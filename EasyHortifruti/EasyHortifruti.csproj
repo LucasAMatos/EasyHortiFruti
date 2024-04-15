@@ -114,7 +114,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class2.cs" />
     <Compile Include="Unidades.cs" />
     <Compile Include="ConexaoBD.cs" />
     <Compile Include="Form_Principal.cs">
@@ -135,70 +134,70 @@
     <Compile Include="FormUnidadeInserir.Designer.cs">
       <DependentUpon>FormUnidadeInserir.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadGrupos.cs">
+    <Compile Include="Geral\FormCadGrupos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadGrupos.Designer.cs">
+    <Compile Include="Geral\FormCadGrupos.Designer.cs">
       <DependentUpon>FormCadGrupos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormGruposInserir.cs">
+    <Compile Include="Geral\FormGruposInserir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGruposInserir.Designer.cs">
+    <Compile Include="Geral\FormGruposInserir.Designer.cs">
       <DependentUpon>FormGruposInserir.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadSubGrupos.cs">
+    <Compile Include="Geral\FormCadSubGrupos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadSubGrupos.Designer.cs">
+    <Compile Include="Geral\FormCadSubGrupos.Designer.cs">
       <DependentUpon>FormCadSubGrupos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadProduto.cs">
+    <Compile Include="Produtos\FormCadProduto.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadProduto.Designer.cs">
+    <Compile Include="Produtos\FormCadProduto.Designer.cs">
       <DependentUpon>FormCadProduto.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormProdutosInserir.cs">
+    <Compile Include="Produtos\FormProdutosInserir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormProdutosInserir.Designer.cs">
+    <Compile Include="Produtos\FormProdutosInserir.Designer.cs">
       <DependentUpon>FormProdutosInserir.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadGeral.cs">
+    <Compile Include="Geral\FormCadGeral.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadGeral.Designer.cs">
+    <Compile Include="Geral\FormCadGeral.Designer.cs">
       <DependentUpon>FormCadGeral.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormGeralInserir.cs">
+    <Compile Include="Geral\FormGeralInserir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormGeralInserir.Designer.cs">
+    <Compile Include="Geral\FormGeralInserir.Designer.cs">
       <DependentUpon>FormGeralInserir.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormSubGrupoInserir.cs">
+    <Compile Include="Geral\FormSubGrupoInserir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormSubGrupoInserir.Designer.cs">
+    <Compile Include="Geral\FormSubGrupoInserir.Designer.cs">
       <DependentUpon>FormSubGrupoInserir.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadPedidos.cs">
+    <Compile Include="Pedidos\FormCadPedidos.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadPedidos.Designer.cs">
+    <Compile Include="Pedidos\FormCadPedidos.Designer.cs">
       <DependentUpon>FormCadPedidos.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormPedidoInserir.cs">
+    <Compile Include="Pedidos\FormPedidoInserir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormPedidoInserir.Designer.cs">
+    <Compile Include="Pedidos\FormPedidoInserir.Designer.cs">
       <DependentUpon>FormPedidoInserir.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCtasReceber.cs">
+    <Compile Include="Financeiro\FormCtasReceber.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCtasReceber.Designer.cs">
+    <Compile Include="Financeiro\FormCtasReceber.Designer.cs">
       <DependentUpon>FormCtasReceber.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -212,37 +211,37 @@
     <EmbeddedResource Include="FormUnidadeInserir.resx">
       <DependentUpon>FormUnidadeInserir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadGrupos.resx">
+    <EmbeddedResource Include="Geral\FormCadGrupos.resx">
       <DependentUpon>FormCadGrupos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGruposInserir.resx">
+    <EmbeddedResource Include="Geral\FormGruposInserir.resx">
       <DependentUpon>FormGruposInserir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadSubGrupos.resx">
+    <EmbeddedResource Include="Geral\FormCadSubGrupos.resx">
       <DependentUpon>FormCadSubGrupos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadProduto.resx">
+    <EmbeddedResource Include="Produtos\FormCadProduto.resx">
       <DependentUpon>FormCadProduto.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormProdutosInserir.resx">
+    <EmbeddedResource Include="Produtos\FormProdutosInserir.resx">
       <DependentUpon>FormProdutosInserir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadGeral.resx">
+    <EmbeddedResource Include="Geral\FormCadGeral.resx">
       <DependentUpon>FormCadGeral.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormGeralInserir.resx">
+    <EmbeddedResource Include="Geral\FormGeralInserir.resx">
       <DependentUpon>FormGeralInserir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormSubGrupoInserir.resx">
+    <EmbeddedResource Include="Geral\FormSubGrupoInserir.resx">
       <DependentUpon>FormSubGrupoInserir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadPedidos.resx">
+    <EmbeddedResource Include="Pedidos\FormCadPedidos.resx">
       <DependentUpon>FormCadPedidos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormPedidoInserir.resx">
+    <EmbeddedResource Include="Pedidos\FormPedidoInserir.resx">
       <DependentUpon>FormPedidoInserir.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCtasReceber.resx">
+    <EmbeddedResource Include="Financeiro\FormCtasReceber.resx">
       <DependentUpon>FormCtasReceber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -279,6 +278,9 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Relatorios\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

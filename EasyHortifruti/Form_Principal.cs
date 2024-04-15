@@ -28,7 +28,6 @@ namespace EasyHortifruti
 
         private void btProdutos_Click(object sender, EventArgs e)
         {
-            // Criar uma nova instância do FormSecundario
             FormCadastroProduto FormCadastroProduto = new FormCadastroProduto();
 
             // Exibir o FormSecundario
@@ -56,6 +55,11 @@ namespace EasyHortifruti
         private void btSairPrincipal_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void btRelatórios_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

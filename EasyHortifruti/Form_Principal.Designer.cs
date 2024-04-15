@@ -94,6 +94,7 @@
             this.btRelatórios.Size = new System.Drawing.Size(195, 44);
             this.btRelatórios.TabIndex = 5;
             this.btRelatórios.UseVisualStyleBackColor = false;
+            this.btRelatórios.Click += new System.EventHandler(this.btRelatórios_Click);
             // 
             // btPedidos
             // 

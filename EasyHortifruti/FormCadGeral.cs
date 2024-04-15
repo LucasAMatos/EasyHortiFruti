@@ -19,10 +19,8 @@ namespace EasyHortifruti
 
         private void btIncluirCliente_Click(object sender, EventArgs e)
         {
-            // Criar uma nova instância do FormSecundario
             FormInserirCliente FormInserirCliente = new FormInserirCliente();
 
-            // Exibir o FormSecundario
             FormInserirCliente.Show();
         }
 

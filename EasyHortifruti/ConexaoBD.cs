@@ -11,7 +11,7 @@ namespace EasyHortifruti
 
         public ConexaoBD()
         {
-            connectionString = "Host=localhost;Username=hortifruti;Password=hortifruti;Database=EasyHortifruti";
+            connectionString = "Host=localhost;Username=Admin;Password=2125071216;Database=EasyHortifruti";
         }
 
         public DataSet ConsultarTabela(string pNomeTabela)
@@ -44,34 +44,36 @@ namespace EasyHortifruti
                 conn.Open();
 
                 string sql = "INSERT INTO UNIDADES (abrev_unid, desc_unid, obs_unid) " +
-                    "VALUES (@Abreviatura, @Descricao, @Observacao)";
+                    "VALUES (@abreviatura, @Descricao, @observacao)";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("Abreviatura", Abreviatura);
+                    cmd.Parameters.AddWithValue("abreviatura", Abreviatura);
                     cmd.Parameters.AddWithValue("Descricao", Descricao);
-                    cmd.Parameters.AddWithValue("Observacao", Observacao);
+                    cmd.Parameters.AddWithValue("observacao", Observacao);
 
-                    int idGerado = (int)cmd.ExecuteScalar();
+                    int rowsAffected = cmd.ExecuteNonQuery();
                 }
             }
         }
 
-        public void DeletarPeloID(int pId, string pNomeTabela)
+        public void ExcluirUnidade(int pId, string pNomeTabela)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
 
-                string sql = String.Format("DELETE FROM {0} WHERE ID_RECNO=@ID", pNomeTabela);
+                string sql = String.Format("DELETE FROM {0} WHERE id_recno=@ID", pNomeTabela);
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("ID", pId);
 
                     cmd.ExecuteNonQuery();
+                    
                 }
             }
+
         }
     }
 }

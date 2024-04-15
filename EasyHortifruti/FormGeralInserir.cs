@@ -20,17 +20,7 @@ namespace EasyHortifruti
 
         private void brPessoaFisica_CheckedChanged(object sender, EventArgs e)
         {
-            // Verifica se o radioButton rbPessoaFisica está selecionado
-            if (rbPessoaFisica.Checked)
-            {
-                // Mostra o panel1
-                panelPessoaFisica.Visible = true;
-            }
-            else
-            {
-                // Esconde o panel1
-                panelPessoaFisica.Visible = false;
-            }
+            panelPessoaFisica.Visible = rbPessoaFisica.Checked;
         }
 
         private void rbPessoaJuridica_CheckedChanged(object sender, EventArgs e)

@@ -55,6 +55,7 @@ namespace EasyHortifruti
                 DialogResult dialogResult = MessageBox.Show("Excluir", "Cancelar", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
+                    new ConexaoBD().ExcluirUnidade(IdSelecionado, NomeTabelaBD);
                     MessageBox.Show("Registro excluído com sucesso");
                 }
 

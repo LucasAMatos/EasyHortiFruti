@@ -13,11 +13,22 @@ namespace EasyHortifruti
 {
     public partial class FormCadUnidade : FormBase
     {
-        private readonly object unidadesTableAdapter;
-
         public FormCadUnidade()
         {
             InitializeComponent();
+        }
+
+        public int IdSelecionado
+        {
+            get
+            {
+                DataGridViewSelectedRowCollection linhaSelecionada = dgvCadUnidades.SelectedRows;
+
+                if (linhaSelecionada != null && linhaSelecionada.Count == 1)
+                    return Convert.ToInt32(linhaSelecionada[0].Cells["id"].Value);
+
+                return -1;
+            }
         }
 
         private void btSairUnidades_Click(object sender, EventArgs e)
@@ -78,11 +89,18 @@ namespace EasyHortifruti
 
         private void btExcluirUnidades_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection ds = dgvCadUnidades.SelectedRows;
-
-            ConexaoBD conexaoBD = new ConexaoBD();
-            conexaoBD.ExcluirUnidade(Convert.ToInt32(ds[0].Cells["id"].Value), NomeTabelaBD);
-            CarregarGrid();
+            if (IdSelecionado >= 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Excluir", "Cancelar", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    new ConexaoBD().ExcluirUnidade(IdSelecionado, NomeTabelaBD);
+                    MessageBox.Show("Registro excluído com sucesso");
+                }
+                CarregarGrid();
+            }
+            else
+                MessageBox.Show("Selecione um registro para excluir");
         }
     }
 }

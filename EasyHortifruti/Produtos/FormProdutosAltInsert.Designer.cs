@@ -290,16 +290,17 @@ namespace EasyHortifruti
             this.BtCancelaProduto.UseVisualStyleBackColor = false;
             this.BtCancelaProduto.Click += new System.EventHandler(this.BtCancelaProduto_Click);
             // 
-            // FormProdutosInserir
+            // FormProdutosAltInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(612, 482);
             this.Controls.Add(this.panelInserirProduto);
             this.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.Name = "FormProdutosInserir";
+            this.Name = "FormProdutosAltInsert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyHortifruti - Inserir Produto";
+            this.Load += new System.EventHandler(this.FormProdutosAltInsert_Load);
             this.panelInserirProduto.ResumeLayout(false);
             this.panelInserirProduto.PerformLayout();
             this.panelBotoesInserirProduto.ResumeLayout(false);

@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btSairSubGrupo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtSairSubGrupo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACgAAAAoCAYAAACM/rhtAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
         EAAAjBIAAP1NAACBPgAAWesAARIPAAA85gAAGc66ySIyAAABJmlDQ1BBZG9iZSBSR0IgKDE5OTgpAAAo
@@ -183,7 +183,7 @@
         iSEU+nEckUykEwXEYSKPyCbyCQ/CEoDZ7yzTrgmGdPLmAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btPesquisarSubGrupo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtPesquisarSubGrupo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAB6FJREFUaEPNmXlsFVUUxgtBcI1bjBCNJvCnRo2ooEZFZBUQKmlSTKCoYQn9Y1hC
@@ -222,7 +222,7 @@
         RU5ErkJggg==
 </value>
   </data>
-  <data name="btImprimirSubGrupo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtImprimirSubGrupo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACsAAAAoCAYAAABnyQNuAAAABGdBTUEAALGeYUxB9wAAACBjSFJNAACH
         EAAAjBIAAP1NAACBPgAAWesAARIPAAA85gAAGc66ySIyAAABJmlDQ1BBZG9iZSBSR0IgKDE5OTgpAAAo
@@ -285,7 +285,7 @@
         +nWDqNtN/cdR9mcIuv0TzTL0UJagYikAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btExcluirSubGrupo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtExcluirSubGrupo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAACBFJREFUaEPNmWtQVOcZx4lN0xYxIGoUMergZCaZNh8iZiZfkljFtoyZcUwCwQ9U
@@ -325,7 +325,7 @@
         2CxG0iWEY/051TaIvozBWIzJ2MzBXMzJ3KqGJ1RNM6hRlYvm4/M/rED07GY2JgYAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btEditarSubGrupo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtEditarSubGrupo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAAB9BJREFUaEPtmX9QVNcVx0nGpjZtYoySqhUxkP6wUWpq25m0TWNVYjLasXRiu87E
@@ -364,7 +364,7 @@
         99+kvgt5LPtgX+yTfXMMjsUxObaUwxNSTo+P733RgoL+B5Dfvm29rXJVAAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="btIncluirSubGrupo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="BtIncluirSubGrupo.BackgroundImage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         vAAADrwBlbxySQAABcpJREFUaEPll31MU2cUxplxzn1lW5ZlMypuEt2MZl/GbDP7Q43oFkwMczpcYmBL

@@ -29,41 +29,10 @@ namespace EasyHortifruti
                 return -1;
             }
         }
-
-        private void btIncluirGrupo_Click(object sender, EventArgs e)
+        private void FormCadGrupos_Load(object sender, EventArgs e)
         {
-            FormGruposAltInsert formGruposAltInsert = new FormGruposAltInsert();
-            formGruposAltInsert.ShowDialog();
-        }
-
-        private void btEditarGrupo_Click(object sender, EventArgs e)
-        {
-            if (IdSelecionado >= 0)
-            {
-                FormGruposAltInsert GruposAltInsert = new FormGruposAltInsert();
-
-                GruposAltInsert.Id = IdSelecionado;
-                GruposAltInsert.ShowDialog();
-            }
-            else
-                MessageBox.Show("Selecione um registro para alterar");
-        }
-
-        private void btExcluirGrupo_Click(object sender, EventArgs e)
-        {
-            if (IdSelecionado >= 0)
-            {
-                DialogResult dialogResult = MessageBox.Show("Excluir", "Cancelar", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    MessageBox.Show("Registro excluído com sucesso");
-                }
-
-                CarregarGrid();
-            }
-            else
-                MessageBox.Show("Selecione um registro para excluir");
-
+            NomeTabelaBD = "GRUPOS";
+            CarregarGrid();
         }
 
         public void CarregarGrid()
@@ -72,10 +41,39 @@ namespace EasyHortifruti
             dataGridView1.DataMember = "Table";
         }
 
-        private void FormCadGrupos_Load(object sender, EventArgs e)
+        private void BtIncluirGrupo_Click(object sender, EventArgs e)
         {
-            NomeTabelaBD = "GRUPOS";
-            CarregarGrid();
+            FormGruposAltInsert GruposAltInsert = new FormGruposAltInsert();
+            GruposAltInsert.ShowDialog();
+        }
+
+        private void BtEditarGrupo_Click(object sender, EventArgs e)
+        {
+            if (IdSelecionado >= 0)
+            {
+                FormGruposAltInsert GruposAltInsert = new FormGruposAltInsert();
+                GruposAltInsert.Id = IdSelecionado;
+                GruposAltInsert.ShowDialog();
+            }
+            else
+                MessageBox.Show("Selecione um registro para alterar");
+        }
+
+        private void BtExcluirGrupo_Click(object sender, EventArgs e)
+        {
+            if (IdSelecionado >= 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Excluir", "Cancelar", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    new ConexaoBD().ExcluirUnidade(IdSelecionado, NomeTabelaBD);
+                    MessageBox.Show("Registro excluído com sucesso");
+                }
+
+                CarregarGrid();
+            }
+            else
+                MessageBox.Show("Selecione um registro para excluir");
 
         }
     }

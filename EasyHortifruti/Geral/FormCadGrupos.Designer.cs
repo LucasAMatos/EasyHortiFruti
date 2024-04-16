@@ -33,12 +33,12 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btSairGrupo = new System.Windows.Forms.Button();
-            this.btPesquisarGrupo = new System.Windows.Forms.Button();
-            this.btImprimirGrupo = new System.Windows.Forms.Button();
-            this.btExcluirGrupo = new System.Windows.Forms.Button();
-            this.btEditarGrupo = new System.Windows.Forms.Button();
-            this.btIncluirGrupo = new System.Windows.Forms.Button();
+            this.BtSairGrupo = new System.Windows.Forms.Button();
+            this.BtPesquisarGrupo = new System.Windows.Forms.Button();
+            this.BtImprimirGrupo = new System.Windows.Forms.Button();
+            this.BtExcluirGrupo = new System.Windows.Forms.Button();
+            this.BtEditarGrupo = new System.Windows.Forms.Button();
+            this.BtIncluirGrupo = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -79,112 +79,112 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.btSairGrupo);
-            this.panel3.Controls.Add(this.btPesquisarGrupo);
-            this.panel3.Controls.Add(this.btImprimirGrupo);
-            this.panel3.Controls.Add(this.btExcluirGrupo);
-            this.panel3.Controls.Add(this.btEditarGrupo);
-            this.panel3.Controls.Add(this.btIncluirGrupo);
+            this.panel3.Controls.Add(this.BtSairGrupo);
+            this.panel3.Controls.Add(this.BtPesquisarGrupo);
+            this.panel3.Controls.Add(this.BtImprimirGrupo);
+            this.panel3.Controls.Add(this.BtExcluirGrupo);
+            this.panel3.Controls.Add(this.BtEditarGrupo);
+            this.panel3.Controls.Add(this.BtIncluirGrupo);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(0, 57);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(481, 64);
             this.panel3.TabIndex = 1;
             // 
-            // btSairGrupo
+            // BtSairGrupo
             // 
-            this.btSairGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.BtSairGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btSairGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.btSairGrupo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSairGrupo.BackgroundImage")));
-            this.btSairGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btSairGrupo.FlatAppearance.BorderSize = 0;
-            this.btSairGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSairGrupo.Location = new System.Drawing.Point(418, 6);
-            this.btSairGrupo.Name = "btSairGrupo";
-            this.btSairGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btSairGrupo.Size = new System.Drawing.Size(44, 52);
-            this.btSairGrupo.TabIndex = 15;
-            this.btSairGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btSairGrupo.UseVisualStyleBackColor = false;
+            this.BtSairGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.BtSairGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtSairGrupo.FlatAppearance.BorderSize = 0;
+            this.BtSairGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtSairGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtSairGrupo.Image")));
+            this.BtSairGrupo.Location = new System.Drawing.Point(418, 6);
+            this.BtSairGrupo.Name = "BtSairGrupo";
+            this.BtSairGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtSairGrupo.Size = new System.Drawing.Size(44, 52);
+            this.BtSairGrupo.TabIndex = 15;
+            this.BtSairGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtSairGrupo.UseVisualStyleBackColor = false;
             // 
-            // btPesquisarGrupo
+            // BtPesquisarGrupo
             // 
-            this.btPesquisarGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.btPesquisarGrupo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btPesquisarGrupo.BackgroundImage")));
-            this.btPesquisarGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btPesquisarGrupo.FlatAppearance.BorderSize = 0;
-            this.btPesquisarGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPesquisarGrupo.Location = new System.Drawing.Point(171, 7);
-            this.btPesquisarGrupo.Name = "btPesquisarGrupo";
-            this.btPesquisarGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btPesquisarGrupo.Size = new System.Drawing.Size(46, 52);
-            this.btPesquisarGrupo.TabIndex = 14;
-            this.btPesquisarGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btPesquisarGrupo.UseVisualStyleBackColor = false;
+            this.BtPesquisarGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.BtPesquisarGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtPesquisarGrupo.FlatAppearance.BorderSize = 0;
+            this.BtPesquisarGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtPesquisarGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtPesquisarGrupo.Image")));
+            this.BtPesquisarGrupo.Location = new System.Drawing.Point(171, 7);
+            this.BtPesquisarGrupo.Name = "BtPesquisarGrupo";
+            this.BtPesquisarGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtPesquisarGrupo.Size = new System.Drawing.Size(46, 52);
+            this.BtPesquisarGrupo.TabIndex = 14;
+            this.BtPesquisarGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtPesquisarGrupo.UseVisualStyleBackColor = false;
             // 
-            // btImprimirGrupo
+            // BtImprimirGrupo
             // 
-            this.btImprimirGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.btImprimirGrupo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btImprimirGrupo.BackgroundImage")));
-            this.btImprimirGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btImprimirGrupo.FlatAppearance.BorderSize = 0;
-            this.btImprimirGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btImprimirGrupo.Location = new System.Drawing.Point(223, 7);
-            this.btImprimirGrupo.Name = "btImprimirGrupo";
-            this.btImprimirGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btImprimirGrupo.Size = new System.Drawing.Size(46, 52);
-            this.btImprimirGrupo.TabIndex = 13;
-            this.btImprimirGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btImprimirGrupo.UseVisualStyleBackColor = false;
+            this.BtImprimirGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.BtImprimirGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtImprimirGrupo.FlatAppearance.BorderSize = 0;
+            this.BtImprimirGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtImprimirGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtImprimirGrupo.Image")));
+            this.BtImprimirGrupo.Location = new System.Drawing.Point(223, 7);
+            this.BtImprimirGrupo.Name = "BtImprimirGrupo";
+            this.BtImprimirGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtImprimirGrupo.Size = new System.Drawing.Size(46, 52);
+            this.BtImprimirGrupo.TabIndex = 13;
+            this.BtImprimirGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtImprimirGrupo.UseVisualStyleBackColor = false;
             // 
-            // btExcluirGrupo
+            // BtExcluirGrupo
             // 
-            this.btExcluirGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.btExcluirGrupo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btExcluirGrupo.BackgroundImage")));
-            this.btExcluirGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btExcluirGrupo.FlatAppearance.BorderSize = 0;
-            this.btExcluirGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btExcluirGrupo.Location = new System.Drawing.Point(119, 6);
-            this.btExcluirGrupo.Name = "btExcluirGrupo";
-            this.btExcluirGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btExcluirGrupo.Size = new System.Drawing.Size(46, 52);
-            this.btExcluirGrupo.TabIndex = 12;
-            this.btExcluirGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btExcluirGrupo.UseVisualStyleBackColor = false;
-            this.btExcluirGrupo.Click += new System.EventHandler(this.btExcluirGrupo_Click);
+            this.BtExcluirGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.BtExcluirGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtExcluirGrupo.FlatAppearance.BorderSize = 0;
+            this.BtExcluirGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtExcluirGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtExcluirGrupo.Image")));
+            this.BtExcluirGrupo.Location = new System.Drawing.Point(119, 6);
+            this.BtExcluirGrupo.Name = "BtExcluirGrupo";
+            this.BtExcluirGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtExcluirGrupo.Size = new System.Drawing.Size(46, 52);
+            this.BtExcluirGrupo.TabIndex = 12;
+            this.BtExcluirGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtExcluirGrupo.UseVisualStyleBackColor = false;
+            this.BtExcluirGrupo.Click += new System.EventHandler(this.BtExcluirGrupo_Click);
             // 
-            // btEditarGrupo
+            // BtEditarGrupo
             // 
-            this.btEditarGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.btEditarGrupo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditarGrupo.BackgroundImage")));
-            this.btEditarGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btEditarGrupo.FlatAppearance.BorderSize = 0;
-            this.btEditarGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEditarGrupo.Location = new System.Drawing.Point(67, 6);
-            this.btEditarGrupo.Name = "btEditarGrupo";
-            this.btEditarGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btEditarGrupo.Size = new System.Drawing.Size(46, 52);
-            this.btEditarGrupo.TabIndex = 11;
-            this.btEditarGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btEditarGrupo.UseVisualStyleBackColor = false;
-            this.btEditarGrupo.Click += new System.EventHandler(this.btEditarGrupo_Click);
+            this.BtEditarGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.BtEditarGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtEditarGrupo.FlatAppearance.BorderSize = 0;
+            this.BtEditarGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtEditarGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtEditarGrupo.Image")));
+            this.BtEditarGrupo.Location = new System.Drawing.Point(67, 6);
+            this.BtEditarGrupo.Name = "BtEditarGrupo";
+            this.BtEditarGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtEditarGrupo.Size = new System.Drawing.Size(46, 52);
+            this.BtEditarGrupo.TabIndex = 11;
+            this.BtEditarGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtEditarGrupo.UseVisualStyleBackColor = false;
+            this.BtEditarGrupo.Click += new System.EventHandler(this.BtEditarGrupo_Click);
             // 
-            // btIncluirGrupo
+            // BtIncluirGrupo
             // 
-            this.btIncluirGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.btIncluirGrupo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btIncluirGrupo.BackgroundImage")));
-            this.btIncluirGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btIncluirGrupo.FlatAppearance.BorderSize = 0;
-            this.btIncluirGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btIncluirGrupo.Location = new System.Drawing.Point(15, 6);
-            this.btIncluirGrupo.Name = "btIncluirGrupo";
-            this.btIncluirGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btIncluirGrupo.Size = new System.Drawing.Size(46, 52);
-            this.btIncluirGrupo.TabIndex = 10;
-            this.btIncluirGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btIncluirGrupo.UseVisualStyleBackColor = false;
-            this.btIncluirGrupo.Click += new System.EventHandler(this.btIncluirGrupo_Click);
+            this.BtIncluirGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.BtIncluirGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtIncluirGrupo.FlatAppearance.BorderSize = 0;
+            this.BtIncluirGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtIncluirGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtIncluirGrupo.Image")));
+            this.BtIncluirGrupo.Location = new System.Drawing.Point(15, 6);
+            this.BtIncluirGrupo.Name = "BtIncluirGrupo";
+            this.BtIncluirGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtIncluirGrupo.Size = new System.Drawing.Size(46, 52);
+            this.BtIncluirGrupo.TabIndex = 10;
+            this.BtIncluirGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtIncluirGrupo.UseVisualStyleBackColor = false;
+            this.BtIncluirGrupo.Click += new System.EventHandler(this.BtIncluirGrupo_Click);
             // 
             // panel2
             // 
@@ -221,11 +221,11 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button btPesquisarGrupo;
-        private System.Windows.Forms.Button btImprimirGrupo;
-        private System.Windows.Forms.Button btExcluirGrupo;
-        private System.Windows.Forms.Button btEditarGrupo;
-        private System.Windows.Forms.Button btIncluirGrupo;
-        private System.Windows.Forms.Button btSairGrupo;
+        private System.Windows.Forms.Button BtPesquisarGrupo;
+        private System.Windows.Forms.Button BtImprimirGrupo;
+        private System.Windows.Forms.Button BtExcluirGrupo;
+        private System.Windows.Forms.Button BtEditarGrupo;
+        private System.Windows.Forms.Button BtIncluirGrupo;
+        private System.Windows.Forms.Button BtSairGrupo;
     }
 }

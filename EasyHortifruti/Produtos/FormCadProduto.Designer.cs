@@ -64,6 +64,8 @@
             // 
             // dtGridViewCadProd
             // 
+            this.dtGridViewCadProd.AllowUserToAddRows = false;
+            this.dtGridViewCadProd.AllowUserToDeleteRows = false;
             this.dtGridViewCadProd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtGridViewCadProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridViewCadProd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {

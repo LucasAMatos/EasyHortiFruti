@@ -17,10 +17,23 @@ namespace EasyHortifruti
             InitializeComponent();
         }
 
+        public int IdSelecionado
+        {
+            get
+            {
+                DataGridViewSelectedRowCollection linhaSelecionada = dtGridViewCadProd.SelectedRows;
+
+                if (linhaSelecionada != null && linhaSelecionada.Count == 1)
+                    return Convert.ToInt32(linhaSelecionada[0].Cells["id"].Value);
+
+                return -1;
+            }
+        }
+
         private void btIncluirProduto_Click(object sender, EventArgs e)
         {
             // Criar uma nova instância do FormSecundario
-            FormProdutosInserir FormInserirProduto = new FormProdutosInserir();
+            FormProdutosAltInsert FormInserirProduto = new FormProdutosAltInsert();
 
             // Exibir o FormSecundario
             FormInserirProduto.Show();
@@ -34,6 +47,18 @@ namespace EasyHortifruti
         private void btSairCadProduto_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btEditarProduto_Click(object sender, EventArgs e)
+        {
+            if (IdSelecionado >= 0)
+            {
+                FormProdutosAltInsert FormProdutosAltInsert = new FormProdutosAltInsert();
+                FormProdutosAltInsert.Id = IdSelecionado;
+                FormProdutosAltInsert.Show();
+            }
+            else
+                MessageBox.Show("Selecione um registro para alterar");
         }
     }
 }

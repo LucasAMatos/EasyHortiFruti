@@ -152,6 +152,7 @@
             this.btExcluirGrupo.TabIndex = 12;
             this.btExcluirGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btExcluirGrupo.UseVisualStyleBackColor = false;
+            this.btExcluirGrupo.Click += new System.EventHandler(this.btExcluirGrupo_Click);
             // 
             // btEditarGrupo
             // 
@@ -167,6 +168,7 @@
             this.btEditarGrupo.TabIndex = 11;
             this.btEditarGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btEditarGrupo.UseVisualStyleBackColor = false;
+            this.btEditarGrupo.Click += new System.EventHandler(this.btEditarGrupo_Click);
             // 
             // btIncluirGrupo
             // 
@@ -182,6 +184,7 @@
             this.btIncluirGrupo.TabIndex = 10;
             this.btIncluirGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btIncluirGrupo.UseVisualStyleBackColor = false;
+            this.btIncluirGrupo.Click += new System.EventHandler(this.btIncluirGrupo_Click);
             // 
             // panel2
             // 
@@ -202,6 +205,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCadGrupos";
             this.Text = "Form14";
+            this.Load += new System.EventHandler(this.FormCadGrupos_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

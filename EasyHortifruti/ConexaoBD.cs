@@ -11,10 +11,33 @@ namespace EasyHortifruti
 
         public ConexaoBD()
         {
-            connectionString = "Host=localhost;Username=Admin;Password=2125071216;Database=EasyHortifruti";
+            connectionString = "Host=localhost;Username=hortifruti;Password=hortifruti;Database=EasyHortifruti";
         }
 
         public DataSet ConsultarTabela(string pNomeTabela)
+        {
+            DataSet dataSet = new DataSet();
+
+            try
+            {
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql = string.Concat("SELECT * FROM ", pNomeTabela, " WHE");
+
+                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(sql, conn))
+                        adapter.Fill(dataSet);
+                }
+                return dataSet;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        public DataSet ConsultarTabelaPorId(int id, string pNomeTabela)
         {
             DataSet dataSet = new DataSet();
 
@@ -70,11 +93,14 @@ namespace EasyHortifruti
                 string sql = "INSERT INTO UNIDADES (abrev_unid, desc_unid, obs_unid) " +
                     "VALUES (@Abreviatura, @Descricao, @Observacao)";
 
-                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
+                string updateSql = "UPDATE UNIDADES SET abrev_unid=@abreviatura , desc_unid=@Descricao , obs_unid=@observacao WHERE id_recno=@ID";
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(updateSql, conn))
                 {
                     cmd.Parameters.AddWithValue("abreviatura", Abreviatura);
                     cmd.Parameters.AddWithValue("Descricao", Descricao);
                     cmd.Parameters.AddWithValue("observacao", Observacao);
+                    cmd.Parameters.AddWithValue("ID", pId);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
                 }

@@ -2,7 +2,7 @@
 
 namespace EasyHortifruti
 {
-    partial class FormProdutosInserir
+    partial class FormProdutosAltInsert
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace EasyHortifruti
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProdutosInserir));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProdutosAltInsert));
             this.panelInserirProduto = new System.Windows.Forms.Panel();
             this.BtCadUnidade = new System.Windows.Forms.Button();
             this.cbSubGrupoProduto = new System.Windows.Forms.ComboBox();

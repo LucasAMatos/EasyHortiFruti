@@ -210,6 +210,7 @@
             this.btEditarProduto.TabIndex = 1;
             this.btEditarProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btEditarProduto.UseVisualStyleBackColor = false;
+            this.btEditarProduto.Click += new System.EventHandler(this.btEditarProduto_Click);
             // 
             // btIncluirProduto
             // 

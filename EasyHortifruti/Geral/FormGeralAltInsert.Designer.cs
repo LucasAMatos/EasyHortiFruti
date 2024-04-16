@@ -1,6 +1,6 @@
 ﻿namespace EasyHortifruti
 {
-    partial class FormInserirCliente
+    partial class FormGeralAltInsert
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormInserirCliente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGeralAltInsert));
             this.panel1CadGeralInserirDados = new System.Windows.Forms.Panel();
             this.panel5InserirCadGeral = new System.Windows.Forms.Panel();
             this.tabControlInserirDados = new System.Windows.Forms.TabControl();

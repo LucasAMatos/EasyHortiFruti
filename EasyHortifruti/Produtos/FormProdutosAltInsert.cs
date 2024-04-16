@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EasyHortifruti
 {
-    public partial class FormProdutosInserir : System.Windows.Forms.Form
+    public partial class FormProdutosAltInsert : FormBase
     {
-        public FormProdutosInserir()
+        public FormProdutosAltInsert()
         {
             InitializeComponent();
         }

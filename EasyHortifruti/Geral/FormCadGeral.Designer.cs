@@ -312,6 +312,7 @@
             this.btExcluirCadGeral.TabIndex = 2;
             this.btExcluirCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btExcluirCadGeral.UseVisualStyleBackColor = false;
+            this.btExcluirCadGeral.Click += new System.EventHandler(this.btExcluirCadGeral_Click);
             // 
             // btEditarCadGeral
             // 
@@ -327,6 +328,7 @@
             this.btEditarCadGeral.TabIndex = 1;
             this.btEditarCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btEditarCadGeral.UseVisualStyleBackColor = false;
+            this.btEditarCadGeral.Click += new System.EventHandler(this.btEditarCadGeral_Click);
             // 
             // btIncluirCadGeral
             // 
@@ -364,6 +366,7 @@
             this.Name = "FormCadastroCliente";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyHortifruti - Cadastro de Clientes, Fornecedores, Funcionarios";
+            this.Load += new System.EventHandler(this.FormCadastroCliente_Load);
             this.panelCadGeralForm.ResumeLayout(false);
             this.panelFormCadGeral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadGeral)).EndInit();

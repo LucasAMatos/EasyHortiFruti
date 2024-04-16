@@ -11,7 +11,7 @@ namespace EasyHortifruti
 
         public ConexaoBD()
         {
-            connectionString = "Host=localhost;Username=hortifruti;Password=hortifruti;Database=EasyHortifruti";
+            connectionString = "Host=localhost;Username=Admin;Password=2125071216;Database=EasyHortifruti";
         }
 
         public DataSet ConsultarTabela(string pNomeTabela)

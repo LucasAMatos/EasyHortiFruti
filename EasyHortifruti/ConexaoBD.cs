@@ -37,29 +37,6 @@ namespace EasyHortifruti
             }
         }
 
-        public DataSet ConsultarTabelaPorId(int id, string pNomeTabela)
-        {
-            DataSet dataSet = new DataSet();
-
-            try
-            {
-                using (var conn = new NpgsqlConnection(connectionString))
-                {
-                    conn.Open();
-
-                    string sql = string.Concat("SELECT * FROM ", pNomeTabela);
-
-                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(sql, conn))
-                        adapter.Fill(dataSet);
-                }
-                return dataSet;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
-
         public DataSet ConsultarTabelaPorId(int pId, string pNomeTabela)
         {
             DataSet dataSet = new DataSet();
@@ -100,7 +77,6 @@ namespace EasyHortifruti
                     cmd.Parameters.AddWithValue("abreviatura", Abreviatura);
                     cmd.Parameters.AddWithValue("Descricao", Descricao);
                     cmd.Parameters.AddWithValue("observacao", Observacao);
-                    cmd.Parameters.AddWithValue("ID", pId);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
                 }

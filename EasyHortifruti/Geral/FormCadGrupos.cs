@@ -41,10 +41,9 @@ namespace EasyHortifruti
             if (IdSelecionado >= 0)
             {
                 FormGruposAltInsert GruposAltInsert = new FormGruposAltInsert();
-                GruposAltInsert.ShowDialog();
 
                 GruposAltInsert.Id = IdSelecionado;
-                GruposAltInsert.Show();
+                GruposAltInsert.ShowDialog();
             }
             else
                 MessageBox.Show("Selecione um registro para alterar");

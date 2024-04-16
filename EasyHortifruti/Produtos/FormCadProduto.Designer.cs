@@ -195,6 +195,7 @@
             this.btExcluirProduto.TabIndex = 2;
             this.btExcluirProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btExcluirProduto.UseVisualStyleBackColor = false;
+            this.btExcluirProduto.Click += new System.EventHandler(this.btExcluirProduto_Click);
             // 
             // btEditarProduto
             // 

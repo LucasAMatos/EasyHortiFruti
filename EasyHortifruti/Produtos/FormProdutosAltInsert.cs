@@ -29,7 +29,7 @@ namespace EasyHortifruti
             FormCadUnidade FormCadUnidade = new FormCadUnidade();
 
             // Exibir o FormSecundario
-            FormCadUnidade.Show();
+            FormCadUnidade.ShowDialog();
         }
 
     }

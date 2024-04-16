@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace EasyHortifruti
 {
-    public partial class FormCadastroProduto : System.Windows.Forms.Form
+    public partial class FormCadastroProduto : FormBase
     {
         public FormCadastroProduto()
         {
@@ -32,11 +32,8 @@ namespace EasyHortifruti
 
         private void btIncluirProduto_Click(object sender, EventArgs e)
         {
-            // Criar uma nova instância do FormSecundario
             FormProdutosAltInsert FormInserirProduto = new FormProdutosAltInsert();
-
-            // Exibir o FormSecundario
-            FormInserirProduto.Show();
+            FormInserirProduto.ShowDialog();
         }
 
         private void btImprimir_Click(object sender, EventArgs e)
@@ -55,10 +52,31 @@ namespace EasyHortifruti
             {
                 FormProdutosAltInsert FormProdutosAltInsert = new FormProdutosAltInsert();
                 FormProdutosAltInsert.Id = IdSelecionado;
-                FormProdutosAltInsert.Show();
+                FormProdutosAltInsert.ShowDialog();
             }
             else
                 MessageBox.Show("Selecione um registro para alterar");
+        }
+
+        public void CarregarGrid()
+        {
+            dtGridViewCadProd.DataSource = new ConexaoBD().ConsultarTabela(NomeTabelaBD);
+            dtGridViewCadProd.DataMember = "Table";
+        }
+
+        private void btExcluirProduto_Click(object sender, EventArgs e)
+        {
+            if (IdSelecionado >= 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Excluir", "Cancelar", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    MessageBox.Show("Registro excluído com sucesso");
+                }
+                CarregarGrid();
+            }
+            else
+                MessageBox.Show("Selecione um registro para excluir");
         }
     }
 }

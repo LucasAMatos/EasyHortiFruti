@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace EasyHortifruti
 {
-    public partial class FormInserirPedido : System.Windows.Forms.Form
+    public partial class FormInserirPedido : FormBase
     {
         public FormInserirPedido()
         {

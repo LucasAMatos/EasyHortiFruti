@@ -114,24 +114,23 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Unidades.cs" />
-    <Compile Include="ConexaoBD.cs" />
+    <Compile Include="Utilitarios\ConexaoBD.cs" />
     <Compile Include="Form_Principal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Form_Principal.Designer.cs">
       <DependentUpon>Form_Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormCadUnidades.cs">
+    <Compile Include="Produtos\FormCadUnidades.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormCadUnidades.Designer.cs">
+    <Compile Include="Produtos\FormCadUnidades.Designer.cs">
       <DependentUpon>FormCadUnidades.cs</DependentUpon>
     </Compile>
-    <Compile Include="FormUnidadeInserir.cs">
+    <Compile Include="Produtos\FormUnidadeInserir.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormUnidadeInserir.Designer.cs">
+    <Compile Include="Produtos\FormUnidadeInserir.Designer.cs">
       <DependentUpon>FormUnidadeInserir.cs</DependentUpon>
     </Compile>
     <Compile Include="Geral\FormCadGrupos.cs">
@@ -208,10 +207,10 @@
     <EmbeddedResource Include="Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormCadUnidades.resx">
+    <EmbeddedResource Include="Produtos\FormCadUnidades.resx">
       <DependentUpon>FormCadUnidades.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormUnidadeInserir.resx">
+    <EmbeddedResource Include="Produtos\FormUnidadeInserir.resx">
       <DependentUpon>FormUnidadeInserir.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Geral\FormCadGrupos.resx">

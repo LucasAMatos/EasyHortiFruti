@@ -180,6 +180,7 @@
             this.btExcluirPedido.TabIndex = 2;
             this.btExcluirPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btExcluirPedido.UseVisualStyleBackColor = false;
+            this.btExcluirPedido.Click += new System.EventHandler(this.btExcluirPedido_Click);
             // 
             // btEditarPedido
             // 
@@ -195,6 +196,7 @@
             this.btEditarPedido.TabIndex = 1;
             this.btEditarPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btEditarPedido.UseVisualStyleBackColor = false;
+            this.btEditarPedido.Click += new System.EventHandler(this.btEditarPedido_Click);
             // 
             // btIncluirPedido
             // 
@@ -233,6 +235,7 @@
             this.Name = "FormPedidos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyHortifruti - Pedidos";
+            this.Load += new System.EventHandler(this.FormPedidos_Load);
             this.panel1.ResumeLayout(false);
             this.panelCadPedidos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

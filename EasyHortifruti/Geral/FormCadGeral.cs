@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EasyHortifruti
@@ -34,7 +27,7 @@ namespace EasyHortifruti
         {
             FormGeralAltInsert GeralAltInsert = new FormGeralAltInsert();
 
-            GeralAltInsert.Show();
+            GeralAltInsert.ShowDialog();
         }
 
         private void btSairCadGeral_Click(object sender, EventArgs e)
@@ -49,7 +42,7 @@ namespace EasyHortifruti
                 FormGeralAltInsert GeralAltInsert = new FormGeralAltInsert();
 
                 GeralAltInsert.Id = IdSelecionado;
-                GeralAltInsert.Show();
+                GeralAltInsert.ShowDialog();
             }
             else
                 MessageBox.Show("Selecione um registro para alterar");

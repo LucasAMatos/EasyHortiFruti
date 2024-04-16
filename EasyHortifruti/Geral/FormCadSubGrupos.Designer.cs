@@ -165,6 +165,7 @@
             this.btExcluirSubGrupo.TabIndex = 18;
             this.btExcluirSubGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btExcluirSubGrupo.UseVisualStyleBackColor = false;
+            this.btExcluirSubGrupo.Click += new System.EventHandler(this.btExcluirSubGrupo_Click);
             // 
             // btEditarSubGrupo
             // 
@@ -180,6 +181,7 @@
             this.btEditarSubGrupo.TabIndex = 17;
             this.btEditarSubGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btEditarSubGrupo.UseVisualStyleBackColor = false;
+            this.btEditarSubGrupo.Click += new System.EventHandler(this.btEditarSubGrupo_Click);
             // 
             // btIncluirSubGrupo
             // 
@@ -195,6 +197,7 @@
             this.btIncluirSubGrupo.TabIndex = 16;
             this.btIncluirSubGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btIncluirSubGrupo.UseVisualStyleBackColor = false;
+            this.btIncluirSubGrupo.Click += new System.EventHandler(this.btIncluirSubGrupo_Click);
             // 
             // panel2
             // 
@@ -214,6 +217,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormCadSubGrupos";
             this.Text = "Form16";
+            this.Load += new System.EventHandler(this.FormCadSubGrupos_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panel3.ResumeLayout(false);

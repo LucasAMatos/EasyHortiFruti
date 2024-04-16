@@ -11,13 +11,14 @@ using System.Windows.Forms;
 
 namespace EasyHortifruti
 {
-    public partial class FormUnidadeInserir : System.Windows.Forms.Form
+    public partial class FormUnidadeAltInsert : System.Windows.Forms.Form
     {
-        public FormUnidadeInserir()
+        public int idunidade {get; set;}
+        public FormUnidadeAltInsert()
         {
             InitializeComponent();
         }
-
+ 
         private void BtGravarUnidade_Click(object sender, EventArgs e)
         {
             try
@@ -26,9 +27,19 @@ namespace EasyHortifruti
                 string Descricao = tbCadDescricaoUni.Text; // Obtém o texto do TextBox
                 string Observacao = tbCadObsUni.Text; // Obtém o texto do TextBox
 
-                new ConexaoBD().InserirUnidades(Abreviatura, Descricao, Observacao);
+                if (idunidade > 0 )
+                {
+                    new ConexaoBD().AlterarUnidades(idunidade, Abreviatura, Descricao, Observacao);
+                }
+                else
+                {
+                    new ConexaoBD().InserirUnidades(Abreviatura, Descricao, Observacao);
 
+                }               
+
+                MessageBox.Show("gravou");
                 this.Close();
+
             }
             catch (Exception E)
             {
@@ -40,6 +51,19 @@ namespace EasyHortifruti
         {
             this.Close();
         }
-        
+
+        private void FormUnidadeAltInsert_Load(object sender, EventArgs e)
+        {
+            if (idunidade > 0)
+            {
+                DataSet ds = new ConexaoBD().ConsultarTabelaPorId(idunidade, "UNIDADES");
+                tbCadAbreviUni.Text = ds.Tables[0].Rows[0]["abrev_unid"].ToString();
+                lbIDCadUnidade.Text = ds.Tables[0].Rows[0]["id_recno"].ToString();
+                tbCadDescricaoUni.Text = ds.Tables[0].Rows[0]["desc_unid"].ToString();
+                tbCadObsUni.Text = ds.Tables[0].Rows[0]["obs_unid"].ToString();
+
+            }
+                
+        }
     }
 }

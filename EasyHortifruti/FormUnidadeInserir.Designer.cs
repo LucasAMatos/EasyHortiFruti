@@ -1,6 +1,6 @@
 ﻿namespace EasyHortifruti
 {
-    partial class FormUnidadeInserir
+    partial class FormUnidadeAltInsert
     {
         /// <summary>
         /// Required designer variable.
@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUnidadeInserir));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUnidadeAltInsert));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tbCadObsUni = new System.Windows.Forms.TextBox();
@@ -39,7 +39,7 @@
             this.tbCadAbreviUni = new System.Windows.Forms.TextBox();
             this.lbCadAbrevUni = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.lbIDPedido = new System.Windows.Forms.Label();
+            this.lbIDCadUnidade = new System.Windows.Forms.Label();
             this.BtGravarUnidade = new System.Windows.Forms.Button();
             this.BtCancelCadUnidade = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -132,7 +132,7 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.lbIDPedido);
+            this.panel3.Controls.Add(this.lbIDCadUnidade);
             this.panel3.Controls.Add(this.BtGravarUnidade);
             this.panel3.Controls.Add(this.BtCancelCadUnidade);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -141,21 +141,21 @@
             this.panel3.Size = new System.Drawing.Size(476, 60);
             this.panel3.TabIndex = 1;
             // 
-            // lbIDPedido
+            // lbIDCadUnidade
             // 
-            this.lbIDPedido.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.lbIDCadUnidade.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.lbIDPedido.AutoSize = true;
-            this.lbIDPedido.BackColor = System.Drawing.Color.Transparent;
-            this.lbIDPedido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.lbIDPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbIDPedido.ForeColor = System.Drawing.Color.Black;
-            this.lbIDPedido.Location = new System.Drawing.Point(12, 21);
-            this.lbIDPedido.Name = "lbIDPedido";
-            this.lbIDPedido.Size = new System.Drawing.Size(30, 22);
-            this.lbIDPedido.TabIndex = 13;
-            this.lbIDPedido.Text = "ID";
+            this.lbIDCadUnidade.AutoSize = true;
+            this.lbIDCadUnidade.BackColor = System.Drawing.Color.Transparent;
+            this.lbIDCadUnidade.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.lbIDCadUnidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbIDCadUnidade.ForeColor = System.Drawing.Color.Black;
+            this.lbIDCadUnidade.Location = new System.Drawing.Point(12, 21);
+            this.lbIDCadUnidade.Name = "lbIDCadUnidade";
+            this.lbIDCadUnidade.Size = new System.Drawing.Size(30, 22);
+            this.lbIDCadUnidade.TabIndex = 13;
+            this.lbIDCadUnidade.Text = "ID";
             // 
             // BtGravarUnidade
             // 
@@ -201,25 +201,20 @@
             this.panel2.Size = new System.Drawing.Size(476, 42);
             this.panel2.TabIndex = 0;
             // 
-            // easyHortifrutiDataSet
-            // 
-            // 
             // unidadesBindingSource
             // 
             this.unidadesBindingSource.DataMember = "Unidades";
             // 
-            // unidadesTableAdapter
-            // 
-            // 
-            // FormCadUnidadeInserir
+            // FormUnidadeAltInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(476, 450);
             this.Controls.Add(this.panel1);
-            this.Name = "FormCadUnidadeInserir";
+            this.Name = "FormUnidadeAltInsert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyHortifruti - Inserir Unidade";
+            this.Load += new System.EventHandler(this.FormUnidadeAltInsert_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
@@ -244,7 +239,7 @@
         private System.Windows.Forms.Label lbCadObsUnid;
         private System.Windows.Forms.Button BtGravarUnidade;
         private System.Windows.Forms.Button BtCancelCadUnidade;
-        private System.Windows.Forms.Label lbIDPedido;
+        private System.Windows.Forms.Label lbIDCadUnidade;
         private System.Windows.Forms.BindingSource unidadesBindingSource;
     }
 }

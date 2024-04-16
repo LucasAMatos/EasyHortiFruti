@@ -30,6 +30,7 @@
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadUnidade));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btSairUnidades = new System.Windows.Forms.Button();
@@ -40,15 +41,17 @@
             this.btIncluirUnidades = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvCadUnidades = new System.Windows.Forms.DataGridView();
             this.unidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.unidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.Abreviação = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Descrição = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Observação = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCadUnidades)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unidadesBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unidadesBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -164,7 +167,7 @@
             this.btIncluirUnidades.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btIncluirUnidades.FlatAppearance.BorderSize = 0;
             this.btIncluirUnidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btIncluirUnidades.Location = new System.Drawing.Point(12, 13);
+            this.btIncluirUnidades.Location = new System.Drawing.Point(12, 12);
             this.btIncluirUnidades.Name = "btIncluirUnidades";
             this.btIncluirUnidades.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btIncluirUnidades.Size = new System.Drawing.Size(46, 52);
@@ -185,28 +188,38 @@
             // 
             // panel4
             // 
-            this.panel4.Controls.Add(this.dataGridView1);
+            this.panel4.Controls.Add(this.dgvCadUnidades);
             this.panel4.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel4.Location = new System.Drawing.Point(0, 122);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(569, 469);
             this.panel4.TabIndex = 2;
             // 
-            // dataGridView1
+            // dgvCadUnidades
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AutoGenerateColumns = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgvCadUnidades.AllowUserToAddRows = false;
+            this.dgvCadUnidades.AllowUserToOrderColumns = true;
+            this.dgvCadUnidades.AutoGenerateColumns = false;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvCadUnidades.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvCadUnidades.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvCadUnidades.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Abreviação,
+            this.Descrição,
+            this.Observação,
             this.ID});
-            this.dataGridView1.DataSource = this.unidadesBindingSource1;
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(569, 469);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvCadUnidades.DataSource = this.unidadesBindingSource;
+            this.dgvCadUnidades.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCadUnidades.Location = new System.Drawing.Point(0, 0);
+            this.dgvCadUnidades.Name = "dgvCadUnidades";
+            this.dgvCadUnidades.Size = new System.Drawing.Size(569, 469);
+            this.dgvCadUnidades.TabIndex = 0;
             // 
             // unidadesBindingSource1
             // 
@@ -221,13 +234,28 @@
             this.Abreviação.DataPropertyName = "abrev_unid";
             this.Abreviação.HeaderText = "Abreviação";
             this.Abreviação.Name = "Abreviação";
+            this.Abreviação.Width = 80;
+            // 
+            // Descrição
+            // 
+            this.Descrição.DataPropertyName = "desc_unid";
+            this.Descrição.HeaderText = "Descrição";
+            this.Descrição.Name = "Descrição";
+            this.Descrição.Width = 200;
+            // 
+            // Observação
+            // 
+            this.Observação.DataPropertyName = "obs_unid";
+            this.Observação.HeaderText = "Observação";
+            this.Observação.Name = "Observação";
+            this.Observação.Width = 200;
             // 
             // ID
             // 
-            this.ID.DataPropertyName = "ID_recno";
+            this.ID.DataPropertyName = "id_recno";
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
-            this.ID.Visible = false;
+            this.ID.Width = 50;
             // 
             // FormCadUnidade
             // 
@@ -243,7 +271,7 @@
             this.panel1.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvCadUnidades)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unidadesBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unidadesBindingSource)).EndInit();
             this.ResumeLayout(false);
@@ -262,7 +290,7 @@
         private System.Windows.Forms.Button btIncluirUnidades;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Button btSairUnidades;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvCadUnidades;
         private System.Windows.Forms.BindingSource unidadesBindingSource;
         private System.Windows.Forms.BindingSource unidadesBindingSource1;
         private System.Windows.Forms.DataGridViewTextBoxColumn abreviaturaDataGridViewTextBoxColumn;
@@ -270,6 +298,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn observacaoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn códigoDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn Abreviação;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Observação;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }

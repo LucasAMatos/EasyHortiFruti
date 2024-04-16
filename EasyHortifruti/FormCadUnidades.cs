@@ -32,32 +32,55 @@ namespace EasyHortifruti
 
         private void btEditarUnidade_Click(object sender, EventArgs e)
         {
+            DataGridViewSelectedRowCollection ds = dgvCadUnidades.SelectedRows;
 
+            // Criar uma nova instância do FormSecundario
+            FormUnidadeAltInsert UnidadeAltInsert = new FormUnidadeAltInsert();
+
+            if (ds.Count != 1)
+                MessageBox.Show("selecione a linha!");
+            else
+            {
+                UnidadeAltInsert.idunidade = Convert.ToInt32(ds[0].Cells["id"].Value);
+
+                // Exibir o FormSecundario
+                UnidadeAltInsert.ShowDialog();
+                CarregarGrid();
+            }
         }
 
         private void btIncluirUnidade_Click(object sender, EventArgs e)
         {
-            FormUnidadeInserir FormCadInserirUnidade = new FormUnidadeInserir();
+            // Criar uma nova instância do FormSecundario
+            FormUnidadeAltInsert UnidadeAltInsert = new FormUnidadeAltInsert();
 
-            FormCadInserirUnidade.ShowDialog();
+            // Exibir o FormSecundario
+            UnidadeAltInsert.ShowDialog();
             CarregarGrid();
+
         }
 
         private void CarregarGrid()
         {
             ConexaoBD conexaoBD = new ConexaoBD();
 
-            dataGridView1.DataSource = conexaoBD.ConsultarTabela("UNIDADES");
-            dataGridView1.DataMember = "Table";
+            dgvCadUnidades.DataSource = conexaoBD.ConsultarTabela("UNIDADES"); // dataset
+            dgvCadUnidades.DataMember = "Table"; // nome da tabela
+
+            // Especifica qual coluna deve ser usada para ordenação
+            DataGridViewColumn colunaParaOrdenar = dgvCadUnidades.Columns["ID"];
+
+            // Ordena os dados na coluna especificada
+            dgvCadUnidades.Sort(colunaParaOrdenar, System.ComponentModel.ListSortDirection.Ascending);
+
         }
 
         private void btExcluirUnidades_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection ds = dataGridView1.SelectedRows;
+            DataGridViewSelectedRowCollection ds = dgvCadUnidades.SelectedRows;
 
             ConexaoBD conexaoBD = new ConexaoBD();
-            conexaoBD.DeletarPeloID(Convert.ToInt32(ds[0].Cells["id"].Value), "UNIDADES");
-
+            conexaoBD.ExcluirUnidade(Convert.ToInt32(ds[0].Cells["id"].Value), "UNIDADES");
             CarregarGrid();
         }
     }

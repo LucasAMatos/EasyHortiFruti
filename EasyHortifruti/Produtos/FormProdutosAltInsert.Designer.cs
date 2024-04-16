@@ -51,6 +51,8 @@ namespace EasyHortifruti
             this.labelIDProduto = new System.Windows.Forms.Label();
             this.btSalvarInserirProduto = new System.Windows.Forms.Button();
             this.BtCancelaProduto = new System.Windows.Forms.Button();
+            this.BtCadGrupo = new System.Windows.Forms.Button();
+            this.BtCadSubGrupo = new System.Windows.Forms.Button();
             this.panelInserirProduto.SuspendLayout();
             this.panelBotoesInserirProduto.SuspendLayout();
             this.SuspendLayout();
@@ -58,6 +60,8 @@ namespace EasyHortifruti
             // panelInserirProduto
             // 
             this.panelInserirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panelInserirProduto.Controls.Add(this.BtCadSubGrupo);
+            this.panelInserirProduto.Controls.Add(this.BtCadGrupo);
             this.panelInserirProduto.Controls.Add(this.BtCadUnidade);
             this.panelInserirProduto.Controls.Add(this.cbSubGrupoProduto);
             this.panelInserirProduto.Controls.Add(this.cbGrupoProduto);
@@ -77,7 +81,7 @@ namespace EasyHortifruti
             this.panelInserirProduto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelInserirProduto.Location = new System.Drawing.Point(0, 0);
             this.panelInserirProduto.Name = "panelInserirProduto";
-            this.panelInserirProduto.Size = new System.Drawing.Size(612, 482);
+            this.panelInserirProduto.Size = new System.Drawing.Size(546, 482);
             this.panelInserirProduto.TabIndex = 0;
             // 
             // BtCadUnidade
@@ -87,7 +91,7 @@ namespace EasyHortifruti
             this.BtCadUnidade.FlatAppearance.BorderSize = 0;
             this.BtCadUnidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtCadUnidade.Image = ((System.Drawing.Image)(resources.GetObject("BtCadUnidade.Image")));
-            this.BtCadUnidade.Location = new System.Drawing.Point(187, 151);
+            this.BtCadUnidade.Location = new System.Drawing.Point(146, 149);
             this.BtCadUnidade.Name = "BtCadUnidade";
             this.BtCadUnidade.Size = new System.Drawing.Size(26, 25);
             this.BtCadUnidade.TabIndex = 14;
@@ -99,18 +103,18 @@ namespace EasyHortifruti
             // 
             this.cbSubGrupoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSubGrupoProduto.FormattingEnabled = true;
-            this.cbSubGrupoProduto.Location = new System.Drawing.Point(421, 230);
+            this.cbSubGrupoProduto.Location = new System.Drawing.Point(349, 230);
             this.cbSubGrupoProduto.Name = "cbSubGrupoProduto";
-            this.cbSubGrupoProduto.Size = new System.Drawing.Size(139, 26);
+            this.cbSubGrupoProduto.Size = new System.Drawing.Size(138, 26);
             this.cbSubGrupoProduto.TabIndex = 13;
             // 
             // cbGrupoProduto
             // 
             this.cbGrupoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGrupoProduto.FormattingEnabled = true;
-            this.cbGrupoProduto.Location = new System.Drawing.Point(232, 230);
+            this.cbGrupoProduto.Location = new System.Drawing.Point(169, 230);
             this.cbGrupoProduto.Name = "cbGrupoProduto";
-            this.cbGrupoProduto.Size = new System.Drawing.Size(149, 26);
+            this.cbGrupoProduto.Size = new System.Drawing.Size(119, 26);
             this.cbGrupoProduto.TabIndex = 5;
             // 
             // label7
@@ -119,7 +123,7 @@ namespace EasyHortifruti
             this.label7.BackColor = System.Drawing.Color.Transparent;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(421, 210);
+            this.label7.Location = new System.Drawing.Point(347, 213);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(71, 15);
             this.label7.TabIndex = 12;
@@ -131,7 +135,7 @@ namespace EasyHortifruti
             this.label6.BackColor = System.Drawing.Color.Transparent;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(232, 210);
+            this.label6.Location = new System.Drawing.Point(166, 213);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(46, 15);
             this.label6.TabIndex = 11;
@@ -140,9 +144,9 @@ namespace EasyHortifruti
             // tbMargemLucro
             // 
             this.tbMargemLucro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbMargemLucro.Location = new System.Drawing.Point(58, 230);
+            this.tbMargemLucro.Location = new System.Drawing.Point(30, 232);
             this.tbMargemLucro.Name = "tbMargemLucro";
-            this.tbMargemLucro.Size = new System.Drawing.Size(129, 24);
+            this.tbMargemLucro.Size = new System.Drawing.Size(109, 24);
             this.tbMargemLucro.TabIndex = 10;
             // 
             // label5
@@ -151,7 +155,7 @@ namespace EasyHortifruti
             this.label5.BackColor = System.Drawing.Color.Transparent;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(58, 210);
+            this.label5.Location = new System.Drawing.Point(27, 213);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(100, 15);
             this.label5.TabIndex = 9;
@@ -160,17 +164,17 @@ namespace EasyHortifruti
             // tbPrecoVenda
             // 
             this.tbPrecoVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrecoVenda.Location = new System.Drawing.Point(421, 151);
+            this.tbPrecoVenda.Location = new System.Drawing.Point(405, 150);
             this.tbPrecoVenda.Name = "tbPrecoVenda";
-            this.tbPrecoVenda.Size = new System.Drawing.Size(139, 24);
+            this.tbPrecoVenda.Size = new System.Drawing.Size(108, 24);
             this.tbPrecoVenda.TabIndex = 8;
             // 
             // tbPrecoCompra
             // 
             this.tbPrecoCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPrecoCompra.Location = new System.Drawing.Point(232, 151);
+            this.tbPrecoCompra.Location = new System.Drawing.Point(232, 150);
             this.tbPrecoCompra.Name = "tbPrecoCompra";
-            this.tbPrecoCompra.Size = new System.Drawing.Size(149, 24);
+            this.tbPrecoCompra.Size = new System.Drawing.Size(113, 24);
             this.tbPrecoCompra.TabIndex = 7;
             // 
             // label4
@@ -179,7 +183,7 @@ namespace EasyHortifruti
             this.label4.BackColor = System.Drawing.Color.Transparent;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.Black;
-            this.label4.Location = new System.Drawing.Point(421, 133);
+            this.label4.Location = new System.Drawing.Point(403, 133);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(108, 15);
             this.label4.TabIndex = 6;
@@ -191,7 +195,7 @@ namespace EasyHortifruti
             this.label3.BackColor = System.Drawing.Color.Transparent;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Black;
-            this.label3.Location = new System.Drawing.Point(232, 132);
+            this.label3.Location = new System.Drawing.Point(229, 134);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(118, 15);
             this.label3.TabIndex = 5;
@@ -201,9 +205,9 @@ namespace EasyHortifruti
             // 
             this.cbUnidProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbUnidProduto.FormattingEnabled = true;
-            this.cbUnidProduto.Location = new System.Drawing.Point(58, 151);
+            this.cbUnidProduto.Location = new System.Drawing.Point(30, 148);
             this.cbUnidProduto.Name = "cbUnidProduto";
-            this.cbUnidProduto.Size = new System.Drawing.Size(129, 26);
+            this.cbUnidProduto.Size = new System.Drawing.Size(113, 26);
             this.cbUnidProduto.TabIndex = 4;
             // 
             // label2
@@ -212,18 +216,19 @@ namespace EasyHortifruti
             this.label2.BackColor = System.Drawing.Color.Transparent;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(58, 132);
+            this.label2.Location = new System.Drawing.Point(27, 131);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 15);
             this.label2.TabIndex = 3;
             this.label2.Text = "Unidade";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbDescricaoProduto
             // 
             this.tbDescricaoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescricaoProduto.Location = new System.Drawing.Point(58, 74);
+            this.tbDescricaoProduto.Location = new System.Drawing.Point(30, 74);
             this.tbDescricaoProduto.Name = "tbDescricaoProduto";
-            this.tbDescricaoProduto.Size = new System.Drawing.Size(502, 24);
+            this.tbDescricaoProduto.Size = new System.Drawing.Size(484, 24);
             this.tbDescricaoProduto.TabIndex = 2;
             // 
             // label1
@@ -232,7 +237,7 @@ namespace EasyHortifruti
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(58, 54);
+            this.label1.Location = new System.Drawing.Point(27, 57);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(71, 15);
             this.label1.TabIndex = 1;
@@ -247,7 +252,7 @@ namespace EasyHortifruti
             this.panelBotoesInserirProduto.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBotoesInserirProduto.Location = new System.Drawing.Point(0, 420);
             this.panelBotoesInserirProduto.Name = "panelBotoesInserirProduto";
-            this.panelBotoesInserirProduto.Size = new System.Drawing.Size(612, 62);
+            this.panelBotoesInserirProduto.Size = new System.Drawing.Size(546, 62);
             this.panelBotoesInserirProduto.TabIndex = 0;
             // 
             // labelIDProduto
@@ -255,7 +260,7 @@ namespace EasyHortifruti
             this.labelIDProduto.AutoSize = true;
             this.labelIDProduto.BackColor = System.Drawing.Color.Transparent;
             this.labelIDProduto.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelIDProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIDProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIDProduto.ForeColor = System.Drawing.Color.Black;
             this.labelIDProduto.Location = new System.Drawing.Point(12, 21);
             this.labelIDProduto.Name = "labelIDProduto";
@@ -265,12 +270,14 @@ namespace EasyHortifruti
             // 
             // btSalvarInserirProduto
             // 
+            this.btSalvarInserirProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btSalvarInserirProduto.BackColor = System.Drawing.Color.Transparent;
             this.btSalvarInserirProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSalvarInserirProduto.BackgroundImage")));
             this.btSalvarInserirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btSalvarInserirProduto.FlatAppearance.BorderSize = 0;
             this.btSalvarInserirProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSalvarInserirProduto.Location = new System.Drawing.Point(405, 17);
+            this.btSalvarInserirProduto.Location = new System.Drawing.Point(337, 17);
             this.btSalvarInserirProduto.Name = "btSalvarInserirProduto";
             this.btSalvarInserirProduto.Size = new System.Drawing.Size(94, 30);
             this.btSalvarInserirProduto.TabIndex = 1;
@@ -278,28 +285,61 @@ namespace EasyHortifruti
             // 
             // BtCancelaProduto
             // 
+            this.BtCancelaProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtCancelaProduto.BackColor = System.Drawing.Color.Transparent;
             this.BtCancelaProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtCancelaProduto.BackgroundImage")));
             this.BtCancelaProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtCancelaProduto.FlatAppearance.BorderSize = 0;
             this.BtCancelaProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtCancelaProduto.Location = new System.Drawing.Point(505, 17);
+            this.BtCancelaProduto.Location = new System.Drawing.Point(437, 17);
             this.BtCancelaProduto.Name = "BtCancelaProduto";
             this.BtCancelaProduto.Size = new System.Drawing.Size(94, 30);
             this.BtCancelaProduto.TabIndex = 0;
             this.BtCancelaProduto.UseVisualStyleBackColor = false;
             this.BtCancelaProduto.Click += new System.EventHandler(this.BtCancelaProduto_Click);
             // 
-            // FormProdutosInserir
+            // BtCadGrupo
+            // 
+            this.BtCadGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.BtCadGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtCadGrupo.FlatAppearance.BorderSize = 0;
+            this.BtCadGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtCadGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtCadGrupo.Image")));
+            this.BtCadGrupo.Location = new System.Drawing.Point(290, 229);
+            this.BtCadGrupo.Name = "BtCadGrupo";
+            this.BtCadGrupo.Size = new System.Drawing.Size(26, 25);
+            this.BtCadGrupo.TabIndex = 16;
+            this.BtCadGrupo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtCadGrupo.UseVisualStyleBackColor = false;
+            this.BtCadGrupo.Click += new System.EventHandler(this.BtCadGrupo_Click);
+            // 
+            // BtCadSubGrupo
+            // 
+            this.BtCadSubGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.BtCadSubGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtCadSubGrupo.FlatAppearance.BorderSize = 0;
+            this.BtCadSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtCadSubGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtCadSubGrupo.Image")));
+            this.BtCadSubGrupo.Location = new System.Drawing.Point(488, 230);
+            this.BtCadSubGrupo.Name = "BtCadSubGrupo";
+            this.BtCadSubGrupo.Size = new System.Drawing.Size(26, 25);
+            this.BtCadSubGrupo.TabIndex = 17;
+            this.BtCadSubGrupo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtCadSubGrupo.UseVisualStyleBackColor = false;
+            this.BtCadSubGrupo.Click += new System.EventHandler(this.BtCadSubGrupo_Click);
+            // 
+            // FormProdutosAltInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(612, 482);
+            this.ClientSize = new System.Drawing.Size(546, 482);
             this.Controls.Add(this.panelInserirProduto);
             this.ImeMode = System.Windows.Forms.ImeMode.On;
-            this.Name = "FormProdutosInserir";
+            this.Name = "FormProdutosAltInsert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EaseHortifruti - Inserir Produto";
+            this.Text = "EasyHortifruti - Inserir Produto";
+            this.Load += new System.EventHandler(this.FormProdutosAltInsert_Load);
             this.panelInserirProduto.ResumeLayout(false);
             this.panelInserirProduto.PerformLayout();
             this.panelBotoesInserirProduto.ResumeLayout(false);
@@ -335,5 +375,7 @@ namespace EasyHortifruti
         private System.Windows.Forms.ComboBox cbGrupoProduto;
         private System.Windows.Forms.Label labelIDProduto;
         private System.Windows.Forms.Button BtCadUnidade;
+        private System.Windows.Forms.Button BtCadGrupo;
+        private System.Windows.Forms.Button BtCadSubGrupo;
     }
 }

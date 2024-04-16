@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace EasyHortifruti
 {
-    public partial class FormCadastroCliente : FormBase
+    public partial class FormCadGeral : FormBase
     {
-        public FormCadastroCliente()
+        public FormCadGeral()
         {
             InitializeComponent();
         }
@@ -78,7 +78,7 @@ namespace EasyHortifruti
             dtGridViewCadGeral.DataMember = "Table";
         }
 
-        private void FormCadastroCliente_Load(object sender, EventArgs e)
+        private void FormCadGeral_Load(object sender, EventArgs e)
         {
             NomeTabelaBD = "GERAL";
             CarregarGrid();

@@ -1,6 +1,6 @@
 ﻿namespace EasyHortifruti
 {
-    partial class FormCadastroCliente
+    partial class FormCadGeral
     {
         /// <summary>
         /// Required designer variable.
@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroCliente));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadGeral));
             this.panelCadGeralForm = new System.Windows.Forms.Panel();
             this.panelFormCadGeral = new System.Windows.Forms.Panel();
             this.dtGridViewCadGeral = new System.Windows.Forms.DataGridView();
@@ -356,17 +356,17 @@
             this.panelTituloCadGeral.Size = new System.Drawing.Size(884, 59);
             this.panelTituloCadGeral.TabIndex = 0;
             // 
-            // FormCadastroCliente
+            // FormCadGeral
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.panelCadGeralForm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormCadastroCliente";
+            this.Name = "FormCadGeral";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyHortifruti - Cadastro de Clientes, Fornecedores, Funcionarios";
-            this.Load += new System.EventHandler(this.FormCadastroCliente_Load);
+            this.Load += new System.EventHandler(this.FormCadGeral_Load);
             this.panelCadGeralForm.ResumeLayout(false);
             this.panelFormCadGeral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadGeral)).EndInit();

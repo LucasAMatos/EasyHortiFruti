@@ -24,7 +24,7 @@ namespace EasyHortifruti
                 {
                     conn.Open();
 
-                    string sql = string.Concat("SELECT * FROM ", pNomeTabela, " WHE");
+                    string sql = string.Concat("SELECT * FROM ", pNomeTabela);
 
                     using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(sql, conn))
                         adapter.Fill(dataSet);
@@ -70,9 +70,8 @@ namespace EasyHortifruti
                 string sql = "INSERT INTO UNIDADES (abrev_unid, desc_unid, obs_unid) " +
                     "VALUES (@Abreviatura, @Descricao, @Observacao)";
 
-                string updateSql = "UPDATE UNIDADES SET abrev_unid=@abreviatura , desc_unid=@Descricao , obs_unid=@observacao WHERE id_recno=@ID";
 
-                using (NpgsqlCommand cmd = new NpgsqlCommand(updateSql, conn))
+                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("abreviatura", Abreviatura);
                     cmd.Parameters.AddWithValue("Descricao", Descricao);

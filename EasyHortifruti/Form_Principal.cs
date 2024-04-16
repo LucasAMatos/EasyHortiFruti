@@ -20,10 +20,10 @@ namespace EasyHortifruti
         private void btCadGeral_Click(object sender, EventArgs e)
         {
             // Criar uma nova instância do FormSecundario
-            FormCadastroCliente FormCadastroCliente = new FormCadastroCliente();
+            FormCadGeral FormCadGeral = new FormCadGeral();
 
             // Exibir o FormSecundario
-            FormCadastroCliente.Show();
+            FormCadGeral.Show();
         }
 
         private void btProdutos_Click(object sender, EventArgs e)

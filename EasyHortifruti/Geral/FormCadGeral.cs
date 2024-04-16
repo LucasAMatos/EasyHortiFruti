@@ -40,7 +40,6 @@ namespace EasyHortifruti
             if (IdSelecionado >= 0)
             {
                 FormGeralAltInsert GeralAltInsert = new FormGeralAltInsert();
-
                 GeralAltInsert.Id = IdSelecionado;
                 GeralAltInsert.ShowDialog();
             }

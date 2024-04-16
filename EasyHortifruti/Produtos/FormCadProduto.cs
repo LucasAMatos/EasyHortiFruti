@@ -78,5 +78,11 @@ namespace EasyHortifruti
             else
                 MessageBox.Show("Selecione um registro para excluir");
         }
+
+        private void FormCadastroProduto_Load(object sender, EventArgs e)
+        {
+            NomeTabelaBD = "produtos";
+            CarregarGrid();
+        }
     }
 }

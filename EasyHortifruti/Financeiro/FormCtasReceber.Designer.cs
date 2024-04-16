@@ -106,6 +106,8 @@
             // 
             // dtGridViewCtasReceber
             // 
+            this.dtGridViewCtasReceber.AllowUserToAddRows = false;
+            this.dtGridViewCtasReceber.AllowUserToDeleteRows = false;
             this.dtGridViewCtasReceber.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridViewCtasReceber.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,

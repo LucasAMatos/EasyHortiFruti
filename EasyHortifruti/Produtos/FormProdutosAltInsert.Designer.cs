@@ -299,7 +299,7 @@ namespace EasyHortifruti
             this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.Name = "FormProdutosInserir";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EaseHortifruti - Inserir Produto";
+            this.Text = "EasyHortifruti - Inserir Produto";
             this.panelInserirProduto.ResumeLayout(false);
             this.panelInserirProduto.PerformLayout();
             this.panelBotoesInserirProduto.ResumeLayout(false);

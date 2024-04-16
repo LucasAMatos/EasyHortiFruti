@@ -250,6 +250,7 @@
             this.Name = "FormCadastroProduto";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyHortifruti - Cadastro de Produtos";
+            this.Load += new System.EventHandler(this.FormCadastroProduto_Load);
             this.panel1FormCadProd.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadProd)).EndInit();
             this.panel3FormCadProdBotoes.ResumeLayout(false);

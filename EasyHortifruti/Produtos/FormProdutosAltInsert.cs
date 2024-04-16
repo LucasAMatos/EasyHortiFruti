@@ -73,12 +73,20 @@ namespace EasyHortifruti
 
         private void BtCadGrupo_Click(object sender, EventArgs e)
         {
+            // Criar uma nova instância do FormSecundario
+            FormCadGrupos CadGrupo = new FormCadGrupos();
 
+            // Exibir o FormSecundario
+            CadGrupo.ShowDialog();
         }
 
         private void BtCadSubGrupo_Click(object sender, EventArgs e)
         {
+            // Criar uma nova instância do FormSecundario
+            FormCadSubGrupos CadSubGrupo = new FormCadSubGrupos();
 
+            // Exibir o FormSecundario
+            CadSubGrupo.ShowDialog();
         }
     }
 }

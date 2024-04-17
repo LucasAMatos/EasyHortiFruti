@@ -293,10 +293,18 @@
         private System.Windows.Forms.DataGridView dgvCadUnidades;
         private System.Windows.Forms.BindingSource unidadesBindingSource;
         private System.Windows.Forms.BindingSource unidadesBindingSource1;
+#pragma warning disable CS0169 // O campo "FormCadUnidade.abreviaturaDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn abreviaturaDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "FormCadUnidade.abreviaturaDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "FormCadUnidade.descricaoDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "FormCadUnidade.descricaoDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "FormCadUnidade.observacaoDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn observacaoDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "FormCadUnidade.observacaoDataGridViewTextBoxColumn" nunca é usado
+#pragma warning disable CS0169 // O campo "FormCadUnidade.códigoDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn códigoDataGridViewTextBoxColumn;
+#pragma warning restore CS0169 // O campo "FormCadUnidade.códigoDataGridViewTextBoxColumn" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn Abreviação;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
         private System.Windows.Forms.DataGridViewTextBoxColumn Observação;

@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EasyHortifruti
@@ -21,7 +14,7 @@ namespace EasyHortifruti
         {
             get
             {
-                DataGridViewSelectedRowCollection linhaSelecionada = dataGridView1.SelectedRows;
+                DataGridViewSelectedRowCollection linhaSelecionada = DgViewCadGrupos.SelectedRows;
 
                 if (linhaSelecionada != null && linhaSelecionada.Count == 1)
                     return Convert.ToInt32(linhaSelecionada[0].Cells["id"].Value);
@@ -30,25 +23,29 @@ namespace EasyHortifruti
             }
         }
 
-        private void btIncluirGrupo_Click(object sender, EventArgs e)
+        private void BtIncluirGrupo_Click(object sender, EventArgs e)
         {
             FormGruposAltInsert formGruposAltInsert = new FormGruposAltInsert();
             formGruposAltInsert.ShowDialog();
+
+            CarregarGrid();
         }
 
-        private void btEditarGrupo_Click(object sender, EventArgs e)
+        private void BtEditarGrupo_Click(object sender, EventArgs e)
         {
             if (IdSelecionado >= 0)
             {
                 FormGruposAltInsert GruposAltInsert = new FormGruposAltInsert();
                 GruposAltInsert.Id = IdSelecionado;
                 GruposAltInsert.ShowDialog();
-            }
+
+                CarregarGrid();
+            }            
             else
                 MessageBox.Show("Selecione um registro para alterar");
         }
 
-        private void btExcluirGrupo_Click(object sender, EventArgs e)
+        private void BtExcluirGrupo_Click(object sender, EventArgs e)
         {
             if (IdSelecionado >= 0)
             {
@@ -68,15 +65,20 @@ namespace EasyHortifruti
 
         public void CarregarGrid()
         {
-            dataGridView1.DataSource = new ConexaoBD().ConsultarTabela(NomeTabelaBD);
-            dataGridView1.DataMember = "Table";
+            DgViewCadGrupos.DataSource = new ConexaoBD().ConsultarTabela(NomeTabelaBD);
+            DgViewCadGrupos.DataMember = "Table";
         }
 
         private void FormCadGrupos_Load(object sender, EventArgs e)
         {
-            NomeTabelaBD = "GRUPOS";
+            NomeTabelaBD = "GRUPO";
             CarregarGrid();
 
+        }
+
+        private void BtSairGrupo_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

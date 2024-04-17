@@ -30,23 +30,23 @@ namespace EasyHortifruti
             }
         }
 
-        private void btIncluirProduto_Click(object sender, EventArgs e)
+        private void BtIncluirProduto_Click(object sender, EventArgs e)
         {
             FormProdutosAltInsert FormInserirProduto = new FormProdutosAltInsert();
             FormInserirProduto.ShowDialog();
         }
 
-        private void btImprimir_Click(object sender, EventArgs e)
+        private void BtImprimir_Click(object sender, EventArgs e)
         {
 
         }
 
-        private void btSairCadProduto_Click(object sender, EventArgs e)
+        private void BtSairCadProduto_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btEditarProduto_Click(object sender, EventArgs e)
+        private void BtEditarProduto_Click(object sender, EventArgs e)
         {
             if (IdSelecionado >= 0)
             {
@@ -64,7 +64,7 @@ namespace EasyHortifruti
             dtGridViewCadProd.DataMember = "Table";
         }
 
-        private void btExcluirProduto_Click(object sender, EventArgs e)
+        private void BtExcluirProduto_Click(object sender, EventArgs e)
         {
             if (IdSelecionado >= 0)
             {
@@ -82,7 +82,7 @@ namespace EasyHortifruti
 
         private void FormCadastroProduto_Load(object sender, EventArgs e)
         {
-            NomeTabelaBD = "produtos";
+            NomeTabelaBD = "PRODUTOS";
             CarregarGrid();
         }
     }

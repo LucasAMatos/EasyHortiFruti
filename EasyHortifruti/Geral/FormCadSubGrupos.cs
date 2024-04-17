@@ -15,13 +15,19 @@ namespace EasyHortifruti
         public FormCadSubGrupos()
         {
             InitializeComponent();
+        private void FormCadSubGrupos_Load(object sender, EventArgs e)
+        {
+            NomeTabelaBD = "SUBGRUPO";
+            CarregarGrid();
+        } 
+
         }
 
         public int IdSelecionado
         {
             get
             {
-                DataGridViewSelectedRowCollection linhaSelecionada = dataGridView1.SelectedRows;
+                DataGridViewSelectedRowCollection linhaSelecionada = DgViewCadSubGrupos.SelectedRows;
 
                 if (linhaSelecionada != null && linhaSelecionada.Count == 1)
                     return Convert.ToInt32(linhaSelecionada[0].Cells["id"].Value);
@@ -30,31 +36,37 @@ namespace EasyHortifruti
             }
         }
 
-        private void btSairSubGrupo_Click(object sender, EventArgs e)
+        private void BtSairSubGrupo_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btIncluirSubGrupo_Click(object sender, EventArgs e)
+        private void BtIncluirSubGrupo_Click(object sender, EventArgs e)
         {
-            FormGruposAltInsert GruposAltInsert = new FormGruposAltInsert();
-            GruposAltInsert.ShowDialog();
+            FormSubGrupoAltInsert SubGruposAltInsert = new FormSubGrupoAltInsert();
+            SubGruposAltInsert.ShowDialog();
+            DataGridViewSelectedRowCollection ds = DgViewCadSubGrupos.SelectedRows;
 
-        }
+            // Criar uma nova instância do FormSecundario
+            FormSubGrupoAltInsert SubGrupoAltInsert = new FormSubGrupoAltInsert();
 
-        private void btEditarSubGrupo_Click(object sender, EventArgs e)
-        {
-            if (IdSelecionado >= 0)
-            {
-                FormGruposAltInsert GruposAltInsert = new FormGruposAltInsert();
-                GruposAltInsert.Id = IdSelecionado;
-                GruposAltInsert.ShowDialog();
-            }
+            if (ds.Count != 1)
+                MessageBox.Show("Selecione a linha para poder alterar!");
             else
-                MessageBox.Show("Selecione um registro para alterar");
         }
 
-        private void btExcluirSubGrupo_Click(object sender, EventArgs e)
+        private void BtEditarSubGrupo_Click(object sender, EventArgs e)
+        {
+            {
+                SubGrupoAltInsert.idgrupo = Convert.ToInt32(ds[0].Cells["id"].Value);
+
+                // Exibir o FormSecundario
+                SubGrupoAltInsert.ShowDialog();
+                CarregarGrid();
+            }
+        }
+
+        private void BtExcluirSubGrupo_Click(object sender, EventArgs e)
         {
             if (IdSelecionado >= 0)
             {
@@ -62,26 +74,19 @@ namespace EasyHortifruti
                 if (dialogResult == DialogResult.Yes)
                 {
                     new ConexaoBD().ExcluirUnidade(IdSelecionado, NomeTabelaBD);
-                    MessageBox.Show("Registro excluído com sucesso");
-                }
+                    MessageBox.Show("Registro excluído com sucesso");                }
 
                 CarregarGrid();
             }
             else
                 MessageBox.Show("Selecione um registro para excluir");
-
         }
 
         public void CarregarGrid()
         {
-            dataGridView1.DataSource = new ConexaoBD().ConsultarTabela(NomeTabelaBD);
-            dataGridView1.DataMember = "Table";
+            DgViewCadSubGrupos.DataSource = new ConexaoBD().ConsultarTabela(NomeTabelaBD);
+            DgViewCadSubGrupos.DataMember = "Table";
         }
 
-        private void FormCadSubGrupos_Load(object sender, EventArgs e)
-        {
-            NomeTabelaBD = "SUBGRUPOS";
-            CarregarGrid();
-        }
     }
 }

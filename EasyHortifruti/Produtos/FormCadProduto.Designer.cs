@@ -39,12 +39,12 @@
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3FormCadProdBotoes = new System.Windows.Forms.Panel();
-            this.btSairCadProduto = new System.Windows.Forms.Button();
-            this.btPesquisarProduto = new System.Windows.Forms.Button();
-            this.btImprimirProduto = new System.Windows.Forms.Button();
-            this.btExcluirProduto = new System.Windows.Forms.Button();
-            this.btEditarProduto = new System.Windows.Forms.Button();
-            this.btIncluirProduto = new System.Windows.Forms.Button();
+            this.BtSairCadProduto = new System.Windows.Forms.Button();
+            this.BtPesquisarProduto = new System.Windows.Forms.Button();
+            this.BtImprimirProduto = new System.Windows.Forms.Button();
+            this.BtExcluirProduto = new System.Windows.Forms.Button();
+            this.BtEditarProduto = new System.Windows.Forms.Button();
+            this.BtIncluirProduto = new System.Windows.Forms.Button();
             this.panelTituloCadProd = new System.Windows.Forms.Panel();
             this.panel1FormCadProd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadProd)).BeginInit();
@@ -120,114 +120,114 @@
             // 
             // panel3FormCadProdBotoes
             // 
-            this.panel3FormCadProdBotoes.Controls.Add(this.btSairCadProduto);
-            this.panel3FormCadProdBotoes.Controls.Add(this.btPesquisarProduto);
-            this.panel3FormCadProdBotoes.Controls.Add(this.btImprimirProduto);
-            this.panel3FormCadProdBotoes.Controls.Add(this.btExcluirProduto);
-            this.panel3FormCadProdBotoes.Controls.Add(this.btEditarProduto);
-            this.panel3FormCadProdBotoes.Controls.Add(this.btIncluirProduto);
+            this.panel3FormCadProdBotoes.Controls.Add(this.BtSairCadProduto);
+            this.panel3FormCadProdBotoes.Controls.Add(this.BtPesquisarProduto);
+            this.panel3FormCadProdBotoes.Controls.Add(this.BtImprimirProduto);
+            this.panel3FormCadProdBotoes.Controls.Add(this.BtExcluirProduto);
+            this.panel3FormCadProdBotoes.Controls.Add(this.BtEditarProduto);
+            this.panel3FormCadProdBotoes.Controls.Add(this.BtIncluirProduto);
             this.panel3FormCadProdBotoes.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3FormCadProdBotoes.Location = new System.Drawing.Point(0, 66);
             this.panel3FormCadProdBotoes.Name = "panel3FormCadProdBotoes";
             this.panel3FormCadProdBotoes.Size = new System.Drawing.Size(754, 61);
             this.panel3FormCadProdBotoes.TabIndex = 1;
             // 
-            // btSairCadProduto
+            // BtSairCadProduto
             // 
-            this.btSairCadProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.BtSairCadProduto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btSairCadProduto.BackColor = System.Drawing.Color.Transparent;
-            this.btSairCadProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSairCadProduto.BackgroundImage")));
-            this.btSairCadProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btSairCadProduto.FlatAppearance.BorderSize = 0;
-            this.btSairCadProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSairCadProduto.Location = new System.Drawing.Point(696, 4);
-            this.btSairCadProduto.Name = "btSairCadProduto";
-            this.btSairCadProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btSairCadProduto.Size = new System.Drawing.Size(46, 52);
-            this.btSairCadProduto.TabIndex = 5;
-            this.btSairCadProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btSairCadProduto.UseVisualStyleBackColor = false;
-            this.btSairCadProduto.Click += new System.EventHandler(this.btSairCadProduto_Click);
+            this.BtSairCadProduto.BackColor = System.Drawing.Color.Transparent;
+            this.BtSairCadProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtSairCadProduto.BackgroundImage")));
+            this.BtSairCadProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtSairCadProduto.FlatAppearance.BorderSize = 0;
+            this.BtSairCadProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtSairCadProduto.Location = new System.Drawing.Point(696, 4);
+            this.BtSairCadProduto.Name = "BtSairCadProduto";
+            this.BtSairCadProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtSairCadProduto.Size = new System.Drawing.Size(46, 52);
+            this.BtSairCadProduto.TabIndex = 5;
+            this.BtSairCadProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtSairCadProduto.UseVisualStyleBackColor = false;
+            this.BtSairCadProduto.Click += new System.EventHandler(this.BtSairCadProduto_Click);
             // 
-            // btPesquisarProduto
+            // BtPesquisarProduto
             // 
-            this.btPesquisarProduto.BackColor = System.Drawing.Color.Transparent;
-            this.btPesquisarProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btPesquisarProduto.BackgroundImage")));
-            this.btPesquisarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btPesquisarProduto.FlatAppearance.BorderSize = 0;
-            this.btPesquisarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPesquisarProduto.Location = new System.Drawing.Point(168, 4);
-            this.btPesquisarProduto.Name = "btPesquisarProduto";
-            this.btPesquisarProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btPesquisarProduto.Size = new System.Drawing.Size(46, 52);
-            this.btPesquisarProduto.TabIndex = 4;
-            this.btPesquisarProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btPesquisarProduto.UseVisualStyleBackColor = false;
+            this.BtPesquisarProduto.BackColor = System.Drawing.Color.Transparent;
+            this.BtPesquisarProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtPesquisarProduto.BackgroundImage")));
+            this.BtPesquisarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtPesquisarProduto.FlatAppearance.BorderSize = 0;
+            this.BtPesquisarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtPesquisarProduto.Location = new System.Drawing.Point(168, 4);
+            this.BtPesquisarProduto.Name = "BtPesquisarProduto";
+            this.BtPesquisarProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtPesquisarProduto.Size = new System.Drawing.Size(46, 52);
+            this.BtPesquisarProduto.TabIndex = 4;
+            this.BtPesquisarProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtPesquisarProduto.UseVisualStyleBackColor = false;
             // 
-            // btImprimirProduto
+            // BtImprimirProduto
             // 
-            this.btImprimirProduto.BackColor = System.Drawing.Color.Transparent;
-            this.btImprimirProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btImprimirProduto.BackgroundImage")));
-            this.btImprimirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btImprimirProduto.FlatAppearance.BorderSize = 0;
-            this.btImprimirProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btImprimirProduto.Location = new System.Drawing.Point(220, 4);
-            this.btImprimirProduto.Name = "btImprimirProduto";
-            this.btImprimirProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btImprimirProduto.Size = new System.Drawing.Size(46, 52);
-            this.btImprimirProduto.TabIndex = 3;
-            this.btImprimirProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btImprimirProduto.UseVisualStyleBackColor = false;
-            this.btImprimirProduto.Click += new System.EventHandler(this.btImprimir_Click);
+            this.BtImprimirProduto.BackColor = System.Drawing.Color.Transparent;
+            this.BtImprimirProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtImprimirProduto.BackgroundImage")));
+            this.BtImprimirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtImprimirProduto.FlatAppearance.BorderSize = 0;
+            this.BtImprimirProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtImprimirProduto.Location = new System.Drawing.Point(220, 4);
+            this.BtImprimirProduto.Name = "BtImprimirProduto";
+            this.BtImprimirProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtImprimirProduto.Size = new System.Drawing.Size(46, 52);
+            this.BtImprimirProduto.TabIndex = 3;
+            this.BtImprimirProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtImprimirProduto.UseVisualStyleBackColor = false;
+            this.BtImprimirProduto.Click += new System.EventHandler(this.BtImprimir_Click);
             // 
-            // btExcluirProduto
+            // BtExcluirProduto
             // 
-            this.btExcluirProduto.BackColor = System.Drawing.Color.Transparent;
-            this.btExcluirProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btExcluirProduto.BackgroundImage")));
-            this.btExcluirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btExcluirProduto.FlatAppearance.BorderSize = 0;
-            this.btExcluirProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btExcluirProduto.Location = new System.Drawing.Point(116, 3);
-            this.btExcluirProduto.Name = "btExcluirProduto";
-            this.btExcluirProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btExcluirProduto.Size = new System.Drawing.Size(46, 52);
-            this.btExcluirProduto.TabIndex = 2;
-            this.btExcluirProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btExcluirProduto.UseVisualStyleBackColor = false;
-            this.btExcluirProduto.Click += new System.EventHandler(this.btExcluirProduto_Click);
+            this.BtExcluirProduto.BackColor = System.Drawing.Color.Transparent;
+            this.BtExcluirProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtExcluirProduto.BackgroundImage")));
+            this.BtExcluirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtExcluirProduto.FlatAppearance.BorderSize = 0;
+            this.BtExcluirProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtExcluirProduto.Location = new System.Drawing.Point(116, 3);
+            this.BtExcluirProduto.Name = "BtExcluirProduto";
+            this.BtExcluirProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtExcluirProduto.Size = new System.Drawing.Size(46, 52);
+            this.BtExcluirProduto.TabIndex = 2;
+            this.BtExcluirProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtExcluirProduto.UseVisualStyleBackColor = false;
+            this.BtExcluirProduto.Click += new System.EventHandler(this.BtExcluirProduto_Click);
             // 
-            // btEditarProduto
+            // BtEditarProduto
             // 
-            this.btEditarProduto.BackColor = System.Drawing.Color.Transparent;
-            this.btEditarProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditarProduto.BackgroundImage")));
-            this.btEditarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btEditarProduto.FlatAppearance.BorderSize = 0;
-            this.btEditarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEditarProduto.Location = new System.Drawing.Point(64, 3);
-            this.btEditarProduto.Name = "btEditarProduto";
-            this.btEditarProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btEditarProduto.Size = new System.Drawing.Size(46, 52);
-            this.btEditarProduto.TabIndex = 1;
-            this.btEditarProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btEditarProduto.UseVisualStyleBackColor = false;
-            this.btEditarProduto.Click += new System.EventHandler(this.btEditarProduto_Click);
+            this.BtEditarProduto.BackColor = System.Drawing.Color.Transparent;
+            this.BtEditarProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtEditarProduto.BackgroundImage")));
+            this.BtEditarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtEditarProduto.FlatAppearance.BorderSize = 0;
+            this.BtEditarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtEditarProduto.Location = new System.Drawing.Point(64, 3);
+            this.BtEditarProduto.Name = "BtEditarProduto";
+            this.BtEditarProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtEditarProduto.Size = new System.Drawing.Size(46, 52);
+            this.BtEditarProduto.TabIndex = 1;
+            this.BtEditarProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtEditarProduto.UseVisualStyleBackColor = false;
+            this.BtEditarProduto.Click += new System.EventHandler(this.BtEditarProduto_Click);
             // 
-            // btIncluirProduto
+            // BtIncluirProduto
             // 
-            this.btIncluirProduto.BackColor = System.Drawing.Color.Transparent;
-            this.btIncluirProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btIncluirProduto.BackgroundImage")));
-            this.btIncluirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btIncluirProduto.FlatAppearance.BorderSize = 0;
-            this.btIncluirProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btIncluirProduto.Location = new System.Drawing.Point(12, 3);
-            this.btIncluirProduto.Name = "btIncluirProduto";
-            this.btIncluirProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btIncluirProduto.Size = new System.Drawing.Size(46, 52);
-            this.btIncluirProduto.TabIndex = 0;
-            this.btIncluirProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btIncluirProduto.UseVisualStyleBackColor = false;
-            this.btIncluirProduto.Click += new System.EventHandler(this.btIncluirProduto_Click);
+            this.BtIncluirProduto.BackColor = System.Drawing.Color.Transparent;
+            this.BtIncluirProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtIncluirProduto.BackgroundImage")));
+            this.BtIncluirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtIncluirProduto.FlatAppearance.BorderSize = 0;
+            this.BtIncluirProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtIncluirProduto.Location = new System.Drawing.Point(12, 3);
+            this.BtIncluirProduto.Name = "BtIncluirProduto";
+            this.BtIncluirProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtIncluirProduto.Size = new System.Drawing.Size(46, 52);
+            this.BtIncluirProduto.TabIndex = 0;
+            this.BtIncluirProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtIncluirProduto.UseVisualStyleBackColor = false;
+            this.BtIncluirProduto.Click += new System.EventHandler(this.BtIncluirProduto_Click);
             // 
             // panelTituloCadProd
             // 
@@ -263,12 +263,12 @@
         private System.Windows.Forms.Panel panel1FormCadProd;
         private System.Windows.Forms.Panel panelTituloCadProd;
         private System.Windows.Forms.Panel panel3FormCadProdBotoes;
-        private System.Windows.Forms.Button btIncluirProduto;
-        private System.Windows.Forms.Button btEditarProduto;
-        private System.Windows.Forms.Button btExcluirProduto;
-        private System.Windows.Forms.Button btImprimirProduto;
-        private System.Windows.Forms.Button btPesquisarProduto;
-        private System.Windows.Forms.Button btSairCadProduto;
+        private System.Windows.Forms.Button BtIncluirProduto;
+        private System.Windows.Forms.Button BtEditarProduto;
+        private System.Windows.Forms.Button BtExcluirProduto;
+        private System.Windows.Forms.Button BtImprimirProduto;
+        private System.Windows.Forms.Button BtPesquisarProduto;
+        private System.Windows.Forms.Button BtSairCadProduto;
         private System.Windows.Forms.DataGridView dtGridViewCadProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;

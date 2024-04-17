@@ -21,6 +21,8 @@ namespace EasyHortifruti
         private void BtCancelaProduto_Click(object sender, EventArgs e)
         {
             this.Close(); // Fecha o formulário atual
+        }
+
         private void FormProdutosAltInsert_Load(object sender, EventArgs e)
         {
             NomeTabelaBD = "UNIDADES";
@@ -29,26 +31,24 @@ namespace EasyHortifruti
             CarregarGridSubGrupo();
         }
 
-        }
-
         private void BtCadUnidade_Click_1(object sender, EventArgs e)
         {
             FormCadUnidade FormCadUnidade = new FormCadUnidade();
             FormCadUnidade.ShowDialog();
-            FormCadGrupos cadGrupos = new FormCadGrupos();
-            FormCadSubGrupos cadSubGrupos = new FormCadSubGrupos();
-        }
-
         }
 
         private void BtCadGrupo_Click(object sender, EventArgs e)
         {
+            FormCadGrupos cadGrupos = new FormCadGrupos();
             cadGrupos.ShowDialog();
         }
 
         private void BtCadSubGrupo_Click(object sender, EventArgs e)
         {
+            FormCadSubGrupos cadSubGrupos = new FormCadSubGrupos();
             cadSubGrupos.ShowDialog();
+        }
+
         private void CarregarGridUnidades()
         { 
             cbUnidProduto.Items.Clear();

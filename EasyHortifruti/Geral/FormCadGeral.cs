@@ -14,28 +14,27 @@ namespace EasyHortifruti
         {
             get
             {
-                DataGridViewSelectedRowCollection linhaSelecionada = dtGridViewCadGeral.SelectedRows;
+                DataGridViewSelectedRowCollection linhaSelecionada = DgViewCadGeral.SelectedRows;
 
                 if (linhaSelecionada != null && linhaSelecionada.Count == 1)
                     return Convert.ToInt32(linhaSelecionada[0].Cells["id"].Value);
-
                 return -1;
             }
         }
 
-        private void btIncluirCliente_Click(object sender, EventArgs e)
+        private void BtIncluirCliente_Click(object sender, EventArgs e)
         {
             FormGeralAltInsert GeralAltInsert = new FormGeralAltInsert();
 
             GeralAltInsert.ShowDialog();
         }
 
-        private void btSairCadGeral_Click(object sender, EventArgs e)
+        private void BtSairCadGeral_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void btEditarCadGeral_Click(object sender, EventArgs e)
+        private void BtEditarCadGeral_Click(object sender, EventArgs e)
         {
             if (IdSelecionado >= 0)
             {
@@ -45,19 +44,18 @@ namespace EasyHortifruti
             }
             else
                 MessageBox.Show("Selecione um registro para alterar");
-
         }
 
-        private void btExcluirCadGeral_Click(object sender, EventArgs e)
+        private void BtExcluirCadGeral_Click(object sender, EventArgs e)
         {
             if (IdSelecionado >= 0)
             {
                 DialogResult dialogResult = MessageBox.Show("Excluir", "Cancelar", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    MessageBox.Show("Registro deletado com sucesso");
+                    new ConexaoBD().ExcluirUnidade(IdSelecionado, NomeTabelaBD);
+                    MessageBox.Show("Registro excluído com sucesso");
                 }
-
                 CarregarGrid();
             }
             else
@@ -66,8 +64,8 @@ namespace EasyHortifruti
 
         public void CarregarGrid()
         {
-            dtGridViewCadGeral.DataSource = new ConexaoBD().ConsultarTabela(NomeTabelaBD);
-            dtGridViewCadGeral.DataMember = "Table";
+            DgViewCadGeral.DataSource = new ConexaoBD().ConsultarTabela(NomeTabelaBD);
+            DgViewCadGeral.DataMember = "Table";
         }
 
         private void FormCadGeral_Load(object sender, EventArgs e)

@@ -25,8 +25,8 @@ namespace EasyHortifruti
 
         private void btProdutos_Click(object sender, EventArgs e)
         {
-            FormCadastroProduto FormCadastroProduto = new FormCadastroProduto();
-            FormCadastroProduto.ShowDialog();
+            FormCadastroProduto CadastroProduto = new FormCadastroProduto();
+            CadastroProduto.ShowDialog();
         }
 
         private void btPedidos_Click(object sender, EventArgs e)

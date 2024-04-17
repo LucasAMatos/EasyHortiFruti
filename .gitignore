@@ -104,3 +104,5 @@ dist
 .tern-port
 EasyHortifruti/.vs/EasyHortifruti/FileContentIndex
 EasyHortifruti/bin
+EasyHortifruti/.vs
+EasyHortifruti/obj/Debug

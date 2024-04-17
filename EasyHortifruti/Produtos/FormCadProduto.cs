@@ -32,8 +32,8 @@ namespace EasyHortifruti
 
         private void BtIncluirProduto_Click(object sender, EventArgs e)
         {
-            FormProdutosAltInsert FormInserirProduto = new FormProdutosAltInsert();
-            FormInserirProduto.ShowDialog();
+            FormProdutosAltInsert InserirProduto = new FormProdutosAltInsert();
+            InserirProduto.ShowDialog();
         }
 
         private void BtImprimir_Click(object sender, EventArgs e)

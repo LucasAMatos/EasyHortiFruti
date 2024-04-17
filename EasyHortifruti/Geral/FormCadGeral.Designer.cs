@@ -31,7 +31,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadGeral));
             this.panelCadGeralForm = new System.Windows.Forms.Panel();
             this.panelFormCadGeral = new System.Windows.Forms.Panel();
-            this.dtGridViewCadGeral = new System.Windows.Forms.DataGridView();
+            this.DgViewCadGeral = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -52,16 +52,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3FormCadGeralBotoes = new System.Windows.Forms.Panel();
-            this.btSairCadGeral = new System.Windows.Forms.Button();
-            this.btPesquisarCadGeral = new System.Windows.Forms.Button();
-            this.btImprimirCadGeral = new System.Windows.Forms.Button();
-            this.btExcluirCadGeral = new System.Windows.Forms.Button();
-            this.btEditarCadGeral = new System.Windows.Forms.Button();
-            this.btIncluirCadGeral = new System.Windows.Forms.Button();
+            this.BtSairCadGeral = new System.Windows.Forms.Button();
+            this.BtPesquisarCadGeral = new System.Windows.Forms.Button();
+            this.BtImprimirCadGeral = new System.Windows.Forms.Button();
+            this.BtExcluirCadGeral = new System.Windows.Forms.Button();
+            this.BtEditarCadGeral = new System.Windows.Forms.Button();
+            this.BtIncluirCadGeral = new System.Windows.Forms.Button();
             this.panelTituloCadGeral = new System.Windows.Forms.Panel();
             this.panelCadGeralForm.SuspendLayout();
             this.panelFormCadGeral.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadGeral)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgViewCadGeral)).BeginInit();
             this.panelPesquisarCadGeral.SuspendLayout();
             this.panel3FormCadGeralBotoes.SuspendLayout();
             this.SuspendLayout();
@@ -80,19 +80,19 @@
             // 
             // panelFormCadGeral
             // 
-            this.panelFormCadGeral.Controls.Add(this.dtGridViewCadGeral);
+            this.panelFormCadGeral.Controls.Add(this.DgViewCadGeral);
             this.panelFormCadGeral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormCadGeral.Location = new System.Drawing.Point(0, 157);
             this.panelFormCadGeral.Name = "panelFormCadGeral";
             this.panelFormCadGeral.Size = new System.Drawing.Size(884, 404);
             this.panelFormCadGeral.TabIndex = 5;
             // 
-            // dtGridViewCadGeral
+            // DgViewCadGeral
             // 
-            this.dtGridViewCadGeral.AllowUserToAddRows = false;
-            this.dtGridViewCadGeral.AllowUserToDeleteRows = false;
-            this.dtGridViewCadGeral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridViewCadGeral.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgViewCadGeral.AllowUserToAddRows = false;
+            this.DgViewCadGeral.AllowUserToDeleteRows = false;
+            this.DgViewCadGeral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgViewCadGeral.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2,
             this.Column3,
@@ -107,11 +107,11 @@
             this.Column12,
             this.Column13,
             this.Column14});
-            this.dtGridViewCadGeral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtGridViewCadGeral.Location = new System.Drawing.Point(0, 0);
-            this.dtGridViewCadGeral.Name = "dtGridViewCadGeral";
-            this.dtGridViewCadGeral.Size = new System.Drawing.Size(884, 404);
-            this.dtGridViewCadGeral.TabIndex = 0;
+            this.DgViewCadGeral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgViewCadGeral.Location = new System.Drawing.Point(0, 0);
+            this.DgViewCadGeral.Name = "DgViewCadGeral";
+            this.DgViewCadGeral.Size = new System.Drawing.Size(884, 404);
+            this.DgViewCadGeral.TabIndex = 0;
             // 
             // Column1
             // 
@@ -221,7 +221,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.Location = new System.Drawing.Point(387, 12);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(86, 13);
@@ -231,7 +231,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(5, 12);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 13);
@@ -240,111 +240,111 @@
             // 
             // panel3FormCadGeralBotoes
             // 
-            this.panel3FormCadGeralBotoes.Controls.Add(this.btSairCadGeral);
-            this.panel3FormCadGeralBotoes.Controls.Add(this.btPesquisarCadGeral);
-            this.panel3FormCadGeralBotoes.Controls.Add(this.btImprimirCadGeral);
-            this.panel3FormCadGeralBotoes.Controls.Add(this.btExcluirCadGeral);
-            this.panel3FormCadGeralBotoes.Controls.Add(this.btEditarCadGeral);
-            this.panel3FormCadGeralBotoes.Controls.Add(this.btIncluirCadGeral);
+            this.panel3FormCadGeralBotoes.Controls.Add(this.BtSairCadGeral);
+            this.panel3FormCadGeralBotoes.Controls.Add(this.BtPesquisarCadGeral);
+            this.panel3FormCadGeralBotoes.Controls.Add(this.BtImprimirCadGeral);
+            this.panel3FormCadGeralBotoes.Controls.Add(this.BtExcluirCadGeral);
+            this.panel3FormCadGeralBotoes.Controls.Add(this.BtEditarCadGeral);
+            this.panel3FormCadGeralBotoes.Controls.Add(this.BtIncluirCadGeral);
             this.panel3FormCadGeralBotoes.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3FormCadGeralBotoes.Location = new System.Drawing.Point(0, 59);
             this.panel3FormCadGeralBotoes.Name = "panel3FormCadGeralBotoes";
             this.panel3FormCadGeralBotoes.Size = new System.Drawing.Size(884, 61);
             this.panel3FormCadGeralBotoes.TabIndex = 2;
             // 
-            // btSairCadGeral
+            // BtSairCadGeral
             // 
-            this.btSairCadGeral.BackColor = System.Drawing.Color.Transparent;
-            this.btSairCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSairCadGeral.BackgroundImage")));
-            this.btSairCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btSairCadGeral.FlatAppearance.BorderSize = 0;
-            this.btSairCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSairCadGeral.Location = new System.Drawing.Point(826, 4);
-            this.btSairCadGeral.Name = "btSairCadGeral";
-            this.btSairCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btSairCadGeral.Size = new System.Drawing.Size(46, 52);
-            this.btSairCadGeral.TabIndex = 5;
-            this.btSairCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btSairCadGeral.UseVisualStyleBackColor = false;
-            this.btSairCadGeral.Click += new System.EventHandler(this.btSairCadGeral_Click);
+            this.BtSairCadGeral.BackColor = System.Drawing.Color.Transparent;
+            this.BtSairCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtSairCadGeral.BackgroundImage")));
+            this.BtSairCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtSairCadGeral.FlatAppearance.BorderSize = 0;
+            this.BtSairCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtSairCadGeral.Location = new System.Drawing.Point(826, 4);
+            this.BtSairCadGeral.Name = "BtSairCadGeral";
+            this.BtSairCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtSairCadGeral.Size = new System.Drawing.Size(46, 52);
+            this.BtSairCadGeral.TabIndex = 5;
+            this.BtSairCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtSairCadGeral.UseVisualStyleBackColor = false;
+            this.BtSairCadGeral.Click += new System.EventHandler(this.BtSairCadGeral_Click);
             // 
-            // btPesquisarCadGeral
+            // BtPesquisarCadGeral
             // 
-            this.btPesquisarCadGeral.BackColor = System.Drawing.Color.Transparent;
-            this.btPesquisarCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btPesquisarCadGeral.BackgroundImage")));
-            this.btPesquisarCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btPesquisarCadGeral.FlatAppearance.BorderSize = 0;
-            this.btPesquisarCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPesquisarCadGeral.Location = new System.Drawing.Point(168, 4);
-            this.btPesquisarCadGeral.Name = "btPesquisarCadGeral";
-            this.btPesquisarCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btPesquisarCadGeral.Size = new System.Drawing.Size(46, 52);
-            this.btPesquisarCadGeral.TabIndex = 4;
-            this.btPesquisarCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btPesquisarCadGeral.UseVisualStyleBackColor = false;
+            this.BtPesquisarCadGeral.BackColor = System.Drawing.Color.Transparent;
+            this.BtPesquisarCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtPesquisarCadGeral.BackgroundImage")));
+            this.BtPesquisarCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtPesquisarCadGeral.FlatAppearance.BorderSize = 0;
+            this.BtPesquisarCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtPesquisarCadGeral.Location = new System.Drawing.Point(168, 4);
+            this.BtPesquisarCadGeral.Name = "BtPesquisarCadGeral";
+            this.BtPesquisarCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtPesquisarCadGeral.Size = new System.Drawing.Size(46, 52);
+            this.BtPesquisarCadGeral.TabIndex = 4;
+            this.BtPesquisarCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtPesquisarCadGeral.UseVisualStyleBackColor = false;
             // 
-            // btImprimirCadGeral
+            // BtImprimirCadGeral
             // 
-            this.btImprimirCadGeral.BackColor = System.Drawing.Color.Transparent;
-            this.btImprimirCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btImprimirCadGeral.BackgroundImage")));
-            this.btImprimirCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btImprimirCadGeral.FlatAppearance.BorderSize = 0;
-            this.btImprimirCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btImprimirCadGeral.Location = new System.Drawing.Point(220, 4);
-            this.btImprimirCadGeral.Name = "btImprimirCadGeral";
-            this.btImprimirCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btImprimirCadGeral.Size = new System.Drawing.Size(46, 52);
-            this.btImprimirCadGeral.TabIndex = 3;
-            this.btImprimirCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btImprimirCadGeral.UseVisualStyleBackColor = false;
+            this.BtImprimirCadGeral.BackColor = System.Drawing.Color.Transparent;
+            this.BtImprimirCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtImprimirCadGeral.BackgroundImage")));
+            this.BtImprimirCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtImprimirCadGeral.FlatAppearance.BorderSize = 0;
+            this.BtImprimirCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtImprimirCadGeral.Location = new System.Drawing.Point(220, 4);
+            this.BtImprimirCadGeral.Name = "BtImprimirCadGeral";
+            this.BtImprimirCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtImprimirCadGeral.Size = new System.Drawing.Size(46, 52);
+            this.BtImprimirCadGeral.TabIndex = 3;
+            this.BtImprimirCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtImprimirCadGeral.UseVisualStyleBackColor = false;
             // 
-            // btExcluirCadGeral
+            // BtExcluirCadGeral
             // 
-            this.btExcluirCadGeral.BackColor = System.Drawing.Color.Transparent;
-            this.btExcluirCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btExcluirCadGeral.BackgroundImage")));
-            this.btExcluirCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btExcluirCadGeral.FlatAppearance.BorderSize = 0;
-            this.btExcluirCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btExcluirCadGeral.Location = new System.Drawing.Point(116, 3);
-            this.btExcluirCadGeral.Name = "btExcluirCadGeral";
-            this.btExcluirCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btExcluirCadGeral.Size = new System.Drawing.Size(46, 52);
-            this.btExcluirCadGeral.TabIndex = 2;
-            this.btExcluirCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btExcluirCadGeral.UseVisualStyleBackColor = false;
-            this.btExcluirCadGeral.Click += new System.EventHandler(this.btExcluirCadGeral_Click);
+            this.BtExcluirCadGeral.BackColor = System.Drawing.Color.Transparent;
+            this.BtExcluirCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtExcluirCadGeral.BackgroundImage")));
+            this.BtExcluirCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtExcluirCadGeral.FlatAppearance.BorderSize = 0;
+            this.BtExcluirCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtExcluirCadGeral.Location = new System.Drawing.Point(116, 3);
+            this.BtExcluirCadGeral.Name = "BtExcluirCadGeral";
+            this.BtExcluirCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtExcluirCadGeral.Size = new System.Drawing.Size(46, 52);
+            this.BtExcluirCadGeral.TabIndex = 2;
+            this.BtExcluirCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtExcluirCadGeral.UseVisualStyleBackColor = false;
+            this.BtExcluirCadGeral.Click += new System.EventHandler(this.BtExcluirCadGeral_Click);
             // 
-            // btEditarCadGeral
+            // BtEditarCadGeral
             // 
-            this.btEditarCadGeral.BackColor = System.Drawing.Color.Transparent;
-            this.btEditarCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditarCadGeral.BackgroundImage")));
-            this.btEditarCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btEditarCadGeral.FlatAppearance.BorderSize = 0;
-            this.btEditarCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEditarCadGeral.Location = new System.Drawing.Point(64, 3);
-            this.btEditarCadGeral.Name = "btEditarCadGeral";
-            this.btEditarCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btEditarCadGeral.Size = new System.Drawing.Size(46, 52);
-            this.btEditarCadGeral.TabIndex = 1;
-            this.btEditarCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btEditarCadGeral.UseVisualStyleBackColor = false;
-            this.btEditarCadGeral.Click += new System.EventHandler(this.btEditarCadGeral_Click);
+            this.BtEditarCadGeral.BackColor = System.Drawing.Color.Transparent;
+            this.BtEditarCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtEditarCadGeral.BackgroundImage")));
+            this.BtEditarCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtEditarCadGeral.FlatAppearance.BorderSize = 0;
+            this.BtEditarCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtEditarCadGeral.Location = new System.Drawing.Point(64, 3);
+            this.BtEditarCadGeral.Name = "BtEditarCadGeral";
+            this.BtEditarCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtEditarCadGeral.Size = new System.Drawing.Size(46, 52);
+            this.BtEditarCadGeral.TabIndex = 1;
+            this.BtEditarCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtEditarCadGeral.UseVisualStyleBackColor = false;
+            this.BtEditarCadGeral.Click += new System.EventHandler(this.BtEditarCadGeral_Click);
             // 
-            // btIncluirCadGeral
+            // BtIncluirCadGeral
             // 
-            this.btIncluirCadGeral.BackColor = System.Drawing.Color.Transparent;
-            this.btIncluirCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btIncluirCadGeral.BackgroundImage")));
-            this.btIncluirCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btIncluirCadGeral.FlatAppearance.BorderSize = 0;
-            this.btIncluirCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btIncluirCadGeral.Location = new System.Drawing.Point(12, 3);
-            this.btIncluirCadGeral.Name = "btIncluirCadGeral";
-            this.btIncluirCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btIncluirCadGeral.Size = new System.Drawing.Size(46, 52);
-            this.btIncluirCadGeral.TabIndex = 0;
-            this.btIncluirCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btIncluirCadGeral.UseVisualStyleBackColor = false;
-            this.btIncluirCadGeral.Click += new System.EventHandler(this.btIncluirCliente_Click);
+            this.BtIncluirCadGeral.BackColor = System.Drawing.Color.Transparent;
+            this.BtIncluirCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtIncluirCadGeral.BackgroundImage")));
+            this.BtIncluirCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtIncluirCadGeral.FlatAppearance.BorderSize = 0;
+            this.BtIncluirCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtIncluirCadGeral.Location = new System.Drawing.Point(12, 3);
+            this.BtIncluirCadGeral.Name = "BtIncluirCadGeral";
+            this.BtIncluirCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtIncluirCadGeral.Size = new System.Drawing.Size(46, 52);
+            this.BtIncluirCadGeral.TabIndex = 0;
+            this.BtIncluirCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtIncluirCadGeral.UseVisualStyleBackColor = false;
+            this.BtIncluirCadGeral.Click += new System.EventHandler(this.BtIncluirCliente_Click);
             // 
             // panelTituloCadGeral
             // 
@@ -369,7 +369,7 @@
             this.Load += new System.EventHandler(this.FormCadGeral_Load);
             this.panelCadGeralForm.ResumeLayout(false);
             this.panelFormCadGeral.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadGeral)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgViewCadGeral)).EndInit();
             this.panelPesquisarCadGeral.ResumeLayout(false);
             this.panelPesquisarCadGeral.PerformLayout();
             this.panel3FormCadGeralBotoes.ResumeLayout(false);
@@ -382,15 +382,15 @@
         private System.Windows.Forms.Panel panelCadGeralForm;
         private System.Windows.Forms.Panel panelTituloCadGeral;
         private System.Windows.Forms.Panel panel3FormCadGeralBotoes;
-        private System.Windows.Forms.Button btSairCadGeral;
-        private System.Windows.Forms.Button btPesquisarCadGeral;
-        private System.Windows.Forms.Button btImprimirCadGeral;
-        private System.Windows.Forms.Button btExcluirCadGeral;
-        private System.Windows.Forms.Button btEditarCadGeral;
-        private System.Windows.Forms.Button btIncluirCadGeral;
+        private System.Windows.Forms.Button BtSairCadGeral;
+        private System.Windows.Forms.Button BtPesquisarCadGeral;
+        private System.Windows.Forms.Button BtImprimirCadGeral;
+        private System.Windows.Forms.Button BtExcluirCadGeral;
+        private System.Windows.Forms.Button BtEditarCadGeral;
+        private System.Windows.Forms.Button BtIncluirCadGeral;
         private System.Windows.Forms.Panel panelPesquisarCadGeral;
         private System.Windows.Forms.Panel panelFormCadGeral;
-        private System.Windows.Forms.DataGridView dtGridViewCadGeral;
+        private System.Windows.Forms.DataGridView DgViewCadGeral;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;

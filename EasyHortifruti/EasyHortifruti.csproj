@@ -175,11 +175,11 @@
     <Compile Include="Geral\FormGeralAltInsert.Designer.cs">
       <DependentUpon>FormGeralAltInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Geral\FormSubGrupoInserir.cs">
+    <Compile Include="Geral\FormSubGrupoAltInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Geral\FormSubGrupoInserir.Designer.cs">
-      <DependentUpon>FormSubGrupoInserir.cs</DependentUpon>
+    <Compile Include="Geral\FormSubGrupoAltInsert.Designer.cs">
+      <DependentUpon>FormSubGrupoAltInsert.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedidos\FormCadPedidos.cs">
       <SubType>Form</SubType>
@@ -234,8 +234,8 @@
     <EmbeddedResource Include="Geral\FormGeralAltInsert.resx">
       <DependentUpon>FormGeralAltInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Geral\FormSubGrupoInserir.resx">
-      <DependentUpon>FormSubGrupoInserir.cs</DependentUpon>
+    <EmbeddedResource Include="Geral\FormSubGrupoAltInsert.resx">
+      <DependentUpon>FormSubGrupoAltInsert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\FormCadPedidos.resx">
       <DependentUpon>FormCadPedidos.cs</DependentUpon>

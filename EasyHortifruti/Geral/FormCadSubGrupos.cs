@@ -15,13 +15,13 @@ namespace EasyHortifruti
         public FormCadSubGrupos()
         {
             InitializeComponent();
+        }
+
         private void FormCadSubGrupos_Load(object sender, EventArgs e)
         {
             NomeTabelaBD = "SUBGRUPO";
             CarregarGrid();
         } 
-
-        }
 
         public int IdSelecionado
         {
@@ -45,6 +45,10 @@ namespace EasyHortifruti
         {
             FormSubGrupoAltInsert SubGruposAltInsert = new FormSubGrupoAltInsert();
             SubGruposAltInsert.ShowDialog();
+        }
+
+        private void BtEditarSubGrupo_Click(object sender, EventArgs e)
+        {
             DataGridViewSelectedRowCollection ds = DgViewCadSubGrupos.SelectedRows;
 
             // Criar uma nova instância do FormSecundario
@@ -53,10 +57,6 @@ namespace EasyHortifruti
             if (ds.Count != 1)
                 MessageBox.Show("Selecione a linha para poder alterar!");
             else
-        }
-
-        private void BtEditarSubGrupo_Click(object sender, EventArgs e)
-        {
             {
                 SubGrupoAltInsert.idgrupo = Convert.ToInt32(ds[0].Cells["id"].Value);
 

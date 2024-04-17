@@ -18,19 +18,18 @@ namespace EasyHortifruti
             InitializeComponent();
         }
 
-        private void brPessoaFisica_CheckedChanged(object sender, EventArgs e)
+        private void RbPessoaFisica_CheckedChanged_1(object sender, EventArgs e)
         {
-            panelPessoaFisica.Visible = rbPessoaFisica.Checked;
+            PanelPF.Visible = RbPessoaFisica.Checked;
         }
 
-        private void rbPessoaJuridica_CheckedChanged(object sender, EventArgs e)
+        private void RbPessoaJuridica_CheckedChanged_1(object sender, EventArgs e)
         {
-            panelPessoaJuridica.Visible = rbPessoaJuridica.Checked;
+            PanelPJ.Visible = RbPessoaJuridica.Checked;
         }
-
-        private void btCancelarInserirCadGeral_Click(object sender, EventArgs e)
+        private void BtCancelarGeralInserir_Click(object sender, EventArgs e)
         {
-            this.Close();
-        }
+                this.Close();
+        }        
     }
 }

@@ -56,7 +56,7 @@ namespace EasyHortifruti
                 if (dialogResult == DialogResult.Yes)
                 {
                     new ConexaoBD().ExcluirUnidade(IdSelecionado, NomeTabelaBD);
-                    MessageBox.Show("Registro excluído com sucesso");
+                    MessageBox.Show("Registro excluído com sucesso!");
                 }
 
                 CarregarGrid();
@@ -74,7 +74,7 @@ namespace EasyHortifruti
 
         private void FormCadGrupos_Load(object sender, EventArgs e)
         {
-            NomeTabelaBD = "GRUPOS";
+            NomeTabelaBD = "GRUPO";
             CarregarGrid();
 
         }

@@ -82,7 +82,7 @@ namespace EasyHortifruti
 
         private void FormCadastroProduto_Load(object sender, EventArgs e)
         {
-            NomeTabelaBD = "produtos";
+            NomeTabelaBD = "PRODUTOS";
             CarregarGrid();
         }
     }

@@ -32,6 +32,8 @@ namespace EasyHortifruti
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProdutosAltInsert));
             this.panelInserirProduto = new System.Windows.Forms.Panel();
+            this.BtCadSubGrupo = new System.Windows.Forms.Button();
+            this.BtCadGrupo = new System.Windows.Forms.Button();
             this.BtCadUnidade = new System.Windows.Forms.Button();
             this.cbSubGrupoProduto = new System.Windows.Forms.ComboBox();
             this.cbGrupoProduto = new System.Windows.Forms.ComboBox();
@@ -51,8 +53,6 @@ namespace EasyHortifruti
             this.labelIDProduto = new System.Windows.Forms.Label();
             this.btSalvarInserirProduto = new System.Windows.Forms.Button();
             this.BtCancelaProduto = new System.Windows.Forms.Button();
-            this.BtCadGrupo = new System.Windows.Forms.Button();
-            this.BtCadSubGrupo = new System.Windows.Forms.Button();
             this.panelInserirProduto.SuspendLayout();
             this.panelBotoesInserirProduto.SuspendLayout();
             this.SuspendLayout();
@@ -83,6 +83,36 @@ namespace EasyHortifruti
             this.panelInserirProduto.Name = "panelInserirProduto";
             this.panelInserirProduto.Size = new System.Drawing.Size(546, 482);
             this.panelInserirProduto.TabIndex = 0;
+            // 
+            // BtCadSubGrupo
+            // 
+            this.BtCadSubGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.BtCadSubGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtCadSubGrupo.FlatAppearance.BorderSize = 0;
+            this.BtCadSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtCadSubGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtCadSubGrupo.Image")));
+            this.BtCadSubGrupo.Location = new System.Drawing.Point(488, 230);
+            this.BtCadSubGrupo.Name = "BtCadSubGrupo";
+            this.BtCadSubGrupo.Size = new System.Drawing.Size(26, 25);
+            this.BtCadSubGrupo.TabIndex = 17;
+            this.BtCadSubGrupo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtCadSubGrupo.UseVisualStyleBackColor = false;
+            this.BtCadSubGrupo.Click += new System.EventHandler(this.BtCadSubGrupo_Click);
+            // 
+            // BtCadGrupo
+            // 
+            this.BtCadGrupo.BackColor = System.Drawing.Color.Transparent;
+            this.BtCadGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtCadGrupo.FlatAppearance.BorderSize = 0;
+            this.BtCadGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtCadGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtCadGrupo.Image")));
+            this.BtCadGrupo.Location = new System.Drawing.Point(290, 229);
+            this.BtCadGrupo.Name = "BtCadGrupo";
+            this.BtCadGrupo.Size = new System.Drawing.Size(26, 25);
+            this.BtCadGrupo.TabIndex = 16;
+            this.BtCadGrupo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtCadGrupo.UseVisualStyleBackColor = false;
+            this.BtCadGrupo.Click += new System.EventHandler(this.BtCadGrupo_Click);
             // 
             // BtCadUnidade
             // 
@@ -298,36 +328,6 @@ namespace EasyHortifruti
             this.BtCancelaProduto.TabIndex = 0;
             this.BtCancelaProduto.UseVisualStyleBackColor = false;
             this.BtCancelaProduto.Click += new System.EventHandler(this.BtCancelaProduto_Click);
-            // 
-            // BtCadGrupo
-            // 
-            this.BtCadGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.BtCadGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtCadGrupo.FlatAppearance.BorderSize = 0;
-            this.BtCadGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtCadGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtCadGrupo.Image")));
-            this.BtCadGrupo.Location = new System.Drawing.Point(290, 229);
-            this.BtCadGrupo.Name = "BtCadGrupo";
-            this.BtCadGrupo.Size = new System.Drawing.Size(26, 25);
-            this.BtCadGrupo.TabIndex = 16;
-            this.BtCadGrupo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtCadGrupo.UseVisualStyleBackColor = false;
-            this.BtCadGrupo.Click += new System.EventHandler(this.BtCadGrupo_Click);
-            // 
-            // BtCadSubGrupo
-            // 
-            this.BtCadSubGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.BtCadSubGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtCadSubGrupo.FlatAppearance.BorderSize = 0;
-            this.BtCadSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtCadSubGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtCadSubGrupo.Image")));
-            this.BtCadSubGrupo.Location = new System.Drawing.Point(488, 230);
-            this.BtCadSubGrupo.Name = "BtCadSubGrupo";
-            this.BtCadSubGrupo.Size = new System.Drawing.Size(26, 25);
-            this.BtCadSubGrupo.TabIndex = 17;
-            this.BtCadSubGrupo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtCadSubGrupo.UseVisualStyleBackColor = false;
-            this.BtCadSubGrupo.Click += new System.EventHandler(this.BtCadSubGrupo_Click);
             // 
             // FormProdutosAltInsert
             // 

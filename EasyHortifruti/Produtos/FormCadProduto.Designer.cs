@@ -148,7 +148,7 @@
             this.BtSairCadProduto.TabIndex = 5;
             this.BtSairCadProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtSairCadProduto.UseVisualStyleBackColor = false;
-            this.BtSairCadProduto.Click += new System.EventHandler(this.btSairCadProduto_Click);
+            this.BtSairCadProduto.Click += new System.EventHandler(this.BtSairCadProduto_Click);
             // 
             // BtPesquisarProduto
             // 
@@ -179,7 +179,7 @@
             this.BtImprimirProduto.TabIndex = 3;
             this.BtImprimirProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtImprimirProduto.UseVisualStyleBackColor = false;
-            this.BtImprimirProduto.Click += new System.EventHandler(this.btImprimir_Click);
+            this.BtImprimirProduto.Click += new System.EventHandler(this.BtImprimir_Click);
             // 
             // BtExcluirProduto
             // 
@@ -195,7 +195,7 @@
             this.BtExcluirProduto.TabIndex = 2;
             this.BtExcluirProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtExcluirProduto.UseVisualStyleBackColor = false;
-            this.BtExcluirProduto.Click += new System.EventHandler(this.btExcluirProduto_Click);
+            this.BtExcluirProduto.Click += new System.EventHandler(this.BtExcluirProduto_Click);
             // 
             // BtEditarProduto
             // 
@@ -211,7 +211,7 @@
             this.BtEditarProduto.TabIndex = 1;
             this.BtEditarProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtEditarProduto.UseVisualStyleBackColor = false;
-            this.BtEditarProduto.Click += new System.EventHandler(this.btEditarProduto_Click);
+            this.BtEditarProduto.Click += new System.EventHandler(this.BtEditarProduto_Click);
             // 
             // BtIncluirProduto
             // 
@@ -227,7 +227,7 @@
             this.BtIncluirProduto.TabIndex = 0;
             this.BtIncluirProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtIncluirProduto.UseVisualStyleBackColor = false;
-            this.BtIncluirProduto.Click += new System.EventHandler(this.btIncluirProduto_Click);
+            this.BtIncluirProduto.Click += new System.EventHandler(this.BtIncluirProduto_Click);
             // 
             // panelTituloCadProd
             // 

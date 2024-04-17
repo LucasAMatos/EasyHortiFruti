@@ -20,17 +20,33 @@ namespace EasyHortifruti
 
         private void BtCancelaProduto_Click(object sender, EventArgs e)
         {
-            // Fecha o formulário atual
-            this.Close();
+            this.Close(); // Fecha o formulário atual
+        }
+
+        private void FormProdutosAltInsert_Load(object sender, EventArgs e)
+        {
+            NomeTabelaBD = "UNIDADES";
+            CarregarGridUnidades();
+            CarregarGridGrupo();
+            CarregarGridSubGrupo();
         }
 
         private void BtCadUnidade_Click_1(object sender, EventArgs e)
         {
-            // Criar uma nova instância do FormSecundario
             FormCadUnidade FormCadUnidade = new FormCadUnidade();
-
-            // Exibir o FormSecundario
             FormCadUnidade.ShowDialog();
+        }
+
+        private void BtCadGrupo_Click(object sender, EventArgs e)
+        {
+            FormCadGrupos cadGrupos = new FormCadGrupos();
+            cadGrupos.ShowDialog();
+        }
+
+        private void BtCadSubGrupo_Click(object sender, EventArgs e)
+        {
+            FormCadSubGrupos cadSubGrupos = new FormCadSubGrupos();
+            cadSubGrupos.ShowDialog();
         }
 
         private void CarregarGridUnidades()
@@ -49,7 +65,7 @@ namespace EasyHortifruti
             DataSet ds = new ConexaoBD().ConsultarTabela("GRUPO");
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                cbSubGrupoProduto.Items.Add(dr["nome_grupo"].ToString());
+                cbGrupoProduto.Items.Add(dr["nome_grupo"].ToString());
             }
         }
 
@@ -61,32 +77,6 @@ namespace EasyHortifruti
             {
                 cbSubGrupoProduto.Items.Add(dr["nome_subgrupo"].ToString());
             }
-        }
-
-        private void FormProdutosAltInsert_Load(object sender, EventArgs e)
-        {
-            NomeTabelaBD = "UNIDADES";
-            CarregarGridUnidades();
-            CarregarGridGrupo();
-            CarregarGridSubGrupo();
-        }
-
-        private void BtCadGrupo_Click(object sender, EventArgs e)
-        {
-            // Criar uma nova instância do FormSecundario
-            FormCadGrupos CadGrupo = new FormCadGrupos();
-
-            // Exibir o FormSecundario
-            CadGrupo.ShowDialog();
-        }
-
-        private void BtCadSubGrupo_Click(object sender, EventArgs e)
-        {
-            // Criar uma nova instância do FormSecundario
-            FormCadSubGrupos CadSubGrupo = new FormCadSubGrupos();
-
-            // Exibir o FormSecundario
-            CadSubGrupo.ShowDialog();
         }
     }
 }

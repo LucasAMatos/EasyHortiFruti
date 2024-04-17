@@ -1,11 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EasyHortifruti
@@ -21,7 +14,7 @@ namespace EasyHortifruti
         {
             get
             {
-                DataGridViewSelectedRowCollection linhaSelecionada = dataGridView1.SelectedRows;
+                DataGridViewSelectedRowCollection linhaSelecionada = DgViewCadGrupos.SelectedRows;
 
                 if (linhaSelecionada != null && linhaSelecionada.Count == 1)
                     return Convert.ToInt32(linhaSelecionada[0].Cells["id"].Value);
@@ -29,22 +22,13 @@ namespace EasyHortifruti
                 return -1;
             }
         }
-        private void FormCadGrupos_Load(object sender, EventArgs e)
-        {
-            NomeTabelaBD = "GRUPOS";
-            CarregarGrid();
-        }
-
-        public void CarregarGrid()
-        {
-            dataGridView1.DataSource = new ConexaoBD().ConsultarTabela(NomeTabelaBD);
-            dataGridView1.DataMember = "Table";
-        }
 
         private void BtIncluirGrupo_Click(object sender, EventArgs e)
         {
-            FormGruposAltInsert GruposAltInsert = new FormGruposAltInsert();
-            GruposAltInsert.ShowDialog();
+            FormGruposAltInsert formGruposAltInsert = new FormGruposAltInsert();
+            formGruposAltInsert.ShowDialog();
+
+            CarregarGrid();
         }
 
         private void BtEditarGrupo_Click(object sender, EventArgs e)
@@ -54,7 +38,9 @@ namespace EasyHortifruti
                 FormGruposAltInsert GruposAltInsert = new FormGruposAltInsert();
                 GruposAltInsert.Id = IdSelecionado;
                 GruposAltInsert.ShowDialog();
-            }
+
+                CarregarGrid();
+            }            
             else
                 MessageBox.Show("Selecione um registro para alterar");
         }
@@ -75,6 +61,24 @@ namespace EasyHortifruti
             else
                 MessageBox.Show("Selecione um registro para excluir");
 
+        }
+
+        public void CarregarGrid()
+        {
+            DgViewCadGrupos.DataSource = new ConexaoBD().ConsultarTabela(NomeTabelaBD);
+            DgViewCadGrupos.DataMember = "Table";
+        }
+
+        private void FormCadGrupos_Load(object sender, EventArgs e)
+        {
+            NomeTabelaBD = "GRUPO";
+            CarregarGrid();
+
+        }
+
+        private void BtSairGrupo_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

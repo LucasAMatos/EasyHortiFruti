@@ -49,11 +49,11 @@
             this.label38 = new System.Windows.Forms.Label();
             this.tbRg = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.tbCpf = new System.Windows.Forms.TextBox();
+            this.tbCpf = new System.Windows.Forms.MaskedTextBox();
             this.TbRazaoSocial = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.TbCNPJ = new System.Windows.Forms.TextBox();
+            this.TbCNPJ = new System.Windows.Forms.MaskedTextBox();
             this.TbInscrMunicipal = new System.Windows.Forms.TextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.TbInscrEstadual = new System.Windows.Forms.TextBox();
@@ -91,19 +91,17 @@
             this.TbComplemento = new System.Windows.Forms.TextBox();
             this.TbNumero = new System.Windows.Forms.TextBox();
             this.TbRua = new System.Windows.Forms.TextBox();
-            this.TbCepEndereco = new System.Windows.Forms.TextBox();
+            this.TbCepEndereco = new System.Windows.Forms.MaskedTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.TbCelular = new System.Windows.Forms.TextBox();
+            this.TbCelular = new System.Windows.Forms.MaskedTextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.TbFone = new System.Windows.Forms.TextBox();
+            this.TbFone = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.TbDDDFone = new System.Windows.Forms.TextBox();
-            this.TbDDDCel = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.panel4InserirCadGeral = new System.Windows.Forms.Panel();
             this.LbIdCadGeral = new System.Windows.Forms.Label();
@@ -362,6 +360,7 @@
             // 
             this.tbCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCpf.Location = new System.Drawing.Point(18, 30);
+            this.tbCpf.Mask = "000.000.000-00";
             this.tbCpf.Name = "tbCpf";
             this.tbCpf.Size = new System.Drawing.Size(169, 24);
             this.tbCpf.TabIndex = 11;
@@ -398,6 +397,7 @@
             // 
             this.TbCNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbCNPJ.Location = new System.Drawing.Point(18, 78);
+            this.TbCNPJ.Mask = "00.000.000/0000-00";
             this.TbCNPJ.Name = "TbCNPJ";
             this.TbCNPJ.Size = new System.Drawing.Size(169, 24);
             this.TbCNPJ.TabIndex = 5;
@@ -781,6 +781,7 @@
             // 
             this.TbCepEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbCepEndereco.Location = new System.Drawing.Point(14, 43);
+            this.TbCepEndereco.Mask = "00000-000";
             this.TbCepEndereco.Name = "TbCepEndereco";
             this.TbCepEndereco.Size = new System.Drawing.Size(84, 24);
             this.TbCepEndereco.TabIndex = 9;
@@ -838,8 +839,6 @@
             this.panel6.Controls.Add(this.label11);
             this.panel6.Controls.Add(this.TbFone);
             this.panel6.Controls.Add(this.label12);
-            this.panel6.Controls.Add(this.TbDDDFone);
-            this.panel6.Controls.Add(this.TbDDDCel);
             this.panel6.Location = new System.Drawing.Point(569, 34);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(188, 73);
@@ -848,9 +847,10 @@
             // TbCelular
             // 
             this.TbCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbCelular.Location = new System.Drawing.Point(102, 42);
+            this.TbCelular.Location = new System.Drawing.Point(66, 42);
+            this.TbCelular.Mask = "(00) 00000-0000";
             this.TbCelular.Name = "TbCelular";
-            this.TbCelular.Size = new System.Drawing.Size(77, 24);
+            this.TbCelular.Size = new System.Drawing.Size(113, 24);
             this.TbCelular.TabIndex = 16;
             // 
             // label11
@@ -866,9 +866,10 @@
             // TbFone
             // 
             this.TbFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbFone.Location = new System.Drawing.Point(102, 5);
+            this.TbFone.Location = new System.Drawing.Point(66, 5);
+            this.TbFone.Mask = "(00) 0000-0000";
             this.TbFone.Name = "TbFone";
-            this.TbFone.Size = new System.Drawing.Size(77, 24);
+            this.TbFone.Size = new System.Drawing.Size(113, 24);
             this.TbFone.TabIndex = 15;
             // 
             // label12
@@ -880,22 +881,6 @@
             this.label12.Size = new System.Drawing.Size(53, 15);
             this.label12.TabIndex = 12;
             this.label12.Text = "Celular";
-            // 
-            // TbDDDFone
-            // 
-            this.TbDDDFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbDDDFone.Location = new System.Drawing.Point(66, 5);
-            this.TbDDDFone.Name = "TbDDDFone";
-            this.TbDDDFone.Size = new System.Drawing.Size(30, 24);
-            this.TbDDDFone.TabIndex = 14;
-            // 
-            // TbDDDCel
-            // 
-            this.TbDDDCel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbDDDCel.Location = new System.Drawing.Point(66, 42);
-            this.TbDDDCel.Name = "TbDDDCel";
-            this.TbDDDCel.Size = new System.Drawing.Size(30, 24);
-            this.TbDDDCel.TabIndex = 13;
             // 
             // label10
             // 
@@ -1159,18 +1144,16 @@
         private System.Windows.Forms.Button BtCancelarGeralInserir;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox TbCNPJ;
+        private System.Windows.Forms.MaskedTextBox TbCNPJ;
         private System.Windows.Forms.TextBox TbInscrMunicipal;
         private System.Windows.Forms.TextBox TbInscrEstadual;
-        private System.Windows.Forms.TextBox TbDDDCel;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel7InserirCadGeral;
         private System.Windows.Forms.Panel panel6;
-        private System.Windows.Forms.TextBox TbCelular;
-        private System.Windows.Forms.TextBox TbFone;
-        private System.Windows.Forms.TextBox TbDDDFone;
+        private System.Windows.Forms.MaskedTextBox TbCelular;
+        private System.Windows.Forms.MaskedTextBox TbFone;
         private System.Windows.Forms.TabControl tabControlInserirEndereco;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tbpEndereco;
@@ -1203,7 +1186,7 @@
         private System.Windows.Forms.TextBox TbComplemento;
         private System.Windows.Forms.TextBox TbNumero;
         private System.Windows.Forms.TextBox TbRua;
-        private System.Windows.Forms.TextBox TbCepEndereco;
+        private System.Windows.Forms.MaskedTextBox TbCepEndereco;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -1217,7 +1200,7 @@
         private System.Windows.Forms.Label label38;
         private System.Windows.Forms.TextBox tbRg;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.TextBox tbCpf;
+        private System.Windows.Forms.MaskedTextBox tbCpf;
         private System.Windows.Forms.Label label43;
         private System.Windows.Forms.TextBox tbNaturalidade;
         private System.Windows.Forms.ComboBox cbEstadoCivil;

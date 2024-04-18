@@ -30,6 +30,6 @@ namespace EasyHortifruti
         private void BtCancelarGeralInserir_Click(object sender, EventArgs e)
         {
                 this.Close();
-        }        
+        }
     }
 }

@@ -33,7 +33,6 @@
             this.panel5InserirCadGeral = new System.Windows.Forms.Panel();
             this.tabControlInserirDados = new System.Windows.Forms.TabControl();
             this.tbBase = new System.Windows.Forms.TabPage();
-            this.PanelPJ = new System.Windows.Forms.Panel();
             this.PanelPF = new System.Windows.Forms.Panel();
             this.label43 = new System.Windows.Forms.Label();
             this.tbNaturalidade = new System.Windows.Forms.TextBox();
@@ -50,6 +49,7 @@
             this.tbRg = new System.Windows.Forms.TextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.tbCpf = new System.Windows.Forms.MaskedTextBox();
+            this.PanelPJ = new System.Windows.Forms.Panel();
             this.TbRazaoSocial = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -64,9 +64,6 @@
             this.CbUF = new System.Windows.Forms.ComboBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
-            this.label34 = new System.Windows.Forms.Label();
-            this.label33 = new System.Windows.Forms.Label();
-            this.label32 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
             this.label30 = new System.Windows.Forms.Label();
             this.label29 = new System.Windows.Forms.Label();
@@ -78,9 +75,7 @@
             this.TbEmail = new System.Windows.Forms.TextBox();
             this.TbPontoRef = new System.Windows.Forms.TextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.CbPais = new System.Windows.Forms.ComboBox();
             this.label22 = new System.Windows.Forms.Label();
-            this.TbIBGECod = new System.Windows.Forms.TextBox();
             this.TbCidade = new System.Windows.Forms.TextBox();
             this.TbBairro = new System.Windows.Forms.TextBox();
             this.label21 = new System.Windows.Forms.Label();
@@ -124,8 +119,8 @@
             this.panel5InserirCadGeral.SuspendLayout();
             this.tabControlInserirDados.SuspendLayout();
             this.tbBase.SuspendLayout();
-            this.PanelPJ.SuspendLayout();
             this.PanelPF.SuspendLayout();
+            this.PanelPJ.SuspendLayout();
             this.panel7InserirCadGeral.SuspendLayout();
             this.tabControlInserirEndereco.SuspendLayout();
             this.tbpEndereco.SuspendLayout();
@@ -168,6 +163,7 @@
             // 
             // tbBase
             // 
+            this.tbBase.Controls.Add(this.PanelPF);
             this.tbBase.Controls.Add(this.PanelPJ);
             this.tbBase.Controls.Add(this.panel7InserirCadGeral);
             this.tbBase.Controls.Add(this.panel6);
@@ -179,22 +175,6 @@
             this.tbBase.TabIndex = 0;
             this.tbBase.Text = "Base";
             this.tbBase.UseVisualStyleBackColor = true;
-            // 
-            // PanelPJ
-            // 
-            this.PanelPJ.Controls.Add(this.PanelPF);
-            this.PanelPJ.Controls.Add(this.TbRazaoSocial);
-            this.PanelPJ.Controls.Add(this.label5);
-            this.PanelPJ.Controls.Add(this.label6);
-            this.PanelPJ.Controls.Add(this.TbCNPJ);
-            this.PanelPJ.Controls.Add(this.TbInscrMunicipal);
-            this.PanelPJ.Controls.Add(this.label7);
-            this.PanelPJ.Controls.Add(this.TbInscrEstadual);
-            this.PanelPJ.Controls.Add(this.label9);
-            this.PanelPJ.Location = new System.Drawing.Point(3, 16);
-            this.PanelPJ.Name = "PanelPJ";
-            this.PanelPJ.Size = new System.Drawing.Size(560, 114);
-            this.PanelPJ.TabIndex = 19;
             // 
             // PanelPF
             // 
@@ -213,7 +193,7 @@
             this.PanelPF.Controls.Add(this.tbRg);
             this.PanelPF.Controls.Add(this.label37);
             this.PanelPF.Controls.Add(this.tbCpf);
-            this.PanelPF.Location = new System.Drawing.Point(0, 0);
+            this.PanelPF.Location = new System.Drawing.Point(3, 16);
             this.PanelPF.Name = "PanelPF";
             this.PanelPF.Size = new System.Drawing.Size(560, 114);
             this.PanelPF.TabIndex = 20;
@@ -365,6 +345,21 @@
             this.tbCpf.Size = new System.Drawing.Size(169, 24);
             this.tbCpf.TabIndex = 11;
             // 
+            // PanelPJ
+            // 
+            this.PanelPJ.Controls.Add(this.TbRazaoSocial);
+            this.PanelPJ.Controls.Add(this.label5);
+            this.PanelPJ.Controls.Add(this.label6);
+            this.PanelPJ.Controls.Add(this.TbCNPJ);
+            this.PanelPJ.Controls.Add(this.TbInscrMunicipal);
+            this.PanelPJ.Controls.Add(this.label7);
+            this.PanelPJ.Controls.Add(this.TbInscrEstadual);
+            this.PanelPJ.Controls.Add(this.label9);
+            this.PanelPJ.Location = new System.Drawing.Point(3, 16);
+            this.PanelPJ.Name = "PanelPJ";
+            this.PanelPJ.Size = new System.Drawing.Size(560, 114);
+            this.PanelPJ.TabIndex = 19;
+            // 
             // TbRazaoSocial
             // 
             this.TbRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -463,9 +458,6 @@
             this.tbpEndereco.Controls.Add(this.CbUF);
             this.tbpEndereco.Controls.Add(this.label36);
             this.tbpEndereco.Controls.Add(this.label35);
-            this.tbpEndereco.Controls.Add(this.label34);
-            this.tbpEndereco.Controls.Add(this.label33);
-            this.tbpEndereco.Controls.Add(this.label32);
             this.tbpEndereco.Controls.Add(this.label31);
             this.tbpEndereco.Controls.Add(this.label30);
             this.tbpEndereco.Controls.Add(this.label29);
@@ -477,9 +469,7 @@
             this.tbpEndereco.Controls.Add(this.TbEmail);
             this.tbpEndereco.Controls.Add(this.TbPontoRef);
             this.tbpEndereco.Controls.Add(this.label23);
-            this.tbpEndereco.Controls.Add(this.CbPais);
             this.tbpEndereco.Controls.Add(this.label22);
-            this.tbpEndereco.Controls.Add(this.TbIBGECod);
             this.tbpEndereco.Controls.Add(this.TbCidade);
             this.tbpEndereco.Controls.Add(this.TbBairro);
             this.tbpEndereco.Controls.Add(this.label21);
@@ -507,7 +497,7 @@
             // 
             this.CbUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbUF.FormattingEnabled = true;
-            this.CbUF.Location = new System.Drawing.Point(533, 97);
+            this.CbUF.Location = new System.Drawing.Point(461, 97);
             this.CbUF.Name = "CbUF";
             this.CbUF.Size = new System.Drawing.Size(50, 26);
             this.CbUF.TabIndex = 40;
@@ -516,7 +506,7 @@
             // 
             this.label36.AutoSize = true;
             this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(559, 143);
+            this.label36.Location = new System.Drawing.Point(535, 80);
             this.label36.Name = "label36";
             this.label36.Size = new System.Drawing.Size(49, 15);
             this.label36.TabIndex = 39;
@@ -526,47 +516,17 @@
             // 
             this.label35.AutoSize = true;
             this.label35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label35.Location = new System.Drawing.Point(248, 143);
+            this.label35.Location = new System.Drawing.Point(11, 143);
             this.label35.Name = "label35";
             this.label35.Size = new System.Drawing.Size(138, 15);
             this.label35.TabIndex = 38;
             this.label35.Text = "Ponto de Referência";
             // 
-            // label34
-            // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(13, 143);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(35, 15);
-            this.label34.TabIndex = 37;
-            this.label34.Text = "País";
-            // 
-            // label33
-            // 
-            this.label33.AutoSize = true;
-            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label33.Location = new System.Drawing.Point(643, 84);
-            this.label33.Name = "label33";
-            this.label33.Size = new System.Drawing.Size(107, 13);
-            this.label33.TabIndex = 36;
-            this.label33.Text = "Código da Cidade";
-            // 
-            // label32
-            // 
-            this.label32.AutoSize = true;
-            this.label32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label32.Location = new System.Drawing.Point(599, 82);
-            this.label32.Name = "label32";
-            this.label32.Size = new System.Drawing.Size(39, 15);
-            this.label32.TabIndex = 35;
-            this.label32.Text = "IBGE";
-            // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(530, 80);
+            this.label31.Location = new System.Drawing.Point(458, 80);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(25, 15);
             this.label31.TabIndex = 34;
@@ -576,7 +536,7 @@
             // 
             this.label30.AutoSize = true;
             this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(248, 81);
+            this.label30.Location = new System.Drawing.Point(209, 81);
             this.label30.Name = "label30";
             this.label30.Size = new System.Drawing.Size(52, 15);
             this.label30.TabIndex = 33;
@@ -644,17 +604,17 @@
             // TbEmail
             // 
             this.TbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbEmail.Location = new System.Drawing.Point(562, 161);
+            this.TbEmail.Location = new System.Drawing.Point(538, 98);
             this.TbEmail.Name = "TbEmail";
-            this.TbEmail.Size = new System.Drawing.Size(188, 24);
+            this.TbEmail.Size = new System.Drawing.Size(210, 24);
             this.TbEmail.TabIndex = 26;
             // 
             // TbPontoRef
             // 
             this.TbPontoRef.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbPontoRef.Location = new System.Drawing.Point(251, 161);
+            this.TbPontoRef.Location = new System.Drawing.Point(14, 161);
             this.TbPontoRef.Name = "TbPontoRef";
-            this.TbPontoRef.Size = new System.Drawing.Size(293, 24);
+            this.TbPontoRef.Size = new System.Drawing.Size(291, 24);
             this.TbPontoRef.TabIndex = 25;
             // 
             // label23
@@ -666,15 +626,6 @@
             this.label23.Size = new System.Drawing.Size(0, 17);
             this.label23.TabIndex = 24;
             // 
-            // CbPais
-            // 
-            this.CbPais.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbPais.FormattingEnabled = true;
-            this.CbPais.Location = new System.Drawing.Point(16, 159);
-            this.CbPais.Name = "CbPais";
-            this.CbPais.Size = new System.Drawing.Size(215, 26);
-            this.CbPais.TabIndex = 23;
-            // 
             // label22
             // 
             this.label22.AutoSize = true;
@@ -684,20 +635,12 @@
             this.label22.Size = new System.Drawing.Size(0, 17);
             this.label22.TabIndex = 22;
             // 
-            // TbIBGECod
-            // 
-            this.TbIBGECod.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbIBGECod.Location = new System.Drawing.Point(602, 99);
-            this.TbIBGECod.Name = "TbIBGECod";
-            this.TbIBGECod.Size = new System.Drawing.Size(148, 24);
-            this.TbIBGECod.TabIndex = 21;
-            // 
             // TbCidade
             // 
             this.TbCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbCidade.Location = new System.Drawing.Point(251, 99);
+            this.TbCidade.Location = new System.Drawing.Point(212, 99);
             this.TbCidade.Name = "TbCidade";
-            this.TbCidade.Size = new System.Drawing.Size(258, 24);
+            this.TbCidade.Size = new System.Drawing.Size(224, 24);
             this.TbCidade.TabIndex = 19;
             // 
             // TbBairro
@@ -705,7 +648,7 @@
             this.TbBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbBairro.Location = new System.Drawing.Point(14, 99);
             this.TbBairro.Name = "TbBairro";
-            this.TbBairro.Size = new System.Drawing.Size(217, 24);
+            this.TbBairro.Size = new System.Drawing.Size(175, 24);
             this.TbBairro.TabIndex = 18;
             // 
             // label21
@@ -1098,10 +1041,10 @@
             this.tabControlInserirDados.ResumeLayout(false);
             this.tbBase.ResumeLayout(false);
             this.tbBase.PerformLayout();
-            this.PanelPJ.ResumeLayout(false);
-            this.PanelPJ.PerformLayout();
             this.PanelPF.ResumeLayout(false);
             this.PanelPF.PerformLayout();
+            this.PanelPJ.ResumeLayout(false);
+            this.PanelPJ.PerformLayout();
             this.panel7InserirCadGeral.ResumeLayout(false);
             this.tabControlInserirEndereco.ResumeLayout(false);
             this.tbpEndereco.ResumeLayout(false);
@@ -1159,9 +1102,6 @@
         private System.Windows.Forms.TabPage tbpEndereco;
         private System.Windows.Forms.Label label36;
         private System.Windows.Forms.Label label35;
-        private System.Windows.Forms.Label label34;
-        private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Label label32;
         private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label30;
         private System.Windows.Forms.Label label29;
@@ -1173,9 +1113,7 @@
         private System.Windows.Forms.TextBox TbEmail;
         private System.Windows.Forms.TextBox TbPontoRef;
         private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.ComboBox CbPais;
         private System.Windows.Forms.Label label22;
-        private System.Windows.Forms.TextBox TbIBGECod;
         private System.Windows.Forms.TextBox TbCidade;
         private System.Windows.Forms.TextBox TbBairro;
         private System.Windows.Forms.Label label21;

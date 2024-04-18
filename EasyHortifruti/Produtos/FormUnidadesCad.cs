@@ -1,22 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-
 
 namespace EasyHortifruti
 {
     public partial class FormUnidadeCad : FormBase
     {
         #region Propriedades
-        
-        DataSet dsUnidades;
-
         public int IdSelecionado
         {
             get
@@ -38,18 +28,20 @@ namespace EasyHortifruti
         public FormUnidadeCad()
         {
             InitializeComponent();
-            dsUnidades = new DataSet();
         }
         #endregion
 
         #region Eventos
-        private void btSairUnidades_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void FormUnidadeCad_Load(object sender, EventArgs e)
         {
+            CarregarGrid();
+        }
+
+        private void btIncluirUnidade_Click(object sender, EventArgs e)
+        {
+            FormUnidadeAltInsert UnidadeAltInsert = new FormUnidadeAltInsert();
+            UnidadeAltInsert.ShowDialog();
+
             CarregarGrid();
         }
 
@@ -57,26 +49,13 @@ namespace EasyHortifruti
         {
             if (IdSelecionado >= 0)
             {
-                FormUnidadeAltInsert UnidadeAltInsert = new FormUnidadeAltInsert();
-                UnidadeAltInsert.idunidade = IdSelecionado;
-
-                // Exibir o FormSecundario
+                FormUnidadeAltInsert UnidadeAltInsert = new FormUnidadeAltInsert(IdSelecionado);
                 UnidadeAltInsert.ShowDialog();
+
                 CarregarGrid();
             }
             else
-                MessageBox.Show("selecione o registro para alterar!");
-        }
-
-        private void btIncluirUnidade_Click(object sender, EventArgs e)
-        {
-            // Criar uma nova instância do FormSecundario
-            FormUnidadeAltInsert UnidadeAltInsert = new FormUnidadeAltInsert();
-
-            // Exibir o FormSecundario
-            UnidadeAltInsert.ShowDialog();
-            CarregarGrid();
-
+                MessageBox.Show("selecione um registro para alterar!");
         }
         private void btExcluirUnidades_Click(object sender, EventArgs e)
         {
@@ -93,23 +72,18 @@ namespace EasyHortifruti
             else
                 MessageBox.Show("Selecione um registro para excluir");
         }
+        private void btSairUnidades_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
 
         #region Metodos
         private void CarregarGrid()
         {
-            ConexaoBD conexaoBD = new ConexaoBD();
-
-            dsUnidades = conexaoBD.ConsultarTabela(TabelasScript.TabelaUnidades);
-            dgvCadUnidades.DataSource = dsUnidades; // dataset
-            dgvCadUnidades.DataMember = "Table"; // nome da tabela
-
-            // Especifica qual coluna deve ser usada para ordenação
-            DataGridViewColumn colunaParaOrdenar = dgvCadUnidades.Columns["ID"];
-
-            // Ordena os dados na coluna especificada
-            dgvCadUnidades.Sort(colunaParaOrdenar, System.ComponentModel.ListSortDirection.Ascending);
-
+            dgvCadUnidades.DataSource = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaUnidades); // dataset
+            dgvCadUnidades.DataMember = "Table"; 
+            dgvCadUnidades.Sort(dgvCadUnidades.Columns["ID"], System.ComponentModel.ListSortDirection.Ascending);
         }
         #endregion
     }

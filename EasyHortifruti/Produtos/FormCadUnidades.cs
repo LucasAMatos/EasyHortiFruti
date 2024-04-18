@@ -13,9 +13,11 @@ namespace EasyHortifruti
 {
     public partial class FormCadUnidade : FormBase
     {
+        DataSet dsUnidades;
         public FormCadUnidade()
         {
             InitializeComponent();
+            dsUnidades = new DataSet();
         }
 
         public int IdSelecionado
@@ -26,6 +28,9 @@ namespace EasyHortifruti
 
                 if (linhaSelecionada != null && linhaSelecionada.Count == 1)
                     return Convert.ToInt32(linhaSelecionada[0].Cells["id"].Value);
+
+                if (dgvCadUnidades.SelectedCells.Count == 1)
+                    return Convert.ToInt32(dgvCadUnidades.Rows[dgvCadUnidades.SelectedCells[0].RowIndex].Cells["id"].Value);
 
                 return -1;
             }
@@ -44,21 +49,17 @@ namespace EasyHortifruti
 
         private void btEditarUnidade_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection ds = dgvCadUnidades.SelectedRows;
-
-            // Criar uma nova instância do FormSecundario
-            FormUnidadeAltInsert UnidadeAltInsert = new FormUnidadeAltInsert();
-
-            if (ds.Count != 1)
-                MessageBox.Show("selecione a linha!");
-            else
+            if (IdSelecionado >= 0)
             {
-                UnidadeAltInsert.idunidade = Convert.ToInt32(ds[0].Cells["id"].Value);
+                FormUnidadeAltInsert UnidadeAltInsert = new FormUnidadeAltInsert();
+                UnidadeAltInsert.idunidade = IdSelecionado;
 
                 // Exibir o FormSecundario
                 UnidadeAltInsert.ShowDialog();
                 CarregarGrid();
             }
+            else
+                MessageBox.Show("selecione o registro para alterar!");
         }
 
         private void btIncluirUnidade_Click(object sender, EventArgs e)
@@ -76,7 +77,8 @@ namespace EasyHortifruti
         {
             ConexaoBD conexaoBD = new ConexaoBD();
 
-            dgvCadUnidades.DataSource = conexaoBD.ConsultarTabela(NomeTabelaBD); // dataset
+            dsUnidades = conexaoBD.ConsultarTabela(NomeTabelaBD);
+            dgvCadUnidades.DataSource = dsUnidades; // dataset
             dgvCadUnidades.DataMember = "Table"; // nome da tabela
 
             // Especifica qual coluna deve ser usada para ordenação

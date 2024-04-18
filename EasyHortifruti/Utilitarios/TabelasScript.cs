@@ -16,7 +16,8 @@ namespace EasyHortifruti
                                                 abrev_unid character varying(6) NOT NULL,
                                                 desc_unid character varying(20) NOT NULL,
                                                 obs_unid character varying(30) NOT NULL,
-                                                id_recno integer NOT NULL GENERATED ALWAYS AS IDENTITY
+                                                id_recno integer NOT NULL GENERATED ALWAYS AS IDENTITY,
+                                                PRIMARY KEY (id_recno)
                                             )";
 
         public TabelasScript()

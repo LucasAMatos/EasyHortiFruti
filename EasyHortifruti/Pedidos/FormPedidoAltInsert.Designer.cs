@@ -107,9 +107,8 @@
             this.label5 = new System.Windows.Forms.Label();
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.TextBox();
+            this.textBox10 = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.textBox7 = new System.Windows.Forms.TextBox();
             this.btBuscaClientePedido = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
@@ -861,7 +860,6 @@
             this.panelPedCliente.Controls.Add(this.label4);
             this.panelPedCliente.Controls.Add(this.textBox10);
             this.panelPedCliente.Controls.Add(this.label12);
-            this.panelPedCliente.Controls.Add(this.textBox7);
             this.panelPedCliente.Controls.Add(this.btBuscaClientePedido);
             this.panelPedCliente.Controls.Add(this.textBox1);
             this.panelPedCliente.Controls.Add(this.label3);
@@ -946,9 +944,10 @@
             // textBox10
             // 
             this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(319, 23);
+            this.textBox10.Location = new System.Drawing.Point(293, 23);
+            this.textBox10.Mask = "(00)00000-0000";
             this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(78, 24);
+            this.textBox10.Size = new System.Drawing.Size(104, 24);
             this.textBox10.TabIndex = 19;
             // 
             // label12
@@ -960,14 +959,6 @@
             this.label12.Size = new System.Drawing.Size(53, 15);
             this.label12.TabIndex = 17;
             this.label12.Text = "Celular";
-            // 
-            // textBox7
-            // 
-            this.textBox7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox7.Location = new System.Drawing.Point(293, 23);
-            this.textBox7.Name = "textBox7";
-            this.textBox7.Size = new System.Drawing.Size(25, 24);
-            this.textBox7.TabIndex = 18;
             // 
             // btBuscaClientePedido
             // 
@@ -1100,9 +1091,8 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.TextBox textBox10;
+        private System.Windows.Forms.MaskedTextBox textBox10;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.TextBox textBox7;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
         private System.Windows.Forms.DateTimePicker dateTimePicker2;
         private System.Windows.Forms.Label label6;

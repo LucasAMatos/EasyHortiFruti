@@ -42,12 +42,12 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.dgvCadUnidades = new System.Windows.Forms.DataGridView();
-            this.unidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.unidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.Abreviação = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Observacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.unidadesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.unidadesBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.panel1.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
@@ -217,17 +217,12 @@
             this.dgvCadUnidades.DataSource = this.unidadesBindingSource;
             this.dgvCadUnidades.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dgvCadUnidades.Location = new System.Drawing.Point(0, 0);
+            this.dgvCadUnidades.MultiSelect = false;
             this.dgvCadUnidades.Name = "dgvCadUnidades";
+            this.dgvCadUnidades.ReadOnly = true;
+            this.dgvCadUnidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCadUnidades.Size = new System.Drawing.Size(569, 469);
             this.dgvCadUnidades.TabIndex = 0;
-            // 
-            // unidadesBindingSource
-            // 
-            this.unidadesBindingSource.DataMember = "Unidades";
-            // 
-            // unidadesBindingSource1
-            // 
-            this.unidadesBindingSource1.DataMember = "Unidades";
             // 
             // Abreviação
             // 
@@ -258,8 +253,17 @@
             this.ID.DataPropertyName = "id_recno";
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             this.ID.Visible = false;
             this.ID.Width = 50;
+            // 
+            // unidadesBindingSource
+            // 
+            this.unidadesBindingSource.DataMember = "Unidades";
+            // 
+            // unidadesBindingSource1
+            // 
+            this.unidadesBindingSource1.DataMember = "Unidades";
             // 
             // FormCadUnidade
             // 

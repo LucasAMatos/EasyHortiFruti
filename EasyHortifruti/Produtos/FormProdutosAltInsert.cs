@@ -62,10 +62,10 @@ namespace EasyHortifruti
         private void CarregarGridGrupo()
         { 
             cbGrupoProduto.Items.Clear();
-            DataSet ds = new ConexaoBD().ConsultarTabela("GRUPO");
+            DataSet ds = new ConexaoBD().ConsultarTabela("GRUPOS");
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                cbGrupoProduto.Items.Add(dr["nome_grupo"].ToString());
+                cbGrupoProduto.Items.Add(dr["desc_grupo"].ToString());
             }
         }
 

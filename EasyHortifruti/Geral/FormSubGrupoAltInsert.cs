@@ -38,7 +38,7 @@ namespace EasyHortifruti
         private void CarregarGridGrupo()
         {
             CbGrupo.Items.Clear();
-            DataSet ds = new ConexaoBD().ConsultarTabela("GRUPO");
+            DataSet ds = new ConexaoBD().ConsultarTabela("GRUPOS");
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 grupos.Add(Convert.ToInt16(dr["id_recno"]), dr["nome_grupo"].ToString());

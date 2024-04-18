@@ -146,15 +146,10 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                string sql = "INSERT INTO GRUPO (nome_grupo, obs_grupo, margem_grupo) " +
-                    "VALUES (@Descricao, @Observacao, @MargemLucro)";
+                string sql = string.Format("INSERT INTO GRUPOS (desc_grupo, obs_grupo, margem_grupo) VALUES ('{0}', '{1}', {2})", Descricao, Observacao, MargemLucro);
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("Descricao", Descricao);
-                    cmd.Parameters.AddWithValue("observacao", Observacao);
-                    cmd.Parameters.AddWithValue("MargemLucro", MargemLucro);
-
                     int rowsAffected = cmd.ExecuteNonQuery();
                 }
             }
@@ -165,7 +160,7 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                string sql = string.Format("UPDATE GRUPO SET nome_grupo='{0}',obs_grupo='{1}',margem_grupo='{2}' WHERE id_recno=@ID", Descricao, Observacao, MargemLucro);
+                string sql = string.Format("UPDATE GRUPOS SET desc_grupo='{0}',obs_grupo='{1}',margem_grupo={2} WHERE id_recno=@ID", Descricao, Observacao, MargemLucro);
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {
@@ -197,7 +192,7 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                string sql = "INSERT INTO SUBGRUPO (nome_subgrupo, id_grupo, margem_subgrupo) " +
+                string sql = "INSERT INTO SUBGRUPO (desc_grupo, id_grupo, margem_subgrupo) " +
                              "VALUES (@Descricao, @Grupo, @MargemLucro)";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))

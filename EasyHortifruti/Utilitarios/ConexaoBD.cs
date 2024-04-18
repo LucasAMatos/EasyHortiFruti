@@ -84,6 +84,7 @@ namespace EasyHortifruti
             }
         }
 
+        #region Unidades
         public void InserirUnidades(string Abreviatura, string Descricao, string Observacao)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
@@ -136,6 +137,9 @@ namespace EasyHortifruti
                 }
             }
         }
+        #endregion
+
+        #region Grupo
         public void InserirGrupo(string Descricao, string Observacao, string MargemLucro)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
@@ -146,7 +150,7 @@ namespace EasyHortifruti
                     "VALUES (@Descricao, @Observacao, @MargemLucro)";
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
-                {                    
+                {
                     cmd.Parameters.AddWithValue("Descricao", Descricao);
                     cmd.Parameters.AddWithValue("observacao", Observacao);
                     cmd.Parameters.AddWithValue("MargemLucro", MargemLucro);
@@ -206,6 +210,9 @@ namespace EasyHortifruti
                 }
             }
         }
+        #endregion
+
+        #region SubGrupo
         public void AlterarSubGrupo(int pId, string Descricao, int pGrupo, string MargemLucro)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
@@ -222,9 +229,9 @@ namespace EasyHortifruti
                     cmd.ExecuteNonQuery();
                 }
             }
-        } 
+        }
         public void ExcluirSubGrupo(int pId, string pNomeTabela)
-        {
+        {            
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
@@ -239,5 +246,20 @@ namespace EasyHortifruti
                 }
             }
         }
+        #endregion
+
+        #region TabelasBD
+        public void CriaTabelasBD()
+        {
+            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+
+                foreach(string script in new TabelasScript().Scripts)
+                    new NpgsqlCommand(script, conn).ExecuteNonQuery();                
+            }
+
+        }
+        #endregion
     }
 }

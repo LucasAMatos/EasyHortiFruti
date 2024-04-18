@@ -109,11 +109,13 @@
     <Reference Include="System.Data" />
     <Reference Include="System.Deployment" />
     <Reference Include="System.Drawing" />
-    <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Utilitarios\TabelasScript.cs" />
+    <Compile Include="Utilitarios\Caracter.cs" />
     <Compile Include="Utilitarios\ConexaoBD.cs" />
     <Compile Include="Form_Principal.cs">
       <SubType>Form</SubType>

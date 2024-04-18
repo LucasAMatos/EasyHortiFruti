@@ -15,6 +15,8 @@ namespace EasyHortifruti
         public FormPrincipal()
         {
             InitializeComponent();
+
+            CriarTabelas();
         }
 
         private void btCadGeral_Click(object sender, EventArgs e)
@@ -49,6 +51,11 @@ namespace EasyHortifruti
         private void btRelatórios_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void CriarTabelas()
+        {
+            new ConexaoBD().CriaTabelasBD();
         }
     }
 }

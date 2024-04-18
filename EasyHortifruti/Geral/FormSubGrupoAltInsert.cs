@@ -25,7 +25,7 @@ namespace EasyHortifruti
         {
             if (idsubgrupo > 0)
             {
-                DataSet ds = new ConexaoBD().ConsultarMultiTabelas(idsubgrupo, "SUBGRUPO");
+                DataSet ds = new ConexaoBD().ConsultarSubGrupo(idsubgrupo, "SUBGRUPO");
 
                 TbDescSubGrupo.Text = ds.Tables[0].Rows[0]["nome_subgrupo"].ToString();
                 CbGrupo.Text = ds.Tables[0].Rows[0]["nome_grupo"].ToString();

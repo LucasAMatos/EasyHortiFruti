@@ -25,7 +25,7 @@ namespace EasyHortifruti
 
         public void CarregarGrid()
         {
-            DgViewCadSubGrupos.DataSource = new ConexaoBD().ConsultarMultiTabelas(Id, NomeTabelaBD);
+            DgViewCadSubGrupos.DataSource = new ConexaoBD().ConsultarSubGrupo(Id, NomeTabelaBD);
             DgViewCadSubGrupos.DataMember = "Table";
         }
 

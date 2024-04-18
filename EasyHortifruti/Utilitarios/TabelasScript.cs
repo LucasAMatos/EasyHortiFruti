@@ -11,6 +11,8 @@ namespace EasyHortifruti
     {
         public List<string> Scripts;
 
+        public static string TabelaUnidades = "unidades";
+
         private string CreateUnidades = @"CREATE TABLE IF NOT EXISTS public.unidades
                                             (
                                                 abrev_unid character varying(6) NOT NULL,
@@ -19,6 +21,9 @@ namespace EasyHortifruti
                                                 id_recno integer NOT NULL GENERATED ALWAYS AS IDENTITY,
                                                 PRIMARY KEY (id_recno)
                                             )";
+
+        public static string TabelaProdutos = "produtos";
+
         private string CreateProdutos = @"CREATE TABLE IF NOT EXISTS public.produtos
                                             (
                                                 id_recno integer NOT NULL,
@@ -31,12 +36,15 @@ namespace EasyHortifruti
                                                 id_subgrupo integer NULL,
                                                 PRIMARY KEY (id_recno),
                                                 CONSTRAINT fk_grupo_id FOREIGN KEY (id_grupo)
-                                                    REFERENCES public.grupo (id_recno),
+                                                    REFERENCES public.grupos (id_recno),
                                                 CONSTRAINT fk_subgrupo_id FOREIGN KEY (id_subgrupo)
-                                                    REFERENCES public.subgrupo (id_recno),
+                                                    REFERENCES public.subgrupos (id_recno),
                                                 CONSTRAINT fk_unidade_id FOREIGN KEY (id_unidade)
                                                     REFERENCES public.unidades (id_recno)
                                             ) ";
+
+        public static string TabelaPedidos = "pedidos";
+
         private string CreatePedidos = @"CREATE TABLE IF NOT EXISTS public.pedidos
                                             (
                                                 id_recno integer NOT NULL,
@@ -63,6 +71,9 @@ namespace EasyHortifruti
                                                 CONSTRAINT pedidos_id_produto_fkey FOREIGN KEY (id_produto)
                                                     REFERENCES public.produtos (id_recno)
                                             )";
+
+        public static string TabelaGrupos = "grupos";
+
         private string CreateGrupos = @"CREATE TABLE IF NOT EXISTS public.grupos
                                             (
                                                 id_recno integer NOT NULL,
@@ -72,6 +83,9 @@ namespace EasyHortifruti
                                                 CONSTRAINT grupo_pkey PRIMARY KEY (id_recno)
                                             )
                                             ";
+
+        public static string TabelaSubGrupos = "subgrupos";
+
         private string CreateSubGrupos = @"CREATE TABLE IF NOT EXISTS public.subgrupos
                                             (
                                                 id_recno integer NOT NULL,
@@ -82,6 +96,9 @@ namespace EasyHortifruti
                                                 CONSTRAINT fk_subgrupo_id FOREIGN KEY (id_grupo)
                                                     REFERENCES public.grupos (id_recno)
                                             )";
+
+        public static string TabelaGeral = "geral";
+
         private string CreateGeral = @"CREATE TABLE IF NOT EXISTS public.geral
                                             (
                                                 id_recno integer NOT NULL,
@@ -120,11 +137,11 @@ namespace EasyHortifruti
             Scripts = new List<string>
             {
                 CreateUnidades,
-                CreateProdutos,
-                CreatePedidos,
+                CreateGeral,
                 CreateGrupos,
                 CreateSubGrupos,
-                CreateGeral
+                CreateProdutos,
+                CreatePedidos
             };
         }
     }

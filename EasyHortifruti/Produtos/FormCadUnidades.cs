@@ -43,7 +43,7 @@ namespace EasyHortifruti
 
         private void FormCadUnidade_Load(object sender, EventArgs e)
         {
-            NomeTabelaBD = "UNIDADES";
+            NomeTabelaBD = TabelasScript.TabelaUnidades;
             CarregarGrid();
         }
 

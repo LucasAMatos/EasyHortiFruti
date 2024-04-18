@@ -203,7 +203,7 @@
             // 
             // unidadesBindingSource
             // 
-            this.unidadesBindingSource.DataMember = "Unidades";
+            this.unidadesBindingSource.DataMember = TabelasScript.TabelaUnidades;
             // 
             // FormUnidadeAltInsert
             // 

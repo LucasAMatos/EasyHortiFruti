@@ -25,7 +25,7 @@ namespace EasyHortifruti
 
         private void FormProdutosAltInsert_Load(object sender, EventArgs e)
         {
-            NomeTabelaBD = "UNIDADES";
+            NomeTabelaBD = TabelasScript.TabelaUnidades;
             CarregarGridUnidades();
             CarregarGridGrupo();
             CarregarGridSubGrupo();
@@ -62,7 +62,7 @@ namespace EasyHortifruti
         private void CarregarGridGrupo()
         { 
             cbGrupoProduto.Items.Clear();
-            DataSet ds = new ConexaoBD().ConsultarTabela("GRUPOS");
+            DataSet ds = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaGrupos);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 cbGrupoProduto.Items.Add(dr["desc_grupo"].ToString());
@@ -72,7 +72,7 @@ namespace EasyHortifruti
         private void CarregarGridSubGrupo()
         {
             cbSubGrupoProduto.Items.Clear();
-            DataSet ds = new ConexaoBD().ConsultarTabela("SUBGRUPO");
+            DataSet ds = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaSubGrupos);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 cbSubGrupoProduto.Items.Add(dr["nome_subgrupo"].ToString());

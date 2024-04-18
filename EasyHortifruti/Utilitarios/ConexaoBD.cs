@@ -59,7 +59,7 @@ namespace EasyHortifruti
                 throw ex;
             }
         }
-        public DataSet ConsultarMultiTabelas(int pId, string pNomeTabela)
+        public DataSet ConsultarSubGrupo(int pId, string pNomeTabela)
         {
             DataSet dataSet = new DataSet();
 
@@ -69,8 +69,8 @@ namespace EasyHortifruti
                 {
                     conn.Open();
 
-                    string sql = string.Concat("SELECT subgrupo.id_recno, grupo.nome_grupo, subgrupo.nome_subgrupo, " +
-                        "subgrupo.margem_subgrupo FROM ", pNomeTabela, " JOIN grupo ON subgrupo.id_grupo = grupo.id_recno") ;                       
+                    string sql = string.Concat("SELECT Sub.id_recno, grp.nome_grupo, Sub.nome_subgrupo, " +
+                        "Sub.margem_subgrupo FROM ", TabelasScript.TabelaSubGrupos,  " Sub JOIN ", TabelasScript.TabelaGrupos , " grp ON Sub.id_grupo = grp.id_recno") ;                       
 
 
                     using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(sql, conn))
@@ -146,7 +146,7 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                string sql = string.Format("INSERT INTO GRUPOS (desc_grupo, obs_grupo, margem_grupo) VALUES ('{0}', '{1}', {2})", Descricao, Observacao, MargemLucro);
+                string sql = string.Format("INSERT INTO {0} (desc_grupo, obs_grupo, margem_grupo) VALUES ('{1}', '{2}', {3})", TabelasScript.TabelaGrupos, Descricao, Observacao, MargemLucro);
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {
@@ -160,7 +160,7 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                string sql = string.Format("UPDATE GRUPOS SET desc_grupo='{0}',obs_grupo='{1}',margem_grupo={2} WHERE id_recno=@ID", Descricao, Observacao, MargemLucro);
+                string sql = string.Format("UPDATE {0} SET desc_grupo='{1}',obs_grupo='{2}',margem_grupo={3} WHERE id_recno=@ID", TabelasScript.TabelaGrupos, Descricao, Observacao, MargemLucro);
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {
@@ -176,7 +176,7 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                string sql = String.Concat("DELETE * FROM GRUPO WHERE id_recno=@ID");
+                string sql = String.Concat("DELETE * FROM ", TabelasScript.TabelaGrupos, " WHERE id_recno=@ID");
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {
@@ -192,8 +192,8 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                string sql = "INSERT INTO SUBGRUPO (desc_grupo, id_grupo, margem_subgrupo) " +
-                             "VALUES (@Descricao, @Grupo, @MargemLucro)";
+                string sql = string.Concat("INSERT INTO ", TabelasScript.TabelaSubGrupos, " (desc_grupo, id_grupo, margem_subgrupo) ",
+                             "VALUES (@Descricao, @Grupo, @MargemLucro)");
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {

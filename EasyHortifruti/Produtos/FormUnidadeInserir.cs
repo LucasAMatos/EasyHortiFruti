@@ -74,7 +74,7 @@ namespace EasyHortifruti
         {
             if (idunidade > 0)
             {
-                DataSet ds = new ConexaoBD().ConsultarTabelaPorId(idunidade, "UNIDADES");
+                DataSet ds = new ConexaoBD().ConsultarTabelaPorId(idunidade, TabelasScript.TabelaUnidades);
 
                 tbCadAbreviUni.Text = ds.Tables[0].Rows[0]["abrev_unid"].ToString();
                 lbIDCadUnidade.Text = ds.Tables[0].Rows[0]["id_recno"].ToString();

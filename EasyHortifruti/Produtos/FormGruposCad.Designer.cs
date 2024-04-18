@@ -211,7 +211,7 @@
             // 
             // Descricao
             // 
-            this.Descricao.DataPropertyName = "desc_grupo";
+            this.Descricao.DataPropertyName = "nome_grupo";
             this.Descricao.HeaderText = "Descrição";
             this.Descricao.Name = "Descricao";
             this.Descricao.ReadOnly = true;
@@ -242,14 +242,14 @@
             this.id.Visible = false;
             this.id.Width = 50;
             // 
-            // FormCadGrupos
+            // FormGruposCad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(481, 495);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormCadGrupos";
+            this.Name = "FormGruposCad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Easy Hortifruti - Cadastro de Grupos";
             this.Load += new System.EventHandler(this.FormCadGrupos_Load);

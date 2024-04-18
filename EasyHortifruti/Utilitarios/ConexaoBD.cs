@@ -146,7 +146,7 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                string sql = string.Format("INSERT INTO {0} (desc_grupo, obs_grupo, margem_grupo) VALUES ('{1}', '{2}', {3})", TabelasScript.TabelaGrupos, Descricao, Observacao, MargemLucro);
+                string sql = string.Format("INSERT INTO {0} (nome_grupo, obs_grupo, margem_grupo) VALUES ('{1}', '{2}', {3})", TabelasScript.TabelaGrupos, Descricao, Observacao, MargemLucro);
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {

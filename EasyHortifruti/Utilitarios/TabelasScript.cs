@@ -131,6 +131,24 @@ namespace EasyHortifruti
                                                 email character varying(30) NULL,
                                                 CONSTRAINT geral_pkey PRIMARY KEY (id_recno)
                                             )";
+        public static string TabelaCtasReceber = "ctasReceber";
+
+        private string CreateCtasReceber = @"CREATE TABLE ctasReceber
+                                            (
+                                                id_recno integer NOT NULL,
+	                                            id_pedido integer NOT NULL,
+	                                            id_fonte integer NOT NULL,
+	                                            vlPedido numeric(2) NOT NULL,
+	                                            margemPedido float NOT NULL,
+	                                            dtVencto date NOT NULL,
+	                                            dtRecebto date NOT NULL,
+	                                            CONSTRAINT ctasReceber_pkey PRIMARY KEY (id_recno),
+	                                            CONSTRAINT fk_pedido_id FOREIGN KEY (id_pedido)
+                                                REFERENCES public.pedidos (id_recno),
+	                                            CONSTRAINT fk_fonte_id FOREIGN KEY (id_fonte)
+                                                REFERENCES public.geral (id_recno)
+
+                                            )";
 
         public TabelasScript()
         {
@@ -141,7 +159,8 @@ namespace EasyHortifruti
                 CreateGrupos,
                 CreateSubGrupos,
                 CreateProdutos,
-                CreatePedidos
+                CreatePedidos,
+                CreateCtasReceber
             };
         }
     }

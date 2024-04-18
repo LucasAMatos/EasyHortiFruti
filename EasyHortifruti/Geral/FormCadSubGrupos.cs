@@ -21,7 +21,13 @@ namespace EasyHortifruti
         {
             NomeTabelaBD = "SUBGRUPO";
             CarregarGrid();
-        } 
+        }
+
+        public void CarregarGrid()
+        {
+            DgViewCadSubGrupos.DataSource = new ConexaoBD().ConsultarMultiTabelas(Id, NomeTabelaBD);
+            DgViewCadSubGrupos.DataMember = "Table";
+        }
 
         public int IdSelecionado
         {
@@ -36,11 +42,6 @@ namespace EasyHortifruti
             }
         }
 
-        private void BtSairSubGrupo_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void BtIncluirSubGrupo_Click(object sender, EventArgs e)
         {
             FormSubGrupoAltInsert SubGruposAltInsert = new FormSubGrupoAltInsert();
@@ -49,22 +50,18 @@ namespace EasyHortifruti
 
         private void BtEditarSubGrupo_Click(object sender, EventArgs e)
         {
-            DataGridViewSelectedRowCollection ds = DgViewCadSubGrupos.SelectedRows;
 
-            // Criar uma nova instância do FormSecundario
-            FormSubGrupoAltInsert SubGrupoAltInsert = new FormSubGrupoAltInsert();
-
-            if (ds.Count != 1)
-                MessageBox.Show("Selecione a linha para poder alterar!");
-            else
+            if (IdSelecionado >= 0)
             {
-                SubGrupoAltInsert.idgrupo = Convert.ToInt32(ds[0].Cells["id"].Value);
+                FormSubGrupoAltInsert SubGruposAltInsert = new FormSubGrupoAltInsert();
+                SubGruposAltInsert.idsubgrupo = IdSelecionado;
+                SubGruposAltInsert.ShowDialog();
 
-                // Exibir o FormSecundario
-                SubGrupoAltInsert.ShowDialog();
                 CarregarGrid();
             }
-        }
+            else
+                MessageBox.Show("Selecione um registro para alterar");
+        } 
 
         private void BtExcluirSubGrupo_Click(object sender, EventArgs e)
         {
@@ -82,11 +79,9 @@ namespace EasyHortifruti
                 MessageBox.Show("Selecione um registro para excluir");
         }
 
-        public void CarregarGrid()
+        private void BtSairSubGrupo_Click(object sender, EventArgs e)
         {
-            DgViewCadSubGrupos.DataSource = new ConexaoBD().ConsultarTabela(NomeTabelaBD);
-            DgViewCadSubGrupos.DataMember = "Table";
+            this.Close();
         }
-
     }
 }

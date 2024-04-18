@@ -21,7 +21,7 @@ namespace EasyHortifruti
         {
             if (idgrupo > 0)
             {
-                DataSet ds = new ConexaoBD().ConsultarTabelaPorId(idunidade, "GRUPO");
+                DataSet ds = new ConexaoBD().ConsultarTabelaPorId(idgrupo, "GRUPO");
 
                 TbDescGrupo.Text = ds.Tables[0].Rows[0]["nome_grupo"].ToString();
                 TbObsGrupo.Text = ds.Tables[0].Rows[0]["Obs_grupo"].ToString();

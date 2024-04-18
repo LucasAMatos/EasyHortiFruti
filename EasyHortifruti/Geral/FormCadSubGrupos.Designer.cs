@@ -204,7 +204,7 @@
             // 
             // Grupo
             // 
-            this.Grupo.DataPropertyName = "id_grupo";
+            this.Grupo.DataPropertyName = "nome_grupo";
             this.Grupo.HeaderText = "Grupo";
             this.Grupo.Name = "Grupo";
             this.Grupo.Width = 120;

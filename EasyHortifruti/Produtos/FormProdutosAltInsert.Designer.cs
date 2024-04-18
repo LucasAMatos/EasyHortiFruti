@@ -335,6 +335,7 @@ namespace EasyHortifruti
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(546, 482);
             this.Controls.Add(this.panelInserirProduto);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;
             this.Name = "FormProdutosAltInsert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -47,9 +47,9 @@ namespace EasyHortifruti
                 {
                     conn.Open();
 
-                    string sql = string.Concat("SELECT * FROM ",pNomeTabela," WHERE id_recno=",pId.ToString());
-                     
-                        using(NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(sql, conn))
+                    string sql = string.Concat("SELECT * FROM ", pNomeTabela, " WHERE id_recno=", pId.ToString());
+
+                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(sql, conn))
                         adapter.Fill(dataSet);
                 }
                 return dataSet;
@@ -59,6 +59,31 @@ namespace EasyHortifruti
                 throw ex;
             }
         }
+        public DataSet ConsultarMultiTabelas(int pId, string pNomeTabela)
+        {
+            DataSet dataSet = new DataSet();
+
+            try
+            {
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql = string.Concat("SELECT subgrupo.id_recno, grupo.nome_grupo, subgrupo.nome_subgrupo, " +
+                        "subgrupo.margem_subgrupo FROM ", pNomeTabela, " JOIN grupo ON subgrupo.id_grupo = grupo.id_recno") ;                       
+
+
+                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(sql, conn))
+                        adapter.Fill(dataSet);
+                }
+                return dataSet;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
         public void InserirUnidades(string Abreviatura, string Descricao, string Observacao)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
@@ -162,7 +187,7 @@ namespace EasyHortifruti
                 }
             }
         }
-        public void InserirSubGrupo(string Descricao, string Grupo, string MargemLucro)
+        public void InserirSubGrupo(string Descricao, int pGrupo, string MargemLucro)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {
@@ -174,21 +199,21 @@ namespace EasyHortifruti
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {
                     cmd.Parameters.AddWithValue("Descricao", Descricao);
-                    cmd.Parameters.AddWithValue("Grupo", Grupo);
+                    cmd.Parameters.AddWithValue("Grupo", pGrupo);
                     cmd.Parameters.AddWithValue("MargemLucro", MargemLucro);
 
                     int rowsAffected = cmd.ExecuteNonQuery();
                 }
             }
         }
-        public void AlterarSubGrupo(int pId, string Descricao, string Grupo, string MargemLucro)
+        public void AlterarSubGrupo(int pId, string Descricao, int pGrupo, string MargemLucro)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
 
-                string sql = string.Format("UPDATE SUBGRUPO SET nome_subgrupo='{0}',id_grupo='{1}', " +
-                    "margem_subgrupo='{2}' WHERE id_recno=@ID", Descricao, Grupo, MargemLucro);
+                string sql = string.Format("UPDATE SUBGRUPO SET nome_subgrupo='{0}',id_grupo={1}, " +
+                    "margem_subgrupo='{2}' WHERE id_recno=@ID", Descricao, pGrupo, MargemLucro);
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {

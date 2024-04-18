@@ -36,7 +36,7 @@ namespace EasyHortifruti
             if (IdSelecionado >= 0)
             {
                 FormGruposAltInsert GruposAltInsert = new FormGruposAltInsert();
-                GruposAltInsert.Id = IdSelecionado;
+                GruposAltInsert.idgrupo = IdSelecionado;
                 GruposAltInsert.ShowDialog();
 
                 CarregarGrid();

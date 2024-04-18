@@ -71,7 +71,7 @@ namespace EasyHortifruti
 
         private void FormCadGrupos_Load(object sender, EventArgs e)
         {
-            NomeTabelaBD = "GRUPO";
+            NomeTabelaBD = "GRUPOS";
             CarregarGrid();
 
         }

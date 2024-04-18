@@ -32,9 +32,6 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.DgViewCadGrupos = new System.Windows.Forms.DataGridView();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.BtSairGrupo = new System.Windows.Forms.Button();
             this.BtPesquisarGrupo = new System.Windows.Forms.Button();
@@ -43,6 +40,10 @@
             this.BtEditarGrupo = new System.Windows.Forms.Button();
             this.BtIncluirGrupo = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Margem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadGrupos)).BeginInit();
@@ -77,33 +78,16 @@
             this.DgViewCadGrupos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Descricao,
             this.observacao,
+            this.Margem,
             this.id});
             this.DgViewCadGrupos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgViewCadGrupos.Location = new System.Drawing.Point(0, 0);
+            this.DgViewCadGrupos.MultiSelect = false;
             this.DgViewCadGrupos.Name = "DgViewCadGrupos";
+            this.DgViewCadGrupos.ReadOnly = true;
+            this.DgViewCadGrupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgViewCadGrupos.Size = new System.Drawing.Size(481, 374);
             this.DgViewCadGrupos.TabIndex = 0;
-            // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "nome_grupo";
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.Width = 150;
-            // 
-            // observacao
-            // 
-            this.observacao.DataPropertyName = "obs_grupo";
-            this.observacao.HeaderText = "Observação";
-            this.observacao.Name = "observacao";
-            this.observacao.Width = 200;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id_recno";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.Width = 50;
             // 
             // panel3
             // 
@@ -225,6 +209,39 @@
             this.panel2.Size = new System.Drawing.Size(481, 57);
             this.panel2.TabIndex = 0;
             // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "desc_grupo";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 120;
+            // 
+            // observacao
+            // 
+            this.observacao.DataPropertyName = "obs_grupo";
+            this.observacao.HeaderText = "Observação";
+            this.observacao.Name = "observacao";
+            this.observacao.ReadOnly = true;
+            this.observacao.Width = 220;
+            // 
+            // Margem
+            // 
+            this.Margem.DataPropertyName = "margem_grupo";
+            this.Margem.HeaderText = "Margem Lucro";
+            this.Margem.Name = "Margem";
+            this.Margem.ReadOnly = true;
+            this.Margem.Width = 110;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id_recno";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            this.id.Width = 50;
+            // 
             // FormCadGrupos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -234,7 +251,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCadGrupos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form14";
+            this.Text = "Easy Hortifruti - Cadastro de Grupos";
             this.Load += new System.EventHandler(this.FormCadGrupos_Load);
             this.panel1.ResumeLayout(false);
             this.panel4.ResumeLayout(false);
@@ -259,6 +276,7 @@
         private System.Windows.Forms.Button BtSairGrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Descricao;
         private System.Windows.Forms.DataGridViewTextBoxColumn observacao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Margem;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }

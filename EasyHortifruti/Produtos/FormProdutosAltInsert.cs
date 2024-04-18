@@ -64,7 +64,7 @@ namespace EasyHortifruti
             DataSet ds = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaGrupos);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                cbGrupoProduto.Items.Add(dr["desc_grupo"].ToString());
+                cbGrupoProduto.Items.Add(dr["nome_grupo"].ToString());
             }
         }
 

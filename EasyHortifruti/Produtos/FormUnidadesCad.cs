@@ -11,14 +11,11 @@ using System.Windows.Forms;
 
 namespace EasyHortifruti
 {
-    public partial class FormCadUnidade : FormBase
+    public partial class FormUnidadeCad : FormBase
     {
+        #region Propriedades
+        
         DataSet dsUnidades;
-        public FormCadUnidade()
-        {
-            InitializeComponent();
-            dsUnidades = new DataSet();
-        }
 
         public int IdSelecionado
         {
@@ -35,15 +32,24 @@ namespace EasyHortifruti
                 return -1;
             }
         }
+        #endregion
 
+        #region Construtor
+        public FormUnidadeCad()
+        {
+            InitializeComponent();
+            dsUnidades = new DataSet();
+        }
+        #endregion
+
+        #region Eventos
         private void btSairUnidades_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void FormCadUnidade_Load(object sender, EventArgs e)
+        private void FormUnidadeCad_Load(object sender, EventArgs e)
         {
-            NomeTabelaBD = TabelasScript.TabelaUnidades;
             CarregarGrid();
         }
 
@@ -72,12 +78,29 @@ namespace EasyHortifruti
             CarregarGrid();
 
         }
+        private void btExcluirUnidades_Click(object sender, EventArgs e)
+        {
+            if (IdSelecionado >= 0)
+            {
+                DialogResult dialogResult = MessageBox.Show("Deseja Excluir o registro?", "", MessageBoxButtons.YesNo);
+                if (dialogResult == DialogResult.Yes)
+                {
+                    new ConexaoBD().ExcluirUnidade(IdSelecionado, TabelasScript.TabelaUnidades);
+                    MessageBox.Show("Registro excluído com sucesso");
+                }
+                CarregarGrid();
+            }
+            else
+                MessageBox.Show("Selecione um registro para excluir");
+        }
+        #endregion
 
+        #region Metodos
         private void CarregarGrid()
         {
             ConexaoBD conexaoBD = new ConexaoBD();
 
-            dsUnidades = conexaoBD.ConsultarTabela(NomeTabelaBD);
+            dsUnidades = conexaoBD.ConsultarTabela(TabelasScript.TabelaUnidades);
             dgvCadUnidades.DataSource = dsUnidades; // dataset
             dgvCadUnidades.DataMember = "Table"; // nome da tabela
 
@@ -88,21 +111,6 @@ namespace EasyHortifruti
             dgvCadUnidades.Sort(colunaParaOrdenar, System.ComponentModel.ListSortDirection.Ascending);
 
         }
-
-        private void btExcluirUnidades_Click(object sender, EventArgs e)
-        {
-            if (IdSelecionado >= 0)
-            {
-                DialogResult dialogResult = MessageBox.Show("Excluir", "Cancelar", MessageBoxButtons.YesNo);
-                if (dialogResult == DialogResult.Yes)
-                {
-                    new ConexaoBD().ExcluirUnidade(IdSelecionado, NomeTabelaBD);
-                    MessageBox.Show("Registro excluído com sucesso");
-                }
-                CarregarGrid();
-            }
-            else
-                MessageBox.Show("Selecione um registro para excluir");
-        }
+        #endregion
     }
 }

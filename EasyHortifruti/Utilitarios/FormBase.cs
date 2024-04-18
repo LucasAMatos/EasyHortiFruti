@@ -12,7 +12,5 @@ namespace EasyHortifruti
         public int idunidade { get; set; }
         public int idgrupo { get; set; }
         public int idsubgrupo { get; set; }
-
-        public string NomeTabelaBD { get; set; }
     }
 }

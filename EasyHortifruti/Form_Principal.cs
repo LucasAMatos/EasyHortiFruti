@@ -21,7 +21,7 @@ namespace EasyHortifruti
 
         private void btCadGeral_Click(object sender, EventArgs e)
         {
-            FormCadGeral FormCadGeral = new FormCadGeral();
+            FormGeralCad FormCadGeral = new FormGeralCad();
             FormCadGeral.ShowDialog();
         }
 

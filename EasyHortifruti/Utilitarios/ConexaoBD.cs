@@ -91,8 +91,8 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                string sql = "INSERT INTO UNIDADES (abrev_unid, desc_unid, obs_unid) " +
-                    "VALUES (@Abreviatura, @Descricao, @Observacao)";
+                string sql = string.Concat("INSERT INTO ", TabelasScript.TabelaUnidades, "(abrev_unid, desc_unid, obs_unid) ",
+                    "VALUES (@Abreviatura, @Descricao, @Observacao)");
 
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
@@ -111,7 +111,7 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                string sql = string.Format("UPDATE UNIDADES SET abrev_unid='{0}',desc_unid='{1}',obs_unid='{2}' WHERE id_recno=@ID", Abreviatura, Descricao, Observacao);
+                string sql = string.Format("UPDATE {0} SET abrev_unid='{1}',desc_unid='{2}',obs_unid='{3}' WHERE id_recno=@ID", TabelasScript.TabelaUnidades, Abreviatura, Descricao, Observacao);
             
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {
@@ -214,8 +214,8 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                string sql = string.Format("UPDATE SUBGRUPO SET nome_subgrupo='{0}',id_grupo={1}, " +
-                    "margem_subgrupo='{2}' WHERE id_recno=@ID", Descricao, pGrupo, MargemLucro);
+                string sql = string.Format("UPDATE {0} SET nome_subgrupo='{1}',id_grupo={2}, " +
+                    "margem_subgrupo='{3}' WHERE id_recno=@ID", TabelasScript.TabelaSubGrupos, Descricao, pGrupo, MargemLucro);
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {
@@ -231,7 +231,7 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                string sql = String.Concat("DELETE * FROM SUBGRUPO WHERE id_recno=@ID");
+                string sql = String.Concat("DELETE * FROM ", TabelasScript.TabelaSubGrupos, " WHERE id_recno=@ID");
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {

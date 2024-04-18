@@ -25,7 +25,6 @@ namespace EasyHortifruti
 
         private void FormProdutosAltInsert_Load(object sender, EventArgs e)
         {
-            NomeTabelaBD = TabelasScript.TabelaUnidades;
             CarregarGridUnidades();
             CarregarGridGrupo();
             CarregarGridSubGrupo();
@@ -33,26 +32,26 @@ namespace EasyHortifruti
 
         private void BtCadUnidade_Click_1(object sender, EventArgs e)
         {
-            FormCadUnidade FormCadUnidade = new FormCadUnidade();
-            FormCadUnidade.ShowDialog();
+            FormUnidadeCad FormUnidadeCad = new FormUnidadeCad();
+            FormUnidadeCad.ShowDialog();
         }
 
         private void BtCadGrupo_Click(object sender, EventArgs e)
         {
-            FormCadGrupos cadGrupos = new FormCadGrupos();
+            FormGruposCad cadGrupos = new FormGruposCad();
             cadGrupos.ShowDialog();
         }
 
         private void BtCadSubGrupo_Click(object sender, EventArgs e)
         {
-            FormCadSubGrupos cadSubGrupos = new FormCadSubGrupos();
+            FormSubGruposCad cadSubGrupos = new FormSubGruposCad();
             cadSubGrupos.ShowDialog();
         }
 
         private void CarregarGridUnidades()
         { 
             cbUnidProduto.Items.Clear();
-            DataSet ds = new ConexaoBD().ConsultarTabela(NomeTabelaBD);
+            DataSet ds = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaUnidades);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 cbUnidProduto.Items.Add(dr["abrev_unid"].ToString());

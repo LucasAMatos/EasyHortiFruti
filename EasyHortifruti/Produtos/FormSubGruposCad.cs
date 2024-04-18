@@ -10,22 +10,21 @@ using System.Windows.Forms;
 
 namespace EasyHortifruti
 {
-    public partial class FormCadSubGrupos : FormBase
+    public partial class FormSubGruposCad : FormBase
     {
-        public FormCadSubGrupos()
+        public FormSubGruposCad()
         {
             InitializeComponent();
         }
 
         private void FormCadSubGrupos_Load(object sender, EventArgs e)
         {
-            NomeTabelaBD = "SUBGRUPO";
             CarregarGrid();
         }
 
         public void CarregarGrid()
         {
-            DgViewCadSubGrupos.DataSource = new ConexaoBD().ConsultarSubGrupo(Id, NomeTabelaBD);
+            DgViewCadSubGrupos.DataSource = new ConexaoBD().ConsultarSubGrupo(Id, TabelasScript.TabelaSubGrupos);
             DgViewCadSubGrupos.DataMember = "Table";
         }
 
@@ -70,7 +69,7 @@ namespace EasyHortifruti
                 DialogResult dialogResult = MessageBox.Show("Excluir", "Cancelar", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    new ConexaoBD().ExcluirUnidade(IdSelecionado, NomeTabelaBD);
+                    new ConexaoBD().ExcluirUnidade(IdSelecionado, TabelasScript.TabelaSubGrupos);
                     MessageBox.Show("Registro excluído com sucesso");                }
 
                 CarregarGrid();

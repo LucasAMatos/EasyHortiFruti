@@ -19,11 +19,10 @@ namespace EasyHortifruti
 
         private void FormGruposAltInsert_Load(object sender, EventArgs e)
         {
-            NomeTabelaBD = "GRUPOS";
 
             if (idgrupo > 0)
             {
-                DataSet ds = new ConexaoBD().ConsultarTabelaPorId(idgrupo, NomeTabelaBD);
+                DataSet ds = new ConexaoBD().ConsultarTabelaPorId(idgrupo, TabelasScript.TabelaGrupos);
 
                 TbDescGrupo.Text = ds.Tables[0].Rows[0]["nome_grupo"].ToString();
                 TbObsGrupo.Text = ds.Tables[0].Rows[0]["Obs_grupo"].ToString();

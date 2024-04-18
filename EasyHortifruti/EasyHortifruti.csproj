@@ -123,41 +123,41 @@
     <Compile Include="Form_Principal.Designer.cs">
       <DependentUpon>Form_Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produtos\FormCadUnidades.cs">
+    <Compile Include="Produtos\FormUnidadesCad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produtos\FormCadUnidades.Designer.cs">
-      <DependentUpon>FormCadUnidades.cs</DependentUpon>
+    <Compile Include="Produtos\FormUnidadesCad.Designer.cs">
+      <DependentUpon>FormUnidadesCad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produtos\FormUnidadeInserir.cs">
+    <Compile Include="Produtos\FormUnidadeAltInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produtos\FormUnidadeInserir.Designer.cs">
-      <DependentUpon>FormUnidadeInserir.cs</DependentUpon>
+    <Compile Include="Produtos\FormUnidadeAltInsert.Designer.cs">
+      <DependentUpon>FormUnidadeAltInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Geral\FormCadGrupos.cs">
+    <Compile Include="Produtos\FormGruposCad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Geral\FormCadGrupos.Designer.cs">
-      <DependentUpon>FormCadGrupos.cs</DependentUpon>
+    <Compile Include="Produtos\FormGruposCad.Designer.cs">
+      <DependentUpon>FormGruposCad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Geral\FormGruposAltInsert.cs">
+    <Compile Include="Produtos\FormGruposAltInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Geral\FormGruposAltInsert.Designer.cs">
+    <Compile Include="Produtos\FormGruposAltInsert.Designer.cs">
       <DependentUpon>FormGruposAltInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Geral\FormCadSubGrupos.cs">
+    <Compile Include="Produtos\FormSubGruposCad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Geral\FormCadSubGrupos.Designer.cs">
-      <DependentUpon>FormCadSubGrupos.cs</DependentUpon>
+    <Compile Include="Produtos\FormSubGruposCad.Designer.cs">
+      <DependentUpon>FormSubGruposCad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produtos\FormCadProduto.cs">
+    <Compile Include="Produtos\FormProdutoCad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produtos\FormCadProduto.Designer.cs">
-      <DependentUpon>FormCadProduto.cs</DependentUpon>
+    <Compile Include="Produtos\FormProdutoCad.Designer.cs">
+      <DependentUpon>FormProdutoCad.cs</DependentUpon>
     </Compile>
     <Compile Include="Produtos\FormProdutosAltInsert.cs">
       <SubType>Form</SubType>
@@ -165,11 +165,11 @@
     <Compile Include="Produtos\FormProdutosAltInsert.Designer.cs">
       <DependentUpon>FormProdutosAltInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Geral\FormCadGeral.cs">
+    <Compile Include="Geral\FormGeralCad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Geral\FormCadGeral.Designer.cs">
-      <DependentUpon>FormCadGeral.cs</DependentUpon>
+    <Compile Include="Geral\FormGeralCad.Designer.cs">
+      <DependentUpon>FormGeralCad.cs</DependentUpon>
     </Compile>
     <Compile Include="Geral\FormGeralAltInsert.cs">
       <SubType>Form</SubType>
@@ -177,17 +177,17 @@
     <Compile Include="Geral\FormGeralAltInsert.Designer.cs">
       <DependentUpon>FormGeralAltInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Geral\FormSubGrupoAltInsert.cs">
+    <Compile Include="Produtos\FormSubGrupoAltInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Geral\FormSubGrupoAltInsert.Designer.cs">
+    <Compile Include="Produtos\FormSubGrupoAltInsert.Designer.cs">
       <DependentUpon>FormSubGrupoAltInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pedidos\FormCadPedidos.cs">
+    <Compile Include="Pedidos\FormPedidosCad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pedidos\FormCadPedidos.Designer.cs">
-      <DependentUpon>FormCadPedidos.cs</DependentUpon>
+    <Compile Include="Pedidos\FormPedidosCad.Designer.cs">
+      <DependentUpon>FormPedidosCad.cs</DependentUpon>
     </Compile>
     <Compile Include="Pedidos\FormPedidoAltInsert.cs">
       <SubType>Form</SubType>
@@ -209,38 +209,38 @@
     <EmbeddedResource Include="Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produtos\FormCadUnidades.resx">
-      <DependentUpon>FormCadUnidades.cs</DependentUpon>
+    <EmbeddedResource Include="Produtos\FormUnidadesCad.resx">
+      <DependentUpon>FormUnidadesCad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produtos\FormUnidadeInserir.resx">
-      <DependentUpon>FormUnidadeInserir.cs</DependentUpon>
+    <EmbeddedResource Include="Produtos\FormUnidadeAltInsert.resx">
+      <DependentUpon>FormUnidadeAltInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Geral\FormCadGrupos.resx">
-      <DependentUpon>FormCadGrupos.cs</DependentUpon>
+    <EmbeddedResource Include="Produtos\FormGruposCad.resx">
+      <DependentUpon>FormGruposCad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Geral\FormGruposAltInsert.resx">
+    <EmbeddedResource Include="Produtos\FormGruposAltInsert.resx">
       <DependentUpon>FormGruposAltInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Geral\FormCadSubGrupos.resx">
-      <DependentUpon>FormCadSubGrupos.cs</DependentUpon>
+    <EmbeddedResource Include="Produtos\FormSubGruposCad.resx">
+      <DependentUpon>FormSubGruposCad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produtos\FormCadProduto.resx">
-      <DependentUpon>FormCadProduto.cs</DependentUpon>
+    <EmbeddedResource Include="Produtos\FormProdutoCad.resx">
+      <DependentUpon>FormProdutoCad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Produtos\FormProdutosAltInsert.resx">
       <DependentUpon>FormProdutosAltInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Geral\FormCadGeral.resx">
-      <DependentUpon>FormCadGeral.cs</DependentUpon>
+    <EmbeddedResource Include="Geral\FormGeralCad.resx">
+      <DependentUpon>FormGeralCad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Geral\FormGeralAltInsert.resx">
       <DependentUpon>FormGeralAltInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Geral\FormSubGrupoAltInsert.resx">
+    <EmbeddedResource Include="Produtos\FormSubGrupoAltInsert.resx">
       <DependentUpon>FormSubGrupoAltInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pedidos\FormCadPedidos.resx">
-      <DependentUpon>FormCadPedidos.cs</DependentUpon>
+    <EmbeddedResource Include="Pedidos\FormPedidosCad.resx">
+      <DependentUpon>FormPedidosCad.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Pedidos\FormPedidoAltInsert.resx">
       <DependentUpon>FormPedidoAltInsert.cs</DependentUpon>

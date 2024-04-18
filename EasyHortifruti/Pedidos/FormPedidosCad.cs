@@ -1,11 +1,18 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EasyHortifruti
 {
-    public partial class FormCadGeral : FormBase
+    public partial class FormPedidos : FormBase
     {
-        public FormCadGeral()
+        public FormPedidos()
         {
             InitializeComponent();
         }
@@ -14,46 +21,46 @@ namespace EasyHortifruti
         {
             get
             {
-                DataGridViewSelectedRowCollection linhaSelecionada = DgViewCadGeral.SelectedRows;
+                DataGridViewSelectedRowCollection linhaSelecionada = dataGridView1.SelectedRows;
 
                 if (linhaSelecionada != null && linhaSelecionada.Count == 1)
                     return Convert.ToInt32(linhaSelecionada[0].Cells["id"].Value);
+
                 return -1;
             }
         }
 
-        private void BtIncluirCliente_Click(object sender, EventArgs e)
+        private void btIncluirPedido_Click(object sender, EventArgs e)
         {
-            FormGeralAltInsert GeralAltInsert = new FormGeralAltInsert();
-
-            GeralAltInsert.ShowDialog();
+            FormInserirPedido FormInserirPedido = new FormInserirPedido();
+            FormInserirPedido.ShowDialog();
         }
 
-        private void BtSairCadGeral_Click(object sender, EventArgs e)
+        private void btSairPedido_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-        private void BtEditarCadGeral_Click(object sender, EventArgs e)
+        private void btEditarPedido_Click(object sender, EventArgs e)
         {
             if (IdSelecionado >= 0)
             {
-                FormGeralAltInsert GeralAltInsert = new FormGeralAltInsert();
-                GeralAltInsert.Id = IdSelecionado;
-                GeralAltInsert.ShowDialog();
+                FormInserirPedido FormInserirPedido = new FormInserirPedido();
+                FormInserirPedido.Id = IdSelecionado;
+                FormInserirPedido.ShowDialog();
             }
             else
                 MessageBox.Show("Selecione um registro para alterar");
         }
 
-        private void BtExcluirCadGeral_Click(object sender, EventArgs e)
+        private void btExcluirPedido_Click(object sender, EventArgs e)
         {
             if (IdSelecionado >= 0)
             {
                 DialogResult dialogResult = MessageBox.Show("Excluir", "Cancelar", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    new ConexaoBD().ExcluirUnidade(IdSelecionado, NomeTabelaBD);
+                    new ConexaoBD().ExcluirUnidade(IdSelecionado, TabelasScript.TabelaPedidos);
                     MessageBox.Show("Registro excluído com sucesso");
                 }
                 CarregarGrid();
@@ -64,13 +71,12 @@ namespace EasyHortifruti
 
         public void CarregarGrid()
         {
-            DgViewCadGeral.DataSource = new ConexaoBD().ConsultarTabela(NomeTabelaBD);
-            DgViewCadGeral.DataMember = "Table";
+            dataGridView1.DataSource = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaPedidos);
+            dataGridView1.DataMember = "Table";
         }
 
-        private void FormCadGeral_Load(object sender, EventArgs e)
+        private void FormPedidos_Load(object sender, EventArgs e)
         {
-            NomeTabelaBD = "GERAL";
             CarregarGrid();
         }
     }

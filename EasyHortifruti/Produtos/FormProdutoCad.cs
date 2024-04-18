@@ -60,7 +60,7 @@ namespace EasyHortifruti
 
         public void CarregarGrid()
         {
-            dtGridViewCadProd.DataSource = new ConexaoBD().ConsultarTabela(NomeTabelaBD);
+            dtGridViewCadProd.DataSource = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaProdutos);
             dtGridViewCadProd.DataMember = "Table";
         }
 
@@ -71,7 +71,7 @@ namespace EasyHortifruti
                 DialogResult dialogResult = MessageBox.Show("Excluir", "Cancelar", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    new ConexaoBD().ExcluirUnidade(IdSelecionado, NomeTabelaBD);
+                    new ConexaoBD().ExcluirUnidade(IdSelecionado, TabelasScript.TabelaProdutos);
                     MessageBox.Show("Registro excluído com sucesso");
                 }
                 CarregarGrid();
@@ -82,7 +82,6 @@ namespace EasyHortifruti
 
         private void FormCadastroProduto_Load(object sender, EventArgs e)
         {
-            NomeTabelaBD = "PRODUTOS";
             CarregarGrid();
         }
     }

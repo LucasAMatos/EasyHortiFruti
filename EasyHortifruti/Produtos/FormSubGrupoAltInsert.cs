@@ -25,7 +25,7 @@ namespace EasyHortifruti
         {
             if (idsubgrupo > 0)
             {
-                DataSet ds = new ConexaoBD().ConsultarSubGrupo(idsubgrupo, "SUBGRUPO");
+                DataSet ds = new ConexaoBD().ConsultarSubGrupo(idsubgrupo, TabelasScript.TabelaSubGrupos);
 
                 TbDescSubGrupo.Text = ds.Tables[0].Rows[0]["nome_subgrupo"].ToString();
                 CbGrupo.Text = ds.Tables[0].Rows[0]["nome_grupo"].ToString();
@@ -38,7 +38,7 @@ namespace EasyHortifruti
         private void CarregarGridGrupo()
         {
             CbGrupo.Items.Clear();
-            DataSet ds = new ConexaoBD().ConsultarTabela("GRUPOS");
+            DataSet ds = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaGrupos);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 grupos.Add(Convert.ToInt16(dr["id_recno"]), dr["nome_grupo"].ToString());

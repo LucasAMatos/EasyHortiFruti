@@ -12,11 +12,7 @@ namespace EasyHortifruti
 {
     public partial class FormCadastroProduto : FormBase
     {
-        public FormCadastroProduto()
-        {
-            InitializeComponent();
-        }
-
+        #region Propriedades
         public int IdSelecionado
         {
             get
@@ -29,21 +25,24 @@ namespace EasyHortifruti
                 return -1;
             }
         }
+        #endregion
 
+        #region Construtor
+        public FormCadastroProduto()
+        {
+            InitializeComponent();
+        }
+        #endregion
+
+        #region Metodos
+        private void FormCadastroProduto_Load(object sender, EventArgs e)
+        {
+            CarregarGrid();
+        }
         private void BtIncluirProduto_Click(object sender, EventArgs e)
         {
             FormProdutosAltInsert InserirProduto = new FormProdutosAltInsert();
             InserirProduto.ShowDialog();
-        }
-
-        private void BtImprimir_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void BtSairCadProduto_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void BtEditarProduto_Click(object sender, EventArgs e)
@@ -56,12 +55,6 @@ namespace EasyHortifruti
             }
             else
                 MessageBox.Show("Selecione um registro para alterar");
-        }
-
-        public void CarregarGrid()
-        {
-            dtGridViewCadProd.DataSource = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaProdutos);
-            dtGridViewCadProd.DataMember = "Table";
         }
 
         private void BtExcluirProduto_Click(object sender, EventArgs e)
@@ -80,9 +73,24 @@ namespace EasyHortifruti
                 MessageBox.Show("Selecione um registro para excluir");
         }
 
-        private void FormCadastroProduto_Load(object sender, EventArgs e)
+        private void BtImprimir_Click(object sender, EventArgs e)
         {
-            CarregarGrid();
+            
         }
+
+        private void BtSairCadProduto_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
+        #region Metodos
+
+        public void CarregarGrid()
+        {
+            dtGridViewCadProd.DataSource = new ConexaoBD().ConsultarProdutos();
+            dtGridViewCadProd.DataMember = "Table";
+        }
+        #endregion
     }
 }

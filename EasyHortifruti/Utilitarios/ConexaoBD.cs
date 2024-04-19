@@ -115,9 +115,15 @@ namespace EasyHortifruti
         #endregion
 
         #region Produtos
-        public Produto ConsultarProduto(int pId)
+        public DataSet ConsultarProdutos()
         {
-            string sql = string.Empty;
+            string sql = string.Concat("SELECT * FROM produtos P INNER JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO INNER JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO INNER JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO");
+
+            return ExecutaEPreencheDataset(sql);
+        }
+        public Produto ConsultarProdutoPorId(int pId)
+        {
+            string sql = string.Concat("SELECT * FROM produtos P INNER JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO INNER JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO INNER JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO WHERE ID =", pId);
 
             DataSet ds = ExecutaEPreencheDataset(sql);
 
@@ -128,12 +134,12 @@ namespace EasyHortifruti
                 {
                     ID = Convert.ToInt32(dr["id_recno"]),
                     Descricao = dr["nome_produto"].ToString(),
-                    Grupo = Convert.ToInt32(dr["id_grupo"]),
-                    SubGrupo = Convert.ToInt32(dr["id_subgrupo"]),
+                    IdGrupo = Convert.ToInt32(dr["id_grupo"]),
+                    IdSubGrupo = Convert.ToInt32(dr["id_subgrupo"]),
                     MargemLucro = Convert.ToDouble(dr["margem_produto"]),
                     PrecoDeCompra = Convert.ToDouble(dr["pcocompra_produto"]),
                     PrecoDeVenda = Convert.ToDouble(dr["pcovenda_produto"]),
-                    Unidade = Convert.ToInt32(dr["id_unidade"])
+                    IdUnidade = Convert.ToInt32(dr["id_unidade"])
                 };
             }
 

@@ -88,9 +88,9 @@ namespace EasyHortifruti
                     PrecoDeCompra = Convert.ToDouble(tbPrecoCompra.Text),
                     PrecoDeVenda = Convert.ToDouble(tbPrecoVenda.Text),
                     MargemLucro = Convert.ToDouble(tbMargemLucro.Text),
-                    SubGrupo = idSubGrupo,
-                    Grupo = idGrupo,
-                    Unidade = idUnidade
+                    IdSubGrupo = idSubGrupo,
+                    IdGrupo = idGrupo,
+                    IdUnidade = idUnidade
                 };
 
 
@@ -198,8 +198,19 @@ namespace EasyHortifruti
 
         private void PreencheCampos()
         {
-            if (Id > 0) { 
-                
+            if (Id > 0) {
+                Produto produto = new ConexaoBD().ConsultarProdutoPorId(Id);
+
+                if(produto != null )
+                {
+                    tbDescricaoProduto.Text = produto.Descricao;
+                    tbPrecoCompra.Text = produto.PrecoDeCompra.ToString();
+                    tbPrecoVenda.Text = produto.PrecoDeVenda.ToString();
+                    tbMargemLucro.Text = produto.MargemLucro.ToString();
+                    cbUnidProduto.Text = produto.Unidade;
+                    cbGrupoProduto.Text = produto.Grupo;
+                    cbSubGrupoProduto.Text = produto.SubGrupo;
+                }
             }
         }
         #endregion

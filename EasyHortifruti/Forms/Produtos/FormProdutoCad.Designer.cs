@@ -31,13 +31,6 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroProduto));
             this.panel1FormCadProd = new System.Windows.Forms.Panel();
             this.dtGridViewCadProd = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3FormCadProdBotoes = new System.Windows.Forms.Panel();
             this.BtSairCadProduto = new System.Windows.Forms.Button();
             this.BtPesquisarProduto = new System.Windows.Forms.Button();
@@ -46,6 +39,13 @@
             this.BtEditarProduto = new System.Windows.Forms.Button();
             this.BtIncluirProduto = new System.Windows.Forms.Button();
             this.panelTituloCadProd = new System.Windows.Forms.Panel();
+            this.lbDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbUnidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbVlrCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbVlrVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbVlrMargem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lbSubGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1FormCadProd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadProd)).BeginInit();
             this.panel3FormCadProdBotoes.SuspendLayout();
@@ -69,54 +69,18 @@
             this.dtGridViewCadProd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dtGridViewCadProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridViewCadProd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
+            this.lbDescricao,
+            this.lbUnidade,
+            this.lbVlrCompra,
+            this.lbVlrVenda,
+            this.lbVlrMargem,
+            this.lbGrupo,
+            this.lbSubGrupo});
             this.dtGridViewCadProd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtGridViewCadProd.Location = new System.Drawing.Point(0, 127);
             this.dtGridViewCadProd.Name = "dtGridViewCadProd";
             this.dtGridViewCadProd.Size = new System.Drawing.Size(754, 434);
             this.dtGridViewCadProd.TabIndex = 2;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Descrição";
-            this.Column1.Name = "Column1";
-            this.Column1.Width = 240;
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Unidade";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Vlr Compra";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Vlr Venda";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Margem Lucro";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Grupo";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "SubGrupo";
-            this.Column7.Name = "Column7";
             // 
             // panel3FormCadProdBotoes
             // 
@@ -240,6 +204,49 @@
             this.panelTituloCadProd.Size = new System.Drawing.Size(754, 66);
             this.panelTituloCadProd.TabIndex = 0;
             // 
+            // lbDescricao
+            // 
+            this.lbDescricao.DataPropertyName = "nome_produto";
+            this.lbDescricao.HeaderText = "Descrição";
+            this.lbDescricao.Name = "lbDescricao";
+            this.lbDescricao.Width = 240;
+            // 
+            // lbUnidade
+            // 
+            this.lbUnidade.DataPropertyName = "abrev_unid";
+            this.lbUnidade.HeaderText = "Unidade";
+            this.lbUnidade.Name = "lbUnidade";
+            // 
+            // lbVlrCompra
+            // 
+            this.lbVlrCompra.DataPropertyName = "pcocompra_produto";
+            this.lbVlrCompra.HeaderText = "Vlr Compra";
+            this.lbVlrCompra.Name = "lbVlrCompra";
+            // 
+            // lbVlrVenda
+            // 
+            this.lbVlrVenda.DataPropertyName = "pcovenda_produto";
+            this.lbVlrVenda.HeaderText = "Vlr Venda";
+            this.lbVlrVenda.Name = "lbVlrVenda";
+            // 
+            // lbVlrMargem
+            // 
+            this.lbVlrMargem.DataPropertyName = "margem_produto";
+            this.lbVlrMargem.HeaderText = "Margem Lucro";
+            this.lbVlrMargem.Name = "lbVlrMargem";
+            // 
+            // lbGrupo
+            // 
+            this.lbGrupo.DataPropertyName = "nome_grupo";
+            this.lbGrupo.HeaderText = "Grupo";
+            this.lbGrupo.Name = "lbGrupo";
+            // 
+            // lbSubGrupo
+            // 
+            this.lbSubGrupo.DataPropertyName = "nome_subgrupo";
+            this.lbSubGrupo.HeaderText = "SubGrupo";
+            this.lbSubGrupo.Name = "lbSubGrupo";
+            // 
             // FormCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -270,12 +277,12 @@
         private System.Windows.Forms.Button BtPesquisarProduto;
         private System.Windows.Forms.Button BtSairCadProduto;
         private System.Windows.Forms.DataGridView dtGridViewCadProd;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lbDescricao;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lbUnidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lbVlrCompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lbVlrVenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lbVlrMargem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lbGrupo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lbSubGrupo;
     }
 }

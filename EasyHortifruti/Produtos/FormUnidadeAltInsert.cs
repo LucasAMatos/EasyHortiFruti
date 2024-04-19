@@ -38,6 +38,11 @@ namespace EasyHortifruti
                 string Descricao = tbCadDescricaoUni.Text; // Obtém o texto do TextBox
                 string Observacao = tbCadObsUni.Text; // Obtém o texto do TextBox
 
+                if (string.IsNullOrEmpty(tbCadAbreviUni.Text))
+                    throw new Exception("Abreviatura é Obrigatório");
+                if (string.IsNullOrEmpty(tbCadAbreviUni.Text))
+                    throw new Exception("Descrição é Obrigatório");
+
                 if (Alterar)
                 {
                     new ConexaoBD().AlterarUnidades(Id, Abreviatura, Descricao, Observacao);

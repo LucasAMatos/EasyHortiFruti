@@ -43,6 +43,9 @@ namespace EasyHortifruti
                 string Observacao = TbObsGrupo.Text; // Obtém o texto do TextBox
                 string MargemLucro = TbMargemGrupo.Text; // Obtém o texto do TextBox
 
+                if (string.IsNullOrEmpty(TbDescGrupo.Text))
+                    throw new Exception("Nome do grupo é Obrigatório");
+
                 if (Alterar)
                 {
                     new ConexaoBD().AlterarGrupo(Id, Descricao, Observacao, MargemLucro);
@@ -62,7 +65,6 @@ namespace EasyHortifruti
                     else
                         this.Close();
                 }
-                this.Close();
             }
             catch (Exception E)
             {

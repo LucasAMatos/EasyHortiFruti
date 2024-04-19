@@ -1,5 +1,6 @@
 ﻿using Npgsql;
 using System;
+using System.CodeDom;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -45,9 +46,15 @@ namespace EasyHortifruti
         {
             try
             {
+
                 string Descricao = TbDescSubGrupo.Text; // Obtém o texto do TextBox
                 string MargemLucro = TbMargemSubGrupo.Text; // Obtém o texto do TextBox
                 int pGrupo = grupos.FirstOrDefault(x => x.Value == CbGrupo.Text).Key;
+
+                if (string.IsNullOrEmpty(TbDescSubGrupo.Text))
+                    throw new Exception("Descrição é Obrigatório");
+                if (pGrupo < 1)
+                    throw new Exception("SubGrupos precisam pertencer a um grupo");
 
                 if (Alterar)
                 {
@@ -68,7 +75,6 @@ namespace EasyHortifruti
                     else
                         this.Close();
                 }
-                this.Close();
             }
             catch (Exception E)
             {
@@ -105,7 +111,7 @@ namespace EasyHortifruti
         {
             if (Id > 0)
             {
-                DataSet ds = new ConexaoBD().ConsultarSubGrupo(Id, TabelasScript.TabelaSubGrupos);
+                DataSet ds = new ConexaoBD().ConsultarSubGrupo(Id);
 
                 TbDescSubGrupo.Text = ds.Tables[0].Rows[0]["nome_subgrupo"].ToString();
                 CbGrupo.Text = ds.Tables[0].Rows[0]["nome_grupo"].ToString();

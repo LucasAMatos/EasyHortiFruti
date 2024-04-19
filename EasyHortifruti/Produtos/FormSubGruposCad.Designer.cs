@@ -31,6 +31,10 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSubGruposCad));
             this.panel1 = new System.Windows.Forms.Panel();
             this.DgViewCadSubGrupos = new System.Windows.Forms.DataGridView();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.margemlucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.BtSairSubGrupo = new System.Windows.Forms.Button();
             this.BtPesquisarSubGrupo = new System.Windows.Forms.Button();
@@ -39,10 +43,6 @@
             this.BtEditarSubGrupo = new System.Windows.Forms.Button();
             this.BtIncluirSubGrupo = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Grupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.margemlucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadSubGrupos)).BeginInit();
             this.panel3.SuspendLayout();
@@ -71,9 +71,44 @@
             this.ID});
             this.DgViewCadSubGrupos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgViewCadSubGrupos.Location = new System.Drawing.Point(0, 121);
+            this.DgViewCadSubGrupos.MultiSelect = false;
             this.DgViewCadSubGrupos.Name = "DgViewCadSubGrupos";
+            this.DgViewCadSubGrupos.ReadOnly = true;
+            this.DgViewCadSubGrupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgViewCadSubGrupos.Size = new System.Drawing.Size(477, 374);
             this.DgViewCadSubGrupos.TabIndex = 2;
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "nome_subgrupo";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 120;
+            // 
+            // Grupo
+            // 
+            this.Grupo.DataPropertyName = "nome_grupo";
+            this.Grupo.HeaderText = "Grupo";
+            this.Grupo.Name = "Grupo";
+            this.Grupo.ReadOnly = true;
+            this.Grupo.Width = 120;
+            // 
+            // margemlucro
+            // 
+            this.margemlucro.DataPropertyName = "margem_subgrupo";
+            this.margemlucro.HeaderText = "Margem Lucro";
+            this.margemlucro.Name = "margemlucro";
+            this.margemlucro.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id_recno";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            this.ID.Width = 50;
             // 
             // panel3
             // 
@@ -195,40 +230,13 @@
             this.panel2.Size = new System.Drawing.Size(477, 55);
             this.panel2.TabIndex = 0;
             // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "nome_subgrupo";
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.Width = 120;
-            // 
-            // Grupo
-            // 
-            this.Grupo.DataPropertyName = "nome_grupo";
-            this.Grupo.HeaderText = "Grupo";
-            this.Grupo.Name = "Grupo";
-            this.Grupo.Width = 120;
-            // 
-            // margemlucro
-            // 
-            this.margemlucro.DataPropertyName = "margem_subgrupo";
-            this.margemlucro.HeaderText = "Margem Lucro";
-            this.margemlucro.Name = "margemlucro";
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "id_recno";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 50;
-            // 
-            // FormCadSubGrupos
+            // FormSubGruposCad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(477, 495);
             this.Controls.Add(this.panel1);
-            this.Name = "FormCadSubGrupos";
+            this.Name = "FormSubGruposCad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form16";
             this.Load += new System.EventHandler(this.FormCadSubGrupos_Load);

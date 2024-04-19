@@ -59,30 +59,6 @@ namespace EasyHortifruti
                 throw ex;
             }
         }
-        public DataSet ConsultarSubGrupo(int pId, string pNomeTabela)
-        {
-            DataSet dataSet = new DataSet();
-
-            try
-            {
-                using (var conn = new NpgsqlConnection(connectionString))
-                {
-                    conn.Open();
-
-                    string sql = string.Concat("SELECT Sub.id_recno, grp.nome_grupo, Sub.nome_subgrupo, " +
-                        "Sub.margem_subgrupo FROM ", TabelasScript.TabelaSubGrupos,  " Sub JOIN ", TabelasScript.TabelaGrupos , " grp ON Sub.id_grupo = grp.id_recno") ;                       
-
-
-                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(sql, conn))
-                        adapter.Fill(dataSet);
-                }
-                return dataSet;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
 
         #region Unidades
         public void InserirUnidades(string Abreviatura, string Descricao, string Observacao)
@@ -160,7 +136,7 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                string sql = string.Format("UPDATE {0} SET desc_grupo='{1}',obs_grupo='{2}',margem_grupo={3} WHERE id_recno=@ID", TabelasScript.TabelaGrupos, Descricao, Observacao, MargemLucro);
+                string sql = string.Format("UPDATE {0} SET nome_grupo='{1}',obs_grupo='{2}',margem_grupo={3} WHERE id_recno=@ID", TabelasScript.TabelaGrupos, Descricao, Observacao, MargemLucro);
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {
@@ -186,28 +162,49 @@ namespace EasyHortifruti
                 }
             }
         }
+        #endregion
+
+        #region SubGrupo
+        public DataSet ConsultarSubGrupo(int pId)
+        {
+            DataSet dataSet = new DataSet();
+
+            try
+            {
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    string sql = string.Concat("SELECT Sub.id_recno, grp.nome_grupo, Sub.nome_subgrupo, " +
+                        "Sub.margem_subgrupo FROM ", TabelasScript.TabelaSubGrupos, " Sub JOIN ", TabelasScript.TabelaGrupos, " grp ON Sub.id_grupo = grp.id_recno");
+
+                    if (pId > 0)
+                        sql += " where Sub.id_recno = " + pId.ToString();
+
+                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(sql, conn))
+                        adapter.Fill(dataSet);
+                }
+                return dataSet;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
         public void InserirSubGrupo(string Descricao, int pGrupo, string MargemLucro)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
 
-                string sql = string.Concat("INSERT INTO ", TabelasScript.TabelaSubGrupos, " (desc_grupo, id_grupo, margem_subgrupo) ",
-                             "VALUES (@Descricao, @Grupo, @MargemLucro)");
+                string sql = string.Format("INSERT INTO {0} (nome_subgrupo, id_grupo, margem_subgrupo) VALUES ('{1}', {2}, {3})", TabelasScript.TabelaSubGrupos, Descricao, pGrupo, MargemLucro == string.Empty ? "null" : MargemLucro);
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {
-                    cmd.Parameters.AddWithValue("Descricao", Descricao);
-                    cmd.Parameters.AddWithValue("Grupo", pGrupo);
-                    cmd.Parameters.AddWithValue("MargemLucro", MargemLucro);
-
                     int rowsAffected = cmd.ExecuteNonQuery();
                 }
             }
         }
-        #endregion
-
-        #region SubGrupo
         public void AlterarSubGrupo(int pId, string Descricao, int pGrupo, string MargemLucro)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
@@ -215,7 +212,7 @@ namespace EasyHortifruti
                 conn.Open();
 
                 string sql = string.Format("UPDATE {0} SET nome_subgrupo='{1}',id_grupo={2}, " +
-                    "margem_subgrupo='{3}' WHERE id_recno=@ID", TabelasScript.TabelaSubGrupos, Descricao, pGrupo, MargemLucro);
+                    "margem_subgrupo={3} WHERE id_recno=@ID", TabelasScript.TabelaSubGrupos, Descricao, pGrupo, MargemLucro == string.Empty ? "null" : MargemLucro);
 
                 using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
                 {

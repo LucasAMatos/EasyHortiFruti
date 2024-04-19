@@ -89,7 +89,7 @@ namespace EasyHortifruti
         #region Métodos
         public void CarregarGrid()
         {
-            DgViewCadSubGrupos.DataSource = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaSubGrupos);
+            DgViewCadSubGrupos.DataSource = new ConexaoBD().ConsultarSubGrupo(0);
             DgViewCadSubGrupos.DataMember = "Table";
             DgViewCadSubGrupos.Sort(DgViewCadSubGrupos.Columns["ID"], System.ComponentModel.ListSortDirection.Ascending);
         }

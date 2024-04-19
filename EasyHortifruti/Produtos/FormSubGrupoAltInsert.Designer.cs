@@ -65,7 +65,7 @@
             // 
             this.CbGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbGrupo.FormattingEnabled = true;
-            this.CbGrupo.Location = new System.Drawing.Point(36, 145);
+            this.CbGrupo.Location = new System.Drawing.Point(34, 166);
             this.CbGrupo.Name = "CbGrupo";
             this.CbGrupo.Size = new System.Drawing.Size(121, 24);
             this.CbGrupo.TabIndex = 15;
@@ -73,7 +73,7 @@
             // TbMargemSubGrupo
             // 
             this.TbMargemSubGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbMargemSubGrupo.Location = new System.Drawing.Point(34, 286);
+            this.TbMargemSubGrupo.Location = new System.Drawing.Point(34, 243);
             this.TbMargemSubGrupo.Name = "TbMargemSubGrupo";
             this.TbMargemSubGrupo.Size = new System.Drawing.Size(116, 24);
             this.TbMargemSubGrupo.TabIndex = 14;
@@ -82,7 +82,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(31, 268);
+            this.label3.Location = new System.Drawing.Point(31, 225);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(120, 15);
             this.label3.TabIndex = 13;
@@ -91,7 +91,7 @@
             // TbDescSubGrupo
             // 
             this.TbDescSubGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbDescSubGrupo.Location = new System.Drawing.Point(34, 216);
+            this.TbDescSubGrupo.Location = new System.Drawing.Point(34, 93);
             this.TbDescSubGrupo.Name = "TbDescSubGrupo";
             this.TbDescSubGrupo.Size = new System.Drawing.Size(418, 24);
             this.TbDescSubGrupo.TabIndex = 12;
@@ -100,7 +100,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(31, 198);
+            this.label2.Location = new System.Drawing.Point(31, 75);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(71, 15);
             this.label2.TabIndex = 11;
@@ -110,7 +110,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(31, 126);
+            this.label1.Location = new System.Drawing.Point(31, 148);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(46, 15);
             this.label1.TabIndex = 9;

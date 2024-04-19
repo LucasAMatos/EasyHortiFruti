@@ -92,6 +92,7 @@ namespace EasyHortifruti
         private void CarregarComboGrupo()
         {
             CbGrupo.Items.Clear();
+            grupos.Clear();
             DataSet ds = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaGrupos);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {

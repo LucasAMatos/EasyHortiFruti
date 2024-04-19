@@ -63,6 +63,8 @@
             // 
             // CbGrupo
             // 
+            this.CbGrupo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.CbGrupo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CbGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbGrupo.FormattingEnabled = true;
             this.CbGrupo.Location = new System.Drawing.Point(34, 166);

@@ -72,7 +72,7 @@ namespace EasyHortifruti
                 DialogResult dialogResult = MessageBox.Show("Deseja Excluir o registro?", "", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    new ConexaoBD().ExcluirUnidade(IdSelecionado, TabelasScript.TabelaSubGrupos);
+                    new ConexaoBD().ExcluirRegistro(IdSelecionado, TabelasScript.TabelaSubGrupos);
                     MessageBox.Show("Registro excluído com sucesso");                }
 
                 CarregarGrid();

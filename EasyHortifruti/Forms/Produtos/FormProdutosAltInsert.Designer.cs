@@ -127,10 +127,12 @@ namespace EasyHortifruti
             this.BtCadUnidade.TabIndex = 14;
             this.BtCadUnidade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtCadUnidade.UseVisualStyleBackColor = false;
-            this.BtCadUnidade.Click += new System.EventHandler(this.BtCadUnidade_Click_1);
+            this.BtCadUnidade.Click += new System.EventHandler(this.BtCadUnidade_Click);
             // 
             // cbSubGrupoProduto
             // 
+            this.cbSubGrupoProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbSubGrupoProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbSubGrupoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSubGrupoProduto.FormattingEnabled = true;
             this.cbSubGrupoProduto.Location = new System.Drawing.Point(349, 230);
@@ -140,6 +142,8 @@ namespace EasyHortifruti
             // 
             // cbGrupoProduto
             // 
+            this.cbGrupoProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbGrupoProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbGrupoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGrupoProduto.FormattingEnabled = true;
             this.cbGrupoProduto.Location = new System.Drawing.Point(169, 230);
@@ -233,6 +237,8 @@ namespace EasyHortifruti
             // 
             // cbUnidProduto
             // 
+            this.cbUnidProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
+            this.cbUnidProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbUnidProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbUnidProduto.FormattingEnabled = true;
             this.cbUnidProduto.Location = new System.Drawing.Point(30, 148);
@@ -312,6 +318,7 @@ namespace EasyHortifruti
             this.btSalvarInserirProduto.Size = new System.Drawing.Size(94, 30);
             this.btSalvarInserirProduto.TabIndex = 1;
             this.btSalvarInserirProduto.UseVisualStyleBackColor = false;
+            this.btSalvarInserirProduto.Click += new System.EventHandler(this.btSalvarInserirProduto_Click);
             // 
             // BtCancelaProduto
             // 

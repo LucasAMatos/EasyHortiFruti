@@ -43,6 +43,7 @@ namespace EasyHortifruti
         {
             FormProdutosAltInsert InserirProduto = new FormProdutosAltInsert();
             InserirProduto.ShowDialog();
+            CarregarGrid();
         }
 
         private void BtEditarProduto_Click(object sender, EventArgs e)
@@ -52,6 +53,7 @@ namespace EasyHortifruti
                 FormProdutosAltInsert FormProdutosAltInsert = new FormProdutosAltInsert();
                 FormProdutosAltInsert.Id = IdSelecionado;
                 FormProdutosAltInsert.ShowDialog();
+                CarregarGrid();
             }
             else
                 MessageBox.Show("Selecione um registro para alterar");

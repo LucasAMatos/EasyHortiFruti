@@ -96,6 +96,7 @@ namespace EasyHortifruti
 
                 if (Alterar)
                 {
+                    produto.ID = Convert.ToInt32(labelIDProduto.Text);
                     new ConexaoBD().AlterarProduto(produto);
 
                     MessageBox.Show(string.Format("Produto Alterado com Sucesso!"));
@@ -147,11 +148,11 @@ namespace EasyHortifruti
         private void CarregarGridUnidades()
         { 
             cbUnidProduto.Items.Clear();
-            grupo.Clear();
+            unidade.Clear();
             DataSet ds = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaUnidades);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                grupo.Add(dr["abrev_unid"].ToString(), Convert.ToInt16(dr["id_recno"]));
+                unidade.Add(dr["abrev_unid"].ToString(), Convert.ToInt16(dr["id_recno"]));
                 cbUnidProduto.Items.Add(dr["abrev_unid"].ToString());
             }
             cbUnidProduto.SelectedText = string.Empty;
@@ -161,11 +162,11 @@ namespace EasyHortifruti
         { 
             cbGrupoProduto.Items.Clear();
             cbGrupoProduto.Items.Add(string.Empty);
-            subGrupo.Clear();
+            grupo.Clear();
             DataSet ds = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaGrupos);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                subGrupo.Add(dr["nome_grupo"].ToString(), Convert.ToInt16(dr["id_recno"]));
+                grupo.Add(dr["nome_grupo"].ToString(), Convert.ToInt16(dr["id_recno"]));
                 cbGrupoProduto.Items.Add(dr["nome_grupo"].ToString());
             }
         }
@@ -174,11 +175,11 @@ namespace EasyHortifruti
         {
             cbSubGrupoProduto.Items.Clear();
             cbSubGrupoProduto.Items.Add(string.Empty);
-            unidade.Clear();
+            subGrupo.Clear();
             DataSet ds = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaSubGrupos);
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                unidade.Add(dr["nome_subgrupo"].ToString(), Convert.ToInt16(dr["id_recno"]));
+                subGrupo.Add(dr["nome_subgrupo"].ToString(), Convert.ToInt16(dr["id_recno"]));
                 cbSubGrupoProduto.Items.Add(dr["nome_subgrupo"].ToString());
             }
         }
@@ -213,6 +214,7 @@ namespace EasyHortifruti
                     cbGrupoProduto.Text = produto.Grupo;
                     cbSubGrupoProduto.Text = produto.SubGrupo;
 
+                    labelIDProduto.Text = Id.ToString();
                     CalcularMargemLucro();
                 }
             }

@@ -123,7 +123,7 @@ namespace EasyHortifruti
         }
         public Produto ConsultarProdutoPorId(int pId)
         {
-            string sql = string.Concat("SELECT * FROM produtos P INNER JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO INNER JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO INNER JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO WHERE ID =", pId);
+            string sql = string.Concat("SELECT * FROM produtos P INNER JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO INNER JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO INNER JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO WHERE P.ID_RECNO =", pId);
 
             DataSet ds = ExecutaEPreencheDataset(sql);
 
@@ -135,11 +135,15 @@ namespace EasyHortifruti
                     ID = Convert.ToInt32(dr["id_recno"]),
                     Descricao = dr["nome_produto"].ToString(),
                     IdGrupo = Convert.ToInt32(dr["id_grupo"]),
+                    Grupo = dr["nome_grupo"].ToString(),
                     IdSubGrupo = Convert.ToInt32(dr["id_subgrupo"]),
+                    SubGrupo = dr["nome_subgrupo"].ToString(),
                     MargemLucro = Convert.ToDouble(dr["margem_produto"]),
                     PrecoDeCompra = Convert.ToDouble(dr["pcocompra_produto"]),
                     PrecoDeVenda = Convert.ToDouble(dr["pcovenda_produto"]),
-                    IdUnidade = Convert.ToInt32(dr["id_unidade"])
+                    IdUnidade = Convert.ToInt32(dr["id_unidade"]),
+                    Unidade = dr["abrev_unid"].ToString()
+                    
                 };
             }
 
@@ -148,13 +152,33 @@ namespace EasyHortifruti
 
         public void IncluirProduto(Produto pProduto)
         {
-            string sql = string.Empty;
+            string sql = string.Concat("" +
+                    "INSERT INTO PRODUTOS (nome_produto, pcocompra_produto, pcovenda_produto, margem_produto, id_unidade, id_grupo, id_subgrupo) values(\'",
+                    pProduto.Descricao, "\',",
+                    pProduto.PrecoDeCompra.ToString("F2", System.Globalization.CultureInfo.InvariantCulture), ",",
+                    pProduto.PrecoDeVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture), ",",
+                    pProduto.MargemLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture), ",",
+                    pProduto.IdUnidade, ",",
+                    pProduto.IdGrupo, ",",
+                    pProduto.IdSubGrupo, ")"
+                    );
 
+            
             ExecutaSemRetorno(sql);
         }
         public void AlterarProduto(Produto pProduto)
         {
-            string sql = string.Empty;
+            string sql = string.Concat(
+                "UPDATE PRODUTOS SET",
+                " nome_produto=\'",pProduto.Descricao,
+                "\', pcocompra_produto=",pProduto.PrecoDeCompra.ToString("F2", System.Globalization.CultureInfo.InvariantCulture),
+                ", pcovenda_produto=",pProduto.PrecoDeVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture),
+                ", margem_produto=",pProduto.MargemLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture),
+                ", id_unidade=",pProduto.IdUnidade,
+                ", id_grupo=",pProduto.IdGrupo,
+                ", id_subgrupo=",pProduto.IdSubGrupo,
+                " WHERE ID_RECNO =", pProduto.ID
+                );
 
             ExecutaSemRetorno(sql);
         }

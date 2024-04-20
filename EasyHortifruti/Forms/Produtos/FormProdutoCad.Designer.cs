@@ -46,6 +46,7 @@
             this.lbVlrMargem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbSubGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1FormCadProd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadProd)).BeginInit();
             this.panel3FormCadProdBotoes.SuspendLayout();
@@ -75,10 +76,12 @@
             this.lbVlrVenda,
             this.lbVlrMargem,
             this.lbGrupo,
-            this.lbSubGrupo});
+            this.lbSubGrupo,
+            this.ID});
             this.dtGridViewCadProd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtGridViewCadProd.Location = new System.Drawing.Point(0, 127);
             this.dtGridViewCadProd.Name = "dtGridViewCadProd";
+            this.dtGridViewCadProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtGridViewCadProd.Size = new System.Drawing.Size(754, 434);
             this.dtGridViewCadProd.TabIndex = 2;
             // 
@@ -247,6 +250,13 @@
             this.lbSubGrupo.HeaderText = "SubGrupo";
             this.lbSubGrupo.Name = "lbSubGrupo";
             // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id_recno";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            // 
             // FormCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -284,5 +294,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lbVlrMargem;
         private System.Windows.Forms.DataGridViewTextBoxColumn lbGrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn lbSubGrupo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }

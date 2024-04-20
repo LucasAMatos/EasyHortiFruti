@@ -72,7 +72,7 @@ namespace EasyHortifruti
             this.Close(); // Fecha o formulário atual
         }
 
-        private void btSalvarInserirProduto_Click(object sender, EventArgs e)
+        private void BtGravaAlterProd_Click(object sender, EventArgs e)
         {
             try
             {
@@ -85,9 +85,9 @@ namespace EasyHortifruti
                 Produto produto = new Produto
                 {
                     Descricao = tbDescricaoProduto.Text,
-                    PrecoDeCompra = Convert.ToDouble(tbPrecoCompra.Text),
-                    PrecoDeVenda = Convert.ToDouble(tbPrecoVenda.Text),
-                    MargemLucro = Convert.ToDouble(tbMargemLucro.Text),
+                    PrecoDeCompra = Convert.ToDouble(MtbPrecoCompra.Text),
+                    PrecoDeVenda = Convert.ToDouble(MtbPrecoVenda.Text),
+                    MargemLucro = Convert.ToDouble(MtbMargemLucro.Text),
                     IdSubGrupo = idSubGrupo,
                     IdGrupo = idGrupo,
                     IdUnidade = idUnidade
@@ -130,11 +130,11 @@ namespace EasyHortifruti
                     throw new Exception("Descrição é Obrigatório");
                 if (cbUnidProduto.SelectedIndex < 0)
                     throw new Exception("Selecione uma Unidade");
-                if (string.IsNullOrEmpty(tbPrecoCompra.Text))
+                if (string.IsNullOrEmpty(MtbPrecoCompra.Text))
                     throw new Exception("Preço de Compra é Obrigatório");
-                if (string.IsNullOrEmpty(tbPrecoVenda.Text))
+                if (string.IsNullOrEmpty(MtbPrecoVenda.Text))
                     throw new Exception("Preço de Venda é Obrigatório");
-                if (string.IsNullOrEmpty(tbPrecoVenda.Text))
+                if (string.IsNullOrEmpty(MtbMargemLucro.Text))
                     throw new Exception("Margem Lucro é Obrigatório");
                 if (cbGrupoProduto.SelectedIndex < 0)
                     throw new Exception("Selecione um grupo");
@@ -187,32 +187,71 @@ namespace EasyHortifruti
         {
             tbDescricaoProduto.Text = string.Empty;
             CarregarGridUnidades();
-            tbPrecoCompra.Text = string.Empty;
-            tbPrecoVenda.Text = string.Empty;
-            tbMargemLucro.Text = string.Empty;
+            MtbPrecoCompra.Text = string.Empty;
+            MtbPrecoVenda.Text = string.Empty;
+            MtbMargemLucro.Text = string.Empty;
             CarregarGridGrupo();
             CarregarGridSubGrupo();
+            CalcularMargemLucro();
 
-            labelIDProduto.Visible = Alterar; 
+            labelIDProduto.Visible = Alterar;
         }
 
         private void PreencheCampos()
         {
-            if (Id > 0) {
+            if (Id > 0)
+            {
                 Produto produto = new ConexaoBD().ConsultarProdutoPorId(Id);
 
-                if(produto != null )
+                if (produto != null)
                 {
                     tbDescricaoProduto.Text = produto.Descricao;
-                    tbPrecoCompra.Text = produto.PrecoDeCompra.ToString();
-                    tbPrecoVenda.Text = produto.PrecoDeVenda.ToString();
-                    tbMargemLucro.Text = produto.MargemLucro.ToString();
+                    MtbPrecoCompra.Text = produto.PrecoDeCompra.ToString();
+                    MtbPrecoVenda.Text = produto.PrecoDeVenda.ToString();
+                    MtbMargemLucro.Text = produto.MargemLucro.ToString();
                     cbUnidProduto.Text = produto.Unidade;
                     cbGrupoProduto.Text = produto.Grupo;
                     cbSubGrupoProduto.Text = produto.SubGrupo;
+
+                    CalcularMargemLucro();
                 }
             }
         }
+
+        private void CalcularMargemLucro()
+        {
+            // Verifica se os TextBoxes têm valores válidos
+            if (decimal.TryParse(MtbPrecoCompra.Text, out decimal valorCompra) &&
+                decimal.TryParse(MtbMargemLucro.Text, out decimal margemLucro))
+            {
+                // Calcula o valor da margem de lucro
+                decimal valorMargemLucro = valorCompra * (1 + (margemLucro / 100));
+
+                // Exibir a margem de lucro no TextBox de resultado
+                MtbMargemLucro.Text = margemLucro.ToString();
+
+                // Exibe o valor da margem de lucro no TextBox
+                MtbPrecoVenda.Text = valorMargemLucro.ToString();
+            }
+            else
+            {
+                // Se os TextBoxes não tiverem valores válidos, limpa o TextBox da margem de lucro
+                MtbPrecoVenda.Text = string.Empty;
+            }
+        }
+
+        private void MtbPrecoVenda_TextChanged(object sender, EventArgs e)
+        {
+            CalcularMargemLucro();
+        }
+
+        private void MtbMargemLucro_TextChanged(object sender, EventArgs e)
+        {
+            CalcularMargemLucro();
+        }
+
+       
+
         #endregion
 
     }

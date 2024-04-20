@@ -124,7 +124,6 @@ namespace EasyHortifruti
                                                 numero character varying(10)  NOT NULL,
                                                 complemento character varying(30) NULL,
                                                 bairro character varying(30)  NOT NULL,
-                                                municipio character varying(30)  NOT NULL,
                                                 cidade character varying(30)  NOT NULL,
                                                 uf character(2)  NOT NULL,
                                                 pontoreferencia character varying(30) NULL,

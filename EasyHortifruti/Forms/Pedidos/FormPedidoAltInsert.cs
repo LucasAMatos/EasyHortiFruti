@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace EasyHortifruti
 {
-    public partial class FormInserirPedido : FormBase
+    public partial class FormPedidoAltInsert : FormBase
     {
         private Timer timer;
         private Color originalColor;
         private Color warningColor = Color.Red; // Cor de aviso (vermelho)
         private bool warningDisplayed = false;
 
-        public FormInserirPedido()
+        public FormPedidoAltInsert()
         {
             InitializeComponent();
 

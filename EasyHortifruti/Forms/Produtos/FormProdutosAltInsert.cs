@@ -106,7 +106,7 @@ namespace EasyHortifruti
                 {
                     new ConexaoBD().IncluirProduto(produto);
 
-                    DialogResult pNovaUnidade = MessageBox.Show(string.Format("Produto {0} criado com sucesso! Deseja cadastrar uma nova unidade?", produto.Descricao), string.Empty, MessageBoxButtons.YesNo);
+                    DialogResult pNovaUnidade = MessageBox.Show(string.Format("Produto {0} criado com sucesso! Deseja cadastrar um novo produto?", produto.Descricao), string.Empty, MessageBoxButtons.YesNo);
                     if (pNovaUnidade == DialogResult.Yes)
                     {
                         LimparCampos();
@@ -137,8 +137,8 @@ namespace EasyHortifruti
                     throw new Exception("Preço de Venda é Obrigatório");
                 if (string.IsNullOrEmpty(MtbMargemLucro.Text))
                     throw new Exception("Margem Lucro é Obrigatório");
-                if (cbGrupoProduto.SelectedIndex < 0)
-                    throw new Exception("Selecione um grupo");
+                //if (cbGrupoProduto.SelectedIndex < 0)
+                  //  throw new Exception("Selecione um grupo");
             }
             catch (Exception ex)
             {

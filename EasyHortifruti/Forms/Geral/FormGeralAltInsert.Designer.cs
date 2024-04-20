@@ -1,4 +1,6 @@
-﻿namespace EasyHortifruti
+﻿using EasyHortifruti.Componentes;
+
+namespace EasyHortifruti
 {
     partial class FormGeralAltInsert
     {
@@ -107,7 +109,7 @@
             this.TbContato = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.TbNomeFantasia = new System.Windows.Forms.TextBox();
+            this.TbNomeFantasia = new TextBoxAlterado();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2InserirCadGeral = new System.Windows.Forms.Panel();
             this.labelClassificacao = new System.Windows.Forms.Label();
@@ -872,6 +874,7 @@
             this.BtGravaAltGeral.Size = new System.Drawing.Size(94, 30);
             this.BtGravaAltGeral.TabIndex = 1;
             this.BtGravaAltGeral.UseVisualStyleBackColor = false;
+            this.BtGravaAltGeral.Click += new System.EventHandler(this.BtGravaAltGeral_Click);
             // 
             // BtCancelarGeralInserir
             // 
@@ -1069,7 +1072,7 @@
         private System.Windows.Forms.Panel panel2InserirCadGeral;
         private System.Windows.Forms.Label labeltpPesoa;
         private System.Windows.Forms.Panel panel3InserirCadGeral;
-        private System.Windows.Forms.TextBox TbNomeFantasia;
+        private TextBoxAlterado TbNomeFantasia;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker DtNascAbert;
         private System.Windows.Forms.TextBox TbContato;

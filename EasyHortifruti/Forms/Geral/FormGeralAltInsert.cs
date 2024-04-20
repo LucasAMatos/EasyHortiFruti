@@ -31,5 +31,10 @@ namespace EasyHortifruti
         {
                 this.Close();
         }
+
+        private void BtGravaAltGeral_Click(object sender, EventArgs e)
+        {
+            Criticar();
+        }
     }
 }

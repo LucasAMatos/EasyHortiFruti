@@ -1,4 +1,6 @@
-﻿using System;
+﻿using EasyHortifruti.Componentes;
+using System;
+using System.Collections.Generic;
 using System.Data;
 using System.Windows.Forms;
 
@@ -28,6 +30,8 @@ namespace EasyHortifruti
             LimpaCampos();
 
             PreencheCampos();
+
+            tbCadAbreviUni.Obrigatorio = true;
         }
 
         private void BtGravarUnidade_Click(object sender, EventArgs e)
@@ -38,10 +42,7 @@ namespace EasyHortifruti
                 string Descricao = tbCadDescricaoUni.Text; // Obtém o texto do TextBox
                 string Observacao = tbCadObsUni.Text; // Obtém o texto do TextBox
 
-                if (string.IsNullOrEmpty(tbCadAbreviUni.Text))
-                    throw new Exception("Abreviatura é Obrigatório");
-                if (string.IsNullOrEmpty(tbCadAbreviUni.Text))
-                    throw new Exception("Descrição é Obrigatório");
+                Criticar();
 
                 if (Alterar)
                 {

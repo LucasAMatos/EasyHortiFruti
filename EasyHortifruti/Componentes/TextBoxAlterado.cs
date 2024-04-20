@@ -15,6 +15,14 @@ namespace EasyHortifruti.Componentes
         // Adicionando uma propriedade personalizada
         public bool Obrigatorio { get; set; }
 
+        public string Caption { get; set; }
+
+        public bool Criticar { 
+            get 
+            {
+                return Obrigatorio && string.IsNullOrEmpty(Text);
+            } 
+        }
         public TextBoxAlterado()
         {
             InitializeComponent();

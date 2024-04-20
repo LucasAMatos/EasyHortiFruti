@@ -94,10 +94,10 @@
             this.textBox9 = new System.Windows.Forms.TextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panelBotoesInserirPedido = new System.Windows.Forms.Panel();
-            this.label15 = new System.Windows.Forms.Label();
+            this.LbAviso = new System.Windows.Forms.Label();
             this.labelIDPedido = new System.Windows.Forms.Label();
             this.btGravarPedido = new System.Windows.Forms.Button();
-            this.btCancelarPedido = new System.Windows.Forms.Button();
+            this.BtCancelarPedido = new System.Windows.Forms.Button();
             this.panelPedCliente = new System.Windows.Forms.Panel();
             this.textBox26 = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
@@ -297,7 +297,7 @@
             this.btBuscaItemPedido.Location = new System.Drawing.Point(245, 29);
             this.btBuscaItemPedido.Name = "btBuscaItemPedido";
             this.btBuscaItemPedido.Size = new System.Drawing.Size(20, 20);
-            this.btBuscaItemPedido.TabIndex = 31;
+            this.btBuscaItemPedido.TabIndex = 7;
             this.btBuscaItemPedido.UseVisualStyleBackColor = false;
             // 
             // textBox6
@@ -342,7 +342,7 @@
             this.textBox4.Location = new System.Drawing.Point(323, 26);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(88, 24);
-            this.textBox4.TabIndex = 26;
+            this.textBox4.TabIndex = 10;
             // 
             // label10
             // 
@@ -360,7 +360,7 @@
             this.textBox3.Location = new System.Drawing.Point(275, 26);
             this.textBox3.Name = "textBox3";
             this.textBox3.Size = new System.Drawing.Size(34, 24);
-            this.textBox3.TabIndex = 24;
+            this.textBox3.TabIndex = 9;
             // 
             // label9
             // 
@@ -378,7 +378,7 @@
             this.textBox2.Location = new System.Drawing.Point(8, 26);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(237, 24);
-            this.textBox2.TabIndex = 22;
+            this.textBox2.TabIndex = 8;
             // 
             // label7
             // 
@@ -775,29 +775,29 @@
             // panelBotoesInserirPedido
             // 
             this.panelBotoesInserirPedido.BackColor = System.Drawing.Color.Transparent;
-            this.panelBotoesInserirPedido.Controls.Add(this.label15);
+            this.panelBotoesInserirPedido.Controls.Add(this.LbAviso);
             this.panelBotoesInserirPedido.Controls.Add(this.labelIDPedido);
             this.panelBotoesInserirPedido.Controls.Add(this.btGravarPedido);
-            this.panelBotoesInserirPedido.Controls.Add(this.btCancelarPedido);
+            this.panelBotoesInserirPedido.Controls.Add(this.BtCancelarPedido);
             this.panelBotoesInserirPedido.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBotoesInserirPedido.Location = new System.Drawing.Point(0, 445);
             this.panelBotoesInserirPedido.Name = "panelBotoesInserirPedido";
             this.panelBotoesInserirPedido.Size = new System.Drawing.Size(802, 62);
             this.panelBotoesInserirPedido.TabIndex = 2;
             // 
-            // label15
+            // LbAviso
             // 
-            this.label15.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.LbAviso.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.ForeColor = System.Drawing.Color.Red;
-            this.label15.Location = new System.Drawing.Point(81, 21);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(344, 24);
-            this.label15.TabIndex = 13;
-            this.label15.Text = "Cliente LA NONNA Somente por Kg";
+            this.LbAviso.AutoSize = true;
+            this.LbAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbAviso.ForeColor = System.Drawing.Color.Black;
+            this.LbAviso.Location = new System.Drawing.Point(81, 21);
+            this.LbAviso.Name = "LbAviso";
+            this.LbAviso.Size = new System.Drawing.Size(344, 24);
+            this.LbAviso.TabIndex = 13;
+            this.LbAviso.Text = "Cliente LA NONNA Somente por Kg";
             // 
             // labelIDPedido
             // 
@@ -807,8 +807,8 @@
             this.labelIDPedido.AutoSize = true;
             this.labelIDPedido.BackColor = System.Drawing.Color.Transparent;
             this.labelIDPedido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.labelIDPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelIDPedido.ForeColor = System.Drawing.Color.White;
+            this.labelIDPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelIDPedido.ForeColor = System.Drawing.Color.Black;
             this.labelIDPedido.Location = new System.Drawing.Point(12, 21);
             this.labelIDPedido.Name = "labelIDPedido";
             this.labelIDPedido.Size = new System.Drawing.Size(30, 22);
@@ -828,25 +828,25 @@
             this.btGravarPedido.Name = "btGravarPedido";
             this.btGravarPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btGravarPedido.Size = new System.Drawing.Size(94, 30);
-            this.btGravarPedido.TabIndex = 1;
+            this.btGravarPedido.TabIndex = 10;
             this.btGravarPedido.UseVisualStyleBackColor = false;
             // 
-            // btCancelarPedido
+            // BtCancelarPedido
             // 
-            this.btCancelarPedido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.BtCancelarPedido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btCancelarPedido.BackColor = System.Drawing.Color.Transparent;
-            this.btCancelarPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btCancelarPedido.BackgroundImage")));
-            this.btCancelarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btCancelarPedido.FlatAppearance.BorderSize = 0;
-            this.btCancelarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCancelarPedido.Location = new System.Drawing.Point(694, 17);
-            this.btCancelarPedido.Name = "btCancelarPedido";
-            this.btCancelarPedido.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.btCancelarPedido.Size = new System.Drawing.Size(94, 30);
-            this.btCancelarPedido.TabIndex = 0;
-            this.btCancelarPedido.UseVisualStyleBackColor = false;
-            this.btCancelarPedido.Click += new System.EventHandler(this.btCancelarPedido_Click);
+            this.BtCancelarPedido.BackColor = System.Drawing.Color.Transparent;
+            this.BtCancelarPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtCancelarPedido.BackgroundImage")));
+            this.BtCancelarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtCancelarPedido.FlatAppearance.BorderSize = 0;
+            this.BtCancelarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtCancelarPedido.Location = new System.Drawing.Point(694, 17);
+            this.BtCancelarPedido.Name = "BtCancelarPedido";
+            this.BtCancelarPedido.RightToLeft = System.Windows.Forms.RightToLeft.No;
+            this.BtCancelarPedido.Size = new System.Drawing.Size(94, 30);
+            this.BtCancelarPedido.TabIndex = 11;
+            this.BtCancelarPedido.UseVisualStyleBackColor = false;
+            this.BtCancelarPedido.Click += new System.EventHandler(this.BtCancelarPedido_Click);
             // 
             // panelPedCliente
             // 
@@ -893,7 +893,7 @@
             this.dateTimePicker3.Location = new System.Drawing.Point(145, 72);
             this.dateTimePicker3.Name = "dateTimePicker3";
             this.dateTimePicker3.Size = new System.Drawing.Size(120, 23);
-            this.dateTimePicker3.TabIndex = 25;
+            this.dateTimePicker3.TabIndex = 6;
             // 
             // dateTimePicker2
             // 
@@ -901,7 +901,7 @@
             this.dateTimePicker2.Location = new System.Drawing.Point(13, 72);
             this.dateTimePicker2.Name = "dateTimePicker2";
             this.dateTimePicker2.Size = new System.Drawing.Size(118, 23);
-            this.dateTimePicker2.TabIndex = 24;
+            this.dateTimePicker2.TabIndex = 5;
             // 
             // label6
             // 
@@ -929,7 +929,7 @@
             this.dateTimePicker1.Location = new System.Drawing.Point(428, 23);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(119, 23);
-            this.dateTimePicker1.TabIndex = 21;
+            this.dateTimePicker1.TabIndex = 4;
             // 
             // label4
             // 
@@ -1017,7 +1017,7 @@
             this.comboBox1.Location = new System.Drawing.Point(333, 8);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(208, 26);
-            this.comboBox1.TabIndex = 3;
+            this.comboBox1.TabIndex = 2;
             // 
             // label2
             // 
@@ -1046,6 +1046,7 @@
             this.dataPedido.Name = "dataPedido";
             this.dataPedido.Size = new System.Drawing.Size(200, 24);
             this.dataPedido.TabIndex = 0;
+            this.dataPedido.Value = new System.DateTime(2024, 4, 20, 0, 0, 0, 0);
             // 
             // FormInserirPedido
             // 
@@ -1108,7 +1109,7 @@
         private System.Windows.Forms.Panel panelBotoesInserirPedido;
         private System.Windows.Forms.Label labelIDPedido;
         private System.Windows.Forms.Button btGravarPedido;
-        private System.Windows.Forms.Button btCancelarPedido;
+        private System.Windows.Forms.Button BtCancelarPedido;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Label label11;
@@ -1123,7 +1124,7 @@
         private System.Windows.Forms.Button btBuscaItemPedido;
         private System.Windows.Forms.TextBox textBox6;
         private System.Windows.Forms.DataGridView dtGridViewPedProdutos;
-        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.Label LbAviso;
         private System.Windows.Forms.Panel panelTotalGeral;
         private System.Windows.Forms.Panel panelPedidoProdutos;
         private System.Windows.Forms.TextBox textBox9;

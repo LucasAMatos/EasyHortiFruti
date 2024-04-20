@@ -1,4 +1,6 @@
-﻿namespace EasyHortifruti
+﻿using EasyHortifruti.Componentes;
+
+namespace EasyHortifruti
 {
     partial class FormUnidadeAltInsert
     {
@@ -32,11 +34,11 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUnidadeAltInsert));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.tbCadObsUni = new System.Windows.Forms.TextBox();
+            this.tbCadObsUni = new EasyHortifruti.Componentes.TextBoxAlterado();
             this.lbCadObsUnid = new System.Windows.Forms.Label();
-            this.tbCadDescricaoUni = new System.Windows.Forms.TextBox();
+            this.tbCadDescricaoUni = new EasyHortifruti.Componentes.TextBoxAlterado();
             this.lbcadDescriUni = new System.Windows.Forms.Label();
-            this.tbCadAbreviUni = new System.Windows.Forms.TextBox();
+            this.tbCadAbreviUni = new EasyHortifruti.Componentes.TextBoxAlterado();
             this.lbCadAbrevUni = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbIDCadUnidade = new System.Windows.Forms.Label();
@@ -77,10 +79,12 @@
             // 
             // tbCadObsUni
             // 
+            this.tbCadObsUni.Caption = null;
             this.tbCadObsUni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCadObsUni.Location = new System.Drawing.Point(31, 186);
             this.tbCadObsUni.Multiline = true;
             this.tbCadObsUni.Name = "tbCadObsUni";
+            this.tbCadObsUni.Obrigatorio = false;
             this.tbCadObsUni.Size = new System.Drawing.Size(408, 103);
             this.tbCadObsUni.TabIndex = 5;
             // 
@@ -96,9 +100,11 @@
             // 
             // tbCadDescricaoUni
             // 
+            this.tbCadDescricaoUni.Caption = null;
             this.tbCadDescricaoUni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCadDescricaoUni.Location = new System.Drawing.Point(31, 121);
             this.tbCadDescricaoUni.Name = "tbCadDescricaoUni";
+            this.tbCadDescricaoUni.Obrigatorio = false;
             this.tbCadDescricaoUni.Size = new System.Drawing.Size(408, 24);
             this.tbCadDescricaoUni.TabIndex = 3;
             // 
@@ -114,9 +120,11 @@
             // 
             // tbCadAbreviUni
             // 
+            this.tbCadAbreviUni.Caption = null;
             this.tbCadAbreviUni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCadAbreviUni.Location = new System.Drawing.Point(31, 62);
             this.tbCadAbreviUni.Name = "tbCadAbreviUni";
+            this.tbCadAbreviUni.Obrigatorio = false;
             this.tbCadAbreviUni.Size = new System.Drawing.Size(81, 24);
             this.tbCadAbreviUni.TabIndex = 1;
             // 
@@ -203,7 +211,7 @@
             // 
             // unidadesBindingSource
             // 
-            this.unidadesBindingSource.DataMember = TabelasScript.TabelaUnidades;
+            this.unidadesBindingSource.DataMember = "unidades";
             // 
             // FormUnidadeAltInsert
             // 
@@ -231,11 +239,11 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.Label lbcadDescriUni;
-        private System.Windows.Forms.TextBox tbCadAbreviUni;
+        private TextBoxAlterado tbCadAbreviUni;
         private System.Windows.Forms.Label lbCadAbrevUni;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.TextBox tbCadDescricaoUni;
-        private System.Windows.Forms.TextBox tbCadObsUni;
+        private TextBoxAlterado tbCadDescricaoUni;
+        private TextBoxAlterado tbCadObsUni;
         private System.Windows.Forms.Label lbCadObsUnid;
         private System.Windows.Forms.Button BtGravarUnidade;
         private System.Windows.Forms.Button BtCancelCadUnidade;

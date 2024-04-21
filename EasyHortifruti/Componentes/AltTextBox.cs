@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Data.SqlTypes;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -11,7 +12,7 @@ using System.Windows.Forms;
 
 namespace EasyHortifruti.Componentes
 {
-    public partial class TextBoxAlterado : TextBox
+    public partial class AltTextBox : TextBox
     {
         #region Propriedades
         public bool Obrigatorio { get; set; }
@@ -22,7 +23,8 @@ namespace EasyHortifruti.Componentes
 
         public TipoCampo Tipo { get; set; }
 
-        public bool Criticar {
+        public bool Criticar
+        {
             get
             {
                 return Obrigatorio && string.IsNullOrEmpty(Text);
@@ -31,12 +33,15 @@ namespace EasyHortifruti.Componentes
         #endregion
 
         #region Construtor
-        public TextBoxAlterado()
+        public AltTextBox()
         {
             this.KeyUp += PreencheValue;
 
             this.KeyUp += FormataCampos;
+
             InitializeComponent();
+
+
         }
         #endregion
 
@@ -47,8 +52,14 @@ namespace EasyHortifruti.Componentes
             switch (Tipo)
             {
                 case TipoCampo.TELEFONE:
+                case TipoCampo.CEP:
                     Value = Regex.Replace(Text, @"\D+", "");
                     break;
+                case TipoCampo.CNPJ:
+                case TipoCampo.CPF:
+                    Value = Regex.Replace(Text, @"\D+", "").TrimStart('0');
+                    break;
+
                 default:
                     Value += Text;
                     break;
@@ -77,19 +88,49 @@ namespace EasyHortifruti.Componentes
                     }
                     else
                         Text = string.Format("({0}) {1}-{2}", Value.Substring(0, 2), Value.Substring(2, 5), Value.Substring(7, 4));
+
+                    this.SelectionStart = this.Text.Length;
+                    if (Value.Length == 1 || Value.Length == 2)
+                        this.SelectionStart = this.Text.Length - 1;
+                    break;
+                case TipoCampo.CEP:
+                    Text = Value.Length > 5 ? string.Format("{0}-{1}", Value.Substring(0, 5), Value.Substring(5, Value.Length - 5)) : Value;
+                    this.SelectionStart = this.Text.Length;
+                    break;
+                case TipoCampo.CPF:
+                    MaxLength = Value.Length == 11 ? 14 : 15;
+                    Value = Value.PadLeft(11, '0');
+                    Text = string.Empty;
+                    if (Value.TrimStart('0').Length > 0)
+                        Text = Regex.Replace(Value, @"(\d{3})(\d{3})(\d{3})(\d{2})", @"$1.$2.$3-$4");
+                    this.SelectionStart = this.Text.Length;
+                    this.TextAlign = HorizontalAlignment.Right;
+                    break;
+                case TipoCampo.CNPJ:
+                    MaxLength = Value.Length == 15 ? 19 : 20;
+                    Value = Value.PadLeft(15, '0');
+                    Text = string.Empty;
+                    if (Value.TrimStart('0').Length > 0)
+                        Text = Regex.Replace(Value, @"(\d{3})(\d{3})(\d{3})(\d{4})(\d{2})", @"$1.$2.$3/$4-$5");
+                    this.SelectionStart = this.Text.Length;
+                    this.TextAlign = HorizontalAlignment.Right;
                     break;
                 default:
+                    this.SelectionStart = this.Text.Length;
                     break;
             }
-            this.SelectionStart = this.Text.Length;
+
         }
+
         #endregion
         #region Enum
-        public enum TipoCampo { 
+        public enum TipoCampo
+        {
             TEXTO,
             CPF,
             CNPJ,
             TELEFONE,
+            CEP
         }
         #endregion
     }

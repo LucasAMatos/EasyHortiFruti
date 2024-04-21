@@ -23,11 +23,17 @@ namespace EasyHortifruti
 
                 foreach (Control c in pControl.Controls)
                 {
-                    if (c is TextBoxAlterado tb && tb.Criticar)
+                    if (c is AltTextBox tb && tb.Criticar)
                     {
-                        if(string.IsNullOrEmpty(tb.Caption))
+                        if (string.IsNullOrEmpty(tb.Caption))
                             throw new Exception(string.Concat(tb.Name, " é Obrigatório"));
                         throw new Exception(string.Concat(tb.Caption, " é Obrigatório"));
+                    }
+                    if (c is AltComboBox cb && cb.Criticar)
+                    {
+                        if (string.IsNullOrEmpty(cb.Caption))
+                            throw new Exception(string.Concat(cb.Name, " é Obrigatório"));
+                        throw new Exception(string.Concat(cb.Caption, " é Obrigatório"));
                     }
                     // Se o controle tiver controles filhos, chama recursivamente o método
                     if (c.HasChildren)

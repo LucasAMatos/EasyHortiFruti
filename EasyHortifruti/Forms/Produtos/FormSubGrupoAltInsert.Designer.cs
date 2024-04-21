@@ -32,10 +32,10 @@ namespace EasyHortifruti
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSubGrupoAltInsert));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CbGrupo = new System.Windows.Forms.ComboBox();
-            this.TbMargemSubGrupo = new TextBoxAlterado();
+            this.CbGrupo = new AltComboBox();
+            this.TbMargemSubGrupo = new AltTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TbDescSubGrupo = new TextBoxAlterado();
+            this.TbDescSubGrupo = new AltTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -218,10 +218,10 @@ namespace EasyHortifruti
         private System.Windows.Forms.Label LbIDSubGrupo;
         private System.Windows.Forms.Button BtGravarSubGrupo;
         private System.Windows.Forms.Button BtCancelSubGrupo;
-        private System.Windows.Forms.ComboBox CbGrupo;
-        private TextBoxAlterado TbMargemSubGrupo;
+        private AltComboBox CbGrupo;
+        private AltTextBox TbMargemSubGrupo;
         private System.Windows.Forms.Label label3;
-        private TextBoxAlterado TbDescSubGrupo;
+        private AltTextBox TbDescSubGrupo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

@@ -32,11 +32,11 @@ namespace EasyHortifruti
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGruposAltInsert));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TbMargemGrupo = new TextBoxAlterado();
+            this.TbMargemGrupo = new AltTextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.TbObsGrupo = new TextBoxAlterado();
+            this.TbObsGrupo = new AltTextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.TbDescGrupo = new TextBoxAlterado();
+            this.TbDescGrupo = new AltTextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.LbIDGrupo = new System.Windows.Forms.Label();
@@ -212,11 +212,11 @@ namespace EasyHortifruti
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private TextBoxAlterado TbMargemGrupo;
+        private AltTextBox TbMargemGrupo;
         private System.Windows.Forms.Label label3;
-        private TextBoxAlterado TbObsGrupo;
+        private AltTextBox TbObsGrupo;
         private System.Windows.Forms.Label label2;
-        private TextBoxAlterado TbDescGrupo;
+        private AltTextBox TbDescGrupo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label LbIDGrupo;

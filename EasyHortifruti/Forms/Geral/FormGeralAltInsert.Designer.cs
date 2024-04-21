@@ -37,28 +37,28 @@ namespace EasyHortifruti
             this.tbBase = new System.Windows.Forms.TabPage();
             this.PanelPF = new System.Windows.Forms.Panel();
             this.label43 = new System.Windows.Forms.Label();
-            this.tbNaturalidade = new EasyHortifruti.Componentes.TextBoxAlterado();
+            this.tbNaturalidade = new EasyHortifruti.Componentes.AltTextBox();
             this.cbEstadoCivil = new System.Windows.Forms.ComboBox();
             this.label42 = new System.Windows.Forms.Label();
             this.cbSexo = new System.Windows.Forms.ComboBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.dtExpRg = new System.Windows.Forms.DateTimePicker();
-            this.tbEstadoRg = new EasyHortifruti.Componentes.TextBoxAlterado();
+            this.tbEstadoRg = new EasyHortifruti.Componentes.AltTextBox();
             this.label39 = new System.Windows.Forms.Label();
-            this.tbOrgaoExpRg = new EasyHortifruti.Componentes.TextBoxAlterado();
+            this.tbOrgaoExpRg = new EasyHortifruti.Componentes.AltTextBox();
             this.label38 = new System.Windows.Forms.Label();
-            this.tbRg = new EasyHortifruti.Componentes.TextBoxAlterado();
+            this.tbRg = new EasyHortifruti.Componentes.AltTextBox();
             this.label37 = new System.Windows.Forms.Label();
-            this.tbCpf = new System.Windows.Forms.MaskedTextBox();
+            this.tbCpf = new EasyHortifruti.Componentes.AltTextBox();
             this.PanelPJ = new System.Windows.Forms.Panel();
-            this.TbRazaoSocial = new EasyHortifruti.Componentes.TextBoxAlterado();
+            this.TbRazaoSocial = new EasyHortifruti.Componentes.AltTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.TbCNPJ = new System.Windows.Forms.MaskedTextBox();
-            this.TbInscrMunicipal = new EasyHortifruti.Componentes.TextBoxAlterado();
+            this.TbCNPJ = new EasyHortifruti.Componentes.AltTextBox();
+            this.TbInscrMunicipal = new EasyHortifruti.Componentes.AltTextBox();
             this.label7 = new System.Windows.Forms.Label();
-            this.TbInscrEstadual = new EasyHortifruti.Componentes.TextBoxAlterado();
+            this.TbInscrEstadual = new EasyHortifruti.Componentes.AltTextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panel7InserirCadGeral = new System.Windows.Forms.Panel();
             this.tabControlInserirEndereco = new System.Windows.Forms.TabControl();
@@ -74,30 +74,30 @@ namespace EasyHortifruti
             this.label26 = new System.Windows.Forms.Label();
             this.label25 = new System.Windows.Forms.Label();
             this.label24 = new System.Windows.Forms.Label();
-            this.TbEmail = new EasyHortifruti.Componentes.TextBoxAlterado();
-            this.TbPontoRef = new EasyHortifruti.Componentes.TextBoxAlterado();
+            this.TbEmail = new EasyHortifruti.Componentes.AltTextBox();
+            this.TbPontoRef = new EasyHortifruti.Componentes.AltTextBox();
             this.label23 = new System.Windows.Forms.Label();
             this.label22 = new System.Windows.Forms.Label();
-            this.TbCidade = new EasyHortifruti.Componentes.TextBoxAlterado();
-            this.TbBairro = new EasyHortifruti.Componentes.TextBoxAlterado();
+            this.TbCidade = new EasyHortifruti.Componentes.AltTextBox();
+            this.TbBairro = new EasyHortifruti.Componentes.AltTextBox();
             this.label21 = new System.Windows.Forms.Label();
             this.label20 = new System.Windows.Forms.Label();
             this.label19 = new System.Windows.Forms.Label();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
-            this.TbComplemento = new EasyHortifruti.Componentes.TextBoxAlterado();
-            this.TbNumero = new EasyHortifruti.Componentes.TextBoxAlterado();
-            this.TbRua = new EasyHortifruti.Componentes.TextBoxAlterado();
-            this.TbCepEndereco = new System.Windows.Forms.MaskedTextBox();
+            this.TbComplemento = new EasyHortifruti.Componentes.AltTextBox();
+            this.TbNumero = new EasyHortifruti.Componentes.AltTextBox();
+            this.TbRua = new EasyHortifruti.Componentes.AltTextBox();
+            this.TbCepEndereco = new EasyHortifruti.Componentes.AltTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.label14 = new System.Windows.Forms.Label();
             this.label13 = new System.Windows.Forms.Label();
             this.tabPage4 = new System.Windows.Forms.TabPage();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.TbCelular = new EasyHortifruti.Componentes.TextBoxAlterado();
+            this.TbCelular = new EasyHortifruti.Componentes.AltTextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.TbFone = new EasyHortifruti.Componentes.TextBoxAlterado();
+            this.TbFone = new EasyHortifruti.Componentes.AltTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.panel4InserirCadGeral = new System.Windows.Forms.Panel();
@@ -106,10 +106,10 @@ namespace EasyHortifruti
             this.BtCancelarGeralInserir = new System.Windows.Forms.Button();
             this.panel3InserirCadGeral = new System.Windows.Forms.Panel();
             this.DtNascAbert = new System.Windows.Forms.DateTimePicker();
-            this.TbContato = new EasyHortifruti.Componentes.TextBoxAlterado();
+            this.TbContato = new EasyHortifruti.Componentes.AltTextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.TbNomeFantasia = new EasyHortifruti.Componentes.TextBoxAlterado();
+            this.TbNomeFantasia = new EasyHortifruti.Componentes.AltTextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panel2InserirCadGeral = new System.Windows.Forms.Panel();
             this.labelClassificacao = new System.Windows.Forms.Label();
@@ -165,7 +165,6 @@ namespace EasyHortifruti
             // 
             // tbBase
             // 
-            this.tbBase.Controls.Add(this.PanelPF);
             this.tbBase.Controls.Add(this.PanelPJ);
             this.tbBase.Controls.Add(this.panel7InserirCadGeral);
             this.tbBase.Controls.Add(this.panel6);
@@ -195,7 +194,7 @@ namespace EasyHortifruti
             this.PanelPF.Controls.Add(this.tbRg);
             this.PanelPF.Controls.Add(this.label37);
             this.PanelPF.Controls.Add(this.tbCpf);
-            this.PanelPF.Location = new System.Drawing.Point(3, 16);
+            this.PanelPF.Location = new System.Drawing.Point(0, 3);
             this.PanelPF.Name = "PanelPF";
             this.PanelPF.Size = new System.Drawing.Size(560, 114);
             this.PanelPF.TabIndex = 20;
@@ -219,7 +218,7 @@ namespace EasyHortifruti
             this.tbNaturalidade.Obrigatorio = false;
             this.tbNaturalidade.Size = new System.Drawing.Size(228, 24);
             this.tbNaturalidade.TabIndex = 45;
-            this.tbNaturalidade.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.tbNaturalidade.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.tbNaturalidade.Value = null;
             // 
             // cbEstadoCivil
@@ -297,7 +296,7 @@ namespace EasyHortifruti
             this.tbEstadoRg.Obrigatorio = false;
             this.tbEstadoRg.Size = new System.Drawing.Size(48, 24);
             this.tbEstadoRg.TabIndex = 16;
-            this.tbEstadoRg.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.tbEstadoRg.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.tbEstadoRg.Value = null;
             // 
             // label39
@@ -319,7 +318,7 @@ namespace EasyHortifruti
             this.tbOrgaoExpRg.Obrigatorio = false;
             this.tbOrgaoExpRg.Size = new System.Drawing.Size(48, 24);
             this.tbOrgaoExpRg.TabIndex = 15;
-            this.tbOrgaoExpRg.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.tbOrgaoExpRg.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.tbOrgaoExpRg.Value = null;
             // 
             // label38
@@ -334,14 +333,14 @@ namespace EasyHortifruti
             // 
             // tbRg
             // 
-            this.tbRg.Caption = null;
+            this.tbRg.Caption = "RG";
             this.tbRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbRg.Location = new System.Drawing.Point(202, 30);
             this.tbRg.Name = "tbRg";
             this.tbRg.Obrigatorio = false;
             this.tbRg.Size = new System.Drawing.Size(112, 24);
             this.tbRg.TabIndex = 13;
-            this.tbRg.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.tbRg.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.tbRg.Value = null;
             // 
             // label37
@@ -356,15 +355,20 @@ namespace EasyHortifruti
             // 
             // tbCpf
             // 
+            this.tbCpf.Caption = null;
             this.tbCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCpf.Location = new System.Drawing.Point(18, 30);
-            this.tbCpf.Mask = "000.000.000-00";
+            this.tbCpf.MaxLength = 15;
             this.tbCpf.Name = "tbCpf";
+            this.tbCpf.Obrigatorio = false;
             this.tbCpf.Size = new System.Drawing.Size(169, 24);
             this.tbCpf.TabIndex = 11;
+            this.tbCpf.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.CPF;
+            this.tbCpf.Value = null;
             // 
             // PanelPJ
             // 
+            this.PanelPJ.Controls.Add(this.PanelPF);
             this.PanelPJ.Controls.Add(this.TbRazaoSocial);
             this.PanelPJ.Controls.Add(this.label5);
             this.PanelPJ.Controls.Add(this.label6);
@@ -387,7 +391,7 @@ namespace EasyHortifruti
             this.TbRazaoSocial.Obrigatorio = false;
             this.TbRazaoSocial.Size = new System.Drawing.Size(530, 24);
             this.TbRazaoSocial.TabIndex = 3;
-            this.TbRazaoSocial.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.TbRazaoSocial.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbRazaoSocial.Value = null;
             // 
             // label5
@@ -412,12 +416,15 @@ namespace EasyHortifruti
             // 
             // TbCNPJ
             // 
+            this.TbCNPJ.Caption = null;
             this.TbCNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbCNPJ.Location = new System.Drawing.Point(18, 78);
-            this.TbCNPJ.Mask = "00.000.000/0000-00";
             this.TbCNPJ.Name = "TbCNPJ";
-            this.TbCNPJ.Size = new System.Drawing.Size(169, 24);
+            this.TbCNPJ.Obrigatorio = false;
+            this.TbCNPJ.Size = new System.Drawing.Size(178, 24);
             this.TbCNPJ.TabIndex = 5;
+            this.TbCNPJ.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.CNPJ;
+            this.TbCNPJ.Value = null;
             // 
             // TbInscrMunicipal
             // 
@@ -428,7 +435,7 @@ namespace EasyHortifruti
             this.TbInscrMunicipal.Obrigatorio = false;
             this.TbInscrMunicipal.Size = new System.Drawing.Size(157, 24);
             this.TbInscrMunicipal.TabIndex = 9;
-            this.TbInscrMunicipal.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.TbInscrMunicipal.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbInscrMunicipal.Value = null;
             // 
             // label7
@@ -450,7 +457,7 @@ namespace EasyHortifruti
             this.TbInscrEstadual.Obrigatorio = false;
             this.TbInscrEstadual.Size = new System.Drawing.Size(169, 24);
             this.TbInscrEstadual.TabIndex = 8;
-            this.TbInscrEstadual.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.TbInscrEstadual.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbInscrEstadual.Value = null;
             // 
             // label9
@@ -640,7 +647,7 @@ namespace EasyHortifruti
             this.TbEmail.Obrigatorio = false;
             this.TbEmail.Size = new System.Drawing.Size(210, 24);
             this.TbEmail.TabIndex = 26;
-            this.TbEmail.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.TbEmail.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbEmail.Value = null;
             // 
             // TbPontoRef
@@ -652,7 +659,7 @@ namespace EasyHortifruti
             this.TbPontoRef.Obrigatorio = false;
             this.TbPontoRef.Size = new System.Drawing.Size(291, 24);
             this.TbPontoRef.TabIndex = 25;
-            this.TbPontoRef.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.TbPontoRef.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbPontoRef.Value = null;
             // 
             // label23
@@ -682,7 +689,7 @@ namespace EasyHortifruti
             this.TbCidade.Obrigatorio = false;
             this.TbCidade.Size = new System.Drawing.Size(224, 24);
             this.TbCidade.TabIndex = 19;
-            this.TbCidade.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.TbCidade.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbCidade.Value = null;
             // 
             // TbBairro
@@ -694,7 +701,7 @@ namespace EasyHortifruti
             this.TbBairro.Obrigatorio = false;
             this.TbBairro.Size = new System.Drawing.Size(175, 24);
             this.TbBairro.TabIndex = 18;
-            this.TbBairro.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.TbBairro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbBairro.Value = null;
             // 
             // label21
@@ -751,7 +758,7 @@ namespace EasyHortifruti
             this.TbComplemento.Obrigatorio = false;
             this.TbComplemento.Size = new System.Drawing.Size(184, 24);
             this.TbComplemento.TabIndex = 12;
-            this.TbComplemento.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.TbComplemento.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbComplemento.Value = null;
             // 
             // TbNumero
@@ -763,7 +770,7 @@ namespace EasyHortifruti
             this.TbNumero.Obrigatorio = false;
             this.TbNumero.Size = new System.Drawing.Size(61, 24);
             this.TbNumero.TabIndex = 11;
-            this.TbNumero.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.TbNumero.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbNumero.Value = null;
             // 
             // TbRua
@@ -775,17 +782,21 @@ namespace EasyHortifruti
             this.TbRua.Obrigatorio = false;
             this.TbRua.Size = new System.Drawing.Size(349, 24);
             this.TbRua.TabIndex = 10;
-            this.TbRua.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.TbRua.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbRua.Value = null;
             // 
             // TbCepEndereco
             // 
+            this.TbCepEndereco.Caption = null;
             this.TbCepEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbCepEndereco.Location = new System.Drawing.Point(14, 43);
-            this.TbCepEndereco.Mask = "00000-000";
+            this.TbCepEndereco.MaxLength = 9;
             this.TbCepEndereco.Name = "TbCepEndereco";
+            this.TbCepEndereco.Obrigatorio = false;
             this.TbCepEndereco.Size = new System.Drawing.Size(84, 24);
             this.TbCepEndereco.TabIndex = 9;
+            this.TbCepEndereco.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.CEP;
+            this.TbCepEndereco.Value = null;
             // 
             // label16
             // 
@@ -850,11 +861,12 @@ namespace EasyHortifruti
             this.TbCelular.Caption = null;
             this.TbCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbCelular.Location = new System.Drawing.Point(66, 42);
+            this.TbCelular.MaxLength = 15;
             this.TbCelular.Name = "TbCelular";
             this.TbCelular.Obrigatorio = false;
             this.TbCelular.Size = new System.Drawing.Size(113, 24);
             this.TbCelular.TabIndex = 16;
-            this.TbCelular.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TELEFONE;
+            this.TbCelular.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TELEFONE;
             this.TbCelular.Value = null;
             // 
             // label11
@@ -872,11 +884,12 @@ namespace EasyHortifruti
             this.TbFone.Caption = null;
             this.TbFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbFone.Location = new System.Drawing.Point(66, 5);
+            this.TbFone.MaxLength = 15;
             this.TbFone.Name = "TbFone";
             this.TbFone.Obrigatorio = false;
             this.TbFone.Size = new System.Drawing.Size(113, 24);
             this.TbFone.TabIndex = 15;
-            this.TbFone.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TELEFONE;
+            this.TbFone.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TELEFONE;
             this.TbFone.Value = null;
             // 
             // label12
@@ -984,7 +997,7 @@ namespace EasyHortifruti
             this.TbContato.Obrigatorio = false;
             this.TbContato.Size = new System.Drawing.Size(135, 24);
             this.TbContato.TabIndex = 4;
-            this.TbContato.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.TbContato.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbContato.Value = null;
             // 
             // label4
@@ -1016,7 +1029,7 @@ namespace EasyHortifruti
             this.TbNomeFantasia.Obrigatorio = false;
             this.TbNomeFantasia.Size = new System.Drawing.Size(402, 24);
             this.TbNomeFantasia.TabIndex = 1;
-            this.TbNomeFantasia.Tipo = EasyHortifruti.Componentes.TextBoxAlterado.TipoCampo.TEXTO;
+            this.TbNomeFantasia.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbNomeFantasia.Value = null;
             // 
             // label2
@@ -1142,17 +1155,17 @@ namespace EasyHortifruti
         private System.Windows.Forms.Panel panel2InserirCadGeral;
         private System.Windows.Forms.Label labeltpPesoa;
         private System.Windows.Forms.Panel panel3InserirCadGeral;
-        private TextBoxAlterado TbNomeFantasia;
+        private AltTextBox TbNomeFantasia;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DateTimePicker DtNascAbert;
-        private TextBoxAlterado TbContato;
+        private AltTextBox TbContato;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Panel panel5InserirCadGeral;
         private System.Windows.Forms.TabControl tabControlInserirDados;
         private System.Windows.Forms.TabPage tbBase;
         private System.Windows.Forms.Label label6;
-        private TextBoxAlterado TbRazaoSocial;
+        private AltTextBox TbRazaoSocial;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Panel panel4InserirCadGeral;
         private System.Windows.Forms.Label LbIdCadGeral;
@@ -1160,16 +1173,16 @@ namespace EasyHortifruti
         private System.Windows.Forms.Button BtCancelarGeralInserir;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.MaskedTextBox TbCNPJ;
-        private TextBoxAlterado TbInscrMunicipal;
-        private TextBoxAlterado TbInscrEstadual;
+        private AltTextBox TbCNPJ;
+        private AltTextBox TbInscrMunicipal;
+        private AltTextBox TbInscrEstadual;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Panel panel7InserirCadGeral;
         private System.Windows.Forms.Panel panel6;
-        private TextBoxAlterado TbCelular;
-        private TextBoxAlterado TbFone;
+        private AltTextBox TbCelular;
+        private AltTextBox TbFone;
         private System.Windows.Forms.TabControl tabControlInserirEndereco;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tbpEndereco;
@@ -1183,21 +1196,21 @@ namespace EasyHortifruti
         private System.Windows.Forms.Label label26;
         private System.Windows.Forms.Label label25;
         private System.Windows.Forms.Label label24;
-        private TextBoxAlterado TbEmail;
-        private TextBoxAlterado TbPontoRef;
+        private AltTextBox TbEmail;
+        private AltTextBox TbPontoRef;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label22;
-        private TextBoxAlterado TbCidade;
-        private TextBoxAlterado TbBairro;
+        private AltTextBox TbCidade;
+        private AltTextBox TbBairro;
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label18;
         private System.Windows.Forms.Label label17;
-        private TextBoxAlterado TbComplemento;
-        private TextBoxAlterado TbNumero;
-        private TextBoxAlterado TbRua;
-        private System.Windows.Forms.MaskedTextBox TbCepEndereco;
+        private AltTextBox TbComplemento;
+        private AltTextBox TbNumero;
+        private AltTextBox TbRua;
+        private AltTextBox TbCepEndereco;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
@@ -1205,15 +1218,15 @@ namespace EasyHortifruti
         private System.Windows.Forms.ComboBox CbUF;
         private System.Windows.Forms.Panel PanelPJ;
         private System.Windows.Forms.Panel PanelPF;
-        private TextBoxAlterado tbEstadoRg;
+        private AltTextBox tbEstadoRg;
         private System.Windows.Forms.Label label39;
-        private TextBoxAlterado tbOrgaoExpRg;
+        private AltTextBox tbOrgaoExpRg;
         private System.Windows.Forms.Label label38;
-        private TextBoxAlterado tbRg;
+        private AltTextBox tbRg;
         private System.Windows.Forms.Label label37;
-        private System.Windows.Forms.MaskedTextBox tbCpf;
+        private AltTextBox tbCpf;
         private System.Windows.Forms.Label label43;
-        private TextBoxAlterado tbNaturalidade;
+        private AltTextBox tbNaturalidade;
         private System.Windows.Forms.ComboBox cbEstadoCivil;
         private System.Windows.Forms.Label label42;
         private System.Windows.Forms.ComboBox cbSexo;

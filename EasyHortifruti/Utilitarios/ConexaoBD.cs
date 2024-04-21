@@ -41,6 +41,8 @@ namespace EasyHortifruti
         }
         #endregion
 
+        #region Geral
+        #endregion
         #region Unidades
         public void InserirUnidades(string Abreviatura, string Descricao, string Observacao)
         {
@@ -183,6 +185,7 @@ namespace EasyHortifruti
             ExecutaSemRetorno(sql);
         }
         #endregion
+
         #region Privado
         private DataSet ExecutaEPreencheDataset(string pSql)
         {

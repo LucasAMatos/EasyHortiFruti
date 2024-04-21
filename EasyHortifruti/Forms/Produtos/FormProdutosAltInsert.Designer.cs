@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasyHortifruti.Componentes;
+using System;
 
 namespace EasyHortifruti
 {
@@ -47,7 +48,7 @@ namespace EasyHortifruti
             this.label3 = new System.Windows.Forms.Label();
             this.cbUnidProduto = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.tbDescricaoProduto = new System.Windows.Forms.TextBox();
+            this.tbDescricaoProduto = new TextBoxAlterado();
             this.label1 = new System.Windows.Forms.Label();
             this.panelBotoesInserirProduto = new System.Windows.Forms.Panel();
             this.labelIDProduto = new System.Windows.Forms.Label();
@@ -416,7 +417,7 @@ namespace EasyHortifruti
         private System.Windows.Forms.Panel panelBotoesInserirProduto;
         private System.Windows.Forms.Button BtCancelaProduto;
         private System.Windows.Forms.Button BtGravaAlterProd;
-        private System.Windows.Forms.TextBox tbDescricaoProduto;
+        private TextBoxAlterado tbDescricaoProduto;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cbUnidProduto;

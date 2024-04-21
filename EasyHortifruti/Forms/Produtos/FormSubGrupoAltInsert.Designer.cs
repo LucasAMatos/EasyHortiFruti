@@ -1,4 +1,6 @@
-﻿namespace EasyHortifruti
+﻿using EasyHortifruti.Componentes;
+
+namespace EasyHortifruti
 {
     partial class FormSubGrupoAltInsert
     {
@@ -31,9 +33,9 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSubGrupoAltInsert));
             this.panel1 = new System.Windows.Forms.Panel();
             this.CbGrupo = new System.Windows.Forms.ComboBox();
-            this.TbMargemSubGrupo = new System.Windows.Forms.TextBox();
+            this.TbMargemSubGrupo = new TextBoxAlterado();
             this.label3 = new System.Windows.Forms.Label();
-            this.TbDescSubGrupo = new System.Windows.Forms.TextBox();
+            this.TbDescSubGrupo = new TextBoxAlterado();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -217,9 +219,9 @@
         private System.Windows.Forms.Button BtGravarSubGrupo;
         private System.Windows.Forms.Button BtCancelSubGrupo;
         private System.Windows.Forms.ComboBox CbGrupo;
-        private System.Windows.Forms.TextBox TbMargemSubGrupo;
+        private TextBoxAlterado TbMargemSubGrupo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TbDescSubGrupo;
+        private TextBoxAlterado TbDescSubGrupo;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
     }

@@ -1,4 +1,6 @@
-﻿namespace EasyHortifruti
+﻿using EasyHortifruti.Componentes;
+
+namespace EasyHortifruti
 {
     partial class FormGruposAltInsert
     {
@@ -30,11 +32,11 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGruposAltInsert));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.TbMargemGrupo = new System.Windows.Forms.TextBox();
+            this.TbMargemGrupo = new TextBoxAlterado();
             this.label3 = new System.Windows.Forms.Label();
-            this.TbObsGrupo = new System.Windows.Forms.TextBox();
+            this.TbObsGrupo = new TextBoxAlterado();
             this.label2 = new System.Windows.Forms.Label();
-            this.TbDescGrupo = new System.Windows.Forms.TextBox();
+            this.TbDescGrupo = new TextBoxAlterado();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.LbIDGrupo = new System.Windows.Forms.Label();
@@ -210,11 +212,11 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox TbMargemGrupo;
+        private TextBoxAlterado TbMargemGrupo;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox TbObsGrupo;
+        private TextBoxAlterado TbObsGrupo;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox TbDescGrupo;
+        private TextBoxAlterado TbDescGrupo;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label LbIDGrupo;

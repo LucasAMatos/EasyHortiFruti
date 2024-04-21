@@ -1,6 +1,4 @@
-﻿using EasyHortifruti.Componentes;
-
-namespace EasyHortifruti
+﻿namespace EasyHortifruti
 {
     partial class FormPedidoAltInsert
     {
@@ -44,56 +42,67 @@ namespace EasyHortifruti
             this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelSelectProduto = new System.Windows.Forms.Panel();
-            this.btAdicItemPedido = new System.Windows.Forms.Button();
-            this.textBox8 = new AltTextBox();
+            this.BtAdicItemPedido = new System.Windows.Forms.Button();
+            this.TbTotalProd = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.btBuscaItemPedido = new System.Windows.Forms.Button();
-            this.textBox6 = new AltTextBox();
+            this.TbMargemLucro = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
-            this.textBox5 = new AltTextBox();
+            this.TbVlVenda = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox4 = new AltTextBox();
+            this.TbVlCompra = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.textBox3 = new AltTextBox();
+            this.TbQtd = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.textBox2 = new AltTextBox();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
+            this.label37 = new System.Windows.Forms.Label();
+            this.TbEmail = new System.Windows.Forms.TextBox();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label34 = new System.Windows.Forms.Label();
+            this.TbCpj = new System.Windows.Forms.TextBox();
+            this.TbRg = new System.Windows.Forms.TextBox();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.TbNome = new System.Windows.Forms.TextBox();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.TbInscrMunicipal = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.TbCnpj = new System.Windows.Forms.TextBox();
+            this.TbInscrEstadual = new System.Windows.Forms.TextBox();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.TbRazaoSocial = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.CbTpDocumento = new System.Windows.Forms.ComboBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.MtbCep = new System.Windows.Forms.MaskedTextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.textBox25 = new AltTextBox();
-            this.label30 = new System.Windows.Forms.Label();
-            this.textBox24 = new AltTextBox();
+            this.textBox25 = new System.Windows.Forms.TextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.textBox23 = new AltTextBox();
+            this.textBox23 = new System.Windows.Forms.TextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox22 = new AltTextBox();
-            this.textBox21 = new AltTextBox();
+            this.textBox22 = new System.Windows.Forms.TextBox();
+            this.textBox21 = new System.Windows.Forms.TextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox20 = new AltTextBox();
-            this.textBox19 = new AltTextBox();
+            this.textBox20 = new System.Windows.Forms.TextBox();
+            this.textBox19 = new System.Windows.Forms.TextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox18 = new AltTextBox();
+            this.textBox18 = new System.Windows.Forms.TextBox();
             this.label24 = new System.Windows.Forms.Label();
-            this.textBox17 = new AltTextBox();
             this.label23 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.textBox16 = new AltTextBox();
-            this.textBox15 = new AltTextBox();
-            this.label21 = new System.Windows.Forms.Label();
-            this.textBox14 = new AltTextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.textBox13 = new AltTextBox();
-            this.comboBox2 = new AltComboBox();
-            this.label19 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panelTotalGeral = new System.Windows.Forms.Panel();
-            this.textBox12 = new AltTextBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.MtbTotPedido = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
+            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
             this.label18 = new System.Windows.Forms.Label();
-            this.textBox11 = new AltTextBox();
             this.label17 = new System.Windows.Forms.Label();
-            this.textBox9 = new AltTextBox();
             this.label16 = new System.Windows.Forms.Label();
             this.panelBotoesInserirPedido = new System.Windows.Forms.Panel();
             this.LbAviso = new System.Windows.Forms.Label();
@@ -101,24 +110,24 @@ namespace EasyHortifruti
             this.btGravarPedido = new System.Windows.Forms.Button();
             this.BtCancelarPedido = new System.Windows.Forms.Button();
             this.panelPedCliente = new System.Windows.Forms.Panel();
-            this.textBox26 = new AltTextBox();
+            this.TbPrazoPgto = new System.Windows.Forms.TextBox();
             this.label32 = new System.Windows.Forms.Label();
-            this.dateTimePicker3 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
+            this.DtConclusaoPedido = new System.Windows.Forms.DateTimePicker();
+            this.DtEntregaPedido = new System.Windows.Forms.DateTimePicker();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.DtPrevEntrega = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox10 = new System.Windows.Forms.MaskedTextBox();
+            this.TbCelular = new System.Windows.Forms.MaskedTextBox();
             this.label12 = new System.Windows.Forms.Label();
-            this.btBuscaClientePedido = new System.Windows.Forms.Button();
-            this.textBox1 = new AltTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panelDataStatus = new System.Windows.Forms.Panel();
-            this.CbStatusPedido = new AltComboBox();
+            this.CbStatusPedido = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataPedido = new System.Windows.Forms.DateTimePicker();
+            this.DtPedido = new System.Windows.Forms.DateTimePicker();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CbNomeCliente = new System.Windows.Forms.ComboBox();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelPedidoProdutos.SuspendLayout();
@@ -128,6 +137,9 @@ namespace EasyHortifruti
             this.panelSelectProduto.SuspendLayout();
             this.tabPage2.SuspendLayout();
             this.panel9.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel3.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.panelTotalGeral.SuspendLayout();
             this.panelBotoesInserirPedido.SuspendLayout();
             this.panelPedCliente.SuspendLayout();
@@ -143,7 +155,7 @@ namespace EasyHortifruti
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(802, 507);
+            this.panel1.Size = new System.Drawing.Size(802, 617);
             this.panel1.TabIndex = 0;
             // 
             // panel5
@@ -151,9 +163,9 @@ namespace EasyHortifruti
             this.panel5.Controls.Add(this.panelPedidoProdutos);
             this.panel5.Controls.Add(this.panelTotalGeral);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5.Location = new System.Drawing.Point(0, 154);
+            this.panel5.Location = new System.Drawing.Point(0, 148);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(802, 291);
+            this.panel5.Size = new System.Drawing.Size(802, 413);
             this.panel5.TabIndex = 3;
             // 
             // panelPedidoProdutos
@@ -162,7 +174,7 @@ namespace EasyHortifruti
             this.panelPedidoProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPedidoProdutos.Location = new System.Drawing.Point(0, 0);
             this.panelPedidoProdutos.Name = "panelPedidoProdutos";
-            this.panelPedidoProdutos.Size = new System.Drawing.Size(802, 253);
+            this.panelPedidoProdutos.Size = new System.Drawing.Size(802, 301);
             this.panelPedidoProdutos.TabIndex = 2;
             // 
             // tabControl1
@@ -174,7 +186,7 @@ namespace EasyHortifruti
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(802, 253);
+            this.tabControl1.Size = new System.Drawing.Size(802, 301);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -184,7 +196,7 @@ namespace EasyHortifruti
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(794, 227);
+            this.tabPage1.Size = new System.Drawing.Size(794, 275);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Produtos";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -202,14 +214,14 @@ namespace EasyHortifruti
             this.dtGridViewPedProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtGridViewPedProdutos.Location = new System.Drawing.Point(3, 61);
             this.dtGridViewPedProdutos.Name = "dtGridViewPedProdutos";
-            this.dtGridViewPedProdutos.Size = new System.Drawing.Size(788, 163);
+            this.dtGridViewPedProdutos.Size = new System.Drawing.Size(788, 211);
             this.dtGridViewPedProdutos.TabIndex = 1;
             // 
             // Column1
             // 
             this.Column1.HeaderText = "Descrição";
             this.Column1.Name = "Column1";
-            this.Column1.Width = 250;
+            this.Column1.Width = 270;
             // 
             // Column2
             // 
@@ -221,37 +233,41 @@ namespace EasyHortifruti
             // 
             this.Column3.HeaderText = "Preço";
             this.Column3.Name = "Column3";
+            this.Column3.Width = 120;
             // 
             // Column4
             // 
             this.Column4.HeaderText = "% Lucro";
             this.Column4.Name = "Column4";
+            this.Column4.Width = 70;
             // 
             // Column5
             // 
             this.Column5.HeaderText = "Total Compra";
             this.Column5.Name = "Column5";
+            this.Column5.Width = 120;
             // 
             // Column6
             // 
             this.Column6.HeaderText = "Valor Lucro";
             this.Column6.Name = "Column6";
+            this.Column6.Width = 120;
             // 
             // panelSelectProduto
             // 
-            this.panelSelectProduto.Controls.Add(this.btAdicItemPedido);
-            this.panelSelectProduto.Controls.Add(this.textBox8);
+            this.panelSelectProduto.Controls.Add(this.comboBox1);
+            this.panelSelectProduto.Controls.Add(this.BtAdicItemPedido);
+            this.panelSelectProduto.Controls.Add(this.TbTotalProd);
             this.panelSelectProduto.Controls.Add(this.label14);
             this.panelSelectProduto.Controls.Add(this.btBuscaItemPedido);
-            this.panelSelectProduto.Controls.Add(this.textBox6);
+            this.panelSelectProduto.Controls.Add(this.TbMargemLucro);
             this.panelSelectProduto.Controls.Add(this.label13);
-            this.panelSelectProduto.Controls.Add(this.textBox5);
+            this.panelSelectProduto.Controls.Add(this.TbVlVenda);
             this.panelSelectProduto.Controls.Add(this.label11);
-            this.panelSelectProduto.Controls.Add(this.textBox4);
+            this.panelSelectProduto.Controls.Add(this.TbVlCompra);
             this.panelSelectProduto.Controls.Add(this.label10);
-            this.panelSelectProduto.Controls.Add(this.textBox3);
+            this.panelSelectProduto.Controls.Add(this.TbQtd);
             this.panelSelectProduto.Controls.Add(this.label9);
-            this.panelSelectProduto.Controls.Add(this.textBox2);
             this.panelSelectProduto.Controls.Add(this.label7);
             this.panelSelectProduto.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSelectProduto.Location = new System.Drawing.Point(3, 3);
@@ -259,36 +275,36 @@ namespace EasyHortifruti
             this.panelSelectProduto.Size = new System.Drawing.Size(788, 58);
             this.panelSelectProduto.TabIndex = 0;
             // 
-            // btAdicItemPedido
+            // BtAdicItemPedido
             // 
-            this.btAdicItemPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btAdicItemPedido.BackgroundImage")));
-            this.btAdicItemPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btAdicItemPedido.FlatAppearance.BorderSize = 0;
-            this.btAdicItemPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btAdicItemPedido.Location = new System.Drawing.Point(718, 8);
-            this.btAdicItemPedido.Name = "btAdicItemPedido";
-            this.btAdicItemPedido.Size = new System.Drawing.Size(61, 42);
-            this.btAdicItemPedido.TabIndex = 34;
-            this.btAdicItemPedido.UseVisualStyleBackColor = true;
+            this.BtAdicItemPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtAdicItemPedido.BackgroundImage")));
+            this.BtAdicItemPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtAdicItemPedido.FlatAppearance.BorderSize = 0;
+            this.BtAdicItemPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtAdicItemPedido.Location = new System.Drawing.Point(712, 8);
+            this.BtAdicItemPedido.Name = "BtAdicItemPedido";
+            this.BtAdicItemPedido.Size = new System.Drawing.Size(61, 42);
+            this.BtAdicItemPedido.TabIndex = 34;
+            this.BtAdicItemPedido.UseVisualStyleBackColor = true;
             // 
-            // textBox8
+            // TbTotalProd
             // 
-            this.textBox8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox8.Location = new System.Drawing.Point(622, 26);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.ReadOnly = true;
-            this.textBox8.Size = new System.Drawing.Size(88, 24);
-            this.textBox8.TabIndex = 33;
+            this.TbTotalProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbTotalProd.Location = new System.Drawing.Point(614, 26);
+            this.TbTotalProd.Name = "TbTotalProd";
+            this.TbTotalProd.ReadOnly = true;
+            this.TbTotalProd.Size = new System.Drawing.Size(88, 24);
+            this.TbTotalProd.TabIndex = 33;
             // 
             // label14
             // 
             this.label14.AutoSize = true;
             this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(620, 10);
+            this.label14.Location = new System.Drawing.Point(612, 10);
             this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(76, 13);
+            this.label14.Size = new System.Drawing.Size(36, 13);
             this.label14.TabIndex = 32;
-            this.label14.Text = "Total Venda";
+            this.label14.Text = "Total";
             // 
             // btBuscaItemPedido
             // 
@@ -302,71 +318,72 @@ namespace EasyHortifruti
             this.btBuscaItemPedido.Size = new System.Drawing.Size(20, 20);
             this.btBuscaItemPedido.TabIndex = 7;
             this.btBuscaItemPedido.UseVisualStyleBackColor = false;
+            this.btBuscaItemPedido.Visible = false;
             // 
-            // textBox6
+            // TbMargemLucro
             // 
-            this.textBox6.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox6.Location = new System.Drawing.Point(522, 26);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.ReadOnly = true;
-            this.textBox6.Size = new System.Drawing.Size(88, 24);
-            this.textBox6.TabIndex = 30;
+            this.TbMargemLucro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbMargemLucro.Location = new System.Drawing.Point(537, 26);
+            this.TbMargemLucro.Name = "TbMargemLucro";
+            this.TbMargemLucro.ReadOnly = true;
+            this.TbMargemLucro.Size = new System.Drawing.Size(60, 24);
+            this.TbMargemLucro.TabIndex = 30;
             // 
             // label13
             // 
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(520, 10);
+            this.label13.Location = new System.Drawing.Point(535, 10);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(52, 13);
             this.label13.TabIndex = 29;
             this.label13.Text = "% Lucro";
             // 
-            // textBox5
+            // TbVlVenda
             // 
-            this.textBox5.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox5.Location = new System.Drawing.Point(423, 26);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.Size = new System.Drawing.Size(88, 24);
-            this.textBox5.TabIndex = 28;
+            this.TbVlVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbVlVenda.Location = new System.Drawing.Point(434, 26);
+            this.TbVlVenda.Name = "TbVlVenda";
+            this.TbVlVenda.ReadOnly = true;
+            this.TbVlVenda.Size = new System.Drawing.Size(88, 24);
+            this.TbVlVenda.TabIndex = 28;
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(422, 10);
+            this.label11.Location = new System.Drawing.Point(433, 10);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(76, 13);
             this.label11.TabIndex = 27;
             this.label11.Text = "Valor Venda";
             // 
-            // textBox4
+            // TbVlCompra
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(323, 26);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.ReadOnly = true;
-            this.textBox4.Size = new System.Drawing.Size(88, 24);
-            this.textBox4.TabIndex = 10;
+            this.TbVlCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbVlCompra.Location = new System.Drawing.Point(326, 26);
+            this.TbVlCompra.Name = "TbVlCompra";
+            this.TbVlCompra.ReadOnly = true;
+            this.TbVlCompra.Size = new System.Drawing.Size(88, 24);
+            this.TbVlCompra.TabIndex = 10;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(323, 10);
+            this.label10.Location = new System.Drawing.Point(326, 10);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(82, 13);
             this.label10.TabIndex = 25;
             this.label10.Text = "Valor Compra";
             // 
-            // textBox3
+            // TbQtd
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(275, 26);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(34, 24);
-            this.textBox3.TabIndex = 9;
+            this.TbQtd.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbQtd.Location = new System.Drawing.Point(275, 26);
+            this.TbQtd.Name = "TbQtd";
+            this.TbQtd.Size = new System.Drawing.Size(34, 24);
+            this.TbQtd.TabIndex = 9;
             // 
             // label9
             // 
@@ -377,14 +394,6 @@ namespace EasyHortifruti
             this.label9.Size = new System.Drawing.Size(34, 13);
             this.label9.TabIndex = 23;
             this.label9.Text = "Qtde";
-            // 
-            // textBox2
-            // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(8, 26);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(237, 24);
-            this.textBox2.TabIndex = 8;
             // 
             // label7
             // 
@@ -402,17 +411,21 @@ namespace EasyHortifruti
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(794, 227);
+            this.tabPage2.Size = new System.Drawing.Size(794, 275);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Dados Cliente";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // panel9
             // 
+            this.panel9.Controls.Add(this.label37);
+            this.panel9.Controls.Add(this.TbEmail);
+            this.panel9.Controls.Add(this.panel4);
+            this.panel9.Controls.Add(this.panel3);
+            this.panel9.Controls.Add(this.panel2);
+            this.panel9.Controls.Add(this.MtbCep);
             this.panel9.Controls.Add(this.label31);
             this.panel9.Controls.Add(this.textBox25);
-            this.panel9.Controls.Add(this.label30);
-            this.panel9.Controls.Add(this.textBox24);
             this.panel9.Controls.Add(this.label29);
             this.panel9.Controls.Add(this.textBox23);
             this.panel9.Controls.Add(this.label28);
@@ -425,28 +438,232 @@ namespace EasyHortifruti
             this.panel9.Controls.Add(this.label25);
             this.panel9.Controls.Add(this.textBox18);
             this.panel9.Controls.Add(this.label24);
-            this.panel9.Controls.Add(this.textBox17);
             this.panel9.Controls.Add(this.label23);
-            this.panel9.Controls.Add(this.label22);
-            this.panel9.Controls.Add(this.textBox16);
-            this.panel9.Controls.Add(this.textBox15);
-            this.panel9.Controls.Add(this.label21);
-            this.panel9.Controls.Add(this.textBox14);
-            this.panel9.Controls.Add(this.label20);
-            this.panel9.Controls.Add(this.textBox13);
-            this.panel9.Controls.Add(this.comboBox2);
-            this.panel9.Controls.Add(this.label19);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(3, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(788, 221);
+            this.panel9.Size = new System.Drawing.Size(788, 269);
             this.panel9.TabIndex = 0;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(5, 198);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(41, 13);
+            this.label37.TabIndex = 60;
+            this.label37.Text = "E-mail";
+            // 
+            // TbEmail
+            // 
+            this.TbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbEmail.Location = new System.Drawing.Point(7, 213);
+            this.TbEmail.Name = "TbEmail";
+            this.TbEmail.Size = new System.Drawing.Size(417, 24);
+            this.TbEmail.TabIndex = 59;
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.label34);
+            this.panel4.Controls.Add(this.TbCpj);
+            this.panel4.Controls.Add(this.TbRg);
+            this.panel4.Controls.Add(this.label36);
+            this.panel4.Controls.Add(this.label38);
+            this.panel4.Controls.Add(this.TbNome);
+            this.panel4.Location = new System.Drawing.Point(0, 38);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(788, 61);
+            this.panel4.TabIndex = 58;
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label34.Location = new System.Drawing.Point(430, 6);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(30, 13);
+            this.label34.TabIndex = 56;
+            this.label34.Text = "CPF";
+            // 
+            // TbCpj
+            // 
+            this.TbCpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbCpj.Location = new System.Drawing.Point(434, 21);
+            this.TbCpj.Name = "TbCpj";
+            this.TbCpj.Size = new System.Drawing.Size(181, 24);
+            this.TbCpj.TabIndex = 55;
+            // 
+            // TbRg
+            // 
+            this.TbRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbRg.Location = new System.Drawing.Point(634, 21);
+            this.TbRg.Name = "TbRg";
+            this.TbRg.Size = new System.Drawing.Size(140, 24);
+            this.TbRg.TabIndex = 43;
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label36.Location = new System.Drawing.Point(631, 6);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(33, 13);
+            this.label36.TabIndex = 44;
+            this.label36.Text = "R.G.";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label38.Location = new System.Drawing.Point(3, 6);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(39, 13);
+            this.label38.TabIndex = 52;
+            this.label38.Text = "Nome";
+            // 
+            // TbNome
+            // 
+            this.TbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbNome.Location = new System.Drawing.Point(6, 21);
+            this.TbNome.Name = "TbNome";
+            this.TbNome.Size = new System.Drawing.Size(414, 24);
+            this.TbNome.TabIndex = 51;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.TbInscrMunicipal);
+            this.panel3.Controls.Add(this.label15);
+            this.panel3.Controls.Add(this.label21);
+            this.panel3.Controls.Add(this.TbCnpj);
+            this.panel3.Controls.Add(this.TbInscrEstadual);
+            this.panel3.Controls.Add(this.label20);
+            this.panel3.Controls.Add(this.label22);
+            this.panel3.Controls.Add(this.TbRazaoSocial);
+            this.panel3.Location = new System.Drawing.Point(0, 39);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(788, 59);
+            this.panel3.TabIndex = 55;
+            // 
+            // TbInscrMunicipal
+            // 
+            this.TbInscrMunicipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbInscrMunicipal.Location = new System.Drawing.Point(639, 21);
+            this.TbInscrMunicipal.Name = "TbInscrMunicipal";
+            this.TbInscrMunicipal.Size = new System.Drawing.Size(135, 24);
+            this.TbInscrMunicipal.TabIndex = 46;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(344, 6);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(38, 13);
+            this.label15.TabIndex = 56;
+            this.label15.Text = "CNPJ";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.Location = new System.Drawing.Point(636, 6);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(91, 13);
+            this.label21.TabIndex = 45;
+            this.label21.Text = "Incr. Municipal";
+            // 
+            // TbCnpj
+            // 
+            this.TbCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbCnpj.Location = new System.Drawing.Point(348, 21);
+            this.TbCnpj.Name = "TbCnpj";
+            this.TbCnpj.Size = new System.Drawing.Size(142, 24);
+            this.TbCnpj.TabIndex = 55;
+            // 
+            // TbInscrEstadual
+            // 
+            this.TbInscrEstadual.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbInscrEstadual.Location = new System.Drawing.Point(507, 21);
+            this.TbInscrEstadual.Name = "TbInscrEstadual";
+            this.TbInscrEstadual.Size = new System.Drawing.Size(118, 24);
+            this.TbInscrEstadual.TabIndex = 43;
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label20.Location = new System.Drawing.Point(504, 6);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(86, 13);
+            this.label20.TabIndex = 44;
+            this.label20.Text = "Incr. Estadual";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.Location = new System.Drawing.Point(3, 6);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(82, 13);
+            this.label22.TabIndex = 52;
+            this.label22.Text = "Razão Social";
+            // 
+            // TbRazaoSocial
+            // 
+            this.TbRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbRazaoSocial.Location = new System.Drawing.Point(6, 21);
+            this.TbRazaoSocial.Name = "TbRazaoSocial";
+            this.TbRazaoSocial.Size = new System.Drawing.Size(328, 24);
+            this.TbRazaoSocial.TabIndex = 51;
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.CbTpDocumento);
+            this.panel2.Controls.Add(this.label19);
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(788, 38);
+            this.panel2.TabIndex = 54;
+            // 
+            // CbTpDocumento
+            // 
+            this.CbTpDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbTpDocumento.FormattingEnabled = true;
+            this.CbTpDocumento.Items.AddRange(new object[] {
+            "Pessoa Física",
+            "Pessoa Jurídia"});
+            this.CbTpDocumento.Location = new System.Drawing.Point(105, 6);
+            this.CbTpDocumento.Name = "CbTpDocumento";
+            this.CbTpDocumento.Size = new System.Drawing.Size(97, 26);
+            this.CbTpDocumento.TabIndex = 36;
+            this.CbTpDocumento.SelectedIndexChanged += new System.EventHandler(this.CbTpDocumento_SelectedIndexChanged);
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.Location = new System.Drawing.Point(4, 13);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(100, 13);
+            this.label19.TabIndex = 35;
+            this.label19.Text = "Tipo Documento";
+            // 
+            // MtbCep
+            // 
+            this.MtbCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MtbCep.Location = new System.Drawing.Point(6, 120);
+            this.MtbCep.Mask = "99999-999";
+            this.MtbCep.Name = "MtbCep";
+            this.MtbCep.Size = new System.Drawing.Size(93, 24);
+            this.MtbCep.TabIndex = 53;
             // 
             // label31
             // 
             this.label31.AutoSize = true;
             this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(437, 161);
+            this.label31.Location = new System.Drawing.Point(490, 153);
             this.label31.Name = "label31";
             this.label31.Size = new System.Drawing.Size(124, 13);
             this.label31.TabIndex = 52;
@@ -455,34 +672,16 @@ namespace EasyHortifruti
             // textBox25
             // 
             this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.Location = new System.Drawing.Point(439, 177);
+            this.textBox25.Location = new System.Drawing.Point(492, 169);
             this.textBox25.Name = "textBox25";
-            this.textBox25.Size = new System.Drawing.Size(219, 24);
+            this.textBox25.Size = new System.Drawing.Size(281, 24);
             this.textBox25.TabIndex = 51;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(494, 62);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(41, 13);
-            this.label30.TabIndex = 50;
-            this.label30.Text = "E-mail";
-            // 
-            // textBox24
-            // 
-            this.textBox24.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox24.Location = new System.Drawing.Point(496, 78);
-            this.textBox24.Name = "textBox24";
-            this.textBox24.Size = new System.Drawing.Size(162, 24);
-            this.textBox24.TabIndex = 49;
             // 
             // label29
             // 
             this.label29.AutoSize = true;
             this.label29.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label29.Location = new System.Drawing.Point(9, 161);
+            this.label29.Location = new System.Drawing.Point(2, 153);
             this.label29.Name = "label29";
             this.label29.Size = new System.Drawing.Size(40, 13);
             this.label29.TabIndex = 48;
@@ -491,16 +690,16 @@ namespace EasyHortifruti
             // textBox23
             // 
             this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox23.Location = new System.Drawing.Point(11, 177);
+            this.textBox23.Location = new System.Drawing.Point(6, 169);
             this.textBox23.Name = "textBox23";
-            this.textBox23.Size = new System.Drawing.Size(172, 24);
+            this.textBox23.Size = new System.Drawing.Size(177, 24);
             this.textBox23.TabIndex = 47;
             // 
             // label28
             // 
             this.label28.AutoSize = true;
             this.label28.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label28.Location = new System.Drawing.Point(524, 112);
+            this.label28.Location = new System.Drawing.Point(550, 104);
             this.label28.Name = "label28";
             this.label28.Size = new System.Drawing.Size(82, 13);
             this.label28.TabIndex = 46;
@@ -509,15 +708,15 @@ namespace EasyHortifruti
             // textBox22
             // 
             this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox22.Location = new System.Drawing.Point(526, 128);
+            this.textBox22.Location = new System.Drawing.Point(553, 120);
             this.textBox22.Name = "textBox22";
-            this.textBox22.Size = new System.Drawing.Size(132, 24);
+            this.textBox22.Size = new System.Drawing.Size(219, 24);
             this.textBox22.TabIndex = 45;
             // 
             // textBox21
             // 
             this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox21.Location = new System.Drawing.Point(471, 128);
+            this.textBox21.Location = new System.Drawing.Point(491, 120);
             this.textBox21.Name = "textBox21";
             this.textBox21.Size = new System.Drawing.Size(44, 24);
             this.textBox21.TabIndex = 44;
@@ -526,7 +725,7 @@ namespace EasyHortifruti
             // 
             this.label27.AutoSize = true;
             this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.Location = new System.Drawing.Point(468, 112);
+            this.label27.Location = new System.Drawing.Point(488, 104);
             this.label27.Name = "label27";
             this.label27.Size = new System.Drawing.Size(50, 13);
             this.label27.TabIndex = 43;
@@ -536,7 +735,7 @@ namespace EasyHortifruti
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(112, 112);
+            this.label26.Location = new System.Drawing.Point(112, 104);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(71, 13);
             this.label26.TabIndex = 42;
@@ -545,24 +744,24 @@ namespace EasyHortifruti
             // textBox20
             // 
             this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox20.Location = new System.Drawing.Point(114, 128);
+            this.textBox20.Location = new System.Drawing.Point(114, 120);
             this.textBox20.Name = "textBox20";
-            this.textBox20.Size = new System.Drawing.Size(348, 24);
+            this.textBox20.Size = new System.Drawing.Size(362, 24);
             this.textBox20.TabIndex = 41;
             // 
             // textBox19
             // 
             this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox19.Location = new System.Drawing.Point(403, 177);
+            this.textBox19.Location = new System.Drawing.Point(440, 169);
             this.textBox19.Name = "textBox19";
-            this.textBox19.Size = new System.Drawing.Size(26, 24);
+            this.textBox19.Size = new System.Drawing.Size(35, 24);
             this.textBox19.TabIndex = 40;
             // 
             // label25
             // 
             this.label25.AutoSize = true;
             this.label25.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label25.Location = new System.Drawing.Point(400, 161);
+            this.label25.Location = new System.Drawing.Point(439, 153);
             this.label25.Name = "label25";
             this.label25.Size = new System.Drawing.Size(23, 13);
             this.label25.TabIndex = 39;
@@ -571,199 +770,126 @@ namespace EasyHortifruti
             // textBox18
             // 
             this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(195, 177);
+            this.textBox18.Location = new System.Drawing.Point(206, 169);
             this.textBox18.Name = "textBox18";
-            this.textBox18.Size = new System.Drawing.Size(195, 24);
+            this.textBox18.Size = new System.Drawing.Size(213, 24);
             this.textBox18.TabIndex = 38;
             // 
             // label24
             // 
             this.label24.AutoSize = true;
             this.label24.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label24.Location = new System.Drawing.Point(192, 161);
+            this.label24.Location = new System.Drawing.Point(203, 153);
             this.label24.Name = "label24";
             this.label24.Size = new System.Drawing.Size(46, 13);
             this.label24.TabIndex = 37;
             this.label24.Text = "Cidade";
             // 
-            // textBox17
-            // 
-            this.textBox17.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox17.Location = new System.Drawing.Point(11, 128);
-            this.textBox17.Name = "textBox17";
-            this.textBox17.Size = new System.Drawing.Size(94, 24);
-            this.textBox17.TabIndex = 36;
-            // 
             // label23
             // 
             this.label23.AutoSize = true;
             this.label23.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label23.Location = new System.Drawing.Point(9, 112);
+            this.label23.Location = new System.Drawing.Point(2, 104);
             this.label23.Name = "label23";
             this.label23.Size = new System.Drawing.Size(31, 13);
             this.label23.TabIndex = 35;
             this.label23.Text = "CEP";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(6, 62);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(82, 13);
-            this.label22.TabIndex = 34;
-            this.label22.Text = "Razão Social";
-            // 
-            // textBox16
-            // 
-            this.textBox16.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox16.Location = new System.Drawing.Point(9, 78);
-            this.textBox16.Name = "textBox16";
-            this.textBox16.Size = new System.Drawing.Size(475, 24);
-            this.textBox16.TabIndex = 33;
-            // 
-            // textBox15
-            // 
-            this.textBox15.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox15.Location = new System.Drawing.Point(494, 30);
-            this.textBox15.Name = "textBox15";
-            this.textBox15.Size = new System.Drawing.Size(164, 24);
-            this.textBox15.TabIndex = 32;
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(493, 13);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(91, 13);
-            this.label21.TabIndex = 31;
-            this.label21.Text = "Incr. Municipal";
-            // 
-            // textBox14
-            // 
-            this.textBox14.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox14.Location = new System.Drawing.Point(301, 30);
-            this.textBox14.Name = "textBox14";
-            this.textBox14.Size = new System.Drawing.Size(183, 24);
-            this.textBox14.TabIndex = 26;
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(298, 13);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(86, 13);
-            this.label20.TabIndex = 30;
-            this.label20.Text = "Incr. Estadual";
-            // 
-            // textBox13
-            // 
-            this.textBox13.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox13.Location = new System.Drawing.Point(118, 30);
-            this.textBox13.Name = "textBox13";
-            this.textBox13.Size = new System.Drawing.Size(171, 24);
-            this.textBox13.TabIndex = 26;
-            // 
-            // comboBox2
-            // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(9, 30);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(97, 24);
-            this.comboBox2.TabIndex = 29;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.Location = new System.Drawing.Point(6, 13);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(100, 13);
-            this.label19.TabIndex = 28;
-            this.label19.Text = "Tipo Documento";
             // 
             // tabPage3
             // 
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(794, 227);
+            this.tabPage3.Size = new System.Drawing.Size(794, 275);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Financeiro";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
             // panelTotalGeral
             // 
-            this.panelTotalGeral.Controls.Add(this.textBox12);
+            this.panelTotalGeral.Controls.Add(this.textBox1);
+            this.panelTotalGeral.Controls.Add(this.label8);
+            this.panelTotalGeral.Controls.Add(this.MtbTotPedido);
+            this.panelTotalGeral.Controls.Add(this.maskedTextBox2);
+            this.panelTotalGeral.Controls.Add(this.maskedTextBox1);
             this.panelTotalGeral.Controls.Add(this.label18);
-            this.panelTotalGeral.Controls.Add(this.textBox11);
             this.panelTotalGeral.Controls.Add(this.label17);
-            this.panelTotalGeral.Controls.Add(this.textBox9);
             this.panelTotalGeral.Controls.Add(this.label16);
             this.panelTotalGeral.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelTotalGeral.Location = new System.Drawing.Point(0, 253);
+            this.panelTotalGeral.Location = new System.Drawing.Point(0, 301);
             this.panelTotalGeral.Name = "panelTotalGeral";
-            this.panelTotalGeral.Size = new System.Drawing.Size(802, 38);
+            this.panelTotalGeral.Size = new System.Drawing.Size(802, 112);
             this.panelTotalGeral.TabIndex = 1;
             // 
-            // textBox12
+            // textBox1
             // 
-            this.textBox12.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox12.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox12.Location = new System.Drawing.Point(658, 8);
-            this.textBox12.Name = "textBox12";
-            this.textBox12.Size = new System.Drawing.Size(131, 24);
-            this.textBox12.TabIndex = 37;
+            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox1.Location = new System.Drawing.Point(13, 24);
+            this.textBox1.Multiline = true;
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(503, 72);
+            this.textBox1.TabIndex = 28;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(9, 6);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(89, 15);
+            this.label8.TabIndex = 40;
+            this.label8.Text = "Observações";
+            // 
+            // MtbTotPedido
+            // 
+            this.MtbTotPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.MtbTotPedido.Location = new System.Drawing.Point(666, 6);
+            this.MtbTotPedido.Name = "MtbTotPedido";
+            this.MtbTotPedido.ReadOnly = true;
+            this.MtbTotPedido.Size = new System.Drawing.Size(115, 27);
+            this.MtbTotPedido.TabIndex = 39;
+            // 
+            // maskedTextBox2
+            // 
+            this.maskedTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox2.Location = new System.Drawing.Point(666, 38);
+            this.maskedTextBox2.Name = "maskedTextBox2";
+            this.maskedTextBox2.Size = new System.Drawing.Size(115, 27);
+            this.maskedTextBox2.TabIndex = 38;
+            // 
+            // maskedTextBox1
+            // 
+            this.maskedTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.maskedTextBox1.Location = new System.Drawing.Point(666, 69);
+            this.maskedTextBox1.Name = "maskedTextBox1";
+            this.maskedTextBox1.ReadOnly = true;
+            this.maskedTextBox1.Size = new System.Drawing.Size(115, 27);
+            this.maskedTextBox1.TabIndex = 37;
             // 
             // label18
             // 
             this.label18.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
-            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(585, 13);
+            this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label18.Location = new System.Drawing.Point(574, 74);
             this.label18.Name = "label18";
-            this.label18.Size = new System.Drawing.Size(70, 13);
+            this.label18.Size = new System.Drawing.Size(90, 17);
             this.label18.TabIndex = 36;
             this.label18.Text = "Total Geral";
             this.label18.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
-            // 
-            // textBox11
-            // 
-            this.textBox11.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox11.Location = new System.Drawing.Point(437, 8);
-            this.textBox11.Name = "textBox11";
-            this.textBox11.Size = new System.Drawing.Size(132, 24);
-            this.textBox11.TabIndex = 35;
             // 
             // label17
             // 
             this.label17.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
-            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(359, 13);
+            this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label17.Location = new System.Drawing.Point(588, 44);
             this.label17.Name = "label17";
-            this.label17.Size = new System.Drawing.Size(76, 13);
+            this.label17.Size = new System.Drawing.Size(76, 17);
             this.label17.TabIndex = 34;
-            this.label17.Text = "Total Venda";
-            // 
-            // textBox9
-            // 
-            this.textBox9.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.textBox9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox9.Location = new System.Drawing.Point(95, 8);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(243, 24);
-            this.textBox9.TabIndex = 28;
+            this.label17.Text = "Desconto";
             // 
             // label16
             // 
@@ -771,12 +897,12 @@ namespace EasyHortifruti
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(12, 13);
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(564, 11);
             this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(82, 13);
+            this.label16.Size = new System.Drawing.Size(100, 17);
             this.label16.TabIndex = 27;
-            this.label16.Text = "Total Compra";
+            this.label16.Text = "Total Pedido";
             // 
             // panelBotoesInserirPedido
             // 
@@ -786,9 +912,9 @@ namespace EasyHortifruti
             this.panelBotoesInserirPedido.Controls.Add(this.btGravarPedido);
             this.panelBotoesInserirPedido.Controls.Add(this.BtCancelarPedido);
             this.panelBotoesInserirPedido.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBotoesInserirPedido.Location = new System.Drawing.Point(0, 445);
+            this.panelBotoesInserirPedido.Location = new System.Drawing.Point(0, 561);
             this.panelBotoesInserirPedido.Name = "panelBotoesInserirPedido";
-            this.panelBotoesInserirPedido.Size = new System.Drawing.Size(802, 62);
+            this.panelBotoesInserirPedido.Size = new System.Drawing.Size(802, 56);
             this.panelBotoesInserirPedido.TabIndex = 2;
             // 
             // LbAviso
@@ -797,11 +923,11 @@ namespace EasyHortifruti
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.LbAviso.AutoSize = true;
-            this.LbAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 14F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbAviso.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.LbAviso.ForeColor = System.Drawing.Color.Black;
-            this.LbAviso.Location = new System.Drawing.Point(81, 21);
+            this.LbAviso.Location = new System.Drawing.Point(100, 14);
             this.LbAviso.Name = "LbAviso";
-            this.LbAviso.Size = new System.Drawing.Size(344, 24);
+            this.LbAviso.Size = new System.Drawing.Size(429, 29);
             this.LbAviso.TabIndex = 13;
             this.LbAviso.Text = "Cliente LA NONNA Somente por Kg";
             // 
@@ -815,7 +941,7 @@ namespace EasyHortifruti
             this.labelIDPedido.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.labelIDPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelIDPedido.ForeColor = System.Drawing.Color.Black;
-            this.labelIDPedido.Location = new System.Drawing.Point(12, 21);
+            this.labelIDPedido.Location = new System.Drawing.Point(12, 15);
             this.labelIDPedido.Name = "labelIDPedido";
             this.labelIDPedido.Size = new System.Drawing.Size(30, 22);
             this.labelIDPedido.TabIndex = 12;
@@ -830,10 +956,10 @@ namespace EasyHortifruti
             this.btGravarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btGravarPedido.FlatAppearance.BorderSize = 0;
             this.btGravarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btGravarPedido.Location = new System.Drawing.Point(594, 17);
+            this.btGravarPedido.Location = new System.Drawing.Point(578, 9);
             this.btGravarPedido.Name = "btGravarPedido";
             this.btGravarPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btGravarPedido.Size = new System.Drawing.Size(94, 30);
+            this.btGravarPedido.Size = new System.Drawing.Size(94, 35);
             this.btGravarPedido.TabIndex = 10;
             this.btGravarPedido.UseVisualStyleBackColor = false;
             // 
@@ -846,42 +972,41 @@ namespace EasyHortifruti
             this.BtCancelarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtCancelarPedido.FlatAppearance.BorderSize = 0;
             this.BtCancelarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtCancelarPedido.Location = new System.Drawing.Point(694, 17);
+            this.BtCancelarPedido.Location = new System.Drawing.Point(687, 9);
             this.BtCancelarPedido.Name = "BtCancelarPedido";
             this.BtCancelarPedido.RightToLeft = System.Windows.Forms.RightToLeft.No;
-            this.BtCancelarPedido.Size = new System.Drawing.Size(94, 30);
+            this.BtCancelarPedido.Size = new System.Drawing.Size(94, 34);
             this.BtCancelarPedido.TabIndex = 11;
             this.BtCancelarPedido.UseVisualStyleBackColor = false;
             this.BtCancelarPedido.Click += new System.EventHandler(this.BtCancelarPedido_Click);
             // 
             // panelPedCliente
             // 
-            this.panelPedCliente.Controls.Add(this.textBox26);
+            this.panelPedCliente.Controls.Add(this.CbNomeCliente);
+            this.panelPedCliente.Controls.Add(this.TbPrazoPgto);
             this.panelPedCliente.Controls.Add(this.label32);
-            this.panelPedCliente.Controls.Add(this.dateTimePicker3);
-            this.panelPedCliente.Controls.Add(this.dateTimePicker2);
+            this.panelPedCliente.Controls.Add(this.DtConclusaoPedido);
+            this.panelPedCliente.Controls.Add(this.DtEntregaPedido);
             this.panelPedCliente.Controls.Add(this.label6);
             this.panelPedCliente.Controls.Add(this.label5);
-            this.panelPedCliente.Controls.Add(this.dateTimePicker1);
+            this.panelPedCliente.Controls.Add(this.DtPrevEntrega);
             this.panelPedCliente.Controls.Add(this.label4);
-            this.panelPedCliente.Controls.Add(this.textBox10);
+            this.panelPedCliente.Controls.Add(this.TbCelular);
             this.panelPedCliente.Controls.Add(this.label12);
-            this.panelPedCliente.Controls.Add(this.btBuscaClientePedido);
-            this.panelPedCliente.Controls.Add(this.textBox1);
             this.panelPedCliente.Controls.Add(this.label3);
             this.panelPedCliente.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPedCliente.Location = new System.Drawing.Point(0, 44);
             this.panelPedCliente.Name = "panelPedCliente";
-            this.panelPedCliente.Size = new System.Drawing.Size(802, 110);
+            this.panelPedCliente.Size = new System.Drawing.Size(802, 104);
             this.panelPedCliente.TabIndex = 1;
             // 
-            // textBox26
+            // TbPrazoPgto
             // 
-            this.textBox26.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox26.Location = new System.Drawing.Point(703, 24);
-            this.textBox26.Name = "textBox26";
-            this.textBox26.Size = new System.Drawing.Size(78, 24);
-            this.textBox26.TabIndex = 27;
+            this.TbPrazoPgto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbPrazoPgto.Location = new System.Drawing.Point(703, 24);
+            this.TbPrazoPgto.Name = "TbPrazoPgto";
+            this.TbPrazoPgto.Size = new System.Drawing.Size(78, 24);
+            this.TbPrazoPgto.TabIndex = 27;
             // 
             // label32
             // 
@@ -893,29 +1018,29 @@ namespace EasyHortifruti
             this.label32.TabIndex = 26;
             this.label32.Text = "Prazo Pagto";
             // 
-            // dateTimePicker3
+            // DtConclusaoPedido
             // 
-            this.dateTimePicker3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker3.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker3.Location = new System.Drawing.Point(145, 72);
-            this.dateTimePicker3.Name = "dateTimePicker3";
-            this.dateTimePicker3.Size = new System.Drawing.Size(120, 23);
-            this.dateTimePicker3.TabIndex = 6;
+            this.DtConclusaoPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtConclusaoPedido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtConclusaoPedido.Location = new System.Drawing.Point(145, 67);
+            this.DtConclusaoPedido.Name = "DtConclusaoPedido";
+            this.DtConclusaoPedido.Size = new System.Drawing.Size(120, 23);
+            this.DtConclusaoPedido.TabIndex = 6;
             // 
-            // dateTimePicker2
+            // DtEntregaPedido
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker2.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker2.Location = new System.Drawing.Point(13, 72);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(118, 23);
-            this.dateTimePicker2.TabIndex = 5;
+            this.DtEntregaPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtEntregaPedido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtEntregaPedido.Location = new System.Drawing.Point(13, 67);
+            this.DtEntregaPedido.Name = "DtEntregaPedido";
+            this.DtEntregaPedido.Size = new System.Drawing.Size(118, 23);
+            this.DtEntregaPedido.TabIndex = 5;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(142, 55);
+            this.label6.Location = new System.Drawing.Point(142, 50);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(95, 15);
             this.label6.TabIndex = 23;
@@ -925,20 +1050,20 @@ namespace EasyHortifruti
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(10, 57);
+            this.label5.Location = new System.Drawing.Point(10, 49);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(89, 15);
             this.label5.TabIndex = 22;
             this.label5.Text = "Entregue em";
             // 
-            // dateTimePicker1
+            // DtPrevEntrega
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(544, 23);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(119, 23);
-            this.dateTimePicker1.TabIndex = 4;
+            this.DtPrevEntrega.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtPrevEntrega.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtPrevEntrega.Location = new System.Drawing.Point(544, 23);
+            this.DtPrevEntrega.Name = "DtPrevEntrega";
+            this.DtPrevEntrega.Size = new System.Drawing.Size(119, 23);
+            this.DtPrevEntrega.TabIndex = 4;
             // 
             // label4
             // 
@@ -950,14 +1075,14 @@ namespace EasyHortifruti
             this.label4.TabIndex = 20;
             this.label4.Text = "Previsão de Entrega";
             // 
-            // textBox10
+            // TbCelular
             // 
-            this.textBox10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox10.Location = new System.Drawing.Point(409, 23);
-            this.textBox10.Mask = "(00)00000-0000";
-            this.textBox10.Name = "textBox10";
-            this.textBox10.Size = new System.Drawing.Size(104, 24);
-            this.textBox10.TabIndex = 19;
+            this.TbCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbCelular.Location = new System.Drawing.Point(409, 23);
+            this.TbCelular.Mask = "(00)00000-0000";
+            this.TbCelular.Name = "TbCelular";
+            this.TbCelular.Size = new System.Drawing.Size(104, 24);
+            this.TbCelular.TabIndex = 19;
             // 
             // label12
             // 
@@ -968,27 +1093,6 @@ namespace EasyHortifruti
             this.label12.Size = new System.Drawing.Size(53, 15);
             this.label12.TabIndex = 17;
             this.label12.Text = "Celular";
-            // 
-            // btBuscaClientePedido
-            // 
-            this.btBuscaClientePedido.BackColor = System.Drawing.Color.Transparent;
-            this.btBuscaClientePedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btBuscaClientePedido.BackgroundImage")));
-            this.btBuscaClientePedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btBuscaClientePedido.FlatAppearance.BorderSize = 0;
-            this.btBuscaClientePedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btBuscaClientePedido.Location = new System.Drawing.Point(353, 25);
-            this.btBuscaClientePedido.Name = "btBuscaClientePedido";
-            this.btBuscaClientePedido.Size = new System.Drawing.Size(20, 20);
-            this.btBuscaClientePedido.TabIndex = 4;
-            this.btBuscaClientePedido.UseVisualStyleBackColor = false;
-            // 
-            // textBox1
-            // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(12, 23);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(340, 24);
-            this.textBox1.TabIndex = 3;
             // 
             // label3
             // 
@@ -1005,7 +1109,7 @@ namespace EasyHortifruti
             this.panelDataStatus.Controls.Add(this.CbStatusPedido);
             this.panelDataStatus.Controls.Add(this.label2);
             this.panelDataStatus.Controls.Add(this.label1);
-            this.panelDataStatus.Controls.Add(this.dataPedido);
+            this.panelDataStatus.Controls.Add(this.DtPedido);
             this.panelDataStatus.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelDataStatus.Location = new System.Drawing.Point(0, 0);
             this.panelDataStatus.Name = "panelDataStatus";
@@ -1048,21 +1152,39 @@ namespace EasyHortifruti
             this.label1.TabIndex = 1;
             this.label1.Text = "Data";
             // 
-            // dataPedido
+            // DtPedido
             // 
-            this.dataPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dataPedido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dataPedido.Location = new System.Drawing.Point(55, 10);
-            this.dataPedido.Name = "dataPedido";
-            this.dataPedido.Size = new System.Drawing.Size(90, 24);
-            this.dataPedido.TabIndex = 0;
-            this.dataPedido.Value = new System.DateTime(2024, 4, 20, 0, 0, 0, 0);
+            this.DtPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtPedido.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtPedido.Location = new System.Drawing.Point(55, 10);
+            this.DtPedido.Name = "DtPedido";
+            this.DtPedido.Size = new System.Drawing.Size(90, 24);
+            this.DtPedido.TabIndex = 0;
+            this.DtPedido.Value = new System.DateTime(2024, 4, 20, 0, 0, 0, 0);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Location = new System.Drawing.Point(8, 25);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(233, 24);
+            this.comboBox1.TabIndex = 35;
+            // 
+            // CbNomeCliente
+            // 
+            this.CbNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbNomeCliente.FormattingEnabled = true;
+            this.CbNomeCliente.Location = new System.Drawing.Point(13, 22);
+            this.CbNomeCliente.Name = "CbNomeCliente";
+            this.CbNomeCliente.Size = new System.Drawing.Size(372, 24);
+            this.CbNomeCliente.TabIndex = 28;
             // 
             // FormPedidoAltInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(802, 507);
+            this.ClientSize = new System.Drawing.Size(802, 617);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPedidoAltInsert";
@@ -1079,6 +1201,12 @@ namespace EasyHortifruti
             this.tabPage2.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
             this.panel9.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.panelTotalGeral.ResumeLayout(false);
             this.panelTotalGeral.PerformLayout();
             this.panelBotoesInserirPedido.ResumeLayout(false);
@@ -1097,19 +1225,17 @@ namespace EasyHortifruti
         private System.Windows.Forms.Panel panelDataStatus;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dataPedido;
+        private System.Windows.Forms.DateTimePicker DtPedido;
         private System.Windows.Forms.Panel panelPedCliente;
-        private System.Windows.Forms.Button btBuscaClientePedido;
-        private AltTextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private AltComboBox CbStatusPedido;
-        private System.Windows.Forms.MaskedTextBox textBox10;
+        private System.Windows.Forms.ComboBox CbStatusPedido;
+        private System.Windows.Forms.MaskedTextBox TbCelular;
         private System.Windows.Forms.Label label12;
-        private System.Windows.Forms.DateTimePicker dateTimePicker3;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
+        private System.Windows.Forms.DateTimePicker DtConclusaoPedido;
+        private System.Windows.Forms.DateTimePicker DtEntregaPedido;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker DtPrevEntrega;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.TabControl tabControl1;
@@ -1122,64 +1248,77 @@ namespace EasyHortifruti
         private System.Windows.Forms.Button btGravarPedido;
         private System.Windows.Forms.Button BtCancelarPedido;
         private System.Windows.Forms.Label label13;
-        private AltTextBox textBox5;
+        private System.Windows.Forms.TextBox TbVlVenda;
         private System.Windows.Forms.Label label11;
-        private AltTextBox textBox4;
+        private System.Windows.Forms.TextBox TbVlCompra;
         private System.Windows.Forms.Label label10;
-        private AltTextBox textBox3;
+        private System.Windows.Forms.TextBox TbQtd;
         private System.Windows.Forms.Label label9;
-        private AltTextBox textBox2;
-        private System.Windows.Forms.Button btAdicItemPedido;
-        private AltTextBox textBox8;
+        private System.Windows.Forms.Button BtAdicItemPedido;
+        private System.Windows.Forms.TextBox TbTotalProd;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Button btBuscaItemPedido;
-        private AltTextBox textBox6;
+        private System.Windows.Forms.TextBox TbMargemLucro;
         private System.Windows.Forms.DataGridView dtGridViewPedProdutos;
         private System.Windows.Forms.Label LbAviso;
         private System.Windows.Forms.Panel panelTotalGeral;
         private System.Windows.Forms.Panel panelPedidoProdutos;
-        private AltTextBox textBox9;
         private System.Windows.Forms.Label label16;
-        private AltTextBox textBox11;
         private System.Windows.Forms.Label label17;
-        private AltTextBox textBox12;
         private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.Panel panel9;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.TextBox textBox25;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.TextBox textBox23;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.TextBox textBox22;
+        private System.Windows.Forms.TextBox textBox21;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.TextBox textBox20;
+        private System.Windows.Forms.TextBox textBox19;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.TextBox textBox18;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.TextBox TbPrazoPgto;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.MaskedTextBox MtbTotPedido;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
+        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.Panel panel9;
-        private AltTextBox textBox13;
-        private AltComboBox comboBox2;
+        private System.Windows.Forms.MaskedTextBox MtbCep;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.ComboBox CbTpDocumento;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Label label22;
-        private AltTextBox textBox16;
-        private AltTextBox textBox15;
+        private System.Windows.Forms.TextBox TbRazaoSocial;
+        private System.Windows.Forms.TextBox TbInscrMunicipal;
+        private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label21;
-        private AltTextBox textBox14;
+        private System.Windows.Forms.TextBox TbCnpj;
+        private System.Windows.Forms.TextBox TbInscrEstadual;
         private System.Windows.Forms.Label label20;
-        private AltTextBox textBox17;
-        private System.Windows.Forms.Label label23;
-        private System.Windows.Forms.Label label31;
-        private AltTextBox textBox25;
-        private System.Windows.Forms.Label label30;
-        private AltTextBox textBox24;
-        private System.Windows.Forms.Label label29;
-        private AltTextBox textBox23;
-        private System.Windows.Forms.Label label28;
-        private AltTextBox textBox22;
-        private AltTextBox textBox21;
-        private System.Windows.Forms.Label label27;
-        private System.Windows.Forms.Label label26;
-        private AltTextBox textBox20;
-        private AltTextBox textBox19;
-        private System.Windows.Forms.Label label25;
-        private AltTextBox textBox18;
-        private System.Windows.Forms.Label label24;
-        private AltTextBox textBox26;
-        private System.Windows.Forms.Label label32;
-        private System.Windows.Forms.TabPage tabPage3;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.TextBox TbCpj;
+        private System.Windows.Forms.TextBox TbRg;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.TextBox TbNome;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.TextBox TbEmail;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CbNomeCliente;
     }
 }

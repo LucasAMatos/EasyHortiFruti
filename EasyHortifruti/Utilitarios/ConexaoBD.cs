@@ -1,6 +1,7 @@
 ﻿using EasyHortifruti.DML;
 using Npgsql;
 using System;
+using System.Collections.Generic;
 using System.Data;
 
 namespace EasyHortifruti
@@ -19,23 +20,30 @@ namespace EasyHortifruti
 
         #region Métodos
 
-        #region MétodosGerais
-
-
-        #endregion
+        #region Tabelas
 
         #region Geral
         public DataSet ConsultarGerais() => ConsultarTabela(TabelasScript.TabelaGeral);
 
         public DataSet ConsultarGeralPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaGeral);
 
-        public void InserirGeral()
+        public void InserirGeral(Geral pGeral)
         {
-            //TO DO: IMPLEMENTAR INSERIR GERAL
+            //TO DO: IMPLEMENTAR
+            Dictionary<string, string> pCampos = new Dictionary<string, string>
+            {
+            };
+
+            ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaGeral, pCampos));
         }
-        public void AlterarGeral()
+        public void AlterarGeral(Geral pGeral)
         {
-            //TO DO: IMPLEMENTAR ALTERAR GERAL
+            //TO DO: IMPLEMENTAR
+            Dictionary<string, string> pCampos = new Dictionary<string, string>
+            {
+            };
+
+            ExecutarSemRetorno(TabelasScript.ScriptUpdate(TabelasScript.TabelaGeral, pGeral.ID, pCampos));
         }
 
         public void ExcluirGeral(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaGeral);
@@ -50,30 +58,26 @@ namespace EasyHortifruti
 
         public void InserirUnidade(string Abreviatura, string Descricao, string Observacao)
         {
-            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
+            Dictionary<string, string> pCampos = new Dictionary<string, string>
             {
-                conn.Open();
+                { "abrev_unid", Abreviatura },
+                { "desc_unid", Descricao },
+                { "obs_unid", Observacao }
+            };
 
-                string sql = string.Concat("INSERT INTO ", TabelasScript.TabelaUnidades, "(abrev_unid, desc_unid, obs_unid) ",
-                    "VALUES (@Abreviatura, @Descricao, @Observacao)");
-
-
-                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("abreviatura", Abreviatura);
-                    cmd.Parameters.AddWithValue("Descricao", Descricao);
-                    cmd.Parameters.AddWithValue("observacao", Observacao);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                }
-            }
+            ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaUnidades, pCampos));
         }
 
         public void AlterarUnidade(int pId, string Abreviatura, string Descricao, string Observacao)
         {
-            string sql = string.Format("UPDATE {0} SET abrev_unid='{1}',desc_unid='{2}',obs_unid='{3}' WHERE id_recno={4}", TabelasScript.TabelaUnidades, Abreviatura, Descricao, Observacao, pId);
+            Dictionary<string, string> pCampos = new Dictionary<string, string>
+            {
+                { "abrev_unid", Abreviatura },
+                { "desc_unid", Descricao },
+                { "obs_unid", Observacao }
+            };
 
-            ExecutaSemRetorno(sql);
+            ExecutarSemRetorno(TabelasScript.ScriptUpdate(TabelasScript.TabelaUnidades, pId, pCampos));
         }
 
         public void ExcluirUnidade(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaUnidades);
@@ -88,22 +92,32 @@ namespace EasyHortifruti
 
         public void InserirGrupo(string Descricao, string Observacao, string MargemLucro)
         {
-            string sql = string.Format("INSERT INTO {0} (nome_grupo, obs_grupo, margem_grupo) VALUES ('{1}', '{2}', {3})", TabelasScript.TabelaGrupos, Descricao, Observacao, MargemLucro);
+            Dictionary<string, string> pCampos = new Dictionary<string, string>
+            {
+                { "nome_grupo", Descricao },
+                { "obs_grupo", Observacao },
+                { "margem_grupo", MargemLucro }
+            };
 
-            ExecutaSemRetorno(sql);
+            ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaGrupos, pCampos));
         }
         public void AlterarGrupo(int pId, string Descricao, string Observacao, string MargemLucro)
         {
-            string sql = string.Format("UPDATE {0} SET nome_grupo='{1}',obs_grupo='{2}',margem_grupo={3} WHERE id_recno={4}", TabelasScript.TabelaGrupos, Descricao, Observacao, MargemLucro, pId);
+            Dictionary<string, string> pCampos = new Dictionary<string, string>
+            {
+                { "nome_grupo", Descricao },
+                { "obs_grupo", Observacao },
+                { "margem_grupo", MargemLucro }
+            };
 
-            ExecutaSemRetorno(sql);
+            ExecutarSemRetorno(TabelasScript.ScriptUpdate(TabelasScript.TabelaGrupos, pId, pCampos));
         }
 
         public void ExcluirGrupo(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaGrupos);
         #endregion
 
         #region SubGrupo
-        public DataSet ConsultarSubGrupos() => ConsultarTabela(TabelasScript.TabelaGrupos);
+        public DataSet ConsultarSubGrupos() => ConsultarTabela(TabelasScript.TabelaSubGrupos);
         public DataSet ConsultarSubGrupo(int pId)
         {
             string sql = string.Concat("SELECT Sub.id_recno, grp.nome_grupo, Sub.nome_subgrupo, " +
@@ -116,17 +130,26 @@ namespace EasyHortifruti
         }
         public void InserirSubGrupo(string Descricao, int pGrupo, string MargemLucro)
         {
-            string sql = string.Format("INSERT INTO {0} (nome_subgrupo, id_grupo, margem_subgrupo) VALUES ('{1}', {2}, {3})", TabelasScript.TabelaSubGrupos, Descricao, pGrupo, MargemLucro == string.Empty ? "null" : MargemLucro);
+            Dictionary<string, string> pCampos = new Dictionary<string, string>
+            {
+                { "nome_subgrupo", Descricao },
+                { "id_grupo", pGrupo.ToString() },
+                { "margem_subgrupo", MargemLucro }
+            };
 
-            ExecutaSemRetorno(sql);
+            ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaSubGrupos, pCampos));
         }
-        
+
         public void AlterarSubGrupo(int pId, string Descricao, int pGrupo, string MargemLucro)
         {
-            string sql = string.Format("UPDATE {0} SET nome_subgrupo='{1}',id_grupo={2}, " +
-                "margem_subgrupo={3} WHERE id_recno={4}", TabelasScript.TabelaSubGrupos, Descricao, pGrupo, MargemLucro == string.Empty ? "null" : MargemLucro, pId);
+            Dictionary<string, string> pCampos = new Dictionary<string, string>
+            {
+                { "nome_subgrupo", Descricao },
+                { "id_grupo", pGrupo.ToString() },
+                { "margem_subgrupo", MargemLucro }
+            };
 
-            ExecutaSemRetorno(sql);
+            ExecutarSemRetorno(TabelasScript.ScriptUpdate(TabelasScript.TabelaSubGrupos, pId, pCampos));
         }
         public void ExcluirSubGrupo(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaSubGrupos);
         #endregion
@@ -138,6 +161,7 @@ namespace EasyHortifruti
 
             return ExecutaEPreencheDataset(sql);
         }
+
         public Produto ConsultarProdutoPorId(int pId)
         {
             string sql = string.Concat("SELECT * FROM produtos P INNER JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO INNER JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO INNER JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO WHERE P.ID_RECNO =", pId);
@@ -160,7 +184,7 @@ namespace EasyHortifruti
                     PrecoDeVenda = Convert.ToDouble(dr["pcovenda_produto"]),
                     IdUnidade = Convert.ToInt32(dr["id_unidade"]),
                     Unidade = dr["abrev_unid"].ToString()
-                    
+
                 };
             }
 
@@ -169,55 +193,138 @@ namespace EasyHortifruti
 
         public void IncluirProduto(Produto pProduto)
         {
-            string sql = string.Concat("" +
-                    "INSERT INTO PRODUTOS (nome_produto, pcocompra_produto, pcovenda_produto, margem_produto, id_unidade, id_grupo, id_subgrupo) values(\'",
-                    pProduto.Descricao, "\',",
-                    pProduto.PrecoDeCompra.ToString("F2", System.Globalization.CultureInfo.InvariantCulture), ",",
-                    pProduto.PrecoDeVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture), ",",
-                    pProduto.MargemLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture), ",",
-                    pProduto.IdUnidade, ",",
-                    pProduto.IdGrupo, ",",
-                    pProduto.IdSubGrupo, ")"
-                    );
+            Dictionary<string, string> pCampos = new Dictionary<string, string>
+            {
+                { "nome_produto", pProduto.Descricao },
+                { "pcocompra_produto", pProduto.PrecoDeCompra.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "pcovenda_produto", pProduto.PrecoDeVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "margem_produto", pProduto.MargemLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)},
+                { "id_unidade",  pProduto.IdUnidade.ToString() },
+                { "id_grupo", pProduto.IdGrupo.ToString() },
+                { "id_subgrupo", pProduto.IdSubGrupo.ToString() }
+            };
 
-            
-            ExecutaSemRetorno(sql);
+            ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaProdutos, pCampos));
         }
+
         public void AlterarProduto(Produto pProduto)
         {
-            string sql = string.Concat(
-                "UPDATE PRODUTOS SET",
-                " nome_produto=\'",pProduto.Descricao,
-                "\', pcocompra_produto=",pProduto.PrecoDeCompra.ToString("F2", System.Globalization.CultureInfo.InvariantCulture),
-                ", pcovenda_produto=",pProduto.PrecoDeVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture),
-                ", margem_produto=",pProduto.MargemLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture),
-                ", id_unidade=",pProduto.IdUnidade,
-                ", id_grupo=",pProduto.IdGrupo,
-                ", id_subgrupo=",pProduto.IdSubGrupo,
-                " WHERE ID_RECNO =", pProduto.ID
-                );
+            Dictionary<string, string> pCampos = new Dictionary<string, string>
+            {
+                { "nome_produto", pProduto.Descricao },
+                { "pcocompra_produto", pProduto.PrecoDeCompra.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "pcovenda_produto", pProduto.PrecoDeVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "margem_produto", pProduto.MargemLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)},
+                { "id_unidade",  pProduto.IdUnidade.ToString() },
+                { "id_grupo", pProduto.IdGrupo.ToString() },
+                { "id_subgrupo", pProduto.IdSubGrupo.ToString() }
+            };
 
-            ExecutaSemRetorno(sql);
+            ExecutarSemRetorno(TabelasScript.ScriptUpdate(TabelasScript.TabelaProdutos, pProduto.ID, pCampos));
         }
+
         public void ExcluirProduto(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaProdutos);
         #endregion
 
         #region Pedidos
-        
+
         public DataSet ConsultarPedidos() => ConsultarTabela(TabelasScript.TabelaPedidos);
 
         public DataSet ConsultarPedidosPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaPedidos);
 
-        public void InserirPedido(string Abreviatura, string Descricao, string Observacao)
+        public void InserirPedido(Pedido pPedido)
         {
+            //TO DO: IMPLEMENTAR
+            Dictionary<string, string> Campos = new Dictionary<string, string>
+            {
+                { "datapedido",     pPedido.dataPedido.ToString() },
+                { "statuspedido",   pPedido.StatusPedido },
+                { "id_fonte",       pPedido.IdFonte.ToString() },
+                { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },
+                { "prazopgto",      pPedido.PrazoPagamento.ToString() },
+                { "dataentrega",    pPedido.DataEntrega.ToString("dd/MM/yyyy") }, 
+                { "dataconclusao",  pPedido.DataConclusao.ToString("dd/MM/yyyy") }, 
+                { "id_produto",     pPedido.IdProduto.ToString() }, 
+                { "qtdproduto",     pPedido.QuantidadeProduto.ToString() }, 
+                { "vrcompra",       pPedido.ValorCompra.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },  
+                { "vrvenda",        pPedido.ValorVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) }, 
+                { "totalvenda",     pPedido.TotalVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) }, 
+                { "percentlucro",   pPedido.PercentualLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) }
+            };
+
+            ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaPedidos, Campos));
         }
 
-        public void AlterarPedido(int pId, string Abreviatura, string Descricao, string Observacao)
+        public void AlterarPedido(Pedido pPedido)
         {
+            //TO DO: IMPLEMENTAR
+            Dictionary<string, string> pCampos = new Dictionary<string, string>
+            {
+                { "datapedido",     pPedido.dataPedido.ToString() },
+                { "statuspedido",   pPedido.StatusPedido },
+                { "id_fonte",       pPedido.IdFonte.ToString() },
+                { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },
+                { "prazopgto",      pPedido.PrazoPagamento.ToString() },
+                { "dataentrega",    pPedido.DataEntrega.ToString("dd/MM/yyyy") },
+                { "dataconclusao",  pPedido.DataConclusao.ToString("dd/MM/yyyy") },
+                { "id_produto",     pPedido.IdProduto.ToString() },
+                { "qtdproduto",     pPedido.QuantidadeProduto.ToString() },
+                { "vrcompra",       pPedido.ValorCompra.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "vrvenda",        pPedido.ValorVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "totalvenda",     pPedido.TotalVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "percentlucro",   pPedido.PercentualLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) }
+            };
+
+            ExecutarSemRetorno(TabelasScript.ScriptUpdate(TabelasScript.TabelaPedidos, pPedido.ID, pCampos));
         }
 
         public void ExcluirPedido(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaPedidos);
         #endregion
+
+        #region CtasReceber
+
+        public DataSet ConsultarContas() => ConsultarTabela(TabelasScript.TabelaCtasReceber);
+
+        public DataSet ConsultarContaPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaCtasReceber);
+
+        public void InserirConta(ContaAReceber pContaAReceber)
+        {
+            //TO DO: IMPLEMENTAR
+            Dictionary<string, string> pCampos = new Dictionary<string, string>
+            {
+               {" id_pedido=",      pContaAReceber.IdPedido.ToString() },
+               {" id_fonte=",       pContaAReceber.IdFonte.ToString() },
+               {" vlpedido=",       pContaAReceber.ValorPedido.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+               {" margempedido=",   pContaAReceber.MargemPedido.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+               {" dtvencto=",       pContaAReceber.DataVencimento.ToString("dd/MM/yyyy") },
+               {" dtrecebto= ",     pContaAReceber.DataRecebimento.ToString("dd/MM/yyyy") }
+            };
+
+            ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaCtasReceber, pCampos));
+        }
+
+        public void AlterarConta(ContaAReceber pContaAReceber)
+        {
+            //TO DO: IMPLEMENTAR
+            Dictionary<string, string> pCampos = new Dictionary<string, string>
+            {
+               {" id_pedido=",      pContaAReceber.IdPedido.ToString() },
+               {" id_fonte=",       pContaAReceber.IdFonte.ToString() },
+               {" vlpedido=",       pContaAReceber.ValorPedido.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+               {" margempedido=",   pContaAReceber.MargemPedido.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+               {" dtvencto=",       pContaAReceber.DataVencimento.ToString("dd/MM/yyyy") },
+               {" dtrecebto= ",     pContaAReceber.DataRecebimento.ToString("dd/MM/yyyy") }
+            };
+
+            ExecutarSemRetorno(TabelasScript.ScriptUpdate(TabelasScript.TabelaCtasReceber, pContaAReceber.ID, pCampos));
+        }
+
+        public void ExcluirConta(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaCtasReceber);
+
+        #endregion
+
+        #endregion
+
         #region Privado
         private DataSet ExecutaEPreencheDataset(string pSql)
         {
@@ -240,7 +347,7 @@ namespace EasyHortifruti
             }
         }
 
-        private void ExecutaSemRetorno(string pSql)
+        private void ExecutarSemRetorno(string pSql)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {
@@ -256,7 +363,7 @@ namespace EasyHortifruti
         {
             string sql = String.Format("DELETE FROM {0} WHERE id_recno={1}", pNomeTabela, pId);
 
-            ExecutaSemRetorno(sql);
+            ExecutarSemRetorno(sql);
         }
         private DataSet ConsultarTabela(string pNomeTabela)
         {
@@ -270,9 +377,7 @@ namespace EasyHortifruti
 
             return ExecutaEPreencheDataset(sql);
         }
-        #endregion
 
-        #region TabelasBD
         public void CriaTabelasBD()
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasyHortifruti.DML;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Security.Policy;
@@ -163,6 +164,28 @@ namespace EasyHortifruti
                 CreatePedidos,
                 CreateCtasReceber
             };
+        }
+
+        public static string ScriptInsert(string pTabela, Dictionary<string, string> pCampos)
+        {
+            return string.Concat(
+                "INSERT INTO ", pTabela,
+                    " (" + string.Join(", ", pCampos.Keys),
+                ") VALUES",
+                    " ('" + string.Join("', '", pCampos.Values), "')");
+        }
+        public static string ScriptUpdate(string pTabela, int pID, Dictionary<string, string> pCampos)
+        {
+            string retorno = string.Concat("UPDATE ", pTabela, " SET ");
+
+            foreach (KeyValuePair<string, string> keyValuePair in pCampos)
+            {
+                retorno += string.Concat("\n" + keyValuePair.Key, "='", keyValuePair.Value, "', ");
+            }
+
+            retorno = string.Concat(retorno.Substring(0, retorno.Length - 2), " WHERE ID_RECNO =", pID.ToString());
+
+            return retorno;
         }
     }
 }

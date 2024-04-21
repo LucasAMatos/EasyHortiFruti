@@ -1,7 +1,7 @@
-﻿using Npgsql;
+﻿using EasyHortifruti.DML;
+using Npgsql;
 using System;
 using System.Data;
-using System.Reflection.Emit;
 
 namespace EasyHortifruti
 
@@ -9,83 +9,46 @@ namespace EasyHortifruti
     public class ConexaoBD
     {
         private string connectionString;
-               
 
+        #region Constructor
         public ConexaoBD()
         {
             connectionString = "Host=localhost;Username=Admin;Password=2125071216;Database=EasyHortifruti";
-        }     
-        public DataSet ConsultarTabela(string pNomeTabela)
-        {
-            DataSet dataSet = new DataSet();
-
-            try
-            {
-                using (var conn = new NpgsqlConnection(connectionString))
-                {
-                    conn.Open();
-
-                    string sql = string.Concat("SELECT * FROM ", pNomeTabela);
-
-                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(sql, conn))
-                        adapter.Fill(dataSet);
-                }
-                return dataSet;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
         }
-        public DataSet ConsultarTabelaPorId(int pId, string pNomeTabela)
+        #endregion
+
+        #region Métodos
+
+        #region MétodosGerais
+
+
+        #endregion
+
+        #region Geral
+        public DataSet ConsultarGerais() => ConsultarTabela(TabelasScript.TabelaGeral);
+
+        public DataSet ConsultarGeralPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaGeral);
+
+        public void InserirGeral()
         {
-            DataSet dataSet = new DataSet();
-
-            try
-            {
-                using (var conn = new NpgsqlConnection(connectionString))
-                {
-                    conn.Open();
-
-                    string sql = string.Concat("SELECT * FROM ", pNomeTabela, " WHERE id_recno=", pId.ToString());
-
-                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(sql, conn))
-                        adapter.Fill(dataSet);
-                }
-                return dataSet;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            //TO DO: IMPLEMENTAR INSERIR GERAL
         }
-        public DataSet ConsultarSubGrupo(int pId, string pNomeTabela)
+        public void AlterarGeral()
         {
-            DataSet dataSet = new DataSet();
-
-            try
-            {
-                using (var conn = new NpgsqlConnection(connectionString))
-                {
-                    conn.Open();
-
-                    string sql = string.Concat("SELECT Sub.id_recno, grp.nome_grupo, Sub.nome_subgrupo, " +
-                        "Sub.margem_subgrupo FROM ", TabelasScript.TabelaSubGrupos,  " Sub JOIN ", TabelasScript.TabelaGrupos , " grp ON Sub.id_grupo = grp.id_recno") ;                       
-
-
-                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(sql, conn))
-                        adapter.Fill(dataSet);
-                }
-                return dataSet;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
+            //TO DO: IMPLEMENTAR ALTERAR GERAL
         }
+
+        public void ExcluirGeral(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaGeral);
+
+        #endregion
 
         #region Unidades
-        public void InserirUnidades(string Abreviatura, string Descricao, string Observacao)
+
+        public DataSet ConsultarUnidades() => ConsultarTabela(TabelasScript.TabelaUnidades);
+
+        public DataSet ConsultarUnidadePorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaUnidades);
+
+        public void InserirUnidade(string Abreviatura, string Descricao, string Observacao)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {
@@ -105,141 +68,207 @@ namespace EasyHortifruti
                 }
             }
         }
-        public void AlterarUnidades(int pId, string Abreviatura, string Descricao, string Observacao)
+
+        public void AlterarUnidade(int pId, string Abreviatura, string Descricao, string Observacao)
         {
-            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
-            {
-                conn.Open();
+            string sql = string.Format("UPDATE {0} SET abrev_unid='{1}',desc_unid='{2}',obs_unid='{3}' WHERE id_recno={4}", TabelasScript.TabelaUnidades, Abreviatura, Descricao, Observacao, pId);
 
-                string sql = string.Format("UPDATE {0} SET abrev_unid='{1}',desc_unid='{2}',obs_unid='{3}' WHERE id_recno=@ID", TabelasScript.TabelaUnidades, Abreviatura, Descricao, Observacao);
-            
-                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("ID", pId);
-
-                    cmd.ExecuteNonQuery();
-                }
-            }
+            ExecutaSemRetorno(sql);
         }
-        public void ExcluirUnidade(int pId, string pNomeTabela)
-        {
-            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
-            {
-                conn.Open();
 
-                string sql = String.Format("DELETE FROM {0} WHERE id_recno=@ID", pNomeTabela);
+        public void ExcluirUnidade(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaUnidades);
 
-                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("ID", pId);
 
-                    cmd.ExecuteNonQuery();                    
-                }
-            }
-        }
         #endregion
 
         #region Grupo
+        public DataSet ConsultarGrupos() => ConsultarTabela(TabelasScript.TabelaGrupos);
+
+        public DataSet ConsultarGrupoPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaGrupos);
+
         public void InserirGrupo(string Descricao, string Observacao, string MargemLucro)
         {
-            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
-            {
-                conn.Open();
+            string sql = string.Format("INSERT INTO {0} (nome_grupo, obs_grupo, margem_grupo) VALUES ('{1}', '{2}', {3})", TabelasScript.TabelaGrupos, Descricao, Observacao, MargemLucro);
 
-                string sql = string.Format("INSERT INTO {0} (nome_grupo, obs_grupo, margem_grupo) VALUES ('{1}', '{2}', {3})", TabelasScript.TabelaGrupos, Descricao, Observacao, MargemLucro);
-
-                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
-                {
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                }
-            }
+            ExecutaSemRetorno(sql);
         }
         public void AlterarGrupo(int pId, string Descricao, string Observacao, string MargemLucro)
         {
-            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
-            {
-                conn.Open();
+            string sql = string.Format("UPDATE {0} SET nome_grupo='{1}',obs_grupo='{2}',margem_grupo={3} WHERE id_recno={4}", TabelasScript.TabelaGrupos, Descricao, Observacao, MargemLucro, pId);
 
-                string sql = string.Format("UPDATE {0} SET desc_grupo='{1}',obs_grupo='{2}',margem_grupo={3} WHERE id_recno=@ID", TabelasScript.TabelaGrupos, Descricao, Observacao, MargemLucro);
-
-                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("ID", pId);
-
-                    cmd.ExecuteNonQuery();
-                }
-            }
+            ExecutaSemRetorno(sql);
         }
-        public void ExcluirGrupo(int pId, string pNomeTabela)
-        {
-            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
-            {
-                conn.Open();
 
-                string sql = String.Concat("DELETE * FROM ", TabelasScript.TabelaGrupos, " WHERE id_recno=@ID");
-
-                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("ID", pId);
-
-                    cmd.ExecuteNonQuery();
-                }
-            }
-        }
-        public void InserirSubGrupo(string Descricao, int pGrupo, string MargemLucro)
-        {
-            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
-            {
-                conn.Open();
-
-                string sql = string.Concat("INSERT INTO ", TabelasScript.TabelaSubGrupos, " (desc_grupo, id_grupo, margem_subgrupo) ",
-                             "VALUES (@Descricao, @Grupo, @MargemLucro)");
-
-                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("Descricao", Descricao);
-                    cmd.Parameters.AddWithValue("Grupo", pGrupo);
-                    cmd.Parameters.AddWithValue("MargemLucro", MargemLucro);
-
-                    int rowsAffected = cmd.ExecuteNonQuery();
-                }
-            }
-        }
+        public void ExcluirGrupo(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaGrupos);
         #endregion
 
         #region SubGrupo
+        public DataSet ConsultarSubGrupos() => ConsultarTabela(TabelasScript.TabelaGrupos);
+        public DataSet ConsultarSubGrupo(int pId)
+        {
+            string sql = string.Concat("SELECT Sub.id_recno, grp.nome_grupo, Sub.nome_subgrupo, " +
+                "Sub.margem_subgrupo FROM ", TabelasScript.TabelaSubGrupos, " Sub JOIN ", TabelasScript.TabelaGrupos, " grp ON Sub.id_grupo = grp.id_recno");
+
+            if (pId > 0)
+                sql += " where Sub.id_recno = " + pId.ToString();
+
+            return ExecutaEPreencheDataset(sql);
+        }
+        public void InserirSubGrupo(string Descricao, int pGrupo, string MargemLucro)
+        {
+            string sql = string.Format("INSERT INTO {0} (nome_subgrupo, id_grupo, margem_subgrupo) VALUES ('{1}', {2}, {3})", TabelasScript.TabelaSubGrupos, Descricao, pGrupo, MargemLucro == string.Empty ? "null" : MargemLucro);
+
+            ExecutaSemRetorno(sql);
+        }
+        
         public void AlterarSubGrupo(int pId, string Descricao, int pGrupo, string MargemLucro)
+        {
+            string sql = string.Format("UPDATE {0} SET nome_subgrupo='{1}',id_grupo={2}, " +
+                "margem_subgrupo={3} WHERE id_recno={4}", TabelasScript.TabelaSubGrupos, Descricao, pGrupo, MargemLucro == string.Empty ? "null" : MargemLucro, pId);
+
+            ExecutaSemRetorno(sql);
+        }
+        public void ExcluirSubGrupo(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaSubGrupos);
+        #endregion
+
+        #region Produtos
+        public DataSet ConsultarProdutos()
+        {
+            string sql = string.Concat("SELECT * FROM produtos P INNER JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO INNER JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO INNER JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO");
+
+            return ExecutaEPreencheDataset(sql);
+        }
+        public Produto ConsultarProdutoPorId(int pId)
+        {
+            string sql = string.Concat("SELECT * FROM produtos P INNER JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO INNER JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO INNER JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO WHERE P.ID_RECNO =", pId);
+
+            DataSet ds = ExecutaEPreencheDataset(sql);
+
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                DataRow dr = ds.Tables[0].Rows[0];
+                return new Produto
+                {
+                    ID = Convert.ToInt32(dr["id_recno"]),
+                    Descricao = dr["nome_produto"].ToString(),
+                    IdGrupo = Convert.ToInt32(dr["id_grupo"]),
+                    Grupo = dr["nome_grupo"].ToString(),
+                    IdSubGrupo = Convert.ToInt32(dr["id_subgrupo"]),
+                    SubGrupo = dr["nome_subgrupo"].ToString(),
+                    MargemLucro = Convert.ToDouble(dr["margem_produto"]),
+                    PrecoDeCompra = Convert.ToDouble(dr["pcocompra_produto"]),
+                    PrecoDeVenda = Convert.ToDouble(dr["pcovenda_produto"]),
+                    IdUnidade = Convert.ToInt32(dr["id_unidade"]),
+                    Unidade = dr["abrev_unid"].ToString()
+                    
+                };
+            }
+
+            return null;
+        }
+
+        public void IncluirProduto(Produto pProduto)
+        {
+            string sql = string.Concat("" +
+                    "INSERT INTO PRODUTOS (nome_produto, pcocompra_produto, pcovenda_produto, margem_produto, id_unidade, id_grupo, id_subgrupo) values(\'",
+                    pProduto.Descricao, "\',",
+                    pProduto.PrecoDeCompra.ToString("F2", System.Globalization.CultureInfo.InvariantCulture), ",",
+                    pProduto.PrecoDeVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture), ",",
+                    pProduto.MargemLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture), ",",
+                    pProduto.IdUnidade, ",",
+                    pProduto.IdGrupo, ",",
+                    pProduto.IdSubGrupo, ")"
+                    );
+
+            
+            ExecutaSemRetorno(sql);
+        }
+        public void AlterarProduto(Produto pProduto)
+        {
+            string sql = string.Concat(
+                "UPDATE PRODUTOS SET",
+                " nome_produto=\'",pProduto.Descricao,
+                "\', pcocompra_produto=",pProduto.PrecoDeCompra.ToString("F2", System.Globalization.CultureInfo.InvariantCulture),
+                ", pcovenda_produto=",pProduto.PrecoDeVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture),
+                ", margem_produto=",pProduto.MargemLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture),
+                ", id_unidade=",pProduto.IdUnidade,
+                ", id_grupo=",pProduto.IdGrupo,
+                ", id_subgrupo=",pProduto.IdSubGrupo,
+                " WHERE ID_RECNO =", pProduto.ID
+                );
+
+            ExecutaSemRetorno(sql);
+        }
+        public void ExcluirProduto(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaProdutos);
+        #endregion
+
+        #region Pedidos
+        
+        public DataSet ConsultarPedidos() => ConsultarTabela(TabelasScript.TabelaPedidos);
+
+        public DataSet ConsultarPedidosPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaPedidos);
+
+        public void InserirPedido(string Abreviatura, string Descricao, string Observacao)
+        {
+        }
+
+        public void AlterarPedido(int pId, string Abreviatura, string Descricao, string Observacao)
+        {
+        }
+
+        public void ExcluirPedido(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaPedidos);
+        #endregion
+        #region Privado
+        private DataSet ExecutaEPreencheDataset(string pSql)
+        {
+            DataSet dataSet = new DataSet();
+
+            try
+            {
+                using (var conn = new NpgsqlConnection(connectionString))
+                {
+                    conn.Open();
+
+                    using (NpgsqlDataAdapter adapter = new NpgsqlDataAdapter(pSql, conn))
+                        adapter.Fill(dataSet);
+                }
+                return dataSet;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
+
+        private void ExecutaSemRetorno(string pSql)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {
                 conn.Open();
 
-                string sql = string.Format("UPDATE {0} SET nome_subgrupo='{1}',id_grupo={2}, " +
-                    "margem_subgrupo='{3}' WHERE id_recno=@ID", TabelasScript.TabelaSubGrupos, Descricao, pGrupo, MargemLucro);
-
-                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
+                using (NpgsqlCommand cmd = new NpgsqlCommand(pSql, conn))
                 {
-                    cmd.Parameters.AddWithValue("ID", pId);
-
                     cmd.ExecuteNonQuery();
                 }
             }
         }
-        public void ExcluirSubGrupo(int pId, string pNomeTabela)
-        {            
-            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
-            {
-                conn.Open();
+        private void ExcluirRegistro(int pId, string pNomeTabela)
+        {
+            string sql = String.Format("DELETE FROM {0} WHERE id_recno={1}", pNomeTabela, pId);
 
-                string sql = String.Concat("DELETE * FROM ", TabelasScript.TabelaSubGrupos, " WHERE id_recno=@ID");
+            ExecutaSemRetorno(sql);
+        }
+        private DataSet ConsultarTabela(string pNomeTabela)
+        {
+            string sql = string.Concat("SELECT * FROM ", pNomeTabela);
 
-                using (NpgsqlCommand cmd = new NpgsqlCommand(sql, conn))
-                {
-                    cmd.Parameters.AddWithValue("ID", pId);
+            return ExecutaEPreencheDataset(sql);
+        }
+        private DataSet ConsultarTabelaPorId(int pId, string pNomeTabela)
+        {
+            string sql = string.Concat("SELECT * FROM ", pNomeTabela, " WHERE id_recno=", pId.ToString());
 
-                    cmd.ExecuteNonQuery();
-                }
-            }
+            return ExecutaEPreencheDataset(sql);
         }
         #endregion
 
@@ -250,11 +279,13 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                foreach(string script in new TabelasScript().Scripts)
-                    new NpgsqlCommand(script, conn).ExecuteNonQuery();                
+                foreach (string script in new TabelasScript().Scripts)
+                    new NpgsqlCommand(script, conn).ExecuteNonQuery();
             }
 
         }
+        #endregion
+
         #endregion
     }
 }

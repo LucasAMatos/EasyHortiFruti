@@ -114,6 +114,22 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Componentes\AltComboBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componentes\AltComboBox.Designer.cs">
+      <DependentUpon>AltComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\AltTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componentes\AltTextBox.Designer.cs">
+      <DependentUpon>AltTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DML\Grupo.cs" />
+    <Compile Include="DML\Produto.cs" />
+    <Compile Include="DML\SubGrupo.cs" />
+    <Compile Include="DML\Unidade.cs" />
     <Compile Include="Utilitarios\TabelasScript.cs" />
     <Compile Include="Utilitarios\Caracter.cs" />
     <Compile Include="Utilitarios\ConexaoBD.cs" />
@@ -123,82 +139,82 @@
     <Compile Include="Form_Principal.Designer.cs">
       <DependentUpon>Form_Principal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produtos\FormUnidadesCad.cs">
+    <Compile Include="Forms\Produtos\FormUnidadesCad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produtos\FormUnidadesCad.Designer.cs">
+    <Compile Include="Forms\Produtos\FormUnidadesCad.Designer.cs">
       <DependentUpon>FormUnidadesCad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produtos\FormUnidadeAltInsert.cs">
+    <Compile Include="Forms\Produtos\FormUnidadeAltInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produtos\FormUnidadeAltInsert.Designer.cs">
+    <Compile Include="Forms\Produtos\FormUnidadeAltInsert.Designer.cs">
       <DependentUpon>FormUnidadeAltInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produtos\FormGruposCad.cs">
+    <Compile Include="Forms\Produtos\FormGruposCad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produtos\FormGruposCad.Designer.cs">
+    <Compile Include="Forms\Produtos\FormGruposCad.Designer.cs">
       <DependentUpon>FormGruposCad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produtos\FormGruposAltInsert.cs">
+    <Compile Include="Forms\Produtos\FormGruposAltInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produtos\FormGruposAltInsert.Designer.cs">
+    <Compile Include="Forms\Produtos\FormGruposAltInsert.Designer.cs">
       <DependentUpon>FormGruposAltInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produtos\FormSubGruposCad.cs">
+    <Compile Include="Forms\Produtos\FormSubGruposCad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produtos\FormSubGruposCad.Designer.cs">
+    <Compile Include="Forms\Produtos\FormSubGruposCad.Designer.cs">
       <DependentUpon>FormSubGruposCad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produtos\FormProdutoCad.cs">
+    <Compile Include="Forms\Produtos\FormProdutoCad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produtos\FormProdutoCad.Designer.cs">
+    <Compile Include="Forms\Produtos\FormProdutoCad.Designer.cs">
       <DependentUpon>FormProdutoCad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produtos\FormProdutosAltInsert.cs">
+    <Compile Include="Forms\Produtos\FormProdutosAltInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produtos\FormProdutosAltInsert.Designer.cs">
+    <Compile Include="Forms\Produtos\FormProdutosAltInsert.Designer.cs">
       <DependentUpon>FormProdutosAltInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Geral\FormGeralCad.cs">
+    <Compile Include="Forms\Geral\FormGeralCad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Geral\FormGeralCad.Designer.cs">
+    <Compile Include="Forms\Geral\FormGeralCad.Designer.cs">
       <DependentUpon>FormGeralCad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Geral\FormGeralAltInsert.cs">
+    <Compile Include="Forms\Geral\FormGeralAltInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Geral\FormGeralAltInsert.Designer.cs">
+    <Compile Include="Forms\Geral\FormGeralAltInsert.Designer.cs">
       <DependentUpon>FormGeralAltInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Produtos\FormSubGrupoAltInsert.cs">
+    <Compile Include="Forms\Produtos\FormSubGrupoAltInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Produtos\FormSubGrupoAltInsert.Designer.cs">
+    <Compile Include="Forms\Produtos\FormSubGrupoAltInsert.Designer.cs">
       <DependentUpon>FormSubGrupoAltInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pedidos\FormPedidosCad.cs">
+    <Compile Include="Forms\Pedidos\FormPedidosCad.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pedidos\FormPedidosCad.Designer.cs">
+    <Compile Include="Forms\Pedidos\FormPedidosCad.Designer.cs">
       <DependentUpon>FormPedidosCad.cs</DependentUpon>
     </Compile>
-    <Compile Include="Pedidos\FormPedidoAltInsert.cs">
+    <Compile Include="Forms\Pedidos\FormPedidoAltInsert.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Pedidos\FormPedidoAltInsert.Designer.cs">
+    <Compile Include="Forms\Pedidos\FormPedidoAltInsert.Designer.cs">
       <DependentUpon>FormPedidoAltInsert.cs</DependentUpon>
     </Compile>
-    <Compile Include="Financeiro\FormCtasReceber.cs">
+    <Compile Include="Forms\Financeiro\FormCtasReceber.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Financeiro\FormCtasReceber.Designer.cs">
+    <Compile Include="Forms\Financeiro\FormCtasReceber.Designer.cs">
       <DependentUpon>FormCtasReceber.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -206,46 +222,52 @@
     <Compile Include="Utilitarios\FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
+    <EmbeddedResource Include="Componentes\AltComboBox.resx">
+      <DependentUpon>AltComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Componentes\AltTextBox.resx">
+      <DependentUpon>AltTextBox.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produtos\FormUnidadesCad.resx">
+    <EmbeddedResource Include="Forms\Produtos\FormUnidadesCad.resx">
       <DependentUpon>FormUnidadesCad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produtos\FormUnidadeAltInsert.resx">
+    <EmbeddedResource Include="Forms\Produtos\FormUnidadeAltInsert.resx">
       <DependentUpon>FormUnidadeAltInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produtos\FormGruposCad.resx">
+    <EmbeddedResource Include="Forms\Produtos\FormGruposCad.resx">
       <DependentUpon>FormGruposCad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produtos\FormGruposAltInsert.resx">
+    <EmbeddedResource Include="Forms\Produtos\FormGruposAltInsert.resx">
       <DependentUpon>FormGruposAltInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produtos\FormSubGruposCad.resx">
+    <EmbeddedResource Include="Forms\Produtos\FormSubGruposCad.resx">
       <DependentUpon>FormSubGruposCad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produtos\FormProdutoCad.resx">
+    <EmbeddedResource Include="Forms\Produtos\FormProdutoCad.resx">
       <DependentUpon>FormProdutoCad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produtos\FormProdutosAltInsert.resx">
+    <EmbeddedResource Include="Forms\Produtos\FormProdutosAltInsert.resx">
       <DependentUpon>FormProdutosAltInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Geral\FormGeralCad.resx">
+    <EmbeddedResource Include="Forms\Geral\FormGeralCad.resx">
       <DependentUpon>FormGeralCad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Geral\FormGeralAltInsert.resx">
+    <EmbeddedResource Include="Forms\Geral\FormGeralAltInsert.resx">
       <DependentUpon>FormGeralAltInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Produtos\FormSubGrupoAltInsert.resx">
+    <EmbeddedResource Include="Forms\Produtos\FormSubGrupoAltInsert.resx">
       <DependentUpon>FormSubGrupoAltInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pedidos\FormPedidosCad.resx">
+    <EmbeddedResource Include="Forms\Pedidos\FormPedidosCad.resx">
       <DependentUpon>FormPedidosCad.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Pedidos\FormPedidoAltInsert.resx">
+    <EmbeddedResource Include="Forms\Pedidos\FormPedidoAltInsert.resx">
       <DependentUpon>FormPedidoAltInsert.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Financeiro\FormCtasReceber.resx">
+    <EmbeddedResource Include="Forms\Financeiro\FormCtasReceber.resx">
       <DependentUpon>FormCtasReceber.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -283,8 +305,6 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Relatorios\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

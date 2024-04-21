@@ -14,8 +14,29 @@ namespace EasyHortifruti
 {
     public partial class FormGeralAltInsert : FormBase
     {
-        private Telefone Fone { get; set; }
-        private Telefone Celular { get; set; }
+        private Telefone Fone { get
+            {
+                return new Telefone
+                {
+                    tipoTelefone = TipoTelefone.pessoal,
+                    DDD = TbFone.Value.Length < 2 ? TbFone.Value.Substring(0, TbFone.Value.Length) : TbFone.Value.Substring(0, 2),
+                    Numero = TbFone.Value.Length < 3 ? string.Empty : TbFone.Value.Substring(2)
+                };
+            } 
+        }
+        private Telefone Celular
+        {
+            get
+            {
+                return new Telefone
+                {
+                    tipoTelefone = TipoTelefone.celular,
+                    DDD = TbCelular.Value.Length < 2 ? TbCelular.Value.Substring(0, TbCelular.Value.Length) : TbCelular.Value.Substring(0, 2),
+                    Numero = TbCelular.Value.Length < 3 ? string.Empty : TbCelular.Value.Substring(2)
+                };
+            }
+        }
+
         public FormGeralAltInsert()
         {
             InitializeComponent();
@@ -46,15 +67,21 @@ namespace EasyHortifruti
             Criticar();
             Geral pGeral = new Geral
             {
-                NomeFantasia = tbNaturalidade.Text,
+                TipoPessoa = RbPessoaFisica.Checked ? TPFJ.Fisica : TPFJ.Juridica,
+                NomeFantasia = TbNomeFantasia.Text,
+                RazaoSocial = TbRazaoSocial.Text,
                 Contato = TbContato.Text,
                 DtNascFundacao = DtNascAbert.Value,
-                CPF = tbCpf.Text,
-                RGIE = tbRg.Text,
-                RGDataExepedicao = dtExpRg.Value,
+                OrgaoExpedidor = tbOrgaoExpRg.Text,
+                OrgaoExpedidorUF = tbEstadoRg.Text,
+                CPF = tbCpf.Value,
+                CNPJ = TbCNPJ.Text,
+                RG = tbRg.Text,
+                IE = TbInscrEstadual.Text,
                 Sexo = (Sexo)cbSexo.SelectedIndex,
                 EstadoCivil = (EstadoCivil)cbEstadoCivil.SelectedIndex,
-                Naturalidade = tbNaturalidade.Text,
+                Email = TbEmail.Text,
+                PontoReferencia = TbPontoRef.Text,
                 Telefones = new Telefones
             {
                 Fone,
@@ -65,7 +92,7 @@ namespace EasyHortifruti
 
             if (Alterar)
             {
-                pGeral.ID = Convert.ToInt16(LbIdCadGeral.Text);
+                pGeral.ID = Convert.ToInt32(LbIdCadGeral.Text);
 
                 new ConexaoBD().AlterarGeral(pGeral);
 
@@ -79,23 +106,21 @@ namespace EasyHortifruti
                 DialogResult pNovaUnidade = MessageBox.Show(string.Format("{0} incluído com sucesso! Deseja cadastrar uma nova unidade?", pGeral.NomeFantasia), string.Empty, MessageBoxButtons.YesNo);
                 if (pNovaUnidade == DialogResult.Yes)
                 {
-                    LimparCampos();
+                    LimparCampos(this);
                     tabPage4.Text = string.Empty;
                 }
                 else
                     this.Close();
             }
-
-            new ConexaoBD().InserirGeral(pGeral);
         }
 
         private Endereco RetornarEnderecoTela()
         {
             Endereco enderecoRetorno = new Endereco();
 
-            enderecoRetorno.CEP = TbCepEndereco.Text;
+            enderecoRetorno.CEP = TbCepEndereco.Value;
             enderecoRetorno.logradouro = TbRua.Text;
-            enderecoRetorno.Numero = Convert.ToInt16(TbNumero.Text);
+            enderecoRetorno.Numero = Convert.ToInt32(TbNumero.Text);
             enderecoRetorno.Complemento = TbComplemento.Text;
             enderecoRetorno.Bairro = TbBairro.Text;
             enderecoRetorno.Cidade = TbCidade.Text;
@@ -113,42 +138,51 @@ namespace EasyHortifruti
 
         private void PreencheCampos()
         {
-            if (Id > 0)
+            try
             {
-                Geral iGeral = new ConexaoBD().ConsultarGeralPorId(Id);
-
-                if (iGeral != null)
+                if (Id > 0)
                 {
-                    tbNaturalidade.Text = iGeral.NomeFantasia;
-                    TbContato.Text = iGeral.Contato;
-                    DtNascAbert.Value = iGeral.DtNascFundacao;
-                    tbCpf.Text = iGeral.CPF;
-                    tbRg.Text = iGeral.RGIE;
-                    dtExpRg.Value = iGeral.RGDataExepedicao;
-                    cbSexo.SelectedIndex = (int)iGeral.Sexo;
-                    cbEstadoCivil.SelectedIndex  = (int)iGeral.EstadoCivil;
-                    tbNaturalidade.Text = iGeral.Naturalidade;
+                    Geral iGeral = new ConexaoBD().ConsultarGeralPorId(Id);
 
-                    if (iGeral.Telefones != null && iGeral.Telefones.Count > 0)
+                    if (iGeral != null)
                     {
-                        TbFone.Text = iGeral.Telefones.FirstOrDefault(x => x.tipoTelefone == TipoTelefone.pessoal).TelefoneCompleto;
-                        TbCelular.Text = iGeral.Telefones.FirstOrDefault(x => x.tipoTelefone == TipoTelefone.celular).TelefoneCompleto;
+                        TbNomeFantasia.Text = iGeral.NomeFantasia;
+                        TbRazaoSocial.Text = iGeral.RazaoSocial;
+                        TbContato.Text = iGeral.Contato;
+                        DtNascAbert.Value = iGeral.DtNascFundacao;
+                        tbOrgaoExpRg.Text = iGeral.OrgaoExpedidor;
+                        tbEstadoRg.Text = iGeral.OrgaoExpedidorUF;
+                        tbCpf.Text = iGeral.CPF;
+                        TbCNPJ.Text = iGeral.CNPJ;
+                        tbRg.Text = iGeral.RG;
+                        cbSexo.SelectedIndex = (int)iGeral.Sexo;
+                        cbEstadoCivil.SelectedIndex = (int)iGeral.EstadoCivil;
+
+                        if (iGeral.Telefones != null && iGeral.Telefones.Count > 0)
+                        {
+                            TbFone.Text = iGeral.Telefones.FirstOrDefault(x => x.tipoTelefone == TipoTelefone.pessoal).TelefoneCompleto;
+                            TbCelular.Text = iGeral.Telefones.FirstOrDefault(x => x.tipoTelefone == TipoTelefone.celular).TelefoneCompleto;
+                        }
+                        if (iGeral.Endereco != null)
+                        {
+                            TbCepEndereco.Text = iGeral.Endereco.CEP;
+                            TbRua.Text = iGeral.Endereco.logradouro;
+                            TbNumero.Text = iGeral.Endereco.Numero.ToString();
+                            TbComplemento.Text = iGeral.Endereco.Complemento;
+                            TbBairro.Text = iGeral.Endereco.Bairro;
+                            TbCidade.Text = iGeral.Endereco.Cidade;
+                            CbUF.Text = iGeral.Endereco.UF;
+                        }
+
+                        TbEmail.Text = iGeral.Email;
+                        TbPontoRef.Text = iGeral.PontoReferencia;
                     }
-                    if (iGeral.Endereco != null)
-                    {
-                        TbCepEndereco.Text = iGeral.Endereco.CEP;
-                        TbRua.Text = iGeral.Endereco.logradouro;
-                        TbNumero.Text = iGeral.Endereco.Numero.ToString();
-                        TbComplemento.Text = iGeral.Endereco.Complemento;
-                        TbBairro.Text = iGeral.Endereco.Bairro;
-                        TbCidade.Text = iGeral.Endereco.Cidade;
-                        CbUF.Text = iGeral.Endereco.UF;
-                    }
-                    
-                    TbEmail.Text = iGeral.Email;
-                    TbPontoRef.Text = iGeral.PontoReferencia;
-                    tabPage4.Text = iGeral.ReferenciasComerciais.ToString();
+                    LbIdCadGeral.Text = Id.ToString();
                 }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);   
             }
         }
 

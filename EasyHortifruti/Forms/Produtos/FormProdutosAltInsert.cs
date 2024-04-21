@@ -140,7 +140,7 @@ namespace EasyHortifruti
             DataSet ds = new ConexaoBD().ConsultarUnidades();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                unidade.Add(dr["abrev_unid"].ToString(), Convert.ToInt16(dr["id_recno"]));
+                unidade.Add(dr["abrev_unid"].ToString(), Convert.ToInt32(dr["id_recno"]));
                 cbUnidProduto.Items.Add(dr["abrev_unid"].ToString());
             }
             cbUnidProduto.SelectedText = string.Empty;
@@ -154,7 +154,7 @@ namespace EasyHortifruti
             DataSet ds = new ConexaoBD().ConsultarGrupos();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                grupo.Add(dr["nome_grupo"].ToString(), Convert.ToInt16(dr["id_recno"]));
+                grupo.Add(dr["nome_grupo"].ToString(), Convert.ToInt32(dr["id_recno"]));
                 cbGrupoProduto.Items.Add(dr["nome_grupo"].ToString());
             }
         }
@@ -167,7 +167,7 @@ namespace EasyHortifruti
             DataSet ds = new ConexaoBD().ConsultarSubGrupos();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                subGrupo.Add(dr["nome_subgrupo"].ToString(), Convert.ToInt16(dr["id_recno"]));
+                subGrupo.Add(dr["nome_subgrupo"].ToString(), Convert.ToInt32(dr["id_recno"]));
                 cbSubGrupoProduto.Items.Add(dr["nome_subgrupo"].ToString());
             }
         }

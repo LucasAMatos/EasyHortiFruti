@@ -69,7 +69,7 @@ namespace EasyHortifruti
                     // Se o controle tiver controles filhos, chama recursivamente o método
                     if (c.HasChildren)
                     {
-                        this.Criticar(c);
+                        this.LimparCampos(c);
                     }
                 }
             }

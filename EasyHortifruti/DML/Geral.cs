@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -11,7 +12,11 @@ namespace EasyHortifruti.DML
     {
         public int ID { get; set; }
 
+        public TPFJ TipoPessoa { get; set; }
+
         public string NomeFantasia { get; set; }
+
+        public string RazaoSocial { get; set; }
 
         public string Contato { get; set; }
 
@@ -21,9 +26,11 @@ namespace EasyHortifruti.DML
 
         public string CPF {  get; set; }
 
-        public string RGIE { get; set; }
+        public string CNPJ { get; set; }
 
-        public DateTime RGDataExepedicao { get; set; }
+        public string RG { get; set; }
+
+        public string IE { get; set; }
 
         public string OrgaoExpedidor { get; set; }
 
@@ -34,8 +41,6 @@ namespace EasyHortifruti.DML
         public Sexo Sexo { get; set; }
 
         public EstadoCivil EstadoCivil { get; set; }
-        
-        public string Naturalidade { get; set; }
 
         public Telefones Telefones { get; set; }
 
@@ -46,6 +51,101 @@ namespace EasyHortifruti.DML
         public string PontoReferencia { get; set; }
 
         public string ReferenciasComerciais { get; set; }
+
+        public void CarregarGeral(DataSet ds)
+        {
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                DataRow dr = ds.Tables[0].Rows[0];
+
+                if (dr["tppessoa"] != null)
+                    TipoPessoa = dr["tppessoa"].ToString() == "J" ? TPFJ.Juridica  : TPFJ.Fisica;
+
+                if (dr["classificacao"] != null)
+                    Classificacao = dr["classificacao"].ToString();
+
+                if (dr["nomefantasia"] != null)
+                    NomeFantasia = dr["nomefantasia"].ToString();
+
+                if (dr["razaosocial"] != null)
+                    RazaoSocial = dr["razaosocial"].ToString();
+
+                if (dr["contato"] != null)
+                    Contato = dr["contato"].ToString();
+
+                if (dr["dtnascaber"] != null)
+                    DtNascFundacao = Convert.ToDateTime(dr["dtnascaber"]);
+
+                if (dr["cnpj"] != null)
+                    CNPJ = dr["cnpj"].ToString();
+
+                if (dr["cpf"] != null)
+                    CPF = dr["cpf"].ToString();
+
+                if (dr["rg"] != null)
+                    RG = dr["rg"].ToString();
+
+                if (dr["inscrestadual"] != null)
+                    IE = dr["inscrestadual"].ToString();
+
+                if (dr["inscrmunicipal"] != null)
+                    InscricaoMunicipal = dr["inscrmunicipal"].ToString();
+
+                if (dr["orgexpedidor"] != null)
+                    OrgaoExpedidor = dr["orgexpedidor"].ToString();
+
+                if (dr["ufrgexped"] != null)
+                    OrgaoExpedidorUF = dr["ufrgexped"].ToString();
+
+                if (Telefones == null)
+                    Telefones = new Telefones();
+
+                if (dr["dddfone"] != null)
+                {
+                    Telefone fone = new Telefone();
+                    fone.tipoTelefone = TipoTelefone.pessoal;
+                    fone.Numero = dr["fone"].ToString();
+                    fone.DDD = dr["dddfone"].ToString();
+                    Telefones.Add(fone);
+                }
+                if (dr["dddcel"] != null)
+                {
+                    Telefone cel = new Telefone();
+                    cel.tipoTelefone = TipoTelefone.celular;
+                    cel.Numero = dr["celular"].ToString();
+                    cel.DDD = dr["dddcel"].ToString();
+                    Telefones.Add(cel);
+                }
+
+                if (Endereco == null)
+                    Endereco = new Endereco();
+
+                if (dr["cep"] != null)
+                    Endereco.CEP = dr["cep"].ToString();
+                if (dr["logradouro"] != null)
+                    Endereco.logradouro = dr["logradouro"].ToString();
+                if (dr["Numero"] != null)
+                    Endereco.Numero = Convert.ToInt32(dr["Numero"]);
+
+                if (dr["complemento"] != null)
+                    Endereco.Complemento = dr["complemento"].ToString();
+
+                if (dr["bairro"] != null)
+                    Endereco.Bairro = dr["bairro"].ToString();
+
+                if (dr["cidade"] != null)
+                    Endereco.Cidade = dr["cidade"].ToString();
+
+                if (dr["uf"] != null)
+                    Endereco.UF = dr["uf"].ToString();
+
+                if (dr["pontoreferencia"] != null)
+                    PontoReferencia = dr["pontoreferencia"].ToString();
+
+                if (dr["email"] != null)
+                    Email = dr["email"].ToString();
+            }
+        }
     }
 
     public enum EstadoCivil
@@ -76,5 +176,15 @@ namespace EasyHortifruti.DML
         [Description("Feminino")]
         [DefaultValue("F")]
         Feminino = 2
+    }
+
+    public enum TPFJ
+    {
+        [Description("Fisica")]
+        [DefaultValue("F")]
+        Fisica,
+        [Description("Juridica")]
+        [DefaultValue("J")]
+        Juridica
     }
 }

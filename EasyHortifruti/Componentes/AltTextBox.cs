@@ -19,7 +19,20 @@ namespace EasyHortifruti.Componentes
 
         public string Caption { get; set; }
 
-        public string Value { get; set; }
+        private string iValue;
+        public string Value
+        {
+            get
+            {
+                if (iValue == null)
+                    PreencheValue(null, null);
+                return iValue;
+            }
+            set
+            {
+                iValue = value;
+            }
+        }
 
         public TipoCampo Tipo { get; set; }
 
@@ -40,8 +53,6 @@ namespace EasyHortifruti.Componentes
             this.KeyUp += FormataCampos;
 
             InitializeComponent();
-
-
         }
         #endregion
 
@@ -53,19 +64,19 @@ namespace EasyHortifruti.Componentes
             {
                 case TipoCampo.TELEFONE:
                 case TipoCampo.CEP:
-                    Value = Regex.Replace(Text, @"\D+", "");
+                    iValue = Regex.Replace(Text, @"\D+", "");
                     break;
                 case TipoCampo.CNPJ:
                 case TipoCampo.CPF:
-                    Value = Regex.Replace(Text, @"\D+", "").TrimStart('0');
+                    iValue = Regex.Replace(Text, @"\D+", "");
                     break;
 
                 default:
-                    Value += Text;
+                    iValue += Text;
                     break;
             }
         }
-        private void FormataCampos(object sender, KeyEventArgs e)
+        private void FormataCampos(object sender, EventArgs e)
         {
             switch (Tipo)
             {
@@ -99,7 +110,7 @@ namespace EasyHortifruti.Componentes
                     break;
                 case TipoCampo.CPF:
                     MaxLength = Value.Length == 11 ? 14 : 15;
-                    Value = Value.PadLeft(11, '0');
+                    Value = Value.Trim('0').PadLeft(11, '0');
                     Text = string.Empty;
                     if (Value.TrimStart('0').Length > 0)
                         Text = Regex.Replace(Value, @"(\d{3})(\d{3})(\d{3})(\d{2})", @"$1.$2.$3-$4");
@@ -108,7 +119,7 @@ namespace EasyHortifruti.Componentes
                     break;
                 case TipoCampo.CNPJ:
                     MaxLength = Value.Length == 15 ? 19 : 20;
-                    Value = Value.PadLeft(15, '0');
+                    Value = Value.Trim('0').PadLeft(15, '0');
                     Text = string.Empty;
                     if (Value.TrimStart('0').Length > 0)
                         Text = Regex.Replace(Value, @"(\d{3})(\d{3})(\d{3})(\d{4})(\d{2})", @"$1.$2.$3/$4-$5");

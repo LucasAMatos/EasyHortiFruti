@@ -38,14 +38,10 @@ namespace EasyHortifruti
             this.tbBase = new System.Windows.Forms.TabPage();
             this.PanelPJ = new System.Windows.Forms.Panel();
             this.PanelPF = new System.Windows.Forms.Panel();
-            this.label43 = new System.Windows.Forms.Label();
-            this.tbNaturalidade = new EasyHortifruti.Componentes.AltTextBox();
             this.cbEstadoCivil = new EasyHortifruti.Componentes.AltComboBox(this.components);
             this.label42 = new System.Windows.Forms.Label();
             this.cbSexo = new EasyHortifruti.Componentes.AltComboBox(this.components);
             this.label41 = new System.Windows.Forms.Label();
-            this.label40 = new System.Windows.Forms.Label();
-            this.dtExpRg = new System.Windows.Forms.DateTimePicker();
             this.tbEstadoRg = new EasyHortifruti.Componentes.AltTextBox();
             this.label39 = new System.Windows.Forms.Label();
             this.tbOrgaoExpRg = new EasyHortifruti.Componentes.AltTextBox();
@@ -196,14 +192,10 @@ namespace EasyHortifruti
             // 
             // PanelPF
             // 
-            this.PanelPF.Controls.Add(this.label43);
-            this.PanelPF.Controls.Add(this.tbNaturalidade);
             this.PanelPF.Controls.Add(this.cbEstadoCivil);
             this.PanelPF.Controls.Add(this.label42);
             this.PanelPF.Controls.Add(this.cbSexo);
             this.PanelPF.Controls.Add(this.label41);
-            this.PanelPF.Controls.Add(this.label40);
-            this.PanelPF.Controls.Add(this.dtExpRg);
             this.PanelPF.Controls.Add(this.tbEstadoRg);
             this.PanelPF.Controls.Add(this.label39);
             this.PanelPF.Controls.Add(this.tbOrgaoExpRg);
@@ -215,28 +207,6 @@ namespace EasyHortifruti
             this.PanelPF.Name = "PanelPF";
             this.PanelPF.Size = new System.Drawing.Size(560, 114);
             this.PanelPF.TabIndex = 20;
-            // 
-            // label43
-            // 
-            this.label43.AutoSize = true;
-            this.label43.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label43.Location = new System.Drawing.Point(317, 63);
-            this.label43.Name = "label43";
-            this.label43.Size = new System.Drawing.Size(74, 15);
-            this.label43.TabIndex = 44;
-            this.label43.Text = "Natural de";
-            // 
-            // tbNaturalidade
-            // 
-            this.tbNaturalidade.Caption = null;
-            this.tbNaturalidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbNaturalidade.Location = new System.Drawing.Point(320, 81);
-            this.tbNaturalidade.Name = "tbNaturalidade";
-            this.tbNaturalidade.Obrigatorio = false;
-            this.tbNaturalidade.Size = new System.Drawing.Size(228, 24);
-            this.tbNaturalidade.TabIndex = 45;
-            this.tbNaturalidade.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.tbNaturalidade.Value = null;
             // 
             // cbEstadoCivil
             // 
@@ -288,25 +258,6 @@ namespace EasyHortifruti
             this.label41.Size = new System.Drawing.Size(39, 15);
             this.label41.TabIndex = 18;
             this.label41.Text = "Sexo";
-            // 
-            // label40
-            // 
-            this.label40.AutoSize = true;
-            this.label40.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label40.Location = new System.Drawing.Point(440, 10);
-            this.label40.Name = "label40";
-            this.label40.Size = new System.Drawing.Size(108, 15);
-            this.label40.TabIndex = 17;
-            this.label40.Text = "Data Expedição";
-            // 
-            // dtExpRg
-            // 
-            this.dtExpRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtExpRg.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dtExpRg.Location = new System.Drawing.Point(443, 30);
-            this.dtExpRg.Name = "dtExpRg";
-            this.dtExpRg.Size = new System.Drawing.Size(105, 24);
-            this.dtExpRg.TabIndex = 6;
             // 
             // tbEstadoRg
             // 
@@ -1235,14 +1186,10 @@ namespace EasyHortifruti
         private AltTextBox tbRg;
         private System.Windows.Forms.Label label37;
         private AltTextBox tbCpf;
-        private System.Windows.Forms.Label label43;
-        private AltTextBox tbNaturalidade;
         private AltComboBox cbEstadoCivil;
         private System.Windows.Forms.Label label42;
         private AltComboBox cbSexo;
         private System.Windows.Forms.Label label41;
-        private System.Windows.Forms.Label label40;
-        private System.Windows.Forms.DateTimePicker dtExpRg;
         private System.Windows.Forms.Label labelClassificacao;
         private AltComboBox CbClassificacao;
     }

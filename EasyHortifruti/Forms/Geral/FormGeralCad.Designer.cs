@@ -30,27 +30,14 @@ namespace EasyHortifruti
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGeralCad));
             this.panelCadGeralForm = new System.Windows.Forms.Panel();
             this.panelFormCadGeral = new System.Windows.Forms.Panel();
             this.DgViewCadGeral = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column8 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelPesquisarCadGeral = new System.Windows.Forms.Panel();
             this.tbPesquisaGeral = new System.Windows.Forms.TextBox();
-            this.cbTpFontePesquisa = new AltComboBox();
+            this.cbTpFontePesquisa = new EasyHortifruti.Componentes.AltComboBox(this.components);
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3FormCadGeralBotoes = new System.Windows.Forms.Panel();
@@ -61,6 +48,20 @@ namespace EasyHortifruti
             this.BtEditarCadGeral = new System.Windows.Forms.Button();
             this.BtIncluirCadGeral = new System.Windows.Forms.Button();
             this.panelTituloCadGeral = new System.Windows.Forms.Panel();
+            this.NomeFantasia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RazaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.RG = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.logradouro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.numero = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.complemento = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bairro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.uf = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.fone = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelCadGeralForm.SuspendLayout();
             this.panelFormCadGeral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadGeral)).BeginInit();
@@ -95,95 +96,27 @@ namespace EasyHortifruti
             this.DgViewCadGeral.AllowUserToDeleteRows = false;
             this.DgViewCadGeral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgViewCadGeral.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
-            this.Column3,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7,
-            this.Column8,
-            this.Column9,
-            this.Column10,
-            this.Column11,
-            this.Column12,
-            this.Column13,
-            this.Column14});
+            this.NomeFantasia,
+            this.RazaoSocial,
+            this.CPF,
+            this.RG,
+            this.logradouro,
+            this.numero,
+            this.complemento,
+            this.bairro,
+            this.cidade,
+            this.uf,
+            this.fone,
+            this.celular,
+            this.email,
+            this.ID});
             this.DgViewCadGeral.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgViewCadGeral.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DgViewCadGeral.Location = new System.Drawing.Point(0, 0);
             this.DgViewCadGeral.Name = "DgViewCadGeral";
+            this.DgViewCadGeral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgViewCadGeral.Size = new System.Drawing.Size(884, 404);
             this.DgViewCadGeral.TabIndex = 0;
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Nome / Fantasia";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Razão Social";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "CNPJ / CPF";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "I.E. / RG.";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "Endereço";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Nº";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "Complemento";
-            this.Column7.Name = "Column7";
-            // 
-            // Column8
-            // 
-            this.Column8.HeaderText = "Bairro";
-            this.Column8.Name = "Column8";
-            // 
-            // Column9
-            // 
-            this.Column9.HeaderText = "Cidade";
-            this.Column9.Name = "Column9";
-            // 
-            // Column10
-            // 
-            this.Column10.HeaderText = "UF";
-            this.Column10.Name = "Column10";
-            // 
-            // Column11
-            // 
-            this.Column11.HeaderText = "Fone";
-            this.Column11.Name = "Column11";
-            // 
-            // Column12
-            // 
-            this.Column12.HeaderText = "Celular";
-            this.Column12.Name = "Column12";
-            // 
-            // Column13
-            // 
-            this.Column13.HeaderText = "E-mail";
-            this.Column13.Name = "Column13";
-            // 
-            // Column14
-            // 
-            this.Column14.HeaderText = "ID";
-            this.Column14.Name = "Column14";
             // 
             // panelPesquisarCadGeral
             // 
@@ -207,6 +140,7 @@ namespace EasyHortifruti
             // 
             // cbTpFontePesquisa
             // 
+            this.cbTpFontePesquisa.Caption = null;
             this.cbTpFontePesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbTpFontePesquisa.FormattingEnabled = true;
             this.cbTpFontePesquisa.Items.AddRange(new object[] {
@@ -217,6 +151,7 @@ namespace EasyHortifruti
             "Sócio"});
             this.cbTpFontePesquisa.Location = new System.Drawing.Point(476, 7);
             this.cbTpFontePesquisa.Name = "cbTpFontePesquisa";
+            this.cbTpFontePesquisa.Obrigatorio = false;
             this.cbTpFontePesquisa.Size = new System.Drawing.Size(152, 24);
             this.cbTpFontePesquisa.TabIndex = 3;
             // 
@@ -358,14 +293,98 @@ namespace EasyHortifruti
             this.panelTituloCadGeral.Size = new System.Drawing.Size(884, 59);
             this.panelTituloCadGeral.TabIndex = 0;
             // 
-            // FormCadGeral
+            // NomeFantasia
+            // 
+            this.NomeFantasia.DataPropertyName = "nomefantasia";
+            this.NomeFantasia.HeaderText = "Nome / Fantasia";
+            this.NomeFantasia.Name = "NomeFantasia";
+            // 
+            // RazaoSocial
+            // 
+            this.RazaoSocial.DataPropertyName = "razaosocial";
+            this.RazaoSocial.HeaderText = "Razão Social";
+            this.RazaoSocial.Name = "RazaoSocial";
+            // 
+            // CPF
+            // 
+            this.CPF.DataPropertyName = "CPF";
+            this.CPF.HeaderText = "CNPJ / CPF";
+            this.CPF.Name = "CPF";
+            // 
+            // RG
+            // 
+            this.RG.DataPropertyName = "RG";
+            this.RG.HeaderText = "I.E. / RG.";
+            this.RG.Name = "RG";
+            // 
+            // logradouro
+            // 
+            this.logradouro.DataPropertyName = "logradouro";
+            this.logradouro.HeaderText = "Endereço";
+            this.logradouro.Name = "logradouro";
+            // 
+            // numero
+            // 
+            this.numero.DataPropertyName = "numero";
+            this.numero.HeaderText = "Nº";
+            this.numero.Name = "numero";
+            // 
+            // complemento
+            // 
+            this.complemento.DataPropertyName = "complemento";
+            this.complemento.HeaderText = "Complemento";
+            this.complemento.Name = "complemento";
+            // 
+            // bairro
+            // 
+            this.bairro.DataPropertyName = "bairro";
+            this.bairro.HeaderText = "Bairro";
+            this.bairro.Name = "bairro";
+            // 
+            // cidade
+            // 
+            this.cidade.DataPropertyName = "cidade";
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            // 
+            // uf
+            // 
+            this.uf.DataPropertyName = "uf";
+            this.uf.HeaderText = "UF";
+            this.uf.Name = "uf";
+            // 
+            // fone
+            // 
+            this.fone.DataPropertyName = "fone";
+            this.fone.HeaderText = "Fone";
+            this.fone.Name = "fone";
+            // 
+            // celular
+            // 
+            this.celular.DataPropertyName = "celular";
+            this.celular.HeaderText = "Celular";
+            this.celular.Name = "celular";
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "E-mail";
+            this.email.Name = "email";
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id_recno";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            // 
+            // FormGeralCad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(884, 561);
             this.Controls.Add(this.panelCadGeralForm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "FormCadGeral";
+            this.Name = "FormGeralCad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyHortifruti - Cadastro de Clientes, Fornecedores, Funcionarios";
             this.Load += new System.EventHandler(this.FormCadGeral_Load);
@@ -393,23 +412,23 @@ namespace EasyHortifruti
         private System.Windows.Forms.Panel panelPesquisarCadGeral;
         private System.Windows.Forms.Panel panelFormCadGeral;
         private System.Windows.Forms.DataGridView DgViewCadGeral;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column8;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column9;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column10;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
         private AltComboBox cbTpFontePesquisa;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbPesquisaGeral;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NomeFantasia;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RazaoSocial;
+        private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
+        private System.Windows.Forms.DataGridViewTextBoxColumn RG;
+        private System.Windows.Forms.DataGridViewTextBoxColumn logradouro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn numero;
+        private System.Windows.Forms.DataGridViewTextBoxColumn complemento;
+        private System.Windows.Forms.DataGridViewTextBoxColumn bairro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn cidade;
+        private System.Windows.Forms.DataGridViewTextBoxColumn uf;
+        private System.Windows.Forms.DataGridViewTextBoxColumn fone;
+        private System.Windows.Forms.DataGridViewTextBoxColumn celular;
+        private System.Windows.Forms.DataGridViewTextBoxColumn email;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }

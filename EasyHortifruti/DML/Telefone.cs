@@ -19,7 +19,8 @@ namespace EasyHortifruti.DML
         {
             get 
             {
-                string Final = Numero.Substring(Numero.Length - 5, Numero.Length - 1);
+                Numero = Numero.Trim();
+                string Final = Numero.Substring(Numero.Length - 4);
 
                 return string.Concat(
                     "(",

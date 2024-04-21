@@ -136,7 +136,7 @@ namespace EasyHortifruti
 
         public static string TabelaCtasReceber = "ctasReceber";
 
-        private string CreateCtasReceber = @"CREATE TABLE IF NOT EXISTS public.ctasreceber
+        private readonly string CreateCtasReceber = @"CREATE TABLE IF NOT EXISTS public.ctasreceber
                                             (
                                                 id_pedido integer NOT NULL,
                                                 id_fonte integer NOT NULL,

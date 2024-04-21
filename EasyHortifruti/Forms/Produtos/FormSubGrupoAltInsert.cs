@@ -92,7 +92,7 @@ namespace EasyHortifruti
             DataSet ds = new ConexaoBD().ConsultarGrupos();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                grupos.Add(Convert.ToInt16(dr["id_recno"]), dr["nome_grupo"].ToString());
+                grupos.Add(Convert.ToInt32(dr["id_recno"]), dr["nome_grupo"].ToString());
                 CbGrupo.Items.Add(dr["nome_grupo"].ToString());
             }
         }

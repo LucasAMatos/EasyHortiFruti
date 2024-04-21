@@ -84,7 +84,7 @@ namespace EasyHortifruti
             DataSet ds = new ConexaoBD().ConsultarUnidades();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                geral.Add(dr["razao_social"].ToString(), Convert.ToInt16(dr["id_recno"]));
+                geral.Add(dr["razao_social"].ToString(), Convert.ToInt32(dr["id_recno"]));
                 CbNomeCliente.Items.Add(dr["razao_social"].ToString());
             }
             CbNomeCliente.SelectedText = string.Empty;

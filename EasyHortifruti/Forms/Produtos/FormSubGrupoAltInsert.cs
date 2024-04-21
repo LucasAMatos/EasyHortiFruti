@@ -48,8 +48,8 @@ namespace EasyHortifruti
             {
                 Criticar();
 
-                string Descricao = TbDescSubGrupo.Text; // Obtém o texto do TextBox
-                string MargemLucro = TbMargemSubGrupo.Text; // Obtém o texto do TextBox
+                string Descricao = TbDescSubGrupo.Text; 
+                string MargemLucro = string.IsNullOrEmpty(TbMargemSubGrupo.Text) ? "0" : TbMargemSubGrupo.Text; 
                 int pGrupo = grupos.FirstOrDefault(x => x.Value == CbGrupo.Text).Key;
 
                 if (Alterar)

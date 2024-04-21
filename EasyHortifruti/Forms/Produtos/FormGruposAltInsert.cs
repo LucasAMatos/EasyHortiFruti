@@ -42,7 +42,7 @@ namespace EasyHortifruti
                 Criticar();
                 string Descricao = TbDescGrupo.Text; // Obtém o texto do TextBox
                 string Observacao = TbObsGrupo.Text; // Obtém o texto do TextBox
-                string MargemLucro = TbMargemGrupo.Text; // Obtém o texto do TextBox
+                string MargemLucro = string.IsNullOrEmpty(TbMargemGrupo.Text) ? "0" : TbMargemGrupo.Text ; // Obtém o texto do TextBox
 
                 if (string.IsNullOrEmpty(TbDescGrupo.Text))
                     throw new Exception("Nome do grupo é Obrigatório");

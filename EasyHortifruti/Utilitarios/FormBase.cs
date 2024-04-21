@@ -48,6 +48,36 @@ namespace EasyHortifruti
             }
         }
 
+        internal void LimparCampos(Control pControl = null)
+        {
+
+            try
+            {
+                if (pControl == null)
+                    pControl = this;
+
+                foreach (Control c in pControl.Controls)
+                {
+                    if (c is AltTextBox tb && tb.Criticar)
+                    {
+                        tb.Text = string.Empty;
+                    }
+                    if (c is AltComboBox cb && cb.Criticar)
+                    {
+                        cb.Text = string.Empty;
+                    }
+                    // Se o controle tiver controles filhos, chama recursivamente o método
+                    if (c.HasChildren)
+                    {
+                        this.Criticar(c);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+        }
 
     }
 }

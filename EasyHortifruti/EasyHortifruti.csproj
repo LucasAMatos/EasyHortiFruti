@@ -114,11 +114,27 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Componentes\TextBoxAlterado.cs" />
-    <Compile Include="Componentes\TextBoxAlterado.Designer.cs">
-      <DependentUpon>TextBoxAlterado.cs</DependentUpon>
+    <Compile Include="Componentes\AltComboBox.cs">
+      <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Componentes\AltComboBox.Designer.cs">
+      <DependentUpon>AltComboBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Componentes\AltTextBox.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Componentes\AltTextBox.Designer.cs">
+      <DependentUpon>AltTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DML\ContaAReceber.cs" />
+    <Compile Include="DML\Endereco.cs" />
+    <Compile Include="DML\Geral.cs" />
+    <Compile Include="DML\Grupo.cs" />
+    <Compile Include="DML\Pedido.cs" />
     <Compile Include="DML\Produto.cs" />
+    <Compile Include="DML\SubGrupo.cs" />
+    <Compile Include="DML\Telefone.cs" />
+    <Compile Include="DML\Unidade.cs" />
     <Compile Include="Utilitarios\TabelasScript.cs" />
     <Compile Include="Utilitarios\Caracter.cs" />
     <Compile Include="Utilitarios\ConexaoBD.cs" />
@@ -211,8 +227,8 @@
     <Compile Include="Utilitarios\FormBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <EmbeddedResource Include="Componentes\TextBoxAlterado.resx">
-      <DependentUpon>TextBoxAlterado.cs</DependentUpon>
+    <EmbeddedResource Include="Componentes\AltComboBox.resx">
+      <DependentUpon>AltComboBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>

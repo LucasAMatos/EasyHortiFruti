@@ -25,7 +25,14 @@ namespace EasyHortifruti
         #region Geral
         public DataSet ConsultarGerais() => ConsultarTabela(TabelasScript.TabelaGeral);
 
-        public DataSet ConsultarGeralPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaGeral);
+        public Geral ConsultarGeralPorId(int pId)
+        {
+            Geral iGeral = new Geral();
+            
+            DataSet ds = ConsultarTabelaPorId(pId, TabelasScript.TabelaGeral);
+
+            return iGeral;
+        }
 
         public void InserirGeral(Geral pGeral)
         {
@@ -166,29 +173,10 @@ namespace EasyHortifruti
         {
             string sql = string.Concat("SELECT * FROM produtos P INNER JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO INNER JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO INNER JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO WHERE P.ID_RECNO =", pId);
 
-            DataSet ds = ExecutaEPreencheDataset(sql);
+            Produto produto = new Produto();
+            produto.CarregarProduto(ExecutaEPreencheDataset(sql));
 
-            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
-            {
-                DataRow dr = ds.Tables[0].Rows[0];
-                return new Produto
-                {
-                    ID = Convert.ToInt32(dr["id_recno"]),
-                    Descricao = dr["nome_produto"].ToString(),
-                    IdGrupo = Convert.ToInt32(dr["id_grupo"]),
-                    Grupo = dr["nome_grupo"].ToString(),
-                    IdSubGrupo = Convert.ToInt32(dr["id_subgrupo"]),
-                    SubGrupo = dr["nome_subgrupo"].ToString(),
-                    MargemLucro = Convert.ToDouble(dr["margem_produto"]),
-                    PrecoDeCompra = Convert.ToDouble(dr["pcocompra_produto"]),
-                    PrecoDeVenda = Convert.ToDouble(dr["pcovenda_produto"]),
-                    IdUnidade = Convert.ToInt32(dr["id_unidade"]),
-                    Unidade = dr["abrev_unid"].ToString()
-
-                };
-            }
-
-            return null;
+            return produto;
         }
 
         public void IncluirProduto(Produto pProduto)

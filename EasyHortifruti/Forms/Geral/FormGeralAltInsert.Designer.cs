@@ -30,17 +30,19 @@ namespace EasyHortifruti
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGeralAltInsert));
             this.panel1CadGeralInserirDados = new System.Windows.Forms.Panel();
             this.panel5InserirCadGeral = new System.Windows.Forms.Panel();
             this.tabControlInserirDados = new System.Windows.Forms.TabControl();
             this.tbBase = new System.Windows.Forms.TabPage();
+            this.PanelPJ = new System.Windows.Forms.Panel();
             this.PanelPF = new System.Windows.Forms.Panel();
             this.label43 = new System.Windows.Forms.Label();
             this.tbNaturalidade = new EasyHortifruti.Componentes.AltTextBox();
-            this.cbEstadoCivil = new AltComboBox();
+            this.cbEstadoCivil = new EasyHortifruti.Componentes.AltComboBox(this.components);
             this.label42 = new System.Windows.Forms.Label();
-            this.cbSexo = new AltComboBox();
+            this.cbSexo = new EasyHortifruti.Componentes.AltComboBox(this.components);
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.dtExpRg = new System.Windows.Forms.DateTimePicker();
@@ -51,7 +53,6 @@ namespace EasyHortifruti
             this.tbRg = new EasyHortifruti.Componentes.AltTextBox();
             this.label37 = new System.Windows.Forms.Label();
             this.tbCpf = new EasyHortifruti.Componentes.AltTextBox();
-            this.PanelPJ = new System.Windows.Forms.Panel();
             this.TbRazaoSocial = new EasyHortifruti.Componentes.AltTextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
@@ -63,7 +64,7 @@ namespace EasyHortifruti
             this.panel7InserirCadGeral = new System.Windows.Forms.Panel();
             this.tabControlInserirEndereco = new System.Windows.Forms.TabControl();
             this.tbpEndereco = new System.Windows.Forms.TabPage();
-            this.CbUF = new AltComboBox();
+            this.CbUF = new EasyHortifruti.Componentes.AltComboBox(this.components);
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -113,7 +114,7 @@ namespace EasyHortifruti
             this.label2 = new System.Windows.Forms.Label();
             this.panel2InserirCadGeral = new System.Windows.Forms.Panel();
             this.labelClassificacao = new System.Windows.Forms.Label();
-            this.CbClassificacao = new AltComboBox();
+            this.CbClassificacao = new EasyHortifruti.Componentes.AltComboBox(this.components);
             this.labeltpPesoa = new System.Windows.Forms.Label();
             this.RbPessoaJuridica = new System.Windows.Forms.RadioButton();
             this.RbPessoaFisica = new System.Windows.Forms.RadioButton();
@@ -121,8 +122,8 @@ namespace EasyHortifruti
             this.panel5InserirCadGeral.SuspendLayout();
             this.tabControlInserirDados.SuspendLayout();
             this.tbBase.SuspendLayout();
-            this.PanelPF.SuspendLayout();
             this.PanelPJ.SuspendLayout();
+            this.PanelPF.SuspendLayout();
             this.panel7InserirCadGeral.SuspendLayout();
             this.tabControlInserirEndereco.SuspendLayout();
             this.tbpEndereco.SuspendLayout();
@@ -177,6 +178,22 @@ namespace EasyHortifruti
             this.tbBase.Text = "Base";
             this.tbBase.UseVisualStyleBackColor = true;
             // 
+            // PanelPJ
+            // 
+            this.PanelPJ.Controls.Add(this.PanelPF);
+            this.PanelPJ.Controls.Add(this.TbRazaoSocial);
+            this.PanelPJ.Controls.Add(this.label5);
+            this.PanelPJ.Controls.Add(this.label6);
+            this.PanelPJ.Controls.Add(this.TbCNPJ);
+            this.PanelPJ.Controls.Add(this.TbInscrMunicipal);
+            this.PanelPJ.Controls.Add(this.label7);
+            this.PanelPJ.Controls.Add(this.TbInscrEstadual);
+            this.PanelPJ.Controls.Add(this.label9);
+            this.PanelPJ.Location = new System.Drawing.Point(3, 16);
+            this.PanelPJ.Name = "PanelPJ";
+            this.PanelPJ.Size = new System.Drawing.Size(560, 114);
+            this.PanelPJ.TabIndex = 19;
+            // 
             // PanelPF
             // 
             this.PanelPF.Controls.Add(this.label43);
@@ -194,7 +211,7 @@ namespace EasyHortifruti
             this.PanelPF.Controls.Add(this.tbRg);
             this.PanelPF.Controls.Add(this.label37);
             this.PanelPF.Controls.Add(this.tbCpf);
-            this.PanelPF.Location = new System.Drawing.Point(0, 3);
+            this.PanelPF.Location = new System.Drawing.Point(0, 0);
             this.PanelPF.Name = "PanelPF";
             this.PanelPF.Size = new System.Drawing.Size(560, 114);
             this.PanelPF.TabIndex = 20;
@@ -223,6 +240,7 @@ namespace EasyHortifruti
             // 
             // cbEstadoCivil
             // 
+            this.cbEstadoCivil.Caption = null;
             this.cbEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbEstadoCivil.FormattingEnabled = true;
             this.cbEstadoCivil.Items.AddRange(new object[] {
@@ -232,6 +250,7 @@ namespace EasyHortifruti
             "Viúvo"});
             this.cbEstadoCivil.Location = new System.Drawing.Point(157, 81);
             this.cbEstadoCivil.Name = "cbEstadoCivil";
+            this.cbEstadoCivil.Obrigatorio = false;
             this.cbEstadoCivil.Size = new System.Drawing.Size(147, 26);
             this.cbEstadoCivil.TabIndex = 43;
             // 
@@ -247,6 +266,7 @@ namespace EasyHortifruti
             // 
             // cbSexo
             // 
+            this.cbSexo.Caption = null;
             this.cbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSexo.FormattingEnabled = true;
             this.cbSexo.Items.AddRange(new object[] {
@@ -255,6 +275,7 @@ namespace EasyHortifruti
             "Outros"});
             this.cbSexo.Location = new System.Drawing.Point(18, 81);
             this.cbSexo.Name = "cbSexo";
+            this.cbSexo.Obrigatorio = false;
             this.cbSexo.Size = new System.Drawing.Size(118, 26);
             this.cbSexo.TabIndex = 41;
             // 
@@ -365,22 +386,6 @@ namespace EasyHortifruti
             this.tbCpf.TabIndex = 11;
             this.tbCpf.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.CPF;
             this.tbCpf.Value = null;
-            // 
-            // PanelPJ
-            // 
-            this.PanelPJ.Controls.Add(this.PanelPF);
-            this.PanelPJ.Controls.Add(this.TbRazaoSocial);
-            this.PanelPJ.Controls.Add(this.label5);
-            this.PanelPJ.Controls.Add(this.label6);
-            this.PanelPJ.Controls.Add(this.TbCNPJ);
-            this.PanelPJ.Controls.Add(this.TbInscrMunicipal);
-            this.PanelPJ.Controls.Add(this.label7);
-            this.PanelPJ.Controls.Add(this.TbInscrEstadual);
-            this.PanelPJ.Controls.Add(this.label9);
-            this.PanelPJ.Location = new System.Drawing.Point(3, 16);
-            this.PanelPJ.Name = "PanelPJ";
-            this.PanelPJ.Size = new System.Drawing.Size(560, 114);
-            this.PanelPJ.TabIndex = 19;
             // 
             // TbRazaoSocial
             // 
@@ -532,10 +537,12 @@ namespace EasyHortifruti
             // 
             // CbUF
             // 
+            this.CbUF.Caption = null;
             this.CbUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbUF.FormattingEnabled = true;
             this.CbUF.Location = new System.Drawing.Point(461, 97);
             this.CbUF.Name = "CbUF";
+            this.CbUF.Obrigatorio = false;
             this.CbUF.Size = new System.Drawing.Size(50, 26);
             this.CbUF.TabIndex = 40;
             // 
@@ -1067,6 +1074,7 @@ namespace EasyHortifruti
             // 
             // CbClassificacao
             // 
+            this.CbClassificacao.Caption = null;
             this.CbClassificacao.FormattingEnabled = true;
             this.CbClassificacao.Items.AddRange(new object[] {
             "Cliente",
@@ -1076,6 +1084,7 @@ namespace EasyHortifruti
             "Sócio"});
             this.CbClassificacao.Location = new System.Drawing.Point(594, 5);
             this.CbClassificacao.Name = "CbClassificacao";
+            this.CbClassificacao.Obrigatorio = false;
             this.CbClassificacao.Size = new System.Drawing.Size(167, 21);
             this.CbClassificacao.TabIndex = 3;
             // 
@@ -1122,15 +1131,16 @@ namespace EasyHortifruti
             this.Name = "FormGeralAltInsert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyHortifruti - Cadastro Geral - Inserir Dados";
+            this.Load += new System.EventHandler(this.FormGeralAltInsert_Load);
             this.panel1CadGeralInserirDados.ResumeLayout(false);
             this.panel5InserirCadGeral.ResumeLayout(false);
             this.tabControlInserirDados.ResumeLayout(false);
             this.tbBase.ResumeLayout(false);
             this.tbBase.PerformLayout();
-            this.PanelPF.ResumeLayout(false);
-            this.PanelPF.PerformLayout();
             this.PanelPJ.ResumeLayout(false);
             this.PanelPJ.PerformLayout();
+            this.PanelPF.ResumeLayout(false);
+            this.PanelPF.PerformLayout();
             this.panel7InserirCadGeral.ResumeLayout(false);
             this.tabControlInserirEndereco.ResumeLayout(false);
             this.tbpEndereco.ResumeLayout(false);

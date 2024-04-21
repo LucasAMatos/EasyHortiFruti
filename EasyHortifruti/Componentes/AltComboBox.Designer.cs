@@ -1,4 +1,6 @@
-﻿namespace EasyHortifruti.Componentes
+﻿using System.Windows.Forms;
+
+namespace EasyHortifruti.Componentes
 {
     partial class AltComboBox
     {

@@ -32,7 +32,7 @@ namespace EasyHortifruti
                                                 nome_produto character varying(30) ,
                                                 pcocompra_produto numeric NOT NULL,
                                                 pcovenda_produto numeric NOT NULL,
-                                                margem_produto numeric NOT NULL,
+                                                margem_produto double precision NOT NULL,
                                                 id_unidade integer NOT NULL,
                                                 id_grupo integer NULL,
                                                 id_subgrupo integer NULL,
@@ -79,7 +79,7 @@ namespace EasyHortifruti
                                             (
                                                 nome_grupo character varying(15)  NOT NULL,
                                                 obs_grupo character varying(50) NULL,
-                                                margem_grupo character varying(5) NULL,
+                                                margem_grupo double precision NULL,
                                                 id_recno integer NOT NULL GENERATED ALWAYS AS IDENTITY 
 	                                            ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
                                                 CONSTRAINT uq_id_grupo UNIQUE (id_recno)
@@ -91,7 +91,7 @@ namespace EasyHortifruti
                                             (
                                                 id_grupo integer NOT NULL,
                                                 nome_subgrupo character varying(15)  NOT NULL,
-                                                margem_subgrupo character varying(50) NULL,
+                                                margem_subgrupo double precision NULL,
                                                 id_recno integer NOT NULL GENERATED ALWAYS AS IDENTITY 
 	                                            ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
                                                 CONSTRAINT uq_idsubgrupo UNIQUE (id_recno),

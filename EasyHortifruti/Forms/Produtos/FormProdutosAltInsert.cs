@@ -120,10 +120,20 @@ namespace EasyHortifruti
                 MessageBox.Show(ex.Message);
             }
         }
+
+        private void MtbPrecoVenda_TextChanged(object sender, EventArgs e)
+        {
+            CalcularMargemLucro();
+        }
+
+        private void MtbMargemLucro_TextChanged(object sender, EventArgs e)
+        {
+            CalcularMargemLucro();
+        }
         #endregion
 
         #region Metodos
-        private void CarregarGridUnidades()
+        private void CarregarComboUnidades()
         { 
             cbUnidProduto.Items.Clear();
             unidade.Clear();
@@ -136,7 +146,7 @@ namespace EasyHortifruti
             cbUnidProduto.SelectedText = string.Empty;
         }
 
-        private void CarregarGridGrupo()
+        private void CarregarComboGrupo()
         { 
             cbGrupoProduto.Items.Clear();
             cbGrupoProduto.Items.Add(string.Empty);
@@ -149,7 +159,7 @@ namespace EasyHortifruti
             }
         }
 
-        private void CarregarGridSubGrupo()
+        private void CarregarComboSubGrupo()
         {
             cbSubGrupoProduto.Items.Clear();
             cbSubGrupoProduto.Items.Add(string.Empty);
@@ -164,13 +174,10 @@ namespace EasyHortifruti
 
         private void LimparCampos()
         {
-            tbDescricaoProduto.Text = string.Empty;
-            CarregarGridUnidades();
-            MtbPrecoCompra.Text = string.Empty;
-            MtbPrecoVenda.Text = string.Empty;
-            MtbMargemLucro.Text = string.Empty;
-            CarregarGridGrupo();
-            CarregarGridSubGrupo();
+            base.LimparCampos();
+            CarregarComboUnidades();
+            CarregarComboGrupo();
+            CarregarComboSubGrupo();
             CalcularMargemLucro();
 
             labelIDProduto.Visible = Alterar;
@@ -218,19 +225,7 @@ namespace EasyHortifruti
                 // Se os TextBoxes não tiverem valores válidos, limpa o TextBox da margem de lucro
                 MtbPrecoVenda.Text = string.Empty;
             }
-        }
-
-        private void MtbPrecoVenda_TextChanged(object sender, EventArgs e)
-        {
-            CalcularMargemLucro();
-        }
-
-        private void MtbMargemLucro_TextChanged(object sender, EventArgs e)
-        {
-            CalcularMargemLucro();
-        }
-
-       
+        }      
 
         #endregion
 

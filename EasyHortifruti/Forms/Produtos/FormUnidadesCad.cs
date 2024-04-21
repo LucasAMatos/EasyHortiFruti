@@ -64,7 +64,7 @@ namespace EasyHortifruti
                 DialogResult dialogResult = MessageBox.Show("Deseja Excluir o registro?", "", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    new ConexaoBD().ExcluirRegistro(IdSelecionado, TabelasScript.TabelaUnidades);
+                    new ConexaoBD().ExcluirUnidade(IdSelecionado);
                     MessageBox.Show("Registro excluído com sucesso");
                 }
                 CarregarGrid();
@@ -81,7 +81,7 @@ namespace EasyHortifruti
         #region Metodos
         private void CarregarGrid()
         {
-            dgvCadUnidades.DataSource = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaUnidades); // dataset
+            dgvCadUnidades.DataSource = new ConexaoBD().ConsultarUnidades(); // dataset
             dgvCadUnidades.DataMember = "Table"; 
             dgvCadUnidades.Sort(dgvCadUnidades.Columns["ID"], System.ComponentModel.ListSortDirection.Ascending);
         }

@@ -39,6 +39,7 @@ namespace EasyHortifruti
         {
             try
             {
+                Criticar();
                 string Descricao = TbDescGrupo.Text; // Obtém o texto do TextBox
                 string Observacao = TbObsGrupo.Text; // Obtém o texto do TextBox
                 string MargemLucro = TbMargemGrupo.Text; // Obtém o texto do TextBox
@@ -92,7 +93,7 @@ namespace EasyHortifruti
 
             if (Alterar)
             {
-                DataSet ds = new ConexaoBD().ConsultarTabelaPorId(Id, TabelasScript.TabelaGrupos);
+                DataSet ds = new ConexaoBD().ConsultarGrupoPorId(Id);
 
                 TbDescGrupo.Text = ds.Tables[0].Rows[0]["nome_grupo"].ToString();
                 TbObsGrupo.Text = ds.Tables[0].Rows[0]["Obs_grupo"].ToString();

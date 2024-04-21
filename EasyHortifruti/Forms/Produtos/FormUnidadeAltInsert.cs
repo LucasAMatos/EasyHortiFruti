@@ -46,14 +46,14 @@ namespace EasyHortifruti
 
                 if (Alterar)
                 {
-                    new ConexaoBD().AlterarUnidades(Id, Abreviatura, Descricao, Observacao);
+                    new ConexaoBD().AlterarUnidade(Id, Abreviatura, Descricao, Observacao);
 
                     MessageBox.Show(string.Format("Unidade Alterada com Sucesso!"));
                     this.Close();
                 }
                 else
                 {
-                    new ConexaoBD().InserirUnidades(Abreviatura, Descricao, Observacao);
+                    new ConexaoBD().InserirUnidade(Abreviatura, Descricao, Observacao);
 
                     DialogResult pNovaUnidade = MessageBox.Show(string.Format("Unidade {0} criada com sucesso! Deseja cadastrar uma nova unidade?", Descricao), string.Empty, MessageBoxButtons.YesNo);
                     if (pNovaUnidade == DialogResult.Yes)
@@ -89,7 +89,7 @@ namespace EasyHortifruti
         {
             if (Alterar)
             {
-                DataSet ds = new ConexaoBD().ConsultarTabelaPorId(Id, TabelasScript.TabelaUnidades);
+                DataSet ds = new ConexaoBD().ConsultarUnidadePorId(Id);
 
                 tbCadAbreviUni.Text = ds.Tables[0].Rows[0]["abrev_unid"].ToString();
                 lbIDCadUnidade.Text = ds.Tables[0].Rows[0]["id_recno"].ToString();

@@ -85,7 +85,7 @@ namespace EasyHortifruti
             this.textBox14 = new AltTextBox();
             this.label20 = new System.Windows.Forms.Label();
             this.textBox13 = new AltTextBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new AltComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
             this.panelTotalGeral = new System.Windows.Forms.Panel();
@@ -115,7 +115,7 @@ namespace EasyHortifruti
             this.textBox1 = new AltTextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.panelDataStatus = new System.Windows.Forms.Panel();
-            this.CbStatusPedido = new System.Windows.Forms.ComboBox();
+            this.CbStatusPedido = new AltComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dataPedido = new System.Windows.Forms.DateTimePicker();
@@ -1102,7 +1102,7 @@ namespace EasyHortifruti
         private System.Windows.Forms.Button btBuscaClientePedido;
         private AltTextBox textBox1;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.ComboBox CbStatusPedido;
+        private AltComboBox CbStatusPedido;
         private System.Windows.Forms.MaskedTextBox textBox10;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker dateTimePicker3;
@@ -1152,7 +1152,7 @@ namespace EasyHortifruti
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
         private System.Windows.Forms.Panel panel9;
         private AltTextBox textBox13;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private AltComboBox comboBox2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Label label22;
         private AltTextBox textBox16;

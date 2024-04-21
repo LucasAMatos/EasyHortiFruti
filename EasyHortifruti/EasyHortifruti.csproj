@@ -126,7 +126,10 @@
     <Compile Include="Componentes\AltTextBox.Designer.cs">
       <DependentUpon>AltTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="DML\Grupo.cs" />
     <Compile Include="DML\Produto.cs" />
+    <Compile Include="DML\SubGrupo.cs" />
+    <Compile Include="DML\Unidade.cs" />
     <Compile Include="Utilitarios\TabelasScript.cs" />
     <Compile Include="Utilitarios\Caracter.cs" />
     <Compile Include="Utilitarios\ConexaoBD.cs" />

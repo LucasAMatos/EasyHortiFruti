@@ -1,4 +1,6 @@
-﻿namespace EasyHortifruti
+﻿using EasyHortifruti.Componentes;
+
+namespace EasyHortifruti
 {
     partial class FormCtasReceber
     {
@@ -51,13 +53,13 @@
             this.BtEditarCtaRecebto = new System.Windows.Forms.Button();
             this.BtIncluirCtaRecebto = new System.Windows.Forms.Button();
             this.panel3CtasReceberFiltros = new System.Windows.Forms.Panel();
-            this.CbFiltroSituação = new System.Windows.Forms.ComboBox();
+            this.CbFiltroSituação = new AltComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.DateFinal = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.DataInicio = new System.Windows.Forms.DateTimePicker();
-            this.CbFiltroCliente = new System.Windows.Forms.ComboBox();
+            this.CbFiltroCliente = new AltComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTituloCtasReceber = new System.Windows.Forms.Panel();
@@ -548,13 +550,13 @@
         private System.Windows.Forms.Panel panelTituloCtasReceber;
         private System.Windows.Forms.Panel panel3CtasReceberFiltros;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox CbFiltroSituação;
+        private AltComboBox CbFiltroSituação;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker DateFinal;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker DataInicio;
-        private System.Windows.Forms.ComboBox CbFiltroCliente;
+        private AltComboBox CbFiltroCliente;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btSairCtasReceber;
         private System.Windows.Forms.Panel panel5CtasReceberBotoes;

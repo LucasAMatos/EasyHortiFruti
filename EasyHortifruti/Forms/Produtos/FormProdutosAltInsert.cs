@@ -80,7 +80,7 @@ namespace EasyHortifruti
                 grupo.TryGetValue(cbGrupoProduto.Text, out int idGrupo);
                 unidade.TryGetValue(cbUnidProduto.Text, out int idUnidade);
 
-                CriticarCampos();
+                Criticar();
 
                 Produto produto = new Produto
                 {
@@ -123,33 +123,11 @@ namespace EasyHortifruti
         #endregion
 
         #region Metodos
-        private void CriticarCampos()
-        {
-            try
-            {
-                if (string.IsNullOrEmpty(tbDescricaoProduto.Text))
-                    throw new Exception("Descrição é Obrigatório");
-                if (cbUnidProduto.SelectedIndex < 0)
-                    throw new Exception("Selecione uma Unidade");
-                if (string.IsNullOrEmpty(MtbPrecoCompra.Text))
-                    throw new Exception("Preço de Compra é Obrigatório");
-                if (string.IsNullOrEmpty(MtbPrecoVenda.Text))
-                    throw new Exception("Preço de Venda é Obrigatório");
-                if (string.IsNullOrEmpty(MtbMargemLucro.Text))
-                    throw new Exception("Margem Lucro é Obrigatório");
-                //if (cbGrupoProduto.SelectedIndex < 0)
-                  //  throw new Exception("Selecione um grupo");
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-            }
-        }
         private void CarregarGridUnidades()
         { 
             cbUnidProduto.Items.Clear();
             unidade.Clear();
-            DataSet ds = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaUnidades);
+            DataSet ds = new ConexaoBD().ConsultarUnidades();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 unidade.Add(dr["abrev_unid"].ToString(), Convert.ToInt16(dr["id_recno"]));
@@ -163,7 +141,7 @@ namespace EasyHortifruti
             cbGrupoProduto.Items.Clear();
             cbGrupoProduto.Items.Add(string.Empty);
             grupo.Clear();
-            DataSet ds = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaGrupos);
+            DataSet ds = new ConexaoBD().ConsultarGrupos();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 grupo.Add(dr["nome_grupo"].ToString(), Convert.ToInt16(dr["id_recno"]));
@@ -176,7 +154,7 @@ namespace EasyHortifruti
             cbSubGrupoProduto.Items.Clear();
             cbSubGrupoProduto.Items.Add(string.Empty);
             subGrupo.Clear();
-            DataSet ds = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaSubGrupos);
+            DataSet ds = new ConexaoBD().ConsultarSubGrupos();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 subGrupo.Add(dr["nome_subgrupo"].ToString(), Convert.ToInt16(dr["id_recno"]));

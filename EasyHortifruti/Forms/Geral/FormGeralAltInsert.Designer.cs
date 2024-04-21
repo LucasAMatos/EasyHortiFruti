@@ -38,9 +38,9 @@ namespace EasyHortifruti
             this.PanelPF = new System.Windows.Forms.Panel();
             this.label43 = new System.Windows.Forms.Label();
             this.tbNaturalidade = new EasyHortifruti.Componentes.AltTextBox();
-            this.cbEstadoCivil = new System.Windows.Forms.ComboBox();
+            this.cbEstadoCivil = new AltComboBox();
             this.label42 = new System.Windows.Forms.Label();
-            this.cbSexo = new System.Windows.Forms.ComboBox();
+            this.cbSexo = new AltComboBox();
             this.label41 = new System.Windows.Forms.Label();
             this.label40 = new System.Windows.Forms.Label();
             this.dtExpRg = new System.Windows.Forms.DateTimePicker();
@@ -63,7 +63,7 @@ namespace EasyHortifruti
             this.panel7InserirCadGeral = new System.Windows.Forms.Panel();
             this.tabControlInserirEndereco = new System.Windows.Forms.TabControl();
             this.tbpEndereco = new System.Windows.Forms.TabPage();
-            this.CbUF = new System.Windows.Forms.ComboBox();
+            this.CbUF = new AltComboBox();
             this.label36 = new System.Windows.Forms.Label();
             this.label35 = new System.Windows.Forms.Label();
             this.label31 = new System.Windows.Forms.Label();
@@ -113,7 +113,7 @@ namespace EasyHortifruti
             this.label2 = new System.Windows.Forms.Label();
             this.panel2InserirCadGeral = new System.Windows.Forms.Panel();
             this.labelClassificacao = new System.Windows.Forms.Label();
-            this.CbClassificacao = new System.Windows.Forms.ComboBox();
+            this.CbClassificacao = new AltComboBox();
             this.labeltpPesoa = new System.Windows.Forms.Label();
             this.RbPessoaJuridica = new System.Windows.Forms.RadioButton();
             this.RbPessoaFisica = new System.Windows.Forms.RadioButton();
@@ -1215,7 +1215,7 @@ namespace EasyHortifruti
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.ComboBox CbUF;
+        private AltComboBox CbUF;
         private System.Windows.Forms.Panel PanelPJ;
         private System.Windows.Forms.Panel PanelPF;
         private AltTextBox tbEstadoRg;
@@ -1227,13 +1227,13 @@ namespace EasyHortifruti
         private AltTextBox tbCpf;
         private System.Windows.Forms.Label label43;
         private AltTextBox tbNaturalidade;
-        private System.Windows.Forms.ComboBox cbEstadoCivil;
+        private AltComboBox cbEstadoCivil;
         private System.Windows.Forms.Label label42;
-        private System.Windows.Forms.ComboBox cbSexo;
+        private AltComboBox cbSexo;
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label label40;
         private System.Windows.Forms.DateTimePicker dtExpRg;
         private System.Windows.Forms.Label labelClassificacao;
-        private System.Windows.Forms.ComboBox CbClassificacao;
+        private AltComboBox CbClassificacao;
     }
 }

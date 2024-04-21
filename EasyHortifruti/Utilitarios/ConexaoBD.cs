@@ -19,32 +19,36 @@ namespace EasyHortifruti
 
         #region Métodos
 
-        #region Geral
-        public DataSet ConsultarTabela(string pNomeTabela)
-        {
-            string sql = string.Concat("SELECT * FROM ", pNomeTabela);
+        #region MétodosGerais
 
-            return ExecutaEPreencheDataset(sql);
-        }
 
-        public DataSet ConsultarTabelaPorId(int pId, string pNomeTabela)
-        {
-            string sql = string.Concat("SELECT * FROM ", pNomeTabela, " WHERE id_recno=", pId.ToString());
-
-            return ExecutaEPreencheDataset(sql);
-        }
-        public void ExcluirRegistro(int pId, string pNomeTabela)
-        {
-            string sql = String.Format("DELETE FROM {0} WHERE id_recno={1}", pNomeTabela, pId);
-
-            ExecutaSemRetorno(sql);
-        }
         #endregion
 
         #region Geral
+        public DataSet ConsultarGerais() => ConsultarTabela(TabelasScript.TabelaGeral);
+
+        public DataSet ConsultarGeralPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaGeral);
+
+        public void InserirGeral()
+        {
+            //TO DO: IMPLEMENTAR INSERIR GERAL
+        }
+        public void AlterarGeral()
+        {
+            //TO DO: IMPLEMENTAR ALTERAR GERAL
+        }
+
+        public void ExcluirGeral(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaGeral);
+
         #endregion
+
         #region Unidades
-        public void InserirUnidades(string Abreviatura, string Descricao, string Observacao)
+
+        public DataSet ConsultarUnidades() => ConsultarTabela(TabelasScript.TabelaUnidades);
+
+        public DataSet ConsultarUnidadePorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaUnidades);
+
+        public void InserirUnidade(string Abreviatura, string Descricao, string Observacao)
         {
             using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
             {
@@ -65,16 +69,23 @@ namespace EasyHortifruti
             }
         }
 
-        public void AlterarUnidades(int pId, string Abreviatura, string Descricao, string Observacao)
+        public void AlterarUnidade(int pId, string Abreviatura, string Descricao, string Observacao)
         {
             string sql = string.Format("UPDATE {0} SET abrev_unid='{1}',desc_unid='{2}',obs_unid='{3}' WHERE id_recno={4}", TabelasScript.TabelaUnidades, Abreviatura, Descricao, Observacao, pId);
 
             ExecutaSemRetorno(sql);
         }
 
+        public void ExcluirUnidade(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaUnidades);
+
+
         #endregion
 
         #region Grupo
+        public DataSet ConsultarGrupos() => ConsultarTabela(TabelasScript.TabelaGrupos);
+
+        public DataSet ConsultarGrupoPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaGrupos);
+
         public void InserirGrupo(string Descricao, string Observacao, string MargemLucro)
         {
             string sql = string.Format("INSERT INTO {0} (nome_grupo, obs_grupo, margem_grupo) VALUES ('{1}', '{2}', {3})", TabelasScript.TabelaGrupos, Descricao, Observacao, MargemLucro);
@@ -87,9 +98,12 @@ namespace EasyHortifruti
 
             ExecutaSemRetorno(sql);
         }
+
+        public void ExcluirGrupo(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaGrupos);
         #endregion
 
         #region SubGrupo
+        public DataSet ConsultarSubGrupos() => ConsultarTabela(TabelasScript.TabelaGrupos);
         public DataSet ConsultarSubGrupo(int pId)
         {
             string sql = string.Concat("SELECT Sub.id_recno, grp.nome_grupo, Sub.nome_subgrupo, " +
@@ -114,6 +128,7 @@ namespace EasyHortifruti
 
             ExecutaSemRetorno(sql);
         }
+        public void ExcluirSubGrupo(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaSubGrupos);
         #endregion
 
         #region Produtos
@@ -184,8 +199,25 @@ namespace EasyHortifruti
 
             ExecutaSemRetorno(sql);
         }
+        public void ExcluirProduto(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaProdutos);
         #endregion
 
+        #region Pedidos
+        
+        public DataSet ConsultarPedidos() => ConsultarTabela(TabelasScript.TabelaPedidos);
+
+        public DataSet ConsultarPedidosPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaPedidos);
+
+        public void InserirPedido(string Abreviatura, string Descricao, string Observacao)
+        {
+        }
+
+        public void AlterarPedido(int pId, string Abreviatura, string Descricao, string Observacao)
+        {
+        }
+
+        public void ExcluirPedido(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaPedidos);
+        #endregion
         #region Privado
         private DataSet ExecutaEPreencheDataset(string pSql)
         {
@@ -219,6 +251,24 @@ namespace EasyHortifruti
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+        private void ExcluirRegistro(int pId, string pNomeTabela)
+        {
+            string sql = String.Format("DELETE FROM {0} WHERE id_recno={1}", pNomeTabela, pId);
+
+            ExecutaSemRetorno(sql);
+        }
+        private DataSet ConsultarTabela(string pNomeTabela)
+        {
+            string sql = string.Concat("SELECT * FROM ", pNomeTabela);
+
+            return ExecutaEPreencheDataset(sql);
+        }
+        private DataSet ConsultarTabelaPorId(int pId, string pNomeTabela)
+        {
+            string sql = string.Concat("SELECT * FROM ", pNomeTabela, " WHERE id_recno=", pId.ToString());
+
+            return ExecutaEPreencheDataset(sql);
         }
         #endregion
 

@@ -53,7 +53,7 @@ namespace EasyHortifruti
                 DialogResult dialogResult = MessageBox.Show("Excluir", "Cancelar", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
                 {
-                    new ConexaoBD().ExcluirRegistro(IdSelecionado, TabelasScript.TabelaGeral);
+                    new ConexaoBD().ExcluirGeral(IdSelecionado);
                     MessageBox.Show("Registro excluído com sucesso");
                 }
                 CarregarGrid();
@@ -64,7 +64,7 @@ namespace EasyHortifruti
 
         public void CarregarGrid()
         {
-            DgViewCadGeral.DataSource = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaGeral);
+            DgViewCadGeral.DataSource = new ConexaoBD().ConsultarGerais();
             DgViewCadGeral.DataMember = "Table";
         }
 

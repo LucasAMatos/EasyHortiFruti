@@ -46,15 +46,11 @@ namespace EasyHortifruti
         {
             try
             {
+                Criticar();
 
                 string Descricao = TbDescSubGrupo.Text; // Obtém o texto do TextBox
                 string MargemLucro = TbMargemSubGrupo.Text; // Obtém o texto do TextBox
                 int pGrupo = grupos.FirstOrDefault(x => x.Value == CbGrupo.Text).Key;
-
-                if (string.IsNullOrEmpty(TbDescSubGrupo.Text))
-                    throw new Exception("Descrição é Obrigatório");
-                if (pGrupo < 1)
-                    throw new Exception("SubGrupos precisam pertencer a um grupo");
 
                 if (Alterar)
                 {
@@ -93,7 +89,7 @@ namespace EasyHortifruti
         {
             CbGrupo.Items.Clear();
             grupos.Clear();
-            DataSet ds = new ConexaoBD().ConsultarTabela(TabelasScript.TabelaGrupos);
+            DataSet ds = new ConexaoBD().ConsultarGrupos();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 grupos.Add(Convert.ToInt16(dr["id_recno"]), dr["nome_grupo"].ToString());

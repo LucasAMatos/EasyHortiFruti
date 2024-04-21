@@ -1,4 +1,6 @@
-﻿namespace EasyHortifruti
+﻿using EasyHortifruti.Componentes;
+
+namespace EasyHortifruti
 {
     partial class FormGeralCad
     {
@@ -48,7 +50,7 @@
             this.Column14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelPesquisarCadGeral = new System.Windows.Forms.Panel();
             this.tbPesquisaGeral = new System.Windows.Forms.TextBox();
-            this.cbTpFontePesquisa = new System.Windows.Forms.ComboBox();
+            this.cbTpFontePesquisa = new AltComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3FormCadGeralBotoes = new System.Windows.Forms.Panel();
@@ -405,7 +407,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Column12;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column13;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column14;
-        private System.Windows.Forms.ComboBox cbTpFontePesquisa;
+        private AltComboBox cbTpFontePesquisa;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox tbPesquisaGeral;

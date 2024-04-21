@@ -152,20 +152,6 @@ namespace EasyHortifruti
                                                     REFERENCES public.pedidos (id_recno)
                                             )";
 
-        public TabelasScript()
-        {
-            Scripts = new List<string>
-            {
-                CreateUnidades,
-                CreateGeral,
-                CreateGrupos,
-                CreateSubGrupos,
-                CreateProdutos,
-                CreatePedidos,
-                CreateCtasReceber
-            };
-        }
-
         public static string ScriptInsert(string pTabela, Dictionary<string, string> pCampos)
         {
             return string.Concat(
@@ -187,5 +173,20 @@ namespace EasyHortifruti
 
             return retorno;
         }
+
+        public TabelasScript()
+        {
+            Scripts = new List<string>
+            {
+                CreateUnidades,
+                CreateGeral,
+                CreateGrupos,
+                CreateSubGrupos,
+                CreateProdutos,
+                CreatePedidos,
+                CreateCtasReceber
+            };
+        }
+
     }
 }

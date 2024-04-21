@@ -6,6 +6,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
@@ -51,10 +52,12 @@ namespace EasyHortifruti
         private void RbPessoaFisica_CheckedChanged_1(object sender, EventArgs e)
         {
             PanelPF.Visible = RbPessoaFisica.Checked;
+            PanelPJ.Visible = !RbPessoaJuridica.Checked;
         }
 
         private void RbPessoaJuridica_CheckedChanged_1(object sender, EventArgs e)
         {
+            PanelPF.Visible = !RbPessoaJuridica.Checked;
             PanelPJ.Visible = RbPessoaJuridica.Checked;
         }
         private void BtCancelarGeralInserir_Click(object sender, EventArgs e)
@@ -152,7 +155,7 @@ namespace EasyHortifruti
                         DtNascAbert.Value = iGeral.DtNascFundacao;
                         tbOrgaoExpRg.Text = iGeral.OrgaoExpedidor;
                         tbEstadoRg.Text = iGeral.OrgaoExpedidorUF;
-                        tbCpf.Text = iGeral.CPF;
+                        tbCpf.Text = Regex.Replace(iGeral.CPF, @"(\d{3})(\d{3})(\d{3})(\d{2})", @"$1.$2.$3-$4");
                         TbCNPJ.Text = iGeral.CNPJ;
                         tbRg.Text = iGeral.RG;
                         cbSexo.SelectedIndex = (int)iGeral.Sexo;
@@ -200,7 +203,7 @@ namespace EasyHortifruti
         {
             cbSexo.Items.Clear();
             DataSet ds = new ConexaoBD().ConsultarUnidades();
-            foreach (Sexo item in Enum.GetValues(typeof(EstadoCivil)))
+            foreach (Sexo item in Enum.GetValues(typeof(Sexo)))
             {
                 cbSexo.Items.Add(item);
             }

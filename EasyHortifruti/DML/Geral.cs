@@ -187,4 +187,11 @@ namespace EasyHortifruti.DML
         [DefaultValue("J")]
         Juridica
     }
+
+    public enum UF
+    { 
+        AC,
+        AM,
+
+    }
 }

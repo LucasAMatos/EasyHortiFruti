@@ -82,6 +82,7 @@
             this.dtGridViewCadProd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtGridViewCadProd.Location = new System.Drawing.Point(0, 127);
             this.dtGridViewCadProd.Name = "dtGridViewCadProd";
+            this.dtGridViewCadProd.ReadOnly = true;
             this.dtGridViewCadProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtGridViewCadProd.Size = new System.Drawing.Size(754, 434);
             this.dtGridViewCadProd.TabIndex = 2;
@@ -91,6 +92,7 @@
             this.lbDescricao.DataPropertyName = "nome_produto";
             this.lbDescricao.HeaderText = "Descrição";
             this.lbDescricao.Name = "lbDescricao";
+            this.lbDescricao.ReadOnly = true;
             this.lbDescricao.Width = 240;
             // 
             // lbUnidade
@@ -98,42 +100,49 @@
             this.lbUnidade.DataPropertyName = "abrev_unid";
             this.lbUnidade.HeaderText = "Unidade";
             this.lbUnidade.Name = "lbUnidade";
+            this.lbUnidade.ReadOnly = true;
             // 
             // lbVlrCompra
             // 
             this.lbVlrCompra.DataPropertyName = "pcocompra_produto";
             this.lbVlrCompra.HeaderText = "Vlr Compra";
             this.lbVlrCompra.Name = "lbVlrCompra";
+            this.lbVlrCompra.ReadOnly = true;
             // 
             // lbVlrVenda
             // 
             this.lbVlrVenda.DataPropertyName = "pcovenda_produto";
             this.lbVlrVenda.HeaderText = "Vlr Venda";
             this.lbVlrVenda.Name = "lbVlrVenda";
+            this.lbVlrVenda.ReadOnly = true;
             // 
             // lbVlrMargem
             // 
             this.lbVlrMargem.DataPropertyName = "margem_produto";
             this.lbVlrMargem.HeaderText = "Margem Lucro";
             this.lbVlrMargem.Name = "lbVlrMargem";
+            this.lbVlrMargem.ReadOnly = true;
             // 
             // lbGrupo
             // 
             this.lbGrupo.DataPropertyName = "nome_grupo";
             this.lbGrupo.HeaderText = "Grupo";
             this.lbGrupo.Name = "lbGrupo";
+            this.lbGrupo.ReadOnly = true;
             // 
             // lbSubGrupo
             // 
             this.lbSubGrupo.DataPropertyName = "nome_subgrupo";
             this.lbSubGrupo.HeaderText = "SubGrupo";
             this.lbSubGrupo.Name = "lbSubGrupo";
+            this.lbSubGrupo.ReadOnly = true;
             // 
             // ID
             // 
             this.ID.DataPropertyName = "id_recno";
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
             this.ID.Visible = false;
             // 
             // panel3FormCadProdBotoes

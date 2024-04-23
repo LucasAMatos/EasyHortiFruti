@@ -192,7 +192,6 @@ namespace EasyHortifruti
         private void CarregarComboSexo()
         {
             cbSexo.Items.Clear();
-            DataSet ds = new ConexaoBD().ConsultarUnidades();
             foreach (Sexo item in Enum.GetValues(typeof(Sexo)))
             {
                 cbSexo.Items.Add(item);
@@ -202,7 +201,6 @@ namespace EasyHortifruti
         private void CarregarComboEstadoCivil()
         {
             cbSexo.Items.Clear();
-            DataSet ds = new ConexaoBD().ConsultarUnidades();
             foreach (Sexo item in Enum.GetValues(typeof(Sexo)))
             {
                 cbSexo.Items.Add(item);

@@ -104,7 +104,7 @@ namespace EasyHortifruti
         private string CreateGeral = @"CREATE TABLE IF NOT EXISTS public.geral
                                             (
                                                 tppessoa character(1)  NOT NULL,
-                                                classificacao character varying(15)  NOT NULL,
+                                                classificacao INTEGER NOT NULL DEFAULT 0,
                                                 nomefantasia character varying(50)  NOT NULL,
                                                 razaosocial character varying(50)  NOT NULL,
                                                 contato character varying(15) NULL,

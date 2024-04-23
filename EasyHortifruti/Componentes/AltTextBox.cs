@@ -24,7 +24,7 @@ namespace EasyHortifruti.Componentes
         {
             get
             {
-                if (iValue == null)
+                if (iValue == null || string.IsNullOrEmpty(iValue.Trim()))
                     PreencheValue(null, null);
                 return iValue;
             }
@@ -48,9 +48,10 @@ namespace EasyHortifruti.Componentes
         #region Construtor
         public AltTextBox()
         {
-            this.KeyUp += PreencheValue;
+            this.KeyPress += PreencheValue;
 
             this.KeyPress += FormataCampos;
+
 
             InitializeComponent();
         }
@@ -58,17 +59,18 @@ namespace EasyHortifruti.Componentes
 
         #region Metodos
 
-        private void PreencheValue(object sender, KeyEventArgs e)
+        private void PreencheValue(object sender, KeyPressEventArgs e)
         {
             switch (Tipo)
             {
                 case TipoCampo.TELEFONE:
                 case TipoCampo.CEP:
-                    iValue = Regex.Replace(Text, @"\D+", "");
-                    break;
                 case TipoCampo.CNPJ:
                 case TipoCampo.CPF:
-                    iValue = Regex.Replace(Text, @"\D+", "");
+                    if (e == null || char.IsDigit(e.KeyChar))
+                    {
+                        iValue = Regex.Replace(Text, @"[^\d]+", "");
+                    }
                     break;
 
                 default:
@@ -90,7 +92,7 @@ namespace EasyHortifruti.Componentes
 
                     if (char.IsDigit(e.KeyChar))
                     {
-                        if (Value.Length == 10)
+                        if (Value.Length >= 10)
                             Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,5})(\d{0,4})", @"($1)$2-$3");
                         else if(Value.Length >= 6)
                             Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,4})(\d{0,4})", @"($1)$2-$3");

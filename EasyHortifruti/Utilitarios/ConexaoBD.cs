@@ -82,7 +82,7 @@ namespace EasyHortifruti
             Dictionary<string, string> pCampos = new Dictionary<string, string>
             {
                 { "tppessoa", pGeral.TipoPessoa == TPFJ.Fisica ? "F" : "J" },
-                { "classificacao", pGeral.Classificacao.ToString() },
+                { "classificacao", ((int)pGeral.Classificacao).ToString() },
                 { "nomefantasia", pGeral.NomeFantasia },
                 { "razaosocial", pGeral.RazaoSocial },
                 { "contato", pGeral.Contato },

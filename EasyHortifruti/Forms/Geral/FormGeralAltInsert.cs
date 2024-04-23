@@ -90,7 +90,8 @@ namespace EasyHortifruti
                 Fone,
                 Celular
             },
-                Endereco = RetornarEnderecoTela()
+                Endereco = RetornarEnderecoTela(),
+                ID = Convert.ToInt32(LbIdCadGeral.Text)
             };
 
             if (Alterar)

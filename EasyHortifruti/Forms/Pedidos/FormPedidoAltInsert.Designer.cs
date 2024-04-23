@@ -82,7 +82,7 @@ namespace EasyHortifruti
             this.panel2 = new System.Windows.Forms.Panel();
             this.CbTpDocumento = new EasyHortifruti.Componentes.AltComboBox(this.components);
             this.label19 = new System.Windows.Forms.Label();
-            this.MtbCep = new System.Windows.Forms.MaskedTextBox();
+            this.MtbCep = new AltTextBox();
             this.label31 = new System.Windows.Forms.Label();
             this.textBox25 = new EasyHortifruti.Componentes.AltTextBox();
             this.label29 = new System.Windows.Forms.Label();
@@ -102,9 +102,9 @@ namespace EasyHortifruti
             this.panelTotalGeral = new System.Windows.Forms.Panel();
             this.textBox1 = new EasyHortifruti.Componentes.AltTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.MtbTotPedido = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox2 = new System.Windows.Forms.MaskedTextBox();
-            this.maskedTextBox1 = new System.Windows.Forms.MaskedTextBox();
+            this.MtbTotPedido = new AltTextBox();
+            this.maskedTextBox2 = new AltTextBox();
+            this.maskedTextBox1 = new AltTextBox();
             this.label18 = new System.Windows.Forms.Label();
             this.label17 = new System.Windows.Forms.Label();
             this.label16 = new System.Windows.Forms.Label();
@@ -123,7 +123,7 @@ namespace EasyHortifruti
             this.label5 = new System.Windows.Forms.Label();
             this.DtPrevEntrega = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
-            this.TbCelular = new System.Windows.Forms.MaskedTextBox();
+            this.TbCelular = new AltTextBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panelDataStatus = new System.Windows.Forms.Panel();
@@ -721,7 +721,6 @@ namespace EasyHortifruti
             // 
             this.MtbCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MtbCep.Location = new System.Drawing.Point(6, 120);
-            this.MtbCep.Mask = "99999-999";
             this.MtbCep.Name = "MtbCep";
             this.MtbCep.Size = new System.Drawing.Size(93, 24);
             this.MtbCep.TabIndex = 53;
@@ -1193,7 +1192,6 @@ namespace EasyHortifruti
             // 
             this.TbCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbCelular.Location = new System.Drawing.Point(409, 23);
-            this.TbCelular.Mask = "(00)00000-0000";
             this.TbCelular.Name = "TbCelular";
             this.TbCelular.Size = new System.Drawing.Size(104, 24);
             this.TbCelular.TabIndex = 19;
@@ -1321,7 +1319,7 @@ namespace EasyHortifruti
         private System.Windows.Forms.Panel panelPedCliente;
         private System.Windows.Forms.Label label3;
         private AltComboBox CbStatusPedido;
-        private System.Windows.Forms.MaskedTextBox TbCelular;
+        private AltTextBox TbCelular;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.DateTimePicker DtConclusaoPedido;
         private System.Windows.Forms.DateTimePicker DtEntregaPedido;
@@ -1377,9 +1375,9 @@ namespace EasyHortifruti
         private AltTextBox TbPrazoPgto;
         private System.Windows.Forms.Label label32;
         private System.Windows.Forms.TabPage tabPage3;
-        private System.Windows.Forms.MaskedTextBox MtbTotPedido;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox2;
-        private System.Windows.Forms.MaskedTextBox maskedTextBox1;
+        private AltTextBox MtbTotPedido;
+        private AltTextBox maskedTextBox2;
+        private AltTextBox maskedTextBox1;
         private AltTextBox textBox1;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
@@ -1388,7 +1386,7 @@ namespace EasyHortifruti
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.MaskedTextBox MtbCep;
+        private AltTextBox MtbCep;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label19;
         private System.Windows.Forms.Panel panel3;

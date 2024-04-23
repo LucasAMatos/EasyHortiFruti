@@ -1028,12 +1028,6 @@ namespace EasyHortifruti
             // 
             this.CbClassificacao.Caption = null;
             this.CbClassificacao.FormattingEnabled = true;
-            this.CbClassificacao.Items.AddRange(new object[] {
-            "Cliente",
-            "Entregador",
-            "Fornecedor",
-            "Funcionário",
-            "Sócio"});
             this.CbClassificacao.Location = new System.Drawing.Point(594, 5);
             this.CbClassificacao.Name = "CbClassificacao";
             this.CbClassificacao.Obrigatorio = false;

@@ -47,6 +47,7 @@ namespace EasyHortifruti
         {
             LimparCampos();
             PreencheCampos();
+
         }
 
         private void RbPessoaFisica_CheckedChanged_1(object sender, EventArgs e)
@@ -137,6 +138,8 @@ namespace EasyHortifruti
             base.LimparCampos();
             CarregarComboSexo();
             CarregarComboEstadoCivil();
+            CarregarComboClassificacao();
+            CarregarComboUf();
             tabPage4.Text = string.Empty;
         }
 
@@ -186,7 +189,7 @@ namespace EasyHortifruti
             }
             catch (Exception ex)
             {
-                MessageBox.Show(ex.Message);   
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -194,9 +197,21 @@ namespace EasyHortifruti
         {
             cbEstadoCivil.CarregarValoresEnum<Sexo>();
         }
+
         private void CarregarComboEstadoCivil()
         {
             cbEstadoCivil.CarregarValoresEnum<EstadoCivil>();
         }
+
+        private void CarregarComboClassificacao()
+        {
+            CbClassificacao.CarregarValoresEnum<Classificacao>();
+        }
+
+        private void CarregarComboUf()
+        {
+            CbUF.CarregarValoresEnum<UF>();
+        }
+
     }
 }

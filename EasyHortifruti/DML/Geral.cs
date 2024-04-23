@@ -20,7 +20,7 @@ namespace EasyHortifruti.DML
 
         public string Contato { get; set; }
 
-        public string Classificacao { get; set; }
+        public Classificacao Classificacao { get; set; }
 
         public DateTime DtNascFundacao { get; set; }
 
@@ -62,7 +62,7 @@ namespace EasyHortifruti.DML
                     TipoPessoa = dr["tppessoa"].ToString() == "J" ? TPFJ.Juridica  : TPFJ.Fisica;
 
                 if (dr["classificacao"] != null)
-                    Classificacao = dr["classificacao"].ToString();
+                    Classificacao = (Classificacao)Convert.ToInt32(dr["classificacao"]);
 
                 if (dr["nomefantasia"] != null)
                     NomeFantasia = dr["nomefantasia"].ToString();
@@ -193,5 +193,17 @@ namespace EasyHortifruti.DML
         AC,
         AM,
 
+    }
+
+    public enum Classificacao
+    {
+        [Description("Cliente")]
+        Cliente = 0,
+        [Description("Fornecedor")]
+        Fornecedor = 1,
+        [Description("Funcionário")]
+        Funcionario = 2,
+        [Description("Sócio")]
+        Socio = 3
     }
 }

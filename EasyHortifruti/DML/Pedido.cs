@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,7 +13,7 @@ namespace EasyHortifruti.DML
 
         public DateTime dataPedido { get; set; }
 
-        public string StatusPedido { get; set; }
+        public StatusPedido StatusPedido { get; set; }
 
         public int IdFonte { get; set; }
 
@@ -35,5 +36,21 @@ namespace EasyHortifruti.DML
         public double TotalVenda { get; set; }
 
         public double PercentualLucro { get; set; }
+    }
+
+    public enum StatusPedido
+    {
+        [Description("Pendente")]
+        Pendente = 0,
+        [Description("Não Aprovado")]
+        NaoAprovado = 1,
+        [Description("Aprovado")]
+        Aprovado = 2,
+        [Description("Em Execução")]
+        EmExecucao = 3,
+        [Description("Concluído")]
+        Concluido = 4,
+        [Description("Engregue - Finalizado")]
+        Entregue = 5
     }
 }

@@ -44,7 +44,7 @@ namespace EasyHortifruti
             Dictionary<string, string> pCampos = new Dictionary<string, string>
             {
                 { "tppessoa", pGeral.TipoPessoa == TPFJ.Fisica ? "F" : "J" },
-                { "classificacao", pGeral.Classificacao },
+                { "classificacao", pGeral.Classificacao.ToString() },
                 { "nomefantasia", pGeral.NomeFantasia },
                 { "razaosocial", pGeral.RazaoSocial },
                 { "contato", pGeral.Contato },
@@ -82,7 +82,7 @@ namespace EasyHortifruti
             Dictionary<string, string> pCampos = new Dictionary<string, string>
             {
                 { "tppessoa", pGeral.TipoPessoa == TPFJ.Fisica ? "F" : "J" },
-                { "classificacao", pGeral.Classificacao },
+                { "classificacao", pGeral.Classificacao.ToString() },
                 { "nomefantasia", pGeral.NomeFantasia },
                 { "razaosocial", pGeral.RazaoSocial },
                 { "contato", pGeral.Contato },
@@ -289,7 +289,7 @@ namespace EasyHortifruti
             Dictionary<string, string> Campos = new Dictionary<string, string>
             {
                 { "datapedido",     pPedido.dataPedido.ToString() },
-                { "statuspedido",   pPedido.StatusPedido },
+                { "statuspedido",   pPedido.StatusPedido.ToString() },
                 { "id_fonte",       pPedido.IdFonte.ToString() },
                 { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },
                 { "prazopgto",      pPedido.PrazoPagamento.ToString() },
@@ -312,7 +312,7 @@ namespace EasyHortifruti
             Dictionary<string, string> pCampos = new Dictionary<string, string>
             {
                 { "datapedido",     pPedido.dataPedido.ToString() },
-                { "statuspedido",   pPedido.StatusPedido },
+                { "statuspedido",   pPedido.StatusPedido.ToString() },
                 { "id_fonte",       pPedido.IdFonte.ToString() },
                 { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },
                 { "prazopgto",      pPedido.PrazoPagamento.ToString() },

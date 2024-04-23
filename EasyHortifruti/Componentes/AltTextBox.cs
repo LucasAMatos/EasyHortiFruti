@@ -50,7 +50,7 @@ namespace EasyHortifruti.Componentes
         {
             this.KeyUp += PreencheValue;
 
-            this.KeyUp += FormataCampos;
+            this.KeyPress += FormataCampos;
 
             InitializeComponent();
         }
@@ -76,61 +76,81 @@ namespace EasyHortifruti.Componentes
                     break;
             }
         }
-        private void FormataCampos(object sender, EventArgs e)
+        private void FormataCampos(object sender, KeyPressEventArgs e)
         {
             switch (Tipo)
             {
                 case TipoCampo.TELEFONE:
-                    if (Value.Length == 0)
+                    // Permite apenas números e teclas de controle (como Backspace)
+                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                     {
-                        Text = string.Empty;
+                        e.Handled = true;
+                        return;
                     }
-                    else if (Value.Length <= 2)
-                    {
-                        Text = string.Format("({0})", Value.Substring(0, Value.Length));
-                    }
-                    else if (Value.Length <= 6)
-                    {
-                        Text = string.Format("({0}) {1}", Value.Substring(0, 2), Value.Substring(2, Value.Length - 2));
-                    }
-                    else if (Value.Length <= 10)
-                    {
-                        Text = string.Format("({0}) {1}-{2}", Value.Substring(0, 2), Value.Substring(2, 4), Value.Substring(6, Value.Length - 6));
-                    }
-                    else
-                        Text = string.Format("({0}) {1}-{2}", Value.Substring(0, 2), Value.Substring(2, 5), Value.Substring(7, 4));
 
-                    this.SelectionStart = this.Text.Length;
-                    if (Value.Length == 1 || Value.Length == 2)
-                        this.SelectionStart = this.Text.Length - 1;
+                    if (char.IsDigit(e.KeyChar))
+                    {
+                        if (Value.Length == 10)
+                            Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,5})(\d{0,4})", @"($1)$2-$3");
+                        else if(Value.Length >= 6)
+                            Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,4})(\d{0,4})", @"($1)$2-$3");
+                        else if (Value.Length >= 2)
+                            Text = Regex.Replace(Value, @"(^\d{0,2})", @"($1)");
+                        else
+                            Text = "(" + Value;
+                    }
                     break;
                 case TipoCampo.CEP:
-                    Text = Value.Length > 5 ? string.Format("{0}-{1}", Value.Substring(0, 5), Value.Substring(5, Value.Length - 5)) : Value;
-                    this.SelectionStart = this.Text.Length;
+                    // Permite apenas números e teclas de controle (como Backspace)
+                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                    {
+                        e.Handled = true;
+                        return;
+                    }
+                    Text = Value.Length >= 5 ? string.Format("{0}-{1}", Value.Substring(0, 5), Value.Substring(5, Value.Length - 5)) : Value;
                     break;
                 case TipoCampo.CPF:
-                    MaxLength = Value.Length == 11 ? 14 : 15;
-                    Value = Value.Trim('0').PadLeft(11, '0');
-                    Text = string.Empty;
-                    if (Value.TrimStart('0').Length > 0)
-                        Text = Regex.Replace(Value, @"(\d{3})(\d{3})(\d{3})(\d{2})", @"$1.$2.$3-$4");
-                    this.SelectionStart = this.Text.Length;
-                    this.TextAlign = HorizontalAlignment.Right;
+                    // Permite apenas números e teclas de controle (como Backspace)
+                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                    {
+                        e.Handled = true;
+                        return;
+                    }
+
+                    if (char.IsDigit(e.KeyChar))
+                    {
+                        if (Value.Length >= 9)
+                            Text = Regex.Replace(Value, @"(\d{3})(\d{3})(\d{3})", @"$1.$2.$3-");
+                        else if (Value.Length >= 3)
+                            Text = Regex.Replace(Value, @"(\d{3})", @"$1.");
+                    }
                     break;
                 case TipoCampo.CNPJ:
-                    MaxLength = Value.Length == 15 ? 19 : 20;
-                    Value = Value.Trim('0').PadLeft(15, '0');
-                    Text = string.Empty;
-                    if (Value.TrimStart('0').Length > 0)
-                        Text = Regex.Replace(Value, @"(\d{3})(\d{3})(\d{3})(\d{4})(\d{2})", @"$1.$2.$3/$4-$5");
-                    this.SelectionStart = this.Text.Length;
-                    this.TextAlign = HorizontalAlignment.Right;
+                    // Permite apenas números e teclas de controle (como Backspace)
+                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                    {
+                        e.Handled = true;
+                        return;
+                    }
+
+                    if (char.IsDigit(e.KeyChar))
+                    {
+                        if (Value.Length >= 12)
+                            Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
+                        else if (Value.Length >= 8)
+                            Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{0,4})", @"$1.$2.$3/$4");
+                        else if (Value.Length >= 5)
+                            Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{0,3})", @"$1.$2.$3");
+                        else if (Value.Length >= 2)
+                            Text = Regex.Replace(Value, @"(\d{2})(\d{0,3})", @"$1.$2");
+                        else
+                            Text = Value;
+                    }
                     break;
                 default:
-                    this.SelectionStart = this.Text.Length;
                     break;
             }
-
+            this.SelectionStart = this.Text.Length;
         }
 
         #endregion

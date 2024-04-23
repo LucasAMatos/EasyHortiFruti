@@ -2,7 +2,7 @@
 
 namespace EasyHortifruti
 {
-    partial class FormSubGrupoAltInsert
+    partial class FormSubGruposAltInsert
     {
         /// <summary>
         /// Required designer variable.
@@ -30,7 +30,7 @@ namespace EasyHortifruti
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSubGrupoAltInsert));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSubGruposAltInsert));
             this.panel1 = new System.Windows.Forms.Panel();
             this.CbGrupo = new AltComboBox();
             this.TbMargemSubGrupo = new AltTextBox();

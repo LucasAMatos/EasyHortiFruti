@@ -2,7 +2,7 @@
 
 namespace EasyHortifruti
 {
-    partial class FormUnidadeAltInsert
+    partial class FormUnidadesAltInsert
     {
         /// <summary>
         /// Required designer variable.
@@ -31,7 +31,7 @@ namespace EasyHortifruti
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUnidadeAltInsert));
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUnidadesAltInsert));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.tbCadObsUni = new EasyHortifruti.Componentes.AltTextBox();

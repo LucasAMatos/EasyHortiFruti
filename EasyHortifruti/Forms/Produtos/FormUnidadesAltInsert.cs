@@ -6,18 +6,18 @@ using System.Windows.Forms;
 
 namespace EasyHortifruti
 {
-    public partial class FormUnidadeAltInsert : FormBase
+    public partial class FormUnidadesAltInsert : FormBase
     {
         #region propriedades
 
         #endregion
 
         #region Construtor
-        public FormUnidadeAltInsert()
+        public FormUnidadesAltInsert()
         {
             InitializeComponent();
         }
-        public FormUnidadeAltInsert(int pID)
+        public FormUnidadesAltInsert(int pID)
         {
             Id = pID;
             InitializeComponent();

@@ -39,7 +39,7 @@ namespace EasyHortifruti
 
         private void btIncluirUnidade_Click(object sender, EventArgs e)
         {
-            FormUnidadeAltInsert UnidadeAltInsert = new FormUnidadeAltInsert();
+            FormUnidadesAltInsert UnidadeAltInsert = new FormUnidadesAltInsert();
             UnidadeAltInsert.ShowDialog();
 
             CarregarGrid();
@@ -49,7 +49,7 @@ namespace EasyHortifruti
         {
             if (IdSelecionado >= 0)
             {
-                FormUnidadeAltInsert UnidadeAltInsert = new FormUnidadeAltInsert(IdSelecionado);
+                FormUnidadesAltInsert UnidadeAltInsert = new FormUnidadesAltInsert(IdSelecionado);
                 UnidadeAltInsert.ShowDialog();
 
                 CarregarGrid();
@@ -82,7 +82,8 @@ namespace EasyHortifruti
         private void CarregarGrid()
         {
             dgvCadUnidades.DataSource = new ConexaoBD().ConsultarUnidades(); // dataset
-            dgvCadUnidades.DataMember = "Table"; 
+            dgvCadUnidades.DataMember = "Table";
+            dgvCadUnidades.AutoGenerateColumns = false;
             dgvCadUnidades.Sort(dgvCadUnidades.Columns["ID"], System.ComponentModel.ListSortDirection.Ascending);
         }
         #endregion

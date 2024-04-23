@@ -47,14 +47,6 @@
             this.BtEditarProduto = new System.Windows.Forms.Button();
             this.BtIncluirProduto = new System.Windows.Forms.Button();
             this.panelTituloCadProd = new System.Windows.Forms.Panel();
-            this.lbDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbUnidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbVlrCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbVlrVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbVlrMargem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.lbSubGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1FormCadProd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadProd)).BeginInit();
             this.panel3FormCadProdBotoes.SuspendLayout();

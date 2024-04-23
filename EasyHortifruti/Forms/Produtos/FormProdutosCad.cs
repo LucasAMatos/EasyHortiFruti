@@ -91,6 +91,7 @@ namespace EasyHortifruti
         public void CarregarGrid()
         {
             dtGridViewCadProd.DataSource = new ConexaoBD().ConsultarProdutos();
+            dtGridViewCadProd.AutoGenerateColumns = false;
             dtGridViewCadProd.DataMember = "Table";
         }
         #endregion

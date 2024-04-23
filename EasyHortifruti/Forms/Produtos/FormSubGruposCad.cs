@@ -45,7 +45,7 @@ namespace EasyHortifruti
 
         private void BtIncluirSubGrupo_Click(object sender, EventArgs e)
         {
-            FormSubGrupoAltInsert SubGruposAltInsert = new FormSubGrupoAltInsert();
+            FormSubGruposAltInsert SubGruposAltInsert = new FormSubGruposAltInsert();
             SubGruposAltInsert.ShowDialog();
 
             CarregarGrid();
@@ -56,7 +56,7 @@ namespace EasyHortifruti
 
             if (IdSelecionado >= 0)
             {
-                FormSubGrupoAltInsert SubGruposAltInsert = new FormSubGrupoAltInsert(IdSelecionado);
+                FormSubGruposAltInsert SubGruposAltInsert = new FormSubGruposAltInsert(IdSelecionado);
                 SubGruposAltInsert.ShowDialog();
 
                 CarregarGrid();
@@ -91,6 +91,7 @@ namespace EasyHortifruti
         {
             DgViewCadSubGrupos.DataSource = new ConexaoBD().ConsultarSubGrupo(0);
             DgViewCadSubGrupos.DataMember = "Table";
+            DgViewCadSubGrupos.AutoGenerateColumns = false;
             DgViewCadSubGrupos.Sort(DgViewCadSubGrupos.Columns["ID"], System.ComponentModel.ListSortDirection.Ascending);
         }
         #endregion

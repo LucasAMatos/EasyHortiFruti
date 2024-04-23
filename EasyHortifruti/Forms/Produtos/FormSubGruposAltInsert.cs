@@ -13,19 +13,19 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EasyHortifruti
 {
-    public partial class FormSubGrupoAltInsert : FormBase
+    public partial class FormSubGruposAltInsert : FormBase
     {
         #region propriedades
         Dictionary<int, string> grupos;
         #endregion
 
         #region construtor
-        public FormSubGrupoAltInsert()
+        public FormSubGruposAltInsert()
         {
             InitializeComponent();
             grupos = new Dictionary<int, string>();
         }
-        public FormSubGrupoAltInsert(int pId)
+        public FormSubGruposAltInsert(int pId)
         {
             InitializeComponent();
             Id = pId;

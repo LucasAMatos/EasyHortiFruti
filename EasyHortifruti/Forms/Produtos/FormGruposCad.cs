@@ -85,6 +85,7 @@ namespace EasyHortifruti
         public void CarregarGrid()
         {
             DgViewCadGrupos.DataSource = new ConexaoBD().ConsultarGrupos();
+            DgViewCadGrupos.AutoGenerateColumns = false;
             DgViewCadGrupos.DataMember = "Table";
             DgViewCadGrupos.Sort(DgViewCadGrupos.Columns["ID"], System.ComponentModel.ListSortDirection.Ascending);
         }

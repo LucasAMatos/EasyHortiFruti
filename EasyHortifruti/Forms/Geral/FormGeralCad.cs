@@ -67,6 +67,7 @@ namespace EasyHortifruti
         public void CarregarGrid()
         {
             DgViewCadGeral.DataSource = new ConexaoBD().ConsultarGerais();
+            DgViewCadGeral.AutoGenerateColumns = false;
             DgViewCadGeral.DataMember = "Table";
         }
 

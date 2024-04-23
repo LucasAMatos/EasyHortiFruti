@@ -72,6 +72,7 @@ namespace EasyHortifruti
         public void CarregarGrid()
         {
             dataGridView1.DataSource = new ConexaoBD().ConsultarPedidos();
+            dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataMember = "Table";
         }
 

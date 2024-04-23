@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasyHortifruti.DML;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Diagnostics;
@@ -35,6 +36,20 @@ namespace EasyHortifruti.Componentes
             container.Add(this);
 
             InitializeComponent();
+        }
+
+        public void CarregarValoresEnum<T>()
+        {
+            Items.Clear();
+            foreach (T item in Enum.GetValues(typeof(T)))
+            {
+                var fieldInfo = item.GetType().GetField(item.ToString());
+                var attributes = (DescriptionAttribute[])fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
+                string description = attributes.Length > 0 ? attributes[0].Description : item.ToString();
+
+                Items.Add(description);
+            }
+            this.SelectedIndex = 0;
         }
     }
 }

@@ -192,21 +192,11 @@ namespace EasyHortifruti
 
         private void CarregarComboSexo()
         {
-            cbSexo.Items.Clear();
-            foreach (Sexo item in Enum.GetValues(typeof(Sexo)))
-            {
-                cbSexo.Items.Add(item);
-            }
-            cbSexo.SelectedText = string.Empty;
+            cbEstadoCivil.CarregarValoresEnum<Sexo>();
         }
         private void CarregarComboEstadoCivil()
         {
-            cbSexo.Items.Clear();
-            foreach (Sexo item in Enum.GetValues(typeof(Sexo)))
-            {
-                cbSexo.Items.Add(item);
-            }
-            cbSexo.SelectedText = string.Empty;
+            cbEstadoCivil.CarregarValoresEnum<EstadoCivil>();
         }
     }
 }

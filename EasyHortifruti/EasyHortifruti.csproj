@@ -135,6 +135,7 @@
     <Compile Include="DML\SubGrupo.cs" />
     <Compile Include="DML\Telefone.cs" />
     <Compile Include="DML\Unidade.cs" />
+    <Compile Include="Utilitarios\Extensions.cs" />
     <Compile Include="Utilitarios\TabelasScript.cs" />
     <Compile Include="Utilitarios\Caracter.cs" />
     <Compile Include="Utilitarios\ConexaoBD.cs" />

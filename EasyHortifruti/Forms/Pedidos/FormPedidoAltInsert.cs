@@ -1,12 +1,15 @@
-﻿using System;
+﻿using EasyHortifruti.DML;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace EasyHortifruti
 {
@@ -43,7 +46,6 @@ namespace EasyHortifruti
         {
             Id = pId;
             geral = new Dictionary<string, int>();
-
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -62,11 +64,6 @@ namespace EasyHortifruti
             warningDisplayed = !warningDisplayed;
         }
 
-        private void BtCancelarPedido_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
         private void CbTpDocumento_SelectedIndexChanged(object sender, EventArgs e)
         {
 
@@ -81,7 +78,7 @@ namespace EasyHortifruti
         {
             CbNomeCliente.Items.Clear();
             geral.Clear();
-            DataSet ds = new ConexaoBD().ConsultarUnidades();
+            DataSet ds = new ConexaoBD().ConsultarGerais();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
                 geral.Add(dr["razao_social"].ToString(), Convert.ToInt32(dr["id_recno"]));
@@ -89,5 +86,27 @@ namespace EasyHortifruti
             }
             CbNomeCliente.SelectedText = string.Empty;
         }
+
+        private void CarregarComboStatusPedido()
+        {
+            CbStatusPedido.Items.Clear();
+            DataSet ds = new ConexaoBD().ConsultarUnidades();
+            foreach (object item in Enum.GetValues(typeof(Sexo)))
+            {
+                CbStatusPedido.Items.Add(item);
+            }
+            CbStatusPedido.SelectedText = string.Empty;
+        }
+
+        private void FormPedidoAltInsert_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void BtCancelarPedido_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
     }
 }

@@ -116,6 +116,8 @@ namespace EasyHortifruti
 
         #endregion
 
+        #endregion
+
         #region Unidades
 
         public DataSet ConsultarUnidades() => ConsultarTabela(TabelasScript.TabelaUnidades);
@@ -438,8 +440,6 @@ namespace EasyHortifruti
             }
 
         }
-        #endregion
-
         #endregion
     }
 }

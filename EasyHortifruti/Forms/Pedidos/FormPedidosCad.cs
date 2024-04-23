@@ -32,8 +32,8 @@ namespace EasyHortifruti
 
         private void btIncluirPedido_Click(object sender, EventArgs e)
         {
-            FormGeralAltInsert FormInserirPedido = new FormGeralAltInsert();
-            FormInserirPedido.ShowDialog();
+            FormPedidoAltInsert InserirPedido = new FormPedidoAltInsert();
+            InserirPedido.ShowDialog();
         }
 
         private void btSairPedido_Click(object sender, EventArgs e)

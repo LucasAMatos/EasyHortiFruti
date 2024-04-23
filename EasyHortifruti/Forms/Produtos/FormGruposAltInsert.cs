@@ -47,6 +47,9 @@ namespace EasyHortifruti
                 if (string.IsNullOrEmpty(TbDescGrupo.Text))
                     throw new Exception("Nome do grupo é Obrigatório");
 
+                if (string.IsNullOrEmpty(TbDescGrupo.Text))
+                    throw new Exception("Nome do grupo é Obrigatório");
+
                 if (Alterar)
                 {
                     new ConexaoBD().AlterarGrupo(Id, Descricao, Observacao, MargemLucro);

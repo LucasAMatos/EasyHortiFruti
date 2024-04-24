@@ -52,7 +52,7 @@ namespace EasyHortifruti.Componentes
 
             this.KeyPress += FormataCampos;
 
-
+            this.LostFocus += PreencheValueLostFocus;
             InitializeComponent();
         }
         #endregion
@@ -73,6 +73,21 @@ namespace EasyHortifruti.Componentes
                     }
                     break;
 
+                default:
+                    iValue += Text;
+                    break;
+            }
+        }
+        private void PreencheValueLostFocus(object sender, EventArgs e)
+        {
+            switch (Tipo)
+            {
+                case TipoCampo.TELEFONE:
+                case TipoCampo.CEP:
+                case TipoCampo.CNPJ:
+                case TipoCampo.CPF:
+                        iValue = Regex.Replace(Text, @"[^\d]+", "");
+                    break;
                 default:
                     iValue += Text;
                     break;

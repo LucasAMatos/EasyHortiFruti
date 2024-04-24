@@ -165,6 +165,7 @@
     <Compile Include="Componentes\AltTextBox.Designer.cs">
       <DependentUpon>AltTextBox.cs</DependentUpon>
     </Compile>
+    <Compile Include="DML\CEPConsultado.cs" />
     <Compile Include="DML\CNPJConsultado.cs" />
     <Compile Include="DML\ContaAReceber.cs" />
     <Compile Include="DML\Endereco.cs" />
@@ -176,6 +177,7 @@
     <Compile Include="DML\Telefone.cs" />
     <Compile Include="DML\Unidade.cs" />
     <Compile Include="Utilitarios\APIClient.cs" />
+    <Compile Include="Utilitarios\ConsultarCEP.cs" />
     <Compile Include="Utilitarios\ConsultarCNPJ.cs" />
     <Compile Include="Utilitarios\Extensions.cs" />
     <Compile Include="Utilitarios\TabelasScript.cs" />
@@ -350,6 +352,5 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

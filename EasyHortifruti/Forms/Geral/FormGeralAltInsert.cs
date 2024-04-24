@@ -6,10 +6,13 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Net.Http;
+using System.Security.Cryptography;
 using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
+using System.Threading;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
@@ -17,7 +20,13 @@ namespace EasyHortifruti
 {
     public partial class FormGeralAltInsert : FormBase
     {
-        private Telefone Fone { get
+        bool chamadoCNPJ;
+        bool chamadoCEP;
+        CNPJConsultado cnpj;
+        CEPConsultado cepConsultado;
+        private Telefone Fone
+        {
+            get
             {
                 return new Telefone
                 {
@@ -25,7 +34,7 @@ namespace EasyHortifruti
                     DDD = TbFone.Value.Length < 2 ? TbFone.Value.Substring(0, TbFone.Value.Length) : TbFone.Value.Substring(0, 2),
                     Numero = TbFone.Value.Length < 3 ? string.Empty : TbFone.Value.Substring(2)
                 };
-            } 
+            }
         }
         private Telefone Celular
         {
@@ -217,10 +226,32 @@ namespace EasyHortifruti
             CbUF.CarregarValoresEnum<UF>();
         }
 
-        private void BtConsCNPJ_Click(object sender, EventArgs e)
+        private async void BtConsCNPJ_ClickAsync(object sender, EventArgs e)
         {
+            if (!chamadoCNPJ)
+            {
+                cnpj = await ConsultarCNPJ.consCNPJ(TbCNPJ.Value);
+                chamadoCNPJ = true;
+            }
 
-            var cnpj = ConsultarCNPJ.consCNPJ(TbCNPJ.Value);
+            MessageBox.Show(cnpj.RazaoSocial);
+        }
+
+        private void TbCNPJ_Leave(object sender, EventArgs e)
+        {
+            chamadoCNPJ = false;
+            cnpj = null;
+        }
+
+        private async void button1_Click(object sender, EventArgs e)
+        {
+            if (!chamadoCNPJ)
+            {
+                cepConsultado = await ConsultarCEP.consCEP(TbCepEndereco.Value);
+                chamadoCNPJ = true;
+            }
+
+            MessageBox.Show(cepConsultado.Logradouro);
 
         }
     }

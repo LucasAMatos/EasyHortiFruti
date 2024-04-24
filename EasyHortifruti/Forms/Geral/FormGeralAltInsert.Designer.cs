@@ -57,6 +57,7 @@ namespace EasyHortifruti
             this.label7 = new System.Windows.Forms.Label();
             this.TbInscrEstadual = new EasyHortifruti.Componentes.AltTextBox();
             this.label9 = new System.Windows.Forms.Label();
+            this.BtConsCNPJ = new System.Windows.Forms.Button();
             this.panel7InserirCadGeral = new System.Windows.Forms.Panel();
             this.tabControlInserirEndereco = new System.Windows.Forms.TabControl();
             this.tbpEndereco = new System.Windows.Forms.TabPage();
@@ -114,6 +115,7 @@ namespace EasyHortifruti
             this.labeltpPesoa = new System.Windows.Forms.Label();
             this.RbPessoaJuridica = new System.Windows.Forms.RadioButton();
             this.RbPessoaFisica = new System.Windows.Forms.RadioButton();
+            this.button1 = new System.Windows.Forms.Button();
             this.panel1CadGeralInserirDados.SuspendLayout();
             this.panel5InserirCadGeral.SuspendLayout();
             this.tabControlInserirDados.SuspendLayout();
@@ -162,6 +164,7 @@ namespace EasyHortifruti
             // 
             // tbBase
             // 
+            this.tbBase.Controls.Add(this.PanelPF);
             this.tbBase.Controls.Add(this.PanelPJ);
             this.tbBase.Controls.Add(this.panel7InserirCadGeral);
             this.tbBase.Controls.Add(this.panel6);
@@ -176,7 +179,6 @@ namespace EasyHortifruti
             // 
             // PanelPJ
             // 
-            this.PanelPJ.Controls.Add(this.PanelPF);
             this.PanelPJ.Controls.Add(this.TbRazaoSocial);
             this.PanelPJ.Controls.Add(this.label5);
             this.PanelPJ.Controls.Add(this.label6);
@@ -185,6 +187,7 @@ namespace EasyHortifruti
             this.PanelPJ.Controls.Add(this.label7);
             this.PanelPJ.Controls.Add(this.TbInscrEstadual);
             this.PanelPJ.Controls.Add(this.label9);
+            this.PanelPJ.Controls.Add(this.BtConsCNPJ);
             this.PanelPJ.Location = new System.Drawing.Point(3, 16);
             this.PanelPJ.Name = "PanelPJ";
             this.PanelPJ.Size = new System.Drawing.Size(560, 114);
@@ -203,7 +206,7 @@ namespace EasyHortifruti
             this.PanelPF.Controls.Add(this.tbRg);
             this.PanelPF.Controls.Add(this.label37);
             this.PanelPF.Controls.Add(this.tbCpf);
-            this.PanelPF.Location = new System.Drawing.Point(0, 0);
+            this.PanelPF.Location = new System.Drawing.Point(3, 16);
             this.PanelPF.Name = "PanelPF";
             this.PanelPF.Size = new System.Drawing.Size(560, 114);
             this.PanelPF.TabIndex = 20;
@@ -382,12 +385,13 @@ namespace EasyHortifruti
             this.TbCNPJ.TabIndex = 5;
             this.TbCNPJ.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.CNPJ;
             this.TbCNPJ.Value = "";
+            this.TbCNPJ.Leave += new System.EventHandler(this.TbCNPJ_Leave);
             // 
             // TbInscrMunicipal
             // 
             this.TbInscrMunicipal.Caption = null;
             this.TbInscrMunicipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbInscrMunicipal.Location = new System.Drawing.Point(391, 78);
+            this.TbInscrMunicipal.Location = new System.Drawing.Point(391, 79);
             this.TbInscrMunicipal.Name = "TbInscrMunicipal";
             this.TbInscrMunicipal.Obrigatorio = false;
             this.TbInscrMunicipal.Size = new System.Drawing.Size(157, 24);
@@ -399,7 +403,7 @@ namespace EasyHortifruti
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(199, 58);
+            this.label7.Location = new System.Drawing.Point(237, 59);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(125, 15);
             this.label7.TabIndex = 6;
@@ -409,10 +413,10 @@ namespace EasyHortifruti
             // 
             this.TbInscrEstadual.Caption = null;
             this.TbInscrEstadual.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbInscrEstadual.Location = new System.Drawing.Point(202, 78);
+            this.TbInscrEstadual.Location = new System.Drawing.Point(240, 79);
             this.TbInscrEstadual.Name = "TbInscrEstadual";
             this.TbInscrEstadual.Obrigatorio = false;
-            this.TbInscrEstadual.Size = new System.Drawing.Size(169, 24);
+            this.TbInscrEstadual.Size = new System.Drawing.Size(145, 24);
             this.TbInscrEstadual.TabIndex = 8;
             this.TbInscrEstadual.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbInscrEstadual.Value = "";
@@ -421,11 +425,26 @@ namespace EasyHortifruti
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(388, 58);
+            this.label9.Location = new System.Drawing.Point(388, 60);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(132, 15);
             this.label9.TabIndex = 7;
             this.label9.Text = "Inscrição Municipal";
+            // 
+            // BtConsCNPJ
+            // 
+            this.BtConsCNPJ.BackColor = System.Drawing.Color.Transparent;
+            this.BtConsCNPJ.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtConsCNPJ.FlatAppearance.BorderSize = 0;
+            this.BtConsCNPJ.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtConsCNPJ.Image = ((System.Drawing.Image)(resources.GetObject("BtConsCNPJ.Image")));
+            this.BtConsCNPJ.Location = new System.Drawing.Point(202, 77);
+            this.BtConsCNPJ.Name = "BtConsCNPJ";
+            this.BtConsCNPJ.Size = new System.Drawing.Size(26, 25);
+            this.BtConsCNPJ.TabIndex = 22;
+            this.BtConsCNPJ.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtConsCNPJ.UseVisualStyleBackColor = false;
+            this.BtConsCNPJ.Click += new System.EventHandler(this.BtConsCNPJ_ClickAsync);
             // 
             // panel7InserirCadGeral
             // 
@@ -449,6 +468,7 @@ namespace EasyHortifruti
             // 
             // tbpEndereco
             // 
+            this.tbpEndereco.Controls.Add(this.button1);
             this.tbpEndereco.Controls.Add(this.CbUF);
             this.tbpEndereco.Controls.Add(this.label36);
             this.tbpEndereco.Controls.Add(this.label35);
@@ -572,7 +592,7 @@ namespace EasyHortifruti
             // 
             this.label26.AutoSize = true;
             this.label26.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label26.Location = new System.Drawing.Point(118, 26);
+            this.label26.Location = new System.Drawing.Point(124, 26);
             this.label26.Name = "label26";
             this.label26.Size = new System.Drawing.Size(121, 15);
             this.label26.TabIndex = 29;
@@ -736,10 +756,10 @@ namespace EasyHortifruti
             // 
             this.TbRua.Caption = null;
             this.TbRua.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbRua.Location = new System.Drawing.Point(121, 43);
+            this.TbRua.Location = new System.Drawing.Point(129, 43);
             this.TbRua.Name = "TbRua";
             this.TbRua.Obrigatorio = false;
-            this.TbRua.Size = new System.Drawing.Size(349, 24);
+            this.TbRua.Size = new System.Drawing.Size(345, 24);
             this.TbRua.TabIndex = 10;
             this.TbRua.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbRua.Value = "";
@@ -1068,6 +1088,21 @@ namespace EasyHortifruti
             this.RbPessoaFisica.UseVisualStyleBackColor = true;
             this.RbPessoaFisica.CheckedChanged += new System.EventHandler(this.RbPessoaFisica_CheckedChanged_1);
             // 
+            // button1
+            // 
+            this.button1.BackColor = System.Drawing.Color.Transparent;
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button1.Image = ((System.Drawing.Image)(resources.GetObject("button1.Image")));
+            this.button1.Location = new System.Drawing.Point(98, 42);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(26, 25);
+            this.button1.TabIndex = 23;
+            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.button1.UseVisualStyleBackColor = false;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
             // FormGeralAltInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1187,5 +1222,7 @@ namespace EasyHortifruti
         private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label labelClassificacao;
         private AltComboBox CbClassificacao;
+        private System.Windows.Forms.Button BtConsCNPJ;
+        private System.Windows.Forms.Button button1;
     }
 }

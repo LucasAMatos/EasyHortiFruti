@@ -35,7 +35,6 @@ namespace EasyHortifruti
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProdutosAltInsert));
             this.panelInserirProduto = new System.Windows.Forms.Panel();
             this.BtCadNCM = new System.Windows.Forms.Button();
-            this.AltTextBox = new AltTextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.MtbPrecoVenda = new AltTextBox();
             this.MtbMargemLucro = new AltTextBox();
@@ -58,9 +57,7 @@ namespace EasyHortifruti
             this.labelIDProduto = new System.Windows.Forms.Label();
             this.BtGravaAlterProd = new System.Windows.Forms.Button();
             this.BtCancelaProduto = new System.Windows.Forms.Button();
-            this.label8 = new System.Windows.Forms.Label();
-            this.AltTextBox = new AltTextBox();
-            this.BtCadNCM = new System.Windows.Forms.Button();
+            this.txtNCM = new AltTextBox();
             this.panelInserirProduto.SuspendLayout();
             this.panelBotoesInserirProduto.SuspendLayout();
             this.SuspendLayout();
@@ -69,7 +66,7 @@ namespace EasyHortifruti
             // 
             this.panelInserirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panelInserirProduto.Controls.Add(this.BtCadNCM);
-            this.panelInserirProduto.Controls.Add(this.AltTextBox);
+            this.panelInserirProduto.Controls.Add(this.txtNCM);
             this.panelInserirProduto.Controls.Add(this.label8);
             this.panelInserirProduto.Controls.Add(this.MtbPrecoVenda);
             this.panelInserirProduto.Controls.Add(this.MtbMargemLucro);
@@ -111,11 +108,11 @@ namespace EasyHortifruti
             // 
             // AltTextBox
             // 
-            this.AltTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.AltTextBox.Location = new System.Drawing.Point(30, 151);
-            this.AltTextBox.Name = "AltTextBox";
-            this.AltTextBox.Size = new System.Drawing.Size(76, 24);
-            this.AltTextBox.TabIndex = 20;
+            this.txtNCM.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNCM.Location = new System.Drawing.Point(30, 151);
+            this.txtNCM.Name = "AltTextBox";
+            this.txtNCM.Size = new System.Drawing.Size(76, 24);
+            this.txtNCM.TabIndex = 20;
             // 
             // label8
             // 
@@ -448,8 +445,8 @@ namespace EasyHortifruti
         private AltTextBox MtbPrecoCompra;
         private AltTextBox MtbMargemLucro;
         private AltTextBox MtbPrecoVenda;
+        private AltTextBox txtNCM;
         private System.Windows.Forms.Button BtCadNCM;
-        private AltTextBox AltTextBox;
         private System.Windows.Forms.Label label8;
     }
 }

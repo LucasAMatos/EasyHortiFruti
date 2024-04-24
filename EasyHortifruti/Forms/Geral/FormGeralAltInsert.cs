@@ -1,10 +1,12 @@
 ﻿using EasyHortifruti.DML;
+using EasyHortifruti.Utilitarios;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Security.Policy;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
@@ -54,12 +56,14 @@ namespace EasyHortifruti
         {
             PanelPF.Visible = RbPessoaFisica.Checked;
             PanelPJ.Visible = !RbPessoaJuridica.Checked;
+            BtConsCNPJ.Visible = PanelPJ.Visible;
         }
 
         private void RbPessoaJuridica_CheckedChanged_1(object sender, EventArgs e)
         {
             PanelPF.Visible = !RbPessoaJuridica.Checked;
             PanelPJ.Visible = RbPessoaJuridica.Checked;
+            BtConsCNPJ.Visible = PanelPJ.Visible;
         }
         private void BtCancelarGeralInserir_Click(object sender, EventArgs e)
         {
@@ -213,5 +217,11 @@ namespace EasyHortifruti
             CbUF.CarregarValoresEnum<UF>();
         }
 
+        private void BtConsCNPJ_Click(object sender, EventArgs e)
+        {
+
+            var cnpj = ConsultarCNPJ.consCNPJ(TbCNPJ.Value);
+
+        }
     }
 }

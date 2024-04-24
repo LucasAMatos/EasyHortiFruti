@@ -18,6 +18,8 @@ namespace EasyHortifruti
         #region propriedades
         Dictionary<string, int> geral;
 
+        Dictionary<string, int> produtos;
+
         #endregion
 
         private Timer timer;
@@ -28,6 +30,7 @@ namespace EasyHortifruti
         public FormPedidoAltInsert()
         {
             geral = new Dictionary<string, int>();
+            produtos = new Dictionary<String, int>();
 
             InitializeComponent();
 
@@ -81,8 +84,8 @@ namespace EasyHortifruti
             DataSet ds = new ConexaoBD().ConsultarGerais();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                geral.Add(dr["razao_social"].ToString(), Convert.ToInt32(dr["id_recno"]));
-                CbNomeCliente.Items.Add(dr["razao_social"].ToString());
+                geral.Add(dr["razaosocial"].ToString(), Convert.ToInt32(dr["id_recno"]));
+                CbNomeCliente.Items.Add(dr["razaosocial"].ToString());
             }
             CbNomeCliente.SelectedText = string.Empty;
         }
@@ -96,6 +99,21 @@ namespace EasyHortifruti
         {
             base.LimparCampos();
             CarregarComboStatusPedido();
+            CarregarGridNomeCliente();
+            CarregarComboProdutos();
+        }
+        
+        private void CarregarComboProdutos()
+        {
+            CbProdutos.Items.Clear();
+            produtos.Clear();
+            DataSet ds = new ConexaoBD().ConsultarProdutos();
+            foreach (DataRow dr in ds.Tables[0].Rows)
+            {
+                produtos.Add(dr["nome_produto"].ToString(), Convert.ToInt32(dr["id_recno"]));
+                CbProdutos.Items.Add(dr["nome_produto"].ToString());
+            }
+            CbProdutos.SelectedText = string.Empty;
         }
 
         private void BtCancelarPedido_Click(object sender, EventArgs e)

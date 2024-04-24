@@ -89,18 +89,13 @@ namespace EasyHortifruti
 
         private void CarregarComboStatusPedido()
         {
-            CbStatusPedido.Items.Clear();
-            DataSet ds = new ConexaoBD().ConsultarUnidades();
-            foreach (object item in Enum.GetValues(typeof(Sexo)))
-            {
-                CbStatusPedido.Items.Add(item);
-            }
-            CbStatusPedido.SelectedText = string.Empty;
+            CbStatusPedido.CarregarValoresEnum<StatusPedido>();
         }
 
         private void FormPedidoAltInsert_Load(object sender, EventArgs e)
         {
-
+            base.LimparCampos();
+            CarregarComboStatusPedido();
         }
 
         private void BtCancelarPedido_Click(object sender, EventArgs e)

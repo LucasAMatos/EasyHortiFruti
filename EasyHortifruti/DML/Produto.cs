@@ -6,6 +6,7 @@ namespace EasyHortifruti.DML
     public class Produto
     {
         public int ID { get; set; }
+
         public string Descricao { get; set; }
 
         public int IdUnidade { get; set; }

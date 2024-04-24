@@ -36,7 +36,11 @@ namespace EasyHortifruti.DML
         public double TotalVenda { get; set; }
 
         public double PercentualLucro { get; set; }
+
+        public double unidade { get; set; }
     }
+
+
 
     public enum StatusPedido
     {

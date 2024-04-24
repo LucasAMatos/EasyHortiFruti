@@ -109,6 +109,7 @@ namespace EasyHortifruti
                                                 razaosocial character varying(50)  NOT NULL,
                                                 contato character varying(15) NULL,
                                                 dtnascaber date NULL,
+                                                prazoPgto INT,
                                                 cnpj character(14)  NOT NULL,
                                                 inscrestadual character(14) NULL,
                                                 inscrmunicipal character(14) NULL,

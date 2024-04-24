@@ -194,7 +194,6 @@ namespace EasyHortifruti
                 {
                     geral.Add(dr["celular"].ToString(), Convert.ToInt32(dr["id_recno"]));
                     TbCelular.Text = (dr["celular"].ToString());
-
                 }
             }
         }

@@ -448,7 +448,6 @@ namespace EasyHortifruti
             // 
             this.panel9.Controls.Add(this.label37);
             this.panel9.Controls.Add(this.TbEmail);
-            this.panel9.Controls.Add(this.PanelPfPedido);
             this.panel9.Controls.Add(this.PanelPJPedido);
             this.panel9.Controls.Add(this.panel2);
             this.panel9.Controls.Add(this.MtbCep);
@@ -503,7 +502,7 @@ namespace EasyHortifruti
             this.PanelPfPedido.Controls.Add(this.label36);
             this.PanelPfPedido.Controls.Add(this.label38);
             this.PanelPfPedido.Controls.Add(this.TbNome);
-            this.PanelPfPedido.Location = new System.Drawing.Point(8, 243);
+            this.PanelPfPedido.Location = new System.Drawing.Point(0, -1);
             this.PanelPfPedido.Name = "PanelPfPedido";
             this.PanelPfPedido.Size = new System.Drawing.Size(788, 61);
             this.PanelPfPedido.TabIndex = 58;
@@ -578,6 +577,7 @@ namespace EasyHortifruti
             // 
             this.PanelPJPedido.Controls.Add(this.TbInscrMunicipal);
             this.PanelPJPedido.Controls.Add(this.label15);
+            this.PanelPJPedido.Controls.Add(this.PanelPfPedido);
             this.PanelPJPedido.Controls.Add(this.label21);
             this.PanelPJPedido.Controls.Add(this.TbCnpj);
             this.PanelPJPedido.Controls.Add(this.TbInscrEstadual);

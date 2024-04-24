@@ -410,18 +410,21 @@ namespace EasyHortifruti
                 }
             }
         }
+        
         private void ExcluirRegistro(int pId, string pNomeTabela)
         {
             string sql = String.Format("DELETE FROM {0} WHERE id_recno={1}", pNomeTabela, pId);
 
             ExecutarSemRetorno(sql);
         }
+        
         private DataSet ConsultarTabela(string pNomeTabela)
         {
             string sql = string.Concat("SELECT * FROM ", pNomeTabela);
 
             return ExecutaEPreencheDataset(sql);
         }
+        
         private DataSet ConsultarTabelaPorId(int pId, string pNomeTabela)
         {
             string sql = string.Concat("SELECT * FROM ", pNomeTabela, " WHERE id_recno=", pId.ToString());

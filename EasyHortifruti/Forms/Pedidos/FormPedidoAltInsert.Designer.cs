@@ -62,40 +62,31 @@ namespace EasyHortifruti
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
             this.label37 = new System.Windows.Forms.Label();
-            this.TbEmail = new EasyHortifruti.Componentes.AltTextBox();
+            this.tbEmail = new EasyHortifruti.Componentes.AltTextBox();
             this.PanelPfPedido = new System.Windows.Forms.Panel();
-            this.label34 = new System.Windows.Forms.Label();
+            this.lbCPFCNPJ = new System.Windows.Forms.Label();
             this.TbCpj = new EasyHortifruti.Componentes.AltTextBox();
             this.TbRg = new EasyHortifruti.Componentes.AltTextBox();
-            this.label36 = new System.Windows.Forms.Label();
+            this.lbRGIE = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.TbNome = new EasyHortifruti.Componentes.AltTextBox();
-            this.PanelPJPedido = new System.Windows.Forms.Panel();
-            this.TbInscrMunicipal = new EasyHortifruti.Componentes.AltTextBox();
-            this.label15 = new System.Windows.Forms.Label();
-            this.label21 = new System.Windows.Forms.Label();
-            this.TbCnpj = new EasyHortifruti.Componentes.AltTextBox();
-            this.TbInscrEstadual = new EasyHortifruti.Componentes.AltTextBox();
-            this.label20 = new System.Windows.Forms.Label();
-            this.label22 = new System.Windows.Forms.Label();
-            this.TbRazaoSocial = new EasyHortifruti.Componentes.AltTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CbTpDocumento = new EasyHortifruti.Componentes.AltComboBox(this.components);
             this.label19 = new System.Windows.Forms.Label();
-            this.MtbCep = new EasyHortifruti.Componentes.AltTextBox();
+            this.tbEndCep = new EasyHortifruti.Componentes.AltTextBox();
             this.label31 = new System.Windows.Forms.Label();
-            this.textBox25 = new EasyHortifruti.Componentes.AltTextBox();
+            this.tbEndPontoReferencia = new EasyHortifruti.Componentes.AltTextBox();
             this.label29 = new System.Windows.Forms.Label();
-            this.textBox23 = new EasyHortifruti.Componentes.AltTextBox();
+            this.tbEndBairro = new EasyHortifruti.Componentes.AltTextBox();
             this.label28 = new System.Windows.Forms.Label();
-            this.textBox22 = new EasyHortifruti.Componentes.AltTextBox();
-            this.textBox21 = new EasyHortifruti.Componentes.AltTextBox();
+            this.tbEndCmpt = new EasyHortifruti.Componentes.AltTextBox();
+            this.tbEndNome = new EasyHortifruti.Componentes.AltTextBox();
             this.label27 = new System.Windows.Forms.Label();
             this.label26 = new System.Windows.Forms.Label();
-            this.textBox20 = new EasyHortifruti.Componentes.AltTextBox();
-            this.textBox19 = new EasyHortifruti.Componentes.AltTextBox();
+            this.tbEndLogradouro = new EasyHortifruti.Componentes.AltTextBox();
+            this.tbEndUF = new EasyHortifruti.Componentes.AltTextBox();
             this.label25 = new System.Windows.Forms.Label();
-            this.textBox18 = new EasyHortifruti.Componentes.AltTextBox();
+            this.tbEndCidade = new EasyHortifruti.Componentes.AltTextBox();
             this.label24 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.tabPage3 = new System.Windows.Forms.TabPage();
@@ -141,7 +132,6 @@ namespace EasyHortifruti
             this.tabPage2.SuspendLayout();
             this.panel9.SuspendLayout();
             this.PanelPfPedido.SuspendLayout();
-            this.PanelPJPedido.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelTotalGeral.SuspendLayout();
             this.panelBotoesInserirPedido.SuspendLayout();
@@ -435,6 +425,7 @@ namespace EasyHortifruti
             // 
             // tabPage2
             // 
+            this.tabPage2.Controls.Add(this.PanelPfPedido);
             this.tabPage2.Controls.Add(this.panel9);
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
@@ -447,23 +438,22 @@ namespace EasyHortifruti
             // panel9
             // 
             this.panel9.Controls.Add(this.label37);
-            this.panel9.Controls.Add(this.TbEmail);
-            this.panel9.Controls.Add(this.PanelPJPedido);
+            this.panel9.Controls.Add(this.tbEmail);
             this.panel9.Controls.Add(this.panel2);
-            this.panel9.Controls.Add(this.MtbCep);
+            this.panel9.Controls.Add(this.tbEndCep);
             this.panel9.Controls.Add(this.label31);
-            this.panel9.Controls.Add(this.textBox25);
+            this.panel9.Controls.Add(this.tbEndPontoReferencia);
             this.panel9.Controls.Add(this.label29);
-            this.panel9.Controls.Add(this.textBox23);
+            this.panel9.Controls.Add(this.tbEndBairro);
             this.panel9.Controls.Add(this.label28);
-            this.panel9.Controls.Add(this.textBox22);
-            this.panel9.Controls.Add(this.textBox21);
+            this.panel9.Controls.Add(this.tbEndCmpt);
+            this.panel9.Controls.Add(this.tbEndNome);
             this.panel9.Controls.Add(this.label27);
             this.panel9.Controls.Add(this.label26);
-            this.panel9.Controls.Add(this.textBox20);
-            this.panel9.Controls.Add(this.textBox19);
+            this.panel9.Controls.Add(this.tbEndLogradouro);
+            this.panel9.Controls.Add(this.tbEndUF);
             this.panel9.Controls.Add(this.label25);
-            this.panel9.Controls.Add(this.textBox18);
+            this.panel9.Controls.Add(this.tbEndCidade);
             this.panel9.Controls.Add(this.label24);
             this.panel9.Controls.Add(this.label23);
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -482,44 +472,46 @@ namespace EasyHortifruti
             this.label37.TabIndex = 60;
             this.label37.Text = "E-mail";
             // 
-            // TbEmail
+            // tbEmail
             // 
-            this.TbEmail.Caption = null;
-            this.TbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbEmail.Location = new System.Drawing.Point(7, 213);
-            this.TbEmail.Name = "TbEmail";
-            this.TbEmail.Obrigatorio = false;
-            this.TbEmail.Size = new System.Drawing.Size(417, 24);
-            this.TbEmail.TabIndex = 59;
-            this.TbEmail.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbEmail.Value = "";
+            this.tbEmail.Caption = null;
+            this.tbEmail.Enabled = false;
+            this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEmail.Location = new System.Drawing.Point(7, 213);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Obrigatorio = false;
+            this.tbEmail.Size = new System.Drawing.Size(417, 24);
+            this.tbEmail.TabIndex = 59;
+            this.tbEmail.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.tbEmail.Value = "";
             // 
             // PanelPfPedido
             // 
-            this.PanelPfPedido.Controls.Add(this.label34);
+            this.PanelPfPedido.Controls.Add(this.lbCPFCNPJ);
             this.PanelPfPedido.Controls.Add(this.TbCpj);
             this.PanelPfPedido.Controls.Add(this.TbRg);
-            this.PanelPfPedido.Controls.Add(this.label36);
+            this.PanelPfPedido.Controls.Add(this.lbRGIE);
             this.PanelPfPedido.Controls.Add(this.label38);
             this.PanelPfPedido.Controls.Add(this.TbNome);
-            this.PanelPfPedido.Location = new System.Drawing.Point(0, -1);
+            this.PanelPfPedido.Location = new System.Drawing.Point(3, 43);
             this.PanelPfPedido.Name = "PanelPfPedido";
             this.PanelPfPedido.Size = new System.Drawing.Size(788, 61);
             this.PanelPfPedido.TabIndex = 58;
             // 
-            // label34
+            // lbCPFCNPJ
             // 
-            this.label34.AutoSize = true;
-            this.label34.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label34.Location = new System.Drawing.Point(430, 6);
-            this.label34.Name = "label34";
-            this.label34.Size = new System.Drawing.Size(30, 13);
-            this.label34.TabIndex = 56;
-            this.label34.Text = "CPF";
+            this.lbCPFCNPJ.AutoSize = true;
+            this.lbCPFCNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbCPFCNPJ.Location = new System.Drawing.Point(430, 6);
+            this.lbCPFCNPJ.Name = "lbCPFCNPJ";
+            this.lbCPFCNPJ.Size = new System.Drawing.Size(30, 13);
+            this.lbCPFCNPJ.TabIndex = 56;
+            this.lbCPFCNPJ.Text = "CPF";
             // 
             // TbCpj
             // 
             this.TbCpj.Caption = null;
+            this.TbCpj.Enabled = false;
             this.TbCpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbCpj.Location = new System.Drawing.Point(434, 21);
             this.TbCpj.Name = "TbCpj";
@@ -532,6 +524,7 @@ namespace EasyHortifruti
             // TbRg
             // 
             this.TbRg.Caption = null;
+            this.TbRg.Enabled = false;
             this.TbRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbRg.Location = new System.Drawing.Point(634, 21);
             this.TbRg.Name = "TbRg";
@@ -541,15 +534,15 @@ namespace EasyHortifruti
             this.TbRg.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbRg.Value = "";
             // 
-            // label36
+            // lbRGIE
             // 
-            this.label36.AutoSize = true;
-            this.label36.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label36.Location = new System.Drawing.Point(631, 6);
-            this.label36.Name = "label36";
-            this.label36.Size = new System.Drawing.Size(33, 13);
-            this.label36.TabIndex = 44;
-            this.label36.Text = "R.G.";
+            this.lbRGIE.AutoSize = true;
+            this.lbRGIE.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbRGIE.Location = new System.Drawing.Point(631, 6);
+            this.lbRGIE.Name = "lbRGIE";
+            this.lbRGIE.Size = new System.Drawing.Size(33, 13);
+            this.lbRGIE.TabIndex = 44;
+            this.lbRGIE.Text = "R.G.";
             // 
             // label38
             // 
@@ -564,6 +557,7 @@ namespace EasyHortifruti
             // TbNome
             // 
             this.TbNome.Caption = null;
+            this.TbNome.Enabled = false;
             this.TbNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbNome.Location = new System.Drawing.Point(6, 21);
             this.TbNome.Name = "TbNome";
@@ -572,110 +566,6 @@ namespace EasyHortifruti
             this.TbNome.TabIndex = 51;
             this.TbNome.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbNome.Value = "";
-            // 
-            // PanelPJPedido
-            // 
-            this.PanelPJPedido.Controls.Add(this.TbInscrMunicipal);
-            this.PanelPJPedido.Controls.Add(this.label15);
-            this.PanelPJPedido.Controls.Add(this.PanelPfPedido);
-            this.PanelPJPedido.Controls.Add(this.label21);
-            this.PanelPJPedido.Controls.Add(this.TbCnpj);
-            this.PanelPJPedido.Controls.Add(this.TbInscrEstadual);
-            this.PanelPJPedido.Controls.Add(this.label20);
-            this.PanelPJPedido.Controls.Add(this.label22);
-            this.PanelPJPedido.Controls.Add(this.TbRazaoSocial);
-            this.PanelPJPedido.Location = new System.Drawing.Point(0, 39);
-            this.PanelPJPedido.Name = "PanelPJPedido";
-            this.PanelPJPedido.Size = new System.Drawing.Size(788, 59);
-            this.PanelPJPedido.TabIndex = 55;
-            // 
-            // TbInscrMunicipal
-            // 
-            this.TbInscrMunicipal.Caption = null;
-            this.TbInscrMunicipal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbInscrMunicipal.Location = new System.Drawing.Point(639, 21);
-            this.TbInscrMunicipal.Name = "TbInscrMunicipal";
-            this.TbInscrMunicipal.Obrigatorio = false;
-            this.TbInscrMunicipal.Size = new System.Drawing.Size(135, 24);
-            this.TbInscrMunicipal.TabIndex = 46;
-            this.TbInscrMunicipal.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbInscrMunicipal.Value = "";
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(344, 6);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(38, 13);
-            this.label15.TabIndex = 56;
-            this.label15.Text = "CNPJ";
-            // 
-            // label21
-            // 
-            this.label21.AutoSize = true;
-            this.label21.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label21.Location = new System.Drawing.Point(636, 6);
-            this.label21.Name = "label21";
-            this.label21.Size = new System.Drawing.Size(91, 13);
-            this.label21.TabIndex = 45;
-            this.label21.Text = "Incr. Municipal";
-            // 
-            // TbCnpj
-            // 
-            this.TbCnpj.Caption = null;
-            this.TbCnpj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbCnpj.Location = new System.Drawing.Point(348, 21);
-            this.TbCnpj.Name = "TbCnpj";
-            this.TbCnpj.Obrigatorio = false;
-            this.TbCnpj.Size = new System.Drawing.Size(142, 24);
-            this.TbCnpj.TabIndex = 55;
-            this.TbCnpj.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbCnpj.Value = "";
-            // 
-            // TbInscrEstadual
-            // 
-            this.TbInscrEstadual.Caption = null;
-            this.TbInscrEstadual.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbInscrEstadual.Location = new System.Drawing.Point(507, 21);
-            this.TbInscrEstadual.Name = "TbInscrEstadual";
-            this.TbInscrEstadual.Obrigatorio = false;
-            this.TbInscrEstadual.Size = new System.Drawing.Size(118, 24);
-            this.TbInscrEstadual.TabIndex = 43;
-            this.TbInscrEstadual.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbInscrEstadual.Value = "";
-            // 
-            // label20
-            // 
-            this.label20.AutoSize = true;
-            this.label20.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label20.Location = new System.Drawing.Point(504, 6);
-            this.label20.Name = "label20";
-            this.label20.Size = new System.Drawing.Size(86, 13);
-            this.label20.TabIndex = 44;
-            this.label20.Text = "Incr. Estadual";
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.Location = new System.Drawing.Point(3, 6);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(82, 13);
-            this.label22.TabIndex = 52;
-            this.label22.Text = "Razão Social";
-            // 
-            // TbRazaoSocial
-            // 
-            this.TbRazaoSocial.Caption = null;
-            this.TbRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbRazaoSocial.Location = new System.Drawing.Point(6, 21);
-            this.TbRazaoSocial.Name = "TbRazaoSocial";
-            this.TbRazaoSocial.Obrigatorio = false;
-            this.TbRazaoSocial.Size = new System.Drawing.Size(328, 24);
-            this.TbRazaoSocial.TabIndex = 51;
-            this.TbRazaoSocial.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbRazaoSocial.Value = "";
             // 
             // panel2
             // 
@@ -690,6 +580,7 @@ namespace EasyHortifruti
             // CbTpDocumento
             // 
             this.CbTpDocumento.Caption = null;
+            this.CbTpDocumento.Enabled = false;
             this.CbTpDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbTpDocumento.FormattingEnabled = true;
             this.CbTpDocumento.Items.AddRange(new object[] {
@@ -698,7 +589,7 @@ namespace EasyHortifruti
             this.CbTpDocumento.Location = new System.Drawing.Point(105, 6);
             this.CbTpDocumento.Name = "CbTpDocumento";
             this.CbTpDocumento.Obrigatorio = false;
-            this.CbTpDocumento.Size = new System.Drawing.Size(97, 26);
+            this.CbTpDocumento.Size = new System.Drawing.Size(164, 26);
             this.CbTpDocumento.TabIndex = 36;
             this.CbTpDocumento.SelectedIndexChanged += new System.EventHandler(this.CbTpDocumento_SelectedIndexChanged);
             // 
@@ -712,17 +603,18 @@ namespace EasyHortifruti
             this.label19.TabIndex = 35;
             this.label19.Text = "Tipo Documento";
             // 
-            // MtbCep
+            // tbEndCep
             // 
-            this.MtbCep.Caption = null;
-            this.MtbCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MtbCep.Location = new System.Drawing.Point(6, 120);
-            this.MtbCep.Name = "MtbCep";
-            this.MtbCep.Obrigatorio = false;
-            this.MtbCep.Size = new System.Drawing.Size(93, 24);
-            this.MtbCep.TabIndex = 53;
-            this.MtbCep.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.MtbCep.Value = "";
+            this.tbEndCep.Caption = null;
+            this.tbEndCep.Enabled = false;
+            this.tbEndCep.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEndCep.Location = new System.Drawing.Point(6, 120);
+            this.tbEndCep.Name = "tbEndCep";
+            this.tbEndCep.Obrigatorio = false;
+            this.tbEndCep.Size = new System.Drawing.Size(93, 24);
+            this.tbEndCep.TabIndex = 53;
+            this.tbEndCep.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.tbEndCep.Value = "";
             // 
             // label31
             // 
@@ -734,17 +626,18 @@ namespace EasyHortifruti
             this.label31.TabIndex = 52;
             this.label31.Text = "Ponto de Referencia";
             // 
-            // textBox25
+            // tbEndPontoReferencia
             // 
-            this.textBox25.Caption = null;
-            this.textBox25.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox25.Location = new System.Drawing.Point(492, 169);
-            this.textBox25.Name = "textBox25";
-            this.textBox25.Obrigatorio = false;
-            this.textBox25.Size = new System.Drawing.Size(281, 24);
-            this.textBox25.TabIndex = 51;
-            this.textBox25.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.textBox25.Value = "";
+            this.tbEndPontoReferencia.Caption = null;
+            this.tbEndPontoReferencia.Enabled = false;
+            this.tbEndPontoReferencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEndPontoReferencia.Location = new System.Drawing.Point(492, 169);
+            this.tbEndPontoReferencia.Name = "tbEndPontoReferencia";
+            this.tbEndPontoReferencia.Obrigatorio = false;
+            this.tbEndPontoReferencia.Size = new System.Drawing.Size(281, 24);
+            this.tbEndPontoReferencia.TabIndex = 51;
+            this.tbEndPontoReferencia.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.tbEndPontoReferencia.Value = "";
             // 
             // label29
             // 
@@ -756,17 +649,18 @@ namespace EasyHortifruti
             this.label29.TabIndex = 48;
             this.label29.Text = "Bairro";
             // 
-            // textBox23
+            // tbEndBairro
             // 
-            this.textBox23.Caption = null;
-            this.textBox23.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox23.Location = new System.Drawing.Point(6, 169);
-            this.textBox23.Name = "textBox23";
-            this.textBox23.Obrigatorio = false;
-            this.textBox23.Size = new System.Drawing.Size(177, 24);
-            this.textBox23.TabIndex = 47;
-            this.textBox23.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.textBox23.Value = "";
+            this.tbEndBairro.Caption = null;
+            this.tbEndBairro.Enabled = false;
+            this.tbEndBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEndBairro.Location = new System.Drawing.Point(6, 169);
+            this.tbEndBairro.Name = "tbEndBairro";
+            this.tbEndBairro.Obrigatorio = false;
+            this.tbEndBairro.Size = new System.Drawing.Size(177, 24);
+            this.tbEndBairro.TabIndex = 47;
+            this.tbEndBairro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.tbEndBairro.Value = "";
             // 
             // label28
             // 
@@ -778,29 +672,31 @@ namespace EasyHortifruti
             this.label28.TabIndex = 46;
             this.label28.Text = "Complemento";
             // 
-            // textBox22
+            // tbEndCmpt
             // 
-            this.textBox22.Caption = null;
-            this.textBox22.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox22.Location = new System.Drawing.Point(553, 120);
-            this.textBox22.Name = "textBox22";
-            this.textBox22.Obrigatorio = false;
-            this.textBox22.Size = new System.Drawing.Size(219, 24);
-            this.textBox22.TabIndex = 45;
-            this.textBox22.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.textBox22.Value = "";
+            this.tbEndCmpt.Caption = null;
+            this.tbEndCmpt.Enabled = false;
+            this.tbEndCmpt.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEndCmpt.Location = new System.Drawing.Point(553, 120);
+            this.tbEndCmpt.Name = "tbEndCmpt";
+            this.tbEndCmpt.Obrigatorio = false;
+            this.tbEndCmpt.Size = new System.Drawing.Size(219, 24);
+            this.tbEndCmpt.TabIndex = 45;
+            this.tbEndCmpt.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.tbEndCmpt.Value = "";
             // 
-            // textBox21
+            // tbEndNome
             // 
-            this.textBox21.Caption = null;
-            this.textBox21.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox21.Location = new System.Drawing.Point(491, 120);
-            this.textBox21.Name = "textBox21";
-            this.textBox21.Obrigatorio = false;
-            this.textBox21.Size = new System.Drawing.Size(44, 24);
-            this.textBox21.TabIndex = 44;
-            this.textBox21.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.textBox21.Value = "";
+            this.tbEndNome.Caption = null;
+            this.tbEndNome.Enabled = false;
+            this.tbEndNome.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEndNome.Location = new System.Drawing.Point(491, 120);
+            this.tbEndNome.Name = "tbEndNome";
+            this.tbEndNome.Obrigatorio = false;
+            this.tbEndNome.Size = new System.Drawing.Size(44, 24);
+            this.tbEndNome.TabIndex = 44;
+            this.tbEndNome.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.tbEndNome.Value = "";
             // 
             // label27
             // 
@@ -822,29 +718,31 @@ namespace EasyHortifruti
             this.label26.TabIndex = 42;
             this.label26.Text = "Logradouro";
             // 
-            // textBox20
+            // tbEndLogradouro
             // 
-            this.textBox20.Caption = null;
-            this.textBox20.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox20.Location = new System.Drawing.Point(114, 120);
-            this.textBox20.Name = "textBox20";
-            this.textBox20.Obrigatorio = false;
-            this.textBox20.Size = new System.Drawing.Size(362, 24);
-            this.textBox20.TabIndex = 41;
-            this.textBox20.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.textBox20.Value = "";
+            this.tbEndLogradouro.Caption = null;
+            this.tbEndLogradouro.Enabled = false;
+            this.tbEndLogradouro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEndLogradouro.Location = new System.Drawing.Point(114, 120);
+            this.tbEndLogradouro.Name = "tbEndLogradouro";
+            this.tbEndLogradouro.Obrigatorio = false;
+            this.tbEndLogradouro.Size = new System.Drawing.Size(362, 24);
+            this.tbEndLogradouro.TabIndex = 41;
+            this.tbEndLogradouro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.tbEndLogradouro.Value = "";
             // 
-            // textBox19
+            // tbEndUF
             // 
-            this.textBox19.Caption = null;
-            this.textBox19.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox19.Location = new System.Drawing.Point(440, 169);
-            this.textBox19.Name = "textBox19";
-            this.textBox19.Obrigatorio = false;
-            this.textBox19.Size = new System.Drawing.Size(35, 24);
-            this.textBox19.TabIndex = 40;
-            this.textBox19.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.textBox19.Value = "";
+            this.tbEndUF.Caption = null;
+            this.tbEndUF.Enabled = false;
+            this.tbEndUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEndUF.Location = new System.Drawing.Point(440, 169);
+            this.tbEndUF.Name = "tbEndUF";
+            this.tbEndUF.Obrigatorio = false;
+            this.tbEndUF.Size = new System.Drawing.Size(35, 24);
+            this.tbEndUF.TabIndex = 40;
+            this.tbEndUF.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.tbEndUF.Value = "";
             // 
             // label25
             // 
@@ -856,17 +754,18 @@ namespace EasyHortifruti
             this.label25.TabIndex = 39;
             this.label25.Text = "UF";
             // 
-            // textBox18
+            // tbEndCidade
             // 
-            this.textBox18.Caption = null;
-            this.textBox18.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox18.Location = new System.Drawing.Point(206, 169);
-            this.textBox18.Name = "textBox18";
-            this.textBox18.Obrigatorio = false;
-            this.textBox18.Size = new System.Drawing.Size(213, 24);
-            this.textBox18.TabIndex = 38;
-            this.textBox18.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.textBox18.Value = "";
+            this.tbEndCidade.Caption = null;
+            this.tbEndCidade.Enabled = false;
+            this.tbEndCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEndCidade.Location = new System.Drawing.Point(206, 169);
+            this.tbEndCidade.Name = "tbEndCidade";
+            this.tbEndCidade.Obrigatorio = false;
+            this.tbEndCidade.Size = new System.Drawing.Size(213, 24);
+            this.tbEndCidade.TabIndex = 38;
+            this.tbEndCidade.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.tbEndCidade.Value = "";
             // 
             // label24
             // 
@@ -1125,7 +1024,7 @@ namespace EasyHortifruti
             // 
             this.TbPrazoPgto.Caption = null;
             this.TbPrazoPgto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbPrazoPgto.Location = new System.Drawing.Point(703, 24);
+            this.TbPrazoPgto.Location = new System.Drawing.Point(699, 23);
             this.TbPrazoPgto.Name = "TbPrazoPgto";
             this.TbPrazoPgto.Obrigatorio = false;
             this.TbPrazoPgto.ReadOnly = true;
@@ -1205,11 +1104,11 @@ namespace EasyHortifruti
             // 
             this.TbCelular.Caption = null;
             this.TbCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbCelular.Location = new System.Drawing.Point(409, 23);
+            this.TbCelular.Location = new System.Drawing.Point(400, 23);
             this.TbCelular.Name = "TbCelular";
             this.TbCelular.Obrigatorio = false;
             this.TbCelular.ReadOnly = true;
-            this.TbCelular.Size = new System.Drawing.Size(104, 24);
+            this.TbCelular.Size = new System.Drawing.Size(129, 24);
             this.TbCelular.TabIndex = 19;
             this.TbCelular.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbCelular.Value = "";
@@ -1218,7 +1117,7 @@ namespace EasyHortifruti
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(406, 5);
+            this.label12.Location = new System.Drawing.Point(397, 5);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(53, 15);
             this.label12.TabIndex = 17;
@@ -1311,8 +1210,6 @@ namespace EasyHortifruti
             this.panel9.PerformLayout();
             this.PanelPfPedido.ResumeLayout(false);
             this.PanelPfPedido.PerformLayout();
-            this.PanelPJPedido.ResumeLayout(false);
-            this.PanelPJPedido.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelTotalGeral.ResumeLayout(false);
@@ -1374,18 +1271,18 @@ namespace EasyHortifruti
         private System.Windows.Forms.Panel panel9;
         private System.Windows.Forms.Label label23;
         private System.Windows.Forms.Label label31;
-        private AltTextBox textBox25;
+        private AltTextBox tbEndPontoReferencia;
         private System.Windows.Forms.Label label29;
-        private AltTextBox textBox23;
+        private AltTextBox tbEndBairro;
         private System.Windows.Forms.Label label28;
-        private AltTextBox textBox22;
-        private AltTextBox textBox21;
+        private AltTextBox tbEndCmpt;
+        private AltTextBox tbEndNome;
         private System.Windows.Forms.Label label27;
         private System.Windows.Forms.Label label26;
-        private AltTextBox textBox20;
-        private AltTextBox textBox19;
+        private AltTextBox tbEndLogradouro;
+        private AltTextBox tbEndUF;
         private System.Windows.Forms.Label label25;
-        private AltTextBox textBox18;
+        private AltTextBox tbEndCidade;
         private System.Windows.Forms.Label label24;
         private AltTextBox TbPrazoPgto;
         private System.Windows.Forms.Label label32;
@@ -1395,27 +1292,18 @@ namespace EasyHortifruti
         private AltTextBox maskedTextBox1;
         private AltTextBox textBox1;
         private System.Windows.Forms.Label label8;
-        private AltTextBox MtbCep;
+        private AltTextBox tbEndCep;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label19;
-        private System.Windows.Forms.Panel PanelPJPedido;
-        private System.Windows.Forms.Label label22;
-        private AltTextBox TbRazaoSocial;
-        private AltTextBox TbInscrMunicipal;
-        private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.Label label21;
-        private AltTextBox TbCnpj;
-        private AltTextBox TbInscrEstadual;
-        private System.Windows.Forms.Label label20;
         private System.Windows.Forms.Panel PanelPfPedido;
-        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label lbCPFCNPJ;
         private AltTextBox TbCpj;
         private AltTextBox TbRg;
-        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label lbRGIE;
         private System.Windows.Forms.Label label38;
         private AltTextBox TbNome;
         private System.Windows.Forms.Label label37;
-        private AltTextBox TbEmail;
+        private AltTextBox tbEmail;
         private AltComboBox CbProdutos;
         private AltComboBox CbNomeCliente;
         private AltComboBox CbTpDocumento;

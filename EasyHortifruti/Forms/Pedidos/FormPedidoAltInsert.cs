@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Data.SqlClient;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -17,7 +18,9 @@ namespace EasyHortifruti
     public partial class FormPedidoAltInsert : FormBase
     {
         #region propriedades
-        Dictionary<string, int> geral;
+        Dictionary<string, int> dctGeral;
+
+        private Geral iGeral;
 
         Dictionary<string, int> produtos;
 
@@ -32,7 +35,7 @@ namespace EasyHortifruti
 
         public FormPedidoAltInsert()
         {
-            geral = new Dictionary<string, int>();
+            dctGeral = new Dictionary<string, int>();
             produtos = new Dictionary<String, int>();
             unidade = new Dictionary<String, int>();
 
@@ -52,7 +55,7 @@ namespace EasyHortifruti
         public FormPedidoAltInsert(int pId)
         {
             Id = pId;
-            geral = new Dictionary<string, int>();
+            dctGeral = new Dictionary<string, int>();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -79,12 +82,12 @@ namespace EasyHortifruti
         private void CarregarGridNomeCliente()
         {
             CbNomeCliente.Items.Clear();
-            geral.Clear();
+            dctGeral.Clear();
             DataSet ds = new ConexaoBD().ConsultarGerais();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                geral.Add(dr["razaosocial"].ToString(), Convert.ToInt32(dr["id_recno"]));
-                CbNomeCliente.Items.Add(dr["razaosocial"].ToString());
+                dctGeral.Add(dr["nomefantasia"].ToString(), Convert.ToInt32(dr["id_recno"]));
+                CbNomeCliente.Items.Add(dr["nomefantasia"].ToString());
             }
             CbNomeCliente.SelectedText = string.Empty;
         }
@@ -189,11 +192,30 @@ namespace EasyHortifruti
         {
             if (CbNomeCliente.SelectedItem != null)
             {
-                DataSet ds = new ConexaoBD().ConsultarGerais();
-                foreach (DataRow dr in ds.Tables[0].Rows)
+                int indice;
+                dctGeral.TryGetValue(CbNomeCliente.SelectedItem.ToString(), out indice);
+                iGeral = new ConexaoBD().ConsultarGeralPorId(indice);
+
+                if(iGeral != null)
                 {
-                    geral.Add(dr["celular"].ToString(), Convert.ToInt32(dr["id_recno"]));
-                    TbCelular.Text = (dr["celular"].ToString());
+                    TbCelular.Text = iGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.celular).TelefoneCompleto;
+
+                    CbTpDocumento.SelectedIndex = iGeral.TipoPessoa == TPFJ.Juridica ? 1 : 0;
+                    TbNome.Text = iGeral.NomeFantasia;
+                    lbCPFCNPJ.Text = iGeral.TipoPessoa == TPFJ.Juridica ? "CNPJ" : "CPF";
+                    TbCpj.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.CNPJ : iGeral.CPF;
+                    lbRGIE.Text = iGeral.TipoPessoa == TPFJ.Juridica ? "Inscrição Estadual" : "RG";
+                    TbRg.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.IE : iGeral.RG;
+                    TbPrazoPgto.Text = iGeral.PrazoPagamento.ToString();
+                    tbEndCep.Text = iGeral.Endereco.CEP;
+                    tbEndLogradouro.Text = iGeral.Endereco.logradouro;
+                    tbEndNome.Text = iGeral.Endereco.Numero.ToString();
+                    tbEndCmpt.Text = iGeral.Endereco.Complemento;
+                    tbEndBairro.Text = iGeral.Endereco.Bairro;
+                    tbEndCidade.Text = iGeral.Endereco.Cidade;
+                    tbEndUF.Text = iGeral.Endereco.UF;
+                    tbEndPontoReferencia.Text = iGeral.PontoReferencia;
+                    tbEmail.Text = iGeral.Email;
                 }
             }
         }
@@ -205,16 +227,6 @@ namespace EasyHortifruti
                 // Verifique qual opção está selecionada no ComboBox
                String opcaoSelecionada = CbTpDocumento.SelectedItem.ToString();
 
-                if (opcaoSelecionada == "1")
-                {
-                    PanelPfPedido.Visible = true;
-                    PanelPJPedido.Visible = false;
-                }
-                 else
-                {
-                    PanelPfPedido.Visible = false;
-                    PanelPJPedido.Visible = true;
-                }
             }
         }
     }

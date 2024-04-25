@@ -21,5 +21,7 @@ namespace EasyHortifruti.DML
         public string Cidade { get; set; }
 
         public string UF { get; set; }
+
+        public string PontoReferencia { get; set; }
     }
 }

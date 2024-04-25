@@ -82,31 +82,31 @@ namespace EasyHortifruti
         private void BtGravaAltGeral_Click(object sender, EventArgs e)
         {
             Criticar();
-            Geral pGeral = new Geral
-            {
-                TipoPessoa = RbPessoaFisica.Checked ? TPFJ.Fisica : TPFJ.Juridica,
-                NomeFantasia = TbNomeFantasia.Text,
-                RazaoSocial = TbRazaoSocial.Text,
-                Contato = TbContato.Text,
-                DtNascFundacao = DtNascAbert.Value,
-                OrgaoExpedidor = tbOrgaoExpRg.Text,
-                OrgaoExpedidorUF = tbEstadoRg.Text,
-                CPF = tbCpf.Value,
-                CNPJ = TbCNPJ.Text,
-                RG = tbRg.Text,
-                IE = TbInscrEstadual.Text,
-                Sexo = (Sexo)cbSexo.SelectedIndex,
-                EstadoCivil = (EstadoCivil)cbEstadoCivil.SelectedIndex,
-                Email = TbEmail.Text,
-                PontoReferencia = TbPontoRef.Text,
-                Telefones = new Telefones
+            Geral pGeral = new Geral();
+
+            pGeral.TipoPessoa = RbPessoaFisica.Checked ? TPFJ.Fisica : TPFJ.Juridica;
+            pGeral.Classificacao = (Classificacao)CbClassificacao.SelectedIndex;
+            pGeral.NomeFantasia = TbNomeFantasia.Text;
+            pGeral.RazaoSocial = TbRazaoSocial.Text;
+            pGeral.Contato = TbContato.Text;
+            pGeral.DtNascFundacao = DtNascAbert.Value;
+            pGeral.OrgaoExpedidor = tbOrgaoExpRg.Text;
+            pGeral.OrgaoExpedidorUF = tbEstadoRg.Text;
+            pGeral.CPF = tbCpf.Value;
+            pGeral.CNPJ = TbCNPJ.Value;
+            pGeral.RG = tbRg.Text;
+            pGeral.IE = TbInscrEstadual.Text;
+            pGeral.InscricaoMunicipal = TbInscrMunicipal.Text;
+            pGeral.Sexo = cbSexo.SelectedIndex >= 0 ? (Sexo)cbSexo.SelectedIndex : Sexo.NaoDefinido;
+            pGeral.EstadoCivil = (EstadoCivil)cbEstadoCivil.SelectedIndex >= 0 ? (EstadoCivil)cbEstadoCivil.SelectedIndex : EstadoCivil.NaoDefinido;
+            pGeral.Email = TbEmail.Text;
+            pGeral.PontoReferencia = TbPontoRef.Text;
+                pGeral.Telefones = new Telefones
             {
                 Fone,
                 Celular
-            },
-                Endereco = RetornarEnderecoTela(),
-                ID = Convert.ToInt32(LbIdCadGeral.Text)
             };
+            pGeral.Endereco = RetornarEnderecoTela();            
 
             if (Alterar)
             {
@@ -166,15 +166,19 @@ namespace EasyHortifruti
 
                     if (iGeral != null)
                     {
+                        RbPessoaFisica.Checked = iGeral.TipoPessoa == TPFJ.Fisica;
+                        RbPessoaJuridica.Checked = iGeral.TipoPessoa == TPFJ.Juridica;
                         TbNomeFantasia.Text = iGeral.NomeFantasia;
                         TbRazaoSocial.Text = iGeral.RazaoSocial;
                         TbContato.Text = iGeral.Contato;
                         DtNascAbert.Value = iGeral.DtNascFundacao;
                         tbOrgaoExpRg.Text = iGeral.OrgaoExpedidor;
                         tbEstadoRg.Text = iGeral.OrgaoExpedidorUF;
-                        tbCpf.Text = Regex.Replace(iGeral.CPF, @"(\d{3})(\d{3})(\d{3})(\d{2})", @"$1.$2.$3-$4");
-                        TbCNPJ.Text = iGeral.CNPJ;
-                        tbRg.Text = iGeral.RG;
+                        tbCpf.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.CPF : string.Empty;
+                        TbCNPJ.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.CNPJ : string.Empty;
+                        tbRg.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.RG : string.Empty;
+                        TbInscrEstadual.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.IE : string.Empty;
+                        TbInscrMunicipal.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.InscricaoMunicipal : string.Empty;
                         cbSexo.SelectedIndex = (int)iGeral.Sexo;
                         cbEstadoCivil.SelectedIndex = (int)iGeral.EstadoCivil;
 

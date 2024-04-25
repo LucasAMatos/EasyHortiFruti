@@ -1,9 +1,11 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
 namespace EasyHortifruti.DML
@@ -52,6 +54,8 @@ namespace EasyHortifruti.DML
 
         public string ReferenciasComerciais { get; set; }
 
+        public int PrazoPagamento { get; set; }
+
         public void CarregarGeral(DataSet ds)
         {
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
@@ -76,11 +80,11 @@ namespace EasyHortifruti.DML
                 if (dr["dtnascaber"] != null)
                     DtNascFundacao = Convert.ToDateTime(dr["dtnascaber"]);
 
-                if (dr["cnpj"] != null)
-                    CNPJ = dr["cnpj"].ToString();
+                if (dr["cnpj"] != null && !string.IsNullOrEmpty(dr["cnpj"].ToString().Trim()))
+                    CNPJ = Regex.Replace(dr["cnpj"].ToString(), @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
 
-                if (dr["cpf"] != null)
-                    CPF = dr["cpf"].ToString();
+                if (dr["cpf"] != null && !string.IsNullOrEmpty(dr["cpf"].ToString().Trim()))
+                    CPF = Regex.Replace(dr["cpf"].ToString(), @"(\d{3})(\d{3})(\d{3})(\d{2})", @"$1.$2.$3-$4");
 
                 if (dr["rg"] != null)
                     RG = dr["rg"].ToString();
@@ -121,7 +125,7 @@ namespace EasyHortifruti.DML
                     Endereco = new Endereco();
 
                 if (dr["cep"] != null)
-                    Endereco.CEP = dr["cep"].ToString();
+                    Endereco.CEP = Regex.Replace(dr["cep"].ToString(), @"(^\d{0,5})(\d{0,3})", @"$1-$2");
                 if (dr["logradouro"] != null)
                     Endereco.logradouro = dr["logradouro"].ToString();
                 if (dr["Numero"] != null)
@@ -144,6 +148,10 @@ namespace EasyHortifruti.DML
 
                 if (dr["email"] != null)
                     Email = dr["email"].ToString();
+
+                if (dr["prazoPgto"] != null)
+                    PrazoPagamento = Convert.ToInt32(dr["prazoPgto"].ToString());
+
             }
         }
     }

@@ -26,6 +26,9 @@ namespace EasyHortifruti
 
         Dictionary<string, int> unidade;
 
+        Dictionary<string, int> produtoItem;
+
+
         #endregion
 
         private Timer timer;
@@ -38,6 +41,7 @@ namespace EasyHortifruti
             dctGeral = new Dictionary<string, int>();
             produtos = new Dictionary<String, int>();
             unidade = new Dictionary<String, int>();
+            produtoItem = new Dictionary<String, int>();
 
             InitializeComponent();
 
@@ -52,6 +56,7 @@ namespace EasyHortifruti
             // Iniciar o Timer
             timer.Start();
         }
+        
         public FormPedidoAltInsert(int pId)
         {
             Id = pId;
@@ -79,6 +84,7 @@ namespace EasyHortifruti
             FormGeralCad BuscaCliente = new FormGeralCad();
             BuscaCliente.ShowDialog();
         }
+       
         private void CarregarGridNomeCliente()
         {
             CbNomeCliente.Items.Clear();
@@ -148,7 +154,7 @@ namespace EasyHortifruti
             CbUnidPedido.SelectedText = string.Empty;
         }
 
-        private void CalcularValorFinal()
+        private void CalcularValorFinalItem()
         {
             // Verifica se os TextBoxes têm valores válidos
             if (decimal.TryParse(TbQtdPedido.Text, out decimal quantidade) &&
@@ -166,6 +172,27 @@ namespace EasyHortifruti
                 // Se os TextBoxes não tiverem valores válidos, limpa o TextBox da margem de lucro
                 TbTotProdPedido.Text = string.Empty;
             }
+            CalcularValorLucroItem();
+        }
+
+        private void CalcularValorLucroItem()
+        {
+            // Verifica se os TextBoxes têm valores válidos
+            if (decimal.TryParse(TbVlCompra.Text, out decimal valorCompra) &&
+                decimal.TryParse(TbQtdPedido.Text, out decimal quantidade) &&
+                decimal.TryParse(TbMargemLucro.Text, out decimal margemLucro))
+            {
+                // Calcula o valor da margem de lucro
+                decimal lucroFinalItem = ((valorCompra * quantidade) * (margemLucro / 100));
+
+                // Exibir a margem de lucro no TextBox de resultado
+                AtbValorLucroItem.Text = lucroFinalItem.ToString();
+            }
+            else
+            {
+                // Se os TextBoxes não tiverem valores válidos, limpa o TextBox da margem de lucro
+                AtbValorLucroItem.Text = string.Empty;
+            }
         }
 
         private void BtCancelarPedido_Click(object sender, EventArgs e)
@@ -175,17 +202,17 @@ namespace EasyHortifruti
 
         private void TbQtdPedido_TextChanged(object sender, EventArgs e)
         {
-            CalcularValorFinal();
+            CalcularValorFinalItem();
         }
 
         private void TbVlCompra_TextChanged(object sender, EventArgs e)
         {
-            CalcularValorFinal();
+            CalcularValorFinalItem();
         }
 
         private void TbMargemLucro_TextChanged(object sender, EventArgs e)
         {
-            CalcularValorFinal();
+            CalcularValorFinalItem();
         }
 
         private void CbNomeCliente_SelectedIndexChanged(object sender, EventArgs e)
@@ -229,5 +256,60 @@ namespace EasyHortifruti
 
             }
         }
+
+        private void BtAdicItemPedido_Click(object sender, EventArgs e)
+        {
+            // Captura os valores dos campos da interface do usuário
+            string produtoItem = CbProdutos.Text;
+            string unidadeItem = CbUnidPedido.SelectedItem.ToString();
+            int quantidadeItem = Convert.ToInt32(TbQtdPedido.Text);
+            decimal valorCompraItem = Convert.ToDecimal(TbVlCompra.Text);
+            decimal margemLucroItem = Convert.ToDecimal(TbMargemLucro.Text);
+            decimal TotalItem = Convert.ToDecimal(TbTotProdPedido.Text);
+            decimal LucroItem = Convert.ToDecimal(AtbValorLucroItem.Text);
+
+            // Cria um novo objeto Pedido e preenche suas propriedades
+            Pedido novoPedido = new Pedido
+            {
+                DescrProduto = produtoItem,
+                UnidProduto = unidadeItem,
+                QtdeProduto = quantidadeItem,
+                VlCompraProduto = (double)valorCompraItem,
+                MargemLucro = (double)margemLucroItem,
+                TotalItem = (double)TotalItem,
+                ValorLucroItem = (double)LucroItem
+            };
+
+            // Adiciona o novo pedido à DataGridView
+            AdicionarPedidoDataGridView(novoPedido);
+
+
+            // (Opcional) Limpa os campos da interface do usuário após registrar o pedido
+            LimparCampos();
+        }
+        
+        private void AdicionarPedidoDataGridView(Pedido pedido)
+        {
+            // Adiciona uma nova linha à DataGridView e preenche as células com os valores do pedido
+            DgvPedidoProdutos.Rows.Add(pedido.DescrProduto, pedido.UnidProduto, pedido.QtdeProduto, pedido.VlCompraProduto, pedido.MargemLucro, pedido.TotalItem, pedido.ValorLucroItem);
+        }
+
+        private void LimparCampos()
+        {
+            CbProdutos.SelectedIndex = -1;
+            TbQtdPedido.Clear();
+            CbUnidPedido.SelectedIndex = -1;
+            TbVlCompra.Clear();
+            TbMargemLucro.Clear();
+            TbTotProdPedido.Clear();
+            AtbValorLucroItem.Clear();
+            
+        }
+
+        private void AtbValorLucroItem_TextChanged(object sender, EventArgs e)
+        {
+            CalcularValorLucroItem();
+        }
+
     }
 }

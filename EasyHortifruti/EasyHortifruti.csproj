@@ -313,6 +313,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Pedidos\FormPedidoAltInsert.resx">
       <DependentUpon>FormPedidoAltInsert.cs</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Financeiro\FormCtasReceber.resx">
       <DependentUpon>FormCtasReceber.cs</DependentUpon>

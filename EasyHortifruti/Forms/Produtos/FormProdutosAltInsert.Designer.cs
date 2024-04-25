@@ -35,10 +35,11 @@ namespace EasyHortifruti
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProdutosAltInsert));
             this.panelInserirProduto = new System.Windows.Forms.Panel();
             this.BtCadNCM = new System.Windows.Forms.Button();
+            this.txtNCM = new EasyHortifruti.Componentes.AltTextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.MtbPrecoVenda = new AltTextBox();
-            this.MtbMargemLucro = new AltTextBox();
-            this.MtbPrecoCompra = new AltTextBox();
+            this.MtbPrecoVenda = new EasyHortifruti.Componentes.AltTextBox();
+            this.MtbMargemLucro = new EasyHortifruti.Componentes.AltTextBox();
+            this.MtbPrecoCompra = new EasyHortifruti.Componentes.AltTextBox();
             this.BtCadSubGrupo = new System.Windows.Forms.Button();
             this.BtCadGrupo = new System.Windows.Forms.Button();
             this.BtCadUnidade = new System.Windows.Forms.Button();
@@ -57,7 +58,6 @@ namespace EasyHortifruti
             this.labelIDProduto = new System.Windows.Forms.Label();
             this.BtGravaAlterProd = new System.Windows.Forms.Button();
             this.BtCancelaProduto = new System.Windows.Forms.Button();
-            this.txtNCM = new AltTextBox();
             this.panelInserirProduto.SuspendLayout();
             this.panelBotoesInserirProduto.SuspendLayout();
             this.SuspendLayout();
@@ -106,13 +106,17 @@ namespace EasyHortifruti
             this.BtCadNCM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtCadNCM.UseVisualStyleBackColor = false;
             // 
-            // AltTextBox
+            // txtNCM
             // 
+            this.txtNCM.Caption = null;
             this.txtNCM.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNCM.Location = new System.Drawing.Point(30, 151);
-            this.txtNCM.Name = "AltTextBox";
+            this.txtNCM.Name = "txtNCM";
+            this.txtNCM.Obrigatorio = false;
             this.txtNCM.Size = new System.Drawing.Size(76, 24);
             this.txtNCM.TabIndex = 20;
+            this.txtNCM.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.txtNCM.Value = "";
             // 
             // label8
             // 
@@ -129,34 +133,46 @@ namespace EasyHortifruti
             // 
             // MtbPrecoVenda
             // 
+            this.MtbPrecoVenda.Caption = null;
             this.MtbPrecoVenda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MtbPrecoVenda.Location = new System.Drawing.Point(30, 231);
             this.MtbPrecoVenda.Name = "MtbPrecoVenda";
+            this.MtbPrecoVenda.Obrigatorio = false;
             this.MtbPrecoVenda.ReadOnly = true;
             this.MtbPrecoVenda.Size = new System.Drawing.Size(96, 24);
             this.MtbPrecoVenda.TabIndex = 18;
             this.MtbPrecoVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.MtbPrecoVenda.TextChanged += new System.EventHandler(this.MtbPrecoVenda_TextChanged);
+            this.MtbPrecoVenda.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.MtbPrecoVenda.Value = "";
             // 
             // MtbMargemLucro
             // 
+            this.MtbMargemLucro.Caption = null;
             this.MtbMargemLucro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MtbMargemLucro.Location = new System.Drawing.Point(458, 151);
             this.MtbMargemLucro.Name = "MtbMargemLucro";
+            this.MtbMargemLucro.Obrigatorio = false;
             this.MtbMargemLucro.Size = new System.Drawing.Size(56, 24);
             this.MtbMargemLucro.TabIndex = 4;
             this.MtbMargemLucro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.MtbMargemLucro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.MOEDA;
+            this.MtbMargemLucro.Value = "";
             this.MtbMargemLucro.TextChanged += new System.EventHandler(this.MtbMargemLucro_TextChanged);
             // 
             // MtbPrecoCompra
             // 
             this.MtbPrecoCompra.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.MtbPrecoCompra.Caption = null;
             this.MtbPrecoCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MtbPrecoCompra.Location = new System.Drawing.Point(327, 151);
             this.MtbPrecoCompra.Name = "MtbPrecoCompra";
+            this.MtbPrecoCompra.Obrigatorio = false;
             this.MtbPrecoCompra.Size = new System.Drawing.Size(88, 24);
             this.MtbPrecoCompra.TabIndex = 3;
             this.MtbPrecoCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.MtbPrecoCompra.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.MOEDA;
+            this.MtbPrecoCompra.Value = "";
+            this.MtbPrecoCompra.TextChanged += new System.EventHandler(this.MtbPrecoCompra_TextChanged);
             // 
             // BtCadSubGrupo
             // 
@@ -395,7 +411,7 @@ namespace EasyHortifruti
             this.BtCancelaProduto.TabIndex = 10;
             this.BtCancelaProduto.UseVisualStyleBackColor = false;
             this.BtCancelaProduto.Click += new System.EventHandler(this.BtCancelaProduto_Click);
-            //
+            // 
             // FormProdutosAltInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);

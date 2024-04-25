@@ -20,6 +20,7 @@ namespace EasyHortifruti.Componentes
         public string Caption { get; set; }
 
         private string iValue;
+
         public string Value
         {
             get
@@ -72,7 +73,6 @@ namespace EasyHortifruti.Componentes
                         iValue = Regex.Replace(Text, @"[^\d]+", "");
                     }
                     break;
-
                 default:
                     iValue += Text;
                     break;
@@ -99,7 +99,7 @@ namespace EasyHortifruti.Componentes
                     Text = Regex.Replace(iValue.PadLeft(11, '0'), @"(\d{3})(\d{3})(\d{3})", @"$1.$2.$3-");
                     break;
                 default:
-                    iValue += Text;
+                    iValue = Text;
                     break;
             }
 
@@ -120,7 +120,7 @@ namespace EasyHortifruti.Componentes
                     {
                         if (Value.Length >= 10)
                             Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,5})(\d{0,4})", @"($1)$2-$3");
-                        else if(Value.Length >= 6)
+                        else if (Value.Length >= 6)
                             Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,4})(\d{0,4})", @"($1)$2-$3");
                         else if (Value.Length >= 2)
                             Text = Regex.Replace(Value, @"(^\d{0,2})", @"($1)");
@@ -177,10 +177,68 @@ namespace EasyHortifruti.Componentes
                             Text = Value;
                     }
                     break;
+                case TipoCampo.MOEDA:
+                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+                    {
+                        e.Handled = true;
+                        return;
+                    }
+
+                    if (string.IsNullOrEmpty(Text) && e.KeyChar == ',')
+                        Text = "0";
+                    if (Text.Contains(',') && e.KeyChar == ',')
+                    {
+                        e.Handled = true;
+                        return;
+                    }
+                    if (!char.IsControl(e.KeyChar) && Text.Contains(',') && Text.Split(',')[1].Length == 2 && SelectionLength == 0)
+                    {
+                        e.Handled = true;
+                        return;
+                    }
+                    if (e.KeyChar == 8 && SelectionLength > 0)
+                    {
+                        Text = Text.Remove(SelectionStart, SelectionLength);
+                        this.SelectionStart = this.Text.Length;
+                        this.SelectionLength = 0;
+                        e.Handled = true;
+                        return;
+                    }
+                    if (e.KeyChar == 8 && SelectionLength == 0)
+                    {
+                        if (Text.Length > 0)
+                        {
+                            Text = Text.Remove(SelectionStart - 1);
+                            this.SelectionStart = this.Text.Length;
+                            this.SelectionLength = 0;
+                            e.Handled = true;
+                            return;
+                        }
+                    }
+                    if (char.IsDigit(e.KeyChar) && SelectionLength > 0)
+                    {
+                        Text = Text.Remove(SelectionStart, SelectionLength);
+                        this.SelectionStart = this.Text.Length;
+                        this.SelectionLength = 0;
+                    }
+                    break;
                 default:
+                    if (e.KeyChar == 8 && SelectionLength > 0)
+                    {
+                        Text = Text.Remove(SelectionStart, SelectionLength);
+                        this.SelectionStart = this.Text.Length;
+                        this.SelectionLength = 0;
+                        e.Handled = true;
+                        return;
+                    }
+                    if (char.IsDigit(e.KeyChar) && SelectionLength > 0)
+                    {
+                        Text = Text.Remove(SelectionStart, SelectionLength);
+                        this.SelectionStart = this.Text.Length;
+                        this.SelectionLength = 0;
+                    }
                     break;
             }
-            this.SelectionStart = this.Text.Length;
         }
 
         #endregion
@@ -191,7 +249,8 @@ namespace EasyHortifruti.Componentes
             CPF,
             CNPJ,
             TELEFONE,
-            CEP
+            CEP,
+            MOEDA
         }
         #endregion
     }

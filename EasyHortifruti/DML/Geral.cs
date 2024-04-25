@@ -149,7 +149,7 @@ namespace EasyHortifruti.DML
                 if (dr["email"] != null)
                     Email = dr["email"].ToString();
 
-                if (dr["prazoPgto"] != null)
+                if (dr["prazoPgto"] != null && !string.IsNullOrEmpty(dr["prazoPgto"].ToString()))
                     PrazoPagamento = Convert.ToInt32(dr["prazoPgto"].ToString());
 
             }

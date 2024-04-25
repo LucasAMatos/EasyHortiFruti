@@ -120,7 +120,7 @@ namespace EasyHortifruti.DML
         public string CnpjOrdem { get; set; }
         public string CnpjDigitoVerificador { get; set; }
         public string Tipo { get; set; }
-        public object NomeFantasia { get; set; }
+        public string NomeFantasia { get; set; }
         public string SituacaoCadastral { get; set; }
         public DateTime DataSituacaoCadastral { get; set; }
         public DateTime DataInicioAtividade { get; set; }

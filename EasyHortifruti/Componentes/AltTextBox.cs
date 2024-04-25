@@ -83,15 +83,26 @@ namespace EasyHortifruti.Componentes
             switch (Tipo)
             {
                 case TipoCampo.TELEFONE:
+                    iValue = Regex.Replace(Text, @"[^\d]+", "");
+                    break;
                 case TipoCampo.CEP:
+                    iValue = Regex.Replace(Text, @"[^\d]+", "");
+                    Text = Regex.Replace(iValue.PadRight(8, '0'), @"(\d{5})(\d{3})", @"$1-$2");
+                    iValue = Regex.Replace(Text, @"[^\d]+", "");
+                    break;
                 case TipoCampo.CNPJ:
+                    iValue = Regex.Replace(Text, @"[^\d]+", "");
+                    Text = Regex.Replace(iValue.PadLeft(14, '0'), @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
+                    break;
                 case TipoCampo.CPF:
-                        iValue = Regex.Replace(Text, @"[^\d]+", "");
+                    iValue = Regex.Replace(Text, @"[^\d]+", "");
+                    Text = Regex.Replace(iValue.PadLeft(11, '0'), @"(\d{3})(\d{3})(\d{3})", @"$1.$2.$3-");
                     break;
                 default:
                     iValue += Text;
                     break;
             }
+
         }
         private void FormataCampos(object sender, KeyPressEventArgs e)
         {
@@ -124,7 +135,9 @@ namespace EasyHortifruti.Componentes
                         e.Handled = true;
                         return;
                     }
-                    Text = Value.Length >= 5 ? string.Format("{0}-{1}", Value.Substring(0, 5), Value.Substring(5, Value.Length - 5)) : Value;
+
+                    if (char.IsDigit(e.KeyChar))
+                        Text = Value.Length >= 5 ? string.Format("{0}-{1}", Value.Substring(0, 5), Value.Substring(5, Value.Length - 5)) : Value;
                     break;
                 case TipoCampo.CPF:
                     // Permite apenas números e teclas de controle (como Backspace)

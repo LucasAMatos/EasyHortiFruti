@@ -147,13 +147,25 @@ namespace EasyHortifruti.Componentes
                         e.Handled = true;
                         return;
                     }
+                    if (!char.IsControl(e.KeyChar) && Value.Length == 11)
+                    {
+                        e.Handled = true;
+                        return;
+                    }
 
                     if (char.IsDigit(e.KeyChar))
                     {
-                        if (Value.Length >= 9)
-                            Text = Regex.Replace(Value, @"(\d{3})(\d{3})(\d{3})", @"$1.$2.$3-");
-                        else if (Value.Length >= 3)
-                            Text = Regex.Replace(Value, @"(\d{3})", @"$1.");
+                        iValue += e.KeyChar;
+                        if (iValue.Length >= 9)
+                            Text = Regex.Replace(iValue, @"(\d{3})(\d{3})(\d{3})", @"$1.$2.$3-");
+                        else if (iValue.Length >= 3)
+                            Text = Regex.Replace(iValue, @"(\d{3})", @"$1.");
+                        else
+                            Text = iValue;
+
+                        this.SelectionStart = this.Text.Length;
+                        e.Handled = true;
+                        return;
                     }
                     break;
                 case TipoCampo.CNPJ:

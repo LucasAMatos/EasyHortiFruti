@@ -326,7 +326,6 @@ namespace EasyHortifruti
             this.TbTotProdPedido.Size = new System.Drawing.Size(88, 24);
             this.TbTotProdPedido.TabIndex = 0;
             this.TbTotProdPedido.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbTotProdPedido.Value = "";
             // 
             // label14
             // 
@@ -349,7 +348,6 @@ namespace EasyHortifruti
             this.TbMargemLucro.Size = new System.Drawing.Size(50, 24);
             this.TbMargemLucro.TabIndex = 0;
             this.TbMargemLucro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbMargemLucro.Value = "";
             this.TbMargemLucro.TextChanged += new System.EventHandler(this.TbMargemLucro_TextChanged);
             // 
             // label13
@@ -373,7 +371,6 @@ namespace EasyHortifruti
             this.TbVlCompra.Size = new System.Drawing.Size(97, 24);
             this.TbVlCompra.TabIndex = 0;
             this.TbVlCompra.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbVlCompra.Value = "";
             this.TbVlCompra.TextChanged += new System.EventHandler(this.TbVlCompra_TextChanged);
             // 
             // label10
@@ -396,7 +393,6 @@ namespace EasyHortifruti
             this.TbQtdPedido.Size = new System.Drawing.Size(49, 24);
             this.TbQtdPedido.TabIndex = 37;
             this.TbQtdPedido.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbQtdPedido.Value = "";
             this.TbQtdPedido.TextChanged += new System.EventHandler(this.TbQtdPedido_TextChanged);
             // 
             // label9
@@ -610,7 +606,6 @@ namespace EasyHortifruti
             this.tbEndCep.Size = new System.Drawing.Size(93, 24);
             this.tbEndCep.TabIndex = 53;
             this.tbEndCep.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.tbEndCep.Value = "";
             // 
             // label31
             // 
@@ -633,7 +628,6 @@ namespace EasyHortifruti
             this.tbEndPontoReferencia.Size = new System.Drawing.Size(281, 24);
             this.tbEndPontoReferencia.TabIndex = 51;
             this.tbEndPontoReferencia.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.tbEndPontoReferencia.Value = "";
             // 
             // label29
             // 
@@ -656,7 +650,6 @@ namespace EasyHortifruti
             this.tbEndBairro.Size = new System.Drawing.Size(177, 24);
             this.tbEndBairro.TabIndex = 47;
             this.tbEndBairro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.tbEndBairro.Value = "";
             // 
             // label28
             // 
@@ -679,7 +672,6 @@ namespace EasyHortifruti
             this.tbEndCmpt.Size = new System.Drawing.Size(219, 24);
             this.tbEndCmpt.TabIndex = 45;
             this.tbEndCmpt.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.tbEndCmpt.Value = "";
             // 
             // tbEndNome
             // 
@@ -692,7 +684,6 @@ namespace EasyHortifruti
             this.tbEndNome.Size = new System.Drawing.Size(44, 24);
             this.tbEndNome.TabIndex = 44;
             this.tbEndNome.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.tbEndNome.Value = "";
             // 
             // label27
             // 
@@ -725,7 +716,6 @@ namespace EasyHortifruti
             this.tbEndLogradouro.Size = new System.Drawing.Size(362, 24);
             this.tbEndLogradouro.TabIndex = 41;
             this.tbEndLogradouro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.tbEndLogradouro.Value = "";
             // 
             // tbEndUF
             // 
@@ -738,7 +728,6 @@ namespace EasyHortifruti
             this.tbEndUF.Size = new System.Drawing.Size(35, 24);
             this.tbEndUF.TabIndex = 40;
             this.tbEndUF.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.tbEndUF.Value = "";
             // 
             // label25
             // 
@@ -761,7 +750,6 @@ namespace EasyHortifruti
             this.tbEndCidade.Size = new System.Drawing.Size(213, 24);
             this.tbEndCidade.TabIndex = 38;
             this.tbEndCidade.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.tbEndCidade.Value = "";
             // 
             // label24
             // 
@@ -820,7 +808,6 @@ namespace EasyHortifruti
             this.textBox1.Size = new System.Drawing.Size(503, 72);
             this.textBox1.TabIndex = 28;
             this.textBox1.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.textBox1.Value = "";
             // 
             // label8
             // 
@@ -843,7 +830,6 @@ namespace EasyHortifruti
             this.MtbTotPedido.Size = new System.Drawing.Size(115, 27);
             this.MtbTotPedido.TabIndex = 39;
             this.MtbTotPedido.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.MtbTotPedido.Value = "";
             // 
             // maskedTextBox2
             // 
@@ -855,7 +841,6 @@ namespace EasyHortifruti
             this.maskedTextBox2.Size = new System.Drawing.Size(115, 27);
             this.maskedTextBox2.TabIndex = 38;
             this.maskedTextBox2.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.maskedTextBox2.Value = "";
             // 
             // maskedTextBox1
             // 
@@ -868,7 +853,6 @@ namespace EasyHortifruti
             this.maskedTextBox1.Size = new System.Drawing.Size(115, 27);
             this.maskedTextBox1.TabIndex = 37;
             this.maskedTextBox1.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.maskedTextBox1.Value = "";
             // 
             // label18
             // 
@@ -1027,7 +1011,6 @@ namespace EasyHortifruti
             this.TbPrazoPgto.Size = new System.Drawing.Size(78, 24);
             this.TbPrazoPgto.TabIndex = 27;
             this.TbPrazoPgto.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbPrazoPgto.Value = "";
             // 
             // label32
             // 
@@ -1107,7 +1090,6 @@ namespace EasyHortifruti
             this.TbCelular.Size = new System.Drawing.Size(129, 24);
             this.TbCelular.TabIndex = 19;
             this.TbCelular.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbCelular.Value = "";
             // 
             // label12
             // 

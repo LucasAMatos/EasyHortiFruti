@@ -19,18 +19,20 @@ namespace EasyHortifruti.Componentes
 
         public string Caption { get; set; }
 
-        private string iValue;
         public string Value
         {
             get
             {
-                if (iValue == null || string.IsNullOrEmpty(iValue.Trim()))
-                    PreencheValue(null, null);
-                return iValue;
-            }
-            set
-            {
-                iValue = value;
+                switch (Tipo)
+                {
+                    case TipoCampo.CEP:
+                    case TipoCampo.CPF:
+                    case TipoCampo.CNPJ:
+                    case TipoCampo.TELEFONE:
+                        return Regex.Replace(Text, @"[^\d]+", "");
+                    default:
+                        return Text;
+                }
             }
         }
 
@@ -48,58 +50,34 @@ namespace EasyHortifruti.Componentes
         #region Construtor
         public AltTextBox()
         {
-            this.KeyPress += PreencheValue;
-
             this.KeyPress += FormataCampos;
+            this.Leave += FormataCampoLeave;
 
-            this.LostFocus += PreencheValueLostFocus;
             InitializeComponent();
         }
         #endregion
 
         #region Metodos
-
-        private void PreencheValue(object sender, KeyPressEventArgs e)
+        private void FormataCampoLeave(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(Text))
+                return;
+
             switch (Tipo)
             {
                 case TipoCampo.TELEFONE:
-                case TipoCampo.CEP:
-                case TipoCampo.CNPJ:
-                case TipoCampo.CPF:
-                    if (e == null || char.IsDigit(e.KeyChar))
-                    {
-                        iValue = Regex.Replace(Text, @"[^\d]+", "");
-                    }
-                    break;
-
-                default:
-                    iValue += Text;
-                    break;
-            }
-        }
-        private void PreencheValueLostFocus(object sender, EventArgs e)
-        {
-            switch (Tipo)
-            {
-                case TipoCampo.TELEFONE:
-                    iValue = Regex.Replace(Text, @"[^\d]+", "");
+                    Text = Value.Length <= 10 ? Regex.Replace(Value, @"(\d{2})(\d{0,4})(\d{0,4})", @"($1)$2-$3") : Regex.Replace(Value, @"(\d{2})(\d{0,5})(\d{0,4})", @"($1)$2-$3");
                     break;
                 case TipoCampo.CEP:
-                    iValue = Regex.Replace(Text, @"[^\d]+", "");
-                    Text = Regex.Replace(iValue.PadRight(8, '0'), @"(\d{5})(\d{3})", @"$1-$2");
-                    iValue = Regex.Replace(Text, @"[^\d]+", "");
+                    Text = Regex.Replace(Value.PadRight(8, '0'), @"(\d{5})(\d{0,3})", @"$1-$2");
                     break;
                 case TipoCampo.CNPJ:
-                    iValue = Regex.Replace(Text, @"[^\d]+", "");
-                    Text = Regex.Replace(iValue.PadLeft(14, '0'), @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
+                    Text = Regex.Replace(Value.PadLeft(14, '0'), @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
                     break;
                 case TipoCampo.CPF:
-                    iValue = Regex.Replace(Text, @"[^\d]+", "");
-                    Text = Regex.Replace(iValue.PadLeft(11, '0'), @"(\d{3})(\d{3})(\d{3})", @"$1.$2.$3-");
+                    Text = Regex.Replace(Value.PadLeft(11, '0'), @"(\d{3})(\d{3})(\d{3})", @"$1.$2.$3-");
                     break;
                 default:
-                    iValue += Text;
                     break;
             }
 
@@ -111,76 +89,124 @@ namespace EasyHortifruti.Componentes
                 case TipoCampo.TELEFONE:
                     // Permite apenas números e teclas de controle (como Backspace)
                     if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-                    {
                         e.Handled = true;
-                        return;
-                    }
 
                     if (char.IsDigit(e.KeyChar))
                     {
-                        if (Value.Length >= 10)
-                            Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,5})(\d{0,4})", @"($1)$2-$3");
-                        else if(Value.Length >= 6)
-                            Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,4})(\d{0,4})", @"($1)$2-$3");
-                        else if (Value.Length >= 2)
-                            Text = Regex.Replace(Value, @"(^\d{0,2})", @"($1)");
-                        else
-                            Text = "(" + Value;
+                        if (Value.Length < 11)
+                        {
+                            if (Value.Length >= 10)
+                                Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,5})(\d{0,4})", @"($1)$2-$3");
+                            else if (Value.Length >= 6)
+                                Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,4})(\d{0,4})", @"($1)$2-$3");
+                            else if (Value.Length >= 2)
+                                Text = Regex.Replace(Value, @"(^\d{0,2})", @"($1)");
+                            else
+                                Text = "(" + Value;
+
+                            this.SelectionStart = this.Text.Length;
+                        }
                     }
-                    break;
+                    return;
                 case TipoCampo.CEP:
                     // Permite apenas números e teclas de controle (como Backspace)
                     if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-                    {
                         e.Handled = true;
-                        return;
-                    }
 
                     if (char.IsDigit(e.KeyChar))
                         Text = Value.Length >= 5 ? string.Format("{0}-{1}", Value.Substring(0, 5), Value.Substring(5, Value.Length - 5)) : Value;
-                    break;
+
+                    return;
                 case TipoCampo.CPF:
                     // Permite apenas números e teclas de controle (como Backspace)
                     if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
-                    {
                         e.Handled = true;
-                        return;
-                    }
 
                     if (char.IsDigit(e.KeyChar))
                     {
-                        if (Value.Length >= 9)
-                            Text = Regex.Replace(Value, @"(\d{3})(\d{3})(\d{3})", @"$1.$2.$3-");
-                        else if (Value.Length >= 3)
-                            Text = Regex.Replace(Value, @"(\d{3})", @"$1.");
+                        if (Value.Length < 11)
+                        {
+                            Text += e.KeyChar;
+
+                            if (Value.Length >= 9)
+                                Text = Regex.Replace(Value, @"(\d{3})(\d{3})(\d{3})", @"$1.$2.$3-");
+                            else if (Value.Length >= 3)
+                                Text = Regex.Replace(Value, @"(\d{3})", @"$1.");
+                            else
+                                Text = Value;
+
+                            this.SelectionStart = this.Text.Length;
+                        }
+                        e.Handled = true;
                     }
-                    break;
+                    return;
                 case TipoCampo.CNPJ:
                     // Permite apenas números e teclas de controle (como Backspace)
                     if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                        e.Handled = true;
+                                         
+                    if (char.IsDigit(e.KeyChar))
+                    {
+                        if (Value.Length < 14)
+                        {
+                            Text += e.KeyChar;
+
+                            if (Value.Length >= 12)
+                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
+                            else if (Value.Length >= 8)
+                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{0,4})", @"$1.$2.$3/$4");
+                            else if (Value.Length >= 5)
+                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{0,3})", @"$1.$2.$3");
+                            else if (Value.Length >= 3)
+                                Text = Regex.Replace(Value, @"(\d{2})(\d{0,3})", @"$1.$2");
+
+                            this.SelectionStart = this.Text.Length;
+                        }
+                        e.Handled = true;
+                    }
+                    return;                   
+                case TipoCampo.MOEDA:
+                    if ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',') ||
+                       (Text.Contains(',') && e.KeyChar == ','))
                     {
                         e.Handled = true;
                         return;
                     }
-
-                    if (char.IsDigit(e.KeyChar))
+                    if (string.IsNullOrEmpty(Text) && e.KeyChar == ',')
                     {
-                        if (Value.Length >= 12)
-                            Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
-                        else if (Value.Length >= 8)
-                            Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{0,4})", @"$1.$2.$3/$4");
-                        else if (Value.Length >= 5)
-                            Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{0,3})", @"$1.$2.$3");
-                        else if (Value.Length >= 2)
-                            Text = Regex.Replace(Value, @"(\d{2})(\d{0,3})", @"$1.$2");
-                        else
-                            Text = Value;
+                        e.Handled = true;
+                        Text = "0,";
+                        SelectionStart = Text.Length;
+                        return;
                     }
-                    break;
+                    if (!char.IsControl(e.KeyChar) && Text.Contains(',') && Text.Split(',')[1].Length == 2 && SelectionLength == 0)
+                    {
+                        e.Handled = true;
+                        return;
+                    }
+                    if (e.KeyChar == 8 && SelectionLength > 0)
+                    {
+                        Text = Text.Remove(SelectionStart, SelectionLength);
+                        SelectionStart = Text.Length;
+                        SelectionLength = 0;
+                        e.Handled = true;
+                        return;
+                    }
+                    if (e.KeyChar == 8 && SelectionLength == 0)
+                    {
+                        if (Text.Length > 0)
+                        {
+                            Text = Text.Remove(SelectionStart - 1);
+                            SelectionStart = Text.Length;
+                            SelectionLength = 0;
+                            e.Handled = true;
+                            return;
+                        }
+                    }
+                    return;
                 default:
-                    break;
+                    return;
             }
-            this.SelectionStart = this.Text.Length;
         }
 
         #endregion
@@ -191,7 +217,8 @@ namespace EasyHortifruti.Componentes
             CPF,
             CNPJ,
             TELEFONE,
-            CEP
+            CEP,
+            MOEDA
         }
         #endregion
     }

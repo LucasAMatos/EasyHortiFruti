@@ -121,12 +121,11 @@ namespace EasyHortifruti
             }
         }
 
-        private void MtbPrecoVenda_TextChanged(object sender, EventArgs e)
+        private void MtbMargemLucro_TextChanged(object sender, EventArgs e)
         {
             CalcularMargemLucro();
         }
-
-        private void MtbMargemLucro_TextChanged(object sender, EventArgs e)
+        private void MtbPrecoCompra_TextChanged(object sender, EventArgs e)
         {
             CalcularMargemLucro();
         }
@@ -214,18 +213,15 @@ namespace EasyHortifruti
                 // Calcula o valor da margem de lucro
                 decimal valorMargemLucro = valorCompra * (1 + (margemLucro / 100));
 
-                // Exibir a margem de lucro no TextBox de resultado
-                MtbMargemLucro.Text = margemLucro.ToString();
-
                 // Exibe o valor da margem de lucro no TextBox
-                MtbPrecoVenda.Text = valorMargemLucro.ToString();
+                MtbPrecoVenda.Text = valorMargemLucro.ToString("0.00");
             }
             else
             {
                 // Se os TextBoxes não tiverem valores válidos, limpa o TextBox da margem de lucro
                 MtbPrecoVenda.Text = string.Empty;
             }
-        }      
+        }
 
         #endregion
 

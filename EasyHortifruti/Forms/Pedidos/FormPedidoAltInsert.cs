@@ -229,5 +229,10 @@ namespace EasyHortifruti
 
             }
         }
+
+        private void BtAdicItemPedido_Click(object sender, EventArgs e)
+        {
+            
+        }
     }
 }

@@ -60,9 +60,6 @@ namespace EasyHortifruti
             this.label9 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
-            this.panel9 = new System.Windows.Forms.Panel();
-            this.label37 = new System.Windows.Forms.Label();
-            this.tbEmail = new EasyHortifruti.Componentes.AltTextBox();
             this.PanelPfPedido = new System.Windows.Forms.Panel();
             this.lbCPFCNPJ = new System.Windows.Forms.Label();
             this.TbCpj = new EasyHortifruti.Componentes.AltTextBox();
@@ -70,6 +67,9 @@ namespace EasyHortifruti
             this.lbRGIE = new System.Windows.Forms.Label();
             this.label38 = new System.Windows.Forms.Label();
             this.TbNome = new EasyHortifruti.Componentes.AltTextBox();
+            this.panel9 = new System.Windows.Forms.Panel();
+            this.label37 = new System.Windows.Forms.Label();
+            this.tbEmail = new EasyHortifruti.Componentes.AltTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.CbTpDocumento = new EasyHortifruti.Componentes.AltComboBox(this.components);
             this.label19 = new System.Windows.Forms.Label();
@@ -130,8 +130,8 @@ namespace EasyHortifruti
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewPedProdutos)).BeginInit();
             this.panelSelectProduto.SuspendLayout();
             this.tabPage2.SuspendLayout();
-            this.panel9.SuspendLayout();
             this.PanelPfPedido.SuspendLayout();
+            this.panel9.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panelTotalGeral.SuspendLayout();
             this.panelBotoesInserirPedido.SuspendLayout();
@@ -318,6 +318,7 @@ namespace EasyHortifruti
             this.BtAdicItemPedido.Size = new System.Drawing.Size(61, 42);
             this.BtAdicItemPedido.TabIndex = 34;
             this.BtAdicItemPedido.UseVisualStyleBackColor = true;
+            this.BtAdicItemPedido.Click += new System.EventHandler(this.BtAdicItemPedido_Click);
             // 
             // TbTotProdPedido
             // 
@@ -435,56 +436,6 @@ namespace EasyHortifruti
             this.tabPage2.Text = "Dados Cliente";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
-            // panel9
-            // 
-            this.panel9.Controls.Add(this.label37);
-            this.panel9.Controls.Add(this.tbEmail);
-            this.panel9.Controls.Add(this.panel2);
-            this.panel9.Controls.Add(this.tbEndCep);
-            this.panel9.Controls.Add(this.label31);
-            this.panel9.Controls.Add(this.tbEndPontoReferencia);
-            this.panel9.Controls.Add(this.label29);
-            this.panel9.Controls.Add(this.tbEndBairro);
-            this.panel9.Controls.Add(this.label28);
-            this.panel9.Controls.Add(this.tbEndCmpt);
-            this.panel9.Controls.Add(this.tbEndNome);
-            this.panel9.Controls.Add(this.label27);
-            this.panel9.Controls.Add(this.label26);
-            this.panel9.Controls.Add(this.tbEndLogradouro);
-            this.panel9.Controls.Add(this.tbEndUF);
-            this.panel9.Controls.Add(this.label25);
-            this.panel9.Controls.Add(this.tbEndCidade);
-            this.panel9.Controls.Add(this.label24);
-            this.panel9.Controls.Add(this.label23);
-            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel9.Location = new System.Drawing.Point(3, 3);
-            this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(788, 269);
-            this.panel9.TabIndex = 0;
-            // 
-            // label37
-            // 
-            this.label37.AutoSize = true;
-            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label37.Location = new System.Drawing.Point(5, 198);
-            this.label37.Name = "label37";
-            this.label37.Size = new System.Drawing.Size(41, 13);
-            this.label37.TabIndex = 60;
-            this.label37.Text = "E-mail";
-            // 
-            // tbEmail
-            // 
-            this.tbEmail.Caption = null;
-            this.tbEmail.Enabled = false;
-            this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbEmail.Location = new System.Drawing.Point(7, 213);
-            this.tbEmail.Name = "tbEmail";
-            this.tbEmail.Obrigatorio = false;
-            this.tbEmail.Size = new System.Drawing.Size(417, 24);
-            this.tbEmail.TabIndex = 59;
-            this.tbEmail.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.tbEmail.Value = "";
-            // 
             // PanelPfPedido
             // 
             this.PanelPfPedido.Controls.Add(this.lbCPFCNPJ);
@@ -566,6 +517,56 @@ namespace EasyHortifruti
             this.TbNome.TabIndex = 51;
             this.TbNome.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbNome.Value = "";
+            // 
+            // panel9
+            // 
+            this.panel9.Controls.Add(this.label37);
+            this.panel9.Controls.Add(this.tbEmail);
+            this.panel9.Controls.Add(this.panel2);
+            this.panel9.Controls.Add(this.tbEndCep);
+            this.panel9.Controls.Add(this.label31);
+            this.panel9.Controls.Add(this.tbEndPontoReferencia);
+            this.panel9.Controls.Add(this.label29);
+            this.panel9.Controls.Add(this.tbEndBairro);
+            this.panel9.Controls.Add(this.label28);
+            this.panel9.Controls.Add(this.tbEndCmpt);
+            this.panel9.Controls.Add(this.tbEndNome);
+            this.panel9.Controls.Add(this.label27);
+            this.panel9.Controls.Add(this.label26);
+            this.panel9.Controls.Add(this.tbEndLogradouro);
+            this.panel9.Controls.Add(this.tbEndUF);
+            this.panel9.Controls.Add(this.label25);
+            this.panel9.Controls.Add(this.tbEndCidade);
+            this.panel9.Controls.Add(this.label24);
+            this.panel9.Controls.Add(this.label23);
+            this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel9.Location = new System.Drawing.Point(3, 3);
+            this.panel9.Name = "panel9";
+            this.panel9.Size = new System.Drawing.Size(788, 269);
+            this.panel9.TabIndex = 0;
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label37.Location = new System.Drawing.Point(5, 198);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(41, 13);
+            this.label37.TabIndex = 60;
+            this.label37.Text = "E-mail";
+            // 
+            // tbEmail
+            // 
+            this.tbEmail.Caption = null;
+            this.tbEmail.Enabled = false;
+            this.tbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbEmail.Location = new System.Drawing.Point(7, 213);
+            this.tbEmail.Name = "tbEmail";
+            this.tbEmail.Obrigatorio = false;
+            this.tbEmail.Size = new System.Drawing.Size(417, 24);
+            this.tbEmail.TabIndex = 59;
+            this.tbEmail.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.tbEmail.Value = "";
             // 
             // panel2
             // 
@@ -1206,10 +1207,10 @@ namespace EasyHortifruti
             this.panelSelectProduto.ResumeLayout(false);
             this.panelSelectProduto.PerformLayout();
             this.tabPage2.ResumeLayout(false);
-            this.panel9.ResumeLayout(false);
-            this.panel9.PerformLayout();
             this.PanelPfPedido.ResumeLayout(false);
             this.PanelPfPedido.PerformLayout();
+            this.panel9.ResumeLayout(false);
+            this.panel9.PerformLayout();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panelTotalGeral.ResumeLayout(false);

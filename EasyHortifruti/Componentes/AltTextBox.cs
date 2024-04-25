@@ -80,6 +80,7 @@ namespace EasyHortifruti.Componentes
         }
         private void PreencheValueLostFocus(object sender, EventArgs e)
         {
+            return;
             switch (Tipo)
             {
                 case TipoCampo.TELEFONE:
@@ -162,19 +163,28 @@ namespace EasyHortifruti.Componentes
                         e.Handled = true;
                         return;
                     }
-
+                    if (!char.IsControl(e.KeyChar) && Value.Length == 14)
+                    {
+                        e.Handled = true;
+                        return;
+                    }
                     if (char.IsDigit(e.KeyChar))
                     {
-                        if (Value.Length >= 12)
-                            Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
-                        else if (Value.Length >= 8)
-                            Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{0,4})", @"$1.$2.$3/$4");
-                        else if (Value.Length >= 5)
-                            Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{0,3})", @"$1.$2.$3");
-                        else if (Value.Length >= 2)
-                            Text = Regex.Replace(Value, @"(\d{2})(\d{0,3})", @"$1.$2");
+                        iValue += e.KeyChar;
+                        if (iValue.Length >= 12)
+                            Text = Regex.Replace(iValue, @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
+                        else if (iValue.Length >= 8)
+                            Text = Regex.Replace(iValue, @"(\d{2})(\d{3})(\d{3})(\d{0,4})", @"$1.$2.$3/$4");
+                        else if (iValue.Length >= 5)
+                            Text = Regex.Replace(iValue, @"(\d{2})(\d{3})(\d{0,3})", @"$1.$2.$3");
+                        else if (iValue.Length >= 3)
+                            Text = Regex.Replace(iValue, @"(\d{2})(\d{0,3})", @"$1.$2");
                         else
-                            Text = Value;
+                            Text = iValue;
+
+                        this.SelectionStart = this.Text.Length;
+                        e.Handled = true;
+                        return;
                     }
                     break;
                 case TipoCampo.MOEDA:

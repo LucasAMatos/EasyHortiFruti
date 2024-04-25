@@ -116,7 +116,6 @@ namespace EasyHortifruti
             this.txtNCM.Size = new System.Drawing.Size(76, 24);
             this.txtNCM.TabIndex = 20;
             this.txtNCM.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.txtNCM.Value = "";
             // 
             // label8
             // 
@@ -143,8 +142,6 @@ namespace EasyHortifruti
             this.MtbPrecoVenda.TabIndex = 18;
             this.MtbPrecoVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.MtbPrecoVenda.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.MtbPrecoVenda.Value = "";
-            // 
             // MtbMargemLucro
             // 
             this.MtbMargemLucro.Caption = null;
@@ -156,7 +153,6 @@ namespace EasyHortifruti
             this.MtbMargemLucro.TabIndex = 4;
             this.MtbMargemLucro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MtbMargemLucro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.MOEDA;
-            this.MtbMargemLucro.Value = "";
             this.MtbMargemLucro.TextChanged += new System.EventHandler(this.MtbMargemLucro_TextChanged);
             // 
             // MtbPrecoCompra
@@ -171,7 +167,6 @@ namespace EasyHortifruti
             this.MtbPrecoCompra.TabIndex = 3;
             this.MtbPrecoCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MtbPrecoCompra.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.MOEDA;
-            this.MtbPrecoCompra.Value = "";
             this.MtbPrecoCompra.TextChanged += new System.EventHandler(this.MtbPrecoCompra_TextChanged);
             // 
             // BtCadSubGrupo
@@ -341,7 +336,6 @@ namespace EasyHortifruti
             this.tbDescricaoProduto.Size = new System.Drawing.Size(484, 24);
             this.tbDescricaoProduto.TabIndex = 1;
             this.tbDescricaoProduto.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.tbDescricaoProduto.Value = "";
             // 
             // label1
             // 

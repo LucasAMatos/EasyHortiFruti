@@ -226,14 +226,14 @@ namespace EasyHortifruti
         #region Produtos
         public DataSet ConsultarProdutos()
         {
-            string sql = string.Concat("SELECT * FROM produtos P INNER JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO INNER JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO INNER JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO");
+            string sql = string.Concat("SELECT * FROM produtos P LEFT JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO LEFT JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO LEFT JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO");
 
             return ExecutaEPreencheDataset(sql);
         }
 
         public Produto ConsultarProdutoPorId(int pId)
         {
-            string sql = string.Concat("SELECT * FROM produtos P INNER JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO INNER JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO INNER JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO WHERE P.ID_RECNO =", pId);
+            string sql = string.Concat("SELECT * FROM produtos P LEFT JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO LEFT JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO INNER JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO WHERE P.ID_RECNO =", pId);
 
             Produto produto = new Produto();
             DataSet ds = ExecutaEPreencheDataset(sql);

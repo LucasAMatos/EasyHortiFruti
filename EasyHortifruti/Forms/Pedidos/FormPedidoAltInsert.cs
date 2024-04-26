@@ -18,16 +18,16 @@ namespace EasyHortifruti
     public partial class FormPedidoAltInsert : FormBase
     {
         #region propriedades
+
         Dictionary<string, int> dctGeral;
-
-        private Geral iGeral;
-
-        Dictionary<string, int> produtos;
-
-        Dictionary<string, int> unidade;
 
         Dictionary<string, int> produtoItem;
 
+        Dictionary<string, int> margemLucro;
+
+        private Geral iGeral;
+
+        private DataSet dsProdutos;
 
         #endregion
 
@@ -39,9 +39,8 @@ namespace EasyHortifruti
         public FormPedidoAltInsert()
         {
             dctGeral = new Dictionary<string, int>();
-            produtos = new Dictionary<String, int>();
-            unidade = new Dictionary<String, int>();
             produtoItem = new Dictionary<String, int>();
+            margemLucro = new Dictionary<String, int>();
 
             InitializeComponent();
 
@@ -108,50 +107,44 @@ namespace EasyHortifruti
             base.LimparCampos();
             CarregarComboStatusPedido();
             CarregarGridNomeCliente();
+            dsProdutos = new ConexaoBD().ConsultarProdutos();
             CarregarComboProdutos();
-            CarregarComboUnidades();
+
         }
         
         private void CarregarComboProdutos()
         {
             CbProdutos.Items.Clear();
-            produtos.Clear();
-            DataSet ds = new ConexaoBD().ConsultarProdutos();
-            foreach (DataRow dr in ds.Tables[0].Rows)
+            foreach (DataRow dr in dsProdutos.Tables[0].Rows)
             {
-                produtos.Add(dr["nome_produto"].ToString(), Convert.ToInt32(dr["id_recno"]));
-                CbProdutos.Items.Add(dr["nome_produto"].ToString());
+                if (!CbProdutos.Items.Contains(dr["nome_produto"].ToString()))
+                { 
+                    CbProdutos.Items.Add(dr["nome_produto"].ToString());
+                }
             }
-            CbProdutos.SelectedText = string.Empty;
+
+            CarregarComboUnidades();
         }
 
         private void CbProdutos_SelectedIndexChanged(object sender, EventArgs e)
         {
-            // Verifique se algum item está selecionado no ComboBox
-            if (CbProdutos.SelectedItem != null)
-            {
-                DataSet ds = new ConexaoBD().ConsultarProdutos();
-                foreach (DataRow dr in ds.Tables[0].Rows)
-                {
-                    produtos.Add(dr["pcocompra_produto"].ToString(), Convert.ToInt32(dr["id_recno"]));
-                    TbVlCompra.Text = (dr["pcocompra_produto"].ToString());
-                    produtos.Add(dr["margem_produto"].ToString(), Convert.ToInt32(dr["id_recno"]));
-                    TbMargemLucro.Text = (dr["margem_produto"].ToString());
-                }
-            }
+            CarregarComboUnidades();
         }
         
         private void CarregarComboUnidades()
         {
-            CbUnidPedido.Items.Clear();
-            unidade.Clear();
-            DataSet ds = new ConexaoBD().ConsultarUnidades();
-            foreach (DataRow dr in ds.Tables[0].Rows)
-            {
-                unidade.Add(dr["abrev_unid"].ToString(), Convert.ToInt32(dr["id_recno"]));
-                CbUnidPedido.Items.Add(dr["abrev_unid"].ToString());
+            if(CbProdutos.SelectedIndex >= 0 )
+            { 
+                CbUnidPedido.Items.Clear();
+                foreach (DataRow dr in dsProdutos.Tables[0].Rows)
+                {
+                    if (CbProdutos.SelectedItem.ToString() == dr["nome_produto"].ToString() && (!CbUnidPedido.Items.Contains(dr["abrev_unid"].ToString())))
+                    { 
+                        CbUnidPedido.Items.Add(dr["abrev_unid"].ToString());
+                    }
+                }
+                CbUnidPedido.SelectedText = string.Empty;
             }
-            CbUnidPedido.SelectedText = string.Empty;
         }
 
         private void CalcularValorFinalItem()

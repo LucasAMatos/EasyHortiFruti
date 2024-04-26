@@ -266,7 +266,6 @@ namespace EasyHortifruti
             this.AtbValorLucroItem.Size = new System.Drawing.Size(80, 24);
             this.AtbValorLucroItem.TabIndex = 0;
             this.AtbValorLucroItem.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.AtbValorLucroItem.Value = "";
             this.AtbValorLucroItem.TextChanged += new System.EventHandler(this.AtbValorLucroItem_TextChanged);
             // 
             // CbUnidPedido
@@ -461,7 +460,6 @@ namespace EasyHortifruti
             this.TbCpj.Size = new System.Drawing.Size(181, 24);
             this.TbCpj.TabIndex = 55;
             this.TbCpj.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbCpj.Value = "";
             // 
             // TbRg
             // 
@@ -474,7 +472,6 @@ namespace EasyHortifruti
             this.TbRg.Size = new System.Drawing.Size(140, 24);
             this.TbRg.TabIndex = 43;
             this.TbRg.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbRg.Value = "";
             // 
             // lbRGIE
             // 
@@ -507,7 +504,6 @@ namespace EasyHortifruti
             this.TbNome.Size = new System.Drawing.Size(414, 24);
             this.TbNome.TabIndex = 51;
             this.TbNome.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbNome.Value = "";
             // 
             // panel9
             // 
@@ -557,7 +553,6 @@ namespace EasyHortifruti
             this.tbEmail.Size = new System.Drawing.Size(417, 24);
             this.tbEmail.TabIndex = 59;
             this.tbEmail.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.tbEmail.Value = "";
             // 
             // panel2
             // 

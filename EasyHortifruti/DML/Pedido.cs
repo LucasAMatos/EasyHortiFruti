@@ -37,9 +37,9 @@ namespace EasyHortifruti.DML
 
         public double PercentualLucro { get; set; }
 
-        public double DescrProduto { get; set; }
+        public string DescrProduto { get; set; }
 
-        public double UnidProduto { get; set; }
+        public string UnidProduto { get; set; }
         
         public double QtdeProduto { get; set; }
         

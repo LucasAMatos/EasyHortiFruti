@@ -262,7 +262,7 @@ namespace EasyHortifruti
             // Captura os valores dos campos da interface do usuário
             string produtoItem = CbProdutos.Text;
             string unidadeItem = CbUnidPedido.SelectedItem.ToString();
-            int quantidadeItem = Convert.ToInt32(TbQtdPedido.Text);
+            string quantidadeItem = TbQtdPedido.Text;
             decimal valorCompraItem = Convert.ToDecimal(TbVlCompra.Text);
             decimal margemLucroItem = Convert.ToDecimal(TbMargemLucro.Text);
             decimal TotalItem = Convert.ToDecimal(TbTotProdPedido.Text);
@@ -274,10 +274,10 @@ namespace EasyHortifruti
                 DescrProduto = produtoItem,
                 UnidProduto = unidadeItem,
                 QtdeProduto = quantidadeItem,
-                VlCompraProduto = (double)valorCompraItem,
-                MargemLucro = (double)margemLucroItem,
-                TotalItem = (double)TotalItem,
-                ValorLucroItem = (double)LucroItem
+                VlCompraProduto = valorCompraItem,
+                MargemLucro = margemLucroItem,
+                TotalItem = TotalItem,
+                ValorLucroItem = LucroItem
             };
 
             // Adiciona o novo pedido à DataGridView

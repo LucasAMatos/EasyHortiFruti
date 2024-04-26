@@ -1,4 +1,5 @@
 ﻿using EasyHortifruti.DML;
+using EasyHortifruti.Forms.Produtos;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -225,5 +226,14 @@ namespace EasyHortifruti
 
         #endregion
 
+        private void BtCadNCM_Click(object sender, EventArgs e)
+        {
+            FormNcm NCM = new FormNcm();
+            NCM.ValorRetornado += (sended, valorRetornado) =>
+            {
+                txtNCM.Text = valorRetornado.ToString();
+            };
+            NCM.Show();
+        }
     }
 }

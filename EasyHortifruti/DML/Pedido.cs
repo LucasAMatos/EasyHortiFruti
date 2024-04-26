@@ -41,15 +41,15 @@ namespace EasyHortifruti.DML
 
         public string UnidProduto { get; set; }
         
-        public double QtdeProduto { get; set; }
+        public string QtdeProduto { get; set; }
         
-        public double VlCompraProduto { get; set; }
+        public decimal VlCompraProduto { get; set; }
         
-        public double MargemLucro { get; set; }
+        public decimal MargemLucro { get; set; }
         
-        public double TotalItem { get; set; }
+        public decimal TotalItem { get; set; }
         
-        public double ValorLucroItem { get; set; }
+        public decimal ValorLucroItem { get; set; }
 
     }
 

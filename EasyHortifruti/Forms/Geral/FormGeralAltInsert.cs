@@ -210,17 +210,17 @@ namespace EasyHortifruti
 
         private void CarregarComboSexo()
         {
-            cbEstadoCivil.CarregarValoresEnum<Sexo>();
+            cbEstadoCivil.CarregarDescricoesEnum<Sexo>();
         }
 
         private void CarregarComboEstadoCivil()
         {
-            cbEstadoCivil.CarregarValoresEnum<EstadoCivil>();
+            cbEstadoCivil.CarregarDescricoesEnum<EstadoCivil>();
         }
 
         private void CarregarComboClassificacao()
         {
-            CbClassificacao.CarregarValoresEnum<Classificacao>();
+            CbClassificacao.CarregarDescricoesEnum<Classificacao>();
         }
 
         private void CarregarComboUf()

@@ -38,7 +38,7 @@ namespace EasyHortifruti.Componentes
             InitializeComponent();
         }
 
-        public void CarregarValoresEnum<T>()
+        public void CarregarDescricoesEnum<T>()
         {
             Items.Clear();
             foreach (T item in Enum.GetValues(typeof(T)))
@@ -48,6 +48,16 @@ namespace EasyHortifruti.Componentes
                 string description = attributes.Length > 0 ? attributes[0].Description : item.ToString();
 
                 Items.Add(description);
+            }
+            this.SelectedIndex = 0;
+        }
+
+        public void CarregarValoresEnum<T>()
+        {
+            Items.Clear();
+            foreach (T item in Enum.GetValues(typeof(T)))
+            {
+                Items.Add(item);
             }
             this.SelectedIndex = 0;
         }

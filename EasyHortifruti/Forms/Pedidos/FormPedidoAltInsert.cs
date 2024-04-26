@@ -100,7 +100,7 @@ namespace EasyHortifruti
 
         private void CarregarComboStatusPedido()
         {
-            CbStatusPedido.CarregarValoresEnum<StatusPedido>();
+            CbStatusPedido.CarregarDescricoesEnum<StatusPedido>();
         }
 
         private void FormPedidoAltInsert_Load(object sender, EventArgs e)

@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Reflection;
+using System.Security.Policy;
 
 namespace EasyHortifruti
 
@@ -122,7 +123,6 @@ namespace EasyHortifruti
 
         public DataSet ConsultarUnidades() => ConsultarTabela(TabelasScript.TabelaUnidades);
         
-
         public DataSet ConsultarUnidadePorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaUnidades);
 
         public void InserirUnidade(string Abreviatura, string Descricao, string Observacao)
@@ -374,6 +374,7 @@ namespace EasyHortifruti
 
         #endregion
 
+        public DataSet ConsutarNCMs() => ConsultarTabela("tabelancm");
         #endregion
 
         #region Privado

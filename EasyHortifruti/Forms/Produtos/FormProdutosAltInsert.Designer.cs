@@ -105,6 +105,7 @@ namespace EasyHortifruti
             this.BtCadNCM.TabIndex = 21;
             this.BtCadNCM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtCadNCM.UseVisualStyleBackColor = false;
+            this.BtCadNCM.Click += new System.EventHandler(this.BtCadNCM_Click);
             // 
             // txtNCM
             // 
@@ -142,6 +143,7 @@ namespace EasyHortifruti
             this.MtbPrecoVenda.TabIndex = 18;
             this.MtbPrecoVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.MtbPrecoVenda.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            // 
             // MtbMargemLucro
             // 
             this.MtbMargemLucro.Caption = null;

@@ -176,6 +176,12 @@
     <Compile Include="DML\SubGrupo.cs" />
     <Compile Include="DML\Telefone.cs" />
     <Compile Include="DML\Unidade.cs" />
+    <Compile Include="Forms\Produtos\FormNcm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Produtos\FormNcm.Designer.cs">
+      <DependentUpon>FormNcm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Utilitarios\APIClient.cs" />
     <Compile Include="Utilitarios\ConsultarCEP.cs" />
     <Compile Include="Utilitarios\ConsultarCNPJ.cs" />
@@ -274,6 +280,9 @@
     </Compile>
     <EmbeddedResource Include="Componentes\AltComboBox.resx">
       <DependentUpon>AltComboBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Produtos\FormNcm.resx">
+      <DependentUpon>FormNcm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form_Principal.resx">
       <DependentUpon>Form_Principal.cs</DependentUpon>

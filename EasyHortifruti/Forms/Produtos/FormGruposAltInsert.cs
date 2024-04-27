@@ -1,33 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EasyHortifruti
 {
     public partial class FormGruposAltInsert : FormBase
     {
-        #region propriedades
-        #endregion
-
         #region construtor
+
         public FormGruposAltInsert()
         {
             InitializeComponent();
         }
+
         public FormGruposAltInsert(int pID)
         {
             Id = pID;
             InitializeComponent();
         }
-        #endregion
+
+        #endregion construtor
 
         #region Eventos
+
         private void FormGruposAltInsert_Load(object sender, EventArgs e)
         {
             LimpaCampos();
@@ -42,7 +37,7 @@ namespace EasyHortifruti
                 Criticar();
                 string Descricao = TbDescGrupo.Text; // Obtém o texto do TextBox
                 string Observacao = TbObsGrupo.Text; // Obtém o texto do TextBox
-                string MargemLucro = string.IsNullOrEmpty(TbMargemGrupo.Text) ? "0" : TbMargemGrupo.Text ; // Obtém o texto do TextBox
+                string MargemLucro = string.IsNullOrEmpty(TbMargemGrupo.Text) ? "0" : TbMargemGrupo.Text; // Obtém o texto do TextBox
 
                 if (string.IsNullOrEmpty(TbDescGrupo.Text))
                     throw new Exception("Nome do grupo é Obrigatório");
@@ -59,7 +54,7 @@ namespace EasyHortifruti
                 }
                 else
                 {
-                    new ConexaoBD().InserirGrupo( Descricao, Observacao, MargemLucro);
+                    new ConexaoBD().InserirGrupo(Descricao, Observacao, MargemLucro);
 
                     DialogResult pNovaUnidade = MessageBox.Show(string.Format("Grupo {0} criado com sucesso! Deseja cadastrar uma nova unidade?", Descricao), string.Empty, MessageBoxButtons.YesNo);
                     if (pNovaUnidade == DialogResult.Yes)
@@ -80,9 +75,11 @@ namespace EasyHortifruti
         {
             this.Close();
         }
-        #endregion
+
+        #endregion Eventos
 
         #region Metodos
+
         private void LimpaCampos()
         {
             TbDescGrupo.Text = string.Empty;
@@ -93,7 +90,6 @@ namespace EasyHortifruti
 
         private void PreencheCampos()
         {
-
             if (Alterar)
             {
                 DataSet ds = new ConexaoBD().ConsultarGrupoPorId(Id);
@@ -104,6 +100,7 @@ namespace EasyHortifruti
                 LbIDGrupo.Text = ds.Tables[0].Rows[0]["id_recno"].ToString();
             }
         }
-        #endregion
+
+        #endregion Metodos
     }
 }

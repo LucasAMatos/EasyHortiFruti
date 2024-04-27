@@ -515,7 +515,10 @@ namespace EasyHortifruti
             // 
             // CbUF
             // 
+            this.CbUF.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+            this.CbUF.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.CbUF.Caption = null;
+            this.CbUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.CbUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbUF.FormattingEnabled = true;
             this.CbUF.Location = new System.Drawing.Point(461, 97);

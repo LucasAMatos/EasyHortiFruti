@@ -1,17 +1,10 @@
 ﻿using EasyHortifruti.DML;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Data.SqlClient;
 using System.Drawing;
-using System.Globalization;
 using System.Linq;
-using System.Text;
-using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
 
 namespace EasyHortifruti
 {
@@ -19,17 +12,17 @@ namespace EasyHortifruti
     {
         #region propriedades
 
-        Dictionary<string, int> dctGeral;
-
-        Dictionary<string, int> produtoItem;
-
-        Dictionary<string, int> margemLucro;
+        private Dictionary<string, int> dctGeral;
 
         private Geral iGeral;
 
-        private DataSet dsProdutos;
+        private Dictionary<string, int> produtos;
 
-        #endregion
+        private Dictionary<string, int> unidade;
+
+        private Dictionary<string, int> produtoItem;
+
+        #endregion propriedades
 
         private Timer timer;
         private Color originalColor;
@@ -55,7 +48,7 @@ namespace EasyHortifruti
             // Iniciar o Timer
             timer.Start();
         }
-        
+
         public FormPedidoAltInsert(int pId)
         {
             Id = pId;
@@ -83,7 +76,7 @@ namespace EasyHortifruti
             FormGeralCad BuscaCliente = new FormGeralCad();
             BuscaCliente.ShowDialog();
         }
-       
+
         private void CarregarGridNomeCliente()
         {
             CbNomeCliente.Items.Clear();
@@ -99,7 +92,7 @@ namespace EasyHortifruti
 
         private void CarregarComboStatusPedido()
         {
-            CbStatusPedido.CarregarValoresEnum<StatusPedido>();
+            CbStatusPedido.CarregarDescricoesEnum<StatusPedido>();
         }
 
         private void FormPedidoAltInsert_Load(object sender, EventArgs e)
@@ -111,7 +104,7 @@ namespace EasyHortifruti
             CarregarComboProdutos();
 
         }
-        
+
         private void CarregarComboProdutos()
         {
             CbProdutos.Items.Clear();
@@ -130,7 +123,7 @@ namespace EasyHortifruti
         {
             CarregarComboUnidades();
         }
-        
+
         private void CarregarComboUnidades()
         {
             if(CbProdutos.SelectedIndex >= 0 )
@@ -216,7 +209,7 @@ namespace EasyHortifruti
                 dctGeral.TryGetValue(CbNomeCliente.SelectedItem.ToString(), out indice);
                 iGeral = new ConexaoBD().ConsultarGeralPorId(indice);
 
-                if(iGeral != null)
+                if (iGeral != null)
                 {
                     TbCelular.Text = iGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.celular).TelefoneCompleto;
 
@@ -245,8 +238,7 @@ namespace EasyHortifruti
             if (CbTpDocumento.SelectedItem != null)
             {
                 // Verifique qual opção está selecionada no ComboBox
-               String opcaoSelecionada = CbTpDocumento.SelectedItem.ToString();
-
+                String opcaoSelecionada = CbTpDocumento.SelectedItem.ToString();
             }
         }
 
@@ -276,11 +268,10 @@ namespace EasyHortifruti
             // Adiciona o novo pedido à DataGridView
             AdicionarPedidoDataGridView(novoPedido);
 
-
             // (Opcional) Limpa os campos da interface do usuário após registrar o pedido
             LimparCampos();
         }
-        
+
         private void AdicionarPedidoDataGridView(Pedido pedido)
         {
             // Adiciona uma nova linha à DataGridView e preenche as células com os valores do pedido
@@ -296,13 +287,11 @@ namespace EasyHortifruti
             TbMargemLucro.Clear();
             TbTotProdPedido.Clear();
             AtbValorLucroItem.Clear();
-            
         }
 
         private void AtbValorLucroItem_TextChanged(object sender, EventArgs e)
         {
             CalcularValorLucroItem();
         }
-
     }
 }

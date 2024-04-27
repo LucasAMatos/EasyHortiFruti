@@ -1,8 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EasyHortifruti.DML
 {
@@ -15,5 +11,5 @@ namespace EasyHortifruti.DML
         public double MargemPedido { get; set; }
         public DateTime DataVencimento { get; set; }
         public DateTime DataRecebimento { get; set; }
-}
+    }
 }

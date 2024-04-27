@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EasyHortifruti.Forms.Produtos
@@ -13,7 +7,9 @@ namespace EasyHortifruti.Forms.Produtos
     public partial class FormNcm : Form
     {
         public event EventHandler<string> ValorRetornado;
-        DataSet dsNCM;
+
+        private DataSet dsNCM;
+
         public FormNcm()
         {
             InitializeComponent();
@@ -22,7 +18,7 @@ namespace EasyHortifruti.Forms.Produtos
         private void form_Load(object sender, EventArgs e)
         {
             dsNCM = new ConexaoBD().ConsutarNCMs();
-            if(dsNCM != null && dsNCM.Tables.Count > 0)
+            if (dsNCM != null && dsNCM.Tables.Count > 0)
                 dataGridView1.DataSource = dsNCM.Tables[0];
         }
 
@@ -30,6 +26,7 @@ namespace EasyHortifruti.Forms.Produtos
         {
             this.Close();
         }
+
         protected override void OnFormClosing(FormClosingEventArgs e)
         {
             base.OnFormClosing(e);

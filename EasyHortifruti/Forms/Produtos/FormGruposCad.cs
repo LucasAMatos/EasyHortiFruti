@@ -6,6 +6,7 @@ namespace EasyHortifruti
     public partial class FormGruposCad : FormBase
     {
         #region Propriedades
+
         public int IdSelecionado
         {
             get
@@ -21,16 +22,20 @@ namespace EasyHortifruti
                 return -1;
             }
         }
-        #endregion
+
+        #endregion Propriedades
 
         #region Construtor
+
         public FormGruposCad()
         {
             InitializeComponent();
         }
-        #endregion
+
+        #endregion Construtor
 
         #region Eventos
+
         private void FormCadGrupos_Load(object sender, EventArgs e)
         {
             CarregarGrid();
@@ -52,7 +57,7 @@ namespace EasyHortifruti
                 GruposAltInsert.ShowDialog();
 
                 CarregarGrid();
-            }            
+            }
             else
                 MessageBox.Show("Selecione um registro para alterar");
         }
@@ -72,16 +77,17 @@ namespace EasyHortifruti
             }
             else
                 MessageBox.Show("Selecione um registro para excluir");
-
         }
 
         private void BtSairGrupo_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        #endregion
+
+        #endregion Eventos
 
         #region Métodos
+
         public void CarregarGrid()
         {
             DgViewCadGrupos.DataSource = new ConexaoBD().ConsultarGrupos();
@@ -89,6 +95,7 @@ namespace EasyHortifruti
             DgViewCadGrupos.DataMember = "Table";
             DgViewCadGrupos.Sort(DgViewCadGrupos.Columns["ID"], System.ComponentModel.ListSortDirection.Ascending);
         }
-        #endregion
+
+        #endregion Métodos
     }
 }

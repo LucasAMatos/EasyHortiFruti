@@ -1,19 +1,13 @@
-﻿using EasyHortifruti.DML;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace EasyHortifruti.Componentes
 {
     public partial class AltComboBox : ComboBox
     {
         #region Propriedades
+
         public bool Obrigatorio { get; set; }
 
         public string Caption { get; set; }
@@ -25,7 +19,9 @@ namespace EasyHortifruti.Componentes
                 return Obrigatorio && SelectedIndex < 0;
             }
         }
-        #endregion
+
+        #endregion Propriedades
+
         public AltComboBox()
         {
             InitializeComponent();
@@ -38,7 +34,7 @@ namespace EasyHortifruti.Componentes
             InitializeComponent();
         }
 
-        public void CarregarValoresEnum<T>()
+        public void CarregarDescricoesEnum<T>()
         {
             Items.Clear();
             foreach (T item in Enum.GetValues(typeof(T)))
@@ -48,6 +44,16 @@ namespace EasyHortifruti.Componentes
                 string description = attributes.Length > 0 ? attributes[0].Description : item.ToString();
 
                 Items.Add(description);
+            }
+            this.SelectedIndex = 0;
+        }
+
+        public void CarregarValoresEnum<T>()
+        {
+            Items.Clear();
+            foreach (T item in Enum.GetValues(typeof(T)))
+            {
+                Items.Add(item);
             }
             this.SelectedIndex = 0;
         }

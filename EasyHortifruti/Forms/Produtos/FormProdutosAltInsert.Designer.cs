@@ -221,6 +221,7 @@ namespace EasyHortifruti
             this.cbSubGrupoProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cbSubGrupoProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbSubGrupoProduto.Caption = null;
+            this.cbSubGrupoProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSubGrupoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSubGrupoProduto.FormattingEnabled = true;
             this.cbSubGrupoProduto.Location = new System.Drawing.Point(344, 231);
@@ -234,6 +235,7 @@ namespace EasyHortifruti
             this.cbGrupoProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cbGrupoProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbGrupoProduto.Caption = null;
+            this.cbGrupoProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrupoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbGrupoProduto.FormattingEnabled = true;
             this.cbGrupoProduto.Location = new System.Drawing.Point(160, 230);
@@ -307,6 +309,7 @@ namespace EasyHortifruti
             this.cbUnidProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cbUnidProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
             this.cbUnidProduto.Caption = null;
+            this.cbUnidProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUnidProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbUnidProduto.FormattingEnabled = true;
             this.cbUnidProduto.Location = new System.Drawing.Point(154, 151);

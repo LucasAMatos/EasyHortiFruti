@@ -15,11 +15,13 @@ using System.Threading.Tasks;
 using System.Threading;
 using System.Windows.Forms;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
+using System.Runtime.InteropServices;
 
 namespace EasyHortifruti
 {
     public partial class FormGeralAltInsert : FormBase
     {
+        #region Propriedades
         CNPJConsultado cnpjConsultado;
         CEPConsultado cepConsultado;
         private Telefone Fone
@@ -46,12 +48,16 @@ namespace EasyHortifruti
                 };
             }
         }
+        #endregion
 
+        #region Construtor
         public FormGeralAltInsert()
         {
             InitializeComponent();
         }
+        #endregion
 
+        #region Eventos
         private void FormGeralAltInsert_Load(object sender, EventArgs e)
         {
             LimparCampos();
@@ -130,6 +136,135 @@ namespace EasyHortifruti
             }
         }
 
+        private async void BtConsCNPJ_ClickAsync(object sender, EventArgs e)
+        {
+            try
+            {
+                cnpjConsultado = await ConsultarCNPJ.consCNPJ(TbCNPJ.Value);
+
+                if (cnpjConsultado != null && cnpjConsultado.RazaoSocial != null)
+                {
+                    DialogResult dialogResult = MessageBox.Show(string.Format("CNPJ Consultado {0} Pertence à empresa {1}. Deseja Preencher os dados da empresa?", TbCNPJ.Text, cnpjConsultado.RazaoSocial), "Consulta CNPJ", MessageBoxButtons.YesNo);
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        if (cnpjConsultado.RazaoSocial != null)
+                        {
+                            TbRazaoSocial.Text = cnpjConsultado.RazaoSocial;
+                            TbRazaoSocial.Enabled = false;
+                        }
+                        if (cnpjConsultado.Estabelecimento != null && cnpjConsultado.Estabelecimento.NomeFantasia != null)
+                            TbNomeFantasia.Text = cnpjConsultado.Estabelecimento.NomeFantasia;
+                        else
+                            TbNomeFantasia.Text = cnpjConsultado.RazaoSocial;
+
+                        TbNomeFantasia.Enabled = false;
+                        if (cnpjConsultado.Estabelecimento != null && cnpjConsultado.Estabelecimento.InscricoesEstaduais != null && cnpjConsultado.Estabelecimento.InscricoesEstaduais.Count > 0)
+                        {
+                            TbInscrEstadual.Text = cnpjConsultado.Estabelecimento.InscricoesEstaduais.First().InscricaoEstadual;
+                            TbInscrEstadual.Enabled = false;
+                        }
+                        if (cnpjConsultado.Estabelecimento.Logradouro != null)
+                        {
+                            DialogResult dialogResult2 = MessageBox.Show("deseja preencher o endereço do cliente?", "Preenche Endereço", MessageBoxButtons.YesNo);
+
+                            if (dialogResult2 == DialogResult.Yes)
+                            {
+                                TbCepEndereco.Text = Regex.Replace(cnpjConsultado.Estabelecimento.Cep, @"(\d{5})(\d{3})", @"$1-$2");
+                                TbRua.Text = cnpjConsultado.Estabelecimento.Logradouro;
+                                TbRua.Enabled = false;
+                                TbNumero.Text = cnpjConsultado.Estabelecimento.Numero;
+                                TbNumero.Enabled = false;
+                                TbComplemento.Text = cnpjConsultado.Estabelecimento.Complemento;
+                                TbComplemento.Enabled = false;
+                                TbBairro.Text = cnpjConsultado.Estabelecimento.Bairro;
+                                TbBairro.Enabled = false;
+                                TbCidade.Text = cnpjConsultado.Estabelecimento.Cidade.Nome;
+                                TbCidade.Enabled = false;
+                                CbUF.Text = cnpjConsultado.Estabelecimento.Estado.Sigla;
+                                CbUF.Enabled = false;
+
+                            }
+                            else
+                            {
+                                LimpaEndereco();
+                            }
+                        }
+
+                    }
+                    else
+                    {
+                        LimpaCnpj();
+
+                        TbCepEndereco.Text = string.Empty;
+                        TbCepEndereco.Enabled = true;
+
+                        LimpaEndereco();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("CNPJ não encontrado.");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("CNPJ não encontrado!");
+            }
+        }
+
+        private async void btnConsultaCEP_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                cepConsultado = await ConsultarCEP.consCEP(TbCepEndereco.Value);
+
+                if (cepConsultado != null && cepConsultado.Cep != null)
+                {
+                    DialogResult dialogResult = MessageBox.Show(string.Format("CEP Consultado {0} retornou logradouro {1}. Deseja Preencher os dados do CEP?", TbCepEndereco.Text, cepConsultado.Logradouro), "Consulta CEP", MessageBoxButtons.YesNo);
+
+                    if (dialogResult == DialogResult.Yes)
+                    {
+                        if (cepConsultado.Logradouro != null)
+                        {
+                            TbRua.Text = cepConsultado.Logradouro;
+                            TbRua.Enabled = false;
+                        }
+                        if (cepConsultado.Bairro != null)
+                        {
+                            TbBairro.Text = cepConsultado.Bairro;
+                            TbBairro.Enabled = false;
+                        }
+                        if (cepConsultado.Localidade != null)
+                        {
+                            TbCidade.Text = cepConsultado.Localidade;
+                            TbCidade.Enabled = false;
+                        }
+                        if (cepConsultado.Uf != null)
+                        {
+                            CbUF.Text = cepConsultado.Uf;
+                            CbUF.Enabled = false;
+                        }
+                        TbNumero.Focus();
+                    }
+                    else
+                    {
+                        LimpaEndereco();
+                    }
+                }
+                else
+                {
+                    MessageBox.Show("CEP não encontrado.");
+                }
+            }
+            catch
+            {
+                MessageBox.Show("CEP não encontrado!");
+            }
+        }
+        #endregion
+
+        #region Métodos
         private Endereco RetornarEnderecoTela()
         {
             Endereco enderecoRetorno = new Endereco();
@@ -152,6 +287,35 @@ namespace EasyHortifruti
             CarregarComboClassificacao();
             CarregarComboUf();
             tabPage4.Text = string.Empty;
+
+            LimpaCnpj();
+            LimpaEndereco();
+        }
+
+        private void LimpaCnpj()
+        {
+            TbRazaoSocial.Enabled = true;
+            TbRazaoSocial.Text = string.Empty;
+            TbNomeFantasia.Enabled = true;
+            TbNomeFantasia.Text = string.Empty;
+            TbInscrEstadual.Enabled = true;
+            TbInscrEstadual.Text = string.Empty;
+        }
+
+        private void LimpaEndereco()
+        {
+            TbRua.Enabled = true;
+            TbRua.Text = string.Empty;
+            TbNumero.Enabled = true;
+            TbNumero.Text = string.Empty;
+            TbComplemento.Enabled = true;
+            TbComplemento.Text = string.Empty;
+            TbBairro.Enabled = true;
+            TbBairro.Text = string.Empty;
+            TbCidade.Enabled = true;
+            TbCidade.Text = string.Empty;
+            CbUF.Enabled = true;
+            CbUF.Text = string.Empty;
         }
 
         private void PreencheCampos()
@@ -227,90 +391,7 @@ namespace EasyHortifruti
         {
             CbUF.CarregarValoresEnum<UF>();
         }
+        #endregion
 
-        private async void BtConsCNPJ_ClickAsync(object sender, EventArgs e)
-        {
-            try
-            {
-                cnpjConsultado = await ConsultarCNPJ.consCNPJ(TbCNPJ.Value);
-
-                if (cnpjConsultado != null && cnpjConsultado.RazaoSocial != null)
-                {
-                    DialogResult dialogResult = MessageBox.Show(string.Format("CNPJ Consultado {0} Pertence à empresa {1}. Deseja Preencher os dados da empresa?", TbCNPJ.Text, cnpjConsultado.RazaoSocial), "Consulta CNPJ", MessageBoxButtons.YesNo);
-
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        if (cnpjConsultado.RazaoSocial != null)
-                            TbRazaoSocial.Text = cnpjConsultado.RazaoSocial;
-                        if (cnpjConsultado.Estabelecimento != null && cnpjConsultado.Estabelecimento.NomeFantasia != null)
-                            TbNomeFantasia.Text = cnpjConsultado.Estabelecimento.NomeFantasia;
-                        else
-                            TbNomeFantasia.Text = cnpjConsultado.RazaoSocial;
-                        if (cnpjConsultado.Estabelecimento != null && cnpjConsultado.Estabelecimento.InscricoesEstaduais != null && cnpjConsultado.Estabelecimento.InscricoesEstaduais.Count > 0)
-                            TbInscrEstadual.Text = cnpjConsultado.Estabelecimento.InscricoesEstaduais.First().InscricaoEstadual;
-
-                        if (cnpjConsultado.Estabelecimento.Logradouro != null)
-                        {
-                            DialogResult dialogResult2 = MessageBox.Show("deseja preencher o endereço do cliente?", "Preenche Endereço", MessageBoxButtons.YesNo);
-
-                            if (dialogResult2 == DialogResult.Yes)
-                            {
-                                TbCepEndereco.Text = Regex.Replace(cnpjConsultado.Estabelecimento.Cep, @"(\d{5})(\d{3})", @"$1-$2");
-                                TbRua.Text = cnpjConsultado.Estabelecimento.Logradouro;
-                                TbNumero.Text = cnpjConsultado.Estabelecimento.Numero;
-                                TbComplemento.Text = cnpjConsultado.Estabelecimento.Complemento;
-                                TbBairro.Text = cnpjConsultado.Estabelecimento.Bairro;
-                                TbCidade.Text = cnpjConsultado.Estabelecimento.Cidade.Nome;
-                                CbUF.Text = cnpjConsultado.Estabelecimento.Estado.Sigla;
-
-                            }
-                        }
-
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("CNPJ não encontrado.");
-                }
-            }
-            catch
-            {
-                MessageBox.Show("CNPJ não encontrado!");
-            }
-        }
-
-        private async void btnConsultaCEP_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                cepConsultado = await ConsultarCEP.consCEP(TbCepEndereco.Value);
-
-                if (cepConsultado != null && cepConsultado.Cep != null)
-                {
-                    DialogResult dialogResult = MessageBox.Show(string.Format("CEP Consultado {0} retornou logradouro {1}. Deseja Preencher os dados do CEP?", TbCepEndereco.Text, cepConsultado.Logradouro), "Consulta CEP", MessageBoxButtons.YesNo);
-
-                    if (dialogResult == DialogResult.Yes)
-                    {
-                        if (cepConsultado.Logradouro != null)
-                            TbRua.Text = cepConsultado.Logradouro;
-                        if (cepConsultado.Bairro != null)
-                            TbBairro.Text = cepConsultado.Bairro;
-                        if (cepConsultado.Localidade != null)
-                            TbCidade.Text = cepConsultado.Localidade;
-                        if (cepConsultado.Uf != null)
-                            CbUF.Text = cepConsultado.Uf;
-                        TbNumero.Focus();
-                    }
-                }
-                else
-                {
-                    MessageBox.Show("CEP não encontrado.");
-                }
-            }
-            catch
-            {
-                MessageBox.Show("CEP não encontrado!");
-            }
-        }
     }
 }

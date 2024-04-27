@@ -109,6 +109,8 @@ namespace EasyHortifruti.Componentes
                     if (char.IsDigit(e.KeyChar))
                         Text = Value.Length >= 5 ? string.Format("{0}-{1}", Value.Substring(0, 5), Value.Substring(5, Value.Length - 5)) : Value;
 
+
+                    this.SelectionStart = this.Text.Length;
                     return;
                 case TipoCampo.CPF:
                     // Permite apenas números e teclas de controle (como Backspace)

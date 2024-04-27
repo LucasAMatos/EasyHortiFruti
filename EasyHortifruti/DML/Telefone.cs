@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Collections.Generic;
 
 namespace EasyHortifruti.DML
 {
@@ -17,11 +12,11 @@ namespace EasyHortifruti.DML
 
         public string TelefoneCompleto
         {
-            get 
+            get
             {
                 Numero = Numero.Trim();
 
-                if (Numero.Length == 0 ) 
+                if (Numero.Length == 0)
                     return string.Empty;
 
                 string Final = Numero.Substring(Numero.Length - 4);
@@ -40,10 +35,14 @@ namespace EasyHortifruti.DML
 
     public class Telefones : List<Telefone>
     {
-        public Telefones() { }
+        public Telefones()
+        { }
 
-        public Telefones(List<Telefone> pList) : base(pList) { }
+        public Telefones(List<Telefone> pList) : base(pList)
+        {
+        }
     }
+
     public enum TipoTelefone
     {
         pessoal,

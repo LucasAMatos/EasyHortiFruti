@@ -1,19 +1,13 @@
-﻿using EasyHortifruti.DML;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
-using System.Diagnostics;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Net.Mime.MediaTypeNames;
 
 namespace EasyHortifruti.Componentes
 {
     public partial class AltComboBox : ComboBox
     {
         #region Propriedades
+
         public bool Obrigatorio { get; set; }
 
         public string Caption { get; set; }
@@ -25,7 +19,9 @@ namespace EasyHortifruti.Componentes
                 return Obrigatorio && SelectedIndex < 0;
             }
         }
-        #endregion
+
+        #endregion Propriedades
+
         public AltComboBox()
         {
             InitializeComponent();

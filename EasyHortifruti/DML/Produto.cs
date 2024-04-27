@@ -33,7 +33,7 @@ namespace EasyHortifruti.DML
             {
                 DataRow dr = ds.Tables[0].Rows[0];
 
-                if(dr["id_recno"] != null)
+                if (dr["id_recno"] != null)
                     ID = Convert.ToInt32(dr["id_recno"]);
 
                 if (dr["nome_produto"] != null)

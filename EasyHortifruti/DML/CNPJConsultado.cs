@@ -1,9 +1,6 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EasyHortifruti.DML
 {
@@ -11,19 +8,27 @@ namespace EasyHortifruti.DML
     {
         [JsonProperty("cnpj_raiz")]
         public string CnpjRaiz { get; set; }
+
         [JsonProperty("razao_social")]
         public string RazaoSocial { get; set; }
+
         [JsonProperty("capital_social")]
         public string CapitalSocial { get; set; }
+
         [JsonProperty("responsavel_federativo")]
         public string ResponsavelFederativo { get; set; }
+
         [JsonProperty("atualizado_em")]
         public DateTime AtualizadoEm { get; set; }
+
         public Porte Porte { get; set; }
+
         [JsonProperty("natureza_juridica")]
         public NaturezaJuridica NaturezaJuridica { get; set; }
+
         [JsonProperty("qualificacao_do_responsavel")]
         public QualificacaoDoResponsavel QualificacaoDoResponsavel { get; set; }
+
         public List<Socio> Socios { get; set; }
         public object Simples { get; set; }
         public Estabelecimento Estabelecimento { get; set; }
@@ -53,6 +58,7 @@ namespace EasyHortifruti.DML
     {
         [JsonProperty("cpf_cnpj_socio")]
         public string CpfCnpjSocio { get; set; }
+
         public string Nome { get; set; }
         public string Tipo { get; set; }
         public DateTime DataEntrada { get; set; }

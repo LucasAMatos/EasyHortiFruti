@@ -1,29 +1,19 @@
 ﻿using EasyHortifruti.DML;
 using EasyHortifruti.Utilitarios;
 using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Net.Http;
-using System.Security.Cryptography;
-using System.Security.Policy;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
-using System.Threading;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement.Button;
-using System.Runtime.InteropServices;
 
 namespace EasyHortifruti
 {
     public partial class FormGeralAltInsert : FormBase
     {
         #region Propriedades
-        CNPJConsultado cnpjConsultado;
-        CEPConsultado cepConsultado;
+
+        private CNPJConsultado cnpjConsultado;
+        private CEPConsultado cepConsultado;
+
         private Telefone Fone
         {
             get
@@ -36,6 +26,7 @@ namespace EasyHortifruti
                 };
             }
         }
+
         private Telefone Celular
         {
             get
@@ -48,21 +39,24 @@ namespace EasyHortifruti
                 };
             }
         }
-        #endregion
+
+        #endregion Propriedades
 
         #region Construtor
+
         public FormGeralAltInsert()
         {
             InitializeComponent();
         }
-        #endregion
+
+        #endregion Construtor
 
         #region Eventos
+
         private void FormGeralAltInsert_Load(object sender, EventArgs e)
         {
             LimparCampos();
             PreencheCampos();
-
         }
 
         private void RbPessoaFisica_CheckedChanged_1(object sender, EventArgs e)
@@ -78,6 +72,7 @@ namespace EasyHortifruti
             PanelPJ.Visible = RbPessoaJuridica.Checked;
             BtConsCNPJ.Visible = PanelPJ.Visible;
         }
+
         private void BtCancelarGeralInserir_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -183,14 +178,12 @@ namespace EasyHortifruti
                                 TbCidade.Enabled = false;
                                 CbUF.Text = cnpjConsultado.Estabelecimento.Estado.Sigla;
                                 CbUF.Enabled = false;
-
                             }
                             else
                             {
                                 LimpaEndereco();
                             }
                         }
-
                     }
                     else
                     {
@@ -262,9 +255,11 @@ namespace EasyHortifruti
                 MessageBox.Show("CEP não encontrado!");
             }
         }
-        #endregion
+
+        #endregion Eventos
 
         #region Métodos
+
         private Endereco RetornarEnderecoTela()
         {
             Endereco enderecoRetorno = new Endereco();
@@ -391,7 +386,7 @@ namespace EasyHortifruti
         {
             CbUF.CarregarValoresEnum<UF>();
         }
-        #endregion
 
+        #endregion Métodos
     }
 }

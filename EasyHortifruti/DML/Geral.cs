@@ -1,12 +1,7 @@
-﻿using Newtonsoft.Json.Linq;
-using System;
-using System.Collections.Generic;
+﻿using System;
 using System.ComponentModel;
 using System.Data;
-using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 
 namespace EasyHortifruti.DML
 {
@@ -26,7 +21,7 @@ namespace EasyHortifruti.DML
 
         public DateTime DtNascFundacao { get; set; }
 
-        public string CPF {  get; set; }
+        public string CPF { get; set; }
 
         public string CNPJ { get; set; }
 
@@ -38,7 +33,7 @@ namespace EasyHortifruti.DML
 
         public string OrgaoExpedidorUF { get; set; }
 
-        public string InscricaoMunicipal {  get; set; }
+        public string InscricaoMunicipal { get; set; }
 
         public Sexo Sexo { get; set; }
 
@@ -63,7 +58,7 @@ namespace EasyHortifruti.DML
                 DataRow dr = ds.Tables[0].Rows[0];
 
                 if (dr["tppessoa"] != null)
-                    TipoPessoa = dr["tppessoa"].ToString() == "J" ? TPFJ.Juridica  : TPFJ.Fisica;
+                    TipoPessoa = dr["tppessoa"].ToString() == "J" ? TPFJ.Juridica : TPFJ.Fisica;
 
                 if (dr["classificacao"] != null)
                     Classificacao = (Classificacao)Convert.ToInt32(dr["classificacao"]);
@@ -151,7 +146,6 @@ namespace EasyHortifruti.DML
 
                 if (dr["prazoPgto"] != null && !string.IsNullOrEmpty(dr["prazoPgto"].ToString()))
                     PrazoPagamento = Convert.ToInt32(dr["prazoPgto"].ToString());
-
             }
         }
     }
@@ -160,27 +154,36 @@ namespace EasyHortifruti.DML
     {
         [Description("Não definido")]
         NaoDefinido = 0,
+
         [Description("Casado")]
         Casado = 1,
+
         [Description("Solteiro")]
         Solteiro = 2,
+
         [Description("Divorciado")]
         Divorciado = 3,
+
         [Description("Viúvo")]
         Viuvo = 4,
+
         [Description("Desquitado")]
         Desquitado = 5,
+
         [Description("Companheiro")]
         Companheiro = 6
     }
+
     public enum Sexo
     {
         [Description("Não definido")]
         [DefaultValue("N")]
         NaoDefinido = 0,
+
         [Description("Masculino")]
         [DefaultValue("M")]
         Masculino = 1,
+
         [Description("Feminino")]
         [DefaultValue("F")]
         Feminino = 2
@@ -191,6 +194,7 @@ namespace EasyHortifruti.DML
         [Description("Fisica")]
         [DefaultValue("F")]
         Fisica,
+
         [Description("Juridica")]
         [DefaultValue("J")]
         Juridica
@@ -200,69 +204,97 @@ namespace EasyHortifruti.DML
     {
         [Description("Acre")]
         AC = 0,
+
         [Description("Alagoas")]
         AL = 1,
+
         [Description("Amapá")]
         AP = 2,
+
         [Description("Amazonas")]
         AM = 3,
+
         [Description("Bahia")]
         BA = 4,
+
         [Description("Ceará")]
         CE = 5,
+
         [Description("Distrito Federal")]
         DF = 6,
+
         [Description("Espirito Santo")]
         ES = 7,
+
         [Description("Goiás")]
         GO = 8,
+
         [Description("Maranhão")]
         MA = 9,
+
         [Description("Mato Grosso")]
         MT = 10,
+
         [Description("Mato Grosso do Sul")]
         MS = 11,
+
         [Description("Minas Gerais")]
         MG = 12,
+
         [Description("Pará")]
         PA = 13,
+
         [Description("Paraíba")]
         PB = 14,
+
         [Description("Paraná")]
         PR = 15,
+
         [Description("Pernambuco")]
         PE = 16,
+
         [Description("Piauí")]
         PI = 17,
+
         [Description("Rio de Janeiro")]
         RJ = 18,
+
         [Description("Rio Grande do Norte")]
         RN = 19,
+
         [Description("Rio Grande do Sul")]
         RS = 20,
+
         [Description("Rondônia")]
         RO = 21,
+
         [Description("Roraima")]
         RR = 22,
+
         [Description("Santa Catarina")]
         SC = 23,
+
         [Description("São Paulo")]
         SP = 24,
+
         [Description("Sergipe")]
         SE = 25,
+
         [Description("Tocantins")]
         TO = 27
-
     }
 
     public enum Classificacao
     {
         [Description("Cliente")]
         Cliente = 0,
+
         [Description("Fornecedor")]
         Fornecedor = 1,
+
         [Description("Funcionário")]
         Funcionario = 2,
+
         [Description("Sócio")]
         Socio = 3
     }

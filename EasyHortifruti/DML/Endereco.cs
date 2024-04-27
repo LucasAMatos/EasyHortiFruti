@@ -1,14 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace EasyHortifruti.DML
+﻿namespace EasyHortifruti.DML
 {
     public class Endereco
     {
-        public string logradouro {  get; set; }
+        public string logradouro { get; set; }
 
         public string CEP { get; set; }
 

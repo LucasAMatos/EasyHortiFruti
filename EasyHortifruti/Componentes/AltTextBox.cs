@@ -8,6 +8,7 @@ namespace EasyHortifruti.Componentes
     public partial class AltTextBox : TextBox
     {
         #region Propriedades
+
         public bool Obrigatorio { get; set; }
 
         public string Caption { get; set; }
@@ -23,6 +24,7 @@ namespace EasyHortifruti.Componentes
                     case TipoCampo.CNPJ:
                     case TipoCampo.TELEFONE:
                         return Regex.Replace(Text, @"[^\d]+", "");
+
                     default:
                         return Text;
                 }
@@ -38,9 +40,11 @@ namespace EasyHortifruti.Componentes
                 return Obrigatorio && string.IsNullOrEmpty(Text);
             }
         }
-        #endregion
+
+        #endregion Propriedades
 
         #region Construtor
+
         public AltTextBox()
         {
             this.KeyPress += FormataCampos;
@@ -48,9 +52,11 @@ namespace EasyHortifruti.Componentes
 
             InitializeComponent();
         }
-        #endregion
+
+        #endregion Construtor
 
         #region Metodos
+
         private void FormataCampoLeave(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(Text))
@@ -61,20 +67,24 @@ namespace EasyHortifruti.Componentes
                 case TipoCampo.TELEFONE:
                     Text = Value.Length <= 10 ? Regex.Replace(Value, @"(\d{2})(\d{0,4})(\d{0,4})", @"($1)$2-$3") : Regex.Replace(Value, @"(\d{2})(\d{0,5})(\d{0,4})", @"($1)$2-$3");
                     break;
+
                 case TipoCampo.CEP:
                     Text = Regex.Replace(Value.PadRight(8, '0'), @"(\d{5})(\d{0,3})", @"$1-$2");
                     break;
+
                 case TipoCampo.CNPJ:
                     Text = Regex.Replace(Value.PadLeft(14, '0'), @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
                     break;
+
                 case TipoCampo.CPF:
                     Text = Regex.Replace(Value.PadLeft(11, '0'), @"(\d{3})(\d{3})(\d{3})", @"$1.$2.$3-");
                     break;
+
                 default:
                     break;
             }
-
         }
+
         private void FormataCampos(object sender, KeyPressEventArgs e)
         {
             switch (Tipo)
@@ -101,6 +111,7 @@ namespace EasyHortifruti.Componentes
                         }
                     }
                     return;
+
                 case TipoCampo.CEP:
                     // Permite apenas números e teclas de controle (como Backspace)
                     if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -109,9 +120,9 @@ namespace EasyHortifruti.Componentes
                     if (char.IsDigit(e.KeyChar))
                         Text = Value.Length >= 5 ? string.Format("{0}-{1}", Value.Substring(0, 5), Value.Substring(5, Value.Length - 5)) : Value;
 
-
                     this.SelectionStart = this.Text.Length;
                     return;
+
                 case TipoCampo.CPF:
                     // Permite apenas números e teclas de controle (como Backspace)
                     if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -135,11 +146,12 @@ namespace EasyHortifruti.Componentes
                         e.Handled = true;
                     }
                     return;
+
                 case TipoCampo.CNPJ:
                     // Permite apenas números e teclas de controle (como Backspace)
                     if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                         e.Handled = true;
-                                         
+
                     if (char.IsDigit(e.KeyChar))
                     {
                         if (Value.Length < 14)
@@ -159,7 +171,8 @@ namespace EasyHortifruti.Componentes
                         }
                         e.Handled = true;
                     }
-                    return;                   
+                    return;
+
                 case TipoCampo.MOEDA:
                     if ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',') ||
                        (Text.Contains(',') && e.KeyChar == ','))
@@ -199,13 +212,16 @@ namespace EasyHortifruti.Componentes
                         }
                     }
                     return;
+
                 default:
                     return;
             }
         }
 
-        #endregion
+        #endregion Metodos
+
         #region Enum
+
         public enum TipoCampo
         {
             TEXTO,
@@ -215,6 +231,7 @@ namespace EasyHortifruti.Componentes
             CEP,
             MOEDA
         }
-        #endregion
+
+        #endregion Enum
     }
 }

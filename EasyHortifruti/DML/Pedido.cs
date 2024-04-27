@@ -1,9 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace EasyHortifruti.DML
 {
@@ -27,10 +23,10 @@ namespace EasyHortifruti.DML
 
         public int IdProduto { get; set; }
 
-        public int QuantidadeProduto{ get;set;}
+        public int QuantidadeProduto { get; set; }
 
         public double ValorCompra { get; set; }
-        
+
         public double ValorVenda { get; set; }
 
         public double TotalVenda { get; set; }
@@ -40,33 +36,35 @@ namespace EasyHortifruti.DML
         public string DescrProduto { get; set; }
 
         public string UnidProduto { get; set; }
-        
+
         public string QtdeProduto { get; set; }
-        
+
         public decimal VlCompraProduto { get; set; }
-        
+
         public decimal MargemLucro { get; set; }
-        
+
         public decimal TotalItem { get; set; }
-        
+
         public decimal ValorLucroItem { get; set; }
-
     }
-
-
 
     public enum StatusPedido
     {
         [Description("Pendente")]
         Pendente = 0,
+
         [Description("Não Aprovado")]
         NaoAprovado = 1,
+
         [Description("Aprovado")]
         Aprovado = 2,
+
         [Description("Em Execução")]
         EmExecucao = 3,
+
         [Description("Concluído")]
         Concluido = 4,
+
         [Description("Engregue - Finalizado")]
         Entregue = 5
     }

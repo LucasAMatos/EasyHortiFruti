@@ -1,13 +1,6 @@
-﻿using EasyHortifruti.Utilitarios;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
+
 namespace EasyHortifruti
 {
     public partial class FormPrincipal : System.Windows.Forms.Form
@@ -50,7 +43,6 @@ namespace EasyHortifruti
 
         private void btRelatórios_Click(object sender, EventArgs e)
         {
-
         }
 
         private void CriarTabelas()

@@ -67,6 +67,9 @@ namespace EasyHortifruti.DML
                     NomeFantasia = dr["nomefantasia"].ToString();
 
                 if (dr["razaosocial"] != null)
+                    EstadoCivil = (EstadoCivil)Convert.ToInt32(dr["estadocivil"]);
+
+                if (dr["razaosocial"] != null)
                     RazaoSocial = dr["razaosocial"].ToString();
 
                 if (dr["contato"] != null)

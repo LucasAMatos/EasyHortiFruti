@@ -215,9 +215,9 @@ namespace EasyHortifruti
 
                     CbTpDocumento.SelectedIndex = iGeral.TipoPessoa == TPFJ.Juridica ? 1 : 0;
                     TbNome.Text = iGeral.NomeFantasia;
-                    lbCPFCNPJ.Text = iGeral.TipoPessoa == TPFJ.Juridica ? "CNPJ" : "CPF";
+                    TbCpj.Caption = iGeral.TipoPessoa == TPFJ.Juridica ? "CNPJ" : "CPF";
                     TbCpj.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.CNPJ : iGeral.CPF;
-                    lbRGIE.Text = iGeral.TipoPessoa == TPFJ.Juridica ? "Inscrição Estadual" : "RG";
+                    TbRg.Caption = iGeral.TipoPessoa == TPFJ.Juridica ? "IE" : "RG";
                     TbRg.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.IE : iGeral.RG;
                     TbPrazoPgto.Text = iGeral.PrazoPagamento.ToString();
                     tbEndCep.Text = iGeral.Endereco.CEP;

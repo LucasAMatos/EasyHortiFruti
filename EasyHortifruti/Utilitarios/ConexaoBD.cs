@@ -48,6 +48,7 @@ namespace EasyHortifruti
                 { "classificacao", pGeral.Classificacao.ToString() },
                 { "nomefantasia", pGeral.NomeFantasia },
                 { "razaosocial", pGeral.RazaoSocial },
+                { "estadocivil", ((int)pGeral.EstadoCivil).ToString() },
                 { "contato", pGeral.Contato },
                 { "dtnascaber", pGeral.DtNascFundacao.ToString("dd/MM/yyyy") },
                 { "cnpj", pGeral.CNPJ },
@@ -86,6 +87,7 @@ namespace EasyHortifruti
                 { "classificacao", ((int)pGeral.Classificacao).ToString() },
                 { "nomefantasia", pGeral.NomeFantasia },
                 { "razaosocial", pGeral.RazaoSocial },
+                { "estadocivil", ((int)pGeral.EstadoCivil).ToString() },
                 { "contato", pGeral.Contato },
                 { "dtnascaber", pGeral.DtNascFundacao.ToString("dd/MM/yyyy") },
                 { "cnpj", pGeral.CNPJ },
@@ -107,7 +109,8 @@ namespace EasyHortifruti
                 { "cidade", pGeral.Endereco.Cidade },
                 { "uf", pGeral.Endereco.UF },
                 { "pontoreferencia", pGeral.PontoReferencia },
-                { "email", pGeral.Email }
+                { "email", pGeral.Email },
+                { "prazoPgto", pGeral.PrazoPagamento.ToString() },
             };
 
             ExecutarSemRetorno(TabelasScript.ScriptUpdate(TabelasScript.TabelaGeral, pGeral.ID, pCampos));

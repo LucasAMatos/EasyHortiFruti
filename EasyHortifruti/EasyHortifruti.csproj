@@ -160,7 +160,7 @@
       <DependentUpon>AltComboBox.cs</DependentUpon>
     </Compile>
     <Compile Include="Componentes\AltTextBox.cs">
-      <SubType>Component</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Componentes\AltTextBox.Designer.cs">
       <DependentUpon>AltTextBox.cs</DependentUpon>
@@ -287,8 +287,8 @@
     <EmbeddedResource Include="Componentes\AltComboBox.resx">
       <DependentUpon>AltComboBox.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Componentes\LabelTextBox.resx">
-      <DependentUpon>LabelTextBox.cs</DependentUpon>
+    <EmbeddedResource Include="Componentes\AltTextBox.resx">
+      <DependentUpon>AltTextBox.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Produtos\FormNcm.resx">
       <DependentUpon>FormNcm.cs</DependentUpon>

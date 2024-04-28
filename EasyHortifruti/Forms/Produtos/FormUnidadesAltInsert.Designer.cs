@@ -34,9 +34,9 @@ namespace EasyHortifruti
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUnidadesAltInsert));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.tbCadObsUni = new EasyHortifruti.Componentes.LabelTextBox();
-            this.tbCadDescricaoUni = new EasyHortifruti.Componentes.LabelTextBox();
-            this.tbCadAbreviUni = new EasyHortifruti.Componentes.LabelTextBox();
+            this.tbCadObsUni = new EasyHortifruti.Componentes.AltTextBox();
+            this.tbCadDescricaoUni = new EasyHortifruti.Componentes.AltTextBox();
+            this.tbCadAbreviUni = new EasyHortifruti.Componentes.AltTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbIDCadUnidade = new System.Windows.Forms.Label();
             this.BtGravarUnidade = new System.Windows.Forms.Button();
@@ -74,47 +74,62 @@ namespace EasyHortifruti
             // tbCadObsUni
             // 
             this.tbCadObsUni.Caption = "Observação da Unidade";
+            this.tbCadObsUni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.tbCadObsUni.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.tbCadObsUni.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCadObsUni.Location = new System.Drawing.Point(31, 178);
-            this.tbCadObsUni.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCadObsUni.Location = new System.Drawing.Point(31, 180);
+            this.tbCadObsUni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCadObsUni.MaxLength = 32767;
+            this.tbCadObsUni.Multiline = true;
             this.tbCadObsUni.Name = "tbCadObsUni";
             this.tbCadObsUni.Obrigatorio = false;
+            this.tbCadObsUni.ReadOnly = false;
             this.tbCadObsUni.SelectionLength = 0;
             this.tbCadObsUni.SelectionStart = 0;
             this.tbCadObsUni.Size = new System.Drawing.Size(408, 112);
             this.tbCadObsUni.TabIndex = 5;
-            this.tbCadObsUni.Tipo = EasyHortifruti.Componentes.LabelTextBox.TipoCampo.TEXTO;
+            this.tbCadObsUni.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbCadObsUni.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
             // tbCadDescricaoUni
             // 
             this.tbCadDescricaoUni.Caption = "Descrição";
+            this.tbCadDescricaoUni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.tbCadDescricaoUni.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.tbCadDescricaoUni.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbCadDescricaoUni.Location = new System.Drawing.Point(31, 109);
-            this.tbCadDescricaoUni.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCadDescricaoUni.Location = new System.Drawing.Point(31, 111);
+            this.tbCadDescricaoUni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCadDescricaoUni.MaxLength = 32767;
+            this.tbCadDescricaoUni.Multiline = true;
             this.tbCadDescricaoUni.Name = "tbCadDescricaoUni";
             this.tbCadDescricaoUni.Obrigatorio = false;
+            this.tbCadDescricaoUni.ReadOnly = false;
             this.tbCadDescricaoUni.SelectionLength = 0;
             this.tbCadDescricaoUni.SelectionStart = 0;
-            this.tbCadDescricaoUni.Size = new System.Drawing.Size(408, 49);
+            this.tbCadDescricaoUni.Size = new System.Drawing.Size(408, 48);
             this.tbCadDescricaoUni.TabIndex = 3;
-            this.tbCadDescricaoUni.Tipo = EasyHortifruti.Componentes.LabelTextBox.TipoCampo.TEXTO;
+            this.tbCadDescricaoUni.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbCadDescricaoUni.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
             // tbCadAbreviUni
             // 
             this.tbCadAbreviUni.Caption = "Abreviatura";
+            this.tbCadAbreviUni.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
             this.tbCadAbreviUni.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.tbCadAbreviUni.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbCadAbreviUni.Location = new System.Drawing.Point(31, 39);
-            this.tbCadAbreviUni.Margin = new System.Windows.Forms.Padding(4);
+            this.tbCadAbreviUni.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCadAbreviUni.MaxLength = 32767;
+            this.tbCadAbreviUni.Multiline = true;
             this.tbCadAbreviUni.Name = "tbCadAbreviUni";
             this.tbCadAbreviUni.Obrigatorio = false;
+            this.tbCadAbreviUni.ReadOnly = false;
             this.tbCadAbreviUni.SelectionLength = 0;
             this.tbCadAbreviUni.SelectionStart = 0;
-            this.tbCadAbreviUni.Size = new System.Drawing.Size(408, 48);
+            this.tbCadAbreviUni.Size = new System.Drawing.Size(131, 48);
             this.tbCadAbreviUni.TabIndex = 1;
-            this.tbCadAbreviUni.Tipo = EasyHortifruti.Componentes.LabelTextBox.TipoCampo.TEXTO;
+            this.tbCadAbreviUni.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbCadAbreviUni.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
             // panel3
             // 
@@ -215,10 +230,10 @@ namespace EasyHortifruti
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
-        private LabelTextBox tbCadAbreviUni;
+        private AltTextBox tbCadAbreviUni;
         private System.Windows.Forms.Panel panel3;
-        private LabelTextBox tbCadDescricaoUni;
-        private LabelTextBox tbCadObsUni;
+        private AltTextBox tbCadDescricaoUni;
+        private AltTextBox tbCadObsUni;
         private System.Windows.Forms.Button BtGravarUnidade;
         private System.Windows.Forms.Button BtCancelCadUnidade;
         private System.Windows.Forms.Label lbIDCadUnidade;

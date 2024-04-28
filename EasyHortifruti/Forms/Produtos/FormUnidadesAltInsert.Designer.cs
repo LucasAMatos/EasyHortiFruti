@@ -34,9 +34,9 @@ namespace EasyHortifruti
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormUnidadesAltInsert));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.tbCadObsUni = new EasyHortifruti.Componentes.LabelTextBox();
-            this.tbCadDescricaoUni = new EasyHortifruti.Componentes.LabelTextBox();
-            this.tbCadAbreviUni = new EasyHortifruti.Componentes.LabelTextBox();
+            this.tbCadObsUni = new EasyHortifruti.Componentes.AltTextBox();
+            this.tbCadDescricaoUni = new EasyHortifruti.Componentes.AltTextBox();
+            this.tbCadAbreviUni = new EasyHortifruti.Componentes.AltTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.lbIDCadUnidade = new System.Windows.Forms.Label();
             this.BtGravarUnidade = new System.Windows.Forms.Button();
@@ -84,7 +84,7 @@ namespace EasyHortifruti
             this.tbCadObsUni.SelectionStart = 0;
             this.tbCadObsUni.Size = new System.Drawing.Size(408, 112);
             this.tbCadObsUni.TabIndex = 5;
-            this.tbCadObsUni.Tipo = EasyHortifruti.Componentes.LabelTextBox.TipoCampo.TEXTO;
+            this.tbCadObsUni.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
             // tbCadDescricaoUni
             // 
@@ -99,7 +99,7 @@ namespace EasyHortifruti
             this.tbCadDescricaoUni.SelectionStart = 0;
             this.tbCadDescricaoUni.Size = new System.Drawing.Size(408, 49);
             this.tbCadDescricaoUni.TabIndex = 3;
-            this.tbCadDescricaoUni.Tipo = EasyHortifruti.Componentes.LabelTextBox.TipoCampo.TEXTO;
+            this.tbCadDescricaoUni.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
             // tbCadAbreviUni
             // 
@@ -114,7 +114,7 @@ namespace EasyHortifruti
             this.tbCadAbreviUni.SelectionStart = 0;
             this.tbCadAbreviUni.Size = new System.Drawing.Size(408, 48);
             this.tbCadAbreviUni.TabIndex = 1;
-            this.tbCadAbreviUni.Tipo = EasyHortifruti.Componentes.LabelTextBox.TipoCampo.TEXTO;
+            this.tbCadAbreviUni.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
             // panel3
             // 
@@ -215,10 +215,10 @@ namespace EasyHortifruti
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel4;
-        private LabelTextBox tbCadAbreviUni;
+        private AltTextBox tbCadAbreviUni;
         private System.Windows.Forms.Panel panel3;
-        private LabelTextBox tbCadDescricaoUni;
-        private LabelTextBox tbCadObsUni;
+        private AltTextBox tbCadDescricaoUni;
+        private AltTextBox tbCadObsUni;
         private System.Windows.Forms.Button BtGravarUnidade;
         private System.Windows.Forms.Button BtCancelCadUnidade;
         private System.Windows.Forms.Label lbIDCadUnidade;

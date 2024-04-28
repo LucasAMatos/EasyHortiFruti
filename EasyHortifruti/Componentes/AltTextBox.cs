@@ -1,17 +1,30 @@
 ﻿using System;
+using System.Collections.Generic;
+using System.ComponentModel;
+using System.Data;
+using System.Drawing;
 using System.Linq;
+using System.Text;
 using System.Text.RegularExpressions;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EasyHortifruti.Componentes
 {
-    public partial class AltTextBox : TextBox
+    public partial class AltTextBox : UserControl
     {
         #region Propriedades
-
         public bool Obrigatorio { get; set; }
 
-        public string Caption { get; set; }
+        public bool Criticar
+        {
+            get
+            {
+                return Obrigatorio && string.IsNullOrEmpty(txtBox.Text);
+            }
+        }
+
+        public TipoCampo Tipo { get; set; }
 
         public string Value
         {
@@ -23,37 +36,139 @@ namespace EasyHortifruti.Componentes
                     case TipoCampo.CPF:
                     case TipoCampo.CNPJ:
                     case TipoCampo.TELEFONE:
-                        return Regex.Replace(Text, @"[^\d]+", "");
+                        return Regex.Replace(txtBox.Text, @"[^\d]+", "");
 
                     default:
-                        return Text;
+                        return txtBox.Text;
                 }
             }
         }
 
-        public TipoCampo Tipo { get; set; }
-
-        public bool Criticar
+        public string Caption
         {
             get
             {
-                return Obrigatorio && string.IsNullOrEmpty(Text);
+                return label.Text;
+            }
+            set
+            {
+                label.Text = value;
+            }
+
+        }
+
+        public Font FonteTexto
+        {
+            get {
+                return txtBox.Font;
+            }
+            set { 
+                txtBox.Font = value;
             }
         }
 
-        #endregion Propriedades
+        public Font FonteCaption
+        {
+            get
+            {
+                return label.Font;
+            }
+            set
+            {
+                label.Font = value;
+            }
+        }
 
-        #region Construtor
+        public int SelectionStart {
+            get {
+                return txtBox.SelectionStart;
+            }
+            set {
+                txtBox.SelectionStart = value;
+            }
+        }
+
+        public int SelectionLength
+        {
+            get
+            {
+                return txtBox.SelectionLength;
+            }
+            set
+            {
+                txtBox.SelectionLength = value;
+            }
+        }
+
+        public override string Text
+        {
+            get {
+                return txtBox.Text;
+            }
+            set {
+                txtBox.Text = value;
+            }
+        }
+
+        public int MaxLength
+        {
+            get
+            {
+                return txtBox.MaxLength;
+            }
+            set
+            {
+                txtBox.MaxLength = value;
+            }
+        }
+
+        public bool ReadOnly
+        {
+            get
+            {
+                return txtBox.ReadOnly;
+            }
+            set
+            {
+                txtBox.ReadOnly = value;
+            }
+        }
+        
+        public System.Windows.Forms.HorizontalAlignment TextAlign
+        {
+            get
+            {
+                return txtBox.TextAlign;
+            }
+            set
+            {
+                txtBox.TextAlign = value;
+            }
+
+        }
+
+        public bool Multiline
+        {
+            get
+            {
+                return txtBox.Multiline;
+            }
+            set
+            {
+                txtBox.Multiline = value;
+            }
+
+        }
+
+
+        
+        #endregion
+
 
         public AltTextBox()
         {
-            this.KeyPress += FormataCampos;
-            this.Leave += FormataCampoLeave;
-
             InitializeComponent();
         }
-
-        #endregion Construtor
 
         #region Metodos
 
@@ -218,7 +333,12 @@ namespace EasyHortifruti.Componentes
             }
         }
 
+        public void Clear()
+        {
+            txtBox.Clear();
+        }
         #endregion Metodos
+
 
         #region Enum
 

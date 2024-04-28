@@ -34,6 +34,13 @@ namespace EasyHortifruti
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6CtasReceber = new System.Windows.Forms.Panel();
             this.dtGridViewCtasReceber = new System.Windows.Forms.DataGridView();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel10CtasReceber = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -53,24 +60,15 @@ namespace EasyHortifruti
             this.BtEditarCtaRecebto = new System.Windows.Forms.Button();
             this.BtIncluirCtaRecebto = new System.Windows.Forms.Button();
             this.panel3CtasReceberFiltros = new System.Windows.Forms.Panel();
-            this.CbFiltroSituação = new AltComboBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.DateFinal = new System.Windows.Forms.DateTimePicker();
             this.label3 = new System.Windows.Forms.Label();
             this.DataInicio = new System.Windows.Forms.DateTimePicker();
-            this.CbFiltroCliente = new AltComboBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panelTituloCtasReceber = new System.Windows.Forms.Panel();
             this.btSairCtasReceber = new System.Windows.Forms.Button();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CbFiltroCliente = new EasyHortifruti.Componentes.AltComboBox();
+            this.CbFiltroSituação = new EasyHortifruti.Componentes.AltComboBox();
             this.panel1.SuspendLayout();
             this.panel6CtasReceber.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCtasReceber)).BeginInit();
@@ -124,6 +122,43 @@ namespace EasyHortifruti
             this.dtGridViewCtasReceber.Name = "dtGridViewCtasReceber";
             this.dtGridViewCtasReceber.Size = new System.Drawing.Size(834, 495);
             this.dtGridViewCtasReceber.TabIndex = 0;
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Nº Pedido";
+            this.Column3.Name = "Column3";
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Vencimento";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Cliente";
+            this.Column2.Name = "Column2";
+            this.Column2.Width = 200;
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Valor Pedido";
+            this.Column4.Name = "Column4";
+            // 
+            // Column5
+            // 
+            this.Column5.HeaderText = "% Lucro";
+            this.Column5.Name = "Column5";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Data Recebto";
+            this.Column6.Name = "Column6";
+            // 
+            // Column7
+            // 
+            this.Column7.HeaderText = "ID";
+            this.Column7.Name = "Column7";
+            this.Column7.Width = 50;
             // 
             // panel4
             // 
@@ -349,39 +384,18 @@ namespace EasyHortifruti
             // 
             // panel3CtasReceberFiltros
             // 
+            this.panel3CtasReceberFiltros.Controls.Add(this.CbFiltroCliente);
             this.panel3CtasReceberFiltros.Controls.Add(this.CbFiltroSituação);
-            this.panel3CtasReceberFiltros.Controls.Add(this.label5);
             this.panel3CtasReceberFiltros.Controls.Add(this.label4);
             this.panel3CtasReceberFiltros.Controls.Add(this.DateFinal);
             this.panel3CtasReceberFiltros.Controls.Add(this.label3);
             this.panel3CtasReceberFiltros.Controls.Add(this.DataInicio);
-            this.panel3CtasReceberFiltros.Controls.Add(this.CbFiltroCliente);
-            this.panel3CtasReceberFiltros.Controls.Add(this.label2);
             this.panel3CtasReceberFiltros.Controls.Add(this.label1);
             this.panel3CtasReceberFiltros.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3CtasReceberFiltros.Location = new System.Drawing.Point(0, 76);
             this.panel3CtasReceberFiltros.Name = "panel3CtasReceberFiltros";
             this.panel3CtasReceberFiltros.Size = new System.Drawing.Size(995, 69);
             this.panel3CtasReceberFiltros.TabIndex = 1;
-            // 
-            // CbFiltroSituação
-            // 
-            this.CbFiltroSituação.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbFiltroSituação.FormattingEnabled = true;
-            this.CbFiltroSituação.Location = new System.Drawing.Point(576, 33);
-            this.CbFiltroSituação.Name = "CbFiltroSituação";
-            this.CbFiltroSituação.Size = new System.Drawing.Size(181, 26);
-            this.CbFiltroSituação.TabIndex = 9;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(573, 18);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(57, 13);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "Situação";
             // 
             // label4
             // 
@@ -422,25 +436,6 @@ namespace EasyHortifruti
             this.DataInicio.TabIndex = 3;
             this.DataInicio.Value = new System.DateTime(2024, 3, 21, 10, 44, 8, 0);
             // 
-            // CbFiltroCliente
-            // 
-            this.CbFiltroCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbFiltroCliente.FormattingEnabled = true;
-            this.CbFiltroCliente.Location = new System.Drawing.Point(15, 35);
-            this.CbFiltroCliente.Name = "CbFiltroCliente";
-            this.CbFiltroCliente.Size = new System.Drawing.Size(230, 24);
-            this.CbFiltroCliente.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(46, 13);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "Cliente";
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -478,42 +473,43 @@ namespace EasyHortifruti
             this.btSairCtasReceber.UseVisualStyleBackColor = false;
             this.btSairCtasReceber.Click += new System.EventHandler(this.btSairCtasReceber_Click);
             // 
-            // Column3
+            // CbFiltroCliente
             // 
-            this.Column3.HeaderText = "Nº Pedido";
-            this.Column3.Name = "Column3";
+            this.CbFiltroCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.CbFiltroCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.CbFiltroCliente.Caption = "Cliente";
+            this.CbFiltroCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CbFiltroCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.CbFiltroCliente.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.CbFiltroCliente.FormattingEnabled = true;
+            this.CbFiltroCliente.Location = new System.Drawing.Point(15, 18);
+            this.CbFiltroCliente.Margin = new System.Windows.Forms.Padding(4);
+            this.CbFiltroCliente.Name = "CbFiltroCliente";
+            this.CbFiltroCliente.Obrigatorio = false;
+            this.CbFiltroCliente.SelectedIndex = -1;
+            this.CbFiltroCliente.SelectedItem = null;
+            this.CbFiltroCliente.SelectedText = "";
+            this.CbFiltroCliente.Size = new System.Drawing.Size(230, 42);
+            this.CbFiltroCliente.TabIndex = 2;
             // 
-            // Column1
+            // CbFiltroSituação
             // 
-            this.Column1.HeaderText = "Vencimento";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Cliente";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Valor Pedido";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "% Lucro";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Data Recebto";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "ID";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 50;
+            this.CbFiltroSituação.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.CbFiltroSituação.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.CbFiltroSituação.Caption = "Situação";
+            this.CbFiltroSituação.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CbFiltroSituação.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.CbFiltroSituação.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.CbFiltroSituação.FormattingEnabled = true;
+            this.CbFiltroSituação.Location = new System.Drawing.Point(576, 18);
+            this.CbFiltroSituação.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CbFiltroSituação.Name = "CbFiltroSituação";
+            this.CbFiltroSituação.Obrigatorio = false;
+            this.CbFiltroSituação.SelectedIndex = -1;
+            this.CbFiltroSituação.SelectedItem = null;
+            this.CbFiltroSituação.SelectedText = "";
+            this.CbFiltroSituação.Size = new System.Drawing.Size(181, 42);
+            this.CbFiltroSituação.TabIndex = 9;
             // 
             // FormCtasReceber
             // 
@@ -551,13 +547,11 @@ namespace EasyHortifruti
         private System.Windows.Forms.Panel panel3CtasReceberFiltros;
         private System.Windows.Forms.Label label1;
         private AltComboBox CbFiltroSituação;
-        private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.DateTimePicker DateFinal;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker DataInicio;
         private AltComboBox CbFiltroCliente;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btSairCtasReceber;
         private System.Windows.Forms.Panel panel5CtasReceberBotoes;
         private System.Windows.Forms.Button BtFiltrarCtaRecebto;

@@ -30,14 +30,13 @@ namespace EasyHortifruti
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidoAltInsert));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
@@ -54,15 +53,13 @@ namespace EasyHortifruti
             this.ValorLucroItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelSelectProduto = new System.Windows.Forms.Panel();
             this.AtbValorLucroItem = new EasyHortifruti.Componentes.AltTextBox();
-            this.CbUnidPedido = new EasyHortifruti.Componentes.AltComboBox(this.components);
-            this.label30 = new System.Windows.Forms.Label();
-            this.CbProdutos = new EasyHortifruti.Componentes.AltComboBox(this.components);
+            this.CbUnidPedido = new EasyHortifruti.Componentes.AltComboBox();
+            this.CbProdutos = new EasyHortifruti.Componentes.AltComboBox();
             this.BtAdicItemPedido = new System.Windows.Forms.Button();
             this.TbTotProdPedido = new EasyHortifruti.Componentes.AltTextBox();
             this.TbMargemLucro = new EasyHortifruti.Componentes.AltTextBox();
             this.TbVlCompra = new EasyHortifruti.Componentes.AltTextBox();
             this.TbQtdPedido = new EasyHortifruti.Componentes.AltTextBox();
-            this.label7 = new System.Windows.Forms.Label();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.PanelPfPedido = new System.Windows.Forms.Panel();
             this.TbCpj = new EasyHortifruti.Componentes.AltTextBox();
@@ -71,7 +68,7 @@ namespace EasyHortifruti
             this.panel9 = new System.Windows.Forms.Panel();
             this.tbEmail = new EasyHortifruti.Componentes.AltTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.CbTpDocumento = new EasyHortifruti.Componentes.AltComboBox(this.components);
+            this.CbTpDocumento = new EasyHortifruti.Componentes.AltComboBox();
             this.label19 = new System.Windows.Forms.Label();
             this.tbEndCep = new EasyHortifruti.Componentes.AltTextBox();
             this.tbEndPontoReferencia = new EasyHortifruti.Componentes.AltTextBox();
@@ -97,7 +94,7 @@ namespace EasyHortifruti
             this.btGravarPedido = new System.Windows.Forms.Button();
             this.BtCancelarPedido = new System.Windows.Forms.Button();
             this.panelPedCliente = new System.Windows.Forms.Panel();
-            this.CbNomeCliente = new EasyHortifruti.Componentes.AltComboBox(this.components);
+            this.CbNomeCliente = new EasyHortifruti.Componentes.AltComboBox();
             this.TbPrazoPgto = new EasyHortifruti.Componentes.AltTextBox();
             this.DtConclusaoPedido = new System.Windows.Forms.DateTimePicker();
             this.DtEntregaPedido = new System.Windows.Forms.DateTimePicker();
@@ -106,9 +103,8 @@ namespace EasyHortifruti
             this.DtPrevEntrega = new System.Windows.Forms.DateTimePicker();
             this.label4 = new System.Windows.Forms.Label();
             this.TbCelular = new EasyHortifruti.Componentes.AltTextBox();
-            this.label3 = new System.Windows.Forms.Label();
             this.panelDataStatus = new System.Windows.Forms.Panel();
-            this.CbStatusPedido = new EasyHortifruti.Componentes.AltComboBox(this.components);
+            this.CbStatusPedido = new EasyHortifruti.Componentes.AltComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.DtPedido = new System.Windows.Forms.DateTimePicker();
@@ -205,71 +201,71 @@ namespace EasyHortifruti
             // 
             // DescrProduto
             // 
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescrProduto.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle29.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescrProduto.DefaultCellStyle = dataGridViewCellStyle29;
             this.DescrProduto.HeaderText = "Descrição Produto";
             this.DescrProduto.Name = "DescrProduto";
             this.DescrProduto.Width = 180;
             // 
             // UnidProduto
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnidProduto.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle30.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.UnidProduto.DefaultCellStyle = dataGridViewCellStyle30;
             this.UnidProduto.HeaderText = "Unidade";
             this.UnidProduto.Name = "UnidProduto";
             this.UnidProduto.Width = 50;
             // 
             // QtdeProduto
             // 
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QtdeProduto.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.QtdeProduto.DefaultCellStyle = dataGridViewCellStyle31;
             this.QtdeProduto.HeaderText = "Qtde";
             this.QtdeProduto.Name = "QtdeProduto";
             this.QtdeProduto.Width = 40;
             // 
             // VlCompraProduto
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle11.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle11.Format = "C2";
-            dataGridViewCellStyle11.NullValue = null;
-            this.VlCompraProduto.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle32.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle32.Format = "C2";
+            dataGridViewCellStyle32.NullValue = null;
+            this.VlCompraProduto.DefaultCellStyle = dataGridViewCellStyle32;
             this.VlCompraProduto.HeaderText = "Valor Custo";
             this.VlCompraProduto.Name = "VlCompraProduto";
             this.VlCompraProduto.Width = 90;
             // 
             // MargemLucro
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle12.Format = "N0";
-            dataGridViewCellStyle12.NullValue = null;
-            this.MargemLucro.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle33.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle33.Format = "N0";
+            dataGridViewCellStyle33.NullValue = null;
+            this.MargemLucro.DefaultCellStyle = dataGridViewCellStyle33;
             this.MargemLucro.HeaderText = "% Lucro";
             this.MargemLucro.Name = "MargemLucro";
             this.MargemLucro.Width = 70;
             // 
             // TotalItem
             // 
-            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle13.Format = "C2";
-            dataGridViewCellStyle13.NullValue = null;
-            this.TotalItem.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle34.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle34.Format = "C2";
+            dataGridViewCellStyle34.NullValue = null;
+            this.TotalItem.DefaultCellStyle = dataGridViewCellStyle34;
             this.TotalItem.HeaderText = "Total Item";
             this.TotalItem.Name = "TotalItem";
             this.TotalItem.Width = 90;
             // 
             // ValorLucroItem
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle14.Format = "C2";
-            dataGridViewCellStyle14.NullValue = null;
-            this.ValorLucroItem.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle35.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle35.Format = "C2";
+            dataGridViewCellStyle35.NullValue = null;
+            this.ValorLucroItem.DefaultCellStyle = dataGridViewCellStyle35;
             this.ValorLucroItem.HeaderText = "Valor Lucro";
             this.ValorLucroItem.Name = "ValorLucroItem";
             this.ValorLucroItem.Width = 90;
@@ -278,14 +274,12 @@ namespace EasyHortifruti
             // 
             this.panelSelectProduto.Controls.Add(this.AtbValorLucroItem);
             this.panelSelectProduto.Controls.Add(this.CbUnidPedido);
-            this.panelSelectProduto.Controls.Add(this.label30);
             this.panelSelectProduto.Controls.Add(this.CbProdutos);
             this.panelSelectProduto.Controls.Add(this.BtAdicItemPedido);
             this.panelSelectProduto.Controls.Add(this.TbTotProdPedido);
             this.panelSelectProduto.Controls.Add(this.TbMargemLucro);
             this.panelSelectProduto.Controls.Add(this.TbVlCompra);
             this.panelSelectProduto.Controls.Add(this.TbQtdPedido);
-            this.panelSelectProduto.Controls.Add(this.label7);
             this.panelSelectProduto.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSelectProduto.Location = new System.Drawing.Point(3, 3);
             this.panelSelectProduto.Name = "panelSelectProduto";
@@ -315,34 +309,40 @@ namespace EasyHortifruti
             // 
             // CbUnidPedido
             // 
-            this.CbUnidPedido.Caption = null;
-            this.CbUnidPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.5F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbUnidPedido.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.CbUnidPedido.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.CbUnidPedido.Caption = "Unid";
+            this.CbUnidPedido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CbUnidPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CbUnidPedido.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.CbUnidPedido.FormattingEnabled = true;
-            this.CbUnidPedido.Location = new System.Drawing.Point(173, 25);
+            this.CbUnidPedido.Location = new System.Drawing.Point(165, 6);
+            this.CbUnidPedido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbUnidPedido.Name = "CbUnidPedido";
             this.CbUnidPedido.Obrigatorio = false;
-            this.CbUnidPedido.Size = new System.Drawing.Size(70, 25);
+            this.CbUnidPedido.SelectedIndex = -1;
+            this.CbUnidPedido.SelectedItem = null;
+            this.CbUnidPedido.SelectedText = "";
+            this.CbUnidPedido.Size = new System.Drawing.Size(86, 46);
             this.CbUnidPedido.TabIndex = 36;
-            // 
-            // label30
-            // 
-            this.label30.AutoSize = true;
-            this.label30.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label30.Location = new System.Drawing.Point(172, 10);
-            this.label30.Name = "label30";
-            this.label30.Size = new System.Drawing.Size(33, 13);
-            this.label30.TabIndex = 37;
-            this.label30.Text = "Unid";
             // 
             // CbProdutos
             // 
-            this.CbProdutos.Caption = null;
-            this.CbProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbProdutos.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.CbProdutos.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.CbProdutos.Caption = "Produto";
+            this.CbProdutos.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CbProdutos.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CbProdutos.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.CbProdutos.FormattingEnabled = true;
-            this.CbProdutos.Location = new System.Drawing.Point(8, 25);
+            this.CbProdutos.Location = new System.Drawing.Point(8, 6);
+            this.CbProdutos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbProdutos.Name = "CbProdutos";
             this.CbProdutos.Obrigatorio = false;
-            this.CbProdutos.Size = new System.Drawing.Size(151, 26);
+            this.CbProdutos.SelectedIndex = -1;
+            this.CbProdutos.SelectedItem = null;
+            this.CbProdutos.SelectedText = "";
+            this.CbProdutos.Size = new System.Drawing.Size(151, 46);
             this.CbProdutos.TabIndex = 35;
             this.CbProdutos.SelectedIndexChanged += new System.EventHandler(this.CbProdutos_SelectedIndexChanged);
             // 
@@ -442,16 +442,6 @@ namespace EasyHortifruti
             this.TbQtdPedido.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbQtdPedido.TextChanged += new System.EventHandler(this.TbQtdPedido_TextChanged);
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(5, 10);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(51, 13);
-            this.label7.TabIndex = 21;
-            this.label7.Text = "Produto";
-            // 
             // tabPage2
             // 
             this.tabPage2.Controls.Add(this.PanelPfPedido);
@@ -482,7 +472,7 @@ namespace EasyHortifruti
             this.TbCpj.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.TbCpj.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbCpj.Location = new System.Drawing.Point(434, 6);
-            this.TbCpj.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbCpj.Margin = new System.Windows.Forms.Padding(4);
             this.TbCpj.MaxLength = 32767;
             this.TbCpj.Multiline = true;
             this.TbCpj.Name = "TbCpj";
@@ -503,7 +493,7 @@ namespace EasyHortifruti
             this.TbRg.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.TbRg.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbRg.Location = new System.Drawing.Point(634, 6);
-            this.TbRg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbRg.Margin = new System.Windows.Forms.Padding(4);
             this.TbRg.MaxLength = 32767;
             this.TbRg.Multiline = true;
             this.TbRg.Name = "TbRg";
@@ -524,7 +514,7 @@ namespace EasyHortifruti
             this.TbNome.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.TbNome.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbNome.Location = new System.Drawing.Point(6, 6);
-            this.TbNome.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbNome.Margin = new System.Windows.Forms.Padding(4);
             this.TbNome.MaxLength = 32767;
             this.TbNome.Multiline = true;
             this.TbNome.Name = "TbNome";
@@ -563,7 +553,7 @@ namespace EasyHortifruti
             this.tbEmail.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.tbEmail.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEmail.Location = new System.Drawing.Point(7, 198);
-            this.tbEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.tbEmail.MaxLength = 32767;
             this.tbEmail.Multiline = true;
             this.tbEmail.Name = "tbEmail";
@@ -588,16 +578,21 @@ namespace EasyHortifruti
             // 
             // CbTpDocumento
             // 
-            this.CbTpDocumento.Caption = null;
+            this.CbTpDocumento.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.CbTpDocumento.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.CbTpDocumento.Caption = "";
+            this.CbTpDocumento.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.CbTpDocumento.Enabled = false;
             this.CbTpDocumento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbTpDocumento.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbTpDocumento.FormattingEnabled = true;
-            this.CbTpDocumento.Items.AddRange(new object[] {
-            "Pessoa Física",
-            "Pessoa Jurídia"});
             this.CbTpDocumento.Location = new System.Drawing.Point(105, 6);
+            this.CbTpDocumento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbTpDocumento.Name = "CbTpDocumento";
             this.CbTpDocumento.Obrigatorio = false;
+            this.CbTpDocumento.SelectedIndex = -1;
+            this.CbTpDocumento.SelectedItem = null;
+            this.CbTpDocumento.SelectedText = "";
             this.CbTpDocumento.Size = new System.Drawing.Size(164, 26);
             this.CbTpDocumento.TabIndex = 36;
             this.CbTpDocumento.SelectedIndexChanged += new System.EventHandler(this.CbTpDocumento_SelectedIndexChanged);
@@ -683,7 +678,7 @@ namespace EasyHortifruti
             this.tbEndCmpt.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.tbEndCmpt.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbEndCmpt.Location = new System.Drawing.Point(553, 105);
-            this.tbEndCmpt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbEndCmpt.Margin = new System.Windows.Forms.Padding(4);
             this.tbEndCmpt.MaxLength = 32767;
             this.tbEndCmpt.Multiline = true;
             this.tbEndCmpt.Name = "tbEndCmpt";
@@ -1021,7 +1016,6 @@ namespace EasyHortifruti
             this.panelPedCliente.Controls.Add(this.DtPrevEntrega);
             this.panelPedCliente.Controls.Add(this.label4);
             this.panelPedCliente.Controls.Add(this.TbCelular);
-            this.panelPedCliente.Controls.Add(this.label3);
             this.panelPedCliente.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPedCliente.Location = new System.Drawing.Point(0, 44);
             this.panelPedCliente.Name = "panelPedCliente";
@@ -1030,13 +1024,21 @@ namespace EasyHortifruti
             // 
             // CbNomeCliente
             // 
-            this.CbNomeCliente.Caption = null;
+            this.CbNomeCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.CbNomeCliente.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.CbNomeCliente.Caption = "Nome do Cliente";
+            this.CbNomeCliente.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.CbNomeCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbNomeCliente.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbNomeCliente.FormattingEnabled = true;
-            this.CbNomeCliente.Location = new System.Drawing.Point(13, 22);
+            this.CbNomeCliente.Location = new System.Drawing.Point(13, 5);
+            this.CbNomeCliente.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbNomeCliente.Name = "CbNomeCliente";
             this.CbNomeCliente.Obrigatorio = false;
-            this.CbNomeCliente.Size = new System.Drawing.Size(372, 24);
+            this.CbNomeCliente.SelectedIndex = -1;
+            this.CbNomeCliente.SelectedItem = null;
+            this.CbNomeCliente.SelectedText = "";
+            this.CbNomeCliente.Size = new System.Drawing.Size(372, 46);
             this.CbNomeCliente.TabIndex = 28;
             this.CbNomeCliente.SelectedIndexChanged += new System.EventHandler(this.CbNomeCliente_SelectedIndexChanged);
             // 
@@ -1137,16 +1139,6 @@ namespace EasyHortifruti
             this.TbCelular.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbCelular.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(10, 5);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(114, 15);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nome do Cliente";
-            // 
             // panelDataStatus
             // 
             this.panelDataStatus.Controls.Add(this.CbStatusPedido);
@@ -1161,13 +1153,21 @@ namespace EasyHortifruti
             // 
             // CbStatusPedido
             // 
-            this.CbStatusPedido.Caption = null;
-            this.CbStatusPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbStatusPedido.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.CbStatusPedido.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.CbStatusPedido.Caption = "";
+            this.CbStatusPedido.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CbStatusPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.CbStatusPedido.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 0.5F);
             this.CbStatusPedido.FormattingEnabled = true;
-            this.CbStatusPedido.Location = new System.Drawing.Point(246, 8);
+            this.CbStatusPedido.Location = new System.Drawing.Point(238, -10);
+            this.CbStatusPedido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbStatusPedido.Name = "CbStatusPedido";
             this.CbStatusPedido.Obrigatorio = true;
-            this.CbStatusPedido.Size = new System.Drawing.Size(208, 26);
+            this.CbStatusPedido.SelectedIndex = -1;
+            this.CbStatusPedido.SelectedItem = null;
+            this.CbStatusPedido.SelectedText = "";
+            this.CbStatusPedido.Size = new System.Drawing.Size(208, 48);
             this.CbStatusPedido.TabIndex = 2;
             // 
             // label2
@@ -1218,7 +1218,6 @@ namespace EasyHortifruti
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvPedidoProdutos)).EndInit();
             this.panelSelectProduto.ResumeLayout(false);
-            this.panelSelectProduto.PerformLayout();
             this.tabPage2.ResumeLayout(false);
             this.PanelPfPedido.ResumeLayout(false);
             this.panel9.ResumeLayout(false);
@@ -1244,7 +1243,6 @@ namespace EasyHortifruti
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.DateTimePicker DtPedido;
         private System.Windows.Forms.Panel panelPedCliente;
-        private System.Windows.Forms.Label label3;
         private AltComboBox CbStatusPedido;
         private AltTextBox TbCelular;
         private System.Windows.Forms.DateTimePicker DtConclusaoPedido;
@@ -1257,7 +1255,6 @@ namespace EasyHortifruti
         private System.Windows.Forms.TabControl tabControl1;
         private System.Windows.Forms.TabPage tabPage1;
         private System.Windows.Forms.Panel panelSelectProduto;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TabPage tabPage2;
         private System.Windows.Forms.Panel panelBotoesInserirPedido;
         private System.Windows.Forms.Label labelIDPedido;
@@ -1301,7 +1298,6 @@ namespace EasyHortifruti
         private AltComboBox CbProdutos;
         private AltComboBox CbNomeCliente;
         private AltComboBox CbTpDocumento;
-        private System.Windows.Forms.Label label30;
         private AltComboBox CbUnidPedido;
         private AltTextBox AtbValorLucroItem;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescrProduto;

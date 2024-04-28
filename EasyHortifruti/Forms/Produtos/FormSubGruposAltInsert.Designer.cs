@@ -33,7 +33,7 @@ namespace EasyHortifruti
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSubGruposAltInsert));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.CbGrupo = new EasyHortifruti.Componentes.AltComboBox(this.components);
+            this.CbGrupo = new EasyHortifruti.Componentes.AltComboBox();
             this.TbMargemSubGrupo = new EasyHortifruti.Componentes.AltTextBox();
             this.TbDescSubGrupo = new EasyHortifruti.Componentes.AltTextBox();
             this.label1 = new System.Windows.Forms.Label();

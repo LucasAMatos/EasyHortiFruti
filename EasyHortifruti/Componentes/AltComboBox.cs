@@ -1,61 +1,145 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
+using System.Drawing;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EasyHortifruti.Componentes
 {
-    public partial class AltComboBox : ComboBox
+    public partial class AltComboBox : UserControl
     {
         #region Propriedades
-
         public bool Obrigatorio { get; set; }
-
-        public string Caption { get; set; }
 
         public bool Criticar
         {
             get
             {
-                return Obrigatorio && SelectedIndex < 0;
+                return Obrigatorio && string.IsNullOrEmpty(comboBox1.Text);
             }
         }
 
-        #endregion Propriedades
+        public string Caption
+        {
+            get
+            {
+                return label.Text;
+            }
+            set
+            {
+                label.Text = value;
+            }
 
+        }
+
+        public ComboBox.ObjectCollection Items
+        {
+            get { return comboBox1.Items; }
+        }
+
+        public string SelectedText
+        {
+            get { return comboBox1.SelectedText; }
+            set { comboBox1.SelectedText = value; }
+        }
+
+        public object SelectedItem
+        {
+            get { return comboBox1.SelectedItem; }
+            set { comboBox1.SelectedItem = value; }
+        }
+
+        public int SelectedIndex
+        {
+            get { return comboBox1.SelectedIndex; }
+            set { comboBox1.SelectedIndex = value; }
+        }
+        
+        public AutoCompleteMode AutoCompleteMode
+        {
+            get { return comboBox1.AutoCompleteMode; }
+            set { comboBox1.AutoCompleteMode = value; }
+        }
+
+        public AutoCompleteSource AutoCompleteSource
+        {
+            get { return comboBox1.AutoCompleteSource; }
+            set { comboBox1.AutoCompleteSource = value; }
+        }
+
+        public bool FormattingEnabled
+        {
+            get { return comboBox1.FormattingEnabled; }
+            set { comboBox1.FormattingEnabled = value; }
+        }
+
+        public ComboBoxStyle DropDownStyle
+        {
+            get { return comboBox1.DropDownStyle; }
+            set { comboBox1.DropDownStyle = value; }
+        }
+
+        public Font FonteCaption
+        {
+            get
+            {
+                return label.Font;
+            }
+            set
+            {
+                label.Font = value;
+            }
+        }
+
+        public event EventHandler SelectedIndexChanged;
+        #endregion
+
+        #region Constructor
         public AltComboBox()
         {
             InitializeComponent();
         }
+        #endregion
 
-        public AltComboBox(IContainer container)
-        {
-            container.Add(this);
-
-            InitializeComponent();
-        }
-
+        #region Metodos
         public void CarregarDescricoesEnum<T>()
         {
-            Items.Clear();
+            comboBox1.Items.Clear();
             foreach (T item in Enum.GetValues(typeof(T)))
             {
                 var fieldInfo = item.GetType().GetField(item.ToString());
                 var attributes = (DescriptionAttribute[])fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
                 string description = attributes.Length > 0 ? attributes[0].Description : item.ToString();
 
-                Items.Add(description);
+                comboBox1.Items.Add(description);
             }
-            this.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 0;
         }
 
         public void CarregarValoresEnum<T>()
         {
-            Items.Clear();
+            comboBox1.Items.Clear();
             foreach (T item in Enum.GetValues(typeof(T)))
             {
-                Items.Add(item);
+                comboBox1.Items.Add(item);
             }
-            this.SelectedIndex = 0;
+            comboBox1.SelectedIndex = 0;
+        }
+        #endregion
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if(SelectedIndexChanged != null)
+                SelectedIndexChanged(sender, e);
+        }
+
+        private void label_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -42,11 +42,11 @@ namespace EasyHortifruti
             this.BtCadSubGrupo = new System.Windows.Forms.Button();
             this.BtCadGrupo = new System.Windows.Forms.Button();
             this.BtCadUnidade = new System.Windows.Forms.Button();
-            this.cbSubGrupoProduto = new EasyHortifruti.Componentes.AltComboBox(this.components);
-            this.cbGrupoProduto = new EasyHortifruti.Componentes.AltComboBox(this.components);
+            this.cbSubGrupoProduto = new EasyHortifruti.Componentes.AltComboBox();
+            this.cbGrupoProduto = new EasyHortifruti.Componentes.AltComboBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.cbUnidProduto = new EasyHortifruti.Componentes.AltComboBox(this.components);
+            this.cbUnidProduto = new EasyHortifruti.Componentes.AltComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.tbDescricaoProduto = new EasyHortifruti.Componentes.AltTextBox();
             this.label1 = new System.Windows.Forms.Label();

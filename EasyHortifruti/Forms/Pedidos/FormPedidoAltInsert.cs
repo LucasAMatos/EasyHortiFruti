@@ -103,6 +103,7 @@ namespace EasyHortifruti
             CarregarGridNomeCliente();
             CarregarComboProdutos();
             CarregarComboUnidades();
+            CarregarComboTpDocumento();
         }
 
         private void CarregarComboProdutos()
@@ -132,6 +133,12 @@ namespace EasyHortifruti
                     TbMargemLucro.Text = (dr["margem_produto"].ToString());
                 }
             }
+        }
+
+        private void CarregarComboTpDocumento()
+        {
+            CbTpDocumento.Items.Clear();
+            CbTpDocumento.CarregarDescricoesEnum<TPFJ>();
         }
 
         private void CarregarComboUnidades()

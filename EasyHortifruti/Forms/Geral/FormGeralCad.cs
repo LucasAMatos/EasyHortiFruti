@@ -8,6 +8,7 @@ namespace EasyHortifruti
         public FormGeralCad()
         {
             InitializeComponent();
+            CarregarComboTipoFonte();
         }
 
         public int IdSelecionado
@@ -71,6 +72,16 @@ namespace EasyHortifruti
             DgViewCadGeral.DataMember = "Table";
         }
 
+        public void CarregarComboTipoFonte()
+        {
+            cbTpFontePesquisa.Items.Clear();
+            cbTpFontePesquisa.Items.AddRange(new object[] {
+            "Cliente",
+            "Entregador",
+            "Fornecedor",
+            "Funcionário",
+            "Sócio"});
+        }
         private void FormCadGeral_Load(object sender, EventArgs e)
         {
             CarregarGrid();

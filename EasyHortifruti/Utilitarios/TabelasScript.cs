@@ -108,6 +108,7 @@ namespace EasyHortifruti
                                                 nomefantasia character varying(50)  NOT NULL,
                                                 razaosocial character varying(50)  NOT NULL,
                                                 estadocivil INTEGER NOT NULL DEFAULT 0,
+                                                sexo INTEGER NOT NULL DEFAULT 0,
                                                 contato character varying(15) NULL,
                                                 dtnascaber date NULL,
                                                 prazoPgto INT,

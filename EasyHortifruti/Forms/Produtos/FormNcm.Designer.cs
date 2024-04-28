@@ -34,7 +34,6 @@
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.btnSelecionar = new System.Windows.Forms.Button();
             this.txtFiltro = new EasyHortifruti.Componentes.AltTextBox();
-            this.lblPesquisar = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -84,30 +83,29 @@
             // 
             // txtFiltro
             // 
-            this.txtFiltro.Caption = null;
-            this.txtFiltro.Location = new System.Drawing.Point(5, 40);
+            this.txtFiltro.Caption = "Digite para pesquisar";
+            this.txtFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.txtFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F);
+            this.txtFiltro.Location = new System.Drawing.Point(5, 18);
+            this.txtFiltro.MaxLength = 32767;
+            this.txtFiltro.Multiline = true;
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Obrigatorio = false;
-            this.txtFiltro.Size = new System.Drawing.Size(323, 20);
+            this.txtFiltro.ReadOnly = false;
+            this.txtFiltro.SelectionLength = 0;
+            this.txtFiltro.SelectionStart = 0;
+            this.txtFiltro.Size = new System.Drawing.Size(323, 48);
             this.txtFiltro.TabIndex = 3;
+            this.txtFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.txtFiltro.TextChanged += new System.EventHandler(this.altTextBox1_TextChanged);
-            // 
-            // lblPesquisar
-            // 
-            this.lblPesquisar.AutoSize = true;
-            this.lblPesquisar.Location = new System.Drawing.Point(9, 18);
-            this.lblPesquisar.Name = "lblPesquisar";
-            this.lblPesquisar.Size = new System.Drawing.Size(106, 13);
-            this.lblPesquisar.TabIndex = 4;
-            this.lblPesquisar.Text = "Digite para pesquisar";
             // 
             // FormNcm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(340, 358);
-            this.Controls.Add(this.lblPesquisar);
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.dataGridView1);
@@ -115,7 +113,6 @@
             this.Load += new System.EventHandler(this.form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -127,6 +124,5 @@
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnSelecionar;
         private Componentes.AltTextBox txtFiltro;
-        private System.Windows.Forms.Label lblPesquisar;
     }
 }

@@ -30,13 +30,11 @@ namespace EasyHortifruti
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSubGruposAltInsert));
             this.panel1 = new System.Windows.Forms.Panel();
             this.CbGrupo = new EasyHortifruti.Componentes.AltComboBox();
             this.TbMargemSubGrupo = new EasyHortifruti.Componentes.AltTextBox();
             this.TbDescSubGrupo = new EasyHortifruti.Componentes.AltTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
             this.LbIDSubGrupo = new System.Windows.Forms.Label();
             this.BtGravarSubGrupo = new System.Windows.Forms.Button();
@@ -51,7 +49,6 @@ namespace EasyHortifruti
             this.panel1.Controls.Add(this.CbGrupo);
             this.panel1.Controls.Add(this.TbMargemSubGrupo);
             this.panel1.Controls.Add(this.TbDescSubGrupo);
-            this.panel1.Controls.Add(this.label1);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -64,13 +61,19 @@ namespace EasyHortifruti
             // 
             this.CbGrupo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.CbGrupo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CbGrupo.Caption = null;
+            this.CbGrupo.Caption = "Grupo";
+            this.CbGrupo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.CbGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbGrupo.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.CbGrupo.FormattingEnabled = true;
-            this.CbGrupo.Location = new System.Drawing.Point(34, 162);
+            this.CbGrupo.Location = new System.Drawing.Point(34, 144);
+            this.CbGrupo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbGrupo.Name = "CbGrupo";
             this.CbGrupo.Obrigatorio = false;
-            this.CbGrupo.Size = new System.Drawing.Size(135, 24);
+            this.CbGrupo.SelectedIndex = -1;
+            this.CbGrupo.SelectedItem = null;
+            this.CbGrupo.SelectedText = "";
+            this.CbGrupo.Size = new System.Drawing.Size(135, 48);
             this.CbGrupo.TabIndex = 15;
             // 
             // TbMargemSubGrupo
@@ -113,16 +116,6 @@ namespace EasyHortifruti
             this.TbDescSubGrupo.TabIndex = 12;
             this.TbDescSubGrupo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbDescSubGrupo.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(38, 144);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(46, 15);
-            this.label1.TabIndex = 9;
-            this.label1.Text = "Grupo";
             // 
             // panel3
             // 
@@ -207,7 +200,6 @@ namespace EasyHortifruti
             this.Text = "Easy Hortifruti - Inserir SubGrupo";
             this.Load += new System.EventHandler(this.FormSubGrupoAltInsert_Load);
             this.panel1.ResumeLayout(false);
-            this.panel1.PerformLayout();
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.ResumeLayout(false);
@@ -225,6 +217,5 @@ namespace EasyHortifruti
         private AltComboBox CbGrupo;
         private AltTextBox TbMargemSubGrupo;
         private AltTextBox TbDescSubGrupo;
-        private System.Windows.Forms.Label label1;
     }
 }

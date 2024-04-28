@@ -49,45 +49,7 @@ namespace EasyHortifruti
                 { "nomefantasia", pGeral.NomeFantasia },
                 { "razaosocial", pGeral.RazaoSocial },
                 { "estadocivil", ((int)pGeral.EstadoCivil).ToString() },
-                { "contato", pGeral.Contato },
-                { "dtnascaber", pGeral.DtNascFundacao.ToString("dd/MM/yyyy") },
-                { "cnpj", pGeral.CNPJ },
-                { "cpf", pGeral.CPF },
-                { "rg", pGeral.RG },
-                { "inscrestadual", pGeral.IE },
-                { "inscrmunicipal", pGeral.InscricaoMunicipal },
-                { "orgexpedidor", pGeral.OrgaoExpedidor },
-                { "ufrgexped", pGeral.OrgaoExpedidorUF },
-                { "dddfone", fone.DDD },
-                { "fone", fone.Numero },
-                { "dddcel", celular.DDD },
-                { "celular", celular.Numero },
-                { "cep", pGeral.Endereco.CEP },
-                { "logradouro", pGeral.Endereco.logradouro },
-                { "numero", pGeral.Endereco.Numero.ToString() },
-                { "complemento", pGeral.Endereco.Complemento },
-                { "bairro", pGeral.Endereco.Complemento },
-                { "cidade", pGeral.Endereco.Cidade },
-                { "uf", pGeral.Endereco.UF },
-                { "pontoreferencia", pGeral.PontoReferencia },
-                { "email", pGeral.Email }
-
-            };
-
-            ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaGeral, pCampos));
-        }
-        public void AlterarGeral(Geral pGeral)
-        {
-            Telefone fone = pGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.pessoal);
-            Telefone celular = pGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.celular);
-            
-            Dictionary<string, string> pCampos = new Dictionary<string, string>
-            {
-                { "tppessoa", pGeral.TipoPessoa == TPFJ.Fisica ? "F" : "J" },
-                { "classificacao", ((int)pGeral.Classificacao).ToString() },
-                { "nomefantasia", pGeral.NomeFantasia },
-                { "razaosocial", pGeral.RazaoSocial },
-                { "estadocivil", ((int)pGeral.EstadoCivil).ToString() },
+                { "sexo", ((int)pGeral.Sexo).ToString() },
                 { "contato", pGeral.Contato },
                 { "dtnascaber", pGeral.DtNascFundacao.ToString("dd/MM/yyyy") },
                 { "cnpj", pGeral.CNPJ },
@@ -110,7 +72,48 @@ namespace EasyHortifruti
                 { "uf", pGeral.Endereco.UF },
                 { "pontoreferencia", pGeral.PontoReferencia },
                 { "email", pGeral.Email },
-                { "prazoPgto", pGeral.PrazoPagamento.ToString() },
+                { "prazoPgto", pGeral.PrazoPagamento.ToString() }
+
+            };
+
+            ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaGeral, pCampos));
+        }
+        public void AlterarGeral(Geral pGeral)
+        {
+            Telefone fone = pGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.pessoal);
+            Telefone celular = pGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.celular);
+            
+            Dictionary<string, string> pCampos = new Dictionary<string, string>
+            {
+                { "tppessoa", pGeral.TipoPessoa == TPFJ.Fisica ? "F" : "J" },
+                { "classificacao", ((int)pGeral.Classificacao).ToString() },
+                { "nomefantasia", pGeral.NomeFantasia },
+                { "razaosocial", pGeral.RazaoSocial },
+                { "estadocivil", ((int)pGeral.EstadoCivil).ToString() },
+                { "sexo", ((int)pGeral.Sexo).ToString() },
+                { "contato", pGeral.Contato },
+                { "dtnascaber", pGeral.DtNascFundacao.ToString("dd/MM/yyyy") },
+                { "cnpj", pGeral.CNPJ },
+                { "cpf", pGeral.CPF },
+                { "rg", pGeral.RG },
+                { "inscrestadual", pGeral.IE },
+                { "inscrmunicipal", pGeral.InscricaoMunicipal },
+                { "orgexpedidor", pGeral.OrgaoExpedidor },
+                { "ufrgexped", pGeral.OrgaoExpedidorUF },
+                { "dddfone", fone.DDD },
+                { "fone", fone.Numero },
+                { "dddcel", celular.DDD },
+                { "celular", celular.Numero },
+                { "cep", pGeral.Endereco.CEP },
+                { "logradouro", pGeral.Endereco.logradouro },
+                { "numero", pGeral.Endereco.Numero.ToString() },
+                { "complemento", pGeral.Endereco.Complemento },
+                { "bairro", pGeral.Endereco.Complemento },
+                { "cidade", pGeral.Endereco.Cidade },
+                { "uf", pGeral.Endereco.UF },
+                { "pontoreferencia", pGeral.PontoReferencia },
+                { "email", pGeral.Email },
+                { "prazoPgto", pGeral.PrazoPagamento.ToString() }
             };
 
             ExecutarSemRetorno(TabelasScript.ScriptUpdate(TabelasScript.TabelaGeral, pGeral.ID, pCampos));

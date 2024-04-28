@@ -100,6 +100,7 @@ namespace EasyHortifruti
             pGeral.EstadoCivil = (EstadoCivil)cbEstadoCivil.SelectedIndex >= 0 ? (EstadoCivil)cbEstadoCivil.SelectedIndex : EstadoCivil.NaoDefinido;
             pGeral.Email = TbEmail.Text;
             pGeral.PontoReferencia = TbPontoRef.Text;
+            pGeral.PrazoPagamento = Convert.ToInt32(TbPrazoPgto.Text);
             pGeral.Telefones = new Telefones
             {
                 Fone,
@@ -328,6 +329,7 @@ namespace EasyHortifruti
                         TbNomeFantasia.Text = iGeral.NomeFantasia;
                         TbRazaoSocial.Text = iGeral.RazaoSocial;
                         TbContato.Text = iGeral.Contato;
+                        TbPrazoPgto.Text = iGeral.PrazoPagamento > 0 ? iGeral.PrazoPagamento.ToString() : string.Empty;
                         DtNascAbert.Value = iGeral.DtNascFundacao;
                         tbOrgaoExpRg.Text = iGeral.OrgaoExpedidor;
                         tbEstadoRg.Text = iGeral.OrgaoExpedidorUF;

@@ -109,7 +109,8 @@ namespace EasyHortifruti
                 { "cidade", pGeral.Endereco.Cidade },
                 { "uf", pGeral.Endereco.UF },
                 { "pontoreferencia", pGeral.PontoReferencia },
-                { "email", pGeral.Email }
+                { "email", pGeral.Email },
+                { "prazoPgto", pGeral.PrazoPagamento.ToString() },
             };
 
             ExecutarSemRetorno(TabelasScript.ScriptUpdate(TabelasScript.TabelaGeral, pGeral.ID, pCampos));

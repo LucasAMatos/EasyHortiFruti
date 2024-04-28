@@ -204,6 +204,11 @@ namespace EasyHortifruti.Componentes
         {
             switch (Tipo)
             {
+                case TipoCampo.NUMERO:
+                    // Permite apenas números e teclas de controle (como Backspace)
+                    if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+                        e.Handled = true;
+                    return;
                 case TipoCampo.TELEFONE:
                     // Permite apenas números e teclas de controle (como Backspace)
                     if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -349,7 +354,8 @@ namespace EasyHortifruti.Componentes
             CNPJ,
             TELEFONE,
             CEP,
-            MOEDA
+            MOEDA,
+            NUMERO
         }
 
         #endregion Enum

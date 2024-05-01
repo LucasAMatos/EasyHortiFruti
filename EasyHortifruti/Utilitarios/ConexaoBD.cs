@@ -45,7 +45,7 @@ namespace EasyHortifruti
             Dictionary<string, string> pCampos = new Dictionary<string, string>
             {
                 { "tppessoa", pGeral.TipoPessoa == TPFJ.Fisica ? "F" : "J" },
-                { "classificacao", pGeral.Classificacao.ToString() },
+                { "classificacao", ((int)pGeral.Classificacao).ToString() },
                 { "nomefantasia", pGeral.NomeFantasia },
                 { "razaosocial", pGeral.RazaoSocial },
                 { "estadocivil", ((int)pGeral.EstadoCivil).ToString() },
@@ -63,7 +63,7 @@ namespace EasyHortifruti
                 { "logradouro", pGeral.Endereco.logradouro },
                 { "numero", pGeral.Endereco.Numero.ToString() },
                 { "complemento", pGeral.Endereco.Complemento },
-                { "bairro", pGeral.Endereco.Complemento },
+                { "bairro", pGeral.Endereco.Bairro },
                 { "cidade", pGeral.Endereco.Cidade },
                 { "uf", pGeral.Endereco.UF },
                 { "pontoreferencia", pGeral.PontoReferencia },
@@ -100,7 +100,7 @@ namespace EasyHortifruti
                 { "logradouro", pGeral.Endereco.logradouro },
                 { "numero", pGeral.Endereco.Numero.ToString() },
                 { "complemento", pGeral.Endereco.Complemento },
-                { "bairro", pGeral.Endereco.Complemento },
+                { "bairro", pGeral.Endereco.Bairro },
                 { "cidade", pGeral.Endereco.Cidade },
                 { "uf", pGeral.Endereco.UF },
                 { "pontoreferencia", pGeral.PontoReferencia },

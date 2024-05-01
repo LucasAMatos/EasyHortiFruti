@@ -8,6 +8,7 @@ namespace EasyHortifruti
         public FormGeralCad()
         {
             InitializeComponent();
+            configuraGridPadrao(DgViewCadGeral);
             CarregarComboTipoFonte();
         }
 

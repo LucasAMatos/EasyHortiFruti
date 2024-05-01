@@ -30,6 +30,7 @@ namespace EasyHortifruti
         public FormGruposCad()
         {
             InitializeComponent();
+            configuraGridPadrao(DgViewCadGrupos);
         }
 
         #endregion Construtor

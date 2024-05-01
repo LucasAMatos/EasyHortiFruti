@@ -111,7 +111,7 @@ namespace EasyHortifruti
                 DataSet ds = new ConexaoBD().ConsultarSubGrupo(Id);
 
                 TbDescSubGrupo.Text = ds.Tables[0].Rows[0]["nome_subgrupo"].ToString();
-                CbGrupo.Text = ds.Tables[0].Rows[0]["nome_grupo"].ToString();
+                CbGrupo.SelecionarIndexPeloConteudo(ds.Tables[0].Rows[0]["nome_grupo"].ToString());
                 TbMargemSubGrupo.Text = ds.Tables[0].Rows[0]["margem_subgrupo"].ToString();
                 LbIDSubGrupo.Text = ds.Tables[0].Rows[0]["id_recno"].ToString();
             }

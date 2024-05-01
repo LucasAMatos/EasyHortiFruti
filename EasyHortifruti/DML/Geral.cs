@@ -206,84 +206,111 @@ namespace EasyHortifruti.DML
     public enum UF
     {
         [Description("Acre")]
+        [DefaultValue("AC")]
         AC = 0,
 
         [Description("Alagoas")]
+        [DefaultValue("AL")]
         AL = 1,
 
         [Description("Amapá")]
+        [DefaultValue("AP")]
         AP = 2,
 
         [Description("Amazonas")]
+        [DefaultValue("AM")]
         AM = 3,
 
         [Description("Bahia")]
+        [DefaultValue("BA")]
         BA = 4,
 
         [Description("Ceará")]
+        [DefaultValue("CE")]
         CE = 5,
 
         [Description("Distrito Federal")]
+        [DefaultValue("DF")]
         DF = 6,
 
         [Description("Espirito Santo")]
+        [DefaultValue("ES")]
         ES = 7,
 
         [Description("Goiás")]
+        [DefaultValue("GO")]
         GO = 8,
 
         [Description("Maranhão")]
+        [DefaultValue("MA")]
         MA = 9,
 
         [Description("Mato Grosso")]
+        [DefaultValue("MT")]
         MT = 10,
 
         [Description("Mato Grosso do Sul")]
+        [DefaultValue("MS")]
         MS = 11,
 
         [Description("Minas Gerais")]
+        [DefaultValue("MG")]
         MG = 12,
 
         [Description("Pará")]
+        [DefaultValue("PA")]
         PA = 13,
 
         [Description("Paraíba")]
+        [DefaultValue("PB")]
         PB = 14,
 
         [Description("Paraná")]
+        [DefaultValue("PR")]
         PR = 15,
 
         [Description("Pernambuco")]
+        [DefaultValue("PE")]
         PE = 16,
 
         [Description("Piauí")]
+        [DefaultValue("PI")]
         PI = 17,
 
         [Description("Rio de Janeiro")]
+        [DefaultValue("RJ")]
         RJ = 18,
 
         [Description("Rio Grande do Norte")]
+        [DefaultValue("RN")]
         RN = 19,
 
         [Description("Rio Grande do Sul")]
+        [DefaultValue("RS")]
         RS = 20,
 
         [Description("Rondônia")]
+        [DefaultValue("RO")]
         RO = 21,
 
         [Description("Roraima")]
+        [DefaultValue("RR")]
         RR = 22,
 
         [Description("Santa Catarina")]
+        [DefaultValue("SC")]
         SC = 23,
 
         [Description("São Paulo")]
+        [DefaultValue("SP")]
         SP = 24,
 
         [Description("Sergipe")]
+        [DefaultValue("SE")]
         SE = 25,
 
         [Description("Tocantins")]
+        [DefaultValue("TO")]
         TO = 27
     }
 

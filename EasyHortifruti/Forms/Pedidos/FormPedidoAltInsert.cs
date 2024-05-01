@@ -82,6 +82,8 @@ namespace EasyHortifruti
             dsProdutos = new DataSet();
             InitializeComponent();
 
+            configuraGridPadrao(DgvPedidoProdutos);
+
             TbDesconto.TextChanged += TbFiltro_TbDescontoTextChanged;
             // Armazenar a cor original do label
             originalColor = LbAviso.ForeColor;

@@ -67,10 +67,8 @@ namespace EasyHortifruti.DML
                     NomeFantasia = dr["nomefantasia"].ToString();
 
                 if (dr["estadocivil"] != null && dr["estadocivil"] != DBNull.Value)
-                    EstadoCivil = (EstadoCivil)Convert.ToInt32(dr["estadocivil"]);
 
                 if (dr["sexo"] != null && dr["sexo"] != DBNull.Value)
-                    Sexo = (Sexo)Convert.ToInt32(dr["sexo"]);
 
                 if (dr["razaosocial"] != null)
                     RazaoSocial = dr["razaosocial"].ToString();
@@ -81,17 +79,22 @@ namespace EasyHortifruti.DML
                 if (dr["dtnascaber"] != null)
                     DtNascFundacao = Convert.ToDateTime(dr["dtnascaber"]);
 
-                if (dr["cnpj"] != null && !string.IsNullOrEmpty(dr["cnpj"].ToString().Trim()))
-                    CNPJ = Regex.Replace(dr["cnpj"].ToString(), @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
+                if (TipoPessoa == TPFJ.Juridica)
+                {
+                    if (dr["cnpj_cpf"] != null && !string.IsNullOrEmpty(dr["cnpj_cpf"].ToString().Trim()))
+                        CNPJ = Regex.Replace(dr["cnpj_cpf"].ToString(), @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
 
-                if (dr["cpf"] != null && !string.IsNullOrEmpty(dr["cpf"].ToString().Trim()))
-                    CPF = Regex.Replace(dr["cpf"].ToString(), @"(\d{3})(\d{3})(\d{3})(\d{2})", @"$1.$2.$3-$4");
+                    if (dr["ie_rg"] != null)
+                        IE = dr["ie_rg"].ToString();
+                }
+                else 
+                {
+                    if (dr["cnpj_cpf"] != null && !string.IsNullOrEmpty(dr["cnpj_cpf"].ToString().Trim()))
+                        CPF = Regex.Replace(dr["cnpj_cpf"].ToString(), @"(\d{3})(\d{3})(\d{3})(\d{2})", @"$1.$2.$3-$4");
 
-                if (dr["rg"] != null)
-                    RG = dr["rg"].ToString();
-
-                if (dr["inscrestadual"] != null)
-                    IE = dr["inscrestadual"].ToString();
+                    if (dr["ie_rg"] != null)
+                        RG = dr["ie_rg"].ToString();
+                }
 
                 if (dr["inscrmunicipal"] != null)
                     InscricaoMunicipal = dr["inscrmunicipal"].ToString();

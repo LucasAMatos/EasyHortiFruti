@@ -34,6 +34,19 @@ namespace EasyHortifruti
             this.panelCadGeralForm = new System.Windows.Forms.Panel();
             this.panelFormCadGeral = new System.Windows.Forms.Panel();
             this.DgViewCadGeral = new System.Windows.Forms.DataGridView();
+            this.panelPesquisarCadGeral = new System.Windows.Forms.Panel();
+            this.cbTpFontePesquisa = new EasyHortifruti.Componentes.AltComboBox();
+            this.tbPesquisaGeral = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3FormCadGeralBotoes = new System.Windows.Forms.Panel();
+            this.BtSairCadGeral = new System.Windows.Forms.Button();
+            this.BtPesquisarCadGeral = new System.Windows.Forms.Button();
+            this.BtImprimirCadGeral = new System.Windows.Forms.Button();
+            this.BtExcluirCadGeral = new System.Windows.Forms.Button();
+            this.BtEditarCadGeral = new System.Windows.Forms.Button();
+            this.BtIncluirCadGeral = new System.Windows.Forms.Button();
+            this.panelTituloCadGeral = new System.Windows.Forms.Panel();
             this.NomeFantasia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RazaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -48,19 +61,6 @@ namespace EasyHortifruti
             this.celular = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelPesquisarCadGeral = new System.Windows.Forms.Panel();
-            this.cbTpFontePesquisa = new EasyHortifruti.Componentes.AltComboBox();
-            this.tbPesquisaGeral = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3FormCadGeralBotoes = new System.Windows.Forms.Panel();
-            this.BtSairCadGeral = new System.Windows.Forms.Button();
-            this.BtPesquisarCadGeral = new System.Windows.Forms.Button();
-            this.BtImprimirCadGeral = new System.Windows.Forms.Button();
-            this.BtExcluirCadGeral = new System.Windows.Forms.Button();
-            this.BtEditarCadGeral = new System.Windows.Forms.Button();
-            this.BtIncluirCadGeral = new System.Windows.Forms.Button();
-            this.panelTituloCadGeral = new System.Windows.Forms.Panel();
             this.panelCadGeralForm.SuspendLayout();
             this.panelFormCadGeral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadGeral)).BeginInit();
@@ -116,90 +116,6 @@ namespace EasyHortifruti
             this.DgViewCadGeral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgViewCadGeral.Size = new System.Drawing.Size(884, 404);
             this.DgViewCadGeral.TabIndex = 0;
-            // 
-            // NomeFantasia
-            // 
-            this.NomeFantasia.DataPropertyName = "nomefantasia";
-            this.NomeFantasia.HeaderText = "Nome / Fantasia";
-            this.NomeFantasia.Name = "NomeFantasia";
-            // 
-            // RazaoSocial
-            // 
-            this.RazaoSocial.DataPropertyName = "razaosocial";
-            this.RazaoSocial.HeaderText = "Razão Social";
-            this.RazaoSocial.Name = "RazaoSocial";
-            // 
-            // CPF
-            // 
-            this.CPF.DataPropertyName = "CPF";
-            this.CPF.HeaderText = "CNPJ / CPF";
-            this.CPF.Name = "CPF";
-            // 
-            // RG
-            // 
-            this.RG.DataPropertyName = "RG";
-            this.RG.HeaderText = "I.E. / RG.";
-            this.RG.Name = "RG";
-            // 
-            // logradouro
-            // 
-            this.logradouro.DataPropertyName = "logradouro";
-            this.logradouro.HeaderText = "Endereço";
-            this.logradouro.Name = "logradouro";
-            // 
-            // numero
-            // 
-            this.numero.DataPropertyName = "numero";
-            this.numero.HeaderText = "Nº";
-            this.numero.Name = "numero";
-            // 
-            // complemento
-            // 
-            this.complemento.DataPropertyName = "complemento";
-            this.complemento.HeaderText = "Complemento";
-            this.complemento.Name = "complemento";
-            // 
-            // bairro
-            // 
-            this.bairro.DataPropertyName = "bairro";
-            this.bairro.HeaderText = "Bairro";
-            this.bairro.Name = "bairro";
-            // 
-            // cidade
-            // 
-            this.cidade.DataPropertyName = "cidade";
-            this.cidade.HeaderText = "Cidade";
-            this.cidade.Name = "cidade";
-            // 
-            // uf
-            // 
-            this.uf.DataPropertyName = "uf";
-            this.uf.HeaderText = "UF";
-            this.uf.Name = "uf";
-            // 
-            // fone
-            // 
-            this.fone.DataPropertyName = "fone";
-            this.fone.HeaderText = "Fone";
-            this.fone.Name = "fone";
-            // 
-            // celular
-            // 
-            this.celular.DataPropertyName = "celular";
-            this.celular.HeaderText = "Celular";
-            this.celular.Name = "celular";
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "E-mail";
-            this.email.Name = "email";
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "id_recno";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
             // 
             // panelPesquisarCadGeral
             // 
@@ -377,6 +293,90 @@ namespace EasyHortifruti
             this.panelTituloCadGeral.Name = "panelTituloCadGeral";
             this.panelTituloCadGeral.Size = new System.Drawing.Size(884, 59);
             this.panelTituloCadGeral.TabIndex = 0;
+            // 
+            // NomeFantasia
+            // 
+            this.NomeFantasia.DataPropertyName = "nomefantasia";
+            this.NomeFantasia.HeaderText = "Nome / Fantasia";
+            this.NomeFantasia.Name = "NomeFantasia";
+            // 
+            // RazaoSocial
+            // 
+            this.RazaoSocial.DataPropertyName = "razaosocial";
+            this.RazaoSocial.HeaderText = "Razão Social";
+            this.RazaoSocial.Name = "RazaoSocial";
+            // 
+            // CPF
+            // 
+            this.CPF.DataPropertyName = "cnpj_cpf";
+            this.CPF.HeaderText = "CNPJ / CPF";
+            this.CPF.Name = "CPF";
+            // 
+            // RG
+            // 
+            this.RG.DataPropertyName = "ie_rg";
+            this.RG.HeaderText = "I.E. / RG.";
+            this.RG.Name = "RG";
+            // 
+            // logradouro
+            // 
+            this.logradouro.DataPropertyName = "logradouro";
+            this.logradouro.HeaderText = "Endereço";
+            this.logradouro.Name = "logradouro";
+            // 
+            // numero
+            // 
+            this.numero.DataPropertyName = "numero";
+            this.numero.HeaderText = "Nº";
+            this.numero.Name = "numero";
+            // 
+            // complemento
+            // 
+            this.complemento.DataPropertyName = "complemento";
+            this.complemento.HeaderText = "Complemento";
+            this.complemento.Name = "complemento";
+            // 
+            // bairro
+            // 
+            this.bairro.DataPropertyName = "bairro";
+            this.bairro.HeaderText = "Bairro";
+            this.bairro.Name = "bairro";
+            // 
+            // cidade
+            // 
+            this.cidade.DataPropertyName = "cidade";
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            // 
+            // uf
+            // 
+            this.uf.DataPropertyName = "uf";
+            this.uf.HeaderText = "UF";
+            this.uf.Name = "uf";
+            // 
+            // fone
+            // 
+            this.fone.DataPropertyName = "fone";
+            this.fone.HeaderText = "Fone";
+            this.fone.Name = "fone";
+            // 
+            // celular
+            // 
+            this.celular.DataPropertyName = "celular";
+            this.celular.HeaderText = "Celular";
+            this.celular.Name = "celular";
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "E-mail";
+            this.email.Name = "email";
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id_recno";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
             // 
             // FormGeralCad
             // 

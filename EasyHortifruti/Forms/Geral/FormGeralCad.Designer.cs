@@ -49,6 +49,7 @@ namespace EasyHortifruti
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelPesquisarCadGeral = new System.Windows.Forms.Panel();
+            this.cbTpFontePesquisa = new EasyHortifruti.Componentes.AltComboBox();
             this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
             this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
             this.panel3FormCadGeralBotoes = new System.Windows.Forms.Panel();
@@ -58,7 +59,6 @@ namespace EasyHortifruti
             this.BtEditarCadGeral = new System.Windows.Forms.Button();
             this.BtIncluirCadGeral = new System.Windows.Forms.Button();
             this.panelTituloCadGeral = new System.Windows.Forms.Panel();
-            this.cbTpFontePesquisa = new EasyHortifruti.Componentes.AltComboBox();
             this.panelCadGeralForm.SuspendLayout();
             this.panelFormCadGeral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadGeral)).BeginInit();
@@ -210,15 +210,32 @@ namespace EasyHortifruti
             this.panelPesquisarCadGeral.Size = new System.Drawing.Size(884, 45);
             this.panelPesquisarCadGeral.TabIndex = 4;
             // 
+            // cbTpFontePesquisa
+            // 
+            this.cbTpFontePesquisa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbTpFontePesquisa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbTpFontePesquisa.Caption = "TipoFonte";
+            this.cbTpFontePesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbTpFontePesquisa.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cbTpFontePesquisa.FormattingEnabled = true;
+            this.cbTpFontePesquisa.Location = new System.Drawing.Point(718, 3);
+            this.cbTpFontePesquisa.Name = "cbTpFontePesquisa";
+            this.cbTpFontePesquisa.Obrigatorio = false;
+            this.cbTpFontePesquisa.SelectedIndex = -1;
+            this.cbTpFontePesquisa.SelectedItem = null;
+            this.cbTpFontePesquisa.SelectedText = "";
+            this.cbTpFontePesquisa.Size = new System.Drawing.Size(163, 38);
+            this.cbTpFontePesquisa.TabIndex = 7;
+            // 
             // cbFiltro
             // 
             this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.cbFiltro.Caption = "Campo para Filtrar";
             this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.cbFiltro.FormattingEnabled = true;
-            this.cbFiltro.Location = new System.Drawing.Point(12, 3);
+            this.cbFiltro.Location = new System.Drawing.Point(3, 3);
             this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Obrigatorio = false;
             this.cbFiltro.SelectedIndex = -1;
@@ -230,9 +247,9 @@ namespace EasyHortifruti
             // tbFiltro
             // 
             this.tbFiltro.Caption = "Digite para Filtrar";
-            this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFiltro.Location = new System.Drawing.Point(181, 3);
+            this.tbFiltro.Location = new System.Drawing.Point(173, 3);
             this.tbFiltro.MaxLength = 32767;
             this.tbFiltro.Multiline = true;
             this.tbFiltro.Name = "tbFiltro";
@@ -240,7 +257,7 @@ namespace EasyHortifruti
             this.tbFiltro.ReadOnly = false;
             this.tbFiltro.SelectionLength = 0;
             this.tbFiltro.SelectionStart = 0;
-            this.tbFiltro.Size = new System.Drawing.Size(391, 36);
+            this.tbFiltro.Size = new System.Drawing.Size(539, 36);
             this.tbFiltro.TabIndex = 6;
             this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -346,23 +363,6 @@ namespace EasyHortifruti
             this.panelTituloCadGeral.Name = "panelTituloCadGeral";
             this.panelTituloCadGeral.Size = new System.Drawing.Size(884, 59);
             this.panelTituloCadGeral.TabIndex = 0;
-            // 
-            // cbTpFontePesquisa
-            // 
-            this.cbTpFontePesquisa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.cbTpFontePesquisa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.cbTpFontePesquisa.Caption = "TipoFonte";
-            this.cbTpFontePesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbTpFontePesquisa.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbTpFontePesquisa.FormattingEnabled = true;
-            this.cbTpFontePesquisa.Location = new System.Drawing.Point(718, 4);
-            this.cbTpFontePesquisa.Name = "cbTpFontePesquisa";
-            this.cbTpFontePesquisa.Obrigatorio = false;
-            this.cbTpFontePesquisa.SelectedIndex = -1;
-            this.cbTpFontePesquisa.SelectedItem = null;
-            this.cbTpFontePesquisa.SelectedText = "";
-            this.cbTpFontePesquisa.Size = new System.Drawing.Size(163, 38);
-            this.cbTpFontePesquisa.TabIndex = 7;
             // 
             // FormGeralCad
             // 

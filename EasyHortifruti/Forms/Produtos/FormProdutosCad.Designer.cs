@@ -46,13 +46,18 @@
             this.BtEditarProduto = new System.Windows.Forms.Button();
             this.BtIncluirProduto = new System.Windows.Forms.Button();
             this.panelTituloCadProd = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
+            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
             this.panel1FormCadProd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadProd)).BeginInit();
             this.panel3FormCadProdBotoes.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1FormCadProd
             // 
+            this.panel1FormCadProd.Controls.Add(this.tableLayoutPanel2);
             this.panel1FormCadProd.Controls.Add(this.dtGridViewCadProd);
             this.panel1FormCadProd.Controls.Add(this.panel3FormCadProdBotoes);
             this.panel1FormCadProd.Controls.Add(this.panelTituloCadProd);
@@ -78,12 +83,11 @@
             this.lbGrupo,
             this.lbSubGrupo,
             this.ID});
-            this.dtGridViewCadProd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtGridViewCadProd.Location = new System.Drawing.Point(0, 127);
+            this.dtGridViewCadProd.Location = new System.Drawing.Point(0, 173);
             this.dtGridViewCadProd.Name = "dtGridViewCadProd";
             this.dtGridViewCadProd.ReadOnly = true;
             this.dtGridViewCadProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtGridViewCadProd.Size = new System.Drawing.Size(754, 434);
+            this.dtGridViewCadProd.Size = new System.Drawing.Size(754, 388);
             this.dtGridViewCadProd.TabIndex = 2;
             // 
             // lbDescricao
@@ -250,6 +254,58 @@
             this.panelTituloCadProd.Size = new System.Drawing.Size(754, 66);
             this.panelTituloCadProd.TabIndex = 0;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel2.Controls.Add(this.cbFiltro, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tbFiltro, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 127);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(754, 44);
+            this.tableLayoutPanel2.TabIndex = 7;
+            // 
+            // cbFiltro
+            // 
+            this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbFiltro.Caption = "Campo para Filtrar";
+            this.cbFiltro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cbFiltro.FormattingEnabled = true;
+            this.cbFiltro.Location = new System.Drawing.Point(3, 3);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Obrigatorio = false;
+            this.cbFiltro.SelectedIndex = -1;
+            this.cbFiltro.SelectedItem = null;
+            this.cbFiltro.SelectedText = "";
+            this.cbFiltro.Size = new System.Drawing.Size(220, 38);
+            this.cbFiltro.TabIndex = 0;
+            // 
+            // tbFiltro
+            // 
+            this.tbFiltro.Caption = "Digite para Filtrar";
+            this.tbFiltro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltro.Location = new System.Drawing.Point(229, 3);
+            this.tbFiltro.MaxLength = 32767;
+            this.tbFiltro.Multiline = true;
+            this.tbFiltro.Name = "tbFiltro";
+            this.tbFiltro.Obrigatorio = false;
+            this.tbFiltro.ReadOnly = false;
+            this.tbFiltro.SelectionLength = 0;
+            this.tbFiltro.SelectionStart = 0;
+            this.tbFiltro.Size = new System.Drawing.Size(522, 38);
+            this.tbFiltro.TabIndex = 1;
+            this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            // 
             // FormCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -264,6 +320,7 @@
             this.panel1FormCadProd.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadProd)).EndInit();
             this.panel3FormCadProdBotoes.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -287,5 +344,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lbGrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn lbSubGrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Componentes.AltComboBox cbFiltro;
+        private Componentes.AltTextBox tbFiltro;
     }
 }

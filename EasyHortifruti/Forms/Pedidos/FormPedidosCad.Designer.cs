@@ -30,92 +30,119 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidos));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.panelCadPedidos = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dtGridViewCadPedidos = new System.Windows.Forms.DataGridView();
+            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
+            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
             this.panelBotoesCadPedidos = new System.Windows.Forms.Panel();
             this.btSairPedido = new System.Windows.Forms.Button();
-            this.btPesquisarPedido = new System.Windows.Forms.Button();
             this.btImprimirPedido = new System.Windows.Forms.Button();
             this.btExcluirPedido = new System.Windows.Forms.Button();
             this.btEditarPedido = new System.Windows.Forms.Button();
             this.btIncluirPedido = new System.Windows.Forms.Button();
+            this.panelCadPedidos = new System.Windows.Forms.Panel();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelTituloCadPedidos = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
+            this.tableLayoutPanel1.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
+            this.panelBotoesCadPedidos.SuspendLayout();
             this.panelCadPedidos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadPedidos)).BeginInit();
-            this.panelBotoesCadPedidos.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.panelCadPedidos);
-            this.panel1.Controls.Add(this.panelBotoesCadPedidos);
-            this.panel1.Controls.Add(this.panelTituloCadPedidos);
+            this.panel1.Controls.Add(this.tableLayoutPanel1);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(743, 563);
             this.panel1.TabIndex = 0;
             // 
-            // panelCadPedidos
+            // tableLayoutPanel1
             // 
-            this.panelCadPedidos.Controls.Add(this.dataGridView1);
-            this.panelCadPedidos.Controls.Add(this.dtGridViewCadPedidos);
-            this.panelCadPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCadPedidos.Location = new System.Drawing.Point(0, 119);
-            this.panelCadPedidos.Name = "panelCadPedidos";
-            this.panelCadPedidos.Size = new System.Drawing.Size(743, 444);
-            this.panelCadPedidos.TabIndex = 4;
+            this.tableLayoutPanel1.ColumnCount = 1;
+            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.panelBotoesCadPedidos, 0, 1);
+            this.tableLayoutPanel1.Controls.Add(this.panelCadPedidos, 0, 3);
+            this.tableLayoutPanel1.Controls.Add(this.panelTituloCadPedidos, 0, 0);
+            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
+            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
+            this.tableLayoutPanel1.RowCount = 4;
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 60F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 50F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(743, 563);
+            this.tableLayoutPanel1.TabIndex = 2;
             // 
-            // dataGridView1
+            // tableLayoutPanel2
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(743, 444);
-            this.dataGridView1.TabIndex = 1;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel2.Controls.Add(this.cbFiltro, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tbFiltro, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 128);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(737, 44);
+            this.tableLayoutPanel2.TabIndex = 5;
             // 
-            // Column1
+            // cbFiltro
             // 
-            this.Column1.HeaderText = "Cliente";
-            this.Column1.Name = "Column1";
+            this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbFiltro.Caption = "Campo para Filtrar";
+            this.cbFiltro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cbFiltro.FormattingEnabled = true;
+            this.cbFiltro.Location = new System.Drawing.Point(3, 3);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Obrigatorio = false;
+            this.cbFiltro.SelectedIndex = -1;
+            this.cbFiltro.SelectedItem = null;
+            this.cbFiltro.SelectedText = "";
+            this.cbFiltro.Size = new System.Drawing.Size(215, 38);
+            this.cbFiltro.TabIndex = 0;
             // 
-            // Column2
+            // tbFiltro
             // 
-            this.Column2.HeaderText = "Data";
-            this.Column2.Name = "Column2";
-            // 
-            // dtGridViewCadPedidos
-            // 
-            this.dtGridViewCadPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtGridViewCadPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtGridViewCadPedidos.Location = new System.Drawing.Point(0, 0);
-            this.dtGridViewCadPedidos.Name = "dtGridViewCadPedidos";
-            this.dtGridViewCadPedidos.Size = new System.Drawing.Size(743, 444);
-            this.dtGridViewCadPedidos.TabIndex = 0;
+            this.tbFiltro.Caption = "Digite para Filtrar";
+            this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltro.Location = new System.Drawing.Point(224, 3);
+            this.tbFiltro.MaxLength = 32767;
+            this.tbFiltro.Multiline = true;
+            this.tbFiltro.Name = "tbFiltro";
+            this.tbFiltro.Obrigatorio = false;
+            this.tbFiltro.ReadOnly = false;
+            this.tbFiltro.SelectionLength = 0;
+            this.tbFiltro.SelectionStart = 0;
+            this.tbFiltro.Size = new System.Drawing.Size(391, 33);
+            this.tbFiltro.TabIndex = 1;
+            this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
             // panelBotoesCadPedidos
             // 
             this.panelBotoesCadPedidos.Controls.Add(this.btSairPedido);
-            this.panelBotoesCadPedidos.Controls.Add(this.btPesquisarPedido);
             this.panelBotoesCadPedidos.Controls.Add(this.btImprimirPedido);
             this.panelBotoesCadPedidos.Controls.Add(this.btExcluirPedido);
             this.panelBotoesCadPedidos.Controls.Add(this.btEditarPedido);
             this.panelBotoesCadPedidos.Controls.Add(this.btIncluirPedido);
-            this.panelBotoesCadPedidos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelBotoesCadPedidos.Location = new System.Drawing.Point(0, 58);
+            this.panelBotoesCadPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelBotoesCadPedidos.Location = new System.Drawing.Point(3, 63);
             this.panelBotoesCadPedidos.Name = "panelBotoesCadPedidos";
-            this.panelBotoesCadPedidos.Size = new System.Drawing.Size(743, 61);
+            this.panelBotoesCadPedidos.Size = new System.Drawing.Size(737, 59);
             this.panelBotoesCadPedidos.TabIndex = 3;
             // 
             // btSairPedido
@@ -127,29 +154,14 @@
             this.btSairPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btSairPedido.FlatAppearance.BorderSize = 0;
             this.btSairPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSairPedido.Location = new System.Drawing.Point(683, 3);
+            this.btSairPedido.Location = new System.Drawing.Point(677, 3);
             this.btSairPedido.Name = "btSairPedido";
             this.btSairPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btSairPedido.Size = new System.Drawing.Size(46, 52);
+            this.btSairPedido.Size = new System.Drawing.Size(46, 53);
             this.btSairPedido.TabIndex = 5;
             this.btSairPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btSairPedido.UseVisualStyleBackColor = false;
             this.btSairPedido.Click += new System.EventHandler(this.btSairPedido_Click);
-            // 
-            // btPesquisarPedido
-            // 
-            this.btPesquisarPedido.BackColor = System.Drawing.Color.Transparent;
-            this.btPesquisarPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btPesquisarPedido.BackgroundImage")));
-            this.btPesquisarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btPesquisarPedido.FlatAppearance.BorderSize = 0;
-            this.btPesquisarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPesquisarPedido.Location = new System.Drawing.Point(168, 4);
-            this.btPesquisarPedido.Name = "btPesquisarPedido";
-            this.btPesquisarPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btPesquisarPedido.Size = new System.Drawing.Size(46, 52);
-            this.btPesquisarPedido.TabIndex = 4;
-            this.btPesquisarPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btPesquisarPedido.UseVisualStyleBackColor = false;
             // 
             // btImprimirPedido
             // 
@@ -158,7 +170,7 @@
             this.btImprimirPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btImprimirPedido.FlatAppearance.BorderSize = 0;
             this.btImprimirPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btImprimirPedido.Location = new System.Drawing.Point(220, 4);
+            this.btImprimirPedido.Location = new System.Drawing.Point(173, 4);
             this.btImprimirPedido.Name = "btImprimirPedido";
             this.btImprimirPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btImprimirPedido.Size = new System.Drawing.Size(46, 52);
@@ -214,14 +226,46 @@
             this.btIncluirPedido.UseVisualStyleBackColor = false;
             this.btIncluirPedido.Click += new System.EventHandler(this.btIncluirPedido_Click);
             // 
+            // panelCadPedidos
+            // 
+            this.panelCadPedidos.Controls.Add(this.dataGridView1);
+            this.panelCadPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelCadPedidos.Location = new System.Drawing.Point(3, 178);
+            this.panelCadPedidos.Name = "panelCadPedidos";
+            this.panelCadPedidos.Size = new System.Drawing.Size(737, 382);
+            this.panelCadPedidos.TabIndex = 4;
+            // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.Column1,
+            this.Column2});
+            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(743, 375);
+            this.dataGridView1.TabIndex = 1;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Cliente";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Data";
+            this.Column2.Name = "Column2";
+            // 
             // panelTituloCadPedidos
             // 
             this.panelTituloCadPedidos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelTituloCadPedidos.BackgroundImage")));
             this.panelTituloCadPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelTituloCadPedidos.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panelTituloCadPedidos.Location = new System.Drawing.Point(0, 0);
+            this.panelTituloCadPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTituloCadPedidos.Location = new System.Drawing.Point(3, 3);
             this.panelTituloCadPedidos.Name = "panelTituloCadPedidos";
-            this.panelTituloCadPedidos.Size = new System.Drawing.Size(743, 58);
+            this.panelTituloCadPedidos.Size = new System.Drawing.Size(737, 54);
             this.panelTituloCadPedidos.TabIndex = 0;
             // 
             // FormPedidos
@@ -237,10 +281,11 @@
             this.Text = "EasyHortifruti - Pedidos";
             this.Load += new System.EventHandler(this.FormPedidos_Load);
             this.panel1.ResumeLayout(false);
+            this.tableLayoutPanel1.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
+            this.panelBotoesCadPedidos.ResumeLayout(false);
             this.panelCadPedidos.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadPedidos)).EndInit();
-            this.panelBotoesCadPedidos.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -251,15 +296,17 @@
         private System.Windows.Forms.Panel panelTituloCadPedidos;
         private System.Windows.Forms.Panel panelBotoesCadPedidos;
         private System.Windows.Forms.Button btSairPedido;
-        private System.Windows.Forms.Button btPesquisarPedido;
         private System.Windows.Forms.Button btImprimirPedido;
         private System.Windows.Forms.Button btExcluirPedido;
         private System.Windows.Forms.Button btEditarPedido;
         private System.Windows.Forms.Button btIncluirPedido;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panelCadPedidos;
-        private System.Windows.Forms.DataGridView dtGridViewCadPedidos;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Componentes.AltComboBox cbFiltro;
+        private Componentes.AltTextBox tbFiltro;
     }
 }

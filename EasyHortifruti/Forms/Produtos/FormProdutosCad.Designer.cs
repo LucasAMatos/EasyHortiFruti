@@ -41,7 +41,6 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3FormCadProdBotoes = new System.Windows.Forms.Panel();
             this.BtSairCadProduto = new System.Windows.Forms.Button();
-            this.BtPesquisarProduto = new System.Windows.Forms.Button();
             this.BtImprimirProduto = new System.Windows.Forms.Button();
             this.BtExcluirProduto = new System.Windows.Forms.Button();
             this.BtEditarProduto = new System.Windows.Forms.Button();
@@ -148,7 +147,6 @@
             // panel3FormCadProdBotoes
             // 
             this.panel3FormCadProdBotoes.Controls.Add(this.BtSairCadProduto);
-            this.panel3FormCadProdBotoes.Controls.Add(this.BtPesquisarProduto);
             this.panel3FormCadProdBotoes.Controls.Add(this.BtImprimirProduto);
             this.panel3FormCadProdBotoes.Controls.Add(this.BtExcluirProduto);
             this.panel3FormCadProdBotoes.Controls.Add(this.BtEditarProduto);
@@ -177,21 +175,6 @@
             this.BtSairCadProduto.UseVisualStyleBackColor = false;
             this.BtSairCadProduto.Click += new System.EventHandler(this.BtSairCadProduto_Click);
             // 
-            // BtPesquisarProduto
-            // 
-            this.BtPesquisarProduto.BackColor = System.Drawing.Color.Transparent;
-            this.BtPesquisarProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtPesquisarProduto.BackgroundImage")));
-            this.BtPesquisarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtPesquisarProduto.FlatAppearance.BorderSize = 0;
-            this.BtPesquisarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtPesquisarProduto.Location = new System.Drawing.Point(168, 4);
-            this.BtPesquisarProduto.Name = "BtPesquisarProduto";
-            this.BtPesquisarProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BtPesquisarProduto.Size = new System.Drawing.Size(46, 52);
-            this.BtPesquisarProduto.TabIndex = 4;
-            this.BtPesquisarProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtPesquisarProduto.UseVisualStyleBackColor = false;
-            // 
             // BtImprimirProduto
             // 
             this.BtImprimirProduto.BackColor = System.Drawing.Color.Transparent;
@@ -199,7 +182,7 @@
             this.BtImprimirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtImprimirProduto.FlatAppearance.BorderSize = 0;
             this.BtImprimirProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtImprimirProduto.Location = new System.Drawing.Point(220, 4);
+            this.BtImprimirProduto.Location = new System.Drawing.Point(172, 4);
             this.BtImprimirProduto.Name = "BtImprimirProduto";
             this.BtImprimirProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtImprimirProduto.Size = new System.Drawing.Size(46, 52);
@@ -267,56 +250,6 @@
             this.panelTituloCadProd.Size = new System.Drawing.Size(754, 66);
             this.panelTituloCadProd.TabIndex = 0;
             // 
-            // lbDescricao
-            // 
-            this.lbDescricao.DataPropertyName = "nome_produto";
-            this.lbDescricao.HeaderText = "Descrição";
-            this.lbDescricao.Name = "lbDescricao";
-            this.lbDescricao.Width = 240;
-            // 
-            // lbUnidade
-            // 
-            this.lbUnidade.DataPropertyName = "abrev_unid";
-            this.lbUnidade.HeaderText = "Unidade";
-            this.lbUnidade.Name = "lbUnidade";
-            // 
-            // lbVlrCompra
-            // 
-            this.lbVlrCompra.DataPropertyName = "pcocompra_produto";
-            this.lbVlrCompra.HeaderText = "Vlr Compra";
-            this.lbVlrCompra.Name = "lbVlrCompra";
-            // 
-            // lbVlrVenda
-            // 
-            this.lbVlrVenda.DataPropertyName = "pcovenda_produto";
-            this.lbVlrVenda.HeaderText = "Vlr Venda";
-            this.lbVlrVenda.Name = "lbVlrVenda";
-            // 
-            // lbVlrMargem
-            // 
-            this.lbVlrMargem.DataPropertyName = "margem_produto";
-            this.lbVlrMargem.HeaderText = "Margem Lucro";
-            this.lbVlrMargem.Name = "lbVlrMargem";
-            // 
-            // lbGrupo
-            // 
-            this.lbGrupo.DataPropertyName = "nome_grupo";
-            this.lbGrupo.HeaderText = "Grupo";
-            this.lbGrupo.Name = "lbGrupo";
-            // 
-            // lbSubGrupo
-            // 
-            this.lbSubGrupo.DataPropertyName = "nome_subgrupo";
-            this.lbSubGrupo.HeaderText = "SubGrupo";
-            this.lbSubGrupo.Name = "lbSubGrupo";
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "id_recno";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            // 
             // FormCadastroProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -344,7 +277,6 @@
         private System.Windows.Forms.Button BtEditarProduto;
         private System.Windows.Forms.Button BtExcluirProduto;
         private System.Windows.Forms.Button BtImprimirProduto;
-        private System.Windows.Forms.Button BtPesquisarProduto;
         private System.Windows.Forms.Button BtSairCadProduto;
         private System.Windows.Forms.DataGridView dtGridViewCadProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn lbDescricao;

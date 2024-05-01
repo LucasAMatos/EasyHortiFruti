@@ -49,18 +49,16 @@ namespace EasyHortifruti
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelPesquisarCadGeral = new System.Windows.Forms.Panel();
-            this.cbTpFontePesquisa = new EasyHortifruti.Componentes.AltComboBox();
-            this.tbPesquisaGeral = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
+            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
             this.panel3FormCadGeralBotoes = new System.Windows.Forms.Panel();
             this.BtSairCadGeral = new System.Windows.Forms.Button();
-            this.BtPesquisarCadGeral = new System.Windows.Forms.Button();
             this.BtImprimirCadGeral = new System.Windows.Forms.Button();
             this.BtExcluirCadGeral = new System.Windows.Forms.Button();
             this.BtEditarCadGeral = new System.Windows.Forms.Button();
             this.BtIncluirCadGeral = new System.Windows.Forms.Button();
             this.panelTituloCadGeral = new System.Windows.Forms.Panel();
+            this.cbTpFontePesquisa = new EasyHortifruti.Componentes.AltComboBox();
             this.panelCadGeralForm.SuspendLayout();
             this.panelFormCadGeral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadGeral)).BeginInit();
@@ -84,9 +82,9 @@ namespace EasyHortifruti
             // 
             this.panelFormCadGeral.Controls.Add(this.DgViewCadGeral);
             this.panelFormCadGeral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelFormCadGeral.Location = new System.Drawing.Point(0, 157);
+            this.panelFormCadGeral.Location = new System.Drawing.Point(0, 165);
             this.panelFormCadGeral.Name = "panelFormCadGeral";
-            this.panelFormCadGeral.Size = new System.Drawing.Size(884, 404);
+            this.panelFormCadGeral.Size = new System.Drawing.Size(884, 396);
             this.panelFormCadGeral.TabIndex = 5;
             // 
             // DgViewCadGeral
@@ -114,7 +112,7 @@ namespace EasyHortifruti
             this.DgViewCadGeral.Location = new System.Drawing.Point(0, 0);
             this.DgViewCadGeral.Name = "DgViewCadGeral";
             this.DgViewCadGeral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgViewCadGeral.Size = new System.Drawing.Size(884, 404);
+            this.DgViewCadGeral.Size = new System.Drawing.Size(884, 396);
             this.DgViewCadGeral.TabIndex = 0;
             // 
             // NomeFantasia
@@ -131,13 +129,13 @@ namespace EasyHortifruti
             // 
             // CPF
             // 
-            this.CPF.DataPropertyName = "CPF";
+            this.CPF.DataPropertyName = "cnpj_cpf";
             this.CPF.HeaderText = "CNPJ / CPF";
             this.CPF.Name = "CPF";
             // 
             // RG
             // 
-            this.RG.DataPropertyName = "RG";
+            this.RG.DataPropertyName = "ie_rg";
             this.RG.HeaderText = "I.E. / RG.";
             this.RG.Name = "RG";
             // 
@@ -204,66 +202,52 @@ namespace EasyHortifruti
             // panelPesquisarCadGeral
             // 
             this.panelPesquisarCadGeral.Controls.Add(this.cbTpFontePesquisa);
-            this.panelPesquisarCadGeral.Controls.Add(this.tbPesquisaGeral);
-            this.panelPesquisarCadGeral.Controls.Add(this.label2);
-            this.panelPesquisarCadGeral.Controls.Add(this.label1);
+            this.panelPesquisarCadGeral.Controls.Add(this.cbFiltro);
+            this.panelPesquisarCadGeral.Controls.Add(this.tbFiltro);
             this.panelPesquisarCadGeral.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPesquisarCadGeral.Location = new System.Drawing.Point(0, 120);
             this.panelPesquisarCadGeral.Name = "panelPesquisarCadGeral";
-            this.panelPesquisarCadGeral.Size = new System.Drawing.Size(884, 37);
+            this.panelPesquisarCadGeral.Size = new System.Drawing.Size(884, 45);
             this.panelPesquisarCadGeral.TabIndex = 4;
             // 
-            // cbTpFontePesquisa
+            // cbFiltro
             // 
-            this.cbTpFontePesquisa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.cbTpFontePesquisa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.cbTpFontePesquisa.Caption = "";
-            this.cbTpFontePesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbTpFontePesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.cbTpFontePesquisa.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 0.5F);
-            this.cbTpFontePesquisa.FormattingEnabled = true;
-            this.cbTpFontePesquisa.Location = new System.Drawing.Point(469, -16);
-            this.cbTpFontePesquisa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.cbTpFontePesquisa.Name = "cbTpFontePesquisa";
-            this.cbTpFontePesquisa.Obrigatorio = false;
-            this.cbTpFontePesquisa.SelectedIndex = -1;
-            this.cbTpFontePesquisa.SelectedItem = null;
-            this.cbTpFontePesquisa.SelectedText = "";
-            this.cbTpFontePesquisa.Size = new System.Drawing.Size(152, 46);
-            this.cbTpFontePesquisa.TabIndex = 3;
+            this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbFiltro.Caption = "Campo para Filtrar";
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFiltro.FormattingEnabled = true;
+            this.cbFiltro.Location = new System.Drawing.Point(12, 3);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Obrigatorio = false;
+            this.cbFiltro.SelectedIndex = -1;
+            this.cbFiltro.SelectedItem = null;
+            this.cbFiltro.SelectedText = "";
+            this.cbFiltro.Size = new System.Drawing.Size(163, 38);
+            this.cbFiltro.TabIndex = 5;
             // 
-            // tbPesquisaGeral
+            // tbFiltro
             // 
-            this.tbPesquisaGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbPesquisaGeral.Location = new System.Drawing.Point(71, 7);
-            this.tbPesquisaGeral.Name = "tbPesquisaGeral";
-            this.tbPesquisaGeral.Size = new System.Drawing.Size(298, 23);
-            this.tbPesquisaGeral.TabIndex = 4;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(387, 12);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(86, 13);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Tipo de Fonte";
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(5, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(62, 13);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Pesquisar";
+            this.tbFiltro.Caption = "Digite para Filtrar";
+            this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltro.Location = new System.Drawing.Point(181, 3);
+            this.tbFiltro.MaxLength = 32767;
+            this.tbFiltro.Multiline = true;
+            this.tbFiltro.Name = "tbFiltro";
+            this.tbFiltro.Obrigatorio = false;
+            this.tbFiltro.ReadOnly = false;
+            this.tbFiltro.SelectionLength = 0;
+            this.tbFiltro.SelectionStart = 0;
+            this.tbFiltro.Size = new System.Drawing.Size(391, 36);
+            this.tbFiltro.TabIndex = 6;
+            this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
             // panel3FormCadGeralBotoes
             // 
             this.panel3FormCadGeralBotoes.Controls.Add(this.BtSairCadGeral);
-            this.panel3FormCadGeralBotoes.Controls.Add(this.BtPesquisarCadGeral);
             this.panel3FormCadGeralBotoes.Controls.Add(this.BtImprimirCadGeral);
             this.panel3FormCadGeralBotoes.Controls.Add(this.BtExcluirCadGeral);
             this.panel3FormCadGeralBotoes.Controls.Add(this.BtEditarCadGeral);
@@ -290,21 +274,6 @@ namespace EasyHortifruti
             this.BtSairCadGeral.UseVisualStyleBackColor = false;
             this.BtSairCadGeral.Click += new System.EventHandler(this.BtSairCadGeral_Click);
             // 
-            // BtPesquisarCadGeral
-            // 
-            this.BtPesquisarCadGeral.BackColor = System.Drawing.Color.Transparent;
-            this.BtPesquisarCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtPesquisarCadGeral.BackgroundImage")));
-            this.BtPesquisarCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtPesquisarCadGeral.FlatAppearance.BorderSize = 0;
-            this.BtPesquisarCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtPesquisarCadGeral.Location = new System.Drawing.Point(168, 4);
-            this.BtPesquisarCadGeral.Name = "BtPesquisarCadGeral";
-            this.BtPesquisarCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BtPesquisarCadGeral.Size = new System.Drawing.Size(46, 52);
-            this.BtPesquisarCadGeral.TabIndex = 4;
-            this.BtPesquisarCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtPesquisarCadGeral.UseVisualStyleBackColor = false;
-            // 
             // BtImprimirCadGeral
             // 
             this.BtImprimirCadGeral.BackColor = System.Drawing.Color.Transparent;
@@ -312,7 +281,7 @@ namespace EasyHortifruti
             this.BtImprimirCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtImprimirCadGeral.FlatAppearance.BorderSize = 0;
             this.BtImprimirCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtImprimirCadGeral.Location = new System.Drawing.Point(220, 4);
+            this.BtImprimirCadGeral.Location = new System.Drawing.Point(171, 4);
             this.BtImprimirCadGeral.Name = "BtImprimirCadGeral";
             this.BtImprimirCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtImprimirCadGeral.Size = new System.Drawing.Size(46, 52);
@@ -378,6 +347,23 @@ namespace EasyHortifruti
             this.panelTituloCadGeral.Size = new System.Drawing.Size(884, 59);
             this.panelTituloCadGeral.TabIndex = 0;
             // 
+            // cbTpFontePesquisa
+            // 
+            this.cbTpFontePesquisa.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbTpFontePesquisa.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbTpFontePesquisa.Caption = "TipoFonte";
+            this.cbTpFontePesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbTpFontePesquisa.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbTpFontePesquisa.FormattingEnabled = true;
+            this.cbTpFontePesquisa.Location = new System.Drawing.Point(718, 4);
+            this.cbTpFontePesquisa.Name = "cbTpFontePesquisa";
+            this.cbTpFontePesquisa.Obrigatorio = false;
+            this.cbTpFontePesquisa.SelectedIndex = -1;
+            this.cbTpFontePesquisa.SelectedItem = null;
+            this.cbTpFontePesquisa.SelectedText = "";
+            this.cbTpFontePesquisa.Size = new System.Drawing.Size(163, 38);
+            this.cbTpFontePesquisa.TabIndex = 7;
+            // 
             // FormGeralCad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -393,7 +379,6 @@ namespace EasyHortifruti
             this.panelFormCadGeral.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadGeral)).EndInit();
             this.panelPesquisarCadGeral.ResumeLayout(false);
-            this.panelPesquisarCadGeral.PerformLayout();
             this.panel3FormCadGeralBotoes.ResumeLayout(false);
             this.ResumeLayout(false);
 
@@ -405,7 +390,6 @@ namespace EasyHortifruti
         private System.Windows.Forms.Panel panelTituloCadGeral;
         private System.Windows.Forms.Panel panel3FormCadGeralBotoes;
         private System.Windows.Forms.Button BtSairCadGeral;
-        private System.Windows.Forms.Button BtPesquisarCadGeral;
         private System.Windows.Forms.Button BtImprimirCadGeral;
         private System.Windows.Forms.Button BtExcluirCadGeral;
         private System.Windows.Forms.Button BtEditarCadGeral;
@@ -413,10 +397,6 @@ namespace EasyHortifruti
         private System.Windows.Forms.Panel panelPesquisarCadGeral;
         private System.Windows.Forms.Panel panelFormCadGeral;
         private System.Windows.Forms.DataGridView DgViewCadGeral;
-        private AltComboBox cbTpFontePesquisa;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox tbPesquisaGeral;
         private System.Windows.Forms.DataGridViewTextBoxColumn NomeFantasia;
         private System.Windows.Forms.DataGridViewTextBoxColumn RazaoSocial;
         private System.Windows.Forms.DataGridViewTextBoxColumn CPF;
@@ -431,5 +411,8 @@ namespace EasyHortifruti
         private System.Windows.Forms.DataGridViewTextBoxColumn celular;
         private System.Windows.Forms.DataGridViewTextBoxColumn email;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private AltComboBox cbFiltro;
+        private AltTextBox tbFiltro;
+        private AltComboBox cbTpFontePesquisa;
     }
 }

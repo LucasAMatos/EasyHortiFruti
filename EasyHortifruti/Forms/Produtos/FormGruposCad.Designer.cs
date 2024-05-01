@@ -32,18 +32,17 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.DgViewCadGrupos = new System.Windows.Forms.DataGridView();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.observacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Margem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.BtSairGrupo = new System.Windows.Forms.Button();
-            this.BtPesquisarGrupo = new System.Windows.Forms.Button();
             this.BtImprimirGrupo = new System.Windows.Forms.Button();
             this.BtExcluirGrupo = new System.Windows.Forms.Button();
             this.BtEditarGrupo = new System.Windows.Forms.Button();
             this.BtIncluirGrupo = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.observacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Margem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel4.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadGrupos)).BeginInit();
@@ -89,10 +88,42 @@
             this.DgViewCadGrupos.Size = new System.Drawing.Size(481, 374);
             this.DgViewCadGrupos.TabIndex = 0;
             // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "nome_grupo";
+            this.Descricao.HeaderText = "Descrição";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 120;
+            // 
+            // observacao
+            // 
+            this.observacao.DataPropertyName = "obs_grupo";
+            this.observacao.HeaderText = "Observação";
+            this.observacao.Name = "observacao";
+            this.observacao.ReadOnly = true;
+            this.observacao.Width = 220;
+            // 
+            // Margem
+            // 
+            this.Margem.DataPropertyName = "margem_grupo";
+            this.Margem.HeaderText = "Margem Lucro";
+            this.Margem.Name = "Margem";
+            this.Margem.ReadOnly = true;
+            this.Margem.Width = 110;
+            // 
+            // id
+            // 
+            this.id.DataPropertyName = "id_recno";
+            this.id.HeaderText = "ID";
+            this.id.Name = "id";
+            this.id.ReadOnly = true;
+            this.id.Visible = false;
+            this.id.Width = 50;
+            // 
             // panel3
             // 
             this.panel3.Controls.Add(this.BtSairGrupo);
-            this.panel3.Controls.Add(this.BtPesquisarGrupo);
             this.panel3.Controls.Add(this.BtImprimirGrupo);
             this.panel3.Controls.Add(this.BtExcluirGrupo);
             this.panel3.Controls.Add(this.BtEditarGrupo);
@@ -121,21 +152,6 @@
             this.BtSairGrupo.UseVisualStyleBackColor = false;
             this.BtSairGrupo.Click += new System.EventHandler(this.BtSairGrupo_Click);
             // 
-            // BtPesquisarGrupo
-            // 
-            this.BtPesquisarGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.BtPesquisarGrupo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtPesquisarGrupo.BackgroundImage")));
-            this.BtPesquisarGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtPesquisarGrupo.FlatAppearance.BorderSize = 0;
-            this.BtPesquisarGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtPesquisarGrupo.Location = new System.Drawing.Point(171, 7);
-            this.BtPesquisarGrupo.Name = "BtPesquisarGrupo";
-            this.BtPesquisarGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BtPesquisarGrupo.Size = new System.Drawing.Size(46, 52);
-            this.BtPesquisarGrupo.TabIndex = 14;
-            this.BtPesquisarGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtPesquisarGrupo.UseVisualStyleBackColor = false;
-            // 
             // BtImprimirGrupo
             // 
             this.BtImprimirGrupo.BackColor = System.Drawing.Color.Transparent;
@@ -143,7 +159,7 @@
             this.BtImprimirGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtImprimirGrupo.FlatAppearance.BorderSize = 0;
             this.BtImprimirGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtImprimirGrupo.Location = new System.Drawing.Point(223, 7);
+            this.BtImprimirGrupo.Location = new System.Drawing.Point(177, 7);
             this.BtImprimirGrupo.Name = "BtImprimirGrupo";
             this.BtImprimirGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtImprimirGrupo.Size = new System.Drawing.Size(46, 52);
@@ -209,39 +225,6 @@
             this.panel2.Size = new System.Drawing.Size(481, 57);
             this.panel2.TabIndex = 0;
             // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "nome_grupo";
-            this.Descricao.HeaderText = "Descrição";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Width = 120;
-            // 
-            // observacao
-            // 
-            this.observacao.DataPropertyName = "obs_grupo";
-            this.observacao.HeaderText = "Observação";
-            this.observacao.Name = "observacao";
-            this.observacao.ReadOnly = true;
-            this.observacao.Width = 220;
-            // 
-            // Margem
-            // 
-            this.Margem.DataPropertyName = "margem_grupo";
-            this.Margem.HeaderText = "Margem Lucro";
-            this.Margem.Name = "Margem";
-            this.Margem.ReadOnly = true;
-            this.Margem.Width = 110;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id_recno";
-            this.id.HeaderText = "ID";
-            this.id.Name = "id";
-            this.id.ReadOnly = true;
-            this.id.Visible = false;
-            this.id.Width = 50;
-            // 
             // FormGruposCad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -268,7 +251,6 @@
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.DataGridView DgViewCadGrupos;
         private System.Windows.Forms.Panel panel3;
-        private System.Windows.Forms.Button BtPesquisarGrupo;
         private System.Windows.Forms.Button BtImprimirGrupo;
         private System.Windows.Forms.Button BtExcluirGrupo;
         private System.Windows.Forms.Button BtEditarGrupo;

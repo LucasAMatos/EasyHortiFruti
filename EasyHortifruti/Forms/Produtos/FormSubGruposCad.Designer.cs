@@ -37,7 +37,6 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.BtSairSubGrupo = new System.Windows.Forms.Button();
-            this.BtPesquisarSubGrupo = new System.Windows.Forms.Button();
             this.BtImprimirSubGrupo = new System.Windows.Forms.Button();
             this.BtExcluirSubGrupo = new System.Windows.Forms.Button();
             this.BtEditarSubGrupo = new System.Windows.Forms.Button();
@@ -113,7 +112,6 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.BtSairSubGrupo);
-            this.panel3.Controls.Add(this.BtPesquisarSubGrupo);
             this.panel3.Controls.Add(this.BtImprimirSubGrupo);
             this.panel3.Controls.Add(this.BtExcluirSubGrupo);
             this.panel3.Controls.Add(this.BtEditarSubGrupo);
@@ -142,21 +140,6 @@
             this.BtSairSubGrupo.UseVisualStyleBackColor = false;
             this.BtSairSubGrupo.Click += new System.EventHandler(this.BtSairSubGrupo_Click);
             // 
-            // BtPesquisarSubGrupo
-            // 
-            this.BtPesquisarSubGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.BtPesquisarSubGrupo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtPesquisarSubGrupo.BackgroundImage")));
-            this.BtPesquisarSubGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtPesquisarSubGrupo.FlatAppearance.BorderSize = 0;
-            this.BtPesquisarSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtPesquisarSubGrupo.Location = new System.Drawing.Point(162, 8);
-            this.BtPesquisarSubGrupo.Name = "BtPesquisarSubGrupo";
-            this.BtPesquisarSubGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BtPesquisarSubGrupo.Size = new System.Drawing.Size(46, 52);
-            this.BtPesquisarSubGrupo.TabIndex = 20;
-            this.BtPesquisarSubGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtPesquisarSubGrupo.UseVisualStyleBackColor = false;
-            // 
             // BtImprimirSubGrupo
             // 
             this.BtImprimirSubGrupo.BackColor = System.Drawing.Color.Transparent;
@@ -164,7 +147,7 @@
             this.BtImprimirSubGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtImprimirSubGrupo.FlatAppearance.BorderSize = 0;
             this.BtImprimirSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtImprimirSubGrupo.Location = new System.Drawing.Point(214, 8);
+            this.BtImprimirSubGrupo.Location = new System.Drawing.Point(168, 8);
             this.BtImprimirSubGrupo.Name = "BtImprimirSubGrupo";
             this.BtImprimirSubGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtImprimirSubGrupo.Size = new System.Drawing.Size(46, 52);
@@ -238,7 +221,6 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormSubGruposCad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form16";
             this.Load += new System.EventHandler(this.FormCadSubGrupos_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadSubGrupos)).EndInit();
@@ -254,7 +236,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView DgViewCadSubGrupos;
         private System.Windows.Forms.Button BtSairSubGrupo;
-        private System.Windows.Forms.Button BtPesquisarSubGrupo;
         private System.Windows.Forms.Button BtImprimirSubGrupo;
         private System.Windows.Forms.Button BtExcluirSubGrupo;
         private System.Windows.Forms.Button BtEditarSubGrupo;

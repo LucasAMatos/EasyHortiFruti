@@ -23,8 +23,50 @@ namespace EasyHortifruti
         private Dictionary<string, int> produtoItem;
 
         private Dictionary<string, int> margemLucro;
-        
+
         private DataSet dsProdutos;
+
+        private decimal TotalPedido
+        { 
+            get
+            {
+                if (!string.IsNullOrEmpty(MtbTotPedido.Text))
+                    return Convert.ToDecimal(MtbTotPedido.Text);
+                return 0;
+            }
+            set 
+            {
+                MtbTotPedido.Text = value.ToString("F2");
+            }
+        }
+
+        private decimal TotalGeral
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(TbTotalGeral.Text))
+                    return Convert.ToDecimal(TbTotalGeral.Text);
+                return 0;
+            }
+            set
+            {
+                TbTotalGeral.Text = value.ToString("F2");
+            }
+        }
+
+        private decimal Desconto
+        {
+            get
+            {
+                if(!string.IsNullOrEmpty(TbDesconto.Text))
+                    return Convert.ToDecimal(TbDesconto.Text);
+                return 0;
+            }
+            set
+            {
+                TbDesconto.Text = value.ToString("F2");
+            }
+        }
         #endregion propriedades
 
         private Timer timer;
@@ -40,6 +82,7 @@ namespace EasyHortifruti
             dsProdutos = new DataSet();
             InitializeComponent();
 
+            TbDesconto.TextChanged += TbFiltro_TbDescontoTextChanged;
             // Armazenar a cor original do label
             originalColor = LbAviso.ForeColor;
 
@@ -115,7 +158,7 @@ namespace EasyHortifruti
             foreach (DataRow dr in dsProdutos.Tables[0].Rows)
             {
                 if (!CbProdutos.Items.Contains(dr["nome_produto"].ToString()))
-                { 
+                {
                     CbProdutos.Items.Add(dr["nome_produto"].ToString());
                 }
             }
@@ -128,6 +171,18 @@ namespace EasyHortifruti
             CarregarComboUnidades();
         }
 
+        private void CbUnidPedido_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            foreach (DataRow dr in dsProdutos.Tables[0].Rows)
+            {
+                if (CbProdutos.SelectedItem != null && CbProdutos.SelectedItem.ToString() == dr["nome_produto"].ToString() && (CbUnidPedido.SelectedItem != null && CbUnidPedido.SelectedItem.ToString() == dr["abrev_unid"].ToString()))
+                {
+                    TbVlCompra.Text = dr["pcocompra_produto"].ToString();
+                    TbMargemLucro.Text = dr["margem_produto"].ToString();
+                }
+            }
+        }
+
         private void CarregarComboTpDocumento()
         {
             CbTpDocumento.Items.Clear();
@@ -136,13 +191,13 @@ namespace EasyHortifruti
 
         private void CarregarComboUnidades()
         {
-            if(CbProdutos.SelectedIndex >= 0 )
-            { 
+            if (CbProdutos.SelectedIndex >= 0)
+            {
                 CbUnidPedido.Items.Clear();
                 foreach (DataRow dr in dsProdutos.Tables[0].Rows)
                 {
                     if (CbProdutos.SelectedItem.ToString() == dr["nome_produto"].ToString() && (!CbUnidPedido.Items.Contains(dr["abrev_unid"].ToString())))
-                    { 
+                    {
                         CbUnidPedido.Items.Add(dr["abrev_unid"].ToString());
                     }
                 }
@@ -255,7 +310,7 @@ namespace EasyHortifruti
         private void BtAdicItemPedido_Click(object sender, EventArgs e)
         {
             // Captura os valores dos campos da interface do usuário
-            string produtoItem = CbProdutos.Text;
+            string produtoItem = CbProdutos.SelectedItem.ToString();
             string unidadeItem = CbUnidPedido.SelectedItem.ToString();
             string quantidadeItem = TbQtdPedido.Text;
             decimal valorCompraItem = Convert.ToDecimal(TbVlCompra.Text);
@@ -275,6 +330,7 @@ namespace EasyHortifruti
                 ValorLucroItem = LucroItem
             };
 
+            SomaTotalPedido(TotalItem);
             // Adiciona o novo pedido à DataGridView
             AdicionarPedidoDataGridView(novoPedido);
 
@@ -302,6 +358,30 @@ namespace EasyHortifruti
         private void AtbValorLucroItem_TextChanged(object sender, EventArgs e)
         {
             CalcularValorLucroItem();
+        }
+
+        private void SomaTotalPedido(decimal TotalItem)
+        {
+            TotalPedido = TotalItem;
+            SomaTotalGeral();
+        }
+
+        private void SomaTotalGeral()
+        {
+            TotalGeral = TotalPedido - Desconto;
+        }
+
+        private void TbFiltro_TbDescontoTextChanged(object sender, EventArgs e)
+        {
+            TotalGeral = TotalPedido - Desconto;
+        }
+
+        private void btGravarPedido_Click(object sender, EventArgs e)
+        {
+            Pedido pedido = new Pedido();
+            pedido.dataPedido = DtPedido.Value;
+
+            new ConexaoBD().InserirPedido(pedido);
         }
     }
 }

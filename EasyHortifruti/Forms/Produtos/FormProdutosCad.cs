@@ -32,6 +32,7 @@ namespace EasyHortifruti
         public FormCadastroProduto()
         {
             InitializeComponent();
+            configuraGridPadrao(dtGridViewCadProd);
         }
         #endregion
 

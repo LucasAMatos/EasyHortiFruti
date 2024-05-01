@@ -80,55 +80,62 @@ namespace EasyHortifruti
 
         private void BtGravaAltGeral_Click(object sender, EventArgs e)
         {
-            Criticar();
-            Geral pGeral = new Geral();
+            try
+            {
+                Criticar();
+                Geral pGeral = new Geral();
 
-            pGeral.TipoPessoa = RbPessoaFisica.Checked ? TPFJ.Fisica : TPFJ.Juridica;
-            pGeral.Classificacao = (Classificacao)CbClassificacao.SelectedIndex;
-            pGeral.NomeFantasia = TbNomeFantasia.Text;
-            pGeral.RazaoSocial = TbRazaoSocial.Text;
-            pGeral.Contato = TbContato.Text;
-            pGeral.DtNascFundacao = DtNascAbert.Value;
-            pGeral.OrgaoExpedidor = tbOrgaoExpRg.Text;
-            pGeral.OrgaoExpedidorUF = tbEstadoRg.Text;
-            pGeral.CPF = tbCpf.Value;
-            pGeral.CNPJ = TbCNPJ.Value;
-            pGeral.RG = tbRg.Text;
-            pGeral.IE = TbInscrEstadual.Text;
-            pGeral.InscricaoMunicipal = TbInscrMunicipal.Text;
-            pGeral.Sexo = cbSexo.SelectedIndex >= 0 ? (Sexo)cbSexo.SelectedIndex : Sexo.NaoDefinido;
-            pGeral.EstadoCivil = (EstadoCivil)cbEstadoCivil.SelectedIndex >= 0 ? (EstadoCivil)cbEstadoCivil.SelectedIndex : EstadoCivil.NaoDefinido;
-            pGeral.Email = TbEmail.Text;
-            pGeral.PontoReferencia = TbPontoRef.Text;
-            pGeral.PrazoPagamento = Convert.ToInt32(TbPrazoPgto.Text);
-            pGeral.Telefones = new Telefones
+                pGeral.TipoPessoa = RbPessoaFisica.Checked ? TPFJ.Fisica : TPFJ.Juridica;
+                pGeral.Classificacao = (Classificacao)CbClassificacao.SelectedIndex;
+                pGeral.NomeFantasia = TbNomeFantasia.Text;
+                pGeral.RazaoSocial = TbRazaoSocial.Text;
+                pGeral.Contato = TbContato.Text;
+                pGeral.DtNascFundacao = DtNascAbert.Value;
+                pGeral.OrgaoExpedidor = tbOrgaoExpRg.Text;
+                pGeral.OrgaoExpedidorUF = tbEstadoRg.Text;
+                pGeral.CPF = tbCpf.Value;
+                pGeral.CNPJ = TbCNPJ.Value;
+                pGeral.RG = tbRg.Text;
+                pGeral.IE = TbInscrEstadual.Text;
+                pGeral.InscricaoMunicipal = TbInscrMunicipal.Text;
+                pGeral.Sexo = cbSexo.SelectedIndex >= 0 ? (Sexo)cbSexo.SelectedIndex : Sexo.NaoDefinido;
+                pGeral.EstadoCivil = (EstadoCivil)cbEstadoCivil.SelectedIndex >= 0 ? (EstadoCivil)cbEstadoCivil.SelectedIndex : EstadoCivil.NaoDefinido;
+                pGeral.Email = TbEmail.Text;
+                pGeral.PontoReferencia = TbPontoRef.Text;
+                pGeral.PrazoPagamento = Convert.ToInt32(TbPrazoPgto.Text);
+                pGeral.Telefones = new Telefones
             {
                 Fone,
                 Celular
             };
-            pGeral.Endereco = RetornarEnderecoTela();
+                pGeral.Endereco = RetornarEnderecoTela();
 
-            if (Alterar)
-            {
-                pGeral.ID = Convert.ToInt32(LbIdCadGeral.Text);
-
-                new ConexaoBD().AlterarGeral(pGeral);
-
-                MessageBox.Show(string.Format("Geral Alterado com Sucesso!"));
-                this.Close();
-            }
-            else
-            {
-                new ConexaoBD().InserirGeral(pGeral);
-
-                DialogResult pNovaUnidade = MessageBox.Show(string.Format("{0} incluído com sucesso! Deseja cadastrar uma nova unidade?", pGeral.NomeFantasia), string.Empty, MessageBoxButtons.YesNo);
-                if (pNovaUnidade == DialogResult.Yes)
+                if (Alterar)
                 {
-                    LimparCampos(this);
-                    tabPage4.Text = string.Empty;
+                    pGeral.ID = Convert.ToInt32(LbIdCadGeral.Text);
+
+                    new ConexaoBD().AlterarGeral(pGeral);
+
+                    MessageBox.Show(string.Format("Geral Alterado com Sucesso!"));
+                    this.Close();
                 }
                 else
-                    this.Close();
+                {
+                    new ConexaoBD().InserirGeral(pGeral);
+
+                    DialogResult pNovaUnidade = MessageBox.Show(string.Format("{0} incluído com sucesso! Deseja cadastrar uma nova unidade?", pGeral.NomeFantasia), string.Empty, MessageBoxButtons.YesNo);
+                    if (pNovaUnidade == DialogResult.Yes)
+                    {
+                        LimparCampos(this);
+                        tabPage4.Text = string.Empty;
+                    }
+                    else
+                        this.Close();
+                }
+            }
+            catch (Exception ex)
+            { 
+                MessageBox.Show(ex.Message);
             }
         }
 
@@ -338,8 +345,8 @@ namespace EasyHortifruti
                         tbRg.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.RG : string.Empty;
                         TbInscrEstadual.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.IE : string.Empty;
                         TbInscrMunicipal.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.InscricaoMunicipal : string.Empty;
-                        cbSexo.SelectedIndex = (int)iGeral.Sexo;
-                        cbEstadoCivil.SelectedIndex = (int)iGeral.EstadoCivil;
+                        cbSexo.SelecionarIndexPeloConteudo(iGeral.Sexo.ToString());
+                        cbEstadoCivil.SelecionarIndexPeloConteudo(iGeral.EstadoCivil.ToString());
 
                         if (iGeral.Telefones != null && iGeral.Telefones.Count > 0)
                         {
@@ -354,7 +361,7 @@ namespace EasyHortifruti
                             TbComplemento.Text = iGeral.Endereco.Complemento;
                             TbBairro.Text = iGeral.Endereco.Bairro;
                             TbCidade.Text = iGeral.Endereco.Cidade;
-                            CbUF.Text = iGeral.Endereco.UF;
+                            CbUF.SelecionarIndexPeloConteudo(iGeral.Endereco.UF);
                         }
 
                         TbEmail.Text = iGeral.Email;
@@ -381,7 +388,7 @@ namespace EasyHortifruti
 
         private void CarregarComboClassificacao()
         {
-            CbClassificacao.CarregarDescricoesEnum<Classificacao>();
+            CbClassificacao.CarregarValoresEnum<Classificacao>();
         }
 
         private void CarregarComboUf()

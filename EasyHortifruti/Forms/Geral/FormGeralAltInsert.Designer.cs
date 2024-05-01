@@ -930,7 +930,7 @@ namespace EasyHortifruti
             this.TbPrazoPgto.MaxLength = 32767;
             this.TbPrazoPgto.Multiline = true;
             this.TbPrazoPgto.Name = "TbPrazoPgto";
-            this.TbPrazoPgto.Obrigatorio = false;
+            this.TbPrazoPgto.Obrigatorio = true;
             this.TbPrazoPgto.ReadOnly = false;
             this.TbPrazoPgto.SelectionLength = 0;
             this.TbPrazoPgto.SelectionStart = 0;

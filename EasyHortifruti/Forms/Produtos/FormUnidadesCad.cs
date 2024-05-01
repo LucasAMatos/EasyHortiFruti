@@ -1,14 +1,15 @@
 ﻿using System;
 using System.Data;
-using System.Drawing;
 using System.Windows.Forms;
-using static Npgsql.Replication.PgOutput.Messages.RelationMessage;
 
 namespace EasyHortifruti
 {
     public partial class FormUnidadeCad : FormBase
     {
         #region Propriedades
+
+        private DataSet dsGrid;
+
         public int IdSelecionado
         {
             get
@@ -24,33 +25,18 @@ namespace EasyHortifruti
                 return -1;
             }
         }
-
-        private DataSet dsGrid;
-        #endregion
+        #endregion Propriedades
 
         #region Construtor
+
         public FormUnidadeCad()
         {
             InitializeComponent();
         }
-        #endregion
+
+        #endregion Construtor
 
         #region Eventos
-        private void FormUnidadeCad_Load(object sender, EventArgs e)
-        {
-            CarregarGrid();
-            CarregarComboFiltros();
-            // Inscreva-se para o evento TextoAlterado do UserControl
-            tbFiltro.TextChanged += TbFiltro_TextoAlterado;
-        }
-
-        private void btIncluirUnidade_Click(object sender, EventArgs e)
-        {
-            FormUnidadesAltInsert UnidadeAltInsert = new FormUnidadesAltInsert();
-            UnidadeAltInsert.ShowDialog();
-
-            CarregarGrid();
-        }
 
         private void btEditarUnidade_Click(object sender, EventArgs e)
         {
@@ -64,6 +50,7 @@ namespace EasyHortifruti
             else
                 MessageBox.Show("selecione um registro para alterar!");
         }
+
         private void btExcluirUnidades_Click(object sender, EventArgs e)
         {
             if (IdSelecionado >= 0)
@@ -79,13 +66,40 @@ namespace EasyHortifruti
             else
                 MessageBox.Show("Selecione um registro para excluir");
         }
+
+        private void btIncluirUnidade_Click(object sender, EventArgs e)
+        {
+            FormUnidadesAltInsert UnidadeAltInsert = new FormUnidadesAltInsert();
+            UnidadeAltInsert.ShowDialog();
+
+            CarregarGrid();
+        }
+
         private void btSairUnidades_Click(object sender, EventArgs e)
         {
             this.Close();
         }
-        #endregion
+
+        private void FormUnidadeCad_Load(object sender, EventArgs e)
+        {
+            CarregarGrid();
+            CarregarComboFiltros();
+            // Inscreva-se para o evento TextoAlterado do UserControl
+            tbFiltro.TextChanged += TbFiltro_TextoAlterado;
+        }
+        #endregion Eventos
 
         #region Metodos
+
+        private void CarregarComboFiltros()
+        {
+            foreach (DataGridViewColumn coluna in dgvCadUnidades.Columns)
+            {
+                if (coluna.Visible)
+                    cbFiltro.Items.Add(coluna.HeaderText);
+            }
+        }
+
         private void CarregarGrid()
         {
             dsGrid = new ConexaoBD().ConsultarUnidades();
@@ -95,28 +109,17 @@ namespace EasyHortifruti
             dgvCadUnidades.Sort(dgvCadUnidades.Columns["ID"], System.ComponentModel.ListSortDirection.Ascending);
         }
 
-        private void CarregarComboFiltros()
-        {
-            foreach (DataGridViewColumn coluna in dgvCadUnidades.Columns)
-            {
-                if(coluna.Visible)
-                    cbFiltro.Items.Add(coluna.HeaderText);
-            }
-        }
-
-        private void TbFiltro_TextoAlterado(object sender, EventArgs e)
-        {
-            // Quando o texto no UserControl é alterado, chame o método Filtrar do formulário
-            Filtrar();
-        }
-
-        // Método para filtrar, este é apenas um exemplo
         private void Filtrar()
         {
             string coluna = dgvCadUnidades.Columns[cbFiltro.SelectedIndex].DataPropertyName;
             dsGrid.Tables["Table"].DefaultView.RowFilter = $"{coluna} LIKE '%{tbFiltro.Text}%'";
             dgvCadUnidades.DataSource = dsGrid.Tables["Table"].DefaultView;
         }
-        #endregion
+
+        private void TbFiltro_TextoAlterado(object sender, EventArgs e)
+        {
+            Filtrar();
+        }
+        #endregion Metodos
     }
 }

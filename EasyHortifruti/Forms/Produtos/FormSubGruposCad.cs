@@ -41,6 +41,7 @@ namespace EasyHortifruti
         private void FormCadSubGrupos_Load(object sender, EventArgs e)
         {
             CarregarGrid();
+            configuraGridPadrao(DgViewCadSubGrupos);
         }
 
         private void BtIncluirSubGrupo_Click(object sender, EventArgs e)

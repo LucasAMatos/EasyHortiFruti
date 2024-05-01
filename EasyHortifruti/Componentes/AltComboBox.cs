@@ -125,14 +125,15 @@ namespace EasyHortifruti.Componentes
             comboBox1.Items.Clear();
             foreach (T item in Enum.GetValues(typeof(T)))
             {
-                comboBox1.Items.Add(item);
+                comboBox1.Items.Add(item.ToString());
             }
             comboBox1.SelectedIndex = 0;
         }
 
         public void SelecionarIndexPeloConteudo(string pItem)
         {
-            comboBox1.SelectedIndex =  comboBox1.Items.IndexOf(pItem);
+            if (pItem != null)
+                comboBox1.SelectedIndex =  comboBox1.Items.IndexOf(pItem);
         }
         #endregion
 

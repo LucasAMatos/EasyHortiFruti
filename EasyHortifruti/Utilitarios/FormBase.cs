@@ -135,5 +135,15 @@ namespace EasyHortifruti
                 }
             }
         }
+
+        internal void configuraGridPadrao(DataGridView pDataGridView)
+        {
+            pDataGridView.RowHeadersVisible = false;
+            pDataGridView.AllowUserToAddRows = false;
+            pDataGridView.AllowUserToDeleteRows = false;
+            pDataGridView.ReadOnly = true;
+            pDataGridView.EditMode = DataGridViewEditMode.EditProgrammatically;
+            pDataGridView.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+        }
     }
 }

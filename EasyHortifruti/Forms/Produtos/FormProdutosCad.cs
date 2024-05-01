@@ -40,6 +40,7 @@ namespace EasyHortifruti
         private void FormCadastroProduto_Load(object sender, EventArgs e)
         {
             CarregarGrid();
+            CarregarComboFiltros();
         }
         private void BtIncluirProduto_Click(object sender, EventArgs e)
         {
@@ -89,6 +90,15 @@ namespace EasyHortifruti
         #endregion
 
         #region Metodos
+
+        private void CarregarComboFiltros()
+        {
+            foreach (DataGridViewColumn coluna in dtGridViewCadProd.Columns)
+            {
+                if (coluna.Visible)
+                    cbFiltro.Items.Add(coluna.HeaderText);
+            }
+        }
 
         public void CarregarGrid()
         {

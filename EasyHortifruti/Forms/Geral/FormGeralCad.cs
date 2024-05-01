@@ -44,6 +44,8 @@ namespace EasyHortifruti
                     Id = IdSelecionado
                 };
                 GeralAltInsert.ShowDialog();
+
+                CarregarGrid();
             }
             else
                 MessageBox.Show("Selecione um registro para alterar");

@@ -31,6 +31,12 @@ namespace EasyHortifruti
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGeralCad));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCadGeralForm = new System.Windows.Forms.Panel();
             this.panelFormCadGeral = new System.Windows.Forms.Panel();
             this.DgViewCadGeral = new System.Windows.Forms.DataGridView();
@@ -193,6 +199,8 @@ namespace EasyHortifruti
             // 
             // BtSairCadGeral
             // 
+            this.BtSairCadGeral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtSairCadGeral.BackColor = System.Drawing.Color.Transparent;
             this.BtSairCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtSairCadGeral.BackgroundImage")));
             this.BtSairCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -285,16 +293,20 @@ namespace EasyHortifruti
             this.NomeFantasia.DataPropertyName = "nomefantasia";
             this.NomeFantasia.HeaderText = "Nome / Fantasia";
             this.NomeFantasia.Name = "NomeFantasia";
+            this.NomeFantasia.Width = 110;
             // 
             // RazaoSocial
             // 
             this.RazaoSocial.DataPropertyName = "razaosocial";
             this.RazaoSocial.HeaderText = "Razão Social";
             this.RazaoSocial.Name = "RazaoSocial";
+            this.RazaoSocial.Width = 230;
             // 
             // CPF
             // 
             this.CPF.DataPropertyName = "cnpj_cpf";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CPF.DefaultCellStyle = dataGridViewCellStyle1;
             this.CPF.HeaderText = "CNPJ / CPF";
             this.CPF.Name = "CPF";
             // 
@@ -303,18 +315,23 @@ namespace EasyHortifruti
             this.RG.DataPropertyName = "ie_rg";
             this.RG.HeaderText = "I.E. / RG.";
             this.RG.Name = "RG";
+            this.RG.Width = 80;
             // 
             // logradouro
             // 
             this.logradouro.DataPropertyName = "logradouro";
             this.logradouro.HeaderText = "Endereço";
             this.logradouro.Name = "logradouro";
+            this.logradouro.Width = 180;
             // 
             // numero
             // 
             this.numero.DataPropertyName = "numero";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.numero.DefaultCellStyle = dataGridViewCellStyle2;
             this.numero.HeaderText = "Nº";
             this.numero.Name = "numero";
+            this.numero.Width = 35;
             // 
             // complemento
             // 
@@ -327,42 +344,57 @@ namespace EasyHortifruti
             this.bairro.DataPropertyName = "bairro";
             this.bairro.HeaderText = "Bairro";
             this.bairro.Name = "bairro";
+            this.bairro.Width = 130;
             // 
             // cidade
             // 
             this.cidade.DataPropertyName = "cidade";
             this.cidade.HeaderText = "Cidade";
             this.cidade.Name = "cidade";
+            this.cidade.Width = 130;
             // 
             // uf
             // 
             this.uf.DataPropertyName = "uf";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.uf.DefaultCellStyle = dataGridViewCellStyle3;
             this.uf.HeaderText = "UF";
             this.uf.Name = "uf";
+            this.uf.Width = 30;
             // 
             // fone
             // 
             this.fone.DataPropertyName = "fone";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fone.DefaultCellStyle = dataGridViewCellStyle4;
             this.fone.HeaderText = "Fone";
             this.fone.Name = "fone";
+            this.fone.Width = 65;
             // 
             // celular
             // 
             this.celular.DataPropertyName = "celular";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.celular.DefaultCellStyle = dataGridViewCellStyle5;
             this.celular.HeaderText = "Celular";
             this.celular.Name = "celular";
+            this.celular.Width = 65;
             // 
             // email
             // 
             this.email.DataPropertyName = "email";
             this.email.HeaderText = "E-mail";
             this.email.Name = "email";
+            this.email.Width = 200;
             // 
             // ID
             // 
             this.ID.DataPropertyName = "id_recno";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle6;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.Width = 30;
             // 
             // FormGeralCad
             // 

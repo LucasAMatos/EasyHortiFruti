@@ -121,7 +121,7 @@ namespace EasyHortifruti
                 {
                     new ConexaoBD().InserirGeral(pGeral);
 
-                    DialogResult pNovaUnidade = MessageBox.Show(string.Format("{0} incluído com sucesso! Deseja cadastrar uma nova unidade?", pGeral.NomeFantasia), string.Empty, MessageBoxButtons.YesNo);
+                    DialogResult pNovaUnidade = MessageBox.Show(string.Format("{0} incluído com sucesso! Deseja cadastrar uma nova empresa?", pGeral.NomeFantasia), string.Empty, MessageBoxButtons.YesNo);
                     if (pNovaUnidade == DialogResult.Yes)
                     {
                         LimparCampos(this);
@@ -285,7 +285,7 @@ namespace EasyHortifruti
             enderecoRetorno.Complemento = TbComplemento.Text;
             enderecoRetorno.Bairro = TbBairro.Text;
             enderecoRetorno.Cidade = TbCidade.Text;
-            enderecoRetorno.UF = CbUF.Text;
+            enderecoRetorno.UF = CbUF.SelectedItem.ToString();
             return enderecoRetorno;
         }
 

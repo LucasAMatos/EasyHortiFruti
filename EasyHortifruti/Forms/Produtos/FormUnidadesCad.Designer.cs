@@ -42,14 +42,13 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.btSairUnidades = new System.Windows.Forms.Button();
-            this.btPesquisarUnidades = new System.Windows.Forms.Button();
             this.btImprimirUnidades = new System.Windows.Forms.Button();
             this.btExcluirUnidades = new System.Windows.Forms.Button();
             this.btEditarUnidades = new System.Windows.Forms.Button();
             this.btIncluirUnidades = new System.Windows.Forms.Button();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.altComboBox1 = new EasyHortifruti.Componentes.AltComboBox();
-            this.altTextBox1 = new EasyHortifruti.Componentes.AltTextBox();
+            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
+            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
             this.panel4 = new System.Windows.Forms.Panel();
             ((System.ComponentModel.ISupportInitialize)(this.unidadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unidadesBindingSource1)).BeginInit();
@@ -98,6 +97,7 @@
             // dgvCadUnidades
             // 
             this.dgvCadUnidades.AllowUserToAddRows = false;
+            this.dgvCadUnidades.AllowUserToDeleteRows = false;
             this.dgvCadUnidades.AllowUserToOrderColumns = true;
             this.dgvCadUnidades.AutoGenerateColumns = false;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -119,6 +119,7 @@
             this.dgvCadUnidades.MultiSelect = false;
             this.dgvCadUnidades.Name = "dgvCadUnidades";
             this.dgvCadUnidades.ReadOnly = true;
+            this.dgvCadUnidades.RowHeadersVisible = false;
             this.dgvCadUnidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvCadUnidades.Size = new System.Drawing.Size(566, 406);
             this.dgvCadUnidades.TabIndex = 0;
@@ -159,7 +160,6 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.btSairUnidades);
-            this.panel3.Controls.Add(this.btPesquisarUnidades);
             this.panel3.Controls.Add(this.btImprimirUnidades);
             this.panel3.Controls.Add(this.btExcluirUnidades);
             this.panel3.Controls.Add(this.btEditarUnidades);
@@ -187,21 +187,6 @@
             this.btSairUnidades.UseVisualStyleBackColor = false;
             this.btSairUnidades.Click += new System.EventHandler(this.btSairUnidades_Click);
             // 
-            // btPesquisarUnidades
-            // 
-            this.btPesquisarUnidades.BackColor = System.Drawing.Color.Transparent;
-            this.btPesquisarUnidades.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btPesquisarUnidades.BackgroundImage")));
-            this.btPesquisarUnidades.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btPesquisarUnidades.FlatAppearance.BorderSize = 0;
-            this.btPesquisarUnidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPesquisarUnidades.Location = new System.Drawing.Point(168, 13);
-            this.btPesquisarUnidades.Name = "btPesquisarUnidades";
-            this.btPesquisarUnidades.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btPesquisarUnidades.Size = new System.Drawing.Size(46, 52);
-            this.btPesquisarUnidades.TabIndex = 9;
-            this.btPesquisarUnidades.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btPesquisarUnidades.UseVisualStyleBackColor = false;
-            // 
             // btImprimirUnidades
             // 
             this.btImprimirUnidades.BackColor = System.Drawing.Color.Transparent;
@@ -209,7 +194,7 @@
             this.btImprimirUnidades.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btImprimirUnidades.FlatAppearance.BorderSize = 0;
             this.btImprimirUnidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btImprimirUnidades.Location = new System.Drawing.Point(220, 13);
+            this.btImprimirUnidades.Location = new System.Drawing.Point(168, 13);
             this.btImprimirUnidades.Name = "btImprimirUnidades";
             this.btImprimirUnidades.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btImprimirUnidades.Size = new System.Drawing.Size(46, 52);
@@ -270,8 +255,8 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel2.Controls.Add(this.altComboBox1, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.altTextBox1, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cbFiltro, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tbFiltro, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 132);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -280,40 +265,40 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(566, 44);
             this.tableLayoutPanel2.TabIndex = 2;
             // 
-            // altComboBox1
+            // cbFiltro
             // 
-            this.altComboBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.altComboBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.altComboBox1.Caption = "Campo para Filtrar";
-            this.altComboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.altComboBox1.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.altComboBox1.FormattingEnabled = true;
-            this.altComboBox1.Location = new System.Drawing.Point(3, 3);
-            this.altComboBox1.Name = "altComboBox1";
-            this.altComboBox1.Obrigatorio = false;
-            this.altComboBox1.SelectedIndex = -1;
-            this.altComboBox1.SelectedItem = null;
-            this.altComboBox1.SelectedText = "";
-            this.altComboBox1.Size = new System.Drawing.Size(163, 38);
-            this.altComboBox1.TabIndex = 0;
+            this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbFiltro.Caption = "Campo para Filtrar";
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFiltro.FormattingEnabled = true;
+            this.cbFiltro.Location = new System.Drawing.Point(3, 3);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Obrigatorio = false;
+            this.cbFiltro.SelectedIndex = -1;
+            this.cbFiltro.SelectedItem = null;
+            this.cbFiltro.SelectedText = "";
+            this.cbFiltro.Size = new System.Drawing.Size(163, 38);
+            this.cbFiltro.TabIndex = 0;
             // 
-            // altTextBox1
+            // tbFiltro
             // 
-            this.altTextBox1.Caption = "Digite para Filtrar";
-            this.altTextBox1.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.altTextBox1.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.altTextBox1.Location = new System.Drawing.Point(172, 3);
-            this.altTextBox1.MaxLength = 32767;
-            this.altTextBox1.Multiline = true;
-            this.altTextBox1.Name = "altTextBox1";
-            this.altTextBox1.Obrigatorio = false;
-            this.altTextBox1.ReadOnly = false;
-            this.altTextBox1.SelectionLength = 0;
-            this.altTextBox1.SelectionStart = 0;
-            this.altTextBox1.Size = new System.Drawing.Size(391, 36);
-            this.altTextBox1.TabIndex = 1;
-            this.altTextBox1.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.altTextBox1.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.tbFiltro.Caption = "Digite para Filtrar";
+            this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltro.Location = new System.Drawing.Point(172, 3);
+            this.tbFiltro.MaxLength = 32767;
+            this.tbFiltro.Multiline = true;
+            this.tbFiltro.Name = "tbFiltro";
+            this.tbFiltro.Obrigatorio = false;
+            this.tbFiltro.ReadOnly = false;
+            this.tbFiltro.SelectionLength = 0;
+            this.tbFiltro.SelectionStart = 0;
+            this.tbFiltro.Size = new System.Drawing.Size(391, 36);
+            this.tbFiltro.TabIndex = 1;
+            this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
             // panel4
             // 
@@ -371,14 +356,13 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Button btSairUnidades;
-        private System.Windows.Forms.Button btPesquisarUnidades;
         private System.Windows.Forms.Button btImprimirUnidades;
         private System.Windows.Forms.Button btExcluirUnidades;
         private System.Windows.Forms.Button btEditarUnidades;
         private System.Windows.Forms.Button btIncluirUnidades;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private System.Windows.Forms.Panel panel4;
-        private Componentes.AltComboBox altComboBox1;
-        private Componentes.AltTextBox altTextBox1;
+        private Componentes.AltComboBox cbFiltro;
+        private Componentes.AltTextBox tbFiltro;
     }
 }

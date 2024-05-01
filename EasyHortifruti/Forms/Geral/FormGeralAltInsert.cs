@@ -89,8 +89,6 @@ namespace EasyHortifruti
             pGeral.RazaoSocial = TbRazaoSocial.Text;
             pGeral.Contato = TbContato.Text;
             pGeral.DtNascFundacao = DtNascAbert.Value;
-            pGeral.OrgaoExpedidor = tbOrgaoExpRg.Text;
-            pGeral.OrgaoExpedidorUF = tbEstadoRg.Text;
             pGeral.CPF = tbCpf.Value;
             pGeral.CNPJ = TbCNPJ.Value;
             pGeral.RG = tbRg.Text;
@@ -153,6 +151,15 @@ namespace EasyHortifruti
                             TbNomeFantasia.Text = cnpjConsultado.Estabelecimento.NomeFantasia;
                         else
                             TbNomeFantasia.Text = cnpjConsultado.RazaoSocial;
+
+                        if (cnpjConsultado.Estabelecimento != null && cnpjConsultado.Estabelecimento.Telefone1 != null)
+                        {
+                            Telefone fixo = new Telefone();
+                            fixo.DDD = cnpjConsultado.Estabelecimento.Ddd1;
+                            fixo.Numero = cnpjConsultado.Estabelecimento.Telefone1;
+
+                            TbFone.Text = fixo.TelefoneCompleto;
+                        }
 
                         TbNomeFantasia.Enabled = false;
                         if (cnpjConsultado.Estabelecimento != null && cnpjConsultado.Estabelecimento.InscricoesEstaduais != null && cnpjConsultado.Estabelecimento.InscricoesEstaduais.Count > 0)
@@ -331,8 +338,6 @@ namespace EasyHortifruti
                         TbContato.Text = iGeral.Contato;
                         TbPrazoPgto.Text = iGeral.PrazoPagamento > 0 ? iGeral.PrazoPagamento.ToString() : string.Empty;
                         DtNascAbert.Value = iGeral.DtNascFundacao;
-                        tbOrgaoExpRg.Text = iGeral.OrgaoExpedidor;
-                        tbEstadoRg.Text = iGeral.OrgaoExpedidorUF;
                         tbCpf.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.CPF : string.Empty;
                         TbCNPJ.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.CNPJ : string.Empty;
                         tbRg.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.RG : string.Empty;

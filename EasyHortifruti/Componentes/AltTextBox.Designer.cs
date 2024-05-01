@@ -55,9 +55,10 @@ namespace EasyHortifruti.Componentes
             // 
             this.label.AutoSize = true;
             this.label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label.Location = new System.Drawing.Point(3, 0);
+            this.label.Location = new System.Drawing.Point(3, 2);
+            this.label.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(48, 15);
+            this.label.Size = new System.Drawing.Size(48, 13);
             this.label.TabIndex = 0;
             this.label.Text = "label1";
             // 

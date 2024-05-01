@@ -36,12 +36,10 @@ namespace EasyHortifruti
             this.DgViewCadGeral = new System.Windows.Forms.DataGridView();
             this.panelPesquisarCadGeral = new System.Windows.Forms.Panel();
             this.cbTpFontePesquisa = new EasyHortifruti.Componentes.AltComboBox();
-            this.tbPesquisaGeral = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
+            this.tbFiltro = new AltTextBox();
             this.panel3FormCadGeralBotoes = new System.Windows.Forms.Panel();
             this.BtSairCadGeral = new System.Windows.Forms.Button();
-            this.BtPesquisarCadGeral = new System.Windows.Forms.Button();
             this.BtImprimirCadGeral = new System.Windows.Forms.Button();
             this.BtExcluirCadGeral = new System.Windows.Forms.Button();
             this.BtEditarCadGeral = new System.Windows.Forms.Button();

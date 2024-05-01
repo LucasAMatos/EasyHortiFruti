@@ -5,13 +5,7 @@ namespace EasyHortifruti
 {
     public partial class FormPedidos : FormBase
     {
-        public FormPedidos()
-        {
-            InitializeComponent();
-
-            configuraGridPadrao(dataGridView1);
-        }
-
+        #region Propriedades
         public int IdSelecionado
         {
             get
@@ -24,6 +18,19 @@ namespace EasyHortifruti
                 return -1;
             }
         }
+
+        #endregion
+
+        #region Construtor
+        public FormPedidos()
+        {
+            InitializeComponent();
+
+            configuraGridPadrao(dataGridView1);
+        }
+        #endregion
+
+        #region Eventos
 
         private void btIncluirPedido_Click(object sender, EventArgs e)
         {
@@ -63,17 +70,29 @@ namespace EasyHortifruti
             else
                 MessageBox.Show("Selecione um registro para excluir");
         }
+        #endregion
 
+        private void FormPedidos_Load(object sender, EventArgs e)
+        {
+            CarregarGrid();
+            CarregarComboFiltros();
+        }
+
+        #region Metodos
         public void CarregarGrid()
         {
             dataGridView1.DataSource = new ConexaoBD().ConsultarPedidos();
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataMember = "Table";
         }
-
-        private void FormPedidos_Load(object sender, EventArgs e)
+        private void CarregarComboFiltros()
         {
-            CarregarGrid();
+            foreach (DataGridViewColumn coluna in dataGridView1.Columns)
+            {
+                if (coluna.Visible)
+                    cbFiltro.Items.Add(coluna.HeaderText);
+            }
         }
+        #endregion
     }
 }

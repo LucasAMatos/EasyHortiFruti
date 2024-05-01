@@ -40,6 +40,7 @@ namespace EasyHortifruti
         private void FormCadGrupos_Load(object sender, EventArgs e)
         {
             CarregarGrid();
+            CarregarComboFiltros();
         }
 
         private void BtIncluirGrupo_Click(object sender, EventArgs e)
@@ -89,6 +90,14 @@ namespace EasyHortifruti
 
         #region Métodos
 
+        private void CarregarComboFiltros()
+        {
+            foreach (DataGridViewColumn coluna in DgViewCadGrupos.Columns)
+            {
+                if (coluna.Visible)
+                    cbFiltro.Items.Add(coluna.HeaderText);
+            }
+        }
         public void CarregarGrid()
         {
             DgViewCadGrupos.DataSource = new ConexaoBD().ConsultarGrupos();

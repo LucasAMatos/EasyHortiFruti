@@ -37,19 +37,23 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3 = new System.Windows.Forms.Panel();
             this.BtSairSubGrupo = new System.Windows.Forms.Button();
-            this.BtPesquisarSubGrupo = new System.Windows.Forms.Button();
             this.BtImprimirSubGrupo = new System.Windows.Forms.Button();
             this.BtExcluirSubGrupo = new System.Windows.Forms.Button();
             this.BtEditarSubGrupo = new System.Windows.Forms.Button();
             this.BtIncluirSubGrupo = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
+            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadSubGrupos)).BeginInit();
             this.panel3.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
+            this.panel1.Controls.Add(this.tableLayoutPanel2);
             this.panel1.Controls.Add(this.DgViewCadSubGrupos);
             this.panel1.Controls.Add(this.panel3);
             this.panel1.Controls.Add(this.panel2);
@@ -69,13 +73,12 @@
             this.Grupo,
             this.margemlucro,
             this.ID});
-            this.DgViewCadSubGrupos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.DgViewCadSubGrupos.Location = new System.Drawing.Point(0, 121);
+            this.DgViewCadSubGrupos.Location = new System.Drawing.Point(0, 167);
             this.DgViewCadSubGrupos.MultiSelect = false;
             this.DgViewCadSubGrupos.Name = "DgViewCadSubGrupos";
             this.DgViewCadSubGrupos.ReadOnly = true;
             this.DgViewCadSubGrupos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgViewCadSubGrupos.Size = new System.Drawing.Size(477, 374);
+            this.DgViewCadSubGrupos.Size = new System.Drawing.Size(477, 328);
             this.DgViewCadSubGrupos.TabIndex = 2;
             // 
             // Descricao
@@ -113,7 +116,6 @@
             // panel3
             // 
             this.panel3.Controls.Add(this.BtSairSubGrupo);
-            this.panel3.Controls.Add(this.BtPesquisarSubGrupo);
             this.panel3.Controls.Add(this.BtImprimirSubGrupo);
             this.panel3.Controls.Add(this.BtExcluirSubGrupo);
             this.panel3.Controls.Add(this.BtEditarSubGrupo);
@@ -142,21 +144,6 @@
             this.BtSairSubGrupo.UseVisualStyleBackColor = false;
             this.BtSairSubGrupo.Click += new System.EventHandler(this.BtSairSubGrupo_Click);
             // 
-            // BtPesquisarSubGrupo
-            // 
-            this.BtPesquisarSubGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.BtPesquisarSubGrupo.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtPesquisarSubGrupo.BackgroundImage")));
-            this.BtPesquisarSubGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtPesquisarSubGrupo.FlatAppearance.BorderSize = 0;
-            this.BtPesquisarSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtPesquisarSubGrupo.Location = new System.Drawing.Point(162, 8);
-            this.BtPesquisarSubGrupo.Name = "BtPesquisarSubGrupo";
-            this.BtPesquisarSubGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BtPesquisarSubGrupo.Size = new System.Drawing.Size(46, 52);
-            this.BtPesquisarSubGrupo.TabIndex = 20;
-            this.BtPesquisarSubGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtPesquisarSubGrupo.UseVisualStyleBackColor = false;
-            // 
             // BtImprimirSubGrupo
             // 
             this.BtImprimirSubGrupo.BackColor = System.Drawing.Color.Transparent;
@@ -164,7 +151,7 @@
             this.BtImprimirSubGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtImprimirSubGrupo.FlatAppearance.BorderSize = 0;
             this.BtImprimirSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtImprimirSubGrupo.Location = new System.Drawing.Point(214, 8);
+            this.BtImprimirSubGrupo.Location = new System.Drawing.Point(168, 8);
             this.BtImprimirSubGrupo.Name = "BtImprimirSubGrupo";
             this.BtImprimirSubGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtImprimirSubGrupo.Size = new System.Drawing.Size(46, 52);
@@ -230,6 +217,58 @@
             this.panel2.Size = new System.Drawing.Size(477, 55);
             this.panel2.TabIndex = 0;
             // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel2.Controls.Add(this.cbFiltro, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tbFiltro, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 121);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(477, 44);
+            this.tableLayoutPanel2.TabIndex = 6;
+            // 
+            // cbFiltro
+            // 
+            this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbFiltro.Caption = "Campo para Filtrar";
+            this.cbFiltro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cbFiltro.FormattingEnabled = true;
+            this.cbFiltro.Location = new System.Drawing.Point(3, 3);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Obrigatorio = false;
+            this.cbFiltro.SelectedIndex = -1;
+            this.cbFiltro.SelectedItem = null;
+            this.cbFiltro.SelectedText = "";
+            this.cbFiltro.Size = new System.Drawing.Size(137, 38);
+            this.cbFiltro.TabIndex = 0;
+            // 
+            // tbFiltro
+            // 
+            this.tbFiltro.Caption = "Digite para Filtrar";
+            this.tbFiltro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltro.Location = new System.Drawing.Point(146, 3);
+            this.tbFiltro.MaxLength = 32767;
+            this.tbFiltro.Multiline = true;
+            this.tbFiltro.Name = "tbFiltro";
+            this.tbFiltro.Obrigatorio = false;
+            this.tbFiltro.ReadOnly = false;
+            this.tbFiltro.SelectionLength = 0;
+            this.tbFiltro.SelectionStart = 0;
+            this.tbFiltro.Size = new System.Drawing.Size(328, 38);
+            this.tbFiltro.TabIndex = 1;
+            this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            // 
             // FormSubGruposCad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -238,11 +277,11 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormSubGruposCad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form16";
             this.Load += new System.EventHandler(this.FormCadSubGrupos_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadSubGrupos)).EndInit();
             this.panel3.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -254,7 +293,6 @@
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.DataGridView DgViewCadSubGrupos;
         private System.Windows.Forms.Button BtSairSubGrupo;
-        private System.Windows.Forms.Button BtPesquisarSubGrupo;
         private System.Windows.Forms.Button BtImprimirSubGrupo;
         private System.Windows.Forms.Button BtExcluirSubGrupo;
         private System.Windows.Forms.Button BtEditarSubGrupo;
@@ -263,5 +301,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Grupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn margemlucro;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Componentes.AltComboBox cbFiltro;
+        private Componentes.AltTextBox tbFiltro;
     }
 }

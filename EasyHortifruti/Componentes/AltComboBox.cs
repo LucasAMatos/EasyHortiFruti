@@ -47,6 +47,13 @@ namespace EasyHortifruti.Componentes
             set { comboBox1.SelectedText = value; }
         }
 
+        public override string Text
+        {
+            get { return comboBox1.Text; }
+            set { comboBox1.Text = value; }
+        }
+
+
         public object SelectedItem
         {
             get { return comboBox1.SelectedItem; }

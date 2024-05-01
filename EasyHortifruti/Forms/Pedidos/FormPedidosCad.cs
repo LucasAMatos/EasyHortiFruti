@@ -8,6 +8,8 @@ namespace EasyHortifruti
         public FormPedidos()
         {
             InitializeComponent();
+
+            configuraGridPadrao(dataGridView1);
         }
 
         public int IdSelecionado

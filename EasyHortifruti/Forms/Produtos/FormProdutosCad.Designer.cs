@@ -41,19 +41,23 @@
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel3FormCadProdBotoes = new System.Windows.Forms.Panel();
             this.BtSairCadProduto = new System.Windows.Forms.Button();
-            this.BtPesquisarProduto = new System.Windows.Forms.Button();
             this.BtImprimirProduto = new System.Windows.Forms.Button();
             this.BtExcluirProduto = new System.Windows.Forms.Button();
             this.BtEditarProduto = new System.Windows.Forms.Button();
             this.BtIncluirProduto = new System.Windows.Forms.Button();
             this.panelTituloCadProd = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
+            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
             this.panel1FormCadProd.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadProd)).BeginInit();
             this.panel3FormCadProdBotoes.SuspendLayout();
+            this.tableLayoutPanel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1FormCadProd
             // 
+            this.panel1FormCadProd.Controls.Add(this.tableLayoutPanel2);
             this.panel1FormCadProd.Controls.Add(this.dtGridViewCadProd);
             this.panel1FormCadProd.Controls.Add(this.panel3FormCadProdBotoes);
             this.panel1FormCadProd.Controls.Add(this.panelTituloCadProd);
@@ -79,12 +83,11 @@
             this.lbGrupo,
             this.lbSubGrupo,
             this.ID});
-            this.dtGridViewCadProd.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dtGridViewCadProd.Location = new System.Drawing.Point(0, 127);
+            this.dtGridViewCadProd.Location = new System.Drawing.Point(0, 173);
             this.dtGridViewCadProd.Name = "dtGridViewCadProd";
             this.dtGridViewCadProd.ReadOnly = true;
             this.dtGridViewCadProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtGridViewCadProd.Size = new System.Drawing.Size(754, 434);
+            this.dtGridViewCadProd.Size = new System.Drawing.Size(754, 388);
             this.dtGridViewCadProd.TabIndex = 2;
             // 
             // lbDescricao
@@ -148,7 +151,6 @@
             // panel3FormCadProdBotoes
             // 
             this.panel3FormCadProdBotoes.Controls.Add(this.BtSairCadProduto);
-            this.panel3FormCadProdBotoes.Controls.Add(this.BtPesquisarProduto);
             this.panel3FormCadProdBotoes.Controls.Add(this.BtImprimirProduto);
             this.panel3FormCadProdBotoes.Controls.Add(this.BtExcluirProduto);
             this.panel3FormCadProdBotoes.Controls.Add(this.BtEditarProduto);
@@ -177,21 +179,6 @@
             this.BtSairCadProduto.UseVisualStyleBackColor = false;
             this.BtSairCadProduto.Click += new System.EventHandler(this.BtSairCadProduto_Click);
             // 
-            // BtPesquisarProduto
-            // 
-            this.BtPesquisarProduto.BackColor = System.Drawing.Color.Transparent;
-            this.BtPesquisarProduto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtPesquisarProduto.BackgroundImage")));
-            this.BtPesquisarProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtPesquisarProduto.FlatAppearance.BorderSize = 0;
-            this.BtPesquisarProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtPesquisarProduto.Location = new System.Drawing.Point(168, 4);
-            this.BtPesquisarProduto.Name = "BtPesquisarProduto";
-            this.BtPesquisarProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BtPesquisarProduto.Size = new System.Drawing.Size(46, 52);
-            this.BtPesquisarProduto.TabIndex = 4;
-            this.BtPesquisarProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtPesquisarProduto.UseVisualStyleBackColor = false;
-            // 
             // BtImprimirProduto
             // 
             this.BtImprimirProduto.BackColor = System.Drawing.Color.Transparent;
@@ -199,7 +186,7 @@
             this.BtImprimirProduto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtImprimirProduto.FlatAppearance.BorderSize = 0;
             this.BtImprimirProduto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtImprimirProduto.Location = new System.Drawing.Point(220, 4);
+            this.BtImprimirProduto.Location = new System.Drawing.Point(172, 4);
             this.BtImprimirProduto.Name = "BtImprimirProduto";
             this.BtImprimirProduto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtImprimirProduto.Size = new System.Drawing.Size(46, 52);
@@ -267,55 +254,57 @@
             this.panelTituloCadProd.Size = new System.Drawing.Size(754, 66);
             this.panelTituloCadProd.TabIndex = 0;
             // 
-            // lbDescricao
+            // tableLayoutPanel2
             // 
-            this.lbDescricao.DataPropertyName = "nome_produto";
-            this.lbDescricao.HeaderText = "Descrição";
-            this.lbDescricao.Name = "lbDescricao";
-            this.lbDescricao.Width = 240;
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel2.Controls.Add(this.cbFiltro, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tbFiltro, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 127);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(754, 44);
+            this.tableLayoutPanel2.TabIndex = 7;
             // 
-            // lbUnidade
+            // cbFiltro
             // 
-            this.lbUnidade.DataPropertyName = "abrev_unid";
-            this.lbUnidade.HeaderText = "Unidade";
-            this.lbUnidade.Name = "lbUnidade";
+            this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbFiltro.Caption = "Campo para Filtrar";
+            this.cbFiltro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cbFiltro.FormattingEnabled = true;
+            this.cbFiltro.Location = new System.Drawing.Point(3, 3);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Obrigatorio = false;
+            this.cbFiltro.SelectedIndex = -1;
+            this.cbFiltro.SelectedItem = null;
+            this.cbFiltro.SelectedText = "";
+            this.cbFiltro.Size = new System.Drawing.Size(220, 38);
+            this.cbFiltro.TabIndex = 0;
             // 
-            // lbVlrCompra
+            // tbFiltro
             // 
-            this.lbVlrCompra.DataPropertyName = "pcocompra_produto";
-            this.lbVlrCompra.HeaderText = "Vlr Compra";
-            this.lbVlrCompra.Name = "lbVlrCompra";
-            // 
-            // lbVlrVenda
-            // 
-            this.lbVlrVenda.DataPropertyName = "pcovenda_produto";
-            this.lbVlrVenda.HeaderText = "Vlr Venda";
-            this.lbVlrVenda.Name = "lbVlrVenda";
-            // 
-            // lbVlrMargem
-            // 
-            this.lbVlrMargem.DataPropertyName = "margem_produto";
-            this.lbVlrMargem.HeaderText = "Margem Lucro";
-            this.lbVlrMargem.Name = "lbVlrMargem";
-            // 
-            // lbGrupo
-            // 
-            this.lbGrupo.DataPropertyName = "nome_grupo";
-            this.lbGrupo.HeaderText = "Grupo";
-            this.lbGrupo.Name = "lbGrupo";
-            // 
-            // lbSubGrupo
-            // 
-            this.lbSubGrupo.DataPropertyName = "nome_subgrupo";
-            this.lbSubGrupo.HeaderText = "SubGrupo";
-            this.lbSubGrupo.Name = "lbSubGrupo";
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "id_recno";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
+            this.tbFiltro.Caption = "Digite para Filtrar";
+            this.tbFiltro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltro.Location = new System.Drawing.Point(229, 3);
+            this.tbFiltro.MaxLength = 32767;
+            this.tbFiltro.Multiline = true;
+            this.tbFiltro.Name = "tbFiltro";
+            this.tbFiltro.Obrigatorio = false;
+            this.tbFiltro.ReadOnly = false;
+            this.tbFiltro.SelectionLength = 0;
+            this.tbFiltro.SelectionStart = 0;
+            this.tbFiltro.Size = new System.Drawing.Size(522, 38);
+            this.tbFiltro.TabIndex = 1;
+            this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
             // FormCadastroProduto
             // 
@@ -331,6 +320,7 @@
             this.panel1FormCadProd.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadProd)).EndInit();
             this.panel3FormCadProdBotoes.ResumeLayout(false);
+            this.tableLayoutPanel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -344,7 +334,6 @@
         private System.Windows.Forms.Button BtEditarProduto;
         private System.Windows.Forms.Button BtExcluirProduto;
         private System.Windows.Forms.Button BtImprimirProduto;
-        private System.Windows.Forms.Button BtPesquisarProduto;
         private System.Windows.Forms.Button BtSairCadProduto;
         private System.Windows.Forms.DataGridView dtGridViewCadProd;
         private System.Windows.Forms.DataGridViewTextBoxColumn lbDescricao;
@@ -355,5 +344,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lbGrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn lbSubGrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
+        private Componentes.AltComboBox cbFiltro;
+        private Componentes.AltTextBox tbFiltro;
     }
 }

@@ -8,6 +8,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EasyHortifruti.Componentes
 {
@@ -15,6 +16,8 @@ namespace EasyHortifruti.Componentes
     {
         #region Propriedades
         public bool Obrigatorio { get; set; }
+
+        public event EventHandler TextChanged;
 
         public bool Criticar
         {
@@ -168,7 +171,23 @@ namespace EasyHortifruti.Componentes
         public AltTextBox()
         {
             InitializeComponent();
+            txtBox.TextChanged += TextBox_TextChanged;
         }
+
+        #region Eventos
+        // Manipulador de eventos para o TextChanged do TextBox interno
+        private void TextBox_TextChanged(object sender, EventArgs e)
+        {
+            // Dispare o evento TextChanged personalizado do UserControl
+            OnTextChanged(EventArgs.Empty);
+        }
+
+        // Método para disparar o evento TextChanged personalizado do UserControl
+        protected virtual void OnTextChanged(EventArgs e)
+        {
+            TextChanged?.Invoke(this, e);
+        }
+        #endregion
 
         #region Metodos
 

@@ -30,7 +30,6 @@ namespace EasyHortifruti
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGeralAltInsert));
             this.panel1CadGeralInserirDados = new System.Windows.Forms.Panel();
             this.panel5InserirCadGeral = new System.Windows.Forms.Panel();
@@ -38,10 +37,8 @@ namespace EasyHortifruti
             this.tbBase = new System.Windows.Forms.TabPage();
             this.PanelPJ = new System.Windows.Forms.Panel();
             this.PanelPF = new System.Windows.Forms.Panel();
-            this.cbEstadoCivil = new EasyHortifruti.Componentes.AltComboBox(this.components);
-            this.label42 = new System.Windows.Forms.Label();
-            this.cbSexo = new EasyHortifruti.Componentes.AltComboBox(this.components);
-            this.label41 = new System.Windows.Forms.Label();
+            this.cbEstadoCivil = new EasyHortifruti.Componentes.AltComboBox();
+            this.cbSexo = new EasyHortifruti.Componentes.AltComboBox();
             this.tbEstadoRg = new EasyHortifruti.Componentes.AltTextBox();
             this.tbOrgaoExpRg = new EasyHortifruti.Componentes.AltTextBox();
             this.tbRg = new EasyHortifruti.Componentes.AltTextBox();
@@ -55,8 +52,7 @@ namespace EasyHortifruti
             this.tabControlInserirEndereco = new System.Windows.Forms.TabControl();
             this.tbpEndereco = new System.Windows.Forms.TabPage();
             this.btnConsultaCEP = new System.Windows.Forms.Button();
-            this.CbUF = new EasyHortifruti.Componentes.AltComboBox(this.components);
-            this.label31 = new System.Windows.Forms.Label();
+            this.CbUF = new EasyHortifruti.Componentes.AltComboBox();
             this.label24 = new System.Windows.Forms.Label();
             this.TbEmail = new EasyHortifruti.Componentes.AltTextBox();
             this.TbPontoRef = new EasyHortifruti.Componentes.AltTextBox();
@@ -97,7 +93,7 @@ namespace EasyHortifruti
             this.TbNomeFantasia = new EasyHortifruti.Componentes.AltTextBox();
             this.panel2InserirCadGeral = new System.Windows.Forms.Panel();
             this.labelClassificacao = new System.Windows.Forms.Label();
-            this.CbClassificacao = new EasyHortifruti.Componentes.AltComboBox(this.components);
+            this.CbClassificacao = new EasyHortifruti.Componentes.AltComboBox();
             this.labeltpPesoa = new System.Windows.Forms.Label();
             this.RbPessoaJuridica = new System.Windows.Forms.RadioButton();
             this.RbPessoaFisica = new System.Windows.Forms.RadioButton();
@@ -177,9 +173,7 @@ namespace EasyHortifruti
             // PanelPF
             // 
             this.PanelPF.Controls.Add(this.cbEstadoCivil);
-            this.PanelPF.Controls.Add(this.label42);
             this.PanelPF.Controls.Add(this.cbSexo);
-            this.PanelPF.Controls.Add(this.label41);
             this.PanelPF.Controls.Add(this.tbEstadoRg);
             this.PanelPF.Controls.Add(this.tbOrgaoExpRg);
             this.PanelPF.Controls.Add(this.tbRg);
@@ -191,54 +185,41 @@ namespace EasyHortifruti
             // 
             // cbEstadoCivil
             // 
-            this.cbEstadoCivil.Caption = null;
-            this.cbEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbEstadoCivil.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbEstadoCivil.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbEstadoCivil.Caption = "Estado Civil";
+            this.cbEstadoCivil.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbEstadoCivil.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cbEstadoCivil.FormattingEnabled = true;
-            this.cbEstadoCivil.Items.AddRange(new object[] {
-            "Casado",
-            "Divorciado",
-            "Solteiro",
-            "Viúvo"});
-            this.cbEstadoCivil.Location = new System.Drawing.Point(157, 81);
+            this.cbEstadoCivil.Location = new System.Drawing.Point(157, 63);
+            this.cbEstadoCivil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbEstadoCivil.Name = "cbEstadoCivil";
             this.cbEstadoCivil.Obrigatorio = false;
-            this.cbEstadoCivil.Size = new System.Drawing.Size(147, 26);
+            this.cbEstadoCivil.SelectedIndex = -1;
+            this.cbEstadoCivil.SelectedItem = null;
+            this.cbEstadoCivil.SelectedText = "";
+            this.cbEstadoCivil.Size = new System.Drawing.Size(147, 48);
             this.cbEstadoCivil.TabIndex = 43;
-            // 
-            // label42
-            // 
-            this.label42.AutoSize = true;
-            this.label42.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label42.Location = new System.Drawing.Point(155, 63);
-            this.label42.Name = "label42";
-            this.label42.Size = new System.Drawing.Size(82, 15);
-            this.label42.TabIndex = 42;
-            this.label42.Text = "Estado Civil";
             // 
             // cbSexo
             // 
-            this.cbSexo.Caption = null;
-            this.cbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSexo.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbSexo.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbSexo.Caption = "Sexo";
+            this.cbSexo.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.cbSexo.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cbSexo.FormattingEnabled = true;
-            this.cbSexo.Items.AddRange(new object[] {
-            "Feminino",
-            "Masculino",
-            "Outros"});
-            this.cbSexo.Location = new System.Drawing.Point(18, 81);
+            this.cbSexo.Location = new System.Drawing.Point(18, 63);
+            this.cbSexo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Obrigatorio = false;
-            this.cbSexo.Size = new System.Drawing.Size(118, 26);
+            this.cbSexo.SelectedIndex = -1;
+            this.cbSexo.SelectedItem = null;
+            this.cbSexo.SelectedText = "";
+            this.cbSexo.Size = new System.Drawing.Size(118, 48);
             this.cbSexo.TabIndex = 41;
-            // 
-            // label41
-            // 
-            this.label41.AutoSize = true;
-            this.label41.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label41.Location = new System.Drawing.Point(20, 63);
-            this.label41.Name = "label41";
-            this.label41.Size = new System.Drawing.Size(39, 15);
-            this.label41.TabIndex = 18;
-            this.label41.Text = "Sexo";
             // 
             // tbEstadoRg
             // 
@@ -439,7 +420,6 @@ namespace EasyHortifruti
             // 
             this.tbpEndereco.Controls.Add(this.btnConsultaCEP);
             this.tbpEndereco.Controls.Add(this.CbUF);
-            this.tbpEndereco.Controls.Add(this.label31);
             this.tbpEndereco.Controls.Add(this.label24);
             this.tbpEndereco.Controls.Add(this.TbEmail);
             this.tbpEndereco.Controls.Add(this.TbPontoRef);
@@ -487,25 +467,20 @@ namespace EasyHortifruti
             // 
             this.CbUF.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
             this.CbUF.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.CbUF.Caption = null;
+            this.CbUF.Caption = "UF";
             this.CbUF.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.CbUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.CbUF.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.CbUF.FormattingEnabled = true;
-            this.CbUF.Location = new System.Drawing.Point(461, 101);
+            this.CbUF.Location = new System.Drawing.Point(458, 82);
+            this.CbUF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbUF.Name = "CbUF";
             this.CbUF.Obrigatorio = false;
-            this.CbUF.Size = new System.Drawing.Size(50, 26);
+            this.CbUF.SelectedIndex = -1;
+            this.CbUF.SelectedItem = null;
+            this.CbUF.SelectedText = "";
+            this.CbUF.Size = new System.Drawing.Size(63, 48);
             this.CbUF.TabIndex = 40;
-            // 
-            // label31
-            // 
-            this.label31.AutoSize = true;
-            this.label31.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label31.Location = new System.Drawing.Point(458, 80);
-            this.label31.Name = "label31";
-            this.label31.Size = new System.Drawing.Size(25, 15);
-            this.label31.TabIndex = 34;
-            this.label31.Text = "UF";
             // 
             // label24
             // 
@@ -1048,12 +1023,19 @@ namespace EasyHortifruti
             // 
             // CbClassificacao
             // 
-            this.CbClassificacao.Caption = null;
+            this.CbClassificacao.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.CbClassificacao.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.CbClassificacao.Caption = "";
+            this.CbClassificacao.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CbClassificacao.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbClassificacao.FormattingEnabled = true;
-            this.CbClassificacao.Location = new System.Drawing.Point(594, 5);
+            this.CbClassificacao.Location = new System.Drawing.Point(593, -9);
             this.CbClassificacao.Name = "CbClassificacao";
             this.CbClassificacao.Obrigatorio = false;
-            this.CbClassificacao.Size = new System.Drawing.Size(167, 21);
+            this.CbClassificacao.SelectedIndex = -1;
+            this.CbClassificacao.SelectedItem = null;
+            this.CbClassificacao.SelectedText = "";
+            this.CbClassificacao.Size = new System.Drawing.Size(167, 46);
             this.CbClassificacao.TabIndex = 3;
             // 
             // labeltpPesoa
@@ -1107,7 +1089,6 @@ namespace EasyHortifruti
             this.tbBase.PerformLayout();
             this.PanelPJ.ResumeLayout(false);
             this.PanelPF.ResumeLayout(false);
-            this.PanelPF.PerformLayout();
             this.panel7InserirCadGeral.ResumeLayout(false);
             this.tabControlInserirEndereco.ResumeLayout(false);
             this.tbpEndereco.ResumeLayout(false);
@@ -1157,7 +1138,6 @@ namespace EasyHortifruti
         private System.Windows.Forms.TabControl tabControlInserirEndereco;
         private System.Windows.Forms.TabPage tabPage4;
         private System.Windows.Forms.TabPage tbpEndereco;
-        private System.Windows.Forms.Label label31;
         private System.Windows.Forms.Label label24;
         private AltTextBox TbEmail;
         private AltTextBox TbPontoRef;
@@ -1186,9 +1166,7 @@ namespace EasyHortifruti
         private AltTextBox tbRg;
         private AltTextBox tbCpf;
         private AltComboBox cbEstadoCivil;
-        private System.Windows.Forms.Label label42;
         private AltComboBox cbSexo;
-        private System.Windows.Forms.Label label41;
         private System.Windows.Forms.Label labelClassificacao;
         private AltComboBox CbClassificacao;
         private System.Windows.Forms.Button BtConsCNPJ;

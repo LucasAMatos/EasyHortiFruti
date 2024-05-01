@@ -371,7 +371,7 @@ namespace EasyHortifruti
 
         private void CarregarComboSexo()
         {
-            cbEstadoCivil.CarregarDescricoesEnum<Sexo>();
+            cbSexo.CarregarDescricoesEnum<Sexo>();
         }
 
         private void CarregarComboEstadoCivil()

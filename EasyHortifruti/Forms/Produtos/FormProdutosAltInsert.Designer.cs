@@ -31,7 +31,6 @@ namespace EasyHortifruti
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormProdutosAltInsert));
             this.panelInserirProduto = new System.Windows.Forms.Panel();
             this.BtCadNCM = new System.Windows.Forms.Button();
@@ -42,14 +41,10 @@ namespace EasyHortifruti
             this.BtCadSubGrupo = new System.Windows.Forms.Button();
             this.BtCadGrupo = new System.Windows.Forms.Button();
             this.BtCadUnidade = new System.Windows.Forms.Button();
-            this.cbSubGrupoProduto = new EasyHortifruti.Componentes.AltComboBox(this.components);
-            this.cbGrupoProduto = new EasyHortifruti.Componentes.AltComboBox(this.components);
-            this.label7 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.cbUnidProduto = new EasyHortifruti.Componentes.AltComboBox(this.components);
-            this.label2 = new System.Windows.Forms.Label();
+            this.cbSubGrupoProduto = new EasyHortifruti.Componentes.AltComboBox();
+            this.cbGrupoProduto = new EasyHortifruti.Componentes.AltComboBox();
+            this.cbUnidProduto = new EasyHortifruti.Componentes.AltComboBox();
             this.tbDescricaoProduto = new EasyHortifruti.Componentes.AltTextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.panelBotoesInserirProduto = new System.Windows.Forms.Panel();
             this.labelIDProduto = new System.Windows.Forms.Label();
             this.BtGravaAlterProd = new System.Windows.Forms.Button();
@@ -71,12 +66,8 @@ namespace EasyHortifruti
             this.panelInserirProduto.Controls.Add(this.BtCadUnidade);
             this.panelInserirProduto.Controls.Add(this.cbSubGrupoProduto);
             this.panelInserirProduto.Controls.Add(this.cbGrupoProduto);
-            this.panelInserirProduto.Controls.Add(this.label7);
-            this.panelInserirProduto.Controls.Add(this.label6);
             this.panelInserirProduto.Controls.Add(this.cbUnidProduto);
-            this.panelInserirProduto.Controls.Add(this.label2);
             this.panelInserirProduto.Controls.Add(this.tbDescricaoProduto);
-            this.panelInserirProduto.Controls.Add(this.label1);
             this.panelInserirProduto.Controls.Add(this.panelBotoesInserirProduto);
             this.panelInserirProduto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelInserirProduto.Location = new System.Drawing.Point(0, 0);
@@ -189,7 +180,7 @@ namespace EasyHortifruti
             this.BtCadSubGrupo.FlatAppearance.BorderSize = 0;
             this.BtCadSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtCadSubGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtCadSubGrupo.Image")));
-            this.BtCadSubGrupo.Location = new System.Drawing.Point(488, 244);
+            this.BtCadSubGrupo.Location = new System.Drawing.Point(488, 247);
             this.BtCadSubGrupo.Name = "BtCadSubGrupo";
             this.BtCadSubGrupo.Size = new System.Drawing.Size(26, 25);
             this.BtCadSubGrupo.TabIndex = 17;
@@ -231,88 +222,66 @@ namespace EasyHortifruti
             // 
             this.cbSubGrupoProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cbSubGrupoProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbSubGrupoProduto.Caption = null;
+            this.cbSubGrupoProduto.Caption = "SubGrupo";
             this.cbSubGrupoProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbSubGrupoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbSubGrupoProduto.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cbSubGrupoProduto.FormattingEnabled = true;
-            this.cbSubGrupoProduto.Location = new System.Drawing.Point(337, 246);
+            this.cbSubGrupoProduto.Location = new System.Drawing.Point(353, 225);
+            this.cbSubGrupoProduto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSubGrupoProduto.Name = "cbSubGrupoProduto";
             this.cbSubGrupoProduto.Obrigatorio = false;
-            this.cbSubGrupoProduto.Size = new System.Drawing.Size(138, 26);
+            this.cbSubGrupoProduto.SelectedIndex = -1;
+            this.cbSubGrupoProduto.SelectedItem = null;
+            this.cbSubGrupoProduto.SelectedText = "";
+            this.cbSubGrupoProduto.Size = new System.Drawing.Size(138, 48);
             this.cbSubGrupoProduto.TabIndex = 8;
             // 
             // cbGrupoProduto
             // 
             this.cbGrupoProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cbGrupoProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbGrupoProduto.Caption = null;
+            this.cbGrupoProduto.Caption = "Grupo";
             this.cbGrupoProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbGrupoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbGrupoProduto.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cbGrupoProduto.FormattingEnabled = true;
-            this.cbGrupoProduto.Location = new System.Drawing.Point(154, 246);
+            this.cbGrupoProduto.Location = new System.Drawing.Point(154, 225);
+            this.cbGrupoProduto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbGrupoProduto.Name = "cbGrupoProduto";
             this.cbGrupoProduto.Obrigatorio = false;
-            this.cbGrupoProduto.Size = new System.Drawing.Size(119, 26);
+            this.cbGrupoProduto.SelectedIndex = -1;
+            this.cbGrupoProduto.SelectedItem = null;
+            this.cbGrupoProduto.SelectedText = "";
+            this.cbGrupoProduto.Size = new System.Drawing.Size(119, 48);
             this.cbGrupoProduto.TabIndex = 7;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.BackColor = System.Drawing.Color.Transparent;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.Color.Black;
-            this.label7.Location = new System.Drawing.Point(341, 229);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 15);
-            this.label7.TabIndex = 12;
-            this.label7.Text = "SubGrupo";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.BackColor = System.Drawing.Color.Transparent;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(157, 229);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(46, 15);
-            this.label6.TabIndex = 11;
-            this.label6.Text = "Grupo";
             // 
             // cbUnidProduto
             // 
             this.cbUnidProduto.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Append;
             this.cbUnidProduto.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.ListItems;
-            this.cbUnidProduto.Caption = null;
+            this.cbUnidProduto.Caption = "Unidade";
             this.cbUnidProduto.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUnidProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbUnidProduto.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cbUnidProduto.FormattingEnabled = true;
-            this.cbUnidProduto.Location = new System.Drawing.Point(154, 151);
+            this.cbUnidProduto.Location = new System.Drawing.Point(154, 132);
+            this.cbUnidProduto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbUnidProduto.Name = "cbUnidProduto";
             this.cbUnidProduto.Obrigatorio = false;
-            this.cbUnidProduto.Size = new System.Drawing.Size(113, 26);
+            this.cbUnidProduto.SelectedIndex = -1;
+            this.cbUnidProduto.SelectedItem = null;
+            this.cbUnidProduto.SelectedText = "";
+            this.cbUnidProduto.Size = new System.Drawing.Size(113, 48);
             this.cbUnidProduto.TabIndex = 2;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.Black;
-            this.label2.Location = new System.Drawing.Point(157, 134);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(61, 15);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Unidade";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // tbDescricaoProduto
             // 
-            this.tbDescricaoProduto.Caption = "";
+            this.tbDescricaoProduto.Caption = "Descrição";
             this.tbDescricaoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescricaoProduto.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbDescricaoProduto.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.tbDescricaoProduto.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbDescricaoProduto.Location = new System.Drawing.Point(30, 74);
+            this.tbDescricaoProduto.Location = new System.Drawing.Point(18, 57);
             this.tbDescricaoProduto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.tbDescricaoProduto.MaxLength = 32767;
             this.tbDescricaoProduto.Multiline = true;
@@ -321,22 +290,10 @@ namespace EasyHortifruti
             this.tbDescricaoProduto.ReadOnly = false;
             this.tbDescricaoProduto.SelectionLength = 0;
             this.tbDescricaoProduto.SelectionStart = 0;
-            this.tbDescricaoProduto.Size = new System.Drawing.Size(484, 24);
+            this.tbDescricaoProduto.Size = new System.Drawing.Size(496, 48);
             this.tbDescricaoProduto.TabIndex = 1;
             this.tbDescricaoProduto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbDescricaoProduto.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.Black;
-            this.label1.Location = new System.Drawing.Point(27, 57);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(71, 15);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Descrição";
             // 
             // panelBotoesInserirProduto
             // 
@@ -408,7 +365,6 @@ namespace EasyHortifruti
             this.Text = "EasyHortifruti - Inserir Produto";
             this.Load += new System.EventHandler(this.FormProdutosAltInsert_Load);
             this.panelInserirProduto.ResumeLayout(false);
-            this.panelInserirProduto.PerformLayout();
             this.panelBotoesInserirProduto.ResumeLayout(false);
             this.panelBotoesInserirProduto.PerformLayout();
             this.ResumeLayout(false);
@@ -427,11 +383,7 @@ namespace EasyHortifruti
         private System.Windows.Forms.Button BtCancelaProduto;
         private System.Windows.Forms.Button BtGravaAlterProd;
         private AltTextBox tbDescricaoProduto;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
         private AltComboBox cbUnidProduto;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Label label6;
         private AltComboBox cbSubGrupoProduto;
         private AltComboBox cbGrupoProduto;
         private System.Windows.Forms.Label labelIDProduto;

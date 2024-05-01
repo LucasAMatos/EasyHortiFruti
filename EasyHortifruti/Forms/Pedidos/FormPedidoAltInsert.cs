@@ -102,7 +102,8 @@ namespace EasyHortifruti
             CarregarGridNomeCliente();
             dsProdutos = new ConexaoBD().ConsultarProdutos();
             CarregarComboProdutos();
-
+            CarregarComboUnidades();
+            CarregarComboTpDocumento();
         }
 
         private void CarregarComboProdutos()
@@ -122,6 +123,12 @@ namespace EasyHortifruti
         private void CbProdutos_SelectedIndexChanged(object sender, EventArgs e)
         {
             CarregarComboUnidades();
+        }
+
+        private void CarregarComboTpDocumento()
+        {
+            CbTpDocumento.Items.Clear();
+            CbTpDocumento.CarregarDescricoesEnum<TPFJ>();
         }
 
         private void CarregarComboUnidades()

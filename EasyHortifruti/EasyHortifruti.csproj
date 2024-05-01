@@ -154,7 +154,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Componentes\AltComboBox.cs">
-      <SubType>Component</SubType>
+      <SubType>UserControl</SubType>
     </Compile>
     <Compile Include="Componentes\AltComboBox.Designer.cs">
       <DependentUpon>AltComboBox.cs</DependentUpon>

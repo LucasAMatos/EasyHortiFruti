@@ -187,7 +187,7 @@ namespace EasyHortifruti
             this.cbEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbEstadoCivil.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cbEstadoCivil.FormattingEnabled = true;
-            this.cbEstadoCivil.Location = new System.Drawing.Point(430, 14);
+            this.cbEstadoCivil.Location = new System.Drawing.Point(430, 8);
             this.cbEstadoCivil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbEstadoCivil.Name = "cbEstadoCivil";
             this.cbEstadoCivil.Obrigatorio = false;
@@ -206,7 +206,7 @@ namespace EasyHortifruti
             this.cbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbSexo.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cbSexo.FormattingEnabled = true;
-            this.cbSexo.Location = new System.Drawing.Point(310, 14);
+            this.cbSexo.Location = new System.Drawing.Point(311, 8);
             this.cbSexo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Obrigatorio = false;
@@ -219,11 +219,11 @@ namespace EasyHortifruti
             // tbRg
             // 
             this.tbRg.Caption = "RG";
-            this.tbRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.tbRg.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.tbRg.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbRg.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbRg.Location = new System.Drawing.Point(193, 10);
-            this.tbRg.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbRg.Margin = new System.Windows.Forms.Padding(4);
             this.tbRg.MaxLength = 32767;
             this.tbRg.Multiline = true;
             this.tbRg.Name = "tbRg";
@@ -231,7 +231,7 @@ namespace EasyHortifruti
             this.tbRg.ReadOnly = false;
             this.tbRg.SelectionLength = 0;
             this.tbRg.SelectionStart = 0;
-            this.tbRg.Size = new System.Drawing.Size(112, 48);
+            this.tbRg.Size = new System.Drawing.Size(112, 40);
             this.tbRg.TabIndex = 13;
             this.tbRg.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbRg.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -239,11 +239,11 @@ namespace EasyHortifruti
             // tbCpf
             // 
             this.tbCpf.Caption = "CPF";
-            this.tbCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.tbCpf.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.tbCpf.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbCpf.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.tbCpf.Location = new System.Drawing.Point(10, 10);
-            this.tbCpf.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.tbCpf.Margin = new System.Windows.Forms.Padding(4);
             this.tbCpf.MaxLength = 14;
             this.tbCpf.Multiline = true;
             this.tbCpf.Name = "tbCpf";
@@ -251,7 +251,7 @@ namespace EasyHortifruti
             this.tbCpf.ReadOnly = false;
             this.tbCpf.SelectionLength = 0;
             this.tbCpf.SelectionStart = 0;
-            this.tbCpf.Size = new System.Drawing.Size(169, 48);
+            this.tbCpf.Size = new System.Drawing.Size(169, 40);
             this.tbCpf.TabIndex = 11;
             this.tbCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbCpf.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.CPF;
@@ -426,14 +426,14 @@ namespace EasyHortifruti
             this.CbUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.CbUF.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.CbUF.FormattingEnabled = true;
-            this.CbUF.Location = new System.Drawing.Point(458, 82);
+            this.CbUF.Location = new System.Drawing.Point(453, 80);
             this.CbUF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbUF.Name = "CbUF";
             this.CbUF.Obrigatorio = false;
             this.CbUF.SelectedIndex = -1;
             this.CbUF.SelectedItem = null;
             this.CbUF.SelectedText = "";
-            this.CbUF.Size = new System.Drawing.Size(63, 48);
+            this.CbUF.Size = new System.Drawing.Size(63, 46);
             this.CbUF.TabIndex = 40;
             // 
             // label24
@@ -448,11 +448,11 @@ namespace EasyHortifruti
             // TbEmail
             // 
             this.TbEmail.Caption = "E-mail";
-            this.TbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TbEmail.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.TbEmail.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbEmail.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.TbEmail.Location = new System.Drawing.Point(538, 80);
-            this.TbEmail.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TbEmail.MaxLength = 32767;
             this.TbEmail.Multiline = true;
             this.TbEmail.Name = "TbEmail";
@@ -460,7 +460,7 @@ namespace EasyHortifruti
             this.TbEmail.ReadOnly = false;
             this.TbEmail.SelectionLength = 0;
             this.TbEmail.SelectionStart = 0;
-            this.TbEmail.Size = new System.Drawing.Size(210, 48);
+            this.TbEmail.Size = new System.Drawing.Size(210, 40);
             this.TbEmail.TabIndex = 26;
             this.TbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbEmail.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -468,11 +468,11 @@ namespace EasyHortifruti
             // TbPontoRef
             // 
             this.TbPontoRef.Caption = "Ponto de Referência";
-            this.TbPontoRef.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbPontoRef.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TbPontoRef.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.TbPontoRef.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbPontoRef.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.TbPontoRef.Location = new System.Drawing.Point(14, 143);
-            this.TbPontoRef.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbPontoRef.Margin = new System.Windows.Forms.Padding(4);
             this.TbPontoRef.MaxLength = 32767;
             this.TbPontoRef.Multiline = true;
             this.TbPontoRef.Name = "TbPontoRef";
@@ -480,7 +480,7 @@ namespace EasyHortifruti
             this.TbPontoRef.ReadOnly = false;
             this.TbPontoRef.SelectionLength = 0;
             this.TbPontoRef.SelectionStart = 0;
-            this.TbPontoRef.Size = new System.Drawing.Size(291, 48);
+            this.TbPontoRef.Size = new System.Drawing.Size(291, 40);
             this.TbPontoRef.TabIndex = 25;
             this.TbPontoRef.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbPontoRef.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -506,11 +506,11 @@ namespace EasyHortifruti
             // TbCidade
             // 
             this.TbCidade.Caption = "Cidade";
-            this.TbCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TbCidade.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.TbCidade.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbCidade.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.TbCidade.Location = new System.Drawing.Point(212, 80);
-            this.TbCidade.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbCidade.Margin = new System.Windows.Forms.Padding(4);
             this.TbCidade.MaxLength = 32767;
             this.TbCidade.Multiline = true;
             this.TbCidade.Name = "TbCidade";
@@ -518,7 +518,7 @@ namespace EasyHortifruti
             this.TbCidade.ReadOnly = false;
             this.TbCidade.SelectionLength = 0;
             this.TbCidade.SelectionStart = 0;
-            this.TbCidade.Size = new System.Drawing.Size(224, 48);
+            this.TbCidade.Size = new System.Drawing.Size(224, 40);
             this.TbCidade.TabIndex = 19;
             this.TbCidade.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbCidade.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -526,11 +526,11 @@ namespace EasyHortifruti
             // TbBairro
             // 
             this.TbBairro.Caption = "Bairro";
-            this.TbBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbBairro.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TbBairro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.TbBairro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbBairro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.TbBairro.Location = new System.Drawing.Point(14, 80);
-            this.TbBairro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbBairro.Margin = new System.Windows.Forms.Padding(4);
             this.TbBairro.MaxLength = 32767;
             this.TbBairro.Multiline = true;
             this.TbBairro.Name = "TbBairro";
@@ -538,7 +538,7 @@ namespace EasyHortifruti
             this.TbBairro.ReadOnly = false;
             this.TbBairro.SelectionLength = 0;
             this.TbBairro.SelectionStart = 0;
-            this.TbBairro.Size = new System.Drawing.Size(175, 48);
+            this.TbBairro.Size = new System.Drawing.Size(175, 40);
             this.TbBairro.TabIndex = 18;
             this.TbBairro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbBairro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -591,11 +591,11 @@ namespace EasyHortifruti
             // TbComplemento
             // 
             this.TbComplemento.Caption = "Complemento";
-            this.TbComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbComplemento.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TbComplemento.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.TbComplemento.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbComplemento.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.TbComplemento.Location = new System.Drawing.Point(566, 26);
-            this.TbComplemento.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbComplemento.Margin = new System.Windows.Forms.Padding(4);
             this.TbComplemento.MaxLength = 32767;
             this.TbComplemento.Multiline = true;
             this.TbComplemento.Name = "TbComplemento";
@@ -603,7 +603,7 @@ namespace EasyHortifruti
             this.TbComplemento.ReadOnly = false;
             this.TbComplemento.SelectionLength = 0;
             this.TbComplemento.SelectionStart = 0;
-            this.TbComplemento.Size = new System.Drawing.Size(184, 48);
+            this.TbComplemento.Size = new System.Drawing.Size(184, 40);
             this.TbComplemento.TabIndex = 12;
             this.TbComplemento.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbComplemento.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -611,11 +611,11 @@ namespace EasyHortifruti
             // TbNumero
             // 
             this.TbNumero.Caption = "Número";
-            this.TbNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbNumero.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TbNumero.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.TbNumero.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbNumero.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.TbNumero.Location = new System.Drawing.Point(484, 26);
-            this.TbNumero.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbNumero.Margin = new System.Windows.Forms.Padding(4);
             this.TbNumero.MaxLength = 32767;
             this.TbNumero.Multiline = true;
             this.TbNumero.Name = "TbNumero";
@@ -623,7 +623,7 @@ namespace EasyHortifruti
             this.TbNumero.ReadOnly = false;
             this.TbNumero.SelectionLength = 0;
             this.TbNumero.SelectionStart = 0;
-            this.TbNumero.Size = new System.Drawing.Size(74, 48);
+            this.TbNumero.Size = new System.Drawing.Size(74, 40);
             this.TbNumero.TabIndex = 11;
             this.TbNumero.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbNumero.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -631,11 +631,11 @@ namespace EasyHortifruti
             // TbRua
             // 
             this.TbRua.Caption = "Rua (Logradouro)";
-            this.TbRua.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbRua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TbRua.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.TbRua.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbRua.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.TbRua.Location = new System.Drawing.Point(129, 26);
-            this.TbRua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbRua.Margin = new System.Windows.Forms.Padding(4);
             this.TbRua.MaxLength = 32767;
             this.TbRua.Multiline = true;
             this.TbRua.Name = "TbRua";
@@ -643,7 +643,7 @@ namespace EasyHortifruti
             this.TbRua.ReadOnly = false;
             this.TbRua.SelectionLength = 0;
             this.TbRua.SelectionStart = 0;
-            this.TbRua.Size = new System.Drawing.Size(345, 48);
+            this.TbRua.Size = new System.Drawing.Size(345, 40);
             this.TbRua.TabIndex = 10;
             this.TbRua.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbRua.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -651,11 +651,11 @@ namespace EasyHortifruti
             // TbCepEndereco
             // 
             this.TbCepEndereco.Caption = "CEP";
-            this.TbCepEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbCepEndereco.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TbCepEndereco.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
-            this.TbCepEndereco.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbCepEndereco.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.TbCepEndereco.Location = new System.Drawing.Point(13, 26);
-            this.TbCepEndereco.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbCepEndereco.Margin = new System.Windows.Forms.Padding(4);
             this.TbCepEndereco.MaxLength = 9;
             this.TbCepEndereco.Multiline = true;
             this.TbCepEndereco.Name = "TbCepEndereco";
@@ -663,7 +663,7 @@ namespace EasyHortifruti
             this.TbCepEndereco.ReadOnly = false;
             this.TbCepEndereco.SelectionLength = 0;
             this.TbCepEndereco.SelectionStart = 0;
-            this.TbCepEndereco.Size = new System.Drawing.Size(84, 48);
+            this.TbCepEndereco.Size = new System.Drawing.Size(84, 40);
             this.TbCepEndereco.TabIndex = 9;
             this.TbCepEndereco.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbCepEndereco.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.CEP;
@@ -719,11 +719,11 @@ namespace EasyHortifruti
             // TbFone
             // 
             this.TbFone.Caption = "Fone";
-            this.TbFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbFone.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TbFone.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 0.5F);
-            this.TbFone.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbFone.Location = new System.Drawing.Point(69, -16);
-            this.TbFone.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbFone.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.TbFone.Location = new System.Drawing.Point(67, -9);
+            this.TbFone.Margin = new System.Windows.Forms.Padding(4);
             this.TbFone.MaxLength = 14;
             this.TbFone.Multiline = true;
             this.TbFone.Name = "TbFone";
@@ -731,7 +731,7 @@ namespace EasyHortifruti
             this.TbFone.ReadOnly = false;
             this.TbFone.SelectionLength = 0;
             this.TbFone.SelectionStart = 0;
-            this.TbFone.Size = new System.Drawing.Size(113, 48);
+            this.TbFone.Size = new System.Drawing.Size(113, 40);
             this.TbFone.TabIndex = 15;
             this.TbFone.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbFone.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TELEFONE;
@@ -739,11 +739,11 @@ namespace EasyHortifruti
             // TbCelular
             // 
             this.TbCelular.Caption = "Celular";
-            this.TbCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbCelular.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TbCelular.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 0.5F);
-            this.TbCelular.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbCelular.Location = new System.Drawing.Point(69, 18);
-            this.TbCelular.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.TbCelular.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            this.TbCelular.Location = new System.Drawing.Point(67, 23);
+            this.TbCelular.Margin = new System.Windows.Forms.Padding(4);
             this.TbCelular.MaxLength = 14;
             this.TbCelular.Multiline = true;
             this.TbCelular.Name = "TbCelular";
@@ -751,7 +751,7 @@ namespace EasyHortifruti
             this.TbCelular.ReadOnly = false;
             this.TbCelular.SelectionLength = 0;
             this.TbCelular.SelectionStart = 0;
-            this.TbCelular.Size = new System.Drawing.Size(113, 48);
+            this.TbCelular.Size = new System.Drawing.Size(113, 40);
             this.TbCelular.TabIndex = 16;
             this.TbCelular.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbCelular.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TELEFONE;
@@ -975,6 +975,7 @@ namespace EasyHortifruti
             this.CbClassificacao.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbClassificacao.FormattingEnabled = true;
             this.CbClassificacao.Location = new System.Drawing.Point(591, -8);
+            this.CbClassificacao.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbClassificacao.Name = "CbClassificacao";
             this.CbClassificacao.Obrigatorio = false;
             this.CbClassificacao.SelectedIndex = -1;

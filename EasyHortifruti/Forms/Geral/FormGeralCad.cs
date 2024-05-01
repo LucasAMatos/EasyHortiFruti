@@ -84,9 +84,19 @@ namespace EasyHortifruti
             "Funcionário",
             "Sócio"});
         }
+        private void CarregarComboFiltros()
+        {
+            foreach (DataGridViewColumn coluna in DgViewCadGeral.Columns)
+            {
+                if (coluna.Visible)
+                    cbFiltro.Items.Add(coluna.HeaderText);
+            }
+        }
+
         private void FormCadGeral_Load(object sender, EventArgs e)
         {
             CarregarGrid();
+            CarregarComboFiltros();
         }
     }
 }

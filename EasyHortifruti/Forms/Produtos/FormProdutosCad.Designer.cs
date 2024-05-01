@@ -28,24 +28,17 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroProduto));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1FormCadProd = new System.Windows.Forms.Panel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
             this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
             this.dtGridViewCadProd = new System.Windows.Forms.DataGridView();
-            this.panel3FormCadProdBotoes = new System.Windows.Forms.Panel();
-            this.BtSairCadProduto = new System.Windows.Forms.Button();
-            this.BtImprimirProduto = new System.Windows.Forms.Button();
-            this.BtExcluirProduto = new System.Windows.Forms.Button();
-            this.BtEditarProduto = new System.Windows.Forms.Button();
-            this.BtIncluirProduto = new System.Windows.Forms.Button();
-            this.panelTituloCadProd = new System.Windows.Forms.Panel();
             this.lbDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbUnidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbVlrCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,6 +47,13 @@
             this.lbGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbSubGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel3FormCadProdBotoes = new System.Windows.Forms.Panel();
+            this.BtSairCadProduto = new System.Windows.Forms.Button();
+            this.BtImprimirProduto = new System.Windows.Forms.Button();
+            this.BtExcluirProduto = new System.Windows.Forms.Button();
+            this.BtEditarProduto = new System.Windows.Forms.Button();
+            this.BtIncluirProduto = new System.Windows.Forms.Button();
+            this.panelTituloCadProd = new System.Windows.Forms.Panel();
             this.panel1FormCadProd.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadProd)).BeginInit();
@@ -97,12 +97,13 @@
             this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.cbFiltro.FormattingEnabled = true;
             this.cbFiltro.Location = new System.Drawing.Point(3, 3);
+            this.cbFiltro.Margin = new System.Windows.Forms.Padding(3, 3, 3, 0);
             this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Obrigatorio = false;
             this.cbFiltro.SelectedIndex = -1;
             this.cbFiltro.SelectedItem = null;
             this.cbFiltro.SelectedText = "";
-            this.cbFiltro.Size = new System.Drawing.Size(205, 38);
+            this.cbFiltro.Size = new System.Drawing.Size(205, 41);
             this.cbFiltro.TabIndex = 0;
             // 
             // tbFiltro
@@ -112,6 +113,7 @@
             this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFiltro.Location = new System.Drawing.Point(214, 3);
+            this.tbFiltro.Margin = new System.Windows.Forms.Padding(3, 3, 3, 6);
             this.tbFiltro.MaxLength = 32767;
             this.tbFiltro.Multiline = true;
             this.tbFiltro.Name = "tbFiltro";
@@ -119,7 +121,7 @@
             this.tbFiltro.ReadOnly = false;
             this.tbFiltro.SelectionLength = 0;
             this.tbFiltro.SelectionStart = 0;
-            this.tbFiltro.Size = new System.Drawing.Size(488, 38);
+            this.tbFiltro.Size = new System.Drawing.Size(488, 35);
             this.tbFiltro.TabIndex = 1;
             this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -146,6 +148,85 @@
             this.dtGridViewCadProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtGridViewCadProd.Size = new System.Drawing.Size(702, 388);
             this.dtGridViewCadProd.TabIndex = 2;
+            // 
+            // lbDescricao
+            // 
+            this.lbDescricao.DataPropertyName = "nome_produto";
+            this.lbDescricao.HeaderText = "Descrição";
+            this.lbDescricao.Name = "lbDescricao";
+            this.lbDescricao.ReadOnly = true;
+            this.lbDescricao.Width = 180;
+            // 
+            // lbUnidade
+            // 
+            this.lbUnidade.DataPropertyName = "abrev_unid";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.lbUnidade.DefaultCellStyle = dataGridViewCellStyle6;
+            this.lbUnidade.HeaderText = "Unidade";
+            this.lbUnidade.Name = "lbUnidade";
+            this.lbUnidade.ReadOnly = true;
+            this.lbUnidade.Width = 60;
+            // 
+            // lbVlrCompra
+            // 
+            this.lbVlrCompra.DataPropertyName = "pcocompra_produto";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle7.Format = "C2";
+            dataGridViewCellStyle7.NullValue = null;
+            this.lbVlrCompra.DefaultCellStyle = dataGridViewCellStyle7;
+            this.lbVlrCompra.HeaderText = "Vlr Compra";
+            this.lbVlrCompra.Name = "lbVlrCompra";
+            this.lbVlrCompra.ReadOnly = true;
+            this.lbVlrCompra.Width = 85;
+            // 
+            // lbVlrVenda
+            // 
+            this.lbVlrVenda.DataPropertyName = "pcovenda_produto";
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle8.Format = "C2";
+            dataGridViewCellStyle8.NullValue = null;
+            this.lbVlrVenda.DefaultCellStyle = dataGridViewCellStyle8;
+            this.lbVlrVenda.HeaderText = "Vlr Venda";
+            this.lbVlrVenda.Name = "lbVlrVenda";
+            this.lbVlrVenda.ReadOnly = true;
+            this.lbVlrVenda.Width = 80;
+            // 
+            // lbVlrMargem
+            // 
+            this.lbVlrMargem.DataPropertyName = "margem_produto";
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.lbVlrMargem.DefaultCellStyle = dataGridViewCellStyle9;
+            this.lbVlrMargem.HeaderText = "% Lucro";
+            this.lbVlrMargem.Name = "lbVlrMargem";
+            this.lbVlrMargem.ReadOnly = true;
+            this.lbVlrMargem.Width = 70;
+            // 
+            // lbGrupo
+            // 
+            this.lbGrupo.DataPropertyName = "nome_grupo";
+            this.lbGrupo.HeaderText = "Grupo";
+            this.lbGrupo.Name = "lbGrupo";
+            this.lbGrupo.ReadOnly = true;
+            this.lbGrupo.Width = 70;
+            // 
+            // lbSubGrupo
+            // 
+            this.lbSubGrupo.DataPropertyName = "nome_subgrupo";
+            this.lbSubGrupo.HeaderText = "SubGrupo";
+            this.lbSubGrupo.Name = "lbSubGrupo";
+            this.lbSubGrupo.ReadOnly = true;
+            this.lbSubGrupo.Width = 70;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id_recno";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle10;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            this.ID.Width = 30;
             // 
             // panel3FormCadProdBotoes
             // 
@@ -252,85 +333,6 @@
             this.panelTituloCadProd.Name = "panelTituloCadProd";
             this.panelTituloCadProd.Size = new System.Drawing.Size(705, 66);
             this.panelTituloCadProd.TabIndex = 0;
-            // 
-            // lbDescricao
-            // 
-            this.lbDescricao.DataPropertyName = "nome_produto";
-            this.lbDescricao.HeaderText = "Descrição";
-            this.lbDescricao.Name = "lbDescricao";
-            this.lbDescricao.ReadOnly = true;
-            this.lbDescricao.Width = 180;
-            // 
-            // lbUnidade
-            // 
-            this.lbUnidade.DataPropertyName = "abrev_unid";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.lbUnidade.DefaultCellStyle = dataGridViewCellStyle1;
-            this.lbUnidade.HeaderText = "Unidade";
-            this.lbUnidade.Name = "lbUnidade";
-            this.lbUnidade.ReadOnly = true;
-            this.lbUnidade.Width = 60;
-            // 
-            // lbVlrCompra
-            // 
-            this.lbVlrCompra.DataPropertyName = "pcocompra_produto";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.lbVlrCompra.DefaultCellStyle = dataGridViewCellStyle2;
-            this.lbVlrCompra.HeaderText = "Vlr Compra";
-            this.lbVlrCompra.Name = "lbVlrCompra";
-            this.lbVlrCompra.ReadOnly = true;
-            this.lbVlrCompra.Width = 85;
-            // 
-            // lbVlrVenda
-            // 
-            this.lbVlrVenda.DataPropertyName = "pcovenda_produto";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.lbVlrVenda.DefaultCellStyle = dataGridViewCellStyle3;
-            this.lbVlrVenda.HeaderText = "Vlr Venda";
-            this.lbVlrVenda.Name = "lbVlrVenda";
-            this.lbVlrVenda.ReadOnly = true;
-            this.lbVlrVenda.Width = 80;
-            // 
-            // lbVlrMargem
-            // 
-            this.lbVlrMargem.DataPropertyName = "margem_produto";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.lbVlrMargem.DefaultCellStyle = dataGridViewCellStyle4;
-            this.lbVlrMargem.HeaderText = "% Lucro";
-            this.lbVlrMargem.Name = "lbVlrMargem";
-            this.lbVlrMargem.ReadOnly = true;
-            this.lbVlrMargem.Width = 70;
-            // 
-            // lbGrupo
-            // 
-            this.lbGrupo.DataPropertyName = "nome_grupo";
-            this.lbGrupo.HeaderText = "Grupo";
-            this.lbGrupo.Name = "lbGrupo";
-            this.lbGrupo.ReadOnly = true;
-            this.lbGrupo.Width = 70;
-            // 
-            // lbSubGrupo
-            // 
-            this.lbSubGrupo.DataPropertyName = "nome_subgrupo";
-            this.lbSubGrupo.HeaderText = "SubGrupo";
-            this.lbSubGrupo.Name = "lbSubGrupo";
-            this.lbSubGrupo.ReadOnly = true;
-            this.lbSubGrupo.Width = 70;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "id_recno";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle5;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            this.ID.Width = 30;
             // 
             // FormCadastroProduto
             // 

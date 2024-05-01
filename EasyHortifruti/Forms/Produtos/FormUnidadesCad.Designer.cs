@@ -290,6 +290,7 @@
             this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFiltro.Location = new System.Drawing.Point(172, 3);
+            this.tbFiltro.Margin = new System.Windows.Forms.Padding(3, 3, 3, 6);
             this.tbFiltro.MaxLength = 32767;
             this.tbFiltro.Multiline = true;
             this.tbFiltro.Name = "tbFiltro";
@@ -297,7 +298,7 @@
             this.tbFiltro.ReadOnly = false;
             this.tbFiltro.SelectionLength = 0;
             this.tbFiltro.SelectionStart = 0;
-            this.tbFiltro.Size = new System.Drawing.Size(391, 36);
+            this.tbFiltro.Size = new System.Drawing.Size(391, 35);
             this.tbFiltro.TabIndex = 1;
             this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;

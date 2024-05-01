@@ -35,6 +35,9 @@
             this.observacao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Margem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
+            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
             this.panel3 = new System.Windows.Forms.Panel();
             this.BtSairGrupo = new System.Windows.Forms.Button();
             this.BtImprimirGrupo = new System.Windows.Forms.Button();
@@ -42,13 +45,10 @@
             this.BtEditarGrupo = new System.Windows.Forms.Button();
             this.BtIncluirGrupo = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
-            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadGrupos)).BeginInit();
-            this.panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -113,6 +113,59 @@
             this.id.ReadOnly = true;
             this.id.Visible = false;
             this.id.Width = 50;
+            // 
+            // tableLayoutPanel2
+            // 
+            this.tableLayoutPanel2.ColumnCount = 2;
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
+            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
+            this.tableLayoutPanel2.Controls.Add(this.cbFiltro, 0, 0);
+            this.tableLayoutPanel2.Controls.Add(this.tbFiltro, 1, 0);
+            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 121);
+            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
+            this.tableLayoutPanel2.RowCount = 1;
+            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
+            this.tableLayoutPanel2.Size = new System.Drawing.Size(481, 44);
+            this.tableLayoutPanel2.TabIndex = 6;
+            // 
+            // cbFiltro
+            // 
+            this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbFiltro.Caption = "Campo para Filtrar";
+            this.cbFiltro.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cbFiltro.FormattingEnabled = true;
+            this.cbFiltro.Location = new System.Drawing.Point(3, 3);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Obrigatorio = false;
+            this.cbFiltro.SelectedIndex = -1;
+            this.cbFiltro.SelectedItem = null;
+            this.cbFiltro.SelectedText = "";
+            this.cbFiltro.Size = new System.Drawing.Size(138, 38);
+            this.cbFiltro.TabIndex = 0;
+            // 
+            // tbFiltro
+            // 
+            this.tbFiltro.Caption = "Digite para Filtrar";
+            this.tbFiltro.Dock = System.Windows.Forms.DockStyle.Top;
+            this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltro.Location = new System.Drawing.Point(147, 3);
+            this.tbFiltro.Margin = new System.Windows.Forms.Padding(3, 3, 3, 6);
+            this.tbFiltro.MaxLength = 32767;
+            this.tbFiltro.Multiline = true;
+            this.tbFiltro.Name = "tbFiltro";
+            this.tbFiltro.Obrigatorio = false;
+            this.tbFiltro.ReadOnly = false;
+            this.tbFiltro.SelectionLength = 0;
+            this.tbFiltro.SelectionStart = 0;
+            this.tbFiltro.Size = new System.Drawing.Size(331, 35);
+            this.tbFiltro.TabIndex = 1;
+            this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
             // panel3
             // 
@@ -218,58 +271,6 @@
             this.panel2.Size = new System.Drawing.Size(481, 57);
             this.panel2.TabIndex = 0;
             // 
-            // tableLayoutPanel2
-            // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel2.Controls.Add(this.cbFiltro, 0, 0);
-            this.tableLayoutPanel2.Controls.Add(this.tbFiltro, 1, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(0, 121);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(481, 44);
-            this.tableLayoutPanel2.TabIndex = 6;
-            // 
-            // cbFiltro
-            // 
-            this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.cbFiltro.Caption = "Campo para Filtrar";
-            this.cbFiltro.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.cbFiltro.FormattingEnabled = true;
-            this.cbFiltro.Location = new System.Drawing.Point(3, 3);
-            this.cbFiltro.Name = "cbFiltro";
-            this.cbFiltro.Obrigatorio = false;
-            this.cbFiltro.SelectedIndex = -1;
-            this.cbFiltro.SelectedItem = null;
-            this.cbFiltro.SelectedText = "";
-            this.cbFiltro.Size = new System.Drawing.Size(138, 38);
-            this.cbFiltro.TabIndex = 0;
-            // 
-            // tbFiltro
-            // 
-            this.tbFiltro.Caption = "Digite para Filtrar";
-            this.tbFiltro.Dock = System.Windows.Forms.DockStyle.Top;
-            this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFiltro.Location = new System.Drawing.Point(147, 3);
-            this.tbFiltro.MaxLength = 32767;
-            this.tbFiltro.Multiline = true;
-            this.tbFiltro.Name = "tbFiltro";
-            this.tbFiltro.Obrigatorio = false;
-            this.tbFiltro.ReadOnly = false;
-            this.tbFiltro.SelectionLength = 0;
-            this.tbFiltro.SelectionStart = 0;
-            this.tbFiltro.Size = new System.Drawing.Size(331, 38);
-            this.tbFiltro.TabIndex = 1;
-            this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            // 
             // FormGruposCad
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -283,8 +284,8 @@
             this.Load += new System.EventHandler(this.FormCadGrupos_Load);
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadGrupos)).EndInit();
-            this.panel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
+            this.panel3.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }

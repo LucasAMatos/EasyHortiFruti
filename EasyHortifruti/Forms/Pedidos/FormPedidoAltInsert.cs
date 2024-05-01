@@ -22,6 +22,9 @@ namespace EasyHortifruti
 
         private Dictionary<string, int> produtoItem;
 
+        private Dictionary<string, int> margemLucro;
+        
+        private DataSet dsProdutos;
         #endregion propriedades
 
         private Timer timer;
@@ -34,7 +37,7 @@ namespace EasyHortifruti
             dctGeral = new Dictionary<string, int>();
             produtoItem = new Dictionary<String, int>();
             margemLucro = new Dictionary<String, int>();
-
+            dsProdutos = new DataSet();
             InitializeComponent();
 
             // Armazenar a cor original do label

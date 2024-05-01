@@ -125,7 +125,7 @@ namespace EasyHortifruti
                     if (pNovaUnidade == DialogResult.Yes)
                     {
                         LimparCampos(this);
-                        tabPage4.Text = string.Empty;
+                        //tabPage4.Text = string.Empty;
                     }
                     else
                         this.Close();
@@ -296,7 +296,7 @@ namespace EasyHortifruti
             CarregarComboEstadoCivil();
             CarregarComboClassificacao();
             CarregarComboUf();
-            tabPage4.Text = string.Empty;
+            //tabPage4.Text = string.Empty;
 
             LimpaCnpj();
             LimpaEndereco();

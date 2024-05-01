@@ -44,7 +44,7 @@
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 2;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 12F));
+            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 14F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Size = new System.Drawing.Size(189, 38);
             this.tableLayoutPanel1.TabIndex = 1;
@@ -56,7 +56,7 @@
             this.label.Location = new System.Drawing.Point(3, 2);
             this.label.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(183, 10);
+            this.label.Size = new System.Drawing.Size(183, 12);
             this.label.TabIndex = 0;
             this.label.Text = "label1";
             this.label.Click += new System.EventHandler(this.label_Click);
@@ -65,9 +65,10 @@
             // 
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 15);
+            this.comboBox1.Location = new System.Drawing.Point(0, 14);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(0);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(183, 21);
+            this.comboBox1.Size = new System.Drawing.Size(189, 21);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 

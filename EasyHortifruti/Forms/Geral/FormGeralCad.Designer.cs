@@ -248,7 +248,7 @@ namespace EasyHortifruti
             this.cbTpFontePesquisa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbTpFontePesquisa.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.cbTpFontePesquisa.FormattingEnabled = true;
-            this.cbTpFontePesquisa.Location = new System.Drawing.Point(718, 3);
+            this.cbTpFontePesquisa.Location = new System.Drawing.Point(707, 3);
             this.cbTpFontePesquisa.Name = "cbTpFontePesquisa";
             this.cbTpFontePesquisa.Obrigatorio = false;
             this.cbTpFontePesquisa.SelectedIndex = -1;
@@ -279,7 +279,7 @@ namespace EasyHortifruti
             this.tbFiltro.Caption = "Digite para Filtrar";
             this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFiltro.Location = new System.Drawing.Point(173, 3);
+            this.tbFiltro.Location = new System.Drawing.Point(173, 2);
             this.tbFiltro.MaxLength = 32767;
             this.tbFiltro.Multiline = true;
             this.tbFiltro.Name = "tbFiltro";
@@ -287,7 +287,7 @@ namespace EasyHortifruti
             this.tbFiltro.ReadOnly = false;
             this.tbFiltro.SelectionLength = 0;
             this.tbFiltro.SelectionStart = 0;
-            this.tbFiltro.Size = new System.Drawing.Size(539, 36);
+            this.tbFiltro.Size = new System.Drawing.Size(526, 36);
             this.tbFiltro.TabIndex = 6;
             this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;

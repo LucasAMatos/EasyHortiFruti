@@ -31,6 +31,12 @@ namespace EasyHortifruti
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGeralCad));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCadGeralForm = new System.Windows.Forms.Panel();
             this.panelFormCadGeral = new System.Windows.Forms.Panel();
             this.DgViewCadGeral = new System.Windows.Forms.DataGridView();
@@ -41,7 +47,6 @@ namespace EasyHortifruti
             this.label1 = new System.Windows.Forms.Label();
             this.panel3FormCadGeralBotoes = new System.Windows.Forms.Panel();
             this.BtSairCadGeral = new System.Windows.Forms.Button();
-            this.BtPesquisarCadGeral = new System.Windows.Forms.Button();
             this.BtImprimirCadGeral = new System.Windows.Forms.Button();
             this.BtExcluirCadGeral = new System.Windows.Forms.Button();
             this.BtEditarCadGeral = new System.Windows.Forms.Button();
@@ -138,7 +143,7 @@ namespace EasyHortifruti
             this.cbTpFontePesquisa.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbTpFontePesquisa.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 0.5F);
             this.cbTpFontePesquisa.FormattingEnabled = true;
-            this.cbTpFontePesquisa.Location = new System.Drawing.Point(469, -16);
+            this.cbTpFontePesquisa.Location = new System.Drawing.Point(469, -13);
             this.cbTpFontePesquisa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbTpFontePesquisa.Name = "cbTpFontePesquisa";
             this.cbTpFontePesquisa.Obrigatorio = false;
@@ -179,7 +184,6 @@ namespace EasyHortifruti
             // panel3FormCadGeralBotoes
             // 
             this.panel3FormCadGeralBotoes.Controls.Add(this.BtSairCadGeral);
-            this.panel3FormCadGeralBotoes.Controls.Add(this.BtPesquisarCadGeral);
             this.panel3FormCadGeralBotoes.Controls.Add(this.BtImprimirCadGeral);
             this.panel3FormCadGeralBotoes.Controls.Add(this.BtExcluirCadGeral);
             this.panel3FormCadGeralBotoes.Controls.Add(this.BtEditarCadGeral);
@@ -192,6 +196,8 @@ namespace EasyHortifruti
             // 
             // BtSairCadGeral
             // 
+            this.BtSairCadGeral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.BtSairCadGeral.BackColor = System.Drawing.Color.Transparent;
             this.BtSairCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtSairCadGeral.BackgroundImage")));
             this.BtSairCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
@@ -206,21 +212,6 @@ namespace EasyHortifruti
             this.BtSairCadGeral.UseVisualStyleBackColor = false;
             this.BtSairCadGeral.Click += new System.EventHandler(this.BtSairCadGeral_Click);
             // 
-            // BtPesquisarCadGeral
-            // 
-            this.BtPesquisarCadGeral.BackColor = System.Drawing.Color.Transparent;
-            this.BtPesquisarCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtPesquisarCadGeral.BackgroundImage")));
-            this.BtPesquisarCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtPesquisarCadGeral.FlatAppearance.BorderSize = 0;
-            this.BtPesquisarCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtPesquisarCadGeral.Location = new System.Drawing.Point(168, 4);
-            this.BtPesquisarCadGeral.Name = "BtPesquisarCadGeral";
-            this.BtPesquisarCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BtPesquisarCadGeral.Size = new System.Drawing.Size(46, 52);
-            this.BtPesquisarCadGeral.TabIndex = 4;
-            this.BtPesquisarCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtPesquisarCadGeral.UseVisualStyleBackColor = false;
-            // 
             // BtImprimirCadGeral
             // 
             this.BtImprimirCadGeral.BackColor = System.Drawing.Color.Transparent;
@@ -228,7 +219,7 @@ namespace EasyHortifruti
             this.BtImprimirCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtImprimirCadGeral.FlatAppearance.BorderSize = 0;
             this.BtImprimirCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtImprimirCadGeral.Location = new System.Drawing.Point(220, 4);
+            this.BtImprimirCadGeral.Location = new System.Drawing.Point(173, 4);
             this.BtImprimirCadGeral.Name = "BtImprimirCadGeral";
             this.BtImprimirCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtImprimirCadGeral.Size = new System.Drawing.Size(46, 52);
@@ -299,16 +290,20 @@ namespace EasyHortifruti
             this.NomeFantasia.DataPropertyName = "nomefantasia";
             this.NomeFantasia.HeaderText = "Nome / Fantasia";
             this.NomeFantasia.Name = "NomeFantasia";
+            this.NomeFantasia.Width = 110;
             // 
             // RazaoSocial
             // 
             this.RazaoSocial.DataPropertyName = "razaosocial";
             this.RazaoSocial.HeaderText = "Razão Social";
             this.RazaoSocial.Name = "RazaoSocial";
+            this.RazaoSocial.Width = 230;
             // 
             // CPF
             // 
             this.CPF.DataPropertyName = "cnpj_cpf";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CPF.DefaultCellStyle = dataGridViewCellStyle1;
             this.CPF.HeaderText = "CNPJ / CPF";
             this.CPF.Name = "CPF";
             // 
@@ -317,18 +312,23 @@ namespace EasyHortifruti
             this.RG.DataPropertyName = "ie_rg";
             this.RG.HeaderText = "I.E. / RG.";
             this.RG.Name = "RG";
+            this.RG.Width = 80;
             // 
             // logradouro
             // 
             this.logradouro.DataPropertyName = "logradouro";
             this.logradouro.HeaderText = "Endereço";
             this.logradouro.Name = "logradouro";
+            this.logradouro.Width = 180;
             // 
             // numero
             // 
             this.numero.DataPropertyName = "numero";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.numero.DefaultCellStyle = dataGridViewCellStyle2;
             this.numero.HeaderText = "Nº";
             this.numero.Name = "numero";
+            this.numero.Width = 35;
             // 
             // complemento
             // 
@@ -341,42 +341,57 @@ namespace EasyHortifruti
             this.bairro.DataPropertyName = "bairro";
             this.bairro.HeaderText = "Bairro";
             this.bairro.Name = "bairro";
+            this.bairro.Width = 130;
             // 
             // cidade
             // 
             this.cidade.DataPropertyName = "cidade";
             this.cidade.HeaderText = "Cidade";
             this.cidade.Name = "cidade";
+            this.cidade.Width = 130;
             // 
             // uf
             // 
             this.uf.DataPropertyName = "uf";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.uf.DefaultCellStyle = dataGridViewCellStyle3;
             this.uf.HeaderText = "UF";
             this.uf.Name = "uf";
+            this.uf.Width = 30;
             // 
             // fone
             // 
             this.fone.DataPropertyName = "fone";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fone.DefaultCellStyle = dataGridViewCellStyle4;
             this.fone.HeaderText = "Fone";
             this.fone.Name = "fone";
+            this.fone.Width = 65;
             // 
             // celular
             // 
             this.celular.DataPropertyName = "celular";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.celular.DefaultCellStyle = dataGridViewCellStyle5;
             this.celular.HeaderText = "Celular";
             this.celular.Name = "celular";
+            this.celular.Width = 65;
             // 
             // email
             // 
             this.email.DataPropertyName = "email";
             this.email.HeaderText = "E-mail";
             this.email.Name = "email";
+            this.email.Width = 200;
             // 
             // ID
             // 
             this.ID.DataPropertyName = "id_recno";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle6;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
+            this.ID.Width = 30;
             // 
             // FormGeralCad
             // 
@@ -405,7 +420,6 @@ namespace EasyHortifruti
         private System.Windows.Forms.Panel panelTituloCadGeral;
         private System.Windows.Forms.Panel panel3FormCadGeralBotoes;
         private System.Windows.Forms.Button BtSairCadGeral;
-        private System.Windows.Forms.Button BtPesquisarCadGeral;
         private System.Windows.Forms.Button BtImprimirCadGeral;
         private System.Windows.Forms.Button BtExcluirCadGeral;
         private System.Windows.Forms.Button BtEditarCadGeral;

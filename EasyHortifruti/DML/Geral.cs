@@ -66,10 +66,10 @@ namespace EasyHortifruti.DML
                 if (dr["nomefantasia"] != null)
                     NomeFantasia = dr["nomefantasia"].ToString();
 
-                if (dr["razaosocial"] != null)
+                if (dr["estadocivil"] != null && dr["estadocivil"] != DBNull.Value)
                     EstadoCivil = (EstadoCivil)Convert.ToInt32(dr["estadocivil"]);
 
-                if (dr["sexo"] != null)
+                if (dr["sexo"] != null && dr["sexo"] != DBNull.Value)
                     Sexo = (Sexo)Convert.ToInt32(dr["sexo"]);
 
                 if (dr["razaosocial"] != null)
@@ -95,12 +95,6 @@ namespace EasyHortifruti.DML
 
                 if (dr["inscrmunicipal"] != null)
                     InscricaoMunicipal = dr["inscrmunicipal"].ToString();
-
-                if (dr["orgexpedidor"] != null)
-                    OrgaoExpedidor = dr["orgexpedidor"].ToString();
-
-                if (dr["ufrgexped"] != null)
-                    OrgaoExpedidorUF = dr["ufrgexped"].ToString();
 
                 if (Telefones == null)
                     Telefones = new Telefones();

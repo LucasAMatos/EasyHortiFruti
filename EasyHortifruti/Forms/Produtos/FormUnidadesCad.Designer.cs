@@ -333,20 +333,6 @@
         #endregion
         private System.Windows.Forms.BindingSource unidadesBindingSource;
         private System.Windows.Forms.BindingSource unidadesBindingSource1;
-#pragma warning disable CS0169 // O campo "FormUnidadeCad.abreviaturaDataGridViewTextBoxColumn" nunca é usado
-        private System.Windows.Forms.DataGridViewTextBoxColumn abreviaturaDataGridViewTextBoxColumn;
-#pragma warning restore CS0169 // O campo "FormUnidadeCad.abreviaturaDataGridViewTextBoxColumn" nunca é usado
-#pragma warning disable CS0169 // O campo "FormUnidadeCad.descricaoDataGridViewTextBoxColumn" nunca é usado
-        private System.Windows.Forms.DataGridViewTextBoxColumn descricaoDataGridViewTextBoxColumn;
-#pragma warning restore CS0169 // O campo "FormUnidadeCad.descricaoDataGridViewTextBoxColumn" nunca é usado
-#pragma warning disable CS0169 // O campo "FormUnidadeCad.observacaoDataGridViewTextBoxColumn" nunca é usado
-        private System.Windows.Forms.DataGridViewTextBoxColumn observacaoDataGridViewTextBoxColumn;
-#pragma warning restore CS0169 // O campo "FormUnidadeCad.observacaoDataGridViewTextBoxColumn" nunca é usado
-#pragma warning disable CS0169 // O campo "FormUnidadeCad.códigoDataGridViewTextBoxColumn" nunca é usado
-        private System.Windows.Forms.DataGridViewTextBoxColumn códigoDataGridViewTextBoxColumn;
-#pragma warning restore CS0169 // O campo "FormUnidadeCad.códigoDataGridViewTextBoxColumn" nunca é usado
-        private System.Windows.Forms.DataGridViewTextBoxColumn Descrição;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Observação;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.DataGridView dgvCadUnidades;

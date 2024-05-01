@@ -16,10 +16,6 @@ namespace EasyHortifruti
 
         private Geral iGeral;
 
-        private Dictionary<string, int> produtos;
-
-        private Dictionary<string, int> unidade;
-
         private Dictionary<string, int> produtoItem;
 
         private Dictionary<string, int> margemLucro;

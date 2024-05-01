@@ -85,25 +85,23 @@ namespace EasyHortifruti
                 Criticar();
                 Geral pGeral = new Geral();
 
-                pGeral.TipoPessoa = RbPessoaFisica.Checked ? TPFJ.Fisica : TPFJ.Juridica;
-                pGeral.Classificacao = (Classificacao)CbClassificacao.SelectedIndex;
-                pGeral.NomeFantasia = TbNomeFantasia.Text;
-                pGeral.RazaoSocial = TbRazaoSocial.Text;
-                pGeral.Contato = TbContato.Text;
-                pGeral.DtNascFundacao = DtNascAbert.Value;
-                pGeral.OrgaoExpedidor = tbOrgaoExpRg.Text;
-                pGeral.OrgaoExpedidorUF = tbEstadoRg.Text;
-                pGeral.CPF = tbCpf.Value;
-                pGeral.CNPJ = TbCNPJ.Value;
-                pGeral.RG = tbRg.Text;
-                pGeral.IE = TbInscrEstadual.Text;
-                pGeral.InscricaoMunicipal = TbInscrMunicipal.Text;
-                pGeral.Sexo = cbSexo.SelectedIndex >= 0 ? (Sexo)cbSexo.SelectedIndex : Sexo.NaoDefinido;
-                pGeral.EstadoCivil = (EstadoCivil)cbEstadoCivil.SelectedIndex >= 0 ? (EstadoCivil)cbEstadoCivil.SelectedIndex : EstadoCivil.NaoDefinido;
-                pGeral.Email = TbEmail.Text;
-                pGeral.PontoReferencia = TbPontoRef.Text;
-                pGeral.PrazoPagamento = Convert.ToInt32(TbPrazoPgto.Text);
-                pGeral.Telefones = new Telefones
+            pGeral.TipoPessoa = RbPessoaFisica.Checked ? TPFJ.Fisica : TPFJ.Juridica;
+            pGeral.Classificacao = (Classificacao)CbClassificacao.SelectedIndex;
+            pGeral.NomeFantasia = TbNomeFantasia.Text;
+            pGeral.RazaoSocial = TbRazaoSocial.Text;
+            pGeral.Contato = TbContato.Text;
+            pGeral.DtNascFundacao = DtNascAbert.Value;
+            pGeral.CPF = tbCpf.Value;
+            pGeral.CNPJ = TbCNPJ.Value;
+            pGeral.RG = tbRg.Text;
+            pGeral.IE = TbInscrEstadual.Text;
+            pGeral.InscricaoMunicipal = TbInscrMunicipal.Text;
+            pGeral.Sexo = cbSexo.SelectedIndex >= 0 ? (Sexo)cbSexo.SelectedIndex : Sexo.NaoDefinido;
+            pGeral.EstadoCivil = (EstadoCivil)cbEstadoCivil.SelectedIndex >= 0 ? (EstadoCivil)cbEstadoCivil.SelectedIndex : EstadoCivil.NaoDefinido;
+            pGeral.Email = TbEmail.Text;
+            pGeral.PontoReferencia = TbPontoRef.Text;
+            pGeral.PrazoPagamento = Convert.ToInt32(TbPrazoPgto.Text);
+            pGeral.Telefones = new Telefones
             {
                 Fone,
                 Celular
@@ -184,7 +182,7 @@ namespace EasyHortifruti
                                 TbBairro.Enabled = false;
                                 TbCidade.Text = cnpjConsultado.Estabelecimento.Cidade.Nome;
                                 TbCidade.Enabled = false;
-                                CbUF.Text = cnpjConsultado.Estabelecimento.Estado.Sigla;
+                                CbUF.SelecionarIndexPeloConteudo(cnpjConsultado.Estabelecimento.Estado.Sigla);
                                 CbUF.Enabled = false;
                             }
                             else
@@ -243,7 +241,7 @@ namespace EasyHortifruti
                         }
                         if (cepConsultado.Uf != null)
                         {
-                            CbUF.Text = cepConsultado.Uf;
+                            CbUF.SelecionarIndexPeloConteudo(cepConsultado.Uf);
                             CbUF.Enabled = false;
                         }
                         TbNumero.Focus();

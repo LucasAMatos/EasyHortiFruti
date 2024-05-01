@@ -192,12 +192,12 @@ namespace EasyHortifruti
                 if (produto != null)
                 {
                     tbDescricaoProduto.Text = produto.Descricao;
-                    MtbPrecoCompra.Text = produto.PrecoDeCompra.ToString();
-                    MtbPrecoVenda.Text = produto.PrecoDeVenda.ToString();
-                    MtbMargemLucro.Text = produto.MargemLucro.ToString();
-                    cbUnidProduto.Text = produto.Unidade;
-                    cbGrupoProduto.Text = produto.Grupo;
-                    cbSubGrupoProduto.Text = produto.SubGrupo;
+                    MtbPrecoCompra.Text = produto.PrecoDeCompra.ToString("N2");
+                    MtbPrecoVenda.Text = produto.PrecoDeVenda.ToString("N2");
+                    MtbMargemLucro.Text = produto.MargemLucro.ToString("N2");
+                    cbUnidProduto.SelecionarIndexPeloConteudo(produto.Unidade);
+                    cbGrupoProduto.SelecionarIndexPeloConteudo(produto.Grupo);
+                    cbSubGrupoProduto.SelecionarIndexPeloConteudo(produto.SubGrupo);
 
                     labelIDProduto.Text = Id.ToString();
                     CalcularMargemLucro();

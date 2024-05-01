@@ -129,6 +129,11 @@ namespace EasyHortifruti.Componentes
             }
             comboBox1.SelectedIndex = 0;
         }
+
+        public void SelecionarIndexPeloConteudo(string pItem)
+        {
+            comboBox1.SelectedIndex =  comboBox1.Items.IndexOf(pItem);
+        }
         #endregion
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -139,7 +144,6 @@ namespace EasyHortifruti.Componentes
 
         private void label_Click(object sender, EventArgs e)
         {
-
         }
     }
 }

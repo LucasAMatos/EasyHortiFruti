@@ -13,6 +13,9 @@ namespace EasyHortifruti.Componentes
     public partial class AltComboBox : UserControl
     {
         #region Propriedades
+
+        internal Array DataSource { get; set; }
+
         public bool Obrigatorio { get; set; }
 
         public bool Criticar

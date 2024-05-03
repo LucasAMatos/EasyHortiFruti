@@ -66,8 +66,10 @@ namespace EasyHortifruti.DML
                     Classificacao = (Classificacao)Convert.ToInt32(dr["classificacao"]);
 
                 if (dr["estadocivil"] != null && dr["estadocivil"] != DBNull.Value)
+                    EstadoCivil = (EstadoCivil)Convert.ToInt32(dr["estadocivil"]);
 
                 if (dr["sexo"] != null && dr["sexo"] != DBNull.Value)
+                    Sexo = (Sexo)Convert.ToInt32(dr["sexo"]);
 
                 if (dr["contato"] != null)
                     Contato = dr["contato"].ToString();
@@ -75,7 +77,18 @@ namespace EasyHortifruti.DML
                 if (dr["dtnascaber"] != null)
                     DtNascFundacao = Convert.ToDateTime(dr["dtnascaber"]);
 
-                if (TipoPessoa == TPFJ.Juridica)
+                if (TipoPessoa == TPFJ.Fisica)
+                {
+                    if (dr["razaosocial"] != null)
+                        NomeCompleto = dr["razaosocial"].ToString();
+
+                    if (dr["cnpj_cpf"] != null && !string.IsNullOrEmpty(dr["cnpj_cpf"].ToString().Trim()))
+                        CPF = Regex.Replace(dr["cnpj_cpf"].ToString(), @"(\d{3})(\d{3})(\d{3})(\d{2})", @"$1.$2.$3-$4");
+
+                    if (dr["ie_rg"] != null)
+                        RG = dr["ie_rg"].ToString();
+                }
+                else 
                 {
                     if (dr["nomefantasia"] != null)
                         NomeFantasia = dr["nomefantasia"].ToString();
@@ -88,17 +101,6 @@ namespace EasyHortifruti.DML
 
                     if (dr["ie_rg"] != null)
                         IE = dr["ie_rg"].ToString();
-                }
-                else 
-                {
-                    if (dr["razaosocial"] != null)
-                        NomeCompleto = dr["razaosocial"].ToString();
-
-                    if (dr["cnpj_cpf"] != null && !string.IsNullOrEmpty(dr["cnpj_cpf"].ToString().Trim()))
-                        CPF = Regex.Replace(dr["cnpj_cpf"].ToString(), @"(\d{3})(\d{3})(\d{3})(\d{2})", @"$1.$2.$3-$4");
-
-                    if (dr["ie_rg"] != null)
-                        RG = dr["ie_rg"].ToString();
                 }
 
                 if (dr["inscrmunicipal"] != null)
@@ -129,8 +131,10 @@ namespace EasyHortifruti.DML
 
                 if (dr["cep"] != null)
                     Endereco.CEP = Regex.Replace(dr["cep"].ToString(), @"(^\d{0,5})(\d{0,3})", @"$1-$2");
+
                 if (dr["logradouro"] != null)
                     Endereco.logradouro = dr["logradouro"].ToString();
+
                 if (dr["Numero"] != null)
                     Endereco.Numero = Convert.ToInt32(dr["Numero"]);
 
@@ -322,16 +326,19 @@ namespace EasyHortifruti.DML
 
     public enum Classificacao
     {
+        [Description("Não Definido")]
+        indefinido = 0,
+
         [Description("Cliente")]
-        Cliente = 0,
+        Cliente = 1,
 
         [Description("Fornecedor")]
-        Fornecedor = 1,
+        Fornecedor = 2,
 
         [Description("Funcionário")]
-        Funcionario = 2,
+        Funcionario = 3,
 
         [Description("Sócio")]
-        Socio = 3
+        Socio = 4
     }
 }

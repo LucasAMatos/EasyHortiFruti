@@ -15,6 +15,8 @@ namespace EasyHortifruti.DML
 
         public string RazaoSocial { get; set; }
 
+        public string NomeCompleto { get; set; }
+
         public string Contato { get; set; }
 
         public Classificacao Classificacao { get; set; }
@@ -63,15 +65,9 @@ namespace EasyHortifruti.DML
                 if (dr["classificacao"] != null)
                     Classificacao = (Classificacao)Convert.ToInt32(dr["classificacao"]);
 
-                if (dr["nomefantasia"] != null)
-                    NomeFantasia = dr["nomefantasia"].ToString();
-
                 if (dr["estadocivil"] != null && dr["estadocivil"] != DBNull.Value)
 
                 if (dr["sexo"] != null && dr["sexo"] != DBNull.Value)
-
-                if (dr["razaosocial"] != null)
-                    RazaoSocial = dr["razaosocial"].ToString();
 
                 if (dr["contato"] != null)
                     Contato = dr["contato"].ToString();
@@ -81,6 +77,12 @@ namespace EasyHortifruti.DML
 
                 if (TipoPessoa == TPFJ.Juridica)
                 {
+                    if (dr["nomefantasia"] != null)
+                        NomeFantasia = dr["nomefantasia"].ToString();
+
+                    if (dr["razaosocial"] != null)
+                        RazaoSocial = dr["razaosocial"].ToString();
+
                     if (dr["cnpj_cpf"] != null && !string.IsNullOrEmpty(dr["cnpj_cpf"].ToString().Trim()))
                         CNPJ = Regex.Replace(dr["cnpj_cpf"].ToString(), @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
 
@@ -89,6 +91,9 @@ namespace EasyHortifruti.DML
                 }
                 else 
                 {
+                    if (dr["razaosocial"] != null)
+                        NomeCompleto = dr["razaosocial"].ToString();
+
                     if (dr["cnpj_cpf"] != null && !string.IsNullOrEmpty(dr["cnpj_cpf"].ToString().Trim()))
                         CPF = Regex.Replace(dr["cnpj_cpf"].ToString(), @"(\d{3})(\d{3})(\d{3})(\d{2})", @"$1.$2.$3-$4");
 
@@ -148,7 +153,8 @@ namespace EasyHortifruti.DML
                     Email = dr["email"].ToString();
 
                 if (dr["prazoPgto"] != null && !string.IsNullOrEmpty(dr["prazoPgto"].ToString()))
-                    PrazoPagamento = Convert.ToInt32(dr["prazoPgto"].ToString());
+                   PrazoPagamento = Convert.ToInt32(dr["prazoPgto"].ToString());
+
             }
         }
     }

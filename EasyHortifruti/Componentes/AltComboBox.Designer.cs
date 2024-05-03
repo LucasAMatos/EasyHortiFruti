@@ -53,10 +53,10 @@
             // 
             this.label.AutoSize = true;
             this.label.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label.Location = new System.Drawing.Point(3, 2);
-            this.label.Margin = new System.Windows.Forms.Padding(3, 2, 3, 0);
+            this.label.Location = new System.Drawing.Point(1, 2);
+            this.label.Margin = new System.Windows.Forms.Padding(1, 2, 3, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(183, 12);
+            this.label.Size = new System.Drawing.Size(185, 12);
             this.label.TabIndex = 0;
             this.label.Text = "label1";
             this.label.Click += new System.EventHandler(this.label_Click);

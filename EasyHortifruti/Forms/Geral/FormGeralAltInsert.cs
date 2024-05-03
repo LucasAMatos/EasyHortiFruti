@@ -100,8 +100,8 @@ namespace EasyHortifruti
             pGeral.RG = tbRg.Text;
             pGeral.IE = TbInscrEstadual.Text;
             pGeral.InscricaoMunicipal = TbInscrMunicipal.Text;
-            pGeral.Sexo = cbSexo.SelectedIndex >= 0 ? (Sexo)cbSexo.SelectedIndex : Sexo.NaoDefinido;
-            pGeral.EstadoCivil = (EstadoCivil)cbEstadoCivil.SelectedIndex >= 0 ? (EstadoCivil)cbEstadoCivil.SelectedIndex : EstadoCivil.NaoDefinido;
+            pGeral.Sexo = CbSexo.SelectedIndex >= 0 ? (Sexo)CbSexo.SelectedIndex : Sexo.NaoDefinido;
+            pGeral.EstadoCivil = (EstadoCivil)CbEstadoCivil.SelectedIndex >= 0 ? (EstadoCivil)CbEstadoCivil.SelectedIndex : EstadoCivil.NaoDefinido;
             pGeral.Email = TbEmail.Text;
             pGeral.PontoReferencia = TbPontoRef.Text;
             pGeral.PrazoPagamento = string.IsNullOrWhiteSpace(TbPrazoPgto.Text) ? -1 : Convert.ToInt32(TbPrazoPgto.Text);
@@ -344,9 +344,10 @@ namespace EasyHortifruti
                     {
                         RbPessoaFisica.Checked = iGeral.TipoPessoa == TPFJ.Fisica;
                         RbPessoaJuridica.Checked = iGeral.TipoPessoa == TPFJ.Juridica;
+                        CbClassificacao.SelecionarIndexPeloConteudo (iGeral.Classificacao.ToString());
                         TbNomeFantasia.Text = iGeral.NomeFantasia;
                         TbRazaoSocial.Text = iGeral.RazaoSocial;
-                        TbNomeCompleto.Text = iGeral.RazaoSocial;
+                        TbNomeCompleto.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.NomeCompleto : iGeral.RazaoSocial;
                         TbContato.Text = iGeral.Contato;
                         TbPrazoPgto.Text = iGeral.PrazoPagamento > 0 ? iGeral.PrazoPagamento.ToString() : string.Empty;
                         DtNascAbert.Value = iGeral.DtNascFundacao;
@@ -355,8 +356,8 @@ namespace EasyHortifruti
                         tbRg.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.RG : string.Empty;
                         TbInscrEstadual.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.IE : string.Empty;
                         TbInscrMunicipal.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.InscricaoMunicipal : string.Empty;
-                        cbSexo.SelecionarIndexPeloConteudo(iGeral.Sexo.ToString());
-                        cbEstadoCivil.SelecionarIndexPeloConteudo(iGeral.EstadoCivil.ToString());
+                        CbSexo.SelecionarIndexPeloConteudo(iGeral.Sexo.ToString());
+                        CbEstadoCivil.SelecionarIndexPeloConteudo(iGeral.EstadoCivil.ToString());
 
                         if (iGeral.Telefones != null && iGeral.Telefones.Count > 0)
                         {
@@ -388,12 +389,12 @@ namespace EasyHortifruti
 
         private void CarregarComboSexo()
         {
-            cbSexo.CarregarDescricoesEnum<Sexo>();
+            CbSexo.CarregarDescricoesEnum<Sexo>();
         }
 
         private void CarregarComboEstadoCivil()
         {
-            cbEstadoCivil.CarregarDescricoesEnum<EstadoCivil>();
+            CbEstadoCivil.CarregarDescricoesEnum<EstadoCivil>();
         }
 
         private void CarregarComboClassificacao()

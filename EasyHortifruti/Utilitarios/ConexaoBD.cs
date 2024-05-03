@@ -47,7 +47,7 @@ namespace EasyHortifruti
                 { "tppessoa", pGeral.TipoPessoa == TPFJ.Fisica ? "F" : "J" },
                 { "classificacao", ((int)pGeral.Classificacao).ToString() },
                 { "nomefantasia", pGeral.NomeFantasia },
-                { "razaosocial", pGeral.RazaoSocial },
+                { "razaosocial", pGeral.TipoPessoa == TPFJ.Fisica ? pGeral.NomeCompleto : pGeral.RazaoSocial },
                 { "estadocivil", ((int)pGeral.EstadoCivil).ToString() },
                 { "sexo", ((int)pGeral.Sexo).ToString() },
                 { "contato", pGeral.Contato },
@@ -78,13 +78,13 @@ namespace EasyHortifruti
         {
             Telefone fone = pGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.pessoal);
             Telefone celular = pGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.celular);
-            
+
             Dictionary<string, string> pCampos = new Dictionary<string, string>
             {
                 { "tppessoa", pGeral.TipoPessoa == TPFJ.Fisica ? "F" : "J" },
                 { "classificacao", ((int)pGeral.Classificacao).ToString() },
                 { "nomefantasia", pGeral.NomeFantasia },
-                { "razaosocial", pGeral.RazaoSocial },
+                { "razaosocial", pGeral.TipoPessoa == TPFJ.Fisica ? pGeral.NomeCompleto : pGeral.RazaoSocial },
                 { "estadocivil", ((int)pGeral.EstadoCivil).ToString() },
                 { "sexo", ((int)pGeral.Sexo).ToString() },
                 { "contato", pGeral.Contato },
@@ -115,12 +115,10 @@ namespace EasyHortifruti
 
         #endregion
 
-        #endregion
-
         #region Unidades
 
         public DataSet ConsultarUnidades() => ConsultarTabela(TabelasScript.TabelaUnidades);
-        
+
         public DataSet ConsultarUnidadePorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaUnidades);
 
         public void InserirUnidade(string Abreviatura, string Descricao, string Observacao)
@@ -291,13 +289,13 @@ namespace EasyHortifruti
                 { "id_fonte",       pPedido.IdFonte.ToString() },
                 { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },
                 { "prazopgto",      pPedido.PrazoPagamento.ToString() },
-                { "dataentrega",    pPedido.DataEntrega.ToString("dd/MM/yyyy") }, 
-                { "dataconclusao",  pPedido.DataConclusao.ToString("dd/MM/yyyy") }, 
-                { "id_produto",     pPedido.IdProduto.ToString() }, 
-                { "qtdproduto",     pPedido.QuantidadeProduto.ToString() }, 
-                { "vrcompra",       pPedido.ValorCompra.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },  
-                { "vrvenda",        pPedido.ValorVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) }, 
-                { "totalvenda",     pPedido.TotalVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) }, 
+                { "dataentrega",    pPedido.DataEntrega.ToString("dd/MM/yyyy") },
+                { "dataconclusao",  pPedido.DataConclusao.ToString("dd/MM/yyyy") },
+                { "id_produto",     pPedido.IdProduto.ToString() },
+                { "qtdproduto",     pPedido.QuantidadeProduto.ToString() },
+                { "vrcompra",       pPedido.ValorCompra.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "vrvenda",        pPedido.ValorVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "totalvenda",     pPedido.TotalVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
                 { "percentlucro",   pPedido.PercentualLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) }
             };
 
@@ -409,21 +407,21 @@ namespace EasyHortifruti
                 }
             }
         }
-        
+
         private void ExcluirRegistro(int pId, string pNomeTabela)
         {
             string sql = String.Format("DELETE FROM {0} WHERE id_recno={1}", pNomeTabela, pId);
 
             ExecutarSemRetorno(sql);
         }
-        
+
         private DataSet ConsultarTabela(string pNomeTabela)
         {
             string sql = string.Concat("SELECT * FROM ", pNomeTabela);
 
             return ExecutaEPreencheDataset(sql);
         }
-        
+
         private DataSet ConsultarTabelaPorId(int pId, string pNomeTabela)
         {
             string sql = string.Concat("SELECT * FROM ", pNomeTabela, " WHERE id_recno=", pId.ToString());
@@ -442,6 +440,8 @@ namespace EasyHortifruti
             }
 
         }
+        #endregion
+
         #endregion
     }
 }

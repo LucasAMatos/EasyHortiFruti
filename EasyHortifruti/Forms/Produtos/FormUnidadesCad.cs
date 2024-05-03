@@ -121,5 +121,10 @@ namespace EasyHortifruti
             Filtrar();
         }
         #endregion Metodos
+
+        private void cbFiltro_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

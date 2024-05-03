@@ -47,6 +47,7 @@ namespace EasyHortifruti
         public FormGeralAltInsert()
         {
             InitializeComponent();
+
         }
 
         #endregion Construtor
@@ -63,6 +64,7 @@ namespace EasyHortifruti
         {
             PanelPF.Visible = RbPessoaFisica.Checked;
             PanelPJ.Visible = !RbPessoaJuridica.Checked;
+            PanelFantasiaPJ.Visible = false;
             BtConsCNPJ.Visible = PanelPJ.Visible;
         }
 
@@ -70,6 +72,7 @@ namespace EasyHortifruti
         {
             PanelPF.Visible = !RbPessoaJuridica.Checked;
             PanelPJ.Visible = RbPessoaJuridica.Checked;
+            PanelFantasiaPJ.Visible = RbPessoaJuridica.Checked;
             BtConsCNPJ.Visible = PanelPJ.Visible;
         }
 
@@ -89,6 +92,7 @@ namespace EasyHortifruti
             pGeral.Classificacao = (Classificacao)CbClassificacao.SelectedIndex;
             pGeral.NomeFantasia = TbNomeFantasia.Text;
             pGeral.RazaoSocial = TbRazaoSocial.Text;
+            pGeral.NomeCompleto = TbNomeCompleto.Text;
             pGeral.Contato = TbContato.Text;
             pGeral.DtNascFundacao = DtNascAbert.Value;
             pGeral.CPF = tbCpf.Value;
@@ -100,7 +104,7 @@ namespace EasyHortifruti
             pGeral.EstadoCivil = (EstadoCivil)cbEstadoCivil.SelectedIndex >= 0 ? (EstadoCivil)cbEstadoCivil.SelectedIndex : EstadoCivil.NaoDefinido;
             pGeral.Email = TbEmail.Text;
             pGeral.PontoReferencia = TbPontoRef.Text;
-            pGeral.PrazoPagamento = Convert.ToInt32(TbPrazoPgto.Text);
+            pGeral.PrazoPagamento = string.IsNullOrWhiteSpace(TbPrazoPgto.Text) ? -1 : Convert.ToInt32(TbPrazoPgto.Text);
             pGeral.Telefones = new Telefones
             {
                 Fone,
@@ -342,6 +346,7 @@ namespace EasyHortifruti
                         RbPessoaJuridica.Checked = iGeral.TipoPessoa == TPFJ.Juridica;
                         TbNomeFantasia.Text = iGeral.NomeFantasia;
                         TbRazaoSocial.Text = iGeral.RazaoSocial;
+                        TbNomeCompleto.Text = iGeral.RazaoSocial;
                         TbContato.Text = iGeral.Contato;
                         TbPrazoPgto.Text = iGeral.PrazoPagamento > 0 ? iGeral.PrazoPagamento.ToString() : string.Empty;
                         DtNascAbert.Value = iGeral.DtNascFundacao;
@@ -403,14 +408,14 @@ namespace EasyHortifruti
 
         #endregion Métodos
 
-        private void label39_Click(object sender, EventArgs e)
+        private void CbClassificacao_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-        }
-
-        private void label7_Click(object sender, EventArgs e)
-        {
-
+            if ((Classificacao)CbClassificacao.SelectedIndex == Classificacao.Funcionario || 
+                (Classificacao)CbClassificacao.SelectedIndex == Classificacao.Socio)
+                TbPrazoPgto.Obrigatorio = false;
+            else
+                TbPrazoPgto.Obrigatorio = true;
         }
     }
 }

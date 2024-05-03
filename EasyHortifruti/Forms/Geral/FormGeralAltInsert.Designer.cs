@@ -35,12 +35,13 @@ namespace EasyHortifruti
             this.panel5InserirCadGeral = new System.Windows.Forms.Panel();
             this.tabControlInserirDados = new System.Windows.Forms.TabControl();
             this.tbBase = new System.Windows.Forms.TabPage();
-            this.PanelPJ = new System.Windows.Forms.Panel();
             this.PanelPF = new System.Windows.Forms.Panel();
+            this.TbNomeCompleto = new EasyHortifruti.Componentes.AltTextBox();
             this.cbEstadoCivil = new EasyHortifruti.Componentes.AltComboBox();
             this.cbSexo = new EasyHortifruti.Componentes.AltComboBox();
             this.tbRg = new EasyHortifruti.Componentes.AltTextBox();
             this.tbCpf = new EasyHortifruti.Componentes.AltTextBox();
+            this.PanelPJ = new System.Windows.Forms.Panel();
             this.TbRazaoSocial = new EasyHortifruti.Componentes.AltTextBox();
             this.TbCNPJ = new EasyHortifruti.Componentes.AltTextBox();
             this.TbInscrMunicipal = new EasyHortifruti.Componentes.AltTextBox();
@@ -82,12 +83,13 @@ namespace EasyHortifruti
             this.BtGravaAltGeral = new System.Windows.Forms.Button();
             this.BtCancelarGeralInserir = new System.Windows.Forms.Button();
             this.panel3InserirCadGeral = new System.Windows.Forms.Panel();
+            this.PanelFantasiaPJ = new System.Windows.Forms.Panel();
             this.lblPrzPgto = new System.Windows.Forms.Label();
             this.TbPrazoPgto = new EasyHortifruti.Componentes.AltTextBox();
-            this.DtNascAbert = new System.Windows.Forms.DateTimePicker();
             this.TbContato = new EasyHortifruti.Componentes.AltTextBox();
-            this.label4 = new System.Windows.Forms.Label();
             this.TbNomeFantasia = new EasyHortifruti.Componentes.AltTextBox();
+            this.DtNascAbert = new System.Windows.Forms.DateTimePicker();
+            this.label4 = new System.Windows.Forms.Label();
             this.panel2InserirCadGeral = new System.Windows.Forms.Panel();
             this.labelClassificacao = new System.Windows.Forms.Label();
             this.CbClassificacao = new EasyHortifruti.Componentes.AltComboBox();
@@ -98,14 +100,15 @@ namespace EasyHortifruti
             this.panel5InserirCadGeral.SuspendLayout();
             this.tabControlInserirDados.SuspendLayout();
             this.tbBase.SuspendLayout();
-            this.PanelPJ.SuspendLayout();
             this.PanelPF.SuspendLayout();
+            this.PanelPJ.SuspendLayout();
             this.panel7InserirCadGeral.SuspendLayout();
             this.tabControlInserirEndereco.SuspendLayout();
             this.tbpEndereco.SuspendLayout();
             this.panel6.SuspendLayout();
             this.panel4InserirCadGeral.SuspendLayout();
             this.panel3InserirCadGeral.SuspendLayout();
+            this.PanelFantasiaPJ.SuspendLayout();
             this.panel2InserirCadGeral.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -118,16 +121,16 @@ namespace EasyHortifruti
             this.panel1CadGeralInserirDados.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1CadGeralInserirDados.Location = new System.Drawing.Point(0, 0);
             this.panel1CadGeralInserirDados.Name = "panel1CadGeralInserirDados";
-            this.panel1CadGeralInserirDados.Size = new System.Drawing.Size(784, 576);
+            this.panel1CadGeralInserirDados.Size = new System.Drawing.Size(784, 586);
             this.panel1CadGeralInserirDados.TabIndex = 0;
             // 
             // panel5InserirCadGeral
             // 
             this.panel5InserirCadGeral.Controls.Add(this.tabControlInserirDados);
             this.panel5InserirCadGeral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panel5InserirCadGeral.Location = new System.Drawing.Point(0, 110);
+            this.panel5InserirCadGeral.Location = new System.Drawing.Point(0, 117);
             this.panel5InserirCadGeral.Name = "panel5InserirCadGeral";
-            this.panel5InserirCadGeral.Size = new System.Drawing.Size(784, 404);
+            this.panel5InserirCadGeral.Size = new System.Drawing.Size(784, 407);
             this.panel5InserirCadGeral.TabIndex = 6;
             // 
             // tabControlInserirDados
@@ -137,11 +140,12 @@ namespace EasyHortifruti
             this.tabControlInserirDados.Location = new System.Drawing.Point(0, 0);
             this.tabControlInserirDados.Name = "tabControlInserirDados";
             this.tabControlInserirDados.SelectedIndex = 0;
-            this.tabControlInserirDados.Size = new System.Drawing.Size(784, 404);
+            this.tabControlInserirDados.Size = new System.Drawing.Size(784, 407);
             this.tabControlInserirDados.TabIndex = 0;
             // 
             // tbBase
             // 
+            this.tbBase.Controls.Add(this.PanelPF);
             this.tbBase.Controls.Add(this.PanelPJ);
             this.tbBase.Controls.Add(this.panel7InserirCadGeral);
             this.tbBase.Controls.Add(this.panel6);
@@ -149,34 +153,42 @@ namespace EasyHortifruti
             this.tbBase.Location = new System.Drawing.Point(4, 22);
             this.tbBase.Name = "tbBase";
             this.tbBase.Padding = new System.Windows.Forms.Padding(3);
-            this.tbBase.Size = new System.Drawing.Size(776, 378);
+            this.tbBase.Size = new System.Drawing.Size(776, 381);
             this.tbBase.TabIndex = 0;
             this.tbBase.Text = "Base";
             this.tbBase.UseVisualStyleBackColor = true;
             // 
-            // PanelPJ
-            // 
-            this.PanelPJ.Controls.Add(this.PanelPF);
-            this.PanelPJ.Controls.Add(this.TbRazaoSocial);
-            this.PanelPJ.Controls.Add(this.TbCNPJ);
-            this.PanelPJ.Controls.Add(this.TbInscrMunicipal);
-            this.PanelPJ.Controls.Add(this.TbInscrEstadual);
-            this.PanelPJ.Controls.Add(this.BtConsCNPJ);
-            this.PanelPJ.Location = new System.Drawing.Point(3, 6);
-            this.PanelPJ.Name = "PanelPJ";
-            this.PanelPJ.Size = new System.Drawing.Size(560, 114);
-            this.PanelPJ.TabIndex = 19;
-            // 
             // PanelPF
             // 
+            this.PanelPF.Controls.Add(this.TbNomeCompleto);
             this.PanelPF.Controls.Add(this.cbEstadoCivil);
             this.PanelPF.Controls.Add(this.cbSexo);
             this.PanelPF.Controls.Add(this.tbRg);
             this.PanelPF.Controls.Add(this.tbCpf);
-            this.PanelPF.Location = new System.Drawing.Point(0, 0);
+            this.PanelPF.Location = new System.Drawing.Point(8, 6);
             this.PanelPF.Name = "PanelPF";
             this.PanelPF.Size = new System.Drawing.Size(560, 114);
             this.PanelPF.TabIndex = 20;
+            // 
+            // TbNomeCompleto
+            // 
+            this.TbNomeCompleto.Caption = "Nome Completo";
+            this.TbNomeCompleto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.TbNomeCompleto.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
+            this.TbNomeCompleto.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 9F);
+            this.TbNomeCompleto.Location = new System.Drawing.Point(4, 15);
+            this.TbNomeCompleto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.TbNomeCompleto.MaxLength = 32767;
+            this.TbNomeCompleto.Multiline = true;
+            this.TbNomeCompleto.Name = "TbNomeCompleto";
+            this.TbNomeCompleto.Obrigatorio = false;
+            this.TbNomeCompleto.ReadOnly = false;
+            this.TbNomeCompleto.SelectionLength = 0;
+            this.TbNomeCompleto.SelectionStart = 0;
+            this.TbNomeCompleto.Size = new System.Drawing.Size(543, 40);
+            this.TbNomeCompleto.TabIndex = 44;
+            this.TbNomeCompleto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TbNomeCompleto.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
             // cbEstadoCivil
             // 
@@ -187,7 +199,7 @@ namespace EasyHortifruti
             this.cbEstadoCivil.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbEstadoCivil.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cbEstadoCivil.FormattingEnabled = true;
-            this.cbEstadoCivil.Location = new System.Drawing.Point(430, 8);
+            this.cbEstadoCivil.Location = new System.Drawing.Point(426, 63);
             this.cbEstadoCivil.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbEstadoCivil.Name = "cbEstadoCivil";
             this.cbEstadoCivil.Obrigatorio = false;
@@ -206,7 +218,7 @@ namespace EasyHortifruti
             this.cbSexo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.cbSexo.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cbSexo.FormattingEnabled = true;
-            this.cbSexo.Location = new System.Drawing.Point(311, 8);
+            this.cbSexo.Location = new System.Drawing.Point(302, 62);
             this.cbSexo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSexo.Name = "cbSexo";
             this.cbSexo.Obrigatorio = false;
@@ -222,7 +234,7 @@ namespace EasyHortifruti
             this.tbRg.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.tbRg.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.tbRg.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbRg.Location = new System.Drawing.Point(193, 10);
+            this.tbRg.Location = new System.Drawing.Point(184, 63);
             this.tbRg.Margin = new System.Windows.Forms.Padding(4);
             this.tbRg.MaxLength = 32767;
             this.tbRg.Multiline = true;
@@ -242,7 +254,7 @@ namespace EasyHortifruti
             this.tbCpf.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.tbCpf.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.tbCpf.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.tbCpf.Location = new System.Drawing.Point(10, 10);
+            this.tbCpf.Location = new System.Drawing.Point(5, 63);
             this.tbCpf.Margin = new System.Windows.Forms.Padding(4);
             this.tbCpf.MaxLength = 14;
             this.tbCpf.Multiline = true;
@@ -256,13 +268,25 @@ namespace EasyHortifruti
             this.tbCpf.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbCpf.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.CPF;
             // 
+            // PanelPJ
+            // 
+            this.PanelPJ.Controls.Add(this.TbRazaoSocial);
+            this.PanelPJ.Controls.Add(this.TbCNPJ);
+            this.PanelPJ.Controls.Add(this.TbInscrMunicipal);
+            this.PanelPJ.Controls.Add(this.TbInscrEstadual);
+            this.PanelPJ.Controls.Add(this.BtConsCNPJ);
+            this.PanelPJ.Location = new System.Drawing.Point(8, 6);
+            this.PanelPJ.Name = "PanelPJ";
+            this.PanelPJ.Size = new System.Drawing.Size(560, 114);
+            this.PanelPJ.TabIndex = 19;
+            // 
             // TbRazaoSocial
             // 
             this.TbRazaoSocial.Caption = "Razão Social";
             this.TbRazaoSocial.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbRazaoSocial.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.TbRazaoSocial.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbRazaoSocial.Location = new System.Drawing.Point(18, 6);
+            this.TbRazaoSocial.Location = new System.Drawing.Point(5, 6);
             this.TbRazaoSocial.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TbRazaoSocial.MaxLength = 32767;
             this.TbRazaoSocial.Multiline = true;
@@ -271,7 +295,7 @@ namespace EasyHortifruti
             this.TbRazaoSocial.ReadOnly = false;
             this.TbRazaoSocial.SelectionLength = 0;
             this.TbRazaoSocial.SelectionStart = 0;
-            this.TbRazaoSocial.Size = new System.Drawing.Size(530, 48);
+            this.TbRazaoSocial.Size = new System.Drawing.Size(543, 48);
             this.TbRazaoSocial.TabIndex = 3;
             this.TbRazaoSocial.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbRazaoSocial.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -282,7 +306,7 @@ namespace EasyHortifruti
             this.TbCNPJ.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbCNPJ.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.TbCNPJ.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbCNPJ.Location = new System.Drawing.Point(18, 58);
+            this.TbCNPJ.Location = new System.Drawing.Point(5, 58);
             this.TbCNPJ.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TbCNPJ.MaxLength = 18;
             this.TbCNPJ.Multiline = true;
@@ -291,7 +315,7 @@ namespace EasyHortifruti
             this.TbCNPJ.ReadOnly = false;
             this.TbCNPJ.SelectionLength = 0;
             this.TbCNPJ.SelectionStart = 0;
-            this.TbCNPJ.Size = new System.Drawing.Size(178, 48);
+            this.TbCNPJ.Size = new System.Drawing.Size(191, 48);
             this.TbCNPJ.TabIndex = 5;
             this.TbCNPJ.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbCNPJ.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.CNPJ;
@@ -355,7 +379,7 @@ namespace EasyHortifruti
             // 
             this.panel7InserirCadGeral.Controls.Add(this.tabControlInserirEndereco);
             this.panel7InserirCadGeral.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel7InserirCadGeral.Location = new System.Drawing.Point(3, 123);
+            this.panel7InserirCadGeral.Location = new System.Drawing.Point(3, 126);
             this.panel7InserirCadGeral.Name = "panel7InserirCadGeral";
             this.panel7InserirCadGeral.Size = new System.Drawing.Size(770, 252);
             this.panel7InserirCadGeral.TabIndex = 18;
@@ -409,7 +433,7 @@ namespace EasyHortifruti
             this.btnConsultaCEP.FlatAppearance.BorderSize = 0;
             this.btnConsultaCEP.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnConsultaCEP.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultaCEP.Image")));
-            this.btnConsultaCEP.Location = new System.Drawing.Point(98, 46);
+            this.btnConsultaCEP.Location = new System.Drawing.Point(98, 43);
             this.btnConsultaCEP.Name = "btnConsultaCEP";
             this.btnConsultaCEP.Size = new System.Drawing.Size(26, 25);
             this.btnConsultaCEP.TabIndex = 23;
@@ -426,14 +450,14 @@ namespace EasyHortifruti
             this.CbUF.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.CbUF.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.CbUF.FormattingEnabled = true;
-            this.CbUF.Location = new System.Drawing.Point(453, 80);
+            this.CbUF.Location = new System.Drawing.Point(448, 80);
             this.CbUF.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbUF.Name = "CbUF";
             this.CbUF.Obrigatorio = false;
             this.CbUF.SelectedIndex = -1;
             this.CbUF.SelectedItem = null;
             this.CbUF.SelectedText = "";
-            this.CbUF.Size = new System.Drawing.Size(63, 46);
+            this.CbUF.Size = new System.Drawing.Size(41, 46);
             this.CbUF.TabIndex = 40;
             // 
             // label24
@@ -451,7 +475,7 @@ namespace EasyHortifruti
             this.TbEmail.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TbEmail.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.TbEmail.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TbEmail.Location = new System.Drawing.Point(538, 80);
+            this.TbEmail.Location = new System.Drawing.Point(509, 80);
             this.TbEmail.Margin = new System.Windows.Forms.Padding(4);
             this.TbEmail.MaxLength = 32767;
             this.TbEmail.Multiline = true;
@@ -460,7 +484,7 @@ namespace EasyHortifruti
             this.TbEmail.ReadOnly = false;
             this.TbEmail.SelectionLength = 0;
             this.TbEmail.SelectionStart = 0;
-            this.TbEmail.Size = new System.Drawing.Size(210, 40);
+            this.TbEmail.Size = new System.Drawing.Size(241, 40);
             this.TbEmail.TabIndex = 26;
             this.TbEmail.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbEmail.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -509,7 +533,7 @@ namespace EasyHortifruti
             this.TbCidade.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TbCidade.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.TbCidade.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.TbCidade.Location = new System.Drawing.Point(212, 80);
+            this.TbCidade.Location = new System.Drawing.Point(206, 80);
             this.TbCidade.Margin = new System.Windows.Forms.Padding(4);
             this.TbCidade.MaxLength = 32767;
             this.TbCidade.Multiline = true;
@@ -711,7 +735,7 @@ namespace EasyHortifruti
             this.panel6.Controls.Add(this.TbCelular);
             this.panel6.Controls.Add(this.label11);
             this.panel6.Controls.Add(this.label12);
-            this.panel6.Location = new System.Drawing.Point(569, 34);
+            this.panel6.Location = new System.Drawing.Point(578, 34);
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(188, 73);
             this.panel6.TabIndex = 17;
@@ -780,7 +804,7 @@ namespace EasyHortifruti
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(567, 16);
+            this.label10.Location = new System.Drawing.Point(576, 16);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(70, 15);
             this.label10.TabIndex = 10;
@@ -793,7 +817,7 @@ namespace EasyHortifruti
             this.panel4InserirCadGeral.Controls.Add(this.BtGravaAltGeral);
             this.panel4InserirCadGeral.Controls.Add(this.BtCancelarGeralInserir);
             this.panel4InserirCadGeral.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel4InserirCadGeral.Location = new System.Drawing.Point(0, 514);
+            this.panel4InserirCadGeral.Location = new System.Drawing.Point(0, 524);
             this.panel4InserirCadGeral.Name = "panel4InserirCadGeral";
             this.panel4InserirCadGeral.Size = new System.Drawing.Size(784, 62);
             this.panel4InserirCadGeral.TabIndex = 5;
@@ -841,26 +865,35 @@ namespace EasyHortifruti
             // 
             // panel3InserirCadGeral
             // 
-            this.panel3InserirCadGeral.Controls.Add(this.lblPrzPgto);
-            this.panel3InserirCadGeral.Controls.Add(this.TbPrazoPgto);
+            this.panel3InserirCadGeral.Controls.Add(this.PanelFantasiaPJ);
             this.panel3InserirCadGeral.Controls.Add(this.DtNascAbert);
-            this.panel3InserirCadGeral.Controls.Add(this.TbContato);
             this.panel3InserirCadGeral.Controls.Add(this.label4);
-            this.panel3InserirCadGeral.Controls.Add(this.TbNomeFantasia);
             this.panel3InserirCadGeral.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3InserirCadGeral.Location = new System.Drawing.Point(0, 44);
             this.panel3InserirCadGeral.Name = "panel3InserirCadGeral";
-            this.panel3InserirCadGeral.Size = new System.Drawing.Size(784, 66);
+            this.panel3InserirCadGeral.Size = new System.Drawing.Size(784, 73);
             this.panel3InserirCadGeral.TabIndex = 4;
+            // 
+            // PanelFantasiaPJ
+            // 
+            this.PanelFantasiaPJ.Controls.Add(this.lblPrzPgto);
+            this.PanelFantasiaPJ.Controls.Add(this.TbPrazoPgto);
+            this.PanelFantasiaPJ.Controls.Add(this.TbContato);
+            this.PanelFantasiaPJ.Controls.Add(this.TbNomeFantasia);
+            this.PanelFantasiaPJ.Location = new System.Drawing.Point(3, 8);
+            this.PanelFantasiaPJ.Name = "PanelFantasiaPJ";
+            this.PanelFantasiaPJ.Size = new System.Drawing.Size(603, 55);
+            this.PanelFantasiaPJ.TabIndex = 18;
+            this.PanelFantasiaPJ.Visible = false;
             // 
             // lblPrzPgto
             // 
             this.lblPrzPgto.AutoSize = true;
             this.lblPrzPgto.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPrzPgto.Location = new System.Drawing.Point(521, 8);
+            this.lblPrzPgto.Location = new System.Drawing.Point(521, 4);
             this.lblPrzPgto.Name = "lblPrzPgto";
             this.lblPrzPgto.Size = new System.Drawing.Size(77, 15);
-            this.lblPrzPgto.TabIndex = 17;
+            this.lblPrzPgto.TabIndex = 19;
             this.lblPrzPgto.Text = "Prazo Pgto";
             // 
             // TbPrazoPgto
@@ -869,7 +902,7 @@ namespace EasyHortifruti
             this.TbPrazoPgto.Font = new System.Drawing.Font("Microsoft Sans Serif", 0.5F);
             this.TbPrazoPgto.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.TbPrazoPgto.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.TbPrazoPgto.Location = new System.Drawing.Point(523, 23);
+            this.TbPrazoPgto.Location = new System.Drawing.Point(523, 19);
             this.TbPrazoPgto.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TbPrazoPgto.MaxLength = 32767;
             this.TbPrazoPgto.Multiline = true;
@@ -879,18 +912,9 @@ namespace EasyHortifruti
             this.TbPrazoPgto.SelectionLength = 0;
             this.TbPrazoPgto.SelectionStart = 0;
             this.TbPrazoPgto.Size = new System.Drawing.Size(72, 26);
-            this.TbPrazoPgto.TabIndex = 6;
+            this.TbPrazoPgto.TabIndex = 18;
             this.TbPrazoPgto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbPrazoPgto.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.NUMERO;
-            // 
-            // DtNascAbert
-            // 
-            this.DtNascAbert.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtNascAbert.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtNascAbert.Location = new System.Drawing.Point(617, 25);
-            this.DtNascAbert.Name = "DtNascAbert";
-            this.DtNascAbert.Size = new System.Drawing.Size(144, 24);
-            this.DtNascAbert.TabIndex = 5;
             // 
             // TbContato
             // 
@@ -898,7 +922,7 @@ namespace EasyHortifruti
             this.TbContato.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TbContato.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.TbContato.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.TbContato.Location = new System.Drawing.Point(398, 10);
+            this.TbContato.Location = new System.Drawing.Point(394, 4);
             this.TbContato.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TbContato.MaxLength = 32767;
             this.TbContato.Multiline = true;
@@ -908,19 +932,9 @@ namespace EasyHortifruti
             this.TbContato.SelectionLength = 0;
             this.TbContato.SelectionStart = 0;
             this.TbContato.Size = new System.Drawing.Size(105, 40);
-            this.TbContato.TabIndex = 4;
+            this.TbContato.TabIndex = 5;
             this.TbContato.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbContato.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(614, 8);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(122, 15);
-            this.label4.TabIndex = 3;
-            this.label4.Text = "Data Nasc / Abert.";
             // 
             // TbNomeFantasia
             // 
@@ -928,7 +942,7 @@ namespace EasyHortifruti
             this.TbNomeFantasia.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F);
             this.TbNomeFantasia.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.TbNomeFantasia.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 9F);
-            this.TbNomeFantasia.Location = new System.Drawing.Point(13, 11);
+            this.TbNomeFantasia.Location = new System.Drawing.Point(9, 5);
             this.TbNomeFantasia.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.TbNomeFantasia.MaxLength = 32767;
             this.TbNomeFantasia.Multiline = true;
@@ -938,9 +952,28 @@ namespace EasyHortifruti
             this.TbNomeFantasia.SelectionLength = 0;
             this.TbNomeFantasia.SelectionStart = 0;
             this.TbNomeFantasia.Size = new System.Drawing.Size(367, 40);
-            this.TbNomeFantasia.TabIndex = 1;
+            this.TbNomeFantasia.TabIndex = 2;
             this.TbNomeFantasia.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbNomeFantasia.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            // 
+            // DtNascAbert
+            // 
+            this.DtNascAbert.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtNascAbert.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtNascAbert.Location = new System.Drawing.Point(617, 29);
+            this.DtNascAbert.Name = "DtNascAbert";
+            this.DtNascAbert.Size = new System.Drawing.Size(144, 24);
+            this.DtNascAbert.TabIndex = 5;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(614, 12);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(122, 15);
+            this.label4.TabIndex = 3;
+            this.label4.Text = "Data Nasc / Abert.";
             // 
             // panel2InserirCadGeral
             // 
@@ -959,7 +992,7 @@ namespace EasyHortifruti
             // 
             this.labelClassificacao.AutoSize = true;
             this.labelClassificacao.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelClassificacao.Location = new System.Drawing.Point(503, 15);
+            this.labelClassificacao.Location = new System.Drawing.Point(499, 14);
             this.labelClassificacao.Name = "labelClassificacao";
             this.labelClassificacao.Size = new System.Drawing.Size(92, 15);
             this.labelClassificacao.TabIndex = 4;
@@ -983,6 +1016,7 @@ namespace EasyHortifruti
             this.CbClassificacao.SelectedText = "";
             this.CbClassificacao.Size = new System.Drawing.Size(170, 46);
             this.CbClassificacao.TabIndex = 3;
+            this.CbClassificacao.SelectedIndexChanged += new System.EventHandler(this.CbClassificacao_SelectedIndexChanged);
             // 
             // labeltpPesoa
             // 
@@ -1022,7 +1056,7 @@ namespace EasyHortifruti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 576);
+            this.ClientSize = new System.Drawing.Size(784, 586);
             this.Controls.Add(this.panel1CadGeralInserirDados);
             this.Name = "FormGeralAltInsert";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -1033,8 +1067,8 @@ namespace EasyHortifruti
             this.tabControlInserirDados.ResumeLayout(false);
             this.tbBase.ResumeLayout(false);
             this.tbBase.PerformLayout();
-            this.PanelPJ.ResumeLayout(false);
             this.PanelPF.ResumeLayout(false);
+            this.PanelPJ.ResumeLayout(false);
             this.panel7InserirCadGeral.ResumeLayout(false);
             this.tabControlInserirEndereco.ResumeLayout(false);
             this.tbpEndereco.ResumeLayout(false);
@@ -1045,6 +1079,8 @@ namespace EasyHortifruti
             this.panel4InserirCadGeral.PerformLayout();
             this.panel3InserirCadGeral.ResumeLayout(false);
             this.panel3InserirCadGeral.PerformLayout();
+            this.PanelFantasiaPJ.ResumeLayout(false);
+            this.PanelFantasiaPJ.PerformLayout();
             this.panel2InserirCadGeral.ResumeLayout(false);
             this.panel2InserirCadGeral.PerformLayout();
             this.ResumeLayout(false);
@@ -1059,9 +1095,7 @@ namespace EasyHortifruti
         private System.Windows.Forms.Panel panel2InserirCadGeral;
         private System.Windows.Forms.Label labeltpPesoa;
         private System.Windows.Forms.Panel panel3InserirCadGeral;
-        private AltTextBox TbNomeFantasia;
         private System.Windows.Forms.DateTimePicker DtNascAbert;
-        private AltTextBox TbContato;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Panel panel5InserirCadGeral;
         private System.Windows.Forms.TabControl tabControlInserirDados;
@@ -1114,7 +1148,11 @@ namespace EasyHortifruti
         private AltComboBox CbClassificacao;
         private System.Windows.Forms.Button BtConsCNPJ;
         private System.Windows.Forms.Button btnConsultaCEP;
-        private AltTextBox TbPrazoPgto;
+        private System.Windows.Forms.Panel PanelFantasiaPJ;
         private System.Windows.Forms.Label lblPrzPgto;
+        private AltTextBox TbPrazoPgto;
+        private AltTextBox TbContato;
+        private AltTextBox TbNomeFantasia;
+        private AltTextBox TbNomeCompleto;
     }
 }

@@ -86,8 +86,8 @@
             this.tableLayoutPanel2.ColumnCount = 2;
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 30F));
             this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 70F));
-            this.tableLayoutPanel2.Controls.Add(this.cbFiltro, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tbFiltro, 1, 0);
+            this.tableLayoutPanel2.Controls.Add(this.cbFiltro, 0, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
             this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 128);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
@@ -98,26 +98,28 @@
             // 
             // cbFiltro
             // 
+            this.cbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.cbFiltro.Caption = "Campo para Filtrar";
-            this.cbFiltro.Dock = System.Windows.Forms.DockStyle.Fill;
             this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.cbFiltro.FormattingEnabled = true;
-            this.cbFiltro.Location = new System.Drawing.Point(3, 3);
+            this.cbFiltro.Location = new System.Drawing.Point(13, 3);
             this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Obrigatorio = false;
             this.cbFiltro.SelectedIndex = -1;
             this.cbFiltro.SelectedItem = null;
             this.cbFiltro.SelectedText = "";
-            this.cbFiltro.Size = new System.Drawing.Size(215, 38);
+            this.cbFiltro.Size = new System.Drawing.Size(194, 38);
             this.cbFiltro.TabIndex = 0;
             // 
             // tbFiltro
             // 
+            this.tbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbFiltro.Caption = "Digite para Filtrar";
-            this.tbFiltro.Dock = System.Windows.Forms.DockStyle.Top;
             this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFiltro.Location = new System.Drawing.Point(224, 3);
@@ -245,9 +247,10 @@
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
             this.Column2});
+            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(743, 375);
+            this.dataGridView1.Size = new System.Drawing.Size(737, 382);
             this.dataGridView1.TabIndex = 1;
             // 
             // Column1

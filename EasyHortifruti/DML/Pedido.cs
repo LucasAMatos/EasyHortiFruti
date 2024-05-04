@@ -50,22 +50,25 @@ namespace EasyHortifruti.DML
 
     public enum StatusPedido
     {
+        [Description("Selecione")]
+        Selecione = 0,
+
         [Description("Pendente")]
-        Pendente = 0,
+        Pendente = 1,
 
         [Description("Não Aprovado")]
-        NaoAprovado = 1,
+        NaoAprovado = 2,
 
         [Description("Aprovado")]
-        Aprovado = 2,
+        Aprovado = 3,
 
         [Description("Em Execução")]
-        EmExecucao = 3,
+        EmExecucao = 4,
 
         [Description("Concluído")]
-        Concluido = 4,
+        Concluido = 5,
 
         [Description("Engregue - Finalizado")]
-        Entregue = 5
+        Entregue = 6
     }
 }

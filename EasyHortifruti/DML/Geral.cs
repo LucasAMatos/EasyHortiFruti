@@ -158,11 +158,11 @@ namespace EasyHortifruti.DML
 
                 if (dr["prazoPgto"] != null && !string.IsNullOrEmpty(dr["prazoPgto"].ToString()))
                    PrazoPagamento = Convert.ToInt32(dr["prazoPgto"].ToString());
-
             }
         }
     }
 
+    #region ENUM
     public enum EstadoCivil
     {
         [Description("Não definido")]
@@ -341,4 +341,6 @@ namespace EasyHortifruti.DML
         [Description("Sócio")]
         Socio = 4
     }
+
+    #endregion
 }

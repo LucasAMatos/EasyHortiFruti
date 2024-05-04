@@ -128,8 +128,8 @@ namespace EasyHortifruti
             DataSet ds = new ConexaoBD().ConsultarGerais();
             foreach (DataRow dr in ds.Tables[0].Rows)
             {
-                dctGeral.Add(dr["nomefantasia"].ToString(), Convert.ToInt32(dr["id_recno"]));
-                CbNomeCliente.Items.Add(dr["nomefantasia"].ToString());
+                dctGeral.Add(dr["razaosocial"].ToString(), Convert.ToInt32(dr["id_recno"]));
+                CbNomeCliente.Items.Add(dr["razaosocial"].ToString());
             }
             CbNomeCliente.SelectedText = string.Empty;
         }
@@ -173,7 +173,8 @@ namespace EasyHortifruti
         {
             foreach (DataRow dr in dsProdutos.Tables[0].Rows)
             {
-                if (CbProdutos.SelectedItem != null && CbProdutos.SelectedItem.ToString() == dr["nome_produto"].ToString() && (CbUnidPedido.SelectedItem != null && CbUnidPedido.SelectedItem.ToString() == dr["abrev_unid"].ToString()))
+                if (CbProdutos.SelectedItem != null && CbProdutos.SelectedItem.ToString() == dr["nome_produto"].ToString() && 
+                    (CbUnidPedido.SelectedItem != null && CbUnidPedido.SelectedItem.ToString() == dr["abrev_unid"].ToString()))
                 {
                     TbVlCompra.Text = dr["pcocompra_produto"].ToString();
                     TbMargemLucro.Text = dr["margem_produto"].ToString();
@@ -276,22 +277,23 @@ namespace EasyHortifruti
                 {
                     TbCelular.Text = iGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.celular).TelefoneCompleto;
 
-                    CbTpDocumento.SelectedIndex = iGeral.TipoPessoa == TPFJ.Juridica ? 1 : 0;
-                    TbNome.Text = iGeral.NomeFantasia;
-                    TbCpj.Caption = iGeral.TipoPessoa == TPFJ.Juridica ? "CNPJ" : "CPF";
-                    TbCpj.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.CNPJ : iGeral.CPF;
-                    TbRg.Caption = iGeral.TipoPessoa == TPFJ.Juridica ? "IE" : "RG";
-                    TbRg.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.IE : iGeral.RG;
+                    CbTpDocumento.SelectedIndex = iGeral.TipoPessoa == TPFJ.Fisica ? 0 : 1;             
+                    TbRazaoSocial.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.RazaoSocial: string.Empty;
+                    TbCNPJ.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.CNPJ : string.Empty;                    
+                    TbIE.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.IE : string.Empty;
+                    TbNomeCompleto.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.NomeCompleto : string.Empty;
+                    TbCPF.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.CPF : string.Empty;
+                    TbRG.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.RG : string.Empty;
                     TbPrazoPgto.Text = iGeral.PrazoPagamento.ToString();
-                    tbEndCep.Text = iGeral.Endereco.CEP;
-                    tbEndLogradouro.Text = iGeral.Endereco.logradouro;
-                    tbEndNome.Text = iGeral.Endereco.Numero.ToString();
-                    tbEndCmpt.Text = iGeral.Endereco.Complemento;
-                    tbEndBairro.Text = iGeral.Endereco.Bairro;
-                    tbEndCidade.Text = iGeral.Endereco.Cidade;
-                    tbEndUF.Text = iGeral.Endereco.UF;
-                    tbEndPontoReferencia.Text = iGeral.PontoReferencia;
-                    tbEmail.Text = iGeral.Email;
+                    TbEndCep.Text = iGeral.Endereco.CEP;
+                    TbEndLogradouro.Text = iGeral.Endereco.logradouro;
+                    TbEndNum.Text = iGeral.Endereco.Numero.ToString();
+                    TbEndCmpt.Text = iGeral.Endereco.Complemento;
+                    TbEndBairro.Text = iGeral.Endereco.Bairro;
+                    TbEndCidade.Text = iGeral.Endereco.Cidade;
+                    TbEndUF.Text = iGeral.Endereco.UF;
+                    TbEndPontoReferencia.Text = iGeral.PontoReferencia;
+                    TbEndEmail.Text = iGeral.Email;
                 }
             }
         }
@@ -302,6 +304,10 @@ namespace EasyHortifruti
             {
                 // Verifique qual opção está selecionada no ComboBox
                 String opcaoSelecionada = CbTpDocumento.SelectedItem.ToString();
+
+                PanelPFPedido.Visible = opcaoSelecionada == "Fisica";
+                PanelPJPedido.Visible = opcaoSelecionada == "Juridica";
+ 
             }
         }
 

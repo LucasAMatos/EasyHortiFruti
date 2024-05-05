@@ -73,6 +73,22 @@ namespace EasyHortifruti
                                                     REFERENCES public.produtos (id_recno)
                                             )";
 
+        public static string TabelaItensPedido = "itens_pedidos";
+
+        private string CreateItensPedido = @"CREATE TABLE IF NOT EXISTS public.itens_pedidos
+                                            (
+                                                idpedido integer NOT NULL,
+                                                idproduto integer NOT NULL,
+                                                idunidade integer NOT NULL,
+                                                qtdeitem integer NOT NULL,
+                                                vlcusto numeric,
+                                                vldesconto numeric,
+                                                vltotperdido numeric,
+                                                vllucro numeric NOT NULL,	
+                                                id_recno integer NOT NULL GENERATED ALWAYS AS IDENTITY 
+                                            	( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 )
+                                            )";
+
         public static string TabelaGrupos = "grupos";
 
         private string CreateGrupos = @"CREATE TABLE IF NOT EXISTS public.grupos
@@ -923,7 +939,8 @@ namespace EasyHortifruti
                 CreateCtasReceber,
                 CreateTabelaNCM,
                 ProcTabelaNCM,
-                ChamaProcNCM
+                ChamaProcNCM,
+                CreateItensPedido
             };
         }
 

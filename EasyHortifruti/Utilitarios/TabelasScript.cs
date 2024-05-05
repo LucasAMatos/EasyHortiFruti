@@ -84,7 +84,7 @@ namespace EasyHortifruti
                                                 vlcusto numeric,
                                                 vldesconto numeric,
                                                 vltotperdido numeric,
-                                                vllucro numeric NOT NULL,	
+                                                vllucro numeric,	
                                                 id_recno integer NOT NULL GENERATED ALWAYS AS IDENTITY 
                                             	( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 )
                                             )";

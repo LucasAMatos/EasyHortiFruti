@@ -21,6 +21,7 @@ namespace EasyHortifruti
 
         private Dictionary<string, int> margemLucro;
 
+        private List<ItemPedido> itensPedido;
         private DataSet dsProdutos;
 
         private Timer timer;
@@ -32,14 +33,16 @@ namespace EasyHortifruti
         private bool warningDisplayed = false;
 
         private decimal Total_Pedido
-        { 
+        {
             get
             {
                 if (!string.IsNullOrEmpty(TbTotPedido.Text))
-                    return Convert.ToDecimal(TbTotPedido.Text);
-               return 0;
+                {
+                    return Convert.ToDecimal(TbTotPedido.Text.Replace("R$",""));
+                }
+                return 0;
             }
-            set 
+            set
             {
                 TbTotPedido.Text = value.ToString("F2");
             }
@@ -63,7 +66,7 @@ namespace EasyHortifruti
         {
             get
             {
-                if(!string.IsNullOrEmpty(TbDesconto.Text))
+                if (!string.IsNullOrEmpty(TbDesconto.Text))
                     return Convert.ToDecimal(TbDesconto.Text);
                 return 0;
             }
@@ -73,6 +76,7 @@ namespace EasyHortifruti
             }
         }
 
+        private int IdClienteSelecionado {get; set;}
         #endregion propriedades
 
         public FormPedidoAltInsert()
@@ -179,7 +183,7 @@ namespace EasyHortifruti
         {
             foreach (DataRow dr in dsProdutos.Tables[0].Rows)
             {
-                if (CbProdutos.SelectedItem != null && CbProdutos.SelectedItem.ToString() == dr["nome_produto"].ToString() && 
+                if (CbProdutos.SelectedItem != null && CbProdutos.SelectedItem.ToString() == dr["nome_produto"].ToString() &&
                     (CbUnidPedido.SelectedItem != null && CbUnidPedido.SelectedItem.ToString() == dr["abrev_unid"].ToString()))
                 {
                     TbVlCompra.Text = dr["pcocompra_produto"].ToString();
@@ -277,15 +281,16 @@ namespace EasyHortifruti
             {
                 int indice;
                 dctGeral.TryGetValue(CbNomeCliente.SelectedItem.ToString(), out indice);
+                IdClienteSelecionado = indice;
                 iGeral = new ConexaoBD().ConsultarGeralPorId(indice);
 
                 if (iGeral != null)
                 {
                     TbCelular.Text = iGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.celular).TelefoneCompleto;
 
-                    CbTpDocumento.SelectedIndex = iGeral.TipoPessoa == TPFJ.Fisica ? 0 : 1;             
-                    TbRazaoSocial.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.RazaoSocial: string.Empty;
-                    TbCNPJ.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.CNPJ : string.Empty;                    
+                    CbTpDocumento.SelectedIndex = iGeral.TipoPessoa == TPFJ.Fisica ? 0 : 1;
+                    TbRazaoSocial.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.RazaoSocial : string.Empty;
+                    TbCNPJ.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.CNPJ : string.Empty;
                     TbIE.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.IE : string.Empty;
                     TbNomeCompleto.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.NomeCompleto : string.Empty;
                     TbCPF.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.CPF : string.Empty;
@@ -313,7 +318,7 @@ namespace EasyHortifruti
 
                 PanelPFPedido.Visible = opcaoSelecionada == "Fisica";
                 PanelPJPedido.Visible = opcaoSelecionada == "Juridica";
- 
+
             }
         }
 
@@ -323,22 +328,22 @@ namespace EasyHortifruti
             DateTime dataPedido = DtPedido.MinDate;
             string produtoItem = CbProdutos.SelectedItem.ToString();
             string unidadeItem = CbUnidPedido.SelectedItem.ToString();
-            string quantidadeItem = TbQtdPedido.Text;
+            int quantidadeItem = Convert.ToInt32(TbQtdPedido.Text);
             decimal valorCompraItem = Convert.ToDecimal(TbVlCompra.Text);
             decimal margemLucroItem = Convert.ToDecimal(TbMargemLucro.Text);
             decimal TotalItem = Convert.ToDecimal(TbTotProdPedido.Text);
             decimal LucroItem = Convert.ToDecimal(AtbValorLucroItem.Text);
 
             // Cria um novo objeto Pedido e preenche suas propriedades
-            Pedido novoPedido = new Pedido
+            ItemPedido novoPedido = new ItemPedido
             {
-                DescrProduto = produtoItem,
-                UnidProduto = unidadeItem,
-                QtdeProduto = quantidadeItem,
-                VlCompraProduto = valorCompraItem,
-                MargemLucro = margemLucroItem,
-                TotalItem = TotalItem,
-                ValorLucroItem = LucroItem
+                descrProduto = produtoItem,
+                unidade = unidadeItem,
+                quantidade = quantidadeItem,
+                valor_custo = valorCompraItem,
+                percentual_lucro = margemLucroItem,
+                total_item = TotalItem,
+                valor_lucro = LucroItem
             };
 
             AtualizarTotalPedido();
@@ -350,10 +355,10 @@ namespace EasyHortifruti
             LimparCampos();
         }
 
-        private void AdicionarPedidoDataGridView(Pedido pedido)
+        private void AdicionarPedidoDataGridView(ItemPedido pedido)
         {
-            // Adiciona uma nova linha à DataGridView e preenche as células com os valores do pedido
-            DgvItensPedido.Rows.Add(pedido.dataPedido, pedido.DescrProduto, pedido.UnidProduto, pedido.QtdeProduto, pedido.VlCompraProduto, pedido.MargemLucro, pedido.TotalItem, pedido.ValorLucroItem);
+            DgvItensPedido.Rows.Add(pedido.descrProduto, pedido.unidade, pedido.quantidade, pedido.valor_custo, pedido.percentual_lucro, pedido.total_item, pedido.valor_lucro);
+            itensPedido.Add(pedido);
         }
 
         private void AtualizarTotalPedido()
@@ -415,8 +420,13 @@ namespace EasyHortifruti
         private void btGravarPedido_Click(object sender, EventArgs e)
         {
             Pedido pedido = new Pedido();
-            pedido.dataPedido = DtPedido.Value;
-
+            pedido.IDCliente = IdClienteSelecionado;
+            pedido.StatusPedido = (StatusPedido)CbStatusPedido.SelectedIndex;
+            pedido.PrazoPagamento = Convert.ToInt32(TbPrazoPgto.Text);
+            pedido.DataConclusao = DtConclusaoPedido.Value;
+            pedido.DataEntrega = DtEntregaPedido.Value;
+            pedido.DataPrev = DtPrevEntrega.Value;
+            pedido.Itens = itensPedido;
             new ConexaoBD().InserirPedido(pedido);
         }
 

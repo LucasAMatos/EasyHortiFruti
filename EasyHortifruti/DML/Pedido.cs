@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel;
 
 namespace EasyHortifruti.DML
@@ -7,6 +8,7 @@ namespace EasyHortifruti.DML
     {
         public int ID { get; set; }
 
+        public int IDCliente {  get; set; }
         public DateTime dataPedido { get; set; }
 
         public StatusPedido StatusPedido { get; set; }
@@ -33,19 +35,9 @@ namespace EasyHortifruti.DML
 
         public double PercentualLucro { get; set; }
 
-        public string DescrProduto { get; set; }
-
-        public string UnidProduto { get; set; }
-
-        public string QtdeProduto { get; set; }
-
-        public decimal VlCompraProduto { get; set; }
-
         public decimal MargemLucro { get; set; }
 
-        public decimal TotalItem { get; set; }
-
-        public decimal ValorLucroItem { get; set; }
+        public List<ItemPedido> Itens { get; set; }
     }
 
     public enum StatusPedido

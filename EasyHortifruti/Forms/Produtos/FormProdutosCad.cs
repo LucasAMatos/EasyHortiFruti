@@ -13,6 +13,8 @@ namespace EasyHortifruti
     public partial class FormCadastroProduto : FormBase
     {
         #region Propriedades
+
+        private DataSet dsGrid;
         public int IdSelecionado
         {
             get
@@ -41,6 +43,8 @@ namespace EasyHortifruti
         {
             CarregarGrid();
             CarregarComboFiltros();
+            // Inscreva-se para o evento TextoAlterado do UserControl
+            tbFiltro.TextChanged += TbFiltro_TextoAlterado;
         }
         private void BtIncluirProduto_Click(object sender, EventArgs e)
         {
@@ -102,9 +106,20 @@ namespace EasyHortifruti
 
         public void CarregarGrid()
         {
-            dtGridViewCadProd.DataSource = new ConexaoBD().ConsultarProdutos();
+            dsGrid = new ConexaoBD().ConsultarProdutos();
+            dtGridViewCadProd.DataSource = dsGrid;
             dtGridViewCadProd.AutoGenerateColumns = false;
             dtGridViewCadProd.DataMember = "Table";
+        }
+
+        private void Filtrar()
+        {
+            base.Filtrar(dtGridViewCadProd, dsGrid, cbFiltro.SelectedIndex, tbFiltro.Text);
+        }
+
+        private void TbFiltro_TextoAlterado(object sender, EventArgs e)
+        {
+            Filtrar();
         }
         #endregion
     }

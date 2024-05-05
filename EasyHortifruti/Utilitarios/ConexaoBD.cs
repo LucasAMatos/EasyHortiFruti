@@ -185,8 +185,8 @@ namespace EasyHortifruti
         public DataSet ConsultarSubGrupos() => ConsultarTabela(TabelasScript.TabelaSubGrupos);
         public DataSet ConsultarSubGrupo(int pId)
         {
-            string sql = string.Concat("SELECT Sub.id_recno, grp.nome_grupo, Sub.nome_subgrupo, " +
-                "Sub.margem_subgrupo FROM ", TabelasScript.TabelaSubGrupos, " Sub JOIN ", TabelasScript.TabelaGrupos, " grp ON Sub.id_grupo = grp.id_recno");
+            string sql = string.Concat("SELECT Sub.nome_subgrupo, grp.nome_grupo,  " +
+                "Sub.margem_subgrupo,Sub.id_recno FROM ", TabelasScript.TabelaSubGrupos, " Sub JOIN ", TabelasScript.TabelaGrupos, " grp ON Sub.id_grupo = grp.id_recno");
 
             if (pId > 0)
                 sql += " where Sub.id_recno = " + pId.ToString();

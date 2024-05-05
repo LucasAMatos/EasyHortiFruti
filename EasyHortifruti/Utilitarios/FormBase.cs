@@ -8,6 +8,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement.Window;
+using System.Data;
 
 namespace EasyHortifruti
 {
@@ -47,6 +48,33 @@ namespace EasyHortifruti
             catch (Exception ex)
             {
                 throw ex;
+            }
+        }
+
+        internal void Filtrar(DataGridView dgv, DataSet pDs, int SelectedIndex, string pFiltro)
+        {
+            try
+            {
+                string coluna = dgv.Columns[SelectedIndex].DataPropertyName;
+                if (!string.IsNullOrEmpty(pFiltro))
+                {
+                    switch (pDs.Tables["Table"].DefaultView.Table.Columns[SelectedIndex].DataType.ToString())
+                    {
+                        case "System.Double":
+                            pDs.Tables["Table"].DefaultView.RowFilter = $"{coluna} = {pFiltro}";
+                            break;
+                        default:
+                            pDs.Tables["Table"].DefaultView.RowFilter = $"{coluna} LIKE '%{pFiltro}%'";
+                            break;
+                    }
+                }
+                else
+                    pDs.Tables["Table"].DefaultView.RowFilter = string.Empty;
+                dgv.DataSource = pDs.Tables["Table"].DefaultView;
+            }
+            catch
+            {
+
             }
         }
 

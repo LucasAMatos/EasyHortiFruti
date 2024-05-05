@@ -111,9 +111,7 @@ namespace EasyHortifruti
 
         private void Filtrar()
         {
-            string coluna = dgvCadUnidades.Columns[cbFiltro.SelectedIndex].DataPropertyName;
-            dsGrid.Tables["Table"].DefaultView.RowFilter = $"{coluna} LIKE '%{tbFiltro.Text}%'";
-            dgvCadUnidades.DataSource = dsGrid.Tables["Table"].DefaultView;
+            base.Filtrar(dgvCadUnidades, dsGrid, cbFiltro.SelectedIndex, tbFiltro.Text);
         }
 
         private void TbFiltro_TextoAlterado(object sender, EventArgs e)
@@ -122,9 +120,5 @@ namespace EasyHortifruti
         }
         #endregion Metodos
 
-        private void cbFiltro_Load(object sender, EventArgs e)
-        {
-
-        }
     }
 }

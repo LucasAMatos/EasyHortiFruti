@@ -106,7 +106,7 @@ namespace EasyHortifruti
             this.txtNCM.SelectionLength = 0;
             this.txtNCM.SelectionStart = 0;
             this.txtNCM.Size = new System.Drawing.Size(88, 48);
-            this.txtNCM.TabIndex = 20;
+            this.txtNCM.TabIndex = 2;
             this.txtNCM.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtNCM.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
@@ -126,7 +126,7 @@ namespace EasyHortifruti
             this.MtbPrecoVenda.SelectionLength = 0;
             this.MtbPrecoVenda.SelectionStart = 0;
             this.MtbPrecoVenda.Size = new System.Drawing.Size(96, 48);
-            this.MtbPrecoVenda.TabIndex = 18;
+            this.MtbPrecoVenda.TabIndex = 6;
             this.MtbPrecoVenda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.MtbPrecoVenda.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
@@ -146,7 +146,7 @@ namespace EasyHortifruti
             this.MtbMargemLucro.SelectionLength = 0;
             this.MtbMargemLucro.SelectionStart = 0;
             this.MtbMargemLucro.Size = new System.Drawing.Size(88, 48);
-            this.MtbMargemLucro.TabIndex = 4;
+            this.MtbMargemLucro.TabIndex = 5;
             this.MtbMargemLucro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MtbMargemLucro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.MOEDA;
             this.MtbMargemLucro.TextChanged += new System.EventHandler(this.MtbMargemLucro_TextChanged);
@@ -168,7 +168,7 @@ namespace EasyHortifruti
             this.MtbPrecoCompra.SelectionLength = 0;
             this.MtbPrecoCompra.SelectionStart = 0;
             this.MtbPrecoCompra.Size = new System.Drawing.Size(93, 48);
-            this.MtbPrecoCompra.TabIndex = 3;
+            this.MtbPrecoCompra.TabIndex = 4;
             this.MtbPrecoCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MtbPrecoCompra.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.MOEDA;
             this.MtbPrecoCompra.TextChanged += new System.EventHandler(this.MtbPrecoCompra_TextChanged);
@@ -273,7 +273,7 @@ namespace EasyHortifruti
             this.cbUnidProduto.SelectedItem = null;
             this.cbUnidProduto.SelectedText = "";
             this.cbUnidProduto.Size = new System.Drawing.Size(113, 48);
-            this.cbUnidProduto.TabIndex = 2;
+            this.cbUnidProduto.TabIndex = 3;
             // 
             // tbDescricaoProduto
             // 

@@ -284,7 +284,6 @@
             this.cbFiltro.SelectedText = "";
             this.cbFiltro.Size = new System.Drawing.Size(163, 46);
             this.cbFiltro.TabIndex = 0;
-            this.cbFiltro.Load += new System.EventHandler(this.cbFiltro_Load);
             // 
             // tbFiltro
             // 

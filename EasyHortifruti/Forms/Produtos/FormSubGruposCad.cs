@@ -13,6 +13,8 @@ namespace EasyHortifruti
     public partial class FormSubGruposCad : FormBase
     {
         #region Propriedades
+
+        private DataSet dsGrid;
         public int IdSelecionado
         {
             get
@@ -43,6 +45,8 @@ namespace EasyHortifruti
             CarregarGrid();
             CarregarComboFiltros();
             configuraGridPadrao(DgViewCadSubGrupos);
+            // Inscreva-se para o evento TextoAlterado do UserControl
+            tbFiltro.TextChanged += TbFiltro_TextoAlterado;
         }
 
         private void BtIncluirSubGrupo_Click(object sender, EventArgs e)
@@ -100,10 +104,21 @@ namespace EasyHortifruti
 
         public void CarregarGrid()
         {
-            DgViewCadSubGrupos.DataSource = new ConexaoBD().ConsultarSubGrupo(0);
+            dsGrid = new ConexaoBD().ConsultarSubGrupo(0);
+            DgViewCadSubGrupos.DataSource = dsGrid;
             DgViewCadSubGrupos.DataMember = "Table";
             DgViewCadSubGrupos.AutoGenerateColumns = false;
             DgViewCadSubGrupos.Sort(DgViewCadSubGrupos.Columns["ID"], System.ComponentModel.ListSortDirection.Ascending);
+        }
+
+        private void Filtrar()
+        {
+            base.Filtrar(DgViewCadSubGrupos, dsGrid, cbFiltro.SelectedIndex, tbFiltro.Text);
+        }
+
+        private void TbFiltro_TextoAlterado(object sender, EventArgs e)
+        {
+            Filtrar();
         }
         #endregion
     }

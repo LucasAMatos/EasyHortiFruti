@@ -1,6 +1,7 @@
 ﻿using EasyHortifruti.DML;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
@@ -22,17 +23,25 @@ namespace EasyHortifruti
 
         private DataSet dsProdutos;
 
-        private decimal TotalPedido
+        private Timer timer;
+
+        private Color originalColor;
+
+        private Color warningColor = Color.Red; // Cor de aviso (vermelho)
+
+        private bool warningDisplayed = false;
+
+        private decimal Total_Pedido
         { 
             get
             {
-                if (!string.IsNullOrEmpty(MtbTotPedido.Text))
-                    return Convert.ToDecimal(MtbTotPedido.Text);
-                return 0;
+                if (!string.IsNullOrEmpty(TbTotPedido.Text))
+                    return Convert.ToDecimal(TbTotPedido.Text);
+               return 0;
             }
             set 
             {
-                MtbTotPedido.Text = value.ToString("F2");
+                TbTotPedido.Text = value.ToString("F2");
             }
         }
 
@@ -63,12 +72,8 @@ namespace EasyHortifruti
                 TbDesconto.Text = value.ToString("F2");
             }
         }
-        #endregion propriedades
 
-        private Timer timer;
-        private Color originalColor;
-        private Color warningColor = Color.Red; // Cor de aviso (vermelho)
-        private bool warningDisplayed = false;
+        #endregion propriedades
 
         public FormPedidoAltInsert()
         {
@@ -76,9 +81,10 @@ namespace EasyHortifruti
             produtoItem = new Dictionary<String, int>();
             margemLucro = new Dictionary<String, int>();
             dsProdutos = new DataSet();
+
             InitializeComponent();
 
-            configuraGridPadrao(DgvPedidoProdutos);
+            configuraGridPadrao(DgvItensPedido);
 
             TbDesconto.TextChanged += TbFiltro_TbDescontoTextChanged;
             // Armazenar a cor original do label
@@ -314,6 +320,7 @@ namespace EasyHortifruti
         private void BtAdicItemPedido_Click(object sender, EventArgs e)
         {
             // Captura os valores dos campos da interface do usuário
+            DateTime dataPedido = DtPedido.MinDate;
             string produtoItem = CbProdutos.SelectedItem.ToString();
             string unidadeItem = CbUnidPedido.SelectedItem.ToString();
             string quantidadeItem = TbQtdPedido.Text;
@@ -334,7 +341,8 @@ namespace EasyHortifruti
                 ValorLucroItem = LucroItem
             };
 
-            SomaTotalPedido(TotalItem);
+            AtualizarTotalPedido();
+
             // Adiciona o novo pedido à DataGridView
             AdicionarPedidoDataGridView(novoPedido);
 
@@ -345,7 +353,31 @@ namespace EasyHortifruti
         private void AdicionarPedidoDataGridView(Pedido pedido)
         {
             // Adiciona uma nova linha à DataGridView e preenche as células com os valores do pedido
-            DgvPedidoProdutos.Rows.Add(pedido.DescrProduto, pedido.UnidProduto, pedido.QtdeProduto, pedido.VlCompraProduto, pedido.MargemLucro, pedido.TotalItem, pedido.ValorLucroItem);
+            DgvItensPedido.Rows.Add(pedido.dataPedido, pedido.DescrProduto, pedido.UnidProduto, pedido.QtdeProduto, pedido.VlCompraProduto, pedido.MargemLucro, pedido.TotalItem, pedido.ValorLucroItem);
+        }
+
+        private void AtualizarTotalPedido()
+        {
+            decimal novoTotal = 0;
+
+            // Itera pelas linhas do DataGridView e soma os preços de venda
+            foreach (DataGridViewRow row in DgvItensPedido.Rows)
+            {
+                if (!row.IsNewRow && row.Cells["TotalItem"].Value != null)
+                {
+                    decimal precoItem = Convert.ToDecimal(row.Cells["TotalItem"].Value);
+                    novoTotal += precoItem;
+                }
+            }
+            // Atualiza o total do pedido no TextBox externo
+            Total_Pedido = novoTotal;
+            TbTotPedido.Text = Total_Pedido.ToString("C");
+
+            // Calcula o total do pedido com desconto
+            decimal totalComDesconto = novoTotal - Desconto;
+
+            // Atualiza o total do pedido com desconto no ComboBox externo
+            TbTotalGeral.Text = totalComDesconto.ToString("C");
         }
 
         private void LimparCampos()
@@ -366,18 +398,18 @@ namespace EasyHortifruti
 
         private void SomaTotalPedido(decimal TotalItem)
         {
-            TotalPedido = TotalItem;
-            SomaTotalGeral();
+            //TotalPedido = TotalItem;
+            //SomaTotalGeral();
         }
 
         private void SomaTotalGeral()
         {
-            TotalGeral = TotalPedido - Desconto;
+            //TotalGeral = TotalPedido - Desconto;
         }
 
         private void TbFiltro_TbDescontoTextChanged(object sender, EventArgs e)
         {
-            TotalGeral = TotalPedido - Desconto;
+            TotalGeral = Total_Pedido - Desconto;
         }
 
         private void btGravarPedido_Click(object sender, EventArgs e)
@@ -386,6 +418,21 @@ namespace EasyHortifruti
             pedido.dataPedido = DtPedido.Value;
 
             new ConexaoBD().InserirPedido(pedido);
+        }
+
+        private void DgvItensPedido_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            AtualizarTotalPedido();
+        }
+
+        private void DgvItensPedido_RowsAdded(object sender, DataGridViewRowsAddedEventArgs e)
+        {
+            AtualizarTotalPedido();
+        }
+
+        private void DgvItensPedido_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
+        {
+            AtualizarTotalPedido();
         }
     }
 }

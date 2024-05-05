@@ -26,6 +26,7 @@ namespace EasyHortifruti
         #region Tabelas
 
         #region Geral
+
         public DataSet ConsultarGerais() => ConsultarTabela(TabelasScript.TabelaGeral);
 
         public Geral ConsultarGeralPorId(int pId)

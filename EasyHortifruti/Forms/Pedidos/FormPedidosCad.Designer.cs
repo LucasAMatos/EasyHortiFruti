@@ -32,8 +32,8 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
             this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
+            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
             this.panelBotoesCadPedidos = new System.Windows.Forms.Panel();
             this.btSairPedido = new System.Windows.Forms.Button();
             this.btImprimirPedido = new System.Windows.Forms.Button();
@@ -42,9 +42,10 @@
             this.btIncluirPedido = new System.Windows.Forms.Button();
             this.panelCadPedidos = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.panelTituloCadPedidos = new System.Windows.Forms.Panel();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelTituloCadPedidos = new System.Windows.Forms.Panel();
+            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -96,24 +97,6 @@
             this.tableLayoutPanel2.Size = new System.Drawing.Size(737, 44);
             this.tableLayoutPanel2.TabIndex = 5;
             // 
-            // cbFiltro
-            // 
-            this.cbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.cbFiltro.Caption = "Campo para Filtrar";
-            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.cbFiltro.FormattingEnabled = true;
-            this.cbFiltro.Location = new System.Drawing.Point(13, 3);
-            this.cbFiltro.Name = "cbFiltro";
-            this.cbFiltro.Obrigatorio = false;
-            this.cbFiltro.SelectedIndex = -1;
-            this.cbFiltro.SelectedItem = null;
-            this.cbFiltro.SelectedText = "";
-            this.cbFiltro.Size = new System.Drawing.Size(194, 38);
-            this.cbFiltro.TabIndex = 0;
-            // 
             // tbFiltro
             // 
             this.tbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
@@ -135,6 +118,24 @@
             this.tbFiltro.TabIndex = 1;
             this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            // 
+            // cbFiltro
+            // 
+            this.cbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbFiltro.Caption = "Campo para Filtrar";
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.cbFiltro.FormattingEnabled = true;
+            this.cbFiltro.Location = new System.Drawing.Point(13, 3);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Obrigatorio = false;
+            this.cbFiltro.SelectedIndex = -1;
+            this.cbFiltro.SelectedItem = null;
+            this.cbFiltro.SelectedText = "";
+            this.cbFiltro.Size = new System.Drawing.Size(194, 38);
+            this.cbFiltro.TabIndex = 0;
             // 
             // panelBotoesCadPedidos
             // 
@@ -246,12 +247,23 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.Column1,
-            this.Column2});
+            this.Column2,
+            this.id});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.Size = new System.Drawing.Size(737, 382);
             this.dataGridView1.TabIndex = 1;
+            // 
+            // panelTituloCadPedidos
+            // 
+            this.panelTituloCadPedidos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelTituloCadPedidos.BackgroundImage")));
+            this.panelTituloCadPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panelTituloCadPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panelTituloCadPedidos.Location = new System.Drawing.Point(3, 3);
+            this.panelTituloCadPedidos.Name = "panelTituloCadPedidos";
+            this.panelTituloCadPedidos.Size = new System.Drawing.Size(737, 54);
+            this.panelTituloCadPedidos.TabIndex = 0;
             // 
             // Column1
             // 
@@ -263,15 +275,12 @@
             this.Column2.HeaderText = "Data";
             this.Column2.Name = "Column2";
             // 
-            // panelTituloCadPedidos
+            // id
             // 
-            this.panelTituloCadPedidos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelTituloCadPedidos.BackgroundImage")));
-            this.panelTituloCadPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panelTituloCadPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTituloCadPedidos.Location = new System.Drawing.Point(3, 3);
-            this.panelTituloCadPedidos.Name = "panelTituloCadPedidos";
-            this.panelTituloCadPedidos.Size = new System.Drawing.Size(737, 54);
-            this.panelTituloCadPedidos.TabIndex = 0;
+            this.id.DataPropertyName = "id_recno";
+            this.id.HeaderText = "id";
+            this.id.Name = "id";
+            this.id.Visible = false;
             // 
             // FormPedidos
             // 
@@ -308,10 +317,11 @@
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panelCadPedidos;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Componentes.AltComboBox cbFiltro;
         private Componentes.AltTextBox tbFiltro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }

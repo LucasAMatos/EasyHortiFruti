@@ -49,25 +49,34 @@ namespace EasyHortifruti
         private string CreatePedidos = @"CREATE TABLE IF NOT EXISTS public.pedidos
                                             (
                                                 datapedido date,
-                                                statuspedido character varying(10)  NOT NULL,
                                                 id_fonte integer NOT NULL,
+                                                statuspedido character varying(10)  NOT NULL,
+                                                prazopgto int NOT NULL,
                                                 dataprev date NULL,
-                                                prazopgto date NOT NULL,
                                                 dataentrega date NOT NULL,
                                                 dataconclusao date NULL,
-                                                id_produto integer NOT NULL,
-                                                qtdproduto character varying(6)  NOT NULL,
-                                                vrcompra numeric NOT NULL,
-                                                vrvenda numeric NOT NULL,
+                                                totalcompra numeric NOT NULL,
+                                                descpedido  numeric NOT NULL,
                                                 totalvenda numeric NOT NULL,
-                                                percentlucro character(3) NULL,
+                                                vlrlucro numeric NULL,
+                                                obspedido text null,
                                                 id_recno integer NOT NULL GENERATED ALWAYS AS IDENTITY 
-	                                            ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
-                                                CONSTRAINT uq_id_pedidos UNIQUE (id_recno),
-                                                CONSTRAINT fk_fonte_id FOREIGN KEY (id_fonte)
-                                                    REFERENCES public.geral (id_recno),
-                                                CONSTRAINT fk_produto_id FOREIGN KEY (id_produto)
-                                                    REFERENCES public.produtos (id_recno)
+	                                            ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 )
+                                            )";
+
+        public static string TabelaItensPedido = "itens_pedidos";
+
+        private string CreateItensPedido = @"CREATE TABLE IF NOT EXISTS public.itens_pedidos
+                                            (
+                                                idpedido integer NOT NULL,
+                                                idproduto integer NOT NULL,
+                                                idunidade integer NOT NULL,
+                                                qtdeitem integer NOT NULL,
+                                                vlcusto numeric,
+                                                vltotitem numeric,
+                                                vllucro numeric,	
+                                                id_recno integer NOT NULL GENERATED ALWAYS AS IDENTITY 
+                                            	( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 )
                                             )";
 
         public static string TabelaGrupos = "grupos";
@@ -920,7 +929,8 @@ namespace EasyHortifruti
                 CreateCtasReceber,
                 CreateTabelaNCM,
                 ProcTabelaNCM,
-                ChamaProcNCM
+                ChamaProcNCM,
+                CreateItensPedido
             };
         }
 

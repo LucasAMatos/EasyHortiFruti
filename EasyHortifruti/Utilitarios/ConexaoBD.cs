@@ -26,6 +26,7 @@ namespace EasyHortifruti
         #region Tabelas
 
         #region Geral
+
         public DataSet ConsultarGerais() => ConsultarTabela(TabelasScript.TabelaGeral);
 
         public Geral ConsultarGeralPorId(int pId)
@@ -287,21 +288,36 @@ namespace EasyHortifruti
             Dictionary<string, string> Campos = new Dictionary<string, string>
             {
                 { "datapedido",     pPedido.dataPedido.ToString() },
+                { "id_fonte",       pPedido.IdPessoa.ToString() },
                 { "statuspedido",   pPedido.StatusPedido.ToString() },
-                { "id_fonte",       pPedido.IdFonte.ToString() },
-                { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },
                 { "prazopgto",      pPedido.PrazoPagamento.ToString() },
+                { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },
                 { "dataentrega",    pPedido.DataEntrega.ToString("dd/MM/yyyy") },
                 { "dataconclusao",  pPedido.DataConclusao.ToString("dd/MM/yyyy") },
-                { "id_produto",     pPedido.IdProduto.ToString() },
-                { "qtdproduto",     pPedido.QuantidadeProduto.ToString() },
-                { "vrcompra",       pPedido.ValorCompra.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
-                { "vrvenda",        pPedido.ValorVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
-                { "totalvenda",     pPedido.TotalVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
-                { "percentlucro",   pPedido.PercentualLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) }
+                { "obspedido",      pPedido.Observacoes },
+                { "totalcompra",    pPedido.TotalPedido.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "descpedido",     pPedido.ValorDesconto.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "totalvenda",     pPedido.TotalGeral.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "vlrlucro",       pPedido.ValorLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) }
             };
 
-            ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaPedidos, Campos));
+            int IDPedido = ExecutarRetornaID(TabelasScript.ScriptInsert(TabelasScript.TabelaPedidos, Campos));
+
+            foreach(ItemPedido item in pPedido.Itens)
+            {
+                Dictionary<string, string> CamposItens = new Dictionary<string, string>
+                {
+                    { "idpedido", IDPedido.ToString() },
+                    { "idproduto", item.id_Produto.ToString() } ,
+                    { "idunidade", item.id_unidade.ToString() },
+                    { "qtdeitem", item.quantidade.ToString() },
+                    { "vlcusto", item.valor_custo.ToString().Replace(",",".") },
+                    { "vltotitem", item.total_item.ToString().Replace(",",".") } ,
+                    { "vllucro", item.valor_lucro.ToString().Replace(",",".") }
+                };
+
+                ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaItensPedido, CamposItens));
+            }
         }
 
         public void AlterarPedido(Pedido pPedido)
@@ -310,18 +326,17 @@ namespace EasyHortifruti
             Dictionary<string, string> pCampos = new Dictionary<string, string>
             {
                 { "datapedido",     pPedido.dataPedido.ToString() },
+                { "id_fonte",       pPedido.IdPessoa.ToString() },
                 { "statuspedido",   pPedido.StatusPedido.ToString() },
-                { "id_fonte",       pPedido.IdFonte.ToString() },
-                { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },
                 { "prazopgto",      pPedido.PrazoPagamento.ToString() },
+                { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },
                 { "dataentrega",    pPedido.DataEntrega.ToString("dd/MM/yyyy") },
                 { "dataconclusao",  pPedido.DataConclusao.ToString("dd/MM/yyyy") },
-                { "id_produto",     pPedido.IdProduto.ToString() },
-                { "qtdproduto",     pPedido.QuantidadeProduto.ToString() },
-                { "vrcompra",       pPedido.ValorCompra.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
-                { "vrvenda",        pPedido.ValorVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
-                { "totalvenda",     pPedido.TotalVenda.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
-                { "percentlucro",   pPedido.PercentualLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) }
+                { "obspedido",      pPedido.Observacoes },
+                { "totalcompra",    pPedido.TotalPedido.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "descpedido",     pPedido.ValorDesconto.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "totalvenda",     pPedido.TotalGeral.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
+                { "vlrlucro",       pPedido.ValorLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) }
             };
 
             ExecutarSemRetorno(TabelasScript.ScriptUpdate(TabelasScript.TabelaPedidos, pPedido.ID, pCampos));
@@ -408,6 +423,24 @@ namespace EasyHortifruti
                     cmd.ExecuteNonQuery();
                 }
             }
+        }
+
+        private int ExecutarRetornaID(string pSql)
+        {
+            pSql += " RETURNING id_recno";
+            int novoId;
+
+            using (NpgsqlConnection conn = new NpgsqlConnection(connectionString))
+            {
+                conn.Open();
+
+                using (NpgsqlCommand cmd = new NpgsqlCommand(pSql, conn))
+                {
+                    novoId = (int)cmd.ExecuteScalar();
+                }
+            }
+
+            return novoId;
         }
 
         private void ExcluirRegistro(int pId, string pNomeTabela)

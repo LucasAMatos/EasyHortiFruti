@@ -177,6 +177,7 @@
     <Compile Include="DML\Endereco.cs" />
     <Compile Include="DML\Geral.cs" />
     <Compile Include="DML\Grupo.cs" />
+    <Compile Include="DML\ItemPedido.cs" />
     <Compile Include="DML\Pedido.cs" />
     <Compile Include="DML\Produto.cs" />
     <Compile Include="DML\SubGrupo.cs" />

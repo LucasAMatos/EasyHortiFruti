@@ -12,6 +12,8 @@ namespace EasyHortifruti.DML
 
         public string descrProduto { get; set; }
 
+        public int id_Produto { get; set; }
+
         public int id_unidade { get; set; }
 
         public string unidade { get; set; }

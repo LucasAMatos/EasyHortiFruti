@@ -21,7 +21,7 @@ namespace EasyHortifruti
 
         private Dictionary<string, int> margemLucro;
 
-        private List<ItemPedido> itensPedido;
+        private List<ItemPedido> itensPedidos;
         private DataSet dsProdutos;
 
         private Timer timer;
@@ -85,6 +85,7 @@ namespace EasyHortifruti
             produtoItem = new Dictionary<String, int>();
             margemLucro = new Dictionary<String, int>();
             dsProdutos = new DataSet();
+            itensPedidos = new List<ItemPedido>();
 
             InitializeComponent();
 
@@ -338,6 +339,7 @@ namespace EasyHortifruti
             ItemPedido novoPedido = new ItemPedido
             {
                 descrProduto = produtoItem,
+                id_Produto = CbProdutos.SelectedIndex,
                 unidade = unidadeItem,
                 quantidade = quantidadeItem,
                 valor_custo = valorCompraItem,
@@ -358,7 +360,7 @@ namespace EasyHortifruti
         private void AdicionarPedidoDataGridView(ItemPedido pedido)
         {
             DgvItensPedido.Rows.Add(pedido.descrProduto, pedido.unidade, pedido.quantidade, pedido.valor_custo, pedido.percentual_lucro, pedido.total_item, pedido.valor_lucro);
-            itensPedido.Add(pedido);
+            itensPedidos.Add(pedido);
         }
 
         private void AtualizarTotalPedido()
@@ -419,14 +421,22 @@ namespace EasyHortifruti
 
         private void btGravarPedido_Click(object sender, EventArgs e)
         {
-            Pedido pedido = new Pedido();
-            pedido.IDCliente = IdClienteSelecionado;
-            pedido.StatusPedido = (StatusPedido)CbStatusPedido.SelectedIndex;
-            pedido.PrazoPagamento = Convert.ToInt32(TbPrazoPgto.Text);
-            pedido.DataConclusao = DtConclusaoPedido.Value;
-            pedido.DataEntrega = DtEntregaPedido.Value;
-            pedido.DataPrev = DtPrevEntrega.Value;
-            pedido.Itens = itensPedido;
+            Pedido pedido = new Pedido
+            {
+                dataPedido = DtPedido.Value,
+                IdPessoa = IdClienteSelecionado,
+                StatusPedido = (StatusPedido)CbStatusPedido.SelectedIndex,
+                PrazoPagamento = string.IsNullOrEmpty(TbPrazoPgto.Text) ? 0 : Convert.ToInt32(TbPrazoPgto.Text),
+                DataPrev = DtPrevEntrega.Value,
+                DataEntrega = DtEntregaPedido.Value,
+                DataConclusao = DtConclusaoPedido.Value,
+                Itens = itensPedidos,
+                Observacoes = tbObservacoes.Text,
+                TotalPedido = Convert.ToDecimal(TbTotPedido.Text.Replace("R$", "")),
+                ValorDesconto = string.IsNullOrEmpty(TbDesconto.Text) ? 0 : Convert.ToDecimal(TbDesconto.Text.Replace("R$", "")),
+                TotalGeral = Convert.ToDecimal(TbTotalGeral.Text.Replace("R$", ""))
+
+            };
             new ConexaoBD().InserirPedido(pedido);
         }
 

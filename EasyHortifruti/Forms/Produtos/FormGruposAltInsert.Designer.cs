@@ -73,7 +73,7 @@ namespace EasyHortifruti
             this.TbMargemGrupo.SelectionLength = 0;
             this.TbMargemGrupo.SelectionStart = 0;
             this.TbMargemGrupo.Size = new System.Drawing.Size(129, 48);
-            this.TbMargemGrupo.TabIndex = 8;
+            this.TbMargemGrupo.TabIndex = 3;
             this.TbMargemGrupo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbMargemGrupo.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
@@ -83,7 +83,7 @@ namespace EasyHortifruti
             this.TbObsGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbObsGrupo.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.TbObsGrupo.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbObsGrupo.Location = new System.Drawing.Point(24, 164);
+            this.TbObsGrupo.Location = new System.Drawing.Point(24, 160);
             this.TbObsGrupo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TbObsGrupo.MaxLength = 32767;
             this.TbObsGrupo.Multiline = true;
@@ -93,7 +93,7 @@ namespace EasyHortifruti
             this.TbObsGrupo.SelectionLength = 0;
             this.TbObsGrupo.SelectionStart = 0;
             this.TbObsGrupo.Size = new System.Drawing.Size(418, 98);
-            this.TbObsGrupo.TabIndex = 6;
+            this.TbObsGrupo.TabIndex = 2;
             this.TbObsGrupo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbObsGrupo.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
@@ -113,7 +113,7 @@ namespace EasyHortifruti
             this.TbDescGrupo.SelectionLength = 0;
             this.TbDescGrupo.SelectionStart = 0;
             this.TbDescGrupo.Size = new System.Drawing.Size(418, 48);
-            this.TbDescGrupo.TabIndex = 4;
+            this.TbDescGrupo.TabIndex = 1;
             this.TbDescGrupo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbDescGrupo.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
@@ -157,7 +157,7 @@ namespace EasyHortifruti
             this.BtGravarGrupo.Name = "BtGravarGrupo";
             this.BtGravarGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtGravarGrupo.Size = new System.Drawing.Size(94, 30);
-            this.BtGravarGrupo.TabIndex = 3;
+            this.BtGravarGrupo.TabIndex = 4;
             this.BtGravarGrupo.UseVisualStyleBackColor = false;
             this.BtGravarGrupo.Click += new System.EventHandler(this.BtGravarGrupo_Click);
             // 
@@ -174,7 +174,7 @@ namespace EasyHortifruti
             this.BtCancelGrupo.Name = "BtCancelGrupo";
             this.BtCancelGrupo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtCancelGrupo.Size = new System.Drawing.Size(94, 30);
-            this.BtCancelGrupo.TabIndex = 2;
+            this.BtCancelGrupo.TabIndex = 5;
             this.BtCancelGrupo.UseVisualStyleBackColor = false;
             this.BtCancelGrupo.Click += new System.EventHandler(this.BtCancelGrupo_Click);
             // 

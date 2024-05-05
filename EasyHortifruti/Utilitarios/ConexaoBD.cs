@@ -248,7 +248,8 @@ namespace EasyHortifruti
                 { "margem_produto", pProduto.MargemLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)},
                 { "id_unidade",  pProduto.IdUnidade.ToString() },
                 { "id_grupo", pProduto.IdGrupo.ToString() },
-                { "id_subgrupo", pProduto.IdSubGrupo.ToString() }
+                { "id_subgrupo", pProduto.IdSubGrupo.ToString() },
+                { "ncm", pProduto.NCM}
             };
 
             ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaProdutos, pCampos));
@@ -264,7 +265,8 @@ namespace EasyHortifruti
                 { "margem_produto", pProduto.MargemLucro.ToString("F2", System.Globalization.CultureInfo.InvariantCulture)},
                 { "id_unidade",  pProduto.IdUnidade.ToString() },
                 { "id_grupo", pProduto.IdGrupo.ToString() },
-                { "id_subgrupo", pProduto.IdSubGrupo.ToString() }
+                { "id_subgrupo", pProduto.IdSubGrupo.ToString() },
+                { "ncm", pProduto.NCM}
             };
 
             ExecutarSemRetorno(TabelasScript.ScriptUpdate(TabelasScript.TabelaProdutos, pProduto.ID, pCampos));

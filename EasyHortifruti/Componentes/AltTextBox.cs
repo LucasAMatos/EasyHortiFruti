@@ -62,10 +62,12 @@ namespace EasyHortifruti.Componentes
 
         public Font FonteTexto
         {
-            get {
+            get
+            {
                 return txtBox.Font;
             }
-            set { 
+            set
+            {
                 txtBox.Font = value;
             }
         }
@@ -82,11 +84,14 @@ namespace EasyHortifruti.Componentes
             }
         }
 
-        public int SelectionStart {
-            get {
+        public int SelectionStart
+        {
+            get
+            {
                 return txtBox.SelectionStart;
             }
-            set {
+            set
+            {
                 txtBox.SelectionStart = value;
             }
         }
@@ -105,10 +110,12 @@ namespace EasyHortifruti.Componentes
 
         public override string Text
         {
-            get {
+            get
+            {
                 return txtBox.Text;
             }
-            set {
+            set
+            {
                 txtBox.Text = value;
             }
         }
@@ -136,7 +143,7 @@ namespace EasyHortifruti.Componentes
                 txtBox.ReadOnly = value;
             }
         }
-        
+
         public System.Windows.Forms.HorizontalAlignment TextAlign
         {
             get
@@ -164,7 +171,7 @@ namespace EasyHortifruti.Componentes
         }
 
 
-        
+
         #endregion
 
 
@@ -172,6 +179,7 @@ namespace EasyHortifruti.Componentes
         {
             InitializeComponent();
             txtBox.TextChanged += TextBox_TextChanged;
+            txtBox.KeyDown += AltTextBox_Enter;
         }
 
         #region Eventos
@@ -180,6 +188,15 @@ namespace EasyHortifruti.Componentes
         {
             // Dispare o evento TextChanged personalizado do UserControl
             OnTextChanged(EventArgs.Empty);
+        }
+
+        private void AltTextBox_Enter(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                e.SuppressKeyPress = true; // Impede que o caractere "Enter" seja inserido no controle atual
+                this.SelectNextControl(this.ActiveControl, true, true, true, true);
+            }
         }
 
         // Método para disparar o evento TextChanged personalizado do UserControl
@@ -378,5 +395,6 @@ namespace EasyHortifruti.Componentes
         }
 
         #endregion Enum
+
     }
 }

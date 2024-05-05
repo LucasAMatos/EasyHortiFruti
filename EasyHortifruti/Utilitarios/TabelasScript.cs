@@ -36,13 +36,10 @@ namespace EasyHortifruti
                                                 id_unidade integer NOT NULL,
                                                 id_grupo integer NULL,
                                                 id_subgrupo integer NULL,
+                                                ncm character varying(15) NULL,
                                                 id_recno integer NOT NULL GENERATED ALWAYS AS IDENTITY 
 	                                            ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
                                                 CONSTRAINT uq_id_produto UNIQUE (id_recno),
-                                                CONSTRAINT fk_grupo_id FOREIGN KEY (id_grupo)
-                                                    REFERENCES public.grupos (id_recno),
-                                                CONSTRAINT fk_subgrupo_id FOREIGN KEY (id_subgrupo)
-                                                    REFERENCES public.subgrupos (id_recno),
                                                 CONSTRAINT fk_unidade_id FOREIGN KEY (id_unidade)
                                                     REFERENCES public.unidades (id_recno)
                                             )";

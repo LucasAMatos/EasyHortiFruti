@@ -91,7 +91,8 @@ namespace EasyHortifruti
                     MargemLucro = Convert.ToDouble(MtbMargemLucro.Text),
                     IdSubGrupo = idSubGrupo,
                     IdGrupo = idGrupo,
-                    IdUnidade = idUnidade
+                    IdUnidade = idUnidade,
+                    NCM = txtNCM.Text
                 };
 
 
@@ -198,7 +199,7 @@ namespace EasyHortifruti
                     cbUnidProduto.SelecionarIndexPeloConteudo(produto.Unidade);
                     cbGrupoProduto.SelecionarIndexPeloConteudo(produto.Grupo);
                     cbSubGrupoProduto.SelecionarIndexPeloConteudo(produto.SubGrupo);
-
+                    txtNCM.Text = produto.NCM;
                     labelIDProduto.Text = Id.ToString();
                     CalcularMargemLucro();
                 }

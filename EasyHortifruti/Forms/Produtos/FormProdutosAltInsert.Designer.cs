@@ -72,7 +72,7 @@ namespace EasyHortifruti
             this.panelInserirProduto.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelInserirProduto.Location = new System.Drawing.Point(0, 0);
             this.panelInserirProduto.Name = "panelInserirProduto";
-            this.panelInserirProduto.Size = new System.Drawing.Size(546, 482);
+            this.panelInserirProduto.Size = new System.Drawing.Size(546, 452);
             this.panelInserirProduto.TabIndex = 0;
             // 
             // BtCadNCM
@@ -82,7 +82,7 @@ namespace EasyHortifruti
             this.BtCadNCM.FlatAppearance.BorderSize = 0;
             this.BtCadNCM.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtCadNCM.Image = ((System.Drawing.Image)(resources.GetObject("BtCadNCM.Image")));
-            this.BtCadNCM.Location = new System.Drawing.Point(107, 150);
+            this.BtCadNCM.Location = new System.Drawing.Point(107, 162);
             this.BtCadNCM.Name = "BtCadNCM";
             this.BtCadNCM.Size = new System.Drawing.Size(26, 25);
             this.BtCadNCM.TabIndex = 21;
@@ -96,7 +96,7 @@ namespace EasyHortifruti
             this.txtNCM.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNCM.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.txtNCM.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNCM.Location = new System.Drawing.Point(18, 129);
+            this.txtNCM.Location = new System.Drawing.Point(18, 141);
             this.txtNCM.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.txtNCM.MaxLength = 32767;
             this.txtNCM.Multiline = true;
@@ -136,7 +136,7 @@ namespace EasyHortifruti
             this.MtbMargemLucro.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MtbMargemLucro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.MtbMargemLucro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MtbMargemLucro.Location = new System.Drawing.Point(426, 129);
+            this.MtbMargemLucro.Location = new System.Drawing.Point(426, 141);
             this.MtbMargemLucro.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MtbMargemLucro.MaxLength = 32767;
             this.MtbMargemLucro.Multiline = true;
@@ -158,7 +158,7 @@ namespace EasyHortifruti
             this.MtbPrecoCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MtbPrecoCompra.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.MtbPrecoCompra.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MtbPrecoCompra.Location = new System.Drawing.Point(325, 129);
+            this.MtbPrecoCompra.Location = new System.Drawing.Point(325, 141);
             this.MtbPrecoCompra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MtbPrecoCompra.MaxLength = 32767;
             this.MtbPrecoCompra.Multiline = true;
@@ -180,7 +180,7 @@ namespace EasyHortifruti
             this.BtCadSubGrupo.FlatAppearance.BorderSize = 0;
             this.BtCadSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtCadSubGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtCadSubGrupo.Image")));
-            this.BtCadSubGrupo.Location = new System.Drawing.Point(488, 247);
+            this.BtCadSubGrupo.Location = new System.Drawing.Point(492, 244);
             this.BtCadSubGrupo.Name = "BtCadSubGrupo";
             this.BtCadSubGrupo.Size = new System.Drawing.Size(26, 25);
             this.BtCadSubGrupo.TabIndex = 17;
@@ -195,7 +195,7 @@ namespace EasyHortifruti
             this.BtCadGrupo.FlatAppearance.BorderSize = 0;
             this.BtCadGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtCadGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtCadGrupo.Image")));
-            this.BtCadGrupo.Location = new System.Drawing.Point(280, 244);
+            this.BtCadGrupo.Location = new System.Drawing.Point(274, 244);
             this.BtCadGrupo.Name = "BtCadGrupo";
             this.BtCadGrupo.Size = new System.Drawing.Size(26, 25);
             this.BtCadGrupo.TabIndex = 16;
@@ -210,7 +210,7 @@ namespace EasyHortifruti
             this.BtCadUnidade.FlatAppearance.BorderSize = 0;
             this.BtCadUnidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtCadUnidade.Image = ((System.Drawing.Image)(resources.GetObject("BtCadUnidade.Image")));
-            this.BtCadUnidade.Location = new System.Drawing.Point(268, 151);
+            this.BtCadUnidade.Location = new System.Drawing.Point(268, 163);
             this.BtCadUnidade.Name = "BtCadUnidade";
             this.BtCadUnidade.Size = new System.Drawing.Size(26, 25);
             this.BtCadUnidade.TabIndex = 14;
@@ -265,7 +265,7 @@ namespace EasyHortifruti
             this.cbUnidProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbUnidProduto.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cbUnidProduto.FormattingEnabled = true;
-            this.cbUnidProduto.Location = new System.Drawing.Point(154, 132);
+            this.cbUnidProduto.Location = new System.Drawing.Point(154, 144);
             this.cbUnidProduto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbUnidProduto.Name = "cbUnidProduto";
             this.cbUnidProduto.Obrigatorio = false;
@@ -302,7 +302,7 @@ namespace EasyHortifruti
             this.panelBotoesInserirProduto.Controls.Add(this.BtGravaAlterProd);
             this.panelBotoesInserirProduto.Controls.Add(this.BtCancelaProduto);
             this.panelBotoesInserirProduto.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panelBotoesInserirProduto.Location = new System.Drawing.Point(0, 420);
+            this.panelBotoesInserirProduto.Location = new System.Drawing.Point(0, 390);
             this.panelBotoesInserirProduto.Name = "panelBotoesInserirProduto";
             this.panelBotoesInserirProduto.Size = new System.Drawing.Size(546, 62);
             this.panelBotoesInserirProduto.TabIndex = 0;
@@ -356,7 +356,7 @@ namespace EasyHortifruti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(546, 482);
+            this.ClientSize = new System.Drawing.Size(546, 452);
             this.Controls.Add(this.panelInserirProduto);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.ImeMode = System.Windows.Forms.ImeMode.On;

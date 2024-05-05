@@ -30,7 +30,6 @@ namespace EasyHortifruti
         /// </summary>
         private void InitializeComponent()
         {
-            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormSubGruposAltInsert));
             this.panel1 = new System.Windows.Forms.Panel();
             this.CbGrupo = new EasyHortifruti.Componentes.AltComboBox();
@@ -55,7 +54,7 @@ namespace EasyHortifruti
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(482, 508);
+            this.panel1.Size = new System.Drawing.Size(469, 423);
             this.panel1.TabIndex = 0;
             // 
             // CbGrupo
@@ -67,7 +66,7 @@ namespace EasyHortifruti
             this.CbGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbGrupo.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.CbGrupo.FormattingEnabled = true;
-            this.CbGrupo.Location = new System.Drawing.Point(34, 144);
+            this.CbGrupo.Location = new System.Drawing.Point(25, 155);
             this.CbGrupo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbGrupo.Name = "CbGrupo";
             this.CbGrupo.Obrigatorio = false;
@@ -75,7 +74,7 @@ namespace EasyHortifruti
             this.CbGrupo.SelectedItem = null;
             this.CbGrupo.SelectedText = "";
             this.CbGrupo.Size = new System.Drawing.Size(135, 48);
-            this.CbGrupo.TabIndex = 15;
+            this.CbGrupo.TabIndex = 2;
             // 
             // TbMargemSubGrupo
             // 
@@ -83,7 +82,7 @@ namespace EasyHortifruti
             this.TbMargemSubGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbMargemSubGrupo.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.TbMargemSubGrupo.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbMargemSubGrupo.Location = new System.Drawing.Point(34, 222);
+            this.TbMargemSubGrupo.Location = new System.Drawing.Point(25, 230);
             this.TbMargemSubGrupo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TbMargemSubGrupo.MaxLength = 32767;
             this.TbMargemSubGrupo.Multiline = true;
@@ -93,7 +92,7 @@ namespace EasyHortifruti
             this.TbMargemSubGrupo.SelectionLength = 0;
             this.TbMargemSubGrupo.SelectionStart = 0;
             this.TbMargemSubGrupo.Size = new System.Drawing.Size(135, 48);
-            this.TbMargemSubGrupo.TabIndex = 14;
+            this.TbMargemSubGrupo.TabIndex = 3;
             this.TbMargemSubGrupo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbMargemSubGrupo.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
@@ -104,7 +103,7 @@ namespace EasyHortifruti
             this.TbDescSubGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.TbDescSubGrupo.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.TbDescSubGrupo.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbDescSubGrupo.Location = new System.Drawing.Point(34, 72);
+            this.TbDescSubGrupo.Location = new System.Drawing.Point(25, 74);
             this.TbDescSubGrupo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TbDescSubGrupo.MaxLength = 32767;
             this.TbDescSubGrupo.Multiline = true;
@@ -114,7 +113,7 @@ namespace EasyHortifruti
             this.TbDescSubGrupo.SelectionLength = 0;
             this.TbDescSubGrupo.SelectionStart = 0;
             this.TbDescSubGrupo.Size = new System.Drawing.Size(418, 48);
-            this.TbDescSubGrupo.TabIndex = 12;
+            this.TbDescSubGrupo.TabIndex = 1;
             this.TbDescSubGrupo.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbDescSubGrupo.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
@@ -124,9 +123,9 @@ namespace EasyHortifruti
             this.panel3.Controls.Add(this.BtGravarSubGrupo);
             this.panel3.Controls.Add(this.BtCancelSubGrupo);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel3.Location = new System.Drawing.Point(0, 448);
+            this.panel3.Location = new System.Drawing.Point(0, 363);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(482, 60);
+            this.panel3.Size = new System.Drawing.Size(469, 60);
             this.panel3.TabIndex = 3;
             // 
             // LbIDSubGrupo
@@ -154,11 +153,11 @@ namespace EasyHortifruti
             this.BtGravarSubGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtGravarSubGrupo.FlatAppearance.BorderSize = 0;
             this.BtGravarSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtGravarSubGrupo.Location = new System.Drawing.Point(276, 17);
+            this.BtGravarSubGrupo.Location = new System.Drawing.Point(263, 17);
             this.BtGravarSubGrupo.Name = "BtGravarSubGrupo";
             this.BtGravarSubGrupo.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtGravarSubGrupo.Size = new System.Drawing.Size(94, 30);
-            this.BtGravarSubGrupo.TabIndex = 3;
+            this.BtGravarSubGrupo.TabIndex = 4;
             this.BtGravarSubGrupo.UseVisualStyleBackColor = false;
             this.BtGravarSubGrupo.Click += new System.EventHandler(this.BtGravarSubGrupo_Click);
             // 
@@ -171,11 +170,11 @@ namespace EasyHortifruti
             this.BtCancelSubGrupo.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtCancelSubGrupo.FlatAppearance.BorderSize = 0;
             this.BtCancelSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtCancelSubGrupo.Location = new System.Drawing.Point(376, 17);
+            this.BtCancelSubGrupo.Location = new System.Drawing.Point(363, 17);
             this.BtCancelSubGrupo.Name = "BtCancelSubGrupo";
             this.BtCancelSubGrupo.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtCancelSubGrupo.Size = new System.Drawing.Size(94, 30);
-            this.BtCancelSubGrupo.TabIndex = 2;
+            this.BtCancelSubGrupo.TabIndex = 5;
             this.BtCancelSubGrupo.UseVisualStyleBackColor = false;
             this.BtCancelSubGrupo.Click += new System.EventHandler(this.BtCancelSubGrupo_Click);
             // 
@@ -186,14 +185,14 @@ namespace EasyHortifruti
             this.panel2.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(482, 55);
+            this.panel2.Size = new System.Drawing.Size(469, 55);
             this.panel2.TabIndex = 1;
             // 
             // FormSubGruposAltInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(482, 508);
+            this.ClientSize = new System.Drawing.Size(469, 423);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormSubGruposAltInsert";

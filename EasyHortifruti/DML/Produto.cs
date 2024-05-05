@@ -27,6 +27,8 @@ namespace EasyHortifruti.DML
 
         public string SubGrupo { get; set; }
 
+        public string NCM { get; set; }
+
         public void CarregarProduto(DataSet ds)
         {
             if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
@@ -65,6 +67,9 @@ namespace EasyHortifruti.DML
 
                 if (dr["abrev_unid"] != null)
                     Unidade = dr["abrev_unid"].ToString();
+
+                if (dr["ncm"] != null)
+                    NCM = dr["ncm"].ToString();
             }
         }
     }

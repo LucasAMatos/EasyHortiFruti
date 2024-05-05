@@ -14,6 +14,21 @@ namespace EasyHortifruti.Componentes
     {
         #region Propriedades
 
+        private Dictionary<int, string> itemDicionario;
+        internal Dictionary<int, string> ItemDicionario
+        {
+            get
+            {
+                if (itemDicionario == null)
+                    itemDicionario = new Dictionary<int, string>();
+                return itemDicionario;
+            }
+            set
+            {
+                itemDicionario = value;
+            }
+        }
+
         internal Array DataSource { get; set; }
 
         public bool Obrigatorio { get; set; }
@@ -57,18 +72,23 @@ namespace EasyHortifruti.Componentes
         }
 
 
-        public object SelectedItem
+        public string SelectedItem
         {
-            get { return comboBox1.SelectedItem; }
+            get => itemDicionario.First(x => x.Value == comboBox1.SelectedItem).Value;
             set { comboBox1.SelectedItem = value; }
         }
 
         public int SelectedIndex
         {
-            get { return comboBox1.SelectedIndex; }
+            get
+            {
+                if (comboBox1.SelectedItem == null)
+                    return -1;
+                return itemDicionario.First(x => x.Value == comboBox1.SelectedItem).Key;
+            }
             set { comboBox1.SelectedIndex = value; }
         }
-        
+
         public AutoCompleteMode AutoCompleteMode
         {
             get { return comboBox1.AutoCompleteMode; }
@@ -125,7 +145,7 @@ namespace EasyHortifruti.Componentes
                 var attributes = (DescriptionAttribute[])fieldInfo.GetCustomAttributes(typeof(DescriptionAttribute), false);
                 string description = attributes.Length > 0 ? attributes[0].Description : item.ToString();
 
-                comboBox1.Items.Add(description);
+                this.Add((int)Convert.ChangeType(item, typeof(int)), description);
             }
             comboBox1.SelectedIndex = 0;
         }
@@ -135,24 +155,44 @@ namespace EasyHortifruti.Componentes
             comboBox1.Items.Clear();
             foreach (T item in Enum.GetValues(typeof(T)))
             {
-                comboBox1.Items.Add(item.ToString());
+                this.Add((int)Convert.ChangeType(item, typeof(int)), item.ToString());
             }
             comboBox1.SelectedIndex = 0;
         }
 
+        public void SelecionarIndexPeloEnum(int pItem)
+        {
+            comboBox1.SelectedIndex = comboBox1.Items.IndexOf(itemDicionario.First(x => x.Key == pItem).Value);
+        }
+
         public void SelecionarIndexPeloConteudo(string pItem)
         {
-            if (pItem != null)
-                comboBox1.SelectedIndex =  comboBox1.Items.IndexOf(pItem);
+            comboBox1.SelectedIndex = comboBox1.Items.IndexOf(pItem);
         }
+
         #endregion
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if(SelectedIndexChanged != null)
+            if (SelectedIndexChanged != null)
                 SelectedIndexChanged(sender, e);
         }
 
+        public void Clear()
+        {
+            if (itemDicionario == null)
+                itemDicionario = new Dictionary<int, string>();
+            itemDicionario.Clear();
+            comboBox1.Items.Clear();
+        }
+
+        public void Add(int pKey, string pValue)
+        {
+            if (itemDicionario == null)
+                itemDicionario = new Dictionary<int, string>();
+            itemDicionario.Add(pKey, pValue);
+            comboBox1.Items.Add(pValue);
+        }
         private void label_Click(object sender, EventArgs e)
         {
         }

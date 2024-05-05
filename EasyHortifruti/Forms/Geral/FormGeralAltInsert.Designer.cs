@@ -215,7 +215,6 @@ namespace EasyHortifruti
             this.CbEstadoCivil.Name = "CbEstadoCivil";
             this.CbEstadoCivil.Obrigatorio = false;
             this.CbEstadoCivil.SelectedIndex = -1;
-            this.CbEstadoCivil.SelectedItem = null;
             this.CbEstadoCivil.SelectedText = "";
             this.CbEstadoCivil.Size = new System.Drawing.Size(129, 48);
             this.CbEstadoCivil.TabIndex = 43;
@@ -234,7 +233,6 @@ namespace EasyHortifruti
             this.CbSexo.Name = "CbSexo";
             this.CbSexo.Obrigatorio = false;
             this.CbSexo.SelectedIndex = -1;
-            this.CbSexo.SelectedItem = null;
             this.CbSexo.SelectedText = "";
             this.CbSexo.Size = new System.Drawing.Size(118, 48);
             this.CbSexo.TabIndex = 41;
@@ -454,7 +452,6 @@ namespace EasyHortifruti
             this.CbUF.Name = "CbUF";
             this.CbUF.Obrigatorio = false;
             this.CbUF.SelectedIndex = -1;
-            this.CbUF.SelectedItem = null;
             this.CbUF.SelectedText = "";
             this.CbUF.Size = new System.Drawing.Size(46, 44);
             this.CbUF.TabIndex = 40;
@@ -1000,7 +997,6 @@ namespace EasyHortifruti
             this.CbClassificacao.Name = "CbClassificacao";
             this.CbClassificacao.Obrigatorio = false;
             this.CbClassificacao.SelectedIndex = -1;
-            this.CbClassificacao.SelectedItem = null;
             this.CbClassificacao.SelectedText = "";
             this.CbClassificacao.Size = new System.Drawing.Size(170, 44);
             this.CbClassificacao.TabIndex = 3;
@@ -1026,7 +1022,7 @@ namespace EasyHortifruti
             this.RbPessoaJuridica.TabIndex = 1;
             this.RbPessoaJuridica.Text = "2 - Pessoa Jurídica";
             this.RbPessoaJuridica.UseVisualStyleBackColor = true;
-            this.RbPessoaJuridica.CheckedChanged += new System.EventHandler(this.RbPessoaJuridica_CheckedChanged_1);
+            this.RbPessoaJuridica.CheckedChanged += new System.EventHandler(this.RbPessoaJuridica_CheckedChanged);
             // 
             // RbPessoaFisica
             // 
@@ -1040,7 +1036,7 @@ namespace EasyHortifruti
             this.RbPessoaFisica.TabStop = true;
             this.RbPessoaFisica.Text = "1 - Pessoa Física";
             this.RbPessoaFisica.UseVisualStyleBackColor = true;
-            this.RbPessoaFisica.CheckedChanged += new System.EventHandler(this.RbPessoaFisica_CheckedChanged_1);
+            this.RbPessoaFisica.CheckedChanged += new System.EventHandler(this.RbPessoaFisica_CheckedChanged);
             // 
             // FormGeralAltInsert
             // 

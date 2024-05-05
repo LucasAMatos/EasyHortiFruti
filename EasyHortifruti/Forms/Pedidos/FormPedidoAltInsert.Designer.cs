@@ -323,7 +323,6 @@ namespace EasyHortifruti
             this.CbUnidPedido.Name = "CbUnidPedido";
             this.CbUnidPedido.Obrigatorio = false;
             this.CbUnidPedido.SelectedIndex = -1;
-            this.CbUnidPedido.SelectedItem = null;
             this.CbUnidPedido.SelectedText = "";
             this.CbUnidPedido.Size = new System.Drawing.Size(86, 46);
             this.CbUnidPedido.TabIndex = 7;
@@ -343,7 +342,6 @@ namespace EasyHortifruti
             this.CbProdutos.Name = "CbProdutos";
             this.CbProdutos.Obrigatorio = false;
             this.CbProdutos.SelectedIndex = -1;
-            this.CbProdutos.SelectedItem = null;
             this.CbProdutos.SelectedText = "";
             this.CbProdutos.Size = new System.Drawing.Size(151, 46);
             this.CbProdutos.TabIndex = 6;
@@ -566,7 +564,6 @@ namespace EasyHortifruti
             this.CbTpDocumento.Name = "CbTpDocumento";
             this.CbTpDocumento.Obrigatorio = false;
             this.CbTpDocumento.SelectedIndex = -1;
-            this.CbTpDocumento.SelectedItem = null;
             this.CbTpDocumento.SelectedText = "";
             this.CbTpDocumento.Size = new System.Drawing.Size(146, 44);
             this.CbTpDocumento.TabIndex = 61;
@@ -1127,7 +1124,6 @@ namespace EasyHortifruti
             this.CbStatusPedido.Name = "CbStatusPedido";
             this.CbStatusPedido.Obrigatorio = true;
             this.CbStatusPedido.SelectedIndex = -1;
-            this.CbStatusPedido.SelectedItem = null;
             this.CbStatusPedido.SelectedText = "";
             this.CbStatusPedido.Size = new System.Drawing.Size(223, 49);
             this.CbStatusPedido.TabIndex = 2;
@@ -1156,7 +1152,6 @@ namespace EasyHortifruti
             this.CbNomeCliente.Name = "CbNomeCliente";
             this.CbNomeCliente.Obrigatorio = false;
             this.CbNomeCliente.SelectedIndex = -1;
-            this.CbNomeCliente.SelectedItem = null;
             this.CbNomeCliente.SelectedText = "";
             this.CbNomeCliente.Size = new System.Drawing.Size(434, 44);
             this.CbNomeCliente.TabIndex = 1;

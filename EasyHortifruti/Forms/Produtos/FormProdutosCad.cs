@@ -97,10 +97,12 @@ namespace EasyHortifruti
 
         private void CarregarComboFiltros()
         {
+            int index = 0;
             foreach (DataGridViewColumn coluna in dtGridViewCadProd.Columns)
             {
                 if (coluna.Visible)
-                    cbFiltro.Items.Add(coluna.HeaderText);
+                    cbFiltro.Add(index, coluna.HeaderText);
+                index++;
             }
         }
 

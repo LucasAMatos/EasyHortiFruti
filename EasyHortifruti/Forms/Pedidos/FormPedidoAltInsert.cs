@@ -134,14 +134,11 @@ namespace EasyHortifruti
 
         private void CarregarGridNomeCliente()
         {
-            CbNomeCliente.Items.Clear();
-            dctGeral.Clear();
+            CbNomeCliente.Clear();
             DataSet ds = new ConexaoBD().ConsultarGerais();
             foreach (DataRow dr in ds.Tables[0].Rows)
-            {
-                dctGeral.Add(dr["razaosocial"].ToString(), Convert.ToInt32(dr["id_recno"]));
-                CbNomeCliente.Items.Add(dr["razaosocial"].ToString());
-            }
+                CbNomeCliente.Add(Convert.ToInt32(dr["id_recno"]), dr["razaosocial"].ToString());
+
             CbNomeCliente.SelectedText = string.Empty;
         }
 
@@ -168,7 +165,7 @@ namespace EasyHortifruti
             {
                 if (!CbProdutos.Items.Contains(dr["nome_produto"].ToString()))
                 {
-                    CbProdutos.Items.Add(dr["nome_produto"].ToString());
+                    CbProdutos.Add(Convert.ToInt32(dr["id_recno"]), dr["nome_produto"].ToString());
                 }
             }
 
@@ -184,8 +181,8 @@ namespace EasyHortifruti
         {
             foreach (DataRow dr in dsProdutos.Tables[0].Rows)
             {
-                if (CbProdutos.SelectedItem != null && CbProdutos.SelectedItem.ToString() == dr["nome_produto"].ToString() &&
-                    (CbUnidPedido.SelectedItem != null && CbUnidPedido.SelectedItem.ToString() == dr["abrev_unid"].ToString()))
+                if (CbProdutos.SelectedItem == dr["nome_produto"].ToString() &&
+                    (CbUnidPedido.SelectedItem == dr["abrev_unid"].ToString()))
                 {
                     TbVlCompra.Text = dr["pcocompra_produto"].ToString();
                     TbMargemLucro.Text = dr["margem_produto"].ToString();
@@ -195,7 +192,7 @@ namespace EasyHortifruti
 
         private void CarregarComboTpDocumento()
         {
-            CbTpDocumento.Items.Clear();
+            CbTpDocumento.Clear();
             CbTpDocumento.CarregarDescricoesEnum<TPFJ>();
         }
 
@@ -208,7 +205,7 @@ namespace EasyHortifruti
                 {
                     if (CbProdutos.SelectedItem.ToString() == dr["nome_produto"].ToString() && (!CbUnidPedido.Items.Contains(dr["abrev_unid"].ToString())))
                     {
-                        CbUnidPedido.Items.Add(dr["abrev_unid"].ToString());
+                        CbUnidPedido.Add(Convert.ToInt32(dr["id_recno"]), dr["abrev_unid"].ToString());
                     }
                 }
                 CbUnidPedido.SelectedText = string.Empty;
@@ -280,14 +277,13 @@ namespace EasyHortifruti
         {
             if (CbNomeCliente.SelectedItem != null)
             {
-                int indice;
-                dctGeral.TryGetValue(CbNomeCliente.SelectedItem.ToString(), out indice);
-                IdClienteSelecionado = indice;
-                iGeral = new ConexaoBD().ConsultarGeralPorId(indice);
+                IdClienteSelecionado = CbNomeCliente.SelectedIndex;
+                iGeral = new ConexaoBD().ConsultarGeralPorId(IdClienteSelecionado);
 
                 if (iGeral != null)
                 {
-                    TbCelular.Text = iGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.celular).TelefoneCompleto;
+                    if(iGeral.Telefones != null && iGeral.Telefones.Count > 0)
+                        TbCelular.Text = iGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.celular).TelefoneCompleto;
 
                     CbTpDocumento.SelectedIndex = iGeral.TipoPessoa == TPFJ.Fisica ? 0 : 1;
                     TbRazaoSocial.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.RazaoSocial : string.Empty;
@@ -297,13 +293,17 @@ namespace EasyHortifruti
                     TbCPF.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.CPF : string.Empty;
                     TbRG.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.RG : string.Empty;
                     TbPrazoPgto.Text = iGeral.PrazoPagamento.ToString();
-                    TbEndCep.Text = iGeral.Endereco.CEP;
-                    TbEndLogradouro.Text = iGeral.Endereco.logradouro;
-                    TbEndNum.Text = iGeral.Endereco.Numero.ToString();
-                    TbEndCmpt.Text = iGeral.Endereco.Complemento;
-                    TbEndBairro.Text = iGeral.Endereco.Bairro;
-                    TbEndCidade.Text = iGeral.Endereco.Cidade;
-                    TbEndUF.Text = iGeral.Endereco.UF;
+
+                    if (iGeral.Endereco != null)
+                    {
+                        TbEndCep.Text = iGeral.Endereco.CEP;
+                        TbEndLogradouro.Text = iGeral.Endereco.logradouro;
+                        TbEndNum.Text = iGeral.Endereco.Numero.ToString();
+                        TbEndCmpt.Text = iGeral.Endereco.Complemento;
+                        TbEndBairro.Text = iGeral.Endereco.Bairro;
+                        TbEndCidade.Text = iGeral.Endereco.Cidade;
+                        TbEndUF.Text = iGeral.Endereco.UF;
+                    }
                     TbEndPontoReferencia.Text = iGeral.PontoReferencia;
                     TbEndEmail.Text = iGeral.Email;
                 }
@@ -327,8 +327,8 @@ namespace EasyHortifruti
         {
             // Captura os valores dos campos da interface do usuário
             DateTime dataPedido = DtPedido.MinDate;
-            string produtoItem = CbProdutos.SelectedItem.ToString();
-            string unidadeItem = CbUnidPedido.SelectedItem.ToString();
+            string produtoItem = CbProdutos.SelectedItem;
+            string unidadeItem = CbUnidPedido.SelectedItem;
             int quantidadeItem = Convert.ToInt32(TbQtdPedido.Text);
             decimal valorCompraItem = Convert.ToDecimal(TbVlCompra.Text);
             decimal margemLucroItem = Convert.ToDecimal(TbMargemLucro.Text);

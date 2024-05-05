@@ -132,7 +132,6 @@
             this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Obrigatorio = false;
             this.cbFiltro.SelectedIndex = -1;
-            this.cbFiltro.SelectedItem = null;
             this.cbFiltro.SelectedText = "";
             this.cbFiltro.Size = new System.Drawing.Size(194, 38);
             this.cbFiltro.TabIndex = 0;

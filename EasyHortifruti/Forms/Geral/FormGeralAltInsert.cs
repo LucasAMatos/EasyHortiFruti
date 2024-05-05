@@ -50,6 +50,11 @@ namespace EasyHortifruti
 
         }
 
+        public FormGeralAltInsert(int pID)
+        {
+            InitializeComponent();
+            Id = pID;
+        }
         #endregion Construtor
 
         #region Eventos
@@ -60,7 +65,7 @@ namespace EasyHortifruti
             PreencheCampos();
         }
 
-        private void RbPessoaFisica_CheckedChanged_1(object sender, EventArgs e)
+        private void RbPessoaFisica_CheckedChanged(object sender, EventArgs e)
         {
             PanelPF.Visible = RbPessoaFisica.Checked;
             PanelPJ.Visible = !RbPessoaJuridica.Checked;
@@ -68,7 +73,7 @@ namespace EasyHortifruti
             BtConsCNPJ.Visible = PanelPJ.Visible;
         }
 
-        private void RbPessoaJuridica_CheckedChanged_1(object sender, EventArgs e)
+        private void RbPessoaJuridica_CheckedChanged(object sender, EventArgs e)
         {
             PanelPF.Visible = !RbPessoaJuridica.Checked;
             PanelPJ.Visible = RbPessoaJuridica.Checked;
@@ -289,7 +294,7 @@ namespace EasyHortifruti
             enderecoRetorno.Complemento = TbComplemento.Text;
             enderecoRetorno.Bairro = TbBairro.Text;
             enderecoRetorno.Cidade = TbCidade.Text;
-            enderecoRetorno.UF = CbUF.SelectedItem.ToString();
+            enderecoRetorno.UF = CbUF.SelectedItem;
             return enderecoRetorno;
         }
 
@@ -344,7 +349,7 @@ namespace EasyHortifruti
                     {
                         RbPessoaFisica.Checked = iGeral.TipoPessoa == TPFJ.Fisica;
                         RbPessoaJuridica.Checked = iGeral.TipoPessoa == TPFJ.Juridica;
-                        CbClassificacao.SelecionarIndexPeloConteudo (iGeral.Classificacao.ToString());
+                        CbClassificacao.SelecionarIndexPeloEnum((int)iGeral.Classificacao);
                         TbNomeFantasia.Text = iGeral.NomeFantasia;
                         TbRazaoSocial.Text = iGeral.RazaoSocial;
                         TbNomeCompleto.Text = iGeral.TipoPessoa == TPFJ.Fisica ? iGeral.NomeCompleto : iGeral.RazaoSocial;
@@ -399,7 +404,7 @@ namespace EasyHortifruti
 
         private void CarregarComboClassificacao()
         {
-            CbClassificacao.CarregarValoresEnum<Classificacao>();
+            CbClassificacao.CarregarDescricoesEnum<Classificacao>();
         }
 
         private void CarregarComboUf()

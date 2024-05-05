@@ -487,7 +487,6 @@ namespace EasyHortifruti
             this.CbFiltroCliente.Name = "CbFiltroCliente";
             this.CbFiltroCliente.Obrigatorio = false;
             this.CbFiltroCliente.SelectedIndex = -1;
-            this.CbFiltroCliente.SelectedItem = null;
             this.CbFiltroCliente.SelectedText = "";
             this.CbFiltroCliente.Size = new System.Drawing.Size(230, 42);
             this.CbFiltroCliente.TabIndex = 2;
@@ -506,7 +505,6 @@ namespace EasyHortifruti
             this.CbFiltroSituação.Name = "CbFiltroSituação";
             this.CbFiltroSituação.Obrigatorio = false;
             this.CbFiltroSituação.SelectedIndex = -1;
-            this.CbFiltroSituação.SelectedItem = null;
             this.CbFiltroSituação.SelectedText = "";
             this.CbFiltroSituação.Size = new System.Drawing.Size(181, 42);
             this.CbFiltroSituação.TabIndex = 9;

@@ -145,7 +145,6 @@ namespace EasyHortifruti
             this.cbTpFontePesquisa.Name = "cbTpFontePesquisa";
             this.cbTpFontePesquisa.Obrigatorio = false;
             this.cbTpFontePesquisa.SelectedIndex = -1;
-            this.cbTpFontePesquisa.SelectedItem = null;
             this.cbTpFontePesquisa.SelectedText = "";
             this.cbTpFontePesquisa.Size = new System.Drawing.Size(163, 38);
             this.cbTpFontePesquisa.TabIndex = 7;
@@ -162,7 +161,6 @@ namespace EasyHortifruti
             this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Obrigatorio = false;
             this.cbFiltro.SelectedIndex = -1;
-            this.cbFiltro.SelectedItem = null;
             this.cbFiltro.SelectedText = "";
             this.cbFiltro.Size = new System.Drawing.Size(163, 38);
             this.cbFiltro.TabIndex = 5;

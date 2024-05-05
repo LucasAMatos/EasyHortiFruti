@@ -71,7 +71,6 @@ namespace EasyHortifruti
             this.CbGrupo.Name = "CbGrupo";
             this.CbGrupo.Obrigatorio = false;
             this.CbGrupo.SelectedIndex = -1;
-            this.CbGrupo.SelectedItem = null;
             this.CbGrupo.SelectedText = "";
             this.CbGrupo.Size = new System.Drawing.Size(135, 48);
             this.CbGrupo.TabIndex = 2;

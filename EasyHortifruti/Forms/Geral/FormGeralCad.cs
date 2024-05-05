@@ -1,15 +1,14 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace EasyHortifruti
 {
     public partial class FormGeralCad : FormBase
     {
-        public FormGeralCad()
-        {
-            InitializeComponent();
-            configuraGridPadrao(DgViewCadGeral);
-        }
+        #region Properties
+
+        private DataSet dsGrid;
 
         public int IdSelecionado
         {
@@ -22,7 +21,17 @@ namespace EasyHortifruti
                 return -1;
             }
         }
+        #endregion
 
+        #region Construtor
+        public FormGeralCad()
+        {
+            InitializeComponent();
+            configuraGridPadrao(DgViewCadGeral);
+        }
+        #endregion
+
+        #region Eventos
         private void BtIncluirCliente_Click(object sender, EventArgs e)
         {
             FormGeralAltInsert GeralAltInsert = new FormGeralAltInsert();
@@ -66,10 +75,13 @@ namespace EasyHortifruti
             else
                 MessageBox.Show("Selecione um registro para excluir");
         }
+        #endregion
 
+        #region Metodos
         public void CarregarGrid()
         {
-            DgViewCadGeral.DataSource = new ConexaoBD().ConsultarGerais();
+            dsGrid = new ConexaoBD().ConsultarGerais();
+            DgViewCadGeral.DataSource = dsGrid;
             DgViewCadGeral.AutoGenerateColumns = false;
             DgViewCadGeral.DataMember = "Table";
         }
@@ -97,6 +109,19 @@ namespace EasyHortifruti
         {
             CarregarGrid();
             CarregarComboFiltros();
+            // Inscreva-se para o evento TextoAlterado do UserControl
+            tbFiltro.TextChanged += TbFiltro_TextoAlterado;
         }
+
+        private void Filtrar()
+        {
+            base.Filtrar(DgViewCadGeral, dsGrid, cbFiltro.SelectedIndex, tbFiltro.Text);
+        }
+
+        private void TbFiltro_TextoAlterado(object sender, EventArgs e)
+        {
+            Filtrar();
+        }
+        #endregion
     }
 }

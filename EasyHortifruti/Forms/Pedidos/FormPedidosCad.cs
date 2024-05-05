@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Windows.Forms;
 
 namespace EasyHortifruti
@@ -6,6 +7,7 @@ namespace EasyHortifruti
     public partial class FormPedidos : FormBase
     {
         #region Propriedades
+        private DataSet dsGrid;
         public int IdSelecionado
         {
             get
@@ -81,7 +83,8 @@ namespace EasyHortifruti
         #region Metodos
         public void CarregarGrid()
         {
-            dataGridView1.DataSource = new ConexaoBD().ConsultarPedidos();
+            dsGrid = new ConexaoBD().ConsultarPedidos();
+            dataGridView1.DataSource = dsGrid;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataMember = "Table";
         }
@@ -92,6 +95,16 @@ namespace EasyHortifruti
                 if (coluna.Visible)
                     cbFiltro.Items.Add(coluna.HeaderText);
             }
+        }
+
+        private void Filtrar()
+        {
+            base.Filtrar(dataGridView1, dsGrid, cbFiltro.SelectedIndex, tbFiltro.Text);
+        }
+
+        private void TbFiltro_TextoAlterado(object sender, EventArgs e)
+        {
+            Filtrar();
         }
         #endregion
     }

@@ -205,10 +205,11 @@ namespace EasyHortifruti
                 {
                     if (CbProdutos.SelectedItem.ToString() == dr["nome_produto"].ToString() && (!CbUnidPedido.Items.Contains(dr["abrev_unid"].ToString())))
                     {
-                        CbUnidPedido.Add(Convert.ToInt32(dr["id_recno"]), dr["abrev_unid"].ToString());
+                        CbUnidPedido.Add(Convert.ToInt32(dr["id_unidade"]), dr["abrev_unid"].ToString());
                     }
                 }
-                CbUnidPedido.SelectedText = string.Empty;
+                if (CbUnidPedido.Items.Count > 1)
+                    CbUnidPedido.SelectedText = string.Empty;
             }
         }
 
@@ -325,27 +326,19 @@ namespace EasyHortifruti
 
         private void BtAdicItemPedido_Click(object sender, EventArgs e)
         {
-            // Captura os valores dos campos da interface do usuário
-            DateTime dataPedido = DtPedido.MinDate;
-            string produtoItem = CbProdutos.SelectedItem;
-            string unidadeItem = CbUnidPedido.SelectedItem;
-            int quantidadeItem = Convert.ToInt32(TbQtdPedido.Text);
-            decimal valorCompraItem = Convert.ToDecimal(TbVlCompra.Text);
-            decimal margemLucroItem = Convert.ToDecimal(TbMargemLucro.Text);
-            decimal TotalItem = Convert.ToDecimal(TbTotProdPedido.Text);
-            decimal LucroItem = Convert.ToDecimal(AtbValorLucroItem.Text);
 
             // Cria um novo objeto Pedido e preenche suas propriedades
             ItemPedido novoPedido = new ItemPedido
             {
-                descrProduto = produtoItem,
+                descrProduto = CbProdutos.SelectedItem,
                 id_Produto = CbProdutos.SelectedIndex,
-                unidade = unidadeItem,
-                quantidade = quantidadeItem,
-                valor_custo = valorCompraItem,
-                percentual_lucro = margemLucroItem,
-                total_item = TotalItem,
-                valor_lucro = LucroItem
+                unidade = CbUnidPedido.SelectedItem,
+                id_unidade = CbUnidPedido.SelectedIndex,
+                quantidade = Convert.ToInt32(TbQtdPedido.Text),
+                valor_custo = Convert.ToDecimal(TbVlCompra.Text),
+                percentual_lucro = Convert.ToDecimal(TbMargemLucro.Text),
+                total_item = Convert.ToDecimal(TbTotProdPedido.Text),
+                valor_lucro = Convert.ToDecimal(AtbValorLucroItem.Text)
             };
 
             AtualizarTotalPedido();

@@ -74,7 +74,12 @@ namespace EasyHortifruti.Componentes
 
         public string SelectedItem
         {
-            get => itemDicionario.First(x => x.Value == comboBox1.SelectedItem).Value;
+            get
+            {
+                if (comboBox1.SelectedItem == null)
+                    return null;
+                return itemDicionario.First(x => x.Value == comboBox1.SelectedItem).Value;
+            }
             set { comboBox1.SelectedItem = value; }
         }
 

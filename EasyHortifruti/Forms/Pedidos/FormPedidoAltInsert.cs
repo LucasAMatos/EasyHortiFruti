@@ -221,15 +221,15 @@ namespace EasyHortifruti
                 decimal.TryParse(TbMargemLucro.Text, out decimal margemLucro))
             {
                 // Calcula o valor da margem de lucro
-                decimal valorFinal = valorCompra * (1 + (margemLucro / 100)) * quantidade;
+                decimal valorFinal = valorCompra * (margemLucro / 100) * quantidade;
 
                 // Exibir a margem de lucro no TextBox de resultado
-                TbTotProdPedido.Text = valorFinal.ToString();
+                TbTotalItem.Text = valorFinal.ToString();
             }
             else
             {
                 // Se os TextBoxes não tiverem valores válidos, limpa o TextBox da margem de lucro
-                TbTotProdPedido.Text = string.Empty;
+                TbTotalItem.Text = string.Empty;
             }
             CalcularValorLucroItem();
         }
@@ -387,7 +387,7 @@ namespace EasyHortifruti
             CbUnidPedido.SelectedIndex = -1;
             TbVlCompra.Clear();
             TbMargemLucro.Clear();
-            TbTotProdPedido.Clear();
+            TbTotalItem.Clear();
             AtbValorLucroItem.Clear();
         }
 
@@ -396,18 +396,7 @@ namespace EasyHortifruti
             CalcularValorLucroItem();
         }
 
-        private void SomaTotalPedido(decimal TotalItem)
-        {
-            //TotalPedido = TotalItem;
-            //SomaTotalGeral();
-        }
-
-        private void SomaTotalGeral()
-        {
-            //TotalGeral = TotalPedido - Desconto;
-        }
-
-        private void TbFiltro_TbDescontoTextChanged(object sender, EventArgs e)
+         private void TbFiltro_TbDescontoTextChanged(object sender, EventArgs e)
         {
             TotalGeral = Total_Pedido - Desconto;
         }
@@ -430,7 +419,10 @@ namespace EasyHortifruti
                 TotalGeral = Convert.ToDecimal(TbTotalGeral.Text.Replace("R$", ""))
 
             };
-            new ConexaoBD().InserirPedido(pedido);
+                new ConexaoBD().InserirPedido(pedido);
+
+                DialogResult pPedido = MessageBox.Show("Pedido inserido com sucesso!");
+                    this.Close();            
         }
 
         private void DgvItensPedido_CellEndEdit(object sender, DataGridViewCellEventArgs e)

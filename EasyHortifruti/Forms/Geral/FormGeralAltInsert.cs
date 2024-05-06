@@ -93,28 +93,28 @@ namespace EasyHortifruti
                 Criticar();
                 Geral pGeral = new Geral();
 
-            pGeral.TipoPessoa = RbPessoaFisica.Checked ? TPFJ.Fisica : TPFJ.Juridica;
-            pGeral.Classificacao = (Classificacao)CbClassificacao.SelectedIndex;
-            pGeral.NomeFantasia = TbNomeFantasia.Text;
-            pGeral.RazaoSocial = TbRazaoSocial.Text;
-            pGeral.NomeCompleto = TbNomeCompleto.Text;
-            pGeral.Contato = TbContato.Text;
-            pGeral.DtNascFundacao = DtNascAbert.Value;
-            pGeral.CPF = tbCpf.Value;
-            pGeral.CNPJ = TbCNPJ.Value;
-            pGeral.RG = tbRg.Text;
-            pGeral.IE = TbInscrEstadual.Text;
-            pGeral.InscricaoMunicipal = TbInscrMunicipal.Text;
-            pGeral.Sexo = CbSexo.SelectedIndex >= 0 ? (Sexo)CbSexo.SelectedIndex : Sexo.NaoDefinido;
-            pGeral.EstadoCivil = (EstadoCivil)CbEstadoCivil.SelectedIndex >= 0 ? (EstadoCivil)CbEstadoCivil.SelectedIndex : EstadoCivil.NaoDefinido;
-            pGeral.Email = TbEmail.Text;
-            pGeral.PontoReferencia = TbPontoRef.Text;
-            pGeral.PrazoPagamento = string.IsNullOrWhiteSpace(TbPrazoPgto.Text) ? -1 : Convert.ToInt32(TbPrazoPgto.Text);
-            pGeral.Telefones = new Telefones
-            {
-                Fone,
-                Celular
-            };
+                pGeral.TipoPessoa = RbPessoaFisica.Checked ? TPFJ.Fisica : TPFJ.Juridica;
+                pGeral.Classificacao = (Classificacao)CbClassificacao.SelectedIndex;
+                pGeral.NomeFantasia = TbNomeFantasia.Text;
+                pGeral.RazaoSocial = TbRazaoSocial.Text;
+                pGeral.NomeCompleto = TbNomeCompleto.Text;
+                pGeral.Contato = TbContato.Text;
+                pGeral.DtNascFundacao = DtNascAbert.Value;
+                pGeral.CPF = tbCpf.Value;
+                pGeral.CNPJ = TbCNPJ.Value;
+                pGeral.RG = tbRg.Text;
+                pGeral.IE = TbInscrEstadual.Text;
+                pGeral.InscricaoMunicipal = TbInscrMunicipal.Text;
+                pGeral.Sexo = CbSexo.SelectedIndex >= 0 ? (Sexo)CbSexo.SelectedIndex : Sexo.NaoDefinido;
+                pGeral.EstadoCivil = (EstadoCivil)CbEstadoCivil.SelectedIndex >= 0 ? (EstadoCivil)CbEstadoCivil.SelectedIndex : EstadoCivil.NaoDefinido;
+                pGeral.Email = TbEmail.Text;
+                pGeral.PontoReferencia = TbPontoRef.Text;
+                pGeral.PrazoPagamento = string.IsNullOrWhiteSpace(TbPrazoPgto.Text) ? -1 : Convert.ToInt32(TbPrazoPgto.Text);
+                pGeral.Telefones = new Telefones
+                {
+                    Fone,
+                    Celular
+                };
                 pGeral.Endereco = RetornarEnderecoTela();
 
                 if (Alterar)

@@ -31,9 +31,6 @@ namespace EasyHortifruti
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidoAltInsert));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -43,14 +40,21 @@ namespace EasyHortifruti
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
             this.DgvItensPedido = new System.Windows.Forms.DataGridView();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vlrtotitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelSelectProduto = new System.Windows.Forms.Panel();
-            this.AtbValorLucroItem = new EasyHortifruti.Componentes.AltTextBox();
+            this.TbPrecoProd = new EasyHortifruti.Componentes.AltTextBox();
+            this.TbLucroItem = new EasyHortifruti.Componentes.AltTextBox();
             this.CbUnidPedido = new EasyHortifruti.Componentes.AltComboBox();
             this.CbProdutos = new EasyHortifruti.Componentes.AltComboBox();
             this.BtAdicItemPedido = new System.Windows.Forms.Button();
             this.TbTotalItem = new EasyHortifruti.Componentes.AltTextBox();
             this.TbMargemLucro = new EasyHortifruti.Componentes.AltTextBox();
-            this.TbVlCompra = new EasyHortifruti.Componentes.AltTextBox();
+            this.TbVlCusto = new EasyHortifruti.Componentes.AltTextBox();
             this.TbQtdPedido = new EasyHortifruti.Componentes.AltTextBox();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.panel9 = new System.Windows.Forms.Panel();
@@ -103,11 +107,8 @@ namespace EasyHortifruti
             this.label4 = new System.Windows.Forms.Label();
             this.TbCelular = new EasyHortifruti.Componentes.AltTextBox();
             this.DescrProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.UnidProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QtdeProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VlCompraProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorLucroItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelPedidoProdutos.SuspendLayout();
@@ -134,7 +135,7 @@ namespace EasyHortifruti
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(808, 569);
+            this.panel1.Size = new System.Drawing.Size(818, 569);
             this.panel1.TabIndex = 0;
             // 
             // panel5
@@ -144,7 +145,7 @@ namespace EasyHortifruti
             this.panel5.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel5.Location = new System.Drawing.Point(0, 104);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(808, 409);
+            this.panel5.Size = new System.Drawing.Size(818, 409);
             this.panel5.TabIndex = 3;
             // 
             // panelPedidoProdutos
@@ -153,7 +154,7 @@ namespace EasyHortifruti
             this.panelPedidoProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelPedidoProdutos.Location = new System.Drawing.Point(0, 0);
             this.panelPedidoProdutos.Name = "panelPedidoProdutos";
-            this.panelPedidoProdutos.Size = new System.Drawing.Size(808, 297);
+            this.panelPedidoProdutos.Size = new System.Drawing.Size(818, 297);
             this.panelPedidoProdutos.TabIndex = 2;
             // 
             // tabControl1
@@ -165,7 +166,7 @@ namespace EasyHortifruti
             this.tabControl1.Location = new System.Drawing.Point(0, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(808, 297);
+            this.tabControl1.Size = new System.Drawing.Size(818, 297);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -175,7 +176,7 @@ namespace EasyHortifruti
             this.tabPage1.Location = new System.Drawing.Point(4, 22);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(800, 271);
+            this.tabPage1.Size = new System.Drawing.Size(810, 271);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Produtos";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -186,12 +187,12 @@ namespace EasyHortifruti
             this.DgvItensPedido.AllowUserToDeleteRows = false;
             this.DgvItensPedido.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvItensPedido.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.DescrProduto,
-            this.unidade,
-            this.quantidade,
-            this.VlCompraProduto,
-            this.TotalItem,
-            this.ValorLucroItem});
+            this.Column1,
+            this.Column2,
+            this.Column3,
+            this.Column4,
+            this.vlrtotitem,
+            this.Column6});
             this.DgvItensPedido.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvItensPedido.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DgvItensPedido.Location = new System.Drawing.Point(3, 61);
@@ -199,50 +200,103 @@ namespace EasyHortifruti
             this.DgvItensPedido.Name = "DgvItensPedido";
             this.DgvItensPedido.RowHeadersVisible = false;
             this.DgvItensPedido.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgvItensPedido.Size = new System.Drawing.Size(794, 207);
+            this.DgvItensPedido.Size = new System.Drawing.Size(804, 207);
             this.DgvItensPedido.TabIndex = 1;
             this.DgvItensPedido.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvItensPedido_CellEndEdit);
             this.DgvItensPedido.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgvItensPedido_RowsAdded);
             this.DgvItensPedido.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DgvItensPedido_RowsRemoved);
             // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Produto";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Unidade";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Qtde.";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Vrl Custo";
+            this.Column4.Name = "Column4";
+            // 
+            // vlrtotitem
+            // 
+            this.vlrtotitem.HeaderText = "Total Item";
+            this.vlrtotitem.Name = "vlrtotitem";
+            // 
+            // Column6
+            // 
+            this.Column6.HeaderText = "Vrl Lucro";
+            this.Column6.Name = "Column6";
+            // 
             // panelSelectProduto
             // 
-            this.panelSelectProduto.Controls.Add(this.AtbValorLucroItem);
+            this.panelSelectProduto.Controls.Add(this.TbPrecoProd);
+            this.panelSelectProduto.Controls.Add(this.TbLucroItem);
             this.panelSelectProduto.Controls.Add(this.CbUnidPedido);
             this.panelSelectProduto.Controls.Add(this.CbProdutos);
             this.panelSelectProduto.Controls.Add(this.BtAdicItemPedido);
             this.panelSelectProduto.Controls.Add(this.TbTotalItem);
             this.panelSelectProduto.Controls.Add(this.TbMargemLucro);
-            this.panelSelectProduto.Controls.Add(this.TbVlCompra);
+            this.panelSelectProduto.Controls.Add(this.TbVlCusto);
             this.panelSelectProduto.Controls.Add(this.TbQtdPedido);
             this.panelSelectProduto.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelSelectProduto.Location = new System.Drawing.Point(3, 3);
             this.panelSelectProduto.Name = "panelSelectProduto";
-            this.panelSelectProduto.Size = new System.Drawing.Size(794, 58);
+            this.panelSelectProduto.Size = new System.Drawing.Size(804, 58);
             this.panelSelectProduto.TabIndex = 0;
             // 
-            // AtbValorLucroItem
+            // TbPrecoProd
             // 
-            this.AtbValorLucroItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TbPrecoProd.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.AtbValorLucroItem.Caption = "Valor Lucro";
-            this.AtbValorLucroItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.AtbValorLucroItem.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.AtbValorLucroItem.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.AtbValorLucroItem.Location = new System.Drawing.Point(620, 8);
-            this.AtbValorLucroItem.Margin = new System.Windows.Forms.Padding(5);
-            this.AtbValorLucroItem.MaxLength = 32767;
-            this.AtbValorLucroItem.Multiline = true;
-            this.AtbValorLucroItem.Name = "AtbValorLucroItem";
-            this.AtbValorLucroItem.Obrigatorio = false;
-            this.AtbValorLucroItem.ReadOnly = true;
-            this.AtbValorLucroItem.SelectionLength = 0;
-            this.AtbValorLucroItem.SelectionStart = 0;
-            this.AtbValorLucroItem.Size = new System.Drawing.Size(84, 40);
-            this.AtbValorLucroItem.TabIndex = 0;
-            this.AtbValorLucroItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.AtbValorLucroItem.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.AtbValorLucroItem.TextChanged += new System.EventHandler(this.AtbValorLucroItem_TextChanged);
+            this.TbPrecoProd.Caption = "Preço Item";
+            this.TbPrecoProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TbPrecoProd.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.TbPrecoProd.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TbPrecoProd.Location = new System.Drawing.Point(332, 7);
+            this.TbPrecoProd.Margin = new System.Windows.Forms.Padding(4);
+            this.TbPrecoProd.MaxLength = 32767;
+            this.TbPrecoProd.Multiline = true;
+            this.TbPrecoProd.Name = "TbPrecoProd";
+            this.TbPrecoProd.Obrigatorio = false;
+            this.TbPrecoProd.ReadOnly = true;
+            this.TbPrecoProd.SelectionLength = 0;
+            this.TbPrecoProd.SelectionStart = 0;
+            this.TbPrecoProd.Size = new System.Drawing.Size(76, 40);
+            this.TbPrecoProd.TabIndex = 10;
+            this.TbPrecoProd.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TbPrecoProd.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            // 
+            // TbLucroItem
+            // 
+            this.TbLucroItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.TbLucroItem.Caption = "Valor Lucro";
+            this.TbLucroItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TbLucroItem.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.TbLucroItem.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TbLucroItem.Location = new System.Drawing.Point(559, 7);
+            this.TbLucroItem.Margin = new System.Windows.Forms.Padding(5);
+            this.TbLucroItem.MaxLength = 32767;
+            this.TbLucroItem.Multiline = true;
+            this.TbLucroItem.Name = "TbLucroItem";
+            this.TbLucroItem.Obrigatorio = false;
+            this.TbLucroItem.ReadOnly = true;
+            this.TbLucroItem.SelectionLength = 0;
+            this.TbLucroItem.SelectionStart = 0;
+            this.TbLucroItem.Size = new System.Drawing.Size(82, 40);
+            this.TbLucroItem.TabIndex = 0;
+            this.TbLucroItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TbLucroItem.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.TbLucroItem.TextChanged += new System.EventHandler(this.AtbValorLucroItem_TextChanged);
             // 
             // CbUnidPedido
             // 
@@ -255,14 +309,14 @@ namespace EasyHortifruti
             this.CbUnidPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.CbUnidPedido.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.CbUnidPedido.FormattingEnabled = true;
-            this.CbUnidPedido.Location = new System.Drawing.Point(219, 6);
+            this.CbUnidPedido.Location = new System.Drawing.Point(214, 5);
             this.CbUnidPedido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.CbUnidPedido.Name = "CbUnidPedido";
             this.CbUnidPedido.Obrigatorio = false;
             this.CbUnidPedido.SelectedIndex = -1;
             this.CbUnidPedido.SelectedItem = null;
             this.CbUnidPedido.SelectedText = "";
-            this.CbUnidPedido.Size = new System.Drawing.Size(86, 46);
+            this.CbUnidPedido.Size = new System.Drawing.Size(70, 46);
             this.CbUnidPedido.TabIndex = 7;
             this.CbUnidPedido.SelectedIndexChanged += new System.EventHandler(this.CbUnidPedido_SelectedIndexChanged);
             // 
@@ -296,7 +350,7 @@ namespace EasyHortifruti
             this.BtAdicItemPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtAdicItemPedido.FlatAppearance.BorderSize = 0;
             this.BtAdicItemPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtAdicItemPedido.Location = new System.Drawing.Point(716, 8);
+            this.BtAdicItemPedido.Location = new System.Drawing.Point(726, 8);
             this.BtAdicItemPedido.Name = "BtAdicItemPedido";
             this.BtAdicItemPedido.Size = new System.Drawing.Size(64, 42);
             this.BtAdicItemPedido.TabIndex = 9;
@@ -307,11 +361,11 @@ namespace EasyHortifruti
             // 
             this.TbTotalItem.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.TbTotalItem.Caption = "Total";
+            this.TbTotalItem.Caption = "Total Item";
             this.TbTotalItem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.TbTotalItem.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.TbTotalItem.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TbTotalItem.Location = new System.Drawing.Point(541, 8);
+            this.TbTotalItem.Location = new System.Drawing.Point(646, 7);
             this.TbTotalItem.Margin = new System.Windows.Forms.Padding(4);
             this.TbTotalItem.MaxLength = 32767;
             this.TbTotalItem.Multiline = true;
@@ -320,7 +374,7 @@ namespace EasyHortifruti
             this.TbTotalItem.ReadOnly = true;
             this.TbTotalItem.SelectionLength = 0;
             this.TbTotalItem.SelectionStart = 0;
-            this.TbTotalItem.Size = new System.Drawing.Size(63, 40);
+            this.TbTotalItem.Size = new System.Drawing.Size(74, 40);
             this.TbTotalItem.TabIndex = 0;
             this.TbTotalItem.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbTotalItem.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -333,7 +387,7 @@ namespace EasyHortifruti
             this.TbMargemLucro.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
             this.TbMargemLucro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.TbMargemLucro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TbMargemLucro.Location = new System.Drawing.Point(462, 8);
+            this.TbMargemLucro.Location = new System.Drawing.Point(412, 7);
             this.TbMargemLucro.Margin = new System.Windows.Forms.Padding(4);
             this.TbMargemLucro.MaxLength = 32767;
             this.TbMargemLucro.Multiline = true;
@@ -348,28 +402,28 @@ namespace EasyHortifruti
             this.TbMargemLucro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.TbMargemLucro.TextChanged += new System.EventHandler(this.TbMargemLucro_TextChanged);
             // 
-            // TbVlCompra
+            // TbVlCusto
             // 
-            this.TbVlCompra.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TbVlCusto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
-            this.TbVlCompra.Caption = "Valor Custo";
-            this.TbVlCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TbVlCompra.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
-            this.TbVlCompra.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TbVlCompra.Location = new System.Drawing.Point(371, 8);
-            this.TbVlCompra.Margin = new System.Windows.Forms.Padding(4);
-            this.TbVlCompra.MaxLength = 32767;
-            this.TbVlCompra.Multiline = true;
-            this.TbVlCompra.Name = "TbVlCompra";
-            this.TbVlCompra.Obrigatorio = false;
-            this.TbVlCompra.ReadOnly = true;
-            this.TbVlCompra.SelectionLength = 0;
-            this.TbVlCompra.SelectionStart = 0;
-            this.TbVlCompra.Size = new System.Drawing.Size(76, 40);
-            this.TbVlCompra.TabIndex = 0;
-            this.TbVlCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TbVlCompra.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.TbVlCompra.TextChanged += new System.EventHandler(this.TbVlCompra_TextChanged);
+            this.TbVlCusto.Caption = "Total Custo";
+            this.TbVlCusto.Font = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TbVlCusto.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
+            this.TbVlCusto.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8F);
+            this.TbVlCusto.Location = new System.Drawing.Point(479, 7);
+            this.TbVlCusto.Margin = new System.Windows.Forms.Padding(4);
+            this.TbVlCusto.MaxLength = 32767;
+            this.TbVlCusto.Multiline = true;
+            this.TbVlCusto.Name = "TbVlCusto";
+            this.TbVlCusto.Obrigatorio = false;
+            this.TbVlCusto.ReadOnly = true;
+            this.TbVlCusto.SelectionLength = 0;
+            this.TbVlCusto.SelectionStart = 0;
+            this.TbVlCusto.Size = new System.Drawing.Size(76, 40);
+            this.TbVlCusto.TabIndex = 0;
+            this.TbVlCusto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TbVlCusto.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.TbVlCusto.TextChanged += new System.EventHandler(this.TbVlCompra_TextChanged);
             // 
             // TbQtdPedido
             // 
@@ -379,7 +433,7 @@ namespace EasyHortifruti
             this.TbQtdPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
             this.TbQtdPedido.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8F, System.Drawing.FontStyle.Bold);
             this.TbQtdPedido.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8F);
-            this.TbQtdPedido.Location = new System.Drawing.Point(319, 5);
+            this.TbQtdPedido.Location = new System.Drawing.Point(289, 4);
             this.TbQtdPedido.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.TbQtdPedido.MaxLength = 32767;
             this.TbQtdPedido.Multiline = true;
@@ -400,7 +454,7 @@ namespace EasyHortifruti
             this.tabPage2.Location = new System.Drawing.Point(4, 22);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(800, 271);
+            this.tabPage2.Size = new System.Drawing.Size(810, 271);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Dados Cliente";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -414,7 +468,7 @@ namespace EasyHortifruti
             this.panel9.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel9.Location = new System.Drawing.Point(3, 3);
             this.panel9.Name = "panel9";
-            this.panel9.Size = new System.Drawing.Size(794, 265);
+            this.panel9.Size = new System.Drawing.Size(804, 265);
             this.panel9.TabIndex = 0;
             // 
             // PanelPJPedido
@@ -497,7 +551,7 @@ namespace EasyHortifruti
             this.PanelTpDocumento.Dock = System.Windows.Forms.DockStyle.Top;
             this.PanelTpDocumento.Location = new System.Drawing.Point(0, 0);
             this.PanelTpDocumento.Name = "PanelTpDocumento";
-            this.PanelTpDocumento.Size = new System.Drawing.Size(794, 53);
+            this.PanelTpDocumento.Size = new System.Drawing.Size(804, 53);
             this.PanelTpDocumento.TabIndex = 63;
             // 
             // CbTpDocumento
@@ -535,7 +589,7 @@ namespace EasyHortifruti
             this.panel2.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel2.Location = new System.Drawing.Point(0, 119);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(794, 146);
+            this.panel2.Size = new System.Drawing.Size(804, 146);
             this.panel2.TabIndex = 62;
             // 
             // TbEndEmail
@@ -806,7 +860,7 @@ namespace EasyHortifruti
             this.tabPage3.Location = new System.Drawing.Point(4, 22);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(800, 271);
+            this.tabPage3.Size = new System.Drawing.Size(810, 271);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Financeiro";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -824,7 +878,7 @@ namespace EasyHortifruti
             this.panelTotalGeral.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelTotalGeral.Location = new System.Drawing.Point(0, 297);
             this.panelTotalGeral.Name = "panelTotalGeral";
-            this.panelTotalGeral.Size = new System.Drawing.Size(808, 112);
+            this.panelTotalGeral.Size = new System.Drawing.Size(818, 112);
             this.panelTotalGeral.TabIndex = 1;
             // 
             // tbObservacoes
@@ -865,7 +919,7 @@ namespace EasyHortifruti
             this.TbTotPedido.Font = new System.Drawing.Font("Microsoft Sans Serif", 0.5F);
             this.TbTotPedido.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 0.5F);
             this.TbTotPedido.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.TbTotPedido.Location = new System.Drawing.Point(672, 6);
+            this.TbTotPedido.Location = new System.Drawing.Point(682, 6);
             this.TbTotPedido.Margin = new System.Windows.Forms.Padding(5);
             this.TbTotPedido.MaxLength = 32767;
             this.TbTotPedido.Multiline = true;
@@ -877,7 +931,7 @@ namespace EasyHortifruti
             this.TbTotPedido.Size = new System.Drawing.Size(115, 27);
             this.TbTotPedido.TabIndex = 0;
             this.TbTotPedido.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TbTotPedido.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.NUMERO;
+            this.TbTotPedido.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.MOEDA;
             // 
             // TbDesconto
             // 
@@ -887,7 +941,7 @@ namespace EasyHortifruti
             this.TbDesconto.Font = new System.Drawing.Font("Microsoft Sans Serif", 0.5F);
             this.TbDesconto.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 0.5F);
             this.TbDesconto.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.TbDesconto.Location = new System.Drawing.Point(672, 38);
+            this.TbDesconto.Location = new System.Drawing.Point(682, 38);
             this.TbDesconto.Margin = new System.Windows.Forms.Padding(5);
             this.TbDesconto.MaxLength = 32767;
             this.TbDesconto.Multiline = true;
@@ -899,7 +953,7 @@ namespace EasyHortifruti
             this.TbDesconto.Size = new System.Drawing.Size(115, 27);
             this.TbDesconto.TabIndex = 11;
             this.TbDesconto.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TbDesconto.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.NUMERO;
+            this.TbDesconto.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.MOEDA;
             // 
             // TbTotalGeral
             // 
@@ -909,7 +963,7 @@ namespace EasyHortifruti
             this.TbTotalGeral.Font = new System.Drawing.Font("Microsoft Sans Serif", 0.5F);
             this.TbTotalGeral.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 0.5F);
             this.TbTotalGeral.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.TbTotalGeral.Location = new System.Drawing.Point(672, 69);
+            this.TbTotalGeral.Location = new System.Drawing.Point(682, 69);
             this.TbTotalGeral.Margin = new System.Windows.Forms.Padding(5);
             this.TbTotalGeral.MaxLength = 32767;
             this.TbTotalGeral.Multiline = true;
@@ -921,7 +975,7 @@ namespace EasyHortifruti
             this.TbTotalGeral.Size = new System.Drawing.Size(115, 27);
             this.TbTotalGeral.TabIndex = 0;
             this.TbTotalGeral.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TbTotalGeral.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.NUMERO;
+            this.TbTotalGeral.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.MOEDA;
             // 
             // label18
             // 
@@ -929,7 +983,7 @@ namespace EasyHortifruti
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label18.AutoSize = true;
             this.label18.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label18.Location = new System.Drawing.Point(580, 75);
+            this.label18.Location = new System.Drawing.Point(590, 75);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(90, 17);
             this.label18.TabIndex = 36;
@@ -942,7 +996,7 @@ namespace EasyHortifruti
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label17.AutoSize = true;
             this.label17.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label17.Location = new System.Drawing.Point(594, 44);
+            this.label17.Location = new System.Drawing.Point(604, 44);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(76, 17);
             this.label17.TabIndex = 34;
@@ -954,7 +1008,7 @@ namespace EasyHortifruti
             | System.Windows.Forms.AnchorStyles.Right)));
             this.label16.AutoSize = true;
             this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(569, 12);
+            this.label16.Location = new System.Drawing.Point(579, 12);
             this.label16.Name = "label16";
             this.label16.Size = new System.Drawing.Size(100, 17);
             this.label16.TabIndex = 27;
@@ -970,7 +1024,7 @@ namespace EasyHortifruti
             this.panelBotoesInserirPedido.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panelBotoesInserirPedido.Location = new System.Drawing.Point(0, 513);
             this.panelBotoesInserirPedido.Name = "panelBotoesInserirPedido";
-            this.panelBotoesInserirPedido.Size = new System.Drawing.Size(808, 56);
+            this.panelBotoesInserirPedido.Size = new System.Drawing.Size(818, 56);
             this.panelBotoesInserirPedido.TabIndex = 2;
             // 
             // LbAviso
@@ -1012,7 +1066,7 @@ namespace EasyHortifruti
             this.btGravarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btGravarPedido.FlatAppearance.BorderSize = 0;
             this.btGravarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btGravarPedido.Location = new System.Drawing.Point(584, 9);
+            this.btGravarPedido.Location = new System.Drawing.Point(594, 9);
             this.btGravarPedido.Name = "btGravarPedido";
             this.btGravarPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btGravarPedido.Size = new System.Drawing.Size(94, 35);
@@ -1029,7 +1083,7 @@ namespace EasyHortifruti
             this.BtCancelarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtCancelarPedido.FlatAppearance.BorderSize = 0;
             this.BtCancelarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtCancelarPedido.Location = new System.Drawing.Point(693, 9);
+            this.BtCancelarPedido.Location = new System.Drawing.Point(703, 9);
             this.BtCancelarPedido.Name = "BtCancelarPedido";
             this.BtCancelarPedido.RightToLeft = System.Windows.Forms.RightToLeft.No;
             this.BtCancelarPedido.Size = new System.Drawing.Size(94, 34);
@@ -1054,7 +1108,7 @@ namespace EasyHortifruti
             this.panelPedCliente.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPedCliente.Location = new System.Drawing.Point(0, 0);
             this.panelPedCliente.Name = "panelPedCliente";
-            this.panelPedCliente.Size = new System.Drawing.Size(808, 104);
+            this.panelPedCliente.Size = new System.Drawing.Size(818, 104);
             this.panelPedCliente.TabIndex = 1;
             // 
             // label1
@@ -1218,69 +1272,40 @@ namespace EasyHortifruti
             // 
             // DescrProduto
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescrProduto.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescrProduto.DefaultCellStyle = dataGridViewCellStyle4;
             this.DescrProduto.HeaderText = "Descrição Produto";
             this.DescrProduto.Name = "DescrProduto";
             this.DescrProduto.Width = 220;
             // 
-            // UnidProduto
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.UnidProduto.DefaultCellStyle = dataGridViewCellStyle2;
-            this.UnidProduto.HeaderText = "Unidade";
-            this.UnidProduto.Name = "UnidProduto";
-            this.UnidProduto.Width = 50;
-            // 
-            // QtdeProduto
-            // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.QtdeProduto.DefaultCellStyle = dataGridViewCellStyle3;
-            this.QtdeProduto.HeaderText = "Qtde";
-            this.QtdeProduto.Name = "QtdeProduto";
-            this.QtdeProduto.Width = 40;
-            // 
             // VlCompraProduto
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.VlCompraProduto.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.VlCompraProduto.DefaultCellStyle = dataGridViewCellStyle5;
             this.VlCompraProduto.HeaderText = "Valor Custo";
             this.VlCompraProduto.Name = "VlCompraProduto";
             this.VlCompraProduto.Width = 90;
             // 
             // TotalItem
             // 
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.TotalItem.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.TotalItem.DefaultCellStyle = dataGridViewCellStyle6;
             this.TotalItem.HeaderText = "Total Item";
             this.TotalItem.Name = "TotalItem";
             this.TotalItem.Width = 90;
-            // 
-            // ValorLucroItem
-            // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.Format = "C2";
-            dataGridViewCellStyle6.NullValue = null;
-            this.ValorLucroItem.DefaultCellStyle = dataGridViewCellStyle6;
-            this.ValorLucroItem.HeaderText = "Valor Lucro";
-            this.ValorLucroItem.Name = "ValorLucroItem";
-            this.ValorLucroItem.Width = 90;
             // 
             // FormPedidoAltInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(808, 569);
+            this.ClientSize = new System.Drawing.Size(818, 569);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPedidoAltInsert";
@@ -1333,7 +1358,7 @@ namespace EasyHortifruti
         private System.Windows.Forms.Label LabelIDPedido;
         private System.Windows.Forms.Button btGravarPedido;
         private System.Windows.Forms.Button BtCancelarPedido;
-        private AltTextBox TbVlCompra;
+        private AltTextBox TbVlCusto;
         private AltTextBox TbQtdPedido;
         private System.Windows.Forms.Button BtAdicItemPedido;
         private AltTextBox TbTotalItem;
@@ -1360,7 +1385,7 @@ namespace EasyHortifruti
         private AltComboBox CbProdutos;
         private AltComboBox CbNomeCliente;
         private AltComboBox CbUnidPedido;
-        private AltTextBox AtbValorLucroItem;
+        private AltTextBox TbLucroItem;
         private System.Windows.Forms.Panel PanelPJPedido;
         private AltTextBox TbRazaoSocial;
         private AltTextBox TbIE;
@@ -1378,10 +1403,20 @@ namespace EasyHortifruti
         private AltTextBox TbEndUF;
         private AltTextBox TbEndCidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescrProduto;
+#pragma warning disable CS0649 // Campo "FormPedidoAltInsert.unidade" nunca é atribuído e sempre terá seu valor padrão null
         private System.Windows.Forms.DataGridViewTextBoxColumn unidade;
+#pragma warning restore CS0649 // Campo "FormPedidoAltInsert.unidade" nunca é atribuído e sempre terá seu valor padrão null
+#pragma warning disable CS0649 // Campo "FormPedidoAltInsert.quantidade" nunca é atribuído e sempre terá seu valor padrão null
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
+#pragma warning restore CS0649 // Campo "FormPedidoAltInsert.quantidade" nunca é atribuído e sempre terá seu valor padrão null
         private System.Windows.Forms.DataGridViewTextBoxColumn VlCompraProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalItem;
-        private System.Windows.Forms.DataGridViewTextBoxColumn ValorLucroItem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vlrtotitem;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
+        private AltTextBox TbPrecoProd;
     }
 }

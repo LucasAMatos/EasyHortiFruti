@@ -78,7 +78,9 @@ namespace EasyHortifruti.Componentes
             {
                 if (comboBox1.SelectedItem == null)
                     return null;
+#pragma warning disable CS0253 // Possível comparação de referência inesperada; o lado direito precisa de conversão
                 return itemDicionario.First(x => x.Value == comboBox1.SelectedItem).Value;
+#pragma warning restore CS0253 // Possível comparação de referência inesperada; o lado direito precisa de conversão
             }
             set { comboBox1.SelectedItem = value; }
         }
@@ -89,7 +91,9 @@ namespace EasyHortifruti.Componentes
             {
                 if (comboBox1.SelectedItem == null)
                     return -1;
+#pragma warning disable CS0253 // Possível comparação de referência inesperada; o lado direito precisa de conversão
                 return itemDicionario.First(x => x.Value == comboBox1.SelectedItem).Key;
+#pragma warning restore CS0253 // Possível comparação de referência inesperada; o lado direito precisa de conversão
             }
             set { comboBox1.SelectedIndex = value; }
         }
@@ -197,9 +201,6 @@ namespace EasyHortifruti.Componentes
                 itemDicionario = new Dictionary<int, string>();
             itemDicionario.Add(pKey, pValue);
             comboBox1.Items.Add(pValue);
-        }
-        private void label_Click(object sender, EventArgs e)
-        {
         }
     }
 }

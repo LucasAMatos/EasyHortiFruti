@@ -17,7 +17,9 @@ namespace EasyHortifruti.Componentes
         #region Propriedades
         public bool Obrigatorio { get; set; }
 
+#pragma warning disable CS0108 // O membro oculta o membro herdado; nova palavra-chave ausente
         public event EventHandler TextChanged;
+#pragma warning restore CS0108 // O membro oculta o membro herdado; nova palavra-chave ausente
 
         public bool Criticar
         {
@@ -200,7 +202,9 @@ namespace EasyHortifruti.Componentes
         }
 
         // Método para disparar o evento TextChanged personalizado do UserControl
+#pragma warning disable CS0114 // O membro oculta o membro herdado; palavra-chave substituta ausente
         protected virtual void OnTextChanged(EventArgs e)
+#pragma warning restore CS0114 // O membro oculta o membro herdado; palavra-chave substituta ausente
         {
             TextChanged?.Invoke(this, e);
         }

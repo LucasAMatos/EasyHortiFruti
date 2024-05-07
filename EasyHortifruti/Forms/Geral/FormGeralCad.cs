@@ -27,6 +27,7 @@ namespace EasyHortifruti
         public FormGeralCad()
         {
             InitializeComponent();
+
             configuraGridPadrao(DgViewCadGeral);
         }
         #endregion
@@ -37,11 +38,6 @@ namespace EasyHortifruti
             FormGeralAltInsert GeralAltInsert = new FormGeralAltInsert();
 
             GeralAltInsert.ShowDialog();
-        }
-
-        private void BtSairCadGeral_Click(object sender, EventArgs e)
-        {
-            this.Close();
         }
 
         private void BtEditarCadGeral_Click(object sender, EventArgs e)
@@ -72,6 +68,12 @@ namespace EasyHortifruti
             else
                 MessageBox.Show("Selecione um registro para excluir");
         }
+
+        private void BtSairCadGeral_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         #endregion
 
         #region Metodos

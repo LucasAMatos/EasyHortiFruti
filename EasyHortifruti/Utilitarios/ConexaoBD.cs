@@ -3,9 +3,11 @@ using Npgsql;
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Security.Policy;
+using System.Windows.Forms;
 
 namespace EasyHortifruti
 
@@ -278,7 +280,20 @@ namespace EasyHortifruti
 
         #region Pedidos
 
-        public DataSet ConsultarPedidos() => ConsultarTabela(TabelasScript.TabelaPedidos);
+        public DataSet ConsultarClientePedidoPorId() => ConsultarTabela(TabelasScript.TabelaPedidos);
+
+        public DataSet ConsultarClientePedidoPorId(int pId)
+        {
+            string sql = string.Concat("SELECT ped.datapedido,grl.razaosocial AS nCliente,ped.statuspedido,ped.prazopgto,ped.dataprev,+" +
+                                        "ped.dataentrega,ped.dataconclusao,ped.obspedido,ped.totalcompra,ped.descpedido,ped.totalvenda,+" +
+                                        "ped.vlrlucro FROM ", TabelasScript.TabelaPedidos, " ped INNER JOIN ", TabelasScript.TabelaGeral, "+" +
+                                        " grl ON ped.id_fonte = grl.id_recno");
+
+            if (pId > 0)
+                sql += " where ped.id_fonte = " + pId.ToString();
+
+            return ExecutaEPreencheDataset(sql);
+        }
 
         public DataSet ConsultarPedidosPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaPedidos);
 
@@ -288,7 +303,7 @@ namespace EasyHortifruti
             Dictionary<string, string> Campos = new Dictionary<string, string>
             {
                 { "datapedido",     pPedido.dataPedido.ToString() },
-                { "id_fonte",       pPedido.IdPessoa.ToString() },
+                { "nCliente",       pPedido.IdPessoa.ToString() },
                 { "statuspedido",   pPedido.StatusPedido.ToString() },
                 { "prazopgto",      pPedido.PrazoPagamento.ToString() },
                 { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },
@@ -307,13 +322,13 @@ namespace EasyHortifruti
             {
                 Dictionary<string, string> CamposItens = new Dictionary<string, string>
                 {
-                    { "idpedido", IDPedido.ToString() },
+                    { "idpedido",  IDPedido.ToString() },
                     { "idproduto", item.id_Produto.ToString() } ,
                     { "idunidade", item.id_unidade.ToString() },
-                    { "qtdeitem", item.quantidade.ToString() },
-                    { "vlcusto", item.valor_custo.ToString().Replace(",",".") },
+                    { "qtdeitem",  item.quantidade.ToString() },
+                    { "vlcusto",   item.valor_custo.ToString().Replace(",",".") },
                     { "vltotitem", item.total_item.ToString().Replace(",",".") } ,
-                    { "vllucro", item.valor_lucro.ToString().Replace(",",".") }
+                    { "vllucro",   item.valor_lucro.ToString().Replace(",",".") }
                 };
 
                 ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaItensPedido, CamposItens));

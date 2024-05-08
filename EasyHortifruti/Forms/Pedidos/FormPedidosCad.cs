@@ -87,7 +87,7 @@ namespace EasyHortifruti
 
         public void CarregarGrid()
         {
-            dsGrid = new ConexaoBD().ConsultarPedidos();
+            dsGrid = new ConexaoBD().ConsultarClientePedidoPorId();
             dataGridView1.DataSource = dsGrid;
             dataGridView1.AutoGenerateColumns = false;
             dataGridView1.DataMember = "Table";

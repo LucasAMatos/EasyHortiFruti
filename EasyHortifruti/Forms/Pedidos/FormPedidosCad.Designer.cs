@@ -29,22 +29,30 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
             this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
             this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
             this.panelBotoesCadPedidos = new System.Windows.Forms.Panel();
-            this.btSairPedido = new System.Windows.Forms.Button();
+            this.BtSairPedido = new System.Windows.Forms.Button();
             this.btImprimirPedido = new System.Windows.Forms.Button();
-            this.btExcluirPedido = new System.Windows.Forms.Button();
-            this.btEditarPedido = new System.Windows.Forms.Button();
-            this.btIncluirPedido = new System.Windows.Forms.Button();
+            this.BtExcluirPedido = new System.Windows.Forms.Button();
+            this.BtEditarPedido = new System.Windows.Forms.Button();
+            this.BtIncluirPedido = new System.Windows.Forms.Button();
             this.panelCadPedidos = new System.Windows.Forms.Panel();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelTituloCadPedidos = new System.Windows.Forms.Panel();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vlrlucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.tableLayoutPanel1.SuspendLayout();
@@ -132,40 +140,41 @@
             this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Obrigatorio = false;
             this.cbFiltro.SelectedIndex = -1;
+            this.cbFiltro.SelectedItem = null;
             this.cbFiltro.SelectedText = "";
             this.cbFiltro.Size = new System.Drawing.Size(194, 38);
             this.cbFiltro.TabIndex = 0;
             // 
             // panelBotoesCadPedidos
             // 
-            this.panelBotoesCadPedidos.Controls.Add(this.btSairPedido);
+            this.panelBotoesCadPedidos.Controls.Add(this.BtSairPedido);
             this.panelBotoesCadPedidos.Controls.Add(this.btImprimirPedido);
-            this.panelBotoesCadPedidos.Controls.Add(this.btExcluirPedido);
-            this.panelBotoesCadPedidos.Controls.Add(this.btEditarPedido);
-            this.panelBotoesCadPedidos.Controls.Add(this.btIncluirPedido);
+            this.panelBotoesCadPedidos.Controls.Add(this.BtExcluirPedido);
+            this.panelBotoesCadPedidos.Controls.Add(this.BtEditarPedido);
+            this.panelBotoesCadPedidos.Controls.Add(this.BtIncluirPedido);
             this.panelBotoesCadPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelBotoesCadPedidos.Location = new System.Drawing.Point(3, 63);
             this.panelBotoesCadPedidos.Name = "panelBotoesCadPedidos";
             this.panelBotoesCadPedidos.Size = new System.Drawing.Size(737, 59);
             this.panelBotoesCadPedidos.TabIndex = 3;
             // 
-            // btSairPedido
+            // BtSairPedido
             // 
-            this.btSairPedido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.BtSairPedido.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.btSairPedido.BackColor = System.Drawing.Color.Transparent;
-            this.btSairPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btSairPedido.BackgroundImage")));
-            this.btSairPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btSairPedido.FlatAppearance.BorderSize = 0;
-            this.btSairPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSairPedido.Location = new System.Drawing.Point(677, 3);
-            this.btSairPedido.Name = "btSairPedido";
-            this.btSairPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btSairPedido.Size = new System.Drawing.Size(46, 53);
-            this.btSairPedido.TabIndex = 5;
-            this.btSairPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btSairPedido.UseVisualStyleBackColor = false;
-            this.btSairPedido.Click += new System.EventHandler(this.btSairPedido_Click);
+            this.BtSairPedido.BackColor = System.Drawing.Color.Transparent;
+            this.BtSairPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtSairPedido.BackgroundImage")));
+            this.BtSairPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtSairPedido.FlatAppearance.BorderSize = 0;
+            this.BtSairPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtSairPedido.Location = new System.Drawing.Point(677, 3);
+            this.BtSairPedido.Name = "BtSairPedido";
+            this.BtSairPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtSairPedido.Size = new System.Drawing.Size(46, 53);
+            this.BtSairPedido.TabIndex = 5;
+            this.BtSairPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtSairPedido.UseVisualStyleBackColor = false;
+            this.BtSairPedido.Click += new System.EventHandler(this.BtSairPedido_Click);
             // 
             // btImprimirPedido
             // 
@@ -182,53 +191,53 @@
             this.btImprimirPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btImprimirPedido.UseVisualStyleBackColor = false;
             // 
-            // btExcluirPedido
+            // BtExcluirPedido
             // 
-            this.btExcluirPedido.BackColor = System.Drawing.Color.Transparent;
-            this.btExcluirPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btExcluirPedido.BackgroundImage")));
-            this.btExcluirPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btExcluirPedido.FlatAppearance.BorderSize = 0;
-            this.btExcluirPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btExcluirPedido.Location = new System.Drawing.Point(116, 3);
-            this.btExcluirPedido.Name = "btExcluirPedido";
-            this.btExcluirPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btExcluirPedido.Size = new System.Drawing.Size(46, 52);
-            this.btExcluirPedido.TabIndex = 2;
-            this.btExcluirPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btExcluirPedido.UseVisualStyleBackColor = false;
-            this.btExcluirPedido.Click += new System.EventHandler(this.btExcluirPedido_Click);
+            this.BtExcluirPedido.BackColor = System.Drawing.Color.Transparent;
+            this.BtExcluirPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtExcluirPedido.BackgroundImage")));
+            this.BtExcluirPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtExcluirPedido.FlatAppearance.BorderSize = 0;
+            this.BtExcluirPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtExcluirPedido.Location = new System.Drawing.Point(116, 3);
+            this.BtExcluirPedido.Name = "BtExcluirPedido";
+            this.BtExcluirPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtExcluirPedido.Size = new System.Drawing.Size(46, 52);
+            this.BtExcluirPedido.TabIndex = 2;
+            this.BtExcluirPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtExcluirPedido.UseVisualStyleBackColor = false;
+            this.BtExcluirPedido.Click += new System.EventHandler(this.BtExcluirPedido_Click);
             // 
-            // btEditarPedido
+            // BtEditarPedido
             // 
-            this.btEditarPedido.BackColor = System.Drawing.Color.Transparent;
-            this.btEditarPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btEditarPedido.BackgroundImage")));
-            this.btEditarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btEditarPedido.FlatAppearance.BorderSize = 0;
-            this.btEditarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEditarPedido.Location = new System.Drawing.Point(64, 3);
-            this.btEditarPedido.Name = "btEditarPedido";
-            this.btEditarPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btEditarPedido.Size = new System.Drawing.Size(46, 52);
-            this.btEditarPedido.TabIndex = 1;
-            this.btEditarPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btEditarPedido.UseVisualStyleBackColor = false;
-            this.btEditarPedido.Click += new System.EventHandler(this.btEditarPedido_Click);
+            this.BtEditarPedido.BackColor = System.Drawing.Color.Transparent;
+            this.BtEditarPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtEditarPedido.BackgroundImage")));
+            this.BtEditarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtEditarPedido.FlatAppearance.BorderSize = 0;
+            this.BtEditarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtEditarPedido.Location = new System.Drawing.Point(64, 3);
+            this.BtEditarPedido.Name = "BtEditarPedido";
+            this.BtEditarPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtEditarPedido.Size = new System.Drawing.Size(46, 52);
+            this.BtEditarPedido.TabIndex = 1;
+            this.BtEditarPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtEditarPedido.UseVisualStyleBackColor = false;
+            this.BtEditarPedido.Click += new System.EventHandler(this.BtEditarPedido_Click);
             // 
-            // btIncluirPedido
+            // BtIncluirPedido
             // 
-            this.btIncluirPedido.BackColor = System.Drawing.Color.Transparent;
-            this.btIncluirPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btIncluirPedido.BackgroundImage")));
-            this.btIncluirPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btIncluirPedido.FlatAppearance.BorderSize = 0;
-            this.btIncluirPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btIncluirPedido.Location = new System.Drawing.Point(12, 3);
-            this.btIncluirPedido.Name = "btIncluirPedido";
-            this.btIncluirPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btIncluirPedido.Size = new System.Drawing.Size(46, 52);
-            this.btIncluirPedido.TabIndex = 0;
-            this.btIncluirPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btIncluirPedido.UseVisualStyleBackColor = false;
-            this.btIncluirPedido.Click += new System.EventHandler(this.btIncluirPedido_Click);
+            this.BtIncluirPedido.BackColor = System.Drawing.Color.Transparent;
+            this.BtIncluirPedido.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtIncluirPedido.BackgroundImage")));
+            this.BtIncluirPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtIncluirPedido.FlatAppearance.BorderSize = 0;
+            this.BtIncluirPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtIncluirPedido.Location = new System.Drawing.Point(12, 3);
+            this.BtIncluirPedido.Name = "BtIncluirPedido";
+            this.BtIncluirPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtIncluirPedido.Size = new System.Drawing.Size(46, 52);
+            this.BtIncluirPedido.TabIndex = 0;
+            this.BtIncluirPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.BtIncluirPedido.UseVisualStyleBackColor = false;
+            this.BtIncluirPedido.Click += new System.EventHandler(this.BtIncluirPedido_Click);
             // 
             // panelCadPedidos
             // 
@@ -245,8 +254,12 @@
             this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column1,
-            this.Column2,
+            this.nCliente,
+            this.data,
+            this.totalPedido,
+            this.vlrlucro,
+            this.status,
+            this.obs,
             this.id});
             this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dataGridView1.Location = new System.Drawing.Point(0, 0);
@@ -264,15 +277,58 @@
             this.panelTituloCadPedidos.Size = new System.Drawing.Size(737, 54);
             this.panelTituloCadPedidos.TabIndex = 0;
             // 
-            // Column1
+            // nCliente
             // 
-            this.Column1.HeaderText = "Cliente";
-            this.Column1.Name = "Column1";
+            this.nCliente.DataPropertyName = "razaosocial";
+            this.nCliente.HeaderText = "Cliente";
+            this.nCliente.Name = "nCliente";
+            this.nCliente.Width = 180;
             // 
-            // Column2
+            // data
             // 
-            this.Column2.HeaderText = "Data";
-            this.Column2.Name = "Column2";
+            this.data.DataPropertyName = "datapedido";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.data.DefaultCellStyle = dataGridViewCellStyle1;
+            this.data.HeaderText = "Data";
+            this.data.Name = "data";
+            this.data.Width = 80;
+            // 
+            // totalPedido
+            // 
+            this.totalPedido.DataPropertyName = "totalvenda";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle2.Format = "C2";
+            dataGridViewCellStyle2.NullValue = null;
+            this.totalPedido.DefaultCellStyle = dataGridViewCellStyle2;
+            this.totalPedido.HeaderText = "Valor Pedido";
+            this.totalPedido.Name = "totalPedido";
+            this.totalPedido.Width = 95;
+            // 
+            // vlrlucro
+            // 
+            this.vlrlucro.DataPropertyName = "vlrlucro";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.vlrlucro.DefaultCellStyle = dataGridViewCellStyle3;
+            this.vlrlucro.HeaderText = "Lucro Pedido";
+            this.vlrlucro.Name = "vlrlucro";
+            this.vlrlucro.Width = 95;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "statuspedido";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.status.DefaultCellStyle = dataGridViewCellStyle4;
+            this.status.HeaderText = "Status Pedido";
+            this.status.Name = "status";
+            // 
+            // obs
+            // 
+            this.obs.DataPropertyName = "obspedido";
+            this.obs.HeaderText = "Observações";
+            this.obs.Name = "obs";
+            this.obs.Width = 200;
             // 
             // id
             // 
@@ -308,19 +364,23 @@
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panelTituloCadPedidos;
         private System.Windows.Forms.Panel panelBotoesCadPedidos;
-        private System.Windows.Forms.Button btSairPedido;
+        private System.Windows.Forms.Button BtSairPedido;
         private System.Windows.Forms.Button btImprimirPedido;
-        private System.Windows.Forms.Button btExcluirPedido;
-        private System.Windows.Forms.Button btEditarPedido;
-        private System.Windows.Forms.Button btIncluirPedido;
+        private System.Windows.Forms.Button BtExcluirPedido;
+        private System.Windows.Forms.Button BtEditarPedido;
+        private System.Windows.Forms.Button BtIncluirPedido;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panelCadPedidos;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Componentes.AltComboBox cbFiltro;
         private Componentes.AltTextBox tbFiltro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vlrlucro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn obs;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
     }
 }

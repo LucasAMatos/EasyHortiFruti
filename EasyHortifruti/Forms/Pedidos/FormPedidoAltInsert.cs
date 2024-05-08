@@ -22,6 +22,7 @@ namespace EasyHortifruti
         private Dictionary<string, int> margemLucro;
 
         private List<ItemPedido> itensPedidos;
+
         private DataSet dsProdutos;
 
         private Timer timer;
@@ -73,6 +74,20 @@ namespace EasyHortifruti
             set
             {
                 TbDesconto.Text = value.ToString("F2");
+            }
+        }
+
+        private decimal TotalLucro
+        {
+            get
+            {
+                if (!string.IsNullOrEmpty(TbLucroPedido.Text))
+                    return Convert.ToDecimal(TbLucroPedido.Text);
+                return 0;
+            }
+            set
+            {
+                TbLucroPedido.Text = value.ToString("F2");
             }
         }
 
@@ -374,14 +389,21 @@ namespace EasyHortifruti
         private void AtualizarTotalPedido()
         {
             decimal novoTotal = 0;
+            decimal novoLucro = 0;
 
             // Itera pelas linhas do DataGridView e soma os preços de venda
             foreach (DataGridViewRow row in DgvItensPedido.Rows)
             {
-                if (!row.IsNewRow && row.Cells["vlrtotitem"].Value != null)
+                if (!row.IsNewRow && row.Cells["vltotitem"].Value != null)
                 {
-                    decimal precoItem = Convert.ToDecimal(row.Cells["vlrtotitem"].Value);
+                    decimal precoItem = Convert.ToDecimal(row.Cells["vltotitem"].Value);
                     novoTotal += precoItem;
+                }
+
+                if (!row.IsNewRow && row.Cells["vllucro"].Value != null)
+                {
+                    decimal lucropedido = Convert.ToDecimal(row.Cells["vllucro"].Value);
+                    novoLucro += lucropedido;
                 }
             }
             // Atualiza o total do pedido no TextBox externo
@@ -393,6 +415,9 @@ namespace EasyHortifruti
 
             // Atualiza o total do pedido com desconto no ComboBox externo
             TbTotalGeral.Text = totalComDesconto.ToString("C");
+
+            TotalLucro = novoLucro;
+            TbLucroPedido.Text = TotalLucro.ToString("C");
         }
 
         private void LimparCampos()
@@ -417,7 +442,7 @@ namespace EasyHortifruti
             TotalGeral = Total_Pedido - Desconto;
         }
 
-        private void btGravarPedido_Click(object sender, EventArgs e)
+        private void BtGravarPedido_Click(object sender, EventArgs e)
         {
             Pedido pedido = new Pedido
             {
@@ -430,6 +455,7 @@ namespace EasyHortifruti
                 DataConclusao = DtConclusaoPedido.Value,
                 Itens = itensPedidos,
                 Observacoes = tbObservacoes.Text,
+                ValorLucro = Convert.ToDecimal(TbLucroPedido.Text.Replace("R$", "")),
                 TotalPedido = Convert.ToDecimal(TbTotPedido.Text.Replace("R$", "")),
                 ValorDesconto = string.IsNullOrEmpty(TbDesconto.Text) ? 0 : Convert.ToDecimal(TbDesconto.Text.Replace("R$", "")),
                 TotalGeral = Convert.ToDecimal(TbTotalGeral.Text.Replace("R$", ""))
@@ -438,7 +464,7 @@ namespace EasyHortifruti
                 new ConexaoBD().InserirPedido(pedido);
 
                 DialogResult pPedido = MessageBox.Show("Pedido inserido com sucesso!");
-                    this.Close();            
+                    this.Close(); 
         }
 
         private void DgvItensPedido_CellEndEdit(object sender, DataGridViewCellEventArgs e)

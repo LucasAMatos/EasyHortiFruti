@@ -34,30 +34,27 @@ namespace EasyHortifruti
 
         #region Eventos
 
-        private void btIncluirPedido_Click(object sender, EventArgs e)
+        private void BtIncluirPedido_Click(object sender, EventArgs e)
         {
             FormPedidoAltInsert InserirPedido = new FormPedidoAltInsert();
             InserirPedido.ShowDialog();
         }
 
-        private void btSairPedido_Click(object sender, EventArgs e)
-        {
-            this.Close();
-        }
-
-        private void btEditarPedido_Click(object sender, EventArgs e)
+        private void BtEditarPedido_Click(object sender, EventArgs e)
         {
             if (IdSelecionado >= 0)
             {
-                FormGeralAltInsert FormInserirPedido = new FormGeralAltInsert();
+                FormPedidoAltInsert FormInserirPedido = new FormPedidoAltInsert();
                 FormInserirPedido.Id = IdSelecionado;
                 FormInserirPedido.ShowDialog();
+
+                CarregarGrid();
             }
             else
                 MessageBox.Show("Selecione um registro para alterar");
         }
 
-        private void btExcluirPedido_Click(object sender, EventArgs e)
+        private void BtExcluirPedido_Click(object sender, EventArgs e)
         {
             if (IdSelecionado >= 0)
             {
@@ -72,7 +69,15 @@ namespace EasyHortifruti
             else
                 MessageBox.Show("Selecione um registro para excluir");
         }
+
+        private void BtSairPedido_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
         #endregion
+
+        #region Metodos
 
         private void FormPedidos_Load(object sender, EventArgs e)
         {
@@ -80,7 +85,6 @@ namespace EasyHortifruti
             CarregarComboFiltros();
         }
 
-        #region Metodos
         public void CarregarGrid()
         {
             dsGrid = new ConexaoBD().ConsultarPedidos();
@@ -109,5 +113,6 @@ namespace EasyHortifruti
             Filtrar();
         }
         #endregion
+
     }
 }

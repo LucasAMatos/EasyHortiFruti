@@ -280,9 +280,8 @@ namespace EasyHortifruti
 
         #region Pedidos
 
-        public DataSet ConsultarClientePedidoPorId() => ConsultarTabela(TabelasScript.TabelaPedidos);
 
-        public DataSet ConsultarClientePedidoPorId(int pId)
+        public DataSet ConsultarClientePedidoPorId(int pId) 
         {
             string sql = string.Concat("SELECT ped.datapedido,grl.razaosocial AS nCliente,ped.statuspedido,ped.prazopgto,ped.dataprev,+" +
                                         "ped.dataentrega,ped.dataconclusao,ped.obspedido,ped.totalcompra,ped.descpedido,ped.totalvenda,+" +
@@ -295,7 +294,9 @@ namespace EasyHortifruti
             return ExecutaEPreencheDataset(sql);
         }
 
-        public DataSet ConsultarPedidosPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaPedidos);
+        //public DataSet ConsultarClientePedidoPorId() => ConsultarTabela(TabelasScript.TabelaPedidos);
+
+        //public DataSet ConsultarPedidosPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaPedidos);
 
         public void InserirPedido(Pedido pPedido)
         {

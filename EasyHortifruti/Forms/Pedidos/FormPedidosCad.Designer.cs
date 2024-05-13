@@ -45,7 +45,7 @@
             this.BtEditarPedido = new System.Windows.Forms.Button();
             this.BtIncluirPedido = new System.Windows.Forms.Button();
             this.panelCadPedidos = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.DgvPedidos = new System.Windows.Forms.DataGridView();
             this.panelTituloCadPedidos = new System.Windows.Forms.Panel();
             this.nCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -59,7 +59,7 @@
             this.tableLayoutPanel2.SuspendLayout();
             this.panelBotoesCadPedidos.SuspendLayout();
             this.panelCadPedidos.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvPedidos)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -241,19 +241,19 @@
             // 
             // panelCadPedidos
             // 
-            this.panelCadPedidos.Controls.Add(this.dataGridView1);
+            this.panelCadPedidos.Controls.Add(this.DgvPedidos);
             this.panelCadPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCadPedidos.Location = new System.Drawing.Point(3, 178);
             this.panelCadPedidos.Name = "panelCadPedidos";
             this.panelCadPedidos.Size = new System.Drawing.Size(737, 382);
             this.panelCadPedidos.TabIndex = 4;
             // 
-            // dataGridView1
+            // DgvPedidos
             // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.DgvPedidos.AllowUserToAddRows = false;
+            this.DgvPedidos.AllowUserToDeleteRows = false;
+            this.DgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.DgvPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nCliente,
             this.data,
             this.totalPedido,
@@ -261,11 +261,11 @@
             this.status,
             this.obs,
             this.id});
-            this.dataGridView1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView1.Location = new System.Drawing.Point(0, 0);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(737, 382);
-            this.dataGridView1.TabIndex = 1;
+            this.DgvPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.DgvPedidos.Location = new System.Drawing.Point(0, 0);
+            this.DgvPedidos.Name = "DgvPedidos";
+            this.DgvPedidos.Size = new System.Drawing.Size(737, 382);
+            this.DgvPedidos.TabIndex = 1;
             // 
             // panelTituloCadPedidos
             // 
@@ -279,7 +279,7 @@
             // 
             // nCliente
             // 
-            this.nCliente.DataPropertyName = "razaosocial";
+            this.nCliente.DataPropertyName = "id_fonte";
             this.nCliente.HeaderText = "Cliente";
             this.nCliente.Name = "nCliente";
             this.nCliente.Width = 180;
@@ -354,7 +354,7 @@
             this.tableLayoutPanel2.ResumeLayout(false);
             this.panelBotoesCadPedidos.ResumeLayout(false);
             this.panelCadPedidos.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DgvPedidos)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -371,7 +371,7 @@
         private System.Windows.Forms.Button BtIncluirPedido;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
         private System.Windows.Forms.Panel panelCadPedidos;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView DgvPedidos;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
         private Componentes.AltComboBox cbFiltro;
         private Componentes.AltTextBox tbFiltro;

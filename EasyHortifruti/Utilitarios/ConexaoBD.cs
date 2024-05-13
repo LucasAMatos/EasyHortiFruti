@@ -189,7 +189,8 @@ namespace EasyHortifruti
         public DataSet ConsultarSubGrupo(int pId)
         {
             string sql = string.Concat("SELECT Sub.nome_subgrupo, grp.nome_grupo,  " +
-                "Sub.margem_subgrupo,Sub.id_recno FROM ", TabelasScript.TabelaSubGrupos, " Sub JOIN ", TabelasScript.TabelaGrupos, " grp ON Sub.id_grupo = grp.id_recno");
+                "Sub.margem_subgrupo,Sub.id_recno FROM ", TabelasScript.TabelaSubGrupos, " Sub JOIN ", TabelasScript.TabelaGrupos, " grp " +
+                "ON Sub.id_grupo = grp.id_recno");
 
             if (pId > 0)
                 sql += " where Sub.id_recno = " + pId.ToString();
@@ -281,6 +282,8 @@ namespace EasyHortifruti
         #region Pedidos
 
 
+        public DataSet ConsultarClientePedidoPorId() => ConsultarTabela(TabelasScript.TabelaPedidos);
+
         public DataSet ConsultarClientePedidoPorId(int pId) 
         {
             string sql = string.Concat("SELECT ped.datapedido,grl.razaosocial AS nCliente,ped.statuspedido,ped.prazopgto,ped.dataprev,+" +
@@ -293,8 +296,6 @@ namespace EasyHortifruti
 
             return ExecutaEPreencheDataset(sql);
         }
-
-        //public DataSet ConsultarClientePedidoPorId() => ConsultarTabela(TabelasScript.TabelaPedidos);
 
         //public DataSet ConsultarPedidosPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaPedidos);
 

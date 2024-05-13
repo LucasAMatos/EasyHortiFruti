@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Data;
 
 namespace EasyHortifruti.DML
 {
@@ -34,6 +35,7 @@ namespace EasyHortifruti.DML
 
         public decimal ValorLucro { get; set; }
     }
+
 
     public enum StatusPedido
     {

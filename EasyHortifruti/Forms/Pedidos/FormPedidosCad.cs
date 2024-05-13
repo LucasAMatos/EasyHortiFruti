@@ -12,7 +12,7 @@ namespace EasyHortifruti
         {
             get
             {
-                DataGridViewSelectedRowCollection linhaSelecionada = dataGridView1.SelectedRows;
+                DataGridViewSelectedRowCollection linhaSelecionada = DgvPedidos.SelectedRows;
 
                 if (linhaSelecionada != null && linhaSelecionada.Count == 1)
                     return Convert.ToInt32(linhaSelecionada[0].Cells["id"].Value);
@@ -28,7 +28,7 @@ namespace EasyHortifruti
         {
             InitializeComponent();
 
-            configuraGridPadrao(dataGridView1);
+            configuraGridPadrao(DgvPedidos);
         }
         #endregion
 
@@ -88,14 +88,15 @@ namespace EasyHortifruti
         public void CarregarGrid()
         {
             dsGrid = new ConexaoBD().ConsultarClientePedidoPorId();
-            dataGridView1.DataSource = dsGrid;
-            dataGridView1.AutoGenerateColumns = false;
-            dataGridView1.DataMember = "Table";
+            DgvPedidos.DataSource = dsGrid;
+            DgvPedidos.AutoGenerateColumns = false;
+            DgvPedidos.DataMember = "Table";
         }
+
         private void CarregarComboFiltros()
         {
             int index = 0;
-            foreach (DataGridViewColumn coluna in dataGridView1.Columns)
+            foreach (DataGridViewColumn coluna in DgvPedidos.Columns)
             {
                 if (coluna.Visible)
                     cbFiltro.Add(index, coluna.HeaderText);
@@ -105,7 +106,7 @@ namespace EasyHortifruti
 
         private void Filtrar()
         {
-            base.Filtrar(dataGridView1, dsGrid, cbFiltro.SelectedIndex, tbFiltro.Text);
+            base.Filtrar(DgvPedidos, dsGrid, cbFiltro.SelectedIndex, tbFiltro.Text);
         }
 
         private void TbFiltro_TextoAlterado(object sender, EventArgs e)

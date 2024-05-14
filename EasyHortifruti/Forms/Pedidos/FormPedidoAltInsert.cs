@@ -184,6 +184,8 @@ namespace EasyHortifruti
             CarregarComboProdutos();
             CarregarComboUnidades();
             CarregarComboTpDocumento();
+
+            PreencheCampos();
         }
 
         private void CbProdutos_SelectedIndexChanged(object sender, EventArgs e)
@@ -319,13 +321,16 @@ namespace EasyHortifruti
 
         private void CbNomeCliente_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (CbNomeCliente.SelectedItem != null)
+            if (CbNomeCliente.SelectedItem != null || IdClienteSelecionado >= 0)
             {
-                IdClienteSelecionado = CbNomeCliente.SelectedIndex;
+                if(IdClienteSelecionado < 0)
+                    IdClienteSelecionado = CbNomeCliente.SelectedIndex;
+
                 iGeral = new ConexaoBD().ConsultarGeralPorId(IdClienteSelecionado);
 
                 if (iGeral != null)
                 {
+                    CbNomeCliente.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.RazaoSocial : iGeral.NomeCompleto;
                     if (iGeral.Telefones != null && iGeral.Telefones.Count > 0)
                         TbCelular.Text = iGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.celular).TelefoneCompleto;
 
@@ -523,6 +528,42 @@ namespace EasyHortifruti
                 TbQtdPedido.Text = DgvItensPedido.Rows[IdSelecionado].Cells[2].Value.ToString();
                 BtAdicItemPedido.Text = "Alterar";
                 BtExclItemPedido.Enabled = false;
+            }
+        }
+
+        private void PreencheCampos()
+        {
+            try
+            {
+                if (Id > 0)
+                {
+                    Pedido pedido = new ConexaoBD().ConsultarClientePedidoPorId(Id);
+
+
+                    DtPedido.Value = pedido.dataPedido;
+                    IdClienteSelecionado = pedido.IdPessoa;
+                    CbStatusPedido.Text = pedido.StatusPedido.ToString();
+                    TbPrazoPgto.Text = pedido.PrazoPagamento.ToString();
+                    DtPrevEntrega.Value = pedido.DataPrev;
+                    DtEntregaPedido.Value = pedido.DataEntrega;
+                    DtConclusaoPedido.Value = pedido.DataConclusao;
+                    tbObservacoes.Text = pedido.Observacoes;
+                    TbLucroPedido.Text = pedido.ValorLucro.ToString();
+                    TbTotPedido.Text = pedido.TotalPedido.ToString();
+                    TbDesconto.Text = pedido.ValorDesconto.ToString();
+                    TbTotalGeral.Text = pedido.TotalGeral.ToString();
+
+                    pedido.Itens = new ConexaoBD().ConsultarItensPedido(pedido.ID);
+
+                    foreach (var item in pedido.Itens)
+                        AdicionarPedidoDataGridView(item);
+
+                    CbNomeCliente_SelectedIndexChanged(null, null);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
             }
         }
     }

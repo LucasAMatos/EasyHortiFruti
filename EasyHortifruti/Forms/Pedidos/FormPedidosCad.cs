@@ -85,6 +85,7 @@ namespace EasyHortifruti
         {
             CarregarGrid();
             CarregarComboFiltros();
+            tbFiltro.TextChanged += TbFiltro_TextoAlterado;
         }
 
         public void CarregarGrid()

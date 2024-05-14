@@ -34,8 +34,72 @@ namespace EasyHortifruti.DML
         public decimal TotalGeral { get; set; }
 
         public decimal ValorLucro { get; set; }
-    }
 
+        public void CarregaPedido(DataSet ds)
+        {
+            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            {
+                DataRow dr = ds.Tables[0].Rows[0];
+                if (dr["id_recno"] != null)
+                    ID = Convert.ToInt32(dr["id_recno"]);
+
+                if (dr["dataPedido"] != null)
+                    dataPedido = Convert.ToDateTime(dr["dataPedido"]);
+
+                if (dr["id_fonte"] != null)
+                    IdPessoa = Convert.ToInt32(dr["id_fonte"]);
+
+                if (dr["statuspedido"] != null)
+                    StatusPedido = retornaStatusPedido(dr["statuspedido"].ToString());
+
+                if (dr["prazopgto"] != null)
+                    PrazoPagamento = Convert.ToInt32(dr["prazopgto"]);
+
+                if (dr["dataprev"] != null)
+                    DataPrev = Convert.ToDateTime(dr["dataprev"]);
+
+                if (dr["dataentrega"] != null)
+                    DataEntrega = Convert.ToDateTime(dr["dataentrega"]);
+
+                if (dr["dataconclusao"] != null)
+                    DataConclusao = Convert.ToDateTime(dr["dataconclusao"]);
+
+                if (dr["obspedido"] != null)
+                    Observacoes = dr["obspedido"].ToString();
+                
+                if (dr["totalcompra"] != null)
+                    TotalPedido = Convert.ToDecimal(dr["totalcompra"]);
+
+                if (dr["descpedido"] != null)
+                    ValorDesconto = Convert.ToDecimal(dr["descpedido"]);
+
+                if (dr["totalvenda"] != null)
+                    TotalGeral = Convert.ToDecimal(dr["totalvenda"]);
+
+                if (dr["vlrlucro"] != null)
+                    ValorLucro = Convert.ToDecimal(dr["vlrlucro"]);
+            }
+        }
+
+        public StatusPedido retornaStatusPedido(string pStatus)
+        {
+            switch (pStatus)
+            {
+                case "Não Aprovado":
+                    return StatusPedido.NaoAprovado;
+                case "Aprovado":
+                    return StatusPedido.Aprovado;
+                case "Em Execução":
+                    return StatusPedido.EmExecucao;
+                case "Concluído":
+                    return StatusPedido.Concluido;
+                case "Entregue - Finalizado":
+                    return StatusPedido.Entregue;
+                default:
+                    return StatusPedido.Pendente;
+            }
+        }
+    }
 
     public enum StatusPedido
     {
@@ -54,7 +118,7 @@ namespace EasyHortifruti.DML
         [Description("Concluído")]
         Concluido = 4,
 
-        [Description("Engregue - Finalizado")]
+        [Description("Entregue - Finalizado")]
         Entregue = 5
     }
 }

@@ -7,6 +7,7 @@ using System.Drawing;
 using System.Linq;
 using System.Reflection;
 using System.Security.Policy;
+using System.Web;
 using System.Windows.Forms;
 
 namespace EasyHortifruti
@@ -293,17 +294,19 @@ namespace EasyHortifruti
             return ExecutaEPreencheDataset(sql);
         }
 
-        public DataSet ConsultarClientePedidoPorId(int pId) 
+        public Pedido ConsultarClientePedidoPorId(int pId) 
         {
-            string sql = string.Concat("SELECT ped.datapedido,grl.razaosocial AS nCliente,ped.statuspedido,ped.prazopgto,ped.dataprev,+" +
-                                        "ped.dataentrega,ped.dataconclusao,ped.obspedido,ped.totalcompra,ped.descpedido,ped.totalvenda,+" +
-                                        "ped.vlrlucro FROM ", TabelasScript.TabelaPedidos, " ped INNER JOIN ", TabelasScript.TabelaGeral, "+" +
+            string sql = string.Concat("SELECT ped.id_recno,ped.id_fonte, ped.datapedido,grl.razaosocial AS nCliente,ped.statuspedido,ped.prazopgto,ped.dataprev,",
+                                        "ped.dataentrega,ped.dataconclusao,ped.obspedido,ped.totalcompra,ped.descpedido,ped.totalvenda,",
+                                        "ped.vlrlucro FROM ", TabelasScript.TabelaPedidos, " ped INNER JOIN ", TabelasScript.TabelaGeral,
                                         " grl ON ped.id_fonte = grl.id_recno");
 
             if (pId > 0)
-                sql += " where ped.id_fonte = " + pId.ToString();
+                sql += " where ped.id_recno = " + pId.ToString();
 
-            return ExecutaEPreencheDataset(sql);
+            Pedido pedido = new Pedido();
+            pedido.CarregaPedido(ExecutaEPreencheDataset(sql));
+            return pedido;
         }
 
         //public DataSet ConsultarPedidosPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaPedidos);
@@ -371,6 +374,39 @@ namespace EasyHortifruti
         public void ExcluirPedido(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaPedidos);
         #endregion
 
+        #region ItensPedido
+
+        public List<ItemPedido> ConsultarItensPedido(int pId)
+        {
+            string sql = $"Select * from {TabelasScript.TabelaItensPedido} itp inner join {TabelasScript.TabelaProdutos} prd on itp.idproduto = prd.id_recno inner join {TabelasScript.TabelaUnidades} und on itp.idunidade = und.id_recno where idpedido={pId}";
+
+            DataSet dsItens = ExecutaEPreencheDataset(sql);
+
+            List<ItemPedido> itensPedido = new List<ItemPedido>();
+
+            if (dsItens != null && dsItens.Tables.Count > 0 && dsItens.Tables[0].Rows.Count > 0)
+            {
+                foreach (DataRow dr in dsItens.Tables[0].Rows)
+                {
+                    ItemPedido item = new ItemPedido();
+
+                    item.id_Produto = Convert.ToInt32(dr["idproduto"]);
+                    item.id_unidade = Convert.ToInt32(dr["idunidade"]);
+                    item.descrProduto = dr["nome_produto"].ToString();
+                    item.unidade = dr["abrev_unid"].ToString();
+                    item.quantidade = Convert.ToInt32(dr["qtdeitem"]);
+                    item.valor_custo = Convert.ToDecimal(dr["vlcusto"]);
+                    item.valor_lucro = Convert.ToDecimal(dr["vllucro"]);
+                    item.percentual_lucro = item.valor_lucro * 100 / (item.valor_custo + item.valor_lucro);
+                    item.id_item = Convert.ToInt32(dr["id_recno"]);
+
+
+                    itensPedido.Add(item);
+                }
+            }
+            return itensPedido;
+        }
+        #endregion
         #region CtasReceber
 
         public DataSet ConsultarContas() => ConsultarTabela(TabelasScript.TabelaCtasReceber);

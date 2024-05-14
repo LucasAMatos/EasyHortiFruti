@@ -199,8 +199,11 @@ namespace EasyHortifruti.Componentes
         {
             if (itemDicionario == null)
                 itemDicionario = new Dictionary<int, string>();
-            itemDicionario.Add(pKey, pValue);
-            comboBox1.Items.Add(pValue);
+            if (!itemDicionario.ContainsKey(pKey))
+            {
+                itemDicionario.Add(pKey, pValue);
+                comboBox1.Items.Add(pValue);
+            }
         }
     }
 }

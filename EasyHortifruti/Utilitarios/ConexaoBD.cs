@@ -314,7 +314,7 @@ namespace EasyHortifruti
             Dictionary<string, string> Campos = new Dictionary<string, string>
             {
                 { "datapedido",     pPedido.dataPedido.ToString() },
-                { "nCliente",       pPedido.IdPessoa.ToString() },
+                { "id_fonte",       pPedido.IdPessoa.ToString() },
                 { "statuspedido",   pPedido.StatusPedido.ToString() },
                 { "prazopgto",      pPedido.PrazoPagamento.ToString() },
                 { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },

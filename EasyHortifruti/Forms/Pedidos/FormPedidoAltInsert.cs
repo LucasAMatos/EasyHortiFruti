@@ -39,7 +39,7 @@ namespace EasyHortifruti
             {
                 if (!string.IsNullOrEmpty(TbTotPedido.Text))
                 {
-                    return Convert.ToDecimal(TbTotPedido.Text.Replace("R$",""));
+                    return Convert.ToDecimal(TbTotPedido.Text.Replace("R$", ""));
                 }
                 return 0;
             }
@@ -91,7 +91,20 @@ namespace EasyHortifruti
             }
         }
 
-        private int IdClienteSelecionado {get; set;}
+        private int IdClienteSelecionado { get; set; }
+
+        public int IdSelecionado
+        {
+            get
+            {
+                DataGridViewSelectedRowCollection linhaSelecionada = DgvItensPedido.SelectedRows;
+
+                if (linhaSelecionada != null && linhaSelecionada.Count == 1)
+                    return DgvItensPedido.SelectedRows[0].Index;
+
+                return -1;
+            }
+        }
         #endregion propriedades
 
         public FormPedidoAltInsert()
@@ -199,7 +212,7 @@ namespace EasyHortifruti
 
         private void CarregarComboProdutos()
         {
-            CbProdutos.Items.Clear();
+            CbProdutos.Clear();
             foreach (DataRow dr in dsProdutos.Tables[0].Rows)
             {
                 if (!CbProdutos.Items.Contains(dr["nome_produto"].ToString()))
@@ -214,7 +227,7 @@ namespace EasyHortifruti
         {
             if (CbProdutos.SelectedIndex >= 0)
             {
-                CbUnidPedido.Items.Clear();
+                CbUnidPedido.Clear();
                 foreach (DataRow dr in dsProdutos.Tables[0].Rows)
                 {
                     if (CbProdutos.SelectedItem.ToString() == dr["nome_produto"].ToString() && (!CbUnidPedido.Items.Contains(dr["abrev_unid"].ToString())))
@@ -313,7 +326,7 @@ namespace EasyHortifruti
 
                 if (iGeral != null)
                 {
-                    if(iGeral.Telefones != null && iGeral.Telefones.Count > 0)
+                    if (iGeral.Telefones != null && iGeral.Telefones.Count > 0)
                         TbCelular.Text = iGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.celular).TelefoneCompleto;
 
                     CbTpDocumento.SelectedIndex = iGeral.TipoPessoa == TPFJ.Fisica ? 0 : 1;
@@ -359,21 +372,28 @@ namespace EasyHortifruti
 
             // Cria um novo objeto Pedido e preenche suas propriedades
             ItemPedido novoPedido = new ItemPedido
-                {
-                    descrProduto = CbProdutos.SelectedItem,
-                    id_Produto = CbProdutos.SelectedIndex,
-                    unidade = CbUnidPedido.SelectedItem,
-                    id_unidade = CbUnidPedido.SelectedIndex,
-                    quantidade = Convert.ToInt32(TbQtdPedido.Text),
-                    valor_custo = Convert.ToDecimal(TbVlCusto.Text),
-                    //percentual_lucro = Convert.ToDecimal(TbMargemLucro.Text),
-                    total_item = Convert.ToDecimal(TbTotalItem.Text),
-                    valor_lucro = Convert.ToDecimal(TbLucroItem.Text)
-                };
+            {
+                descrProduto = CbProdutos.SelectedItem,
+                id_Produto = CbProdutos.SelectedIndex,
+                unidade = CbUnidPedido.SelectedItem,
+                id_unidade = CbUnidPedido.SelectedIndex,
+                quantidade = Convert.ToInt32(TbQtdPedido.Text),
+                valor_custo = Convert.ToDecimal(TbVlCusto.Text),
+                //percentual_lucro = Convert.ToDecimal(TbMargemLucro.Text),
+                total_item = Convert.ToDecimal(TbTotalItem.Text),
+                valor_lucro = Convert.ToDecimal(TbLucroItem.Text)
+            };
 
             AtualizarTotalPedido();
 
-            // Adiciona o novo pedido à DataGridView
+            if (BtAdicItemPedido.Text == "Alterar")
+            {
+                DgvItensPedido.Rows.RemoveAt(IdSelecionado);
+                DgvItensPedido.Refresh();
+                BtAdicItemPedido.Text = "Adicionar";
+                CbProdutos.Enabled = true;
+                BtExclItemPedido.Enabled = true;
+            }
             AdicionarPedidoDataGridView(novoPedido);
 
             // (Opcional) Limpa os campos da interface do usuário após registrar o pedido
@@ -437,7 +457,7 @@ namespace EasyHortifruti
             CalcularValorLucroItem();
         }
 
-         private void TbFiltro_TbDescontoTextChanged(object sender, EventArgs e)
+        private void TbFiltro_TbDescontoTextChanged(object sender, EventArgs e)
         {
             TotalGeral = Total_Pedido - Desconto;
         }
@@ -461,10 +481,10 @@ namespace EasyHortifruti
                 TotalGeral = Convert.ToDecimal(TbTotalGeral.Text.Replace("R$", ""))
 
             };
-                new ConexaoBD().InserirPedido(pedido);
+            new ConexaoBD().InserirPedido(pedido);
 
-                DialogResult pPedido = MessageBox.Show("Pedido inserido com sucesso!");
-                    this.Close(); 
+            DialogResult pPedido = MessageBox.Show("Pedido inserido com sucesso!");
+            this.Close();
         }
 
         private void DgvItensPedido_CellEndEdit(object sender, DataGridViewCellEventArgs e)
@@ -480,6 +500,30 @@ namespace EasyHortifruti
         private void DgvItensPedido_RowsRemoved(object sender, DataGridViewRowsRemovedEventArgs e)
         {
             AtualizarTotalPedido();
+        }
+
+        private void btExclItemPedido_Click(object sender, EventArgs e)
+        {
+            if (IdSelecionado >= 0)
+            {
+                DgvItensPedido.Rows.RemoveAt(IdSelecionado);
+                DgvItensPedido.Refresh();
+            }
+
+        }
+
+        private void BtEditItemPedido_Click(object sender, EventArgs e)
+        {
+            if (IdSelecionado >= 0)
+            {
+                CbProdutos.Text = DgvItensPedido.Rows[IdSelecionado].Cells[0].Value.ToString();
+                CbProdutos.Enabled = false;
+                CbProdutos_SelectedIndexChanged(sender, EventArgs.Empty);
+                CbUnidPedido.Text = DgvItensPedido.Rows[IdSelecionado].Cells[1].Value.ToString();
+                TbQtdPedido.Text = DgvItensPedido.Rows[IdSelecionado].Cells[2].Value.ToString();
+                BtAdicItemPedido.Text = "Alterar";
+                BtExclItemPedido.Enabled = false;
+            }
         }
     }
 }

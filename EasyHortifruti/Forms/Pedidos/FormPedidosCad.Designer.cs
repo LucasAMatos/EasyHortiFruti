@@ -48,6 +48,7 @@
             this.DgvPedidos = new System.Windows.Forms.DataGridView();
             this.panelTituloCadPedidos = new System.Windows.Forms.Panel();
             this.nCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vlrlucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -255,6 +256,7 @@
             this.DgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nCliente,
+            this.idCliente,
             this.data,
             this.totalPedido,
             this.vlrlucro,
@@ -279,10 +281,17 @@
             // 
             // nCliente
             // 
-            this.nCliente.DataPropertyName = "id_fonte";
+            this.nCliente.DataPropertyName = "NOME_GRID";
             this.nCliente.HeaderText = "Cliente";
             this.nCliente.Name = "nCliente";
             this.nCliente.Width = 180;
+            // 
+            // idCliente
+            // 
+            this.idCliente.DataPropertyName = "id_fonte";
+            this.idCliente.HeaderText = "idCliente";
+            this.idCliente.Name = "idCliente";
+            this.idCliente.Visible = false;
             // 
             // data
             // 
@@ -376,6 +385,7 @@
         private Componentes.AltComboBox cbFiltro;
         private Componentes.AltTextBox tbFiltro;
         private System.Windows.Forms.DataGridViewTextBoxColumn nCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn data;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn vlrlucro;

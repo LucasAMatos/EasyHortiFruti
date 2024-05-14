@@ -282,7 +282,16 @@ namespace EasyHortifruti
         #region Pedidos
 
 
-        public DataSet ConsultarClientePedidoPorId() => ConsultarTabela(TabelasScript.TabelaPedidos);
+        public DataSet ConsultarClientePedido()
+        {
+            string sql = string.Concat(
+                "SELECT CASE WHEN TPPESSOA='J' THEN nomefantasia ELSE RAZAOSOCIAL END as NOME_GRID,* FROM ", 
+                TabelasScript.TabelaPedidos, " ped INNER JOIN ", 
+                TabelasScript.TabelaGeral, " grl ON ped.id_fonte = grl.id_recno"
+            );
+
+            return ExecutaEPreencheDataset(sql);
+        }
 
         public DataSet ConsultarClientePedidoPorId(int pId) 
         {

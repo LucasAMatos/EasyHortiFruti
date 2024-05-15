@@ -114,6 +114,7 @@ namespace EasyHortifruti
         {
             CarregarGrid();
             CarregarComboFiltros();
+            CarregarComboTipoFonte();
             // Inscreva-se para o evento TextoAlterado do UserControl
             tbFiltro.TextChanged += TbFiltro_TextoAlterado;
         }

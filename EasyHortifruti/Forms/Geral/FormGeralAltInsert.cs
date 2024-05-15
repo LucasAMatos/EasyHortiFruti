@@ -20,7 +20,7 @@ namespace EasyHortifruti
             {
                 return new Telefone
                 {
-                    tipoTelefone = TipoTelefone.pessoal,
+                    TipoTelefone = TipoTelefone.pessoal,
                     DDD = TbFone.Value.Length < 2 ? TbFone.Value.Substring(0, TbFone.Value.Length) : TbFone.Value.Substring(0, 2),
                     Numero = TbFone.Value.Length < 3 ? string.Empty : TbFone.Value.Substring(2)
                 };
@@ -33,7 +33,7 @@ namespace EasyHortifruti
             {
                 return new Telefone
                 {
-                    tipoTelefone = TipoTelefone.celular,
+                    TipoTelefone = TipoTelefone.celular,
                     DDD = TbCelular.Value.Length < 2 ? TbCelular.Value.Substring(0, TbCelular.Value.Length) : TbCelular.Value.Substring(0, 2),
                     Numero = TbCelular.Value.Length < 3 ? string.Empty : TbCelular.Value.Substring(2)
                 };
@@ -150,7 +150,7 @@ namespace EasyHortifruti
         {
             try
             {
-                cnpjConsultado = await ConsultarCNPJ.consCNPJ(TbCNPJ.Value);
+                cnpjConsultado = await ConsultarCNPJ.ConsCNPJ(TbCNPJ.Value);
 
                 if (cnpjConsultado != null && cnpjConsultado.RazaoSocial != null)
                 {
@@ -234,7 +234,7 @@ namespace EasyHortifruti
         {
             try
             {
-                cepConsultado = await ConsultarCEP.consCEP(TbCepEndereco.Value);
+                cepConsultado = await ConsultarCEP.ConsCEP(TbCepEndereco.Value);
 
                 if (cepConsultado != null && cepConsultado.Cep != null)
                 {
@@ -289,7 +289,7 @@ namespace EasyHortifruti
             Endereco enderecoRetorno = new Endereco();
 
             enderecoRetorno.CEP = TbCepEndereco.Value;
-            enderecoRetorno.logradouro = TbRua.Text;
+            enderecoRetorno.Logradouro = TbRua.Text;
             enderecoRetorno.Numero = Convert.ToInt32(TbNumero.Text);
             enderecoRetorno.Complemento = TbComplemento.Text;
             enderecoRetorno.Bairro = TbBairro.Text;
@@ -366,13 +366,13 @@ namespace EasyHortifruti
 
                         if (iGeral.Telefones != null && iGeral.Telefones.Count > 0)
                         {
-                            TbFone.Text = iGeral.Telefones.FirstOrDefault(x => x.tipoTelefone == TipoTelefone.pessoal).TelefoneCompleto;
-                            TbCelular.Text = iGeral.Telefones.FirstOrDefault(x => x.tipoTelefone == TipoTelefone.celular).TelefoneCompleto;
+                            TbFone.Text = iGeral.Telefones.FirstOrDefault(x => x.TipoTelefone == TipoTelefone.pessoal).TelefoneCompleto;
+                            TbCelular.Text = iGeral.Telefones.FirstOrDefault(x => x.TipoTelefone == TipoTelefone.celular).TelefoneCompleto;
                         }
                         if (iGeral.Endereco != null)
                         {
                             TbCepEndereco.Text = iGeral.Endereco.CEP;
-                            TbRua.Text = iGeral.Endereco.logradouro;
+                            TbRua.Text = iGeral.Endereco.Logradouro;
                             TbNumero.Text = iGeral.Endereco.Numero.ToString();
                             TbComplemento.Text = iGeral.Endereco.Complemento;
                             TbBairro.Text = iGeral.Endereco.Bairro;

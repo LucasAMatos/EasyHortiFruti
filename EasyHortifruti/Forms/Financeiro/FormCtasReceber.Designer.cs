@@ -47,7 +47,6 @@ namespace EasyHortifruti
             this.label6 = new System.Windows.Forms.Label();
             this.panel5CtasReceberBotoes = new System.Windows.Forms.Panel();
             this.BtBaixaCtaRecebto = new System.Windows.Forms.Button();
-            this.BtFiltrarCtaRecebto = new System.Windows.Forms.Button();
             this.BtImprimirCtaRecebto = new System.Windows.Forms.Button();
             this.BtExcluirCtaRecebto = new System.Windows.Forms.Button();
             this.BtEditarCtaRecebto = new System.Windows.Forms.Button();
@@ -237,7 +236,6 @@ namespace EasyHortifruti
             // panel5CtasReceberBotoes
             // 
             this.panel5CtasReceberBotoes.Controls.Add(this.BtBaixaCtaRecebto);
-            this.panel5CtasReceberBotoes.Controls.Add(this.BtFiltrarCtaRecebto);
             this.panel5CtasReceberBotoes.Controls.Add(this.BtImprimirCtaRecebto);
             this.panel5CtasReceberBotoes.Controls.Add(this.BtExcluirCtaRecebto);
             this.panel5CtasReceberBotoes.Controls.Add(this.BtEditarCtaRecebto);
@@ -256,28 +254,11 @@ namespace EasyHortifruti
             this.BtBaixaCtaRecebto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtBaixaCtaRecebto.FlatAppearance.BorderSize = 0;
             this.BtBaixaCtaRecebto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtBaixaCtaRecebto.Location = new System.Drawing.Point(277, 6);
+            this.BtBaixaCtaRecebto.Location = new System.Drawing.Point(226, 5);
             this.BtBaixaCtaRecebto.Name = "BtBaixaCtaRecebto";
             this.BtBaixaCtaRecebto.Size = new System.Drawing.Size(56, 49);
             this.BtBaixaCtaRecebto.TabIndex = 5;
             this.BtBaixaCtaRecebto.UseVisualStyleBackColor = true;
-            // 
-            // BtFiltrarCtaRecebto
-            // 
-            this.BtFiltrarCtaRecebto.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.BtFiltrarCtaRecebto.BackColor = System.Drawing.Color.Transparent;
-            this.BtFiltrarCtaRecebto.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtFiltrarCtaRecebto.BackgroundImage")));
-            this.BtFiltrarCtaRecebto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtFiltrarCtaRecebto.FlatAppearance.BorderSize = 0;
-            this.BtFiltrarCtaRecebto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtFiltrarCtaRecebto.Location = new System.Drawing.Point(173, 4);
-            this.BtFiltrarCtaRecebto.Name = "BtFiltrarCtaRecebto";
-            this.BtFiltrarCtaRecebto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.BtFiltrarCtaRecebto.Size = new System.Drawing.Size(47, 52);
-            this.BtFiltrarCtaRecebto.TabIndex = 4;
-            this.BtFiltrarCtaRecebto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.BtFiltrarCtaRecebto.UseVisualStyleBackColor = false;
             // 
             // BtImprimirCtaRecebto
             // 
@@ -288,7 +269,7 @@ namespace EasyHortifruti
             this.BtImprimirCtaRecebto.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtImprimirCtaRecebto.FlatAppearance.BorderSize = 0;
             this.BtImprimirCtaRecebto.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtImprimirCtaRecebto.Location = new System.Drawing.Point(225, 4);
+            this.BtImprimirCtaRecebto.Location = new System.Drawing.Point(174, 3);
             this.BtImprimirCtaRecebto.Name = "BtImprimirCtaRecebto";
             this.BtImprimirCtaRecebto.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtImprimirCtaRecebto.Size = new System.Drawing.Size(47, 52);
@@ -436,7 +417,7 @@ namespace EasyHortifruti
             this.btSairCtasReceber.Size = new System.Drawing.Size(50, 46);
             this.btSairCtasReceber.TabIndex = 0;
             this.btSairCtasReceber.UseVisualStyleBackColor = false;
-            this.btSairCtasReceber.Click += new System.EventHandler(this.btSairCtasReceber_Click);
+            this.btSairCtasReceber.Click += new System.EventHandler(this.BtSairCtasReceber_Click);
             // 
             // id_recno
             // 
@@ -573,7 +554,6 @@ namespace EasyHortifruti
         private AltComboBox CbFiltroCliente;
         private System.Windows.Forms.Button btSairCtasReceber;
         private System.Windows.Forms.Panel panel5CtasReceberBotoes;
-        private System.Windows.Forms.Button BtFiltrarCtaRecebto;
         private System.Windows.Forms.Button BtImprimirCtaRecebto;
         private System.Windows.Forms.Button BtExcluirCtaRecebto;
         private System.Windows.Forms.Button BtEditarCtaRecebto;

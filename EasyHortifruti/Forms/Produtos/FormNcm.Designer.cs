@@ -52,7 +52,7 @@
             this.dataGridView1.RowHeadersVisible = false;
             this.dataGridView1.Size = new System.Drawing.Size(323, 247);
             this.dataGridView1.TabIndex = 0;
-            this.dataGridView1.DoubleClick += new System.EventHandler(this.dataGridView1_DoubleClick);
+            this.dataGridView1.DoubleClick += new System.EventHandler(this.DataGridView1_DoubleClick);
             // 
             // descricao_ncm
             // 
@@ -79,7 +79,7 @@
             this.btnSelecionar.TabIndex = 2;
             this.btnSelecionar.Text = "Selecionar";
             this.btnSelecionar.UseVisualStyleBackColor = true;
-            this.btnSelecionar.Click += new System.EventHandler(this.btnSelecionar_Click);
+            this.btnSelecionar.Click += new System.EventHandler(this.BtnSelecionar_Click);
             // 
             // txtFiltro
             // 
@@ -99,7 +99,7 @@
             this.txtFiltro.TabIndex = 3;
             this.txtFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            this.txtFiltro.TextChanged += new System.EventHandler(this.altTextBox1_TextChanged);
+            this.txtFiltro.TextChanged += new System.EventHandler(this.AltTextBox1_TextChanged);
             // 
             // FormNcm
             // 
@@ -110,7 +110,7 @@
             this.Controls.Add(this.btnSelecionar);
             this.Controls.Add(this.dataGridView1);
             this.Name = "FormNcm";
-            this.Load += new System.EventHandler(this.form_Load);
+            this.Load += new System.EventHandler(this.Form_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

@@ -1,12 +1,7 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EasyHortifruti.Componentes
@@ -14,6 +9,7 @@ namespace EasyHortifruti.Componentes
     public partial class LabelTextBox : UserControl
     {
         #region Propriedades
+
         public bool Obrigatorio { get; set; }
 
         public bool Criticar
@@ -54,15 +50,16 @@ namespace EasyHortifruti.Componentes
             {
                 label.Text = value;
             }
-
         }
 
         public Font FonteTexto
         {
-            get {
+            get
+            {
                 return txtBox.Font;
             }
-            set { 
+            set
+            {
                 txtBox.Font = value;
             }
         }
@@ -79,11 +76,14 @@ namespace EasyHortifruti.Componentes
             }
         }
 
-        public int SelectionStart {
-            get {
+        public int SelectionStart
+        {
+            get
+            {
                 return txtBox.SelectionStart;
             }
-            set {
+            set
+            {
                 txtBox.SelectionStart = value;
             }
         }
@@ -102,16 +102,17 @@ namespace EasyHortifruti.Componentes
 
         public override string Text
         {
-            get {
+            get
+            {
                 return txtBox.Text;
             }
-            set {
+            set
+            {
                 txtBox.Text = value;
             }
         }
 
-        #endregion
-
+        #endregion Propriedades
 
         public LabelTextBox()
         {
@@ -128,19 +129,19 @@ namespace EasyHortifruti.Componentes
             switch (Tipo)
             {
                 case TipoCampo.TELEFONE:
-                    Text = Value.Length <= 10 ? Regex.Replace(Value, @"(\d{2})(\d{0,4})(\d{0,4})", @"($1)$2-$3") : Regex.Replace(Value, @"(\d{2})(\d{0,5})(\d{0,4})", @"($1)$2-$3");
+                    Text = Value.Length <= 10 ? Regex.Replace(Value, @"(\d{2})(\d{0,4})(\d{0,4})", "($1)$2-$3") : Regex.Replace(Value, @"(\d{2})(\d{0,5})(\d{0,4})", "($1)$2-$3");
                     break;
 
                 case TipoCampo.CEP:
-                    Text = Regex.Replace(Value.PadRight(8, '0'), @"(\d{5})(\d{0,3})", @"$1-$2");
+                    Text = Regex.Replace(Value.PadRight(8, '0'), @"(\d{5})(\d{0,3})", "$1-$2");
                     break;
 
                 case TipoCampo.CNPJ:
-                    Text = Regex.Replace(Value.PadLeft(14, '0'), @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
+                    Text = Regex.Replace(Value.PadLeft(14, '0'), @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", "$1.$2.$3/$4-$5");
                     break;
 
                 case TipoCampo.CPF:
-                    Text = Regex.Replace(Value.PadLeft(11, '0'), @"(\d{3})(\d{3})(\d{3})", @"$1.$2.$3-");
+                    Text = Regex.Replace(Value.PadLeft(11, '0'), @"(\d{3})(\d{3})(\d{3})", "$1.$2.$3-");
                     break;
 
                 default:
@@ -162,11 +163,11 @@ namespace EasyHortifruti.Componentes
                         if (Value.Length < 11)
                         {
                             if (Value.Length >= 10)
-                                Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,5})(\d{0,4})", @"($1)$2-$3");
+                                Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,5})(\d{0,4})", "($1)$2-$3");
                             else if (Value.Length >= 6)
-                                Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,4})(\d{0,4})", @"($1)$2-$3");
+                                Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,4})(\d{0,4})", "($1)$2-$3");
                             else if (Value.Length >= 2)
-                                Text = Regex.Replace(Value, @"(^\d{0,2})", @"($1)");
+                                Text = Regex.Replace(Value, @"(^\d{0,2})", "($1)");
                             else
                                 Text = "(" + Value;
 
@@ -198,9 +199,9 @@ namespace EasyHortifruti.Componentes
                             Text += e.KeyChar;
 
                             if (Value.Length >= 9)
-                                Text = Regex.Replace(Value, @"(\d{3})(\d{3})(\d{3})", @"$1.$2.$3-");
+                                Text = Regex.Replace(Value, @"(\d{3})(\d{3})(\d{3})", "$1.$2.$3-");
                             else if (Value.Length >= 3)
-                                Text = Regex.Replace(Value, @"(\d{3})", @"$1.");
+                                Text = Regex.Replace(Value, @"(\d{3})", "$1.");
                             else
                                 Text = Value;
 
@@ -222,13 +223,13 @@ namespace EasyHortifruti.Componentes
                             Text += e.KeyChar;
 
                             if (Value.Length >= 12)
-                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
+                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", "$1.$2.$3/$4-$5");
                             else if (Value.Length >= 8)
-                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{0,4})", @"$1.$2.$3/$4");
+                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{0,4})", "$1.$2.$3/$4");
                             else if (Value.Length >= 5)
-                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{0,3})", @"$1.$2.$3");
+                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{0,3})", "$1.$2.$3");
                             else if (Value.Length >= 3)
-                                Text = Regex.Replace(Value, @"(\d{2})(\d{0,3})", @"$1.$2");
+                                Text = Regex.Replace(Value, @"(\d{2})(\d{0,3})", "$1.$2");
 
                             this.SelectionStart = this.Text.Length;
                         }
@@ -282,7 +283,6 @@ namespace EasyHortifruti.Componentes
         }
 
         #endregion Metodos
-
 
         #region Enum
 

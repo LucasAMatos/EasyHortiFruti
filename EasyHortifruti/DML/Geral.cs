@@ -55,7 +55,7 @@ namespace EasyHortifruti.DML
 
         public void CarregarGeral(DataSet ds)
         {
-            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            if (ds?.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
                 DataRow dr = ds.Tables[0].Rows[0];
 
@@ -83,12 +83,12 @@ namespace EasyHortifruti.DML
                         NomeCompleto = dr["razaosocial"].ToString();
 
                     if (dr["cnpj_cpf"] != null && !string.IsNullOrEmpty(dr["cnpj_cpf"].ToString().Trim()))
-                        CPF = Regex.Replace(dr["cnpj_cpf"].ToString(), @"(\d{3})(\d{3})(\d{3})(\d{2})", @"$1.$2.$3-$4");
+                        CPF = Regex.Replace(dr["cnpj_cpf"].ToString(), @"(\d{3})(\d{3})(\d{3})(\d{2})", "$1.$2.$3-$4");
 
                     if (dr["ie_rg"] != null)
                         RG = dr["ie_rg"].ToString();
                 }
-                else 
+                else
                 {
                     if (dr["nomefantasia"] != null)
                         NomeFantasia = dr["nomefantasia"].ToString();
@@ -97,7 +97,7 @@ namespace EasyHortifruti.DML
                         RazaoSocial = dr["razaosocial"].ToString();
 
                     if (dr["cnpj_cpf"] != null && !string.IsNullOrEmpty(dr["cnpj_cpf"].ToString().Trim()))
-                        CNPJ = Regex.Replace(dr["cnpj_cpf"].ToString(), @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
+                        CNPJ = Regex.Replace(dr["cnpj_cpf"].ToString(), @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", "$1.$2.$3/$4-$5");
 
                     if (dr["ie_rg"] != null)
                         IE = dr["ie_rg"].ToString();
@@ -111,18 +111,22 @@ namespace EasyHortifruti.DML
 
                 if (dr["dddfone"] != null)
                 {
-                    Telefone fone = new Telefone();
-                    fone.tipoTelefone = TipoTelefone.pessoal;
-                    fone.Numero = dr["fone"].ToString();
-                    fone.DDD = dr["dddfone"].ToString();
+                    Telefone fone = new Telefone
+                    {
+                        TipoTelefone = TipoTelefone.pessoal,
+                        Numero = dr["fone"].ToString(),
+                        DDD = dr["dddfone"].ToString()
+                    };
                     Telefones.Add(fone);
                 }
                 if (dr["dddcel"] != null)
                 {
-                    Telefone cel = new Telefone();
-                    cel.tipoTelefone = TipoTelefone.celular;
-                    cel.Numero = dr["celular"].ToString();
-                    cel.DDD = dr["dddcel"].ToString();
+                    Telefone cel = new Telefone
+                    {
+                        TipoTelefone = TipoTelefone.celular,
+                        Numero = dr["celular"].ToString(),
+                        DDD = dr["dddcel"].ToString()
+                    };
                     Telefones.Add(cel);
                 }
 
@@ -130,10 +134,10 @@ namespace EasyHortifruti.DML
                     Endereco = new Endereco();
 
                 if (dr["cep"] != null)
-                    Endereco.CEP = Regex.Replace(dr["cep"].ToString(), @"(^\d{0,5})(\d{0,3})", @"$1-$2");
+                    Endereco.CEP = Regex.Replace(dr["cep"].ToString(), @"(^\d{0,5})(\d{0,3})", "$1-$2");
 
                 if (dr["logradouro"] != null)
-                    Endereco.logradouro = dr["logradouro"].ToString();
+                    Endereco.Logradouro = dr["logradouro"].ToString();
 
                 if (dr["Numero"] != null)
                     Endereco.Numero = Convert.ToInt32(dr["Numero"]);
@@ -157,12 +161,13 @@ namespace EasyHortifruti.DML
                     Email = dr["email"].ToString();
 
                 if (dr["prazoPgto"] != null && !string.IsNullOrEmpty(dr["prazoPgto"].ToString()))
-                   PrazoPagamento = Convert.ToInt32(dr["prazoPgto"].ToString());
+                    PrazoPagamento = Convert.ToInt32(dr["prazoPgto"].ToString());
             }
         }
     }
 
     #region ENUM
+
     public enum EstadoCivil
     {
         [Description("Não definido")]
@@ -342,5 +347,5 @@ namespace EasyHortifruti.DML
         Socio = 4
     }
 
-    #endregion
+    #endregion ENUM
 }

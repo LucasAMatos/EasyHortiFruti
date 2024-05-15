@@ -1,11 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace EasyHortifruti.Componentes
@@ -15,12 +12,14 @@ namespace EasyHortifruti.Componentes
         #region Propriedades
 
         private Dictionary<int, string> itemDicionario;
+
         internal Dictionary<int, string> ItemDicionario
         {
             get
             {
-                if (itemDicionario == null)
-                    itemDicionario = new Dictionary<int, string>();
+                if (itemDicionario != null)
+                    return itemDicionario;
+                itemDicionario = new Dictionary<int, string>();
                 return itemDicionario;
             }
             set
@@ -51,7 +50,6 @@ namespace EasyHortifruti.Componentes
             {
                 label.Text = value;
             }
-
         }
 
         public ComboBox.ObjectCollection Items
@@ -70,7 +68,6 @@ namespace EasyHortifruti.Componentes
             get { return comboBox1.Text; }
             set { comboBox1.Text = value; }
         }
-
 
         public string SelectedItem
         {
@@ -135,16 +132,20 @@ namespace EasyHortifruti.Componentes
         }
 
         public event EventHandler SelectedIndexChanged;
-        #endregion
+
+        #endregion Propriedades
 
         #region Constructor
+
         public AltComboBox()
         {
             InitializeComponent();
         }
-        #endregion
+
+        #endregion Constructor
 
         #region Metodos
+
         public void CarregarDescricoesEnum<T>()
         {
             comboBox1.Items.Clear();
@@ -179,19 +180,16 @@ namespace EasyHortifruti.Componentes
             comboBox1.SelectedIndex = comboBox1.Items.IndexOf(pItem);
         }
 
-        #endregion
+        #endregion Metodos
 
-        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        private void ComboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (SelectedIndexChanged != null)
-                SelectedIndexChanged(sender, e);
+            SelectedIndexChanged?.Invoke(sender, e);
         }
 
         public void Clear()
         {
-            if (itemDicionario == null)
-                itemDicionario = new Dictionary<int, string>();
-            itemDicionario.Clear();
+            (itemDicionario ?? (itemDicionario = new Dictionary<int, string>())).Clear();
             comboBox1.Items.Clear();
         }
 

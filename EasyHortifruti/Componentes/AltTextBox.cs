@@ -1,24 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.Linq;
-using System.Text;
 using System.Text.RegularExpressions;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace EasyHortifruti.Componentes
 {
     public partial class AltTextBox : UserControl
     {
         #region Propriedades
+
         public bool Obrigatorio { get; set; }
 
 #pragma warning disable CS0108 // O membro oculta o membro herdado; nova palavra-chave ausente
+
         public event EventHandler TextChanged;
+
 #pragma warning restore CS0108 // O membro oculta o membro herdado; nova palavra-chave ausente
 
         public bool Criticar
@@ -59,7 +56,6 @@ namespace EasyHortifruti.Componentes
             {
                 label.Text = value;
             }
-
         }
 
         public Font FonteTexto
@@ -156,7 +152,6 @@ namespace EasyHortifruti.Componentes
             {
                 txtBox.TextAlign = value;
             }
-
         }
 
         public bool Multiline
@@ -169,13 +164,9 @@ namespace EasyHortifruti.Componentes
             {
                 txtBox.Multiline = value;
             }
-
         }
 
-
-
-        #endregion
-
+        #endregion Propriedades
 
         public AltTextBox()
         {
@@ -185,6 +176,7 @@ namespace EasyHortifruti.Componentes
         }
 
         #region Eventos
+
         // Manipulador de eventos para o TextChanged do TextBox interno
         private void TextBox_TextChanged(object sender, EventArgs e)
         {
@@ -203,12 +195,14 @@ namespace EasyHortifruti.Componentes
 
         // Método para disparar o evento TextChanged personalizado do UserControl
 #pragma warning disable CS0114 // O membro oculta o membro herdado; palavra-chave substituta ausente
+
         protected virtual void OnTextChanged(EventArgs e)
 #pragma warning restore CS0114 // O membro oculta o membro herdado; palavra-chave substituta ausente
         {
             TextChanged?.Invoke(this, e);
         }
-        #endregion
+
+        #endregion Eventos
 
         #region Metodos
 
@@ -220,19 +214,19 @@ namespace EasyHortifruti.Componentes
             switch (Tipo)
             {
                 case TipoCampo.TELEFONE:
-                    Text = Value.Length <= 10 ? Regex.Replace(Value, @"(\d{2})(\d{0,4})(\d{0,4})", @"($1)$2-$3") : Regex.Replace(Value, @"(\d{2})(\d{0,5})(\d{0,4})", @"($1)$2-$3");
+                    Text = Value.Length <= 10 ? Regex.Replace(Value, @"(\d{2})(\d{0,4})(\d{0,4})", "($1)$2-$3") : Regex.Replace(Value, @"(\d{2})(\d{0,5})(\d{0,4})", "($1)$2-$3");
                     break;
 
                 case TipoCampo.CEP:
-                    Text = Regex.Replace(Value.PadRight(8, '0'), @"(\d{5})(\d{0,3})", @"$1-$2");
+                    Text = Regex.Replace(Value.PadRight(8, '0'), @"(\d{5})(\d{0,3})", "$1-$2");
                     break;
 
                 case TipoCampo.CNPJ:
-                    Text = Regex.Replace(Value.PadLeft(14, '0'), @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
+                    Text = Regex.Replace(Value.PadLeft(14, '0'), @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", "$1.$2.$3/$4-$5");
                     break;
 
                 case TipoCampo.CPF:
-                    Text = Regex.Replace(Value.PadLeft(11, '0'), @"(\d{3})(\d{3})(\d{3})", @"$1.$2.$3-");
+                    Text = Regex.Replace(Value.PadLeft(11, '0'), @"(\d{3})(\d{3})(\d{3})", "$1.$2.$3-");
                     break;
 
                 default:
@@ -249,6 +243,7 @@ namespace EasyHortifruti.Componentes
                     if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
                         e.Handled = true;
                     return;
+
                 case TipoCampo.TELEFONE:
                     // Permite apenas números e teclas de controle (como Backspace)
                     if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
@@ -259,11 +254,11 @@ namespace EasyHortifruti.Componentes
                         if (Value.Length < 11)
                         {
                             if (Value.Length >= 10)
-                                Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,5})(\d{0,4})", @"($1)$2-$3");
+                                Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,5})(\d{0,4})", "($1)$2-$3");
                             else if (Value.Length >= 6)
-                                Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,4})(\d{0,4})", @"($1)$2-$3");
+                                Text = Regex.Replace(Value, @"(^\d{0,2})(\d{0,4})(\d{0,4})", "($1)$2-$3");
                             else if (Value.Length >= 2)
-                                Text = Regex.Replace(Value, @"(^\d{0,2})", @"($1)");
+                                Text = Regex.Replace(Value, @"(^\d{0,2})", "($1)");
                             else
                                 Text = "(" + Value;
 
@@ -295,9 +290,9 @@ namespace EasyHortifruti.Componentes
                             Text += e.KeyChar;
 
                             if (Value.Length >= 9)
-                                Text = Regex.Replace(Value, @"(\d{3})(\d{3})(\d{3})", @"$1.$2.$3-");
+                                Text = Regex.Replace(Value, @"(\d{3})(\d{3})(\d{3})", "$1.$2.$3-");
                             else if (Value.Length >= 3)
-                                Text = Regex.Replace(Value, @"(\d{3})", @"$1.");
+                                Text = Regex.Replace(Value, @"(\d{3})", "$1.");
                             else
                                 Text = Value;
 
@@ -319,13 +314,13 @@ namespace EasyHortifruti.Componentes
                             Text += e.KeyChar;
 
                             if (Value.Length >= 12)
-                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", @"$1.$2.$3/$4-$5");
+                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{4})(\d{0,2})", "$1.$2.$3/$4-$5");
                             else if (Value.Length >= 8)
-                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{0,4})", @"$1.$2.$3/$4");
+                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{3})(\d{0,4})", "$1.$2.$3/$4");
                             else if (Value.Length >= 5)
-                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{0,3})", @"$1.$2.$3");
+                                Text = Regex.Replace(Value, @"(\d{2})(\d{3})(\d{0,3})", "$1.$2.$3");
                             else if (Value.Length >= 3)
-                                Text = Regex.Replace(Value, @"(\d{2})(\d{0,3})", @"$1.$2");
+                                Text = Regex.Replace(Value, @"(\d{2})(\d{0,3})", "$1.$2");
 
                             this.SelectionStart = this.Text.Length;
                         }
@@ -382,8 +377,8 @@ namespace EasyHortifruti.Componentes
         {
             txtBox.Clear();
         }
-        #endregion Metodos
 
+        #endregion Metodos
 
         #region Enum
 
@@ -399,6 +394,5 @@ namespace EasyHortifruti.Componentes
         }
 
         #endregion Enum
-
     }
 }

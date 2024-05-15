@@ -31,7 +31,7 @@ namespace EasyHortifruti.DML
 
         public void CarregarProduto(DataSet ds)
         {
-            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            if (ds?.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
                 DataRow dr = ds.Tables[0].Rows[0];
 

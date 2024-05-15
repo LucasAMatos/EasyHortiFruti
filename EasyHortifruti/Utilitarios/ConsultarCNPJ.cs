@@ -8,7 +8,7 @@ namespace EasyHortifruti.Utilitarios
 {
     public static class ConsultarCNPJ
     {
-        public static async Task<CNPJConsultado> consCNPJ(string cnpj)
+        public static async Task<CNPJConsultado> ConsCNPJ(string cnpj)
         {
             string url = "https://publica.cnpj.ws/cnpj/" + cnpj;
 

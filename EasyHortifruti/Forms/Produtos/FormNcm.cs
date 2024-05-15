@@ -15,14 +15,14 @@ namespace EasyHortifruti.Forms.Produtos
             InitializeComponent();
         }
 
-        private void form_Load(object sender, EventArgs e)
+        private void Form_Load(object sender, EventArgs e)
         {
             dsNCM = new ConexaoBD().ConsutarNCMs();
-            if (dsNCM != null && dsNCM.Tables.Count > 0)
+            if (dsNCM?.Tables.Count > 0)
                 dataGridView1.DataSource = dsNCM.Tables[0];
         }
 
-        private void btnSelecionar_Click(object sender, EventArgs e)
+        private void BtnSelecionar_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -42,14 +42,14 @@ namespace EasyHortifruti.Forms.Produtos
             }
         }
 
-        private void altTextBox1_TextChanged(object sender, EventArgs e)
+        private void AltTextBox1_TextChanged(object sender, EventArgs e)
         {
             string filtro = txtFiltro.Text.ToLower(); // Texto digitado no TextBox (convertido para minúsculas)
 
             // Verifica se o DataGridView possui dados
-            if (dataGridView1.DataSource != null && dataGridView1.DataSource is DataTable)
+            if (dataGridView1.DataSource != null && dataGridView1.DataSource is DataTable table)
             {
-                DataTable dataTable = (DataTable)dataGridView1.DataSource;
+                DataTable dataTable = table;
 
                 // Aplica o filtro nos dados do DataTable
                 // Neste exemplo, assumimos que a primeira coluna do DataGridView contém os valores que queremos filtrar
@@ -58,7 +58,7 @@ namespace EasyHortifruti.Forms.Produtos
             }
         }
 
-        private void dataGridView1_DoubleClick(object sender, EventArgs e)
+        private void DataGridView1_DoubleClick(object sender, EventArgs e)
         {
             this.Close();
         }

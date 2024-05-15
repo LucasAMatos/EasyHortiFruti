@@ -9,7 +9,7 @@ namespace EasyHortifruti.DML
     {
         public int ID { get; set; }
 
-        public DateTime dataPedido { get; set; }
+        public DateTime DataPedido { get; set; }
 
         public int IdPessoa { get; set; }
 
@@ -37,20 +37,20 @@ namespace EasyHortifruti.DML
 
         public void CarregaPedido(DataSet ds)
         {
-            if (ds != null && ds.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
+            if (ds?.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
             {
                 DataRow dr = ds.Tables[0].Rows[0];
                 if (dr["id_recno"] != null)
                     ID = Convert.ToInt32(dr["id_recno"]);
 
                 if (dr["dataPedido"] != null)
-                    dataPedido = Convert.ToDateTime(dr["dataPedido"]);
+                    DataPedido = Convert.ToDateTime(dr["dataPedido"]);
 
                 if (dr["id_fonte"] != null)
                     IdPessoa = Convert.ToInt32(dr["id_fonte"]);
 
                 if (dr["statuspedido"] != null)
-                    StatusPedido = retornaStatusPedido(dr["statuspedido"].ToString());
+                    StatusPedido = RetornaStatusPedido(dr["statuspedido"].ToString());
 
                 if (dr["prazopgto"] != null)
                     PrazoPagamento = Convert.ToInt32(dr["prazopgto"]);
@@ -66,7 +66,7 @@ namespace EasyHortifruti.DML
 
                 if (dr["obspedido"] != null)
                     Observacoes = dr["obspedido"].ToString();
-                
+
                 if (dr["totalcompra"] != null)
                     TotalPedido = Convert.ToDecimal(dr["totalcompra"]);
 
@@ -81,20 +81,25 @@ namespace EasyHortifruti.DML
             }
         }
 
-        public StatusPedido retornaStatusPedido(string pStatus)
+        public StatusPedido RetornaStatusPedido(string pStatus)
         {
             switch (pStatus)
             {
                 case "Não Aprovado":
                     return StatusPedido.NaoAprovado;
+
                 case "Aprovado":
                     return StatusPedido.Aprovado;
+
                 case "Em Execução":
                     return StatusPedido.EmExecucao;
+
                 case "Concluído":
                     return StatusPedido.Concluido;
+
                 case "Entregue - Finalizado":
                     return StatusPedido.Entregue;
+
                 default:
                     return StatusPedido.Pendente;
             }

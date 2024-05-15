@@ -15,7 +15,7 @@ namespace EasyHortifruti
             {
                 DataGridViewSelectedRowCollection linhaSelecionada = DgViewCadGrupos.SelectedRows;
 
-                if (linhaSelecionada != null && linhaSelecionada.Count == 1)
+                if (linhaSelecionada?.Count == 1)
                     return Convert.ToInt32(linhaSelecionada[0].Cells["id"].Value);
 
                 if (DgViewCadGrupos.SelectedCells.Count == 1)
@@ -32,7 +32,7 @@ namespace EasyHortifruti
         public FormGruposCad()
         {
             InitializeComponent();
-            configuraGridPadrao(DgViewCadGrupos);
+            ConfiguraGridPadrao(DgViewCadGrupos);
         }
 
         #endregion Construtor
@@ -65,7 +65,9 @@ namespace EasyHortifruti
                 CarregarGrid();
             }
             else
+            {
                 MessageBox.Show("Selecione um registro para alterar");
+            }
         }
 
         private void BtExcluirGrupo_Click(object sender, EventArgs e)
@@ -82,7 +84,9 @@ namespace EasyHortifruti
                 CarregarGrid();
             }
             else
+            {
                 MessageBox.Show("Selecione um registro para excluir");
+            }
         }
 
         private void BtSairGrupo_Click(object sender, EventArgs e)

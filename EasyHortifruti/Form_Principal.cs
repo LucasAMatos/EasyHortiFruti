@@ -12,36 +12,36 @@ namespace EasyHortifruti
             CriarTabelas();
         }
 
-        private void btCadGeral_Click(object sender, EventArgs e)
+        private void BtCadGeral_Click(object sender, EventArgs e)
         {
             FormGeralCad FormCadGeral = new FormGeralCad();
             FormCadGeral.ShowDialog();
         }
 
-        private void btProdutos_Click(object sender, EventArgs e)
+        private void BtProdutos_Click(object sender, EventArgs e)
         {
             FormCadastroProduto CadastroProduto = new FormCadastroProduto();
             CadastroProduto.ShowDialog();
         }
 
-        private void btPedidos_Click(object sender, EventArgs e)
+        private void BtPedidos_Click(object sender, EventArgs e)
         {
             FormPedidos FormPedidos = new FormPedidos();
             FormPedidos.ShowDialog();
         }
 
-        private void btFinanceiro_Click(object sender, EventArgs e)
+        private void BtFinanceiro_Click(object sender, EventArgs e)
         {
             FormCtasReceber FormCtasReceber = new FormCtasReceber();
             FormCtasReceber.ShowDialog();
         }
 
-        private void btSairPrincipal_Click(object sender, EventArgs e)
+        private void BtSairPrincipal_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void btRelatórios_Click(object sender, EventArgs e)
+        private void BtRelatórios_Click(object sender, EventArgs e)
         {
         }
 

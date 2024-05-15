@@ -16,25 +16,25 @@ namespace EasyHortifruti
     public partial class FormProdutosAltInsert : FormBase
     {
         #region propriedades
-        Dictionary<string, int> grupo;
+        readonly Dictionary<string, int> grupo;
 
-        Dictionary<string, int> subGrupo;
+        readonly Dictionary<string, int> subGrupo;
 
-        Dictionary<string, int> unidade;
+        readonly Dictionary<string, int> unidade;
         #endregion
-        
+
         #region Construtor
         public FormProdutosAltInsert()
         {
             grupo = new Dictionary<string, int>();
             subGrupo = new Dictionary<string, int>();
             unidade = new Dictionary<string, int>();
-            
+
             InitializeComponent();
         }
 
         public FormProdutosAltInsert(int pId)
-        { 
+        {
             Id = pId;
             grupo = new Dictionary<string, int>();
             subGrupo = new Dictionary<string, int>();
@@ -95,7 +95,6 @@ namespace EasyHortifruti
                     NCM = txtNCM.Text
                 };
 
-
                 if (Alterar)
                 {
                     produto.ID = Convert.ToInt32(labelIDProduto.Text);
@@ -114,7 +113,9 @@ namespace EasyHortifruti
                         LimparCampos();
                     }
                     else
+                    {
                         this.Close();
+                    }
                 }
             }
             catch (Exception ex)
@@ -135,7 +136,7 @@ namespace EasyHortifruti
 
         #region Metodos
         private void CarregarComboUnidades()
-        { 
+        {
             cbUnidProduto.Items.Clear();
             unidade.Clear();
             DataSet ds = new ConexaoBD().ConsultarUnidades();
@@ -148,7 +149,7 @@ namespace EasyHortifruti
         }
 
         private void CarregarComboGrupo()
-        { 
+        {
             cbGrupoProduto.Items.Clear();
             cbGrupoProduto.Items.Add(string.Empty);
             grupo.Clear();
@@ -230,10 +231,7 @@ namespace EasyHortifruti
         private void BtCadNCM_Click(object sender, EventArgs e)
         {
             FormNcm NCM = new FormNcm();
-            NCM.ValorRetornado += (sended, valorRetornado) =>
-            {
-                txtNCM.Text = valorRetornado.ToString();
-            };
+            NCM.ValorRetornado += (_, valorRetornado) => txtNCM.Text = valorRetornado;
             NCM.Show();
         }
     }

@@ -9,7 +9,7 @@ namespace EasyHortifruti.Utilitarios
 {
     public static class ConsultarCEP
     {
-        public static async Task<CEPConsultado> consCEP(string cep)
+        public static async Task<CEPConsultado> ConsCEP(string cep)
         {
             string url = string.Format("http://viacep.com.br/ws/{0}/json/", cep);
 
@@ -26,6 +26,5 @@ namespace EasyHortifruti.Utilitarios
 
             return null;
         }
-
     }
 }

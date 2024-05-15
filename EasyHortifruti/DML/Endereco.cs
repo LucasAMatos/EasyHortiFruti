@@ -2,7 +2,7 @@
 {
     public class Endereco
     {
-        public string logradouro { get; set; }
+        public string Logradouro { get; set; }
 
         public string CEP { get; set; }
 

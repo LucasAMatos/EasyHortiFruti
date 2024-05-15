@@ -201,7 +201,7 @@ namespace EasyHortifruti
             this.BtExclItemPedido.TabIndex = 12;
             this.BtExclItemPedido.Text = "Excluir";
             this.BtExclItemPedido.UseVisualStyleBackColor = false;
-            this.BtExclItemPedido.Click += new System.EventHandler(this.btExclItemPedido_Click);
+            this.BtExclItemPedido.Click += new System.EventHandler(this.BtExclItemPedido_Click);
             // 
             // BtEditItemPedido
             // 

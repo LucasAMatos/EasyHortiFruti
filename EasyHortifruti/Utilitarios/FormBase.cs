@@ -29,14 +29,14 @@ namespace EasyHortifruti
                     if (c is AltTextBox tb && tb.Criticar)
                     {
                         if (string.IsNullOrEmpty(tb.Caption))
-                            throw new Exception(string.Concat(tb.Name, " é Obrigatório"));
-                        throw new Exception(string.Concat(tb.Caption, " é Obrigatório"));
+                            throw new Exception($"{tb.Name} é Obrigatório");
+                        throw new Exception($"{tb.Caption} é Obrigatório");
                     }
                     if (c is AltComboBox cb && cb.Criticar)
                     {
                         if (string.IsNullOrEmpty(cb.Caption))
-                            throw new Exception(string.Concat(cb.Name, " é Obrigatório"));
-                        throw new Exception(string.Concat(cb.Caption, " é Obrigatório"));
+                            throw new Exception($"{cb.Name} é Obrigatório");
+                        throw new Exception($"{cb.Caption} é Obrigatório");
                     }
                     // Se o controle tiver controles filhos, chama recursivamente o método
                     if (c.HasChildren)
@@ -45,9 +45,9 @@ namespace EasyHortifruti
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -69,18 +69,19 @@ namespace EasyHortifruti
                     }
                 }
                 else
+                {
                     pDs.Tables["Table"].DefaultView.RowFilter = string.Empty;
+                }
+
                 dgv.DataSource = pDs.Tables["Table"].DefaultView;
             }
             catch
             {
-
             }
         }
 
         internal void LimparCampos(Control pControl = null)
         {
-
             try
             {
                 if (pControl == null)
@@ -103,20 +104,21 @@ namespace EasyHortifruti
                     }
                 }
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
 
         internal void SalvarCSV(DataGridView grdCSV)
         {
             // Cria um objeto SaveFileDialog
-            SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-            // Define o filtro de arquivos para a caixa de diálogo (por exemplo, CSV)
-            saveFileDialog.Filter = "Arquivos CSV (*.csv)|*.csv|Todos os arquivos (*.*)|*.*";
-            saveFileDialog.FilterIndex = 1;
+            SaveFileDialog saveFileDialog = new SaveFileDialog
+            {
+                // Define o filtro de arquivos para a caixa de diálogo (por exemplo, CSV)
+                Filter = "Arquivos CSV (*.csv)|*.csv|Todos os arquivos (*.*)|*.*",
+                FilterIndex = 1
+            };
 
             // Exibe a caixa de diálogo "Salvar como"
             if (saveFileDialog.ShowDialog() == DialogResult.OK)
@@ -164,7 +166,7 @@ namespace EasyHortifruti
             }
         }
 
-        internal void configuraGridPadrao(DataGridView pDataGridView)
+        internal void ConfiguraGridPadrao(DataGridView pDataGridView)
         {
             pDataGridView.RowHeadersVisible = false;
             pDataGridView.AllowUserToAddRows = false;

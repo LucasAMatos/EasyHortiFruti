@@ -66,7 +66,7 @@
             this.btFinanceiro.Size = new System.Drawing.Size(195, 44);
             this.btFinanceiro.TabIndex = 7;
             this.btFinanceiro.UseVisualStyleBackColor = false;
-            this.btFinanceiro.Click += new System.EventHandler(this.btFinanceiro_Click);
+            this.btFinanceiro.Click += new System.EventHandler(this.BtFinanceiro_Click);
             // 
             // btSairPrincipal
             // 
@@ -80,7 +80,7 @@
             this.btSairPrincipal.Size = new System.Drawing.Size(195, 44);
             this.btSairPrincipal.TabIndex = 6;
             this.btSairPrincipal.UseVisualStyleBackColor = false;
-            this.btSairPrincipal.Click += new System.EventHandler(this.btSairPrincipal_Click);
+            this.btSairPrincipal.Click += new System.EventHandler(this.BtSairPrincipal_Click);
             // 
             // btRelatórios
             // 
@@ -94,7 +94,7 @@
             this.btRelatórios.Size = new System.Drawing.Size(195, 44);
             this.btRelatórios.TabIndex = 5;
             this.btRelatórios.UseVisualStyleBackColor = false;
-            this.btRelatórios.Click += new System.EventHandler(this.btRelatórios_Click);
+            this.btRelatórios.Click += new System.EventHandler(this.BtRelatórios_Click);
             // 
             // btPedidos
             // 
@@ -108,7 +108,7 @@
             this.btPedidos.Size = new System.Drawing.Size(195, 44);
             this.btPedidos.TabIndex = 4;
             this.btPedidos.UseVisualStyleBackColor = false;
-            this.btPedidos.Click += new System.EventHandler(this.btPedidos_Click);
+            this.btPedidos.Click += new System.EventHandler(this.BtPedidos_Click);
             // 
             // btCadGeral
             // 
@@ -122,7 +122,7 @@
             this.btCadGeral.Size = new System.Drawing.Size(195, 42);
             this.btCadGeral.TabIndex = 1;
             this.btCadGeral.UseVisualStyleBackColor = false;
-            this.btCadGeral.Click += new System.EventHandler(this.btCadGeral_Click);
+            this.btCadGeral.Click += new System.EventHandler(this.BtCadGeral_Click);
             // 
             // btProdutos
             // 
@@ -136,7 +136,7 @@
             this.btProdutos.Size = new System.Drawing.Size(195, 45);
             this.btProdutos.TabIndex = 0;
             this.btProdutos.UseVisualStyleBackColor = false;
-            this.btProdutos.Click += new System.EventHandler(this.btProdutos_Click);
+            this.btProdutos.Click += new System.EventHandler(this.BtProdutos_Click);
             // 
             // FormPrincipal
             // 

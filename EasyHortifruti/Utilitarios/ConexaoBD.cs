@@ -15,7 +15,7 @@ namespace EasyHortifruti
 {
     public class ConexaoBD
     {
-        private string connectionString;
+        private readonly string connectionString;
 
         #region Constructor
         public ConexaoBD()
@@ -43,8 +43,8 @@ namespace EasyHortifruti
 
         public void InserirGeral(Geral pGeral)
         {
-            Telefone fone = pGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.pessoal);
-            Telefone celular = pGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.celular);
+            Telefone fone = pGeral.Telefones.First(x => x.TipoTelefone == TipoTelefone.pessoal);
+            Telefone celular = pGeral.Telefones.First(x => x.TipoTelefone == TipoTelefone.celular);
 
             Dictionary<string, string> pCampos = new Dictionary<string, string>
             {
@@ -64,7 +64,7 @@ namespace EasyHortifruti
                 { "dddcel", celular.DDD },
                 { "celular", celular.Numero },
                 { "cep", pGeral.Endereco.CEP },
-                { "logradouro", pGeral.Endereco.logradouro },
+                { "logradouro", pGeral.Endereco.Logradouro },
                 { "numero", pGeral.Endereco.Numero.ToString() },
                 { "complemento", pGeral.Endereco.Complemento },
                 { "bairro", pGeral.Endereco.Bairro },
@@ -73,15 +73,14 @@ namespace EasyHortifruti
                 { "pontoreferencia", pGeral.PontoReferencia },
                 { "email", pGeral.Email },
                 { "prazoPgto", pGeral.PrazoPagamento.ToString() }
-
             };
 
             ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaGeral, pCampos));
         }
         public void AlterarGeral(Geral pGeral)
         {
-            Telefone fone = pGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.pessoal);
-            Telefone celular = pGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.celular);
+            Telefone fone = pGeral.Telefones.First(x => x.TipoTelefone == TipoTelefone.pessoal);
+            Telefone celular = pGeral.Telefones.First(x => x.TipoTelefone == TipoTelefone.celular);
 
             Dictionary<string, string> pCampos = new Dictionary<string, string>
             {
@@ -101,7 +100,7 @@ namespace EasyHortifruti
                 { "dddcel", celular.DDD },
                 { "celular", celular.Numero },
                 { "cep", pGeral.Endereco.CEP },
-                { "logradouro", pGeral.Endereco.logradouro },
+                { "logradouro", pGeral.Endereco.Logradouro },
                 { "numero", pGeral.Endereco.Numero.ToString() },
                 { "complemento", pGeral.Endereco.Complemento },
                 { "bairro", pGeral.Endereco.Bairro },
@@ -150,7 +149,6 @@ namespace EasyHortifruti
         }
 
         public void ExcluirUnidade(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaUnidades);
-
 
         #endregion
 
@@ -234,7 +232,7 @@ namespace EasyHortifruti
 
         public Produto ConsultarProdutoPorId(int pId)
         {
-            string sql = string.Concat("SELECT * FROM produtos P LEFT JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO LEFT JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO INNER JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO WHERE P.ID_RECNO =", pId);
+            string sql = $"SELECT * FROM produtos P LEFT JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO LEFT JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO INNER JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO WHERE P.ID_RECNO ={pId}";
 
             Produto produto = new Produto();
             DataSet ds = ExecutaEPreencheDataset(sql);
@@ -285,8 +283,8 @@ namespace EasyHortifruti
         public DataSet ConsultarClientePedido()
         {
             string sql = string.Concat(
-                "SELECT CASE WHEN TPPESSOA='J' THEN nomefantasia ELSE RAZAOSOCIAL END as NOME_GRID,* FROM ", 
-                TabelasScript.TabelaPedidos, " ped INNER JOIN ", 
+                "SELECT CASE WHEN TPPESSOA='J' THEN nomefantasia ELSE RAZAOSOCIAL END as NOME_GRID,* FROM ",
+                TabelasScript.TabelaPedidos, " ped INNER JOIN ",
                 TabelasScript.TabelaGeral, " grl ON ped.id_fonte = grl.id_recno"
             );
 
@@ -306,10 +304,9 @@ namespace EasyHortifruti
                 sql += " statuspedido=" + pStatusPedido;
             }
 
-
             return ExecutaEPreencheDataset(sql);
         }
-        public Pedido ConsultarClientePedidoPorId(int pId) 
+        public Pedido ConsultarClientePedidoPorId(int pId)
         {
             string sql = string.Concat("SELECT ped.id_recno,ped.id_fonte, ped.datapedido,grl.razaosocial AS nCliente,ped.statuspedido,ped.prazopgto,ped.dataprev,",
                                         "ped.dataentrega,ped.dataconclusao,ped.obspedido,ped.totalcompra,ped.descpedido,ped.totalvenda,",
@@ -331,7 +328,7 @@ namespace EasyHortifruti
             //TO DO: IMPLEMENTAR
             Dictionary<string, string> Campos = new Dictionary<string, string>
             {
-                { "datapedido",     pPedido.dataPedido.ToString() },
+                { "datapedido",     pPedido.DataPedido.ToString() },
                 { "id_fonte",       pPedido.IdPessoa.ToString() },
                 { "statuspedido",   pPedido.StatusPedido.ToString() },
                 { "prazopgto",      pPedido.PrazoPagamento.ToString() },
@@ -352,12 +349,12 @@ namespace EasyHortifruti
                 Dictionary<string, string> CamposItens = new Dictionary<string, string>
                 {
                     { "idpedido",  IDPedido.ToString() },
-                    { "idproduto", item.id_Produto.ToString() } ,
-                    { "idunidade", item.id_unidade.ToString() },
-                    { "qtdeitem",  item.quantidade.ToString() },
-                    { "vlcusto",   item.valor_custo.ToString().Replace(",",".") },
-                    { "vltotitem", item.total_item.ToString().Replace(",",".") } ,
-                    { "vllucro",   item.valor_lucro.ToString().Replace(",",".") }
+                    { "idproduto", item.Id_Produto.ToString() } ,
+                    { "idunidade", item.Id_unidade.ToString() },
+                    { "qtdeitem",  item.Quantidade.ToString() },
+                    { "vlcusto",   item.Valor_custo.ToString().Replace(",",".") },
+                    { "vltotitem", item.Total_item.ToString().Replace(",",".") } ,
+                    { "vllucro",   item.Valor_lucro.ToString().Replace(",",".") }
                 };
 
                 ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaItensPedido, CamposItens));
@@ -369,7 +366,7 @@ namespace EasyHortifruti
             //TO DO: IMPLEMENTAR
             Dictionary<string, string> pCampos = new Dictionary<string, string>
             {
-                { "datapedido",     pPedido.dataPedido.ToString() },
+                { "datapedido",     pPedido.DataPedido.ToString() },
                 { "id_fonte",       pPedido.IdPessoa.ToString() },
                 { "statuspedido",   pPedido.StatusPedido.ToString() },
                 { "prazopgto",      pPedido.PrazoPagamento.ToString() },
@@ -399,22 +396,22 @@ namespace EasyHortifruti
 
             List<ItemPedido> itensPedido = new List<ItemPedido>();
 
-            if (dsItens != null && dsItens.Tables.Count > 0 && dsItens.Tables[0].Rows.Count > 0)
+            if (dsItens?.Tables.Count > 0 && dsItens.Tables[0].Rows.Count > 0)
             {
                 foreach (DataRow dr in dsItens.Tables[0].Rows)
                 {
-                    ItemPedido item = new ItemPedido();
-
-                    item.id_Produto = Convert.ToInt32(dr["idproduto"]);
-                    item.id_unidade = Convert.ToInt32(dr["idunidade"]);
-                    item.descrProduto = dr["nome_produto"].ToString();
-                    item.unidade = dr["abrev_unid"].ToString();
-                    item.quantidade = Convert.ToInt32(dr["qtdeitem"]);
-                    item.valor_custo = Convert.ToDecimal(dr["vlcusto"]);
-                    item.valor_lucro = Convert.ToDecimal(dr["vllucro"]);
-                    item.percentual_lucro = item.valor_lucro * 100 / (item.valor_custo + item.valor_lucro);
-                    item.id_item = Convert.ToInt32(dr["id_recno"]);
-
+                    ItemPedido item = new ItemPedido
+                    {
+                        Id_Produto = Convert.ToInt32(dr["idproduto"]),
+                        Id_unidade = Convert.ToInt32(dr["idunidade"]),
+                        DescrProduto = dr["nome_produto"].ToString(),
+                        Unidade = dr["abrev_unid"].ToString(),
+                        Quantidade = Convert.ToInt32(dr["qtdeitem"]),
+                        Valor_custo = Convert.ToDecimal(dr["vlcusto"]),
+                        Valor_lucro = Convert.ToDecimal(dr["vllucro"])
+                    };
+                    item.Percentual_lucro = item.Valor_lucro * 100 / (item.Valor_custo + item.Valor_lucro);
+                    item.Id_item = Convert.ToInt32(dr["id_recno"]);
 
                     itensPedido.Add(item);
                 }
@@ -484,9 +481,9 @@ namespace EasyHortifruti
                 }
                 return dataSet;
             }
-            catch (Exception ex)
+            catch (Exception)
             {
-                throw ex;
+                throw;
             }
         }
 
@@ -530,14 +527,14 @@ namespace EasyHortifruti
 
         private DataSet ConsultarTabela(string pNomeTabela)
         {
-            string sql = string.Concat("SELECT * FROM ", pNomeTabela);
+            string sql = $"SELECT * FROM {pNomeTabela}";
 
             return ExecutaEPreencheDataset(sql);
         }
 
         private DataSet ConsultarTabelaPorId(int pId, string pNomeTabela)
         {
-            string sql = string.Concat("SELECT * FROM ", pNomeTabela, " WHERE id_recno=", pId.ToString());
+            string sql = $"SELECT * FROM {pNomeTabela} WHERE id_recno={pId}";
 
             return ExecutaEPreencheDataset(sql);
         }
@@ -551,7 +548,6 @@ namespace EasyHortifruti
                 foreach (string script in new TabelasScript().Scripts)
                     new NpgsqlCommand(script, conn).ExecuteNonQuery();
             }
-
         }
         #endregion
 

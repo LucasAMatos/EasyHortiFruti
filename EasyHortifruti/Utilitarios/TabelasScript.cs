@@ -14,7 +14,7 @@ namespace EasyHortifruti
 
         public static string TabelaUnidades = "unidades";
 
-        private string CreateUnidades = @"CREATE TABLE IF NOT EXISTS public.unidades
+        private readonly string CreateUnidades = @"CREATE TABLE IF NOT EXISTS public.unidades
                                             (
                                                 abrev_unid character varying(6)  NOT NULL,
                                                 desc_unid character varying(20)  NOT NULL,
@@ -27,7 +27,7 @@ namespace EasyHortifruti
 
         public static string TabelaProdutos = "produtos";
 
-        private string CreateProdutos = @"CREATE TABLE IF NOT EXISTS public.produtos
+        private readonly string CreateProdutos = @"CREATE TABLE IF NOT EXISTS public.produtos
                                             (
                                                 nome_produto character varying(30) ,
                                                 pcocompra_produto numeric NOT NULL,
@@ -46,7 +46,7 @@ namespace EasyHortifruti
 
         public static string TabelaPedidos = "pedidos";
 
-        private string CreatePedidos = @"CREATE TABLE IF NOT EXISTS public.pedidos
+        private readonly string CreatePedidos = @"CREATE TABLE IF NOT EXISTS public.pedidos
                                             (
                                                 datapedido date,
                                                 id_fonte integer NOT NULL,
@@ -66,7 +66,7 @@ namespace EasyHortifruti
 
         public static string TabelaItensPedido = "itens_pedidos";
 
-        private string CreateItensPedido = @"CREATE TABLE IF NOT EXISTS public.itens_pedidos
+        private readonly string CreateItensPedido = @"CREATE TABLE IF NOT EXISTS public.itens_pedidos
                                             (
                                                 idpedido integer NOT NULL,
                                                 idproduto integer NOT NULL,
@@ -81,7 +81,7 @@ namespace EasyHortifruti
 
         public static string TabelaGrupos = "grupos";
 
-        private string CreateGrupos = @"CREATE TABLE IF NOT EXISTS public.grupos
+        private readonly string CreateGrupos = @"CREATE TABLE IF NOT EXISTS public.grupos
                                             (
                                                 nome_grupo character varying(15)  NOT NULL,
                                                 obs_grupo character varying(50) NULL,
@@ -93,7 +93,7 @@ namespace EasyHortifruti
 
         public static string TabelaSubGrupos = "subgrupos";
 
-        private string CreateSubGrupos = @"CREATE TABLE IF NOT EXISTS public.subgrupos
+        private readonly string CreateSubGrupos = @"CREATE TABLE IF NOT EXISTS public.subgrupos
                                             (
                                                 id_grupo integer NOT NULL,
                                                 nome_subgrupo character varying(15)  NOT NULL,
@@ -107,7 +107,7 @@ namespace EasyHortifruti
 
         public static string TabelaGeral = "geral";
 
-        private string CreateGeral = @"CREATE TABLE IF NOT EXISTS public.geral
+        private readonly string CreateGeral = @"CREATE TABLE IF NOT EXISTS public.geral
                                             (
                                                 tppessoa character(1)  NOT NULL,
                                                 classificacao INTEGER NOT NULL DEFAULT 0,
@@ -168,7 +168,7 @@ namespace EasyHortifruti
 
         public readonly string ChamaProcNCM = "SELECT verificar_e_incluir()";
 
-        public readonly string ProcTabelaNCM = 
+        public readonly string ProcTabelaNCM =
             @"CREATE OR REPLACE FUNCTION verificar_e_incluir()
             RETURNS VOID AS $$
             BEGIN
@@ -893,7 +893,6 @@ namespace EasyHortifruti
             END;
             $$ LANGUAGE plpgsql;";
 
-
         public static string ScriptInsert(string pTabela, Dictionary<string, string> pCampos)
         {
             return string.Concat(
@@ -904,16 +903,14 @@ namespace EasyHortifruti
         }
         public static string ScriptUpdate(string pTabela, int pID, Dictionary<string, string> pCampos)
         {
-            string retorno = string.Concat("UPDATE ", pTabela, " SET ");
+            string retorno = $"UPDATE {pTabela} SET ";
 
             foreach (KeyValuePair<string, string> keyValuePair in pCampos)
             {
-                retorno += string.Concat("\n" + keyValuePair.Key, "='", keyValuePair.Value, "', ");
+                retorno += $"{"\n" + keyValuePair.Key}='{keyValuePair.Value}', ";
             }
 
-            retorno = string.Concat(retorno.Substring(0, retorno.Length - 2), " WHERE ID_RECNO =", pID.ToString());
-
-            return retorno;
+            return $"{retorno.Substring(0, retorno.Length - 2)} WHERE ID_RECNO ={pID}";
         }
 
         public TabelasScript()
@@ -933,6 +930,5 @@ namespace EasyHortifruti
                 CreateItensPedido
             };
         }
-
     }
 }

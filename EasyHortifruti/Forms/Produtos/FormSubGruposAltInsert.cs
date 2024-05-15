@@ -16,7 +16,7 @@ namespace EasyHortifruti
     public partial class FormSubGruposAltInsert : FormBase
     {
         #region propriedades
-        Dictionary<int, string> grupos;
+        readonly Dictionary<int, string> grupos;
         #endregion
 
         #region construtor
@@ -41,15 +41,14 @@ namespace EasyHortifruti
             PreencheCampos();
         }
 
-
         private void BtGravarSubGrupo_Click(object sender, EventArgs e)
         {
             try
             {
                 Criticar();
 
-                string Descricao = TbDescSubGrupo.Text; 
-                string MargemLucro = string.IsNullOrEmpty(TbMargemSubGrupo.Text) ? "0" : TbMargemSubGrupo.Text; 
+                string Descricao = TbDescSubGrupo.Text;
+                string MargemLucro = string.IsNullOrEmpty(TbMargemSubGrupo.Text) ? "0" : TbMargemSubGrupo.Text;
                 int pGrupo = grupos.FirstOrDefault(x => x.Value == CbGrupo.Text).Key;
 
                 if (Alterar)
@@ -69,7 +68,9 @@ namespace EasyHortifruti
                         LimpaCampos();
                     }
                     else
+                    {
                         this.Close();
+                    }
                 }
             }
             catch (Exception E)

@@ -8,7 +8,7 @@ namespace EasyHortifruti.DML
 
         public string Numero { get; set; }
 
-        public TipoTelefone tipoTelefone { get; set; }
+        public TipoTelefone TipoTelefone { get; set; }
 
         public string TelefoneCompleto
         {

@@ -21,7 +21,7 @@ namespace EasyHortifruti
             {
                 DataGridViewSelectedRowCollection linhaSelecionada = DgViewCadSubGrupos.SelectedRows;
 
-                if (linhaSelecionada != null && linhaSelecionada.Count == 1)
+                if (linhaSelecionada?.Count == 1)
                     return Convert.ToInt32(linhaSelecionada[0].Cells["id"].Value);
 
                 if (DgViewCadSubGrupos.SelectedCells.Count == 1)
@@ -44,7 +44,7 @@ namespace EasyHortifruti
         {
             CarregarGrid();
             CarregarComboFiltros();
-            configuraGridPadrao(DgViewCadSubGrupos);
+            ConfiguraGridPadrao(DgViewCadSubGrupos);
             // Inscreva-se para o evento TextoAlterado do UserControl
             tbFiltro.TextChanged += TbFiltro_TextoAlterado;
         }
@@ -59,7 +59,6 @@ namespace EasyHortifruti
 
         private void BtEditarSubGrupo_Click(object sender, EventArgs e)
         {
-
             if (IdSelecionado >= 0)
             {
                 FormSubGruposAltInsert SubGruposAltInsert = new FormSubGruposAltInsert(IdSelecionado);
@@ -68,8 +67,10 @@ namespace EasyHortifruti
                 CarregarGrid();
             }
             else
+            {
                 MessageBox.Show("Selecione um registro para alterar");
-        } 
+            }
+        }
 
         private void BtExcluirSubGrupo_Click(object sender, EventArgs e)
         {
@@ -79,12 +80,15 @@ namespace EasyHortifruti
                 if (dialogResult == DialogResult.Yes)
                 {
                     new ConexaoBD().ExcluirSubGrupo(IdSelecionado);
-                    MessageBox.Show("Registro excluído com sucesso");                }
+                    MessageBox.Show("Registro excluído com sucesso");
+                }
 
                 CarregarGrid();
             }
             else
+            {
                 MessageBox.Show("Selecione um registro para excluir");
+            }
         }
 
         private void BtSairSubGrupo_Click(object sender, EventArgs e)

@@ -8,10 +8,6 @@ namespace EasyHortifruti
 {
     public partial class FormUnidadesAltInsert : FormBase
     {
-        #region propriedades
-
-        #endregion
-
         #region Construtor
         public FormUnidadesAltInsert()
         {
@@ -61,7 +57,9 @@ namespace EasyHortifruti
                         LimpaCampos();
                     }
                     else
+                    {
                         this.Close();
+                    }
                 }
             }
             catch (Exception E)

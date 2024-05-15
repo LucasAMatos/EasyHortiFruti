@@ -14,7 +14,7 @@ namespace EasyHortifruti
             {
                 DataGridViewSelectedRowCollection linhaSelecionada = DgvPedidos.SelectedRows;
 
-                if (linhaSelecionada != null && linhaSelecionada.Count == 1)
+                if (linhaSelecionada?.Count == 1)
                     return Convert.ToInt32(linhaSelecionada[0].Cells["id"].Value);
 
                 return -1;
@@ -28,7 +28,7 @@ namespace EasyHortifruti
         {
             InitializeComponent();
 
-            configuraGridPadrao(DgvPedidos);
+            ConfiguraGridPadrao(DgvPedidos);
         }
         #endregion
 
@@ -46,14 +46,18 @@ namespace EasyHortifruti
         {
             if (IdSelecionado >= 0)
             {
-                FormPedidoAltInsert FormInserirPedido = new FormPedidoAltInsert();
-                FormInserirPedido.Id = IdSelecionado;
+                FormPedidoAltInsert FormInserirPedido = new FormPedidoAltInsert
+                {
+                    Id = IdSelecionado
+                };
                 FormInserirPedido.ShowDialog();
 
                 CarregarGrid();
             }
             else
+            {
                 MessageBox.Show("Selecione um registro para alterar");
+            }
         }
 
         private void BtExcluirPedido_Click(object sender, EventArgs e)
@@ -69,7 +73,9 @@ namespace EasyHortifruti
                 CarregarGrid();
             }
             else
+            {
                 MessageBox.Show("Selecione um registro para excluir");
+            }
         }
 
         private void BtSairPedido_Click(object sender, EventArgs e)

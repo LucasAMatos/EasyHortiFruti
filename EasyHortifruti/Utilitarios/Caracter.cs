@@ -11,7 +11,7 @@ namespace EasyHortifruti
     {
         public static bool OnlyNr(KeyPressEventArgs e)
         {
-            return (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar));
+            return !char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar);
         }
     }
 }

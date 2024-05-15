@@ -13,23 +13,17 @@ namespace EasyHortifruti
     {
         #region propriedades
 
-        private Dictionary<string, int> dctGeral;
-
         private Geral iGeral;
 
-        private Dictionary<string, int> produtoItem;
-
-        private Dictionary<string, int> margemLucro;
-
-        private List<ItemPedido> itensPedidos;
+        private readonly List<ItemPedido> itensPedidos;
 
         private DataSet dsProdutos;
 
-        private Timer timer;
+        private readonly Timer timer;
 
-        private Color originalColor;
+        private readonly Color originalColor;
 
-        private Color warningColor = Color.Red; // Cor de aviso (vermelho)
+        private readonly Color warningColor = Color.Red; // Cor de aviso (vermelho)
 
         private bool warningDisplayed = false;
 
@@ -49,7 +43,7 @@ namespace EasyHortifruti
             }
         }
 
-        private decimal TotalGeral
+        private decimal Total_Geral
         {
             get
             {
@@ -99,7 +93,7 @@ namespace EasyHortifruti
             {
                 DataGridViewSelectedRowCollection linhaSelecionada = DgvItensPedido.SelectedRows;
 
-                if (linhaSelecionada != null && linhaSelecionada.Count == 1)
+                if (linhaSelecionada?.Count == 1)
                     return DgvItensPedido.SelectedRows[0].Index;
 
                 return -1;
@@ -109,23 +103,22 @@ namespace EasyHortifruti
 
         public FormPedidoAltInsert()
         {
-            dctGeral = new Dictionary<string, int>();
-            produtoItem = new Dictionary<String, int>();
-            margemLucro = new Dictionary<String, int>();
             dsProdutos = new DataSet();
             itensPedidos = new List<ItemPedido>();
 
             InitializeComponent();
 
-            configuraGridPadrao(DgvItensPedido);
+            ConfiguraGridPadrao(DgvItensPedido);
 
             TbDesconto.TextChanged += TbFiltro_TbDescontoTextChanged;
             // Armazenar a cor original do label
             originalColor = LbAviso.ForeColor;
 
             // Configurar o Timer
-            timer = new Timer();
-            timer.Interval = 500; // Intervalo em milissegundos
+            timer = new Timer
+            {
+                Interval = 500 // Intervalo em milissegundos
+            };
             timer.Tick += Timer_Tick;
 
             // Iniciar o Timer
@@ -135,7 +128,6 @@ namespace EasyHortifruti
         public FormPedidoAltInsert(int pId)
         {
             Id = pId;
-            dctGeral = new Dictionary<string, int>();
         }
 
         private void Timer_Tick(object sender, EventArgs e)
@@ -232,7 +224,7 @@ namespace EasyHortifruti
                 CbUnidPedido.Clear();
                 foreach (DataRow dr in dsProdutos.Tables[0].Rows)
                 {
-                    if (CbProdutos.SelectedItem.ToString() == dr["nome_produto"].ToString() && (!CbUnidPedido.Items.Contains(dr["abrev_unid"].ToString())))
+                    if (CbProdutos.SelectedItem == dr["nome_produto"].ToString() && (!CbUnidPedido.Items.Contains(dr["abrev_unid"].ToString())))
                     {
                         CbUnidPedido.Add(Convert.ToInt32(dr["id_unidade"]), dr["abrev_unid"].ToString());
                     }
@@ -250,7 +242,7 @@ namespace EasyHortifruti
                 decimal.TryParse(TbMargemLucro.Text, out decimal margemLucro))
             {
                 // Calcula o valor da margem de lucro
-                decimal lucroFinalItem = ((valorCompra * quantidade) * (margemLucro / 100));
+                decimal lucroFinalItem = (valorCompra * quantidade * (margemLucro / 100));
 
                 // Exibir a margem de lucro no TextBox de resultado
                 TbLucroItem.Text = lucroFinalItem.ToString();
@@ -280,9 +272,9 @@ namespace EasyHortifruti
         private void CalcularValorFinalItem()
         {
             // Verifica se os TextBoxes têm valores válidos
-            if (decimal.TryParse(TbQtdPedido.Text, out decimal quantidade) &&
+            if (decimal.TryParse(TbQtdPedido.Text, out _) &&
                 decimal.TryParse(TbVlCusto.Text, out decimal valorCompra) &&
-                decimal.TryParse(TbMargemLucro.Text, out decimal margemLucro) &&
+                decimal.TryParse(TbMargemLucro.Text, out _) &&
                 decimal.TryParse(TbLucroItem.Text, out decimal LucroItem))
             {
                 // Calcula o valor da margem de lucro
@@ -331,8 +323,8 @@ namespace EasyHortifruti
                 if (iGeral != null)
                 {
                     CbNomeCliente.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.RazaoSocial : iGeral.NomeCompleto;
-                    if (iGeral.Telefones != null && iGeral.Telefones.Count > 0)
-                        TbCelular.Text = iGeral.Telefones.First(x => x.tipoTelefone == TipoTelefone.celular).TelefoneCompleto;
+                    if (iGeral.Telefones?.Count > 0)
+                        TbCelular.Text = iGeral.Telefones.First(x => x.TipoTelefone == TipoTelefone.celular).TelefoneCompleto;
 
                     CbTpDocumento.SelectedIndex = iGeral.TipoPessoa == TPFJ.Fisica ? 0 : 1;
                     TbRazaoSocial.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.RazaoSocial : string.Empty;
@@ -346,7 +338,7 @@ namespace EasyHortifruti
                     if (iGeral.Endereco != null)
                     {
                         TbEndCep.Text = iGeral.Endereco.CEP;
-                        TbEndLogradouro.Text = iGeral.Endereco.logradouro;
+                        TbEndLogradouro.Text = iGeral.Endereco.Logradouro;
                         TbEndNum.Text = iGeral.Endereco.Numero.ToString();
                         TbEndCmpt.Text = iGeral.Endereco.Complemento;
                         TbEndBairro.Text = iGeral.Endereco.Bairro;
@@ -364,29 +356,27 @@ namespace EasyHortifruti
             if (CbTpDocumento.SelectedItem != null)
             {
                 // Verifique qual opção está selecionada no ComboBox
-                String opcaoSelecionada = CbTpDocumento.SelectedItem.ToString();
+                String opcaoSelecionada = CbTpDocumento.SelectedItem;
 
                 PanelPFPedido.Visible = opcaoSelecionada == "Fisica";
                 PanelPJPedido.Visible = opcaoSelecionada == "Juridica";
-
             }
         }
 
         private void BtAdicItemPedido_Click(object sender, EventArgs e)
         {
-
             // Cria um novo objeto Pedido e preenche suas propriedades
             ItemPedido novoPedido = new ItemPedido
             {
-                descrProduto = CbProdutos.SelectedItem,
-                id_Produto = CbProdutos.SelectedIndex,
-                unidade = CbUnidPedido.SelectedItem,
-                id_unidade = CbUnidPedido.SelectedIndex,
-                quantidade = Convert.ToInt32(TbQtdPedido.Text),
-                valor_custo = Convert.ToDecimal(TbVlCusto.Text),
+                DescrProduto = CbProdutos.SelectedItem,
+                Id_Produto = CbProdutos.SelectedIndex,
+                Unidade = CbUnidPedido.SelectedItem,
+                Id_unidade = CbUnidPedido.SelectedIndex,
+                Quantidade = Convert.ToInt32(TbQtdPedido.Text),
+                Valor_custo = Convert.ToDecimal(TbVlCusto.Text),
                 //percentual_lucro = Convert.ToDecimal(TbMargemLucro.Text),
-                total_item = Convert.ToDecimal(TbTotalItem.Text),
-                valor_lucro = Convert.ToDecimal(TbLucroItem.Text)
+                Total_item = Convert.ToDecimal(TbTotalItem.Text),
+                Valor_lucro = Convert.ToDecimal(TbLucroItem.Text)
             };
 
             AtualizarTotalPedido();
@@ -407,7 +397,7 @@ namespace EasyHortifruti
 
         private void AdicionarPedidoDataGridView(ItemPedido pedido)
         {
-            DgvItensPedido.Rows.Add(pedido.descrProduto, pedido.unidade, pedido.quantidade, pedido.valor_custo, pedido.total_item, pedido.valor_lucro);
+            DgvItensPedido.Rows.Add(pedido.DescrProduto, pedido.Unidade, pedido.Quantidade, pedido.Valor_custo, pedido.Total_item, pedido.Valor_lucro);
             itensPedidos.Add(pedido);
         }
 
@@ -464,14 +454,14 @@ namespace EasyHortifruti
 
         private void TbFiltro_TbDescontoTextChanged(object sender, EventArgs e)
         {
-            TotalGeral = Total_Pedido - Desconto;
+            Total_Geral = Total_Pedido - Desconto;
         }
 
         private void BtGravarPedido_Click(object sender, EventArgs e)
         {
             Pedido pedido = new Pedido
             {
-                dataPedido = DtPedido.Value,
+                DataPedido = DtPedido.Value,
                 IdPessoa = IdClienteSelecionado,
                 StatusPedido = (StatusPedido)CbStatusPedido.SelectedIndex,
                 PrazoPagamento = string.IsNullOrEmpty(TbPrazoPgto.Text) ? 0 : Convert.ToInt32(TbPrazoPgto.Text),
@@ -484,11 +474,10 @@ namespace EasyHortifruti
                 TotalPedido = Convert.ToDecimal(TbTotPedido.Text.Replace("R$", "")),
                 ValorDesconto = string.IsNullOrEmpty(TbDesconto.Text) ? 0 : Convert.ToDecimal(TbDesconto.Text.Replace("R$", "")),
                 TotalGeral = Convert.ToDecimal(TbTotalGeral.Text.Replace("R$", ""))
-
             };
             new ConexaoBD().InserirPedido(pedido);
 
-            DialogResult pPedido = MessageBox.Show("Pedido inserido com sucesso!");
+            MessageBox.Show("Pedido inserido com sucesso!");
             this.Close();
         }
 
@@ -507,14 +496,13 @@ namespace EasyHortifruti
             AtualizarTotalPedido();
         }
 
-        private void btExclItemPedido_Click(object sender, EventArgs e)
+        private void BtExclItemPedido_Click(object sender, EventArgs e)
         {
             if (IdSelecionado >= 0)
             {
                 DgvItensPedido.Rows.RemoveAt(IdSelecionado);
                 DgvItensPedido.Refresh();
             }
-
         }
 
         private void BtEditItemPedido_Click(object sender, EventArgs e)
@@ -539,8 +527,7 @@ namespace EasyHortifruti
                 {
                     Pedido pedido = new ConexaoBD().ConsultarClientePedidoPorId(Id);
 
-
-                    DtPedido.Value = pedido.dataPedido;
+                    DtPedido.Value = pedido.DataPedido;
                     IdClienteSelecionado = pedido.IdPessoa;
                     CbStatusPedido.Text = pedido.StatusPedido.ToString();
                     TbPrazoPgto.Text = pedido.PrazoPagamento.ToString();

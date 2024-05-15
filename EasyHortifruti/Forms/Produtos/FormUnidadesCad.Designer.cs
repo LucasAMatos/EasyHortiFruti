@@ -187,7 +187,7 @@
             this.btSairUnidades.TabIndex = 10;
             this.btSairUnidades.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btSairUnidades.UseVisualStyleBackColor = false;
-            this.btSairUnidades.Click += new System.EventHandler(this.btSairUnidades_Click);
+            this.btSairUnidades.Click += new System.EventHandler(this.BtSairUnidades_Click);
             // 
             // btImprimirUnidades
             // 
@@ -218,7 +218,7 @@
             this.btExcluirUnidades.TabIndex = 7;
             this.btExcluirUnidades.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btExcluirUnidades.UseVisualStyleBackColor = false;
-            this.btExcluirUnidades.Click += new System.EventHandler(this.btExcluirUnidades_Click);
+            this.btExcluirUnidades.Click += new System.EventHandler(this.BtExcluirUnidades_Click);
             // 
             // btEditarUnidades
             // 
@@ -234,7 +234,7 @@
             this.btEditarUnidades.TabIndex = 6;
             this.btEditarUnidades.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btEditarUnidades.UseVisualStyleBackColor = false;
-            this.btEditarUnidades.Click += new System.EventHandler(this.btEditarUnidade_Click);
+            this.btEditarUnidades.Click += new System.EventHandler(this.BtEditarUnidade_Click);
             // 
             // btIncluirUnidades
             // 
@@ -250,7 +250,7 @@
             this.btIncluirUnidades.TabIndex = 5;
             this.btIncluirUnidades.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btIncluirUnidades.UseVisualStyleBackColor = false;
-            this.btIncluirUnidades.Click += new System.EventHandler(this.btIncluirUnidade_Click);
+            this.btIncluirUnidades.Click += new System.EventHandler(this.BtIncluirUnidade_Click);
             // 
             // tableLayoutPanel2
             // 

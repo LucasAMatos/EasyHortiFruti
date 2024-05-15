@@ -13,7 +13,7 @@ namespace EasyHortifruti
             InitializeComponent();
         }
 
-        private void btSairCtasReceber_Click(object sender, EventArgs e)
+        private void BtSairCtasReceber_Click(object sender, EventArgs e)
         {
             this.Close();
         }
@@ -35,9 +35,8 @@ namespace EasyHortifruti
             {
                 CbFiltroCliente.Add(Convert.ToInt32(dr["id_recno"]), dr["razaosocial"].ToString());
             }
-
         }
-        
+
         private void CarregarComboStatusPedido()
         {
             CbFiltroSituação.CarregarDescricoesEnum<StatusPedido>();
@@ -47,14 +46,14 @@ namespace EasyHortifruti
         private void CarregarGrid()
         {
             dsGrid = new ConexaoBD().ConsultarPedidosComFiltros(-1, string.Empty);
-            
+
             lstBoxHoje.Items.Clear();
             lstBoxProxSemana.Items.Clear();
 
-            lblQtdPedido.Text = string.Concat(dsGrid.Tables[0].Rows.Count.ToString(), " Pedidos");
+            lblQtdPedido.Text = $"{dsGrid.Tables[0].Rows.Count} Pedidos";
 
             double total = 0.0;
-            
+
             foreach (DataRow row in dsGrid.Tables[0].Rows)
             {
                 total += Convert.ToDouble(row["totalvenda"]);
@@ -73,7 +72,7 @@ namespace EasyHortifruti
         }
 
         private bool IsNextWeek(DateTime pData)
-        { 
+        {
             DateTime domingo = DateTime.Now.Date.AddDays(1);
             while (domingo.DayOfWeek != DayOfWeek.Sunday)
                 domingo = domingo.AddDays(1);

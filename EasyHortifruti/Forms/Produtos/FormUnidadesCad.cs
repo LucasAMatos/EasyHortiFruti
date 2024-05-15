@@ -16,7 +16,7 @@ namespace EasyHortifruti
             {
                 DataGridViewSelectedRowCollection linhaSelecionada = dgvCadUnidades.SelectedRows;
 
-                if (linhaSelecionada != null && linhaSelecionada.Count == 1)
+                if (linhaSelecionada?.Count == 1)
                     return Convert.ToInt32(linhaSelecionada[0].Cells["id"].Value);
 
                 if (dgvCadUnidades.SelectedCells.Count == 1)
@@ -38,7 +38,7 @@ namespace EasyHortifruti
 
         #region Eventos
 
-        private void btEditarUnidade_Click(object sender, EventArgs e)
+        private void BtEditarUnidade_Click(object sender, EventArgs e)
         {
             if (IdSelecionado >= 0)
             {
@@ -48,12 +48,18 @@ namespace EasyHortifruti
                 CarregarGrid();
             }
             else
+            {
                 MessageBox.Show("selecione um registro para alterar!");
+            }
         }
 
-        private void btExcluirUnidades_Click(object sender, EventArgs e)
+        private void BtExcluirUnidades_Click(object sender, EventArgs e)
         {
-            if (IdSelecionado >= 0)
+            if (IdSelecionado < 0)
+            {
+                MessageBox.Show("Selecione um registro para excluir");
+            }
+            else
             {
                 DialogResult dialogResult = MessageBox.Show("Deseja Excluir o registro?", "", MessageBoxButtons.YesNo);
                 if (dialogResult == DialogResult.Yes)
@@ -63,11 +69,9 @@ namespace EasyHortifruti
                 }
                 CarregarGrid();
             }
-            else
-                MessageBox.Show("Selecione um registro para excluir");
         }
 
-        private void btIncluirUnidade_Click(object sender, EventArgs e)
+        private void BtIncluirUnidade_Click(object sender, EventArgs e)
         {
             FormUnidadesAltInsert UnidadeAltInsert = new FormUnidadesAltInsert();
             UnidadeAltInsert.ShowDialog();
@@ -75,7 +79,7 @@ namespace EasyHortifruti
             CarregarGrid();
         }
 
-        private void btSairUnidades_Click(object sender, EventArgs e)
+        private void BtSairUnidades_Click(object sender, EventArgs e)
         {
             this.Close();
         }

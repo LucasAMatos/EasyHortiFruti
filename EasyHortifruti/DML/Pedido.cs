@@ -119,6 +119,9 @@ namespace EasyHortifruti.DML
         Concluido = 4,
 
         [Description("Entregue - Finalizado")]
-        Entregue = 5
+        Entregue = 5,
+
+        [Description("Todos")]
+        Todos = 99
     }
 }

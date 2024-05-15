@@ -7,7 +7,7 @@ using System.Windows.Forms;
 
 namespace EasyHortifruti
 {
-    public class Caracter
+    public static class Caracter
     {
         public static bool OnlyNr(KeyPressEventArgs e)
         {

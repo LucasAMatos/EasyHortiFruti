@@ -282,7 +282,6 @@ namespace EasyHortifruti
 
         #region Pedidos
 
-
         public DataSet ConsultarClientePedido()
         {
             string sql = string.Concat(
@@ -294,6 +293,22 @@ namespace EasyHortifruti
             return ExecutaEPreencheDataset(sql);
         }
 
+        public DataSet ConsultarPedidosComFiltros(int pCliente, string pStatusPedido)
+        {
+            string sql = "select id_recno,dataconclusao,id_fonte,totalvenda,vlrlucro,prazopgto,dataentrega,round(((vlrlucro * 100)/totalvenda),2) as perclucro from pedidos";
+
+            if (pCliente >= 0)
+                sql += " where id_fonte=" + pCliente;
+
+            if (!string.IsNullOrEmpty(pStatusPedido))
+            {
+                sql += sql.Contains("where") ? " and" : " where";
+                sql += " statuspedido=" + pStatusPedido;
+            }
+
+
+            return ExecutaEPreencheDataset(sql);
+        }
         public Pedido ConsultarClientePedidoPorId(int pId) 
         {
             string sql = string.Concat("SELECT ped.id_recno,ped.id_fonte, ped.datapedido,grl.razaosocial AS nCliente,ped.statuspedido,ped.prazopgto,ped.dataprev,",
@@ -407,6 +422,7 @@ namespace EasyHortifruti
             return itensPedido;
         }
         #endregion
+
         #region CtasReceber
 
         public DataSet ConsultarContas() => ConsultarTabela(TabelasScript.TabelaCtasReceber);

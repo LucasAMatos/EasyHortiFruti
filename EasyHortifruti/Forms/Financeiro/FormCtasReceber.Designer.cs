@@ -34,19 +34,12 @@ namespace EasyHortifruti
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel6CtasReceber = new System.Windows.Forms.Panel();
             this.dtGridViewCtasReceber = new System.Windows.Forms.DataGridView();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel4 = new System.Windows.Forms.Panel();
             this.panel10CtasReceber = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
             this.panel9CtasReceber = new System.Windows.Forms.Panel();
-            this.label9 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
+            this.lblValor = new System.Windows.Forms.Label();
+            this.lblQtdPedido = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.panel8CtasReceber = new System.Windows.Forms.Panel();
             this.label11 = new System.Windows.Forms.Label();
@@ -67,6 +60,14 @@ namespace EasyHortifruti
             this.label1 = new System.Windows.Forms.Label();
             this.panelTituloCtasReceber = new System.Windows.Forms.Panel();
             this.btSairCtasReceber = new System.Windows.Forms.Button();
+            this.id_recno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataentrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_fonte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalvenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vlrlucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataconclusao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lstBoxHoje = new System.Windows.Forms.ListBox();
+            this.lstBoxProxSemana = new System.Windows.Forms.ListBox();
             this.CbFiltroCliente = new EasyHortifruti.Componentes.AltComboBox();
             this.CbFiltroSituação = new EasyHortifruti.Componentes.AltComboBox();
             this.panel1.SuspendLayout();
@@ -110,55 +111,17 @@ namespace EasyHortifruti
             this.dtGridViewCtasReceber.AllowUserToDeleteRows = false;
             this.dtGridViewCtasReceber.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridViewCtasReceber.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Column3,
-            this.Column1,
-            this.Column2,
-            this.Column4,
-            this.Column5,
-            this.Column6,
-            this.Column7});
+            this.id_recno,
+            this.dataentrega,
+            this.id_fonte,
+            this.totalvenda,
+            this.vlrlucro,
+            this.dataconclusao});
             this.dtGridViewCtasReceber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtGridViewCtasReceber.Location = new System.Drawing.Point(0, 0);
             this.dtGridViewCtasReceber.Name = "dtGridViewCtasReceber";
             this.dtGridViewCtasReceber.Size = new System.Drawing.Size(834, 495);
             this.dtGridViewCtasReceber.TabIndex = 0;
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Nº Pedido";
-            this.Column3.Name = "Column3";
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Vencimento";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Cliente";
-            this.Column2.Name = "Column2";
-            this.Column2.Width = 200;
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Valor Pedido";
-            this.Column4.Name = "Column4";
-            // 
-            // Column5
-            // 
-            this.Column5.HeaderText = "% Lucro";
-            this.Column5.Name = "Column5";
-            // 
-            // Column6
-            // 
-            this.Column6.HeaderText = "Data Recebto";
-            this.Column6.Name = "Column6";
-            // 
-            // Column7
-            // 
-            this.Column7.HeaderText = "ID";
-            this.Column7.Name = "Column7";
-            this.Column7.Width = 50;
             // 
             // panel4
             // 
@@ -174,6 +137,7 @@ namespace EasyHortifruti
             // 
             // panel10CtasReceber
             // 
+            this.panel10CtasReceber.Controls.Add(this.lstBoxProxSemana);
             this.panel10CtasReceber.Controls.Add(this.label10);
             this.panel10CtasReceber.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel10CtasReceber.Location = new System.Drawing.Point(0, 218);
@@ -193,8 +157,8 @@ namespace EasyHortifruti
             // 
             // panel9CtasReceber
             // 
-            this.panel9CtasReceber.Controls.Add(this.label9);
-            this.panel9CtasReceber.Controls.Add(this.label8);
+            this.panel9CtasReceber.Controls.Add(this.lblValor);
+            this.panel9CtasReceber.Controls.Add(this.lblQtdPedido);
             this.panel9CtasReceber.Controls.Add(this.label7);
             this.panel9CtasReceber.Dock = System.Windows.Forms.DockStyle.Bottom;
             this.panel9CtasReceber.Location = new System.Drawing.Point(0, 406);
@@ -202,23 +166,23 @@ namespace EasyHortifruti
             this.panel9CtasReceber.Size = new System.Drawing.Size(161, 89);
             this.panel9CtasReceber.TabIndex = 2;
             // 
-            // label9
+            // lblValor
             // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(94, 32);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(31, 13);
-            this.label9.TabIndex = 2;
-            this.label9.Text = "Valor";
+            this.lblValor.AutoSize = true;
+            this.lblValor.Location = new System.Drawing.Point(94, 32);
+            this.lblValor.Name = "lblValor";
+            this.lblValor.Size = new System.Drawing.Size(31, 13);
+            this.lblValor.TabIndex = 2;
+            this.lblValor.Text = "Valor";
             // 
-            // label8
+            // lblQtdPedido
             // 
-            this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(15, 32);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(47, 13);
-            this.label8.TabIndex = 1;
-            this.label8.Text = "? nº ped";
+            this.lblQtdPedido.AutoSize = true;
+            this.lblQtdPedido.Location = new System.Drawing.Point(15, 32);
+            this.lblQtdPedido.Name = "lblQtdPedido";
+            this.lblQtdPedido.Size = new System.Drawing.Size(47, 13);
+            this.lblQtdPedido.TabIndex = 1;
+            this.lblQtdPedido.Text = "? nº ped";
             // 
             // label7
             // 
@@ -232,6 +196,7 @@ namespace EasyHortifruti
             // 
             // panel8CtasReceber
             // 
+            this.panel8CtasReceber.Controls.Add(this.lstBoxHoje);
             this.panel8CtasReceber.Controls.Add(this.label11);
             this.panel8CtasReceber.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel8CtasReceber.Location = new System.Drawing.Point(0, 23);
@@ -473,6 +438,59 @@ namespace EasyHortifruti
             this.btSairCtasReceber.UseVisualStyleBackColor = false;
             this.btSairCtasReceber.Click += new System.EventHandler(this.btSairCtasReceber_Click);
             // 
+            // id_recno
+            // 
+            this.id_recno.DataPropertyName = "id_recno";
+            this.id_recno.HeaderText = "Nº Pedido";
+            this.id_recno.Name = "id_recno";
+            // 
+            // dataentrega
+            // 
+            this.dataentrega.DataPropertyName = "dataentrega";
+            this.dataentrega.HeaderText = "Vencimento";
+            this.dataentrega.Name = "dataentrega";
+            // 
+            // id_fonte
+            // 
+            this.id_fonte.DataPropertyName = "id_fonte";
+            this.id_fonte.HeaderText = "Cliente";
+            this.id_fonte.Name = "id_fonte";
+            this.id_fonte.Width = 200;
+            // 
+            // totalvenda
+            // 
+            this.totalvenda.DataPropertyName = "totalvenda";
+            this.totalvenda.HeaderText = "Valor Pedido";
+            this.totalvenda.Name = "totalvenda";
+            // 
+            // vlrlucro
+            // 
+            this.vlrlucro.DataPropertyName = "vlrlucro";
+            this.vlrlucro.HeaderText = "% Lucro";
+            this.vlrlucro.Name = "vlrlucro";
+            // 
+            // dataconclusao
+            // 
+            this.dataconclusao.DataPropertyName = "dataconclusao";
+            this.dataconclusao.HeaderText = "Data Recebto";
+            this.dataconclusao.Name = "dataconclusao";
+            // 
+            // lstBoxHoje
+            // 
+            this.lstBoxHoje.FormattingEnabled = true;
+            this.lstBoxHoje.Location = new System.Drawing.Point(18, 23);
+            this.lstBoxHoje.Name = "lstBoxHoje";
+            this.lstBoxHoje.Size = new System.Drawing.Size(120, 147);
+            this.lstBoxHoje.TabIndex = 3;
+            // 
+            // lstBoxProxSemana
+            // 
+            this.lstBoxProxSemana.FormattingEnabled = true;
+            this.lstBoxProxSemana.Location = new System.Drawing.Point(18, 25);
+            this.lstBoxProxSemana.Name = "lstBoxProxSemana";
+            this.lstBoxProxSemana.Size = new System.Drawing.Size(120, 147);
+            this.lstBoxProxSemana.TabIndex = 4;
+            // 
             // CbFiltroCliente
             // 
             this.CbFiltroCliente.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
@@ -487,6 +505,7 @@ namespace EasyHortifruti
             this.CbFiltroCliente.Name = "CbFiltroCliente";
             this.CbFiltroCliente.Obrigatorio = false;
             this.CbFiltroCliente.SelectedIndex = -1;
+            this.CbFiltroCliente.SelectedItem = null;
             this.CbFiltroCliente.SelectedText = "";
             this.CbFiltroCliente.Size = new System.Drawing.Size(230, 42);
             this.CbFiltroCliente.TabIndex = 2;
@@ -501,10 +520,11 @@ namespace EasyHortifruti
             this.CbFiltroSituação.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.CbFiltroSituação.FormattingEnabled = true;
             this.CbFiltroSituação.Location = new System.Drawing.Point(576, 18);
-            this.CbFiltroSituação.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.CbFiltroSituação.Margin = new System.Windows.Forms.Padding(4);
             this.CbFiltroSituação.Name = "CbFiltroSituação";
             this.CbFiltroSituação.Obrigatorio = false;
             this.CbFiltroSituação.SelectedIndex = -1;
+            this.CbFiltroSituação.SelectedItem = null;
             this.CbFiltroSituação.SelectedText = "";
             this.CbFiltroSituação.Size = new System.Drawing.Size(181, 42);
             this.CbFiltroSituação.TabIndex = 9;
@@ -518,6 +538,7 @@ namespace EasyHortifruti
             this.Name = "FormCtasReceber";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "EasyHortifruti - Contas a Receber";
+            this.Load += new System.EventHandler(this.FormCtasReceber_Load);
             this.panel1.ResumeLayout(false);
             this.panel6CtasReceber.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCtasReceber)).EndInit();
@@ -567,16 +588,17 @@ namespace EasyHortifruti
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Panel panel10CtasReceber;
         private System.Windows.Forms.Label label10;
-        private System.Windows.Forms.Label label9;
-        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblValor;
+        private System.Windows.Forms.Label lblQtdPedido;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column5;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Column7;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_recno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataentrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_fonte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalvenda;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vlrlucro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataconclusao;
+        private System.Windows.Forms.ListBox lstBoxProxSemana;
+        private System.Windows.Forms.ListBox lstBoxHoje;
     }
 }

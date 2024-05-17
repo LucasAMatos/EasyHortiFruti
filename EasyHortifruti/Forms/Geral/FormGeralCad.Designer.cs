@@ -66,8 +66,8 @@ namespace EasyHortifruti
             this.BtEditarCadGeral = new System.Windows.Forms.Button();
             this.BtIncluirCadGeral = new System.Windows.Forms.Button();
             this.panelTituloCadGeral = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelCadGeralForm.SuspendLayout();
             this.panelFormCadGeral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadGeral)).BeginInit();
@@ -406,20 +406,6 @@ namespace EasyHortifruti
             this.panelTituloCadGeral.Size = new System.Drawing.Size(843, 59);
             this.panelTituloCadGeral.TabIndex = 0;
             // 
-            // label1
-            // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Calibri", 32.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(81, 2);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(290, 53);
-            this.label1.TabIndex = 0;
-            this.label1.Text = "Cadastro Geral";
-            // 
             // panel1
             // 
             this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
@@ -430,6 +416,20 @@ namespace EasyHortifruti
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(79, 59);
             this.panel1.TabIndex = 1;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Calibri", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(81, 2);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(285, 53);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "Cadastro Geral";
             // 
             // FormGeralCad
             // 

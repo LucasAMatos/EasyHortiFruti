@@ -50,9 +50,12 @@
             this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
             this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.unidadesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.unidadesBindingSource1)).BeginInit();
             this.tableLayoutPanel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadUnidades)).BeginInit();
             this.panel3.SuspendLayout();
             this.tableLayoutPanel2.SuspendLayout();
@@ -72,9 +75,9 @@
             this.tableLayoutPanel1.ColumnCount = 1;
             this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
             this.tableLayoutPanel1.Controls.Add(this.panel2, 0, 0);
-            this.tableLayoutPanel1.Controls.Add(this.dgvCadUnidades, 0, 3);
             this.tableLayoutPanel1.Controls.Add(this.panel3, 0, 1);
             this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
+            this.tableLayoutPanel1.Controls.Add(this.dgvCadUnidades, 0, 3);
             this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
             this.tableLayoutPanel1.Name = "tableLayoutPanel1";
             this.tableLayoutPanel1.RowCount = 4;
@@ -90,10 +93,12 @@
             // panel2
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.label1);
+            this.panel2.Controls.Add(this.panel1);
             this.panel2.Location = new System.Drawing.Point(3, 3);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(566, 43);
+            this.panel2.Size = new System.Drawing.Size(566, 55);
             this.panel2.TabIndex = 0;
             // 
             // dgvCadUnidades
@@ -117,13 +122,15 @@
             this.Observacao,
             this.ID});
             this.dgvCadUnidades.DataSource = this.unidadesBindingSource;
-            this.dgvCadUnidades.Location = new System.Drawing.Point(3, 190);
+            this.dgvCadUnidades.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.dgvCadUnidades.Location = new System.Drawing.Point(0, 184);
+            this.dgvCadUnidades.Margin = new System.Windows.Forms.Padding(0);
             this.dgvCadUnidades.MultiSelect = false;
             this.dgvCadUnidades.Name = "dgvCadUnidades";
             this.dgvCadUnidades.ReadOnly = true;
             this.dgvCadUnidades.RowHeadersVisible = false;
             this.dgvCadUnidades.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvCadUnidades.Size = new System.Drawing.Size(566, 398);
+            this.dgvCadUnidades.Size = new System.Drawing.Size(572, 407);
             this.dgvCadUnidades.TabIndex = 0;
             // 
             // Abreviação
@@ -166,9 +173,10 @@
             this.panel3.Controls.Add(this.btExcluirUnidades);
             this.panel3.Controls.Add(this.btEditarUnidades);
             this.panel3.Controls.Add(this.btIncluirUnidades);
-            this.panel3.Location = new System.Drawing.Point(3, 52);
+            this.panel3.Location = new System.Drawing.Point(0, 61);
+            this.panel3.Margin = new System.Windows.Forms.Padding(0);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(566, 74);
+            this.panel3.Size = new System.Drawing.Size(566, 65);
             this.panel3.TabIndex = 1;
             // 
             // btSairUnidades
@@ -180,10 +188,10 @@
             this.btSairUnidades.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btSairUnidades.FlatAppearance.BorderSize = 0;
             this.btSairUnidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSairUnidades.Location = new System.Drawing.Point(514, 14);
+            this.btSairUnidades.Location = new System.Drawing.Point(514, 7);
             this.btSairUnidades.Name = "btSairUnidades";
             this.btSairUnidades.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.btSairUnidades.Size = new System.Drawing.Size(44, 51);
+            this.btSairUnidades.Size = new System.Drawing.Size(44, 50);
             this.btSairUnidades.TabIndex = 10;
             this.btSairUnidades.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btSairUnidades.UseVisualStyleBackColor = false;
@@ -196,7 +204,7 @@
             this.btImprimirUnidades.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btImprimirUnidades.FlatAppearance.BorderSize = 0;
             this.btImprimirUnidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btImprimirUnidades.Location = new System.Drawing.Point(168, 13);
+            this.btImprimirUnidades.Location = new System.Drawing.Point(168, 6);
             this.btImprimirUnidades.Name = "btImprimirUnidades";
             this.btImprimirUnidades.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btImprimirUnidades.Size = new System.Drawing.Size(46, 52);
@@ -211,7 +219,7 @@
             this.btExcluirUnidades.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btExcluirUnidades.FlatAppearance.BorderSize = 0;
             this.btExcluirUnidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btExcluirUnidades.Location = new System.Drawing.Point(116, 12);
+            this.btExcluirUnidades.Location = new System.Drawing.Point(116, 5);
             this.btExcluirUnidades.Name = "btExcluirUnidades";
             this.btExcluirUnidades.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btExcluirUnidades.Size = new System.Drawing.Size(46, 52);
@@ -227,7 +235,7 @@
             this.btEditarUnidades.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btEditarUnidades.FlatAppearance.BorderSize = 0;
             this.btEditarUnidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btEditarUnidades.Location = new System.Drawing.Point(64, 12);
+            this.btEditarUnidades.Location = new System.Drawing.Point(64, 5);
             this.btEditarUnidades.Name = "btEditarUnidades";
             this.btEditarUnidades.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btEditarUnidades.Size = new System.Drawing.Size(46, 52);
@@ -243,7 +251,7 @@
             this.btIncluirUnidades.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btIncluirUnidades.FlatAppearance.BorderSize = 0;
             this.btIncluirUnidades.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btIncluirUnidades.Location = new System.Drawing.Point(12, 12);
+            this.btIncluirUnidades.Location = new System.Drawing.Point(12, 5);
             this.btIncluirUnidades.Name = "btIncluirUnidades";
             this.btIncluirUnidades.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btIncluirUnidades.Size = new System.Drawing.Size(46, 52);
@@ -260,7 +268,7 @@
             this.tableLayoutPanel2.Controls.Add(this.cbFiltro, 0, 0);
             this.tableLayoutPanel2.Controls.Add(this.tbFiltro, 1, 0);
             this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 132);
+            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 129);
             this.tableLayoutPanel2.Name = "tableLayoutPanel2";
             this.tableLayoutPanel2.RowCount = 1;
             this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
@@ -269,6 +277,8 @@
             // 
             // cbFiltro
             // 
+            this.cbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
             this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
             this.cbFiltro.Caption = "Campo para Filtrar";
@@ -276,22 +286,26 @@
             this.cbFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.cbFiltro.FormattingEnabled = true;
-            this.cbFiltro.Location = new System.Drawing.Point(3, 3);
+            this.cbFiltro.Location = new System.Drawing.Point(15, 1);
+            this.cbFiltro.Margin = new System.Windows.Forms.Padding(15, 1, 8, 4);
             this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Obrigatorio = false;
             this.cbFiltro.SelectedIndex = -1;
+            this.cbFiltro.SelectedItem = null;
             this.cbFiltro.SelectedText = "";
-            this.cbFiltro.Size = new System.Drawing.Size(163, 46);
+            this.cbFiltro.Size = new System.Drawing.Size(146, 47);
             this.cbFiltro.TabIndex = 0;
             // 
             // tbFiltro
             // 
+            this.tbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.tbFiltro.Caption = "Digite para Filtrar";
             this.tbFiltro.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFiltro.Location = new System.Drawing.Point(172, 3);
-            this.tbFiltro.Margin = new System.Windows.Forms.Padding(3, 3, 3, 6);
+            this.tbFiltro.Location = new System.Drawing.Point(176, 1);
+            this.tbFiltro.Margin = new System.Windows.Forms.Padding(7, 1, 15, 8);
             this.tbFiltro.MaxLength = 32767;
             this.tbFiltro.Multiline = true;
             this.tbFiltro.Name = "tbFiltro";
@@ -299,7 +313,7 @@
             this.tbFiltro.ReadOnly = false;
             this.tbFiltro.SelectionLength = 0;
             this.tbFiltro.SelectionStart = 0;
-            this.tbFiltro.Size = new System.Drawing.Size(391, 41);
+            this.tbFiltro.Size = new System.Drawing.Size(375, 43);
             this.tbFiltro.TabIndex = 1;
             this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -312,6 +326,32 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(573, 591);
             this.panel4.TabIndex = 2;
+            // 
+            // panel1
+            // 
+            this.panel1.AutoScroll = true;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(71, 55);
+            this.panel1.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Calibri", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(74, 0);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(413, 53);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Cadastro de Unidades";
             // 
             // FormUnidadeCad
             // 
@@ -326,6 +366,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.unidadesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.unidadesBindingSource1)).EndInit();
             this.tableLayoutPanel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvCadUnidades)).EndInit();
             this.panel3.ResumeLayout(false);
             this.tableLayoutPanel2.ResumeLayout(false);
@@ -354,5 +396,7 @@
         private System.Windows.Forms.Panel panel4;
         private Componentes.AltComboBox cbFiltro;
         private Componentes.AltTextBox tbFiltro;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Label label1;
     }
 }

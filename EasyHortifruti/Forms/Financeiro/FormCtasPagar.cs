@@ -21,5 +21,16 @@ namespace EasyHortifruti.Forms.Financeiro
         {
 
         }
+
+        private void BtSairCtasPagar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtIncluirCtasPagar_Click(object sender, EventArgs e)
+        {
+            FormCtasPagarAltInsert CtasPagarInsert = new FormCtasPagarAltInsert();
+            CtasPagarInsert.ShowDialog();
+        }
     }
 }

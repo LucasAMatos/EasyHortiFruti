@@ -30,36 +30,39 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.panel1 = new System.Windows.Forms.Panel();
-            this.PanelCRTop1 = new System.Windows.Forms.Panel();
-            this.PanelCRTop2 = new System.Windows.Forms.Panel();
-            this.PanelCRTop3 = new System.Windows.Forms.Panel();
-            this.CbCRDevedor = new EasyHortifruti.Componentes.AltComboBox();
-            this.BtnCadGeral = new System.Windows.Forms.Button();
-            this.TbCRVlrDocumento = new EasyHortifruti.Componentes.AltTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.DtCRVencimento = new System.Windows.Forms.DateTimePicker();
-            this.PanelCRButtom = new System.Windows.Forms.Panel();
-            this.LbIdCtaRecebtoInsert = new System.Windows.Forms.Label();
-            this.BtGravarCRAltInsert = new System.Windows.Forms.Button();
-            this.BtCancelarCRInserir = new System.Windows.Forms.Button();
-            this.PanelCRTop4 = new System.Windows.Forms.Panel();
-            this.TbCRDescricaoObs = new EasyHortifruti.Componentes.AltTextBox();
             this.PanelCRCentral = new System.Windows.Forms.Panel();
-            this.PanelCRMultaJuros = new System.Windows.Forms.Panel();
             this.CbCRTpConta = new EasyHortifruti.Componentes.AltComboBox();
             this.CbCRTpDocumento = new EasyHortifruti.Componentes.AltComboBox();
+            this.PanelCRMultaJuros = new System.Windows.Forms.Panel();
             this.CbCRTpCobraJuros = new EasyHortifruti.Componentes.AltComboBox();
             this.TbCRPercentJuros = new EasyHortifruti.Componentes.AltTextBox();
             this.TbCRPercentMulta = new EasyHortifruti.Componentes.AltTextBox();
             this.CbCRJuros = new EasyHortifruti.Componentes.AltComboBox();
             this.CbCRMulta = new EasyHortifruti.Componentes.AltComboBox();
+            this.PanelCRTop4 = new System.Windows.Forms.Panel();
+            this.TbCRDescricaoObs = new EasyHortifruti.Componentes.AltTextBox();
+            this.PanelCRButtom = new System.Windows.Forms.Panel();
+            this.LbIdCtaRecebtoInsert = new System.Windows.Forms.Label();
+            this.BtGravarCRAltInsert = new System.Windows.Forms.Button();
+            this.BtCancelarCRInserir = new System.Windows.Forms.Button();
+            this.PanelCRTop3 = new System.Windows.Forms.Panel();
+            this.TbCRVlrDocumento = new EasyHortifruti.Componentes.AltTextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DtCRVencimento = new System.Windows.Forms.DateTimePicker();
+            this.PanelCRTop2 = new System.Windows.Forms.Panel();
+            this.CbCRDevedor = new EasyHortifruti.Componentes.AltComboBox();
+            this.BtnCadGeral = new System.Windows.Forms.Button();
+            this.PanelCRTop1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1.SuspendLayout();
-            this.PanelCRTop2.SuspendLayout();
-            this.PanelCRTop3.SuspendLayout();
-            this.PanelCRButtom.SuspendLayout();
-            this.PanelCRTop4.SuspendLayout();
             this.PanelCRCentral.SuspendLayout();
             this.PanelCRMultaJuros.SuspendLayout();
+            this.PanelCRTop4.SuspendLayout();
+            this.PanelCRButtom.SuspendLayout();
+            this.PanelCRTop3.SuspendLayout();
+            this.PanelCRTop2.SuspendLayout();
+            this.PanelCRTop1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -76,208 +79,16 @@
             this.panel1.Size = new System.Drawing.Size(603, 422);
             this.panel1.TabIndex = 0;
             // 
-            // PanelCRTop1
-            // 
-            this.PanelCRTop1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelCRTop1.BackgroundImage")));
-            this.PanelCRTop1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelCRTop1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelCRTop1.Location = new System.Drawing.Point(0, 0);
-            this.PanelCRTop1.Name = "PanelCRTop1";
-            this.PanelCRTop1.Size = new System.Drawing.Size(603, 36);
-            this.PanelCRTop1.TabIndex = 0;
-            // 
-            // PanelCRTop2
-            // 
-            this.PanelCRTop2.Controls.Add(this.CbCRDevedor);
-            this.PanelCRTop2.Controls.Add(this.BtnCadGeral);
-            this.PanelCRTop2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelCRTop2.Location = new System.Drawing.Point(0, 36);
-            this.PanelCRTop2.Name = "PanelCRTop2";
-            this.PanelCRTop2.Size = new System.Drawing.Size(603, 58);
-            this.PanelCRTop2.TabIndex = 1;
-            // 
-            // PanelCRTop3
-            // 
-            this.PanelCRTop3.Controls.Add(this.TbCRVlrDocumento);
-            this.PanelCRTop3.Controls.Add(this.label1);
-            this.PanelCRTop3.Controls.Add(this.DtCRVencimento);
-            this.PanelCRTop3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelCRTop3.Location = new System.Drawing.Point(0, 94);
-            this.PanelCRTop3.Name = "PanelCRTop3";
-            this.PanelCRTop3.Size = new System.Drawing.Size(603, 60);
-            this.PanelCRTop3.TabIndex = 2;
-            // 
-            // CbCRDevedor
-            // 
-            this.CbCRDevedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.CbCRDevedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.CbCRDevedor.Caption = "Devedor";
-            this.CbCRDevedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.CbCRDevedor.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.CbCRDevedor.FormattingEnabled = true;
-            this.CbCRDevedor.Location = new System.Drawing.Point(23, 10);
-            this.CbCRDevedor.Name = "CbCRDevedor";
-            this.CbCRDevedor.Obrigatorio = false;
-            this.CbCRDevedor.SelectedIndex = -1;
-            this.CbCRDevedor.SelectedItem = null;
-            this.CbCRDevedor.SelectedText = "";
-            this.CbCRDevedor.Size = new System.Drawing.Size(530, 44);
-            this.CbCRDevedor.TabIndex = 27;
-            // 
-            // BtnCadGeral
-            // 
-            this.BtnCadGeral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnCadGeral.BackColor = System.Drawing.Color.Transparent;
-            this.BtnCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnCadGeral.FlatAppearance.BorderSize = 0;
-            this.BtnCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnCadGeral.Image = ((System.Drawing.Image)(resources.GetObject("BtnCadGeral.Image")));
-            this.BtnCadGeral.Location = new System.Drawing.Point(551, 24);
-            this.BtnCadGeral.Name = "BtnCadGeral";
-            this.BtnCadGeral.Size = new System.Drawing.Size(28, 26);
-            this.BtnCadGeral.TabIndex = 26;
-            this.BtnCadGeral.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnCadGeral.UseVisualStyleBackColor = false;
-            // 
-            // TbCRVlrDocumento
-            // 
-            this.TbCRVlrDocumento.Caption = "Vlr Documento";
-            this.TbCRVlrDocumento.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbCRVlrDocumento.FonteTexto = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbCRVlrDocumento.Location = new System.Drawing.Point(206, 10);
-            this.TbCRVlrDocumento.MaxLength = 32767;
-            this.TbCRVlrDocumento.Multiline = true;
-            this.TbCRVlrDocumento.Name = "TbCRVlrDocumento";
-            this.TbCRVlrDocumento.Obrigatorio = false;
-            this.TbCRVlrDocumento.ReadOnly = false;
-            this.TbCRVlrDocumento.SelectionLength = 0;
-            this.TbCRVlrDocumento.SelectionStart = 0;
-            this.TbCRVlrDocumento.Size = new System.Drawing.Size(135, 40);
-            this.TbCRVlrDocumento.TabIndex = 5;
-            this.TbCRVlrDocumento.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TbCRVlrDocumento.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(20, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Vencimento";
-            // 
-            // DtCRVencimento
-            // 
-            this.DtCRVencimento.CalendarFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtCRVencimento.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtCRVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtCRVencimento.Location = new System.Drawing.Point(23, 24);
-            this.DtCRVencimento.Name = "DtCRVencimento";
-            this.DtCRVencimento.Size = new System.Drawing.Size(126, 25);
-            this.DtCRVencimento.TabIndex = 3;
-            // 
-            // PanelCRButtom
-            // 
-            this.PanelCRButtom.Controls.Add(this.LbIdCtaRecebtoInsert);
-            this.PanelCRButtom.Controls.Add(this.BtGravarCRAltInsert);
-            this.PanelCRButtom.Controls.Add(this.BtCancelarCRInserir);
-            this.PanelCRButtom.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.PanelCRButtom.Location = new System.Drawing.Point(0, 364);
-            this.PanelCRButtom.Name = "PanelCRButtom";
-            this.PanelCRButtom.Size = new System.Drawing.Size(603, 58);
-            this.PanelCRButtom.TabIndex = 3;
-            // 
-            // LbIdCtaRecebtoInsert
-            // 
-            this.LbIdCtaRecebtoInsert.AutoSize = true;
-            this.LbIdCtaRecebtoInsert.BackColor = System.Drawing.Color.Transparent;
-            this.LbIdCtaRecebtoInsert.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LbIdCtaRecebtoInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbIdCtaRecebtoInsert.ForeColor = System.Drawing.Color.Black;
-            this.LbIdCtaRecebtoInsert.Location = new System.Drawing.Point(12, 18);
-            this.LbIdCtaRecebtoInsert.Name = "LbIdCtaRecebtoInsert";
-            this.LbIdCtaRecebtoInsert.Size = new System.Drawing.Size(30, 22);
-            this.LbIdCtaRecebtoInsert.TabIndex = 16;
-            this.LbIdCtaRecebtoInsert.Text = "ID";
-            // 
-            // BtGravarCRAltInsert
-            // 
-            this.BtGravarCRAltInsert.BackColor = System.Drawing.Color.Transparent;
-            this.BtGravarCRAltInsert.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtGravarCRAltInsert.BackgroundImage")));
-            this.BtGravarCRAltInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtGravarCRAltInsert.FlatAppearance.BorderSize = 0;
-            this.BtGravarCRAltInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtGravarCRAltInsert.Location = new System.Drawing.Point(397, 14);
-            this.BtGravarCRAltInsert.Name = "BtGravarCRAltInsert";
-            this.BtGravarCRAltInsert.Size = new System.Drawing.Size(94, 30);
-            this.BtGravarCRAltInsert.TabIndex = 15;
-            this.BtGravarCRAltInsert.UseVisualStyleBackColor = false;
-            // 
-            // BtCancelarCRInserir
-            // 
-            this.BtCancelarCRInserir.BackColor = System.Drawing.Color.Transparent;
-            this.BtCancelarCRInserir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtCancelarCRInserir.BackgroundImage")));
-            this.BtCancelarCRInserir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtCancelarCRInserir.FlatAppearance.BorderSize = 0;
-            this.BtCancelarCRInserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtCancelarCRInserir.Location = new System.Drawing.Point(497, 14);
-            this.BtCancelarCRInserir.Name = "BtCancelarCRInserir";
-            this.BtCancelarCRInserir.Size = new System.Drawing.Size(94, 30);
-            this.BtCancelarCRInserir.TabIndex = 14;
-            this.BtCancelarCRInserir.UseVisualStyleBackColor = false;
-            // 
-            // PanelCRTop4
-            // 
-            this.PanelCRTop4.Controls.Add(this.TbCRDescricaoObs);
-            this.PanelCRTop4.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelCRTop4.Location = new System.Drawing.Point(0, 154);
-            this.PanelCRTop4.Name = "PanelCRTop4";
-            this.PanelCRTop4.Size = new System.Drawing.Size(603, 67);
-            this.PanelCRTop4.TabIndex = 4;
-            // 
-            // TbCRDescricaoObs
-            // 
-            this.TbCRDescricaoObs.Caption = "Descrição / Observações do Documento";
-            this.TbCRDescricaoObs.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbCRDescricaoObs.FonteTexto = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.TbCRDescricaoObs.Location = new System.Drawing.Point(25, 3);
-            this.TbCRDescricaoObs.MaxLength = 32767;
-            this.TbCRDescricaoObs.Multiline = true;
-            this.TbCRDescricaoObs.Name = "TbCRDescricaoObs";
-            this.TbCRDescricaoObs.Obrigatorio = false;
-            this.TbCRDescricaoObs.ReadOnly = false;
-            this.TbCRDescricaoObs.SelectionLength = 0;
-            this.TbCRDescricaoObs.SelectionStart = 0;
-            this.TbCRDescricaoObs.Size = new System.Drawing.Size(553, 54);
-            this.TbCRDescricaoObs.TabIndex = 1;
-            this.TbCRDescricaoObs.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TbCRDescricaoObs.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            // 
             // PanelCRCentral
             // 
             this.PanelCRCentral.Controls.Add(this.CbCRTpConta);
             this.PanelCRCentral.Controls.Add(this.CbCRTpDocumento);
             this.PanelCRCentral.Controls.Add(this.PanelCRMultaJuros);
             this.PanelCRCentral.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.PanelCRCentral.Location = new System.Drawing.Point(0, 221);
+            this.PanelCRCentral.Location = new System.Drawing.Point(0, 226);
             this.PanelCRCentral.Name = "PanelCRCentral";
-            this.PanelCRCentral.Size = new System.Drawing.Size(603, 143);
+            this.PanelCRCentral.Size = new System.Drawing.Size(603, 138);
             this.PanelCRCentral.TabIndex = 5;
-            // 
-            // PanelCRMultaJuros
-            // 
-            this.PanelCRMultaJuros.Controls.Add(this.CbCRTpCobraJuros);
-            this.PanelCRMultaJuros.Controls.Add(this.TbCRPercentJuros);
-            this.PanelCRMultaJuros.Controls.Add(this.TbCRPercentMulta);
-            this.PanelCRMultaJuros.Controls.Add(this.CbCRJuros);
-            this.PanelCRMultaJuros.Controls.Add(this.CbCRMulta);
-            this.PanelCRMultaJuros.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PanelCRMultaJuros.Location = new System.Drawing.Point(290, 0);
-            this.PanelCRMultaJuros.Name = "PanelCRMultaJuros";
-            this.PanelCRMultaJuros.Size = new System.Drawing.Size(313, 143);
-            this.PanelCRMultaJuros.TabIndex = 0;
             // 
             // CbCRTpConta
             // 
@@ -312,6 +123,19 @@
             this.CbCRTpDocumento.SelectedText = "";
             this.CbCRTpDocumento.Size = new System.Drawing.Size(189, 40);
             this.CbCRTpDocumento.TabIndex = 6;
+            // 
+            // PanelCRMultaJuros
+            // 
+            this.PanelCRMultaJuros.Controls.Add(this.CbCRTpCobraJuros);
+            this.PanelCRMultaJuros.Controls.Add(this.TbCRPercentJuros);
+            this.PanelCRMultaJuros.Controls.Add(this.TbCRPercentMulta);
+            this.PanelCRMultaJuros.Controls.Add(this.CbCRJuros);
+            this.PanelCRMultaJuros.Controls.Add(this.CbCRMulta);
+            this.PanelCRMultaJuros.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PanelCRMultaJuros.Location = new System.Drawing.Point(290, 0);
+            this.PanelCRMultaJuros.Name = "PanelCRMultaJuros";
+            this.PanelCRMultaJuros.Size = new System.Drawing.Size(313, 138);
+            this.PanelCRMultaJuros.TabIndex = 0;
             // 
             // CbCRTpCobraJuros
             // 
@@ -400,6 +224,212 @@
             this.CbCRMulta.Size = new System.Drawing.Size(101, 40);
             this.CbCRMulta.TabIndex = 7;
             // 
+            // PanelCRTop4
+            // 
+            this.PanelCRTop4.Controls.Add(this.TbCRDescricaoObs);
+            this.PanelCRTop4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelCRTop4.Location = new System.Drawing.Point(0, 159);
+            this.PanelCRTop4.Name = "PanelCRTop4";
+            this.PanelCRTop4.Size = new System.Drawing.Size(603, 67);
+            this.PanelCRTop4.TabIndex = 4;
+            // 
+            // TbCRDescricaoObs
+            // 
+            this.TbCRDescricaoObs.Caption = "Descrição / Observações do Documento";
+            this.TbCRDescricaoObs.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbCRDescricaoObs.FonteTexto = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbCRDescricaoObs.Location = new System.Drawing.Point(25, 3);
+            this.TbCRDescricaoObs.MaxLength = 32767;
+            this.TbCRDescricaoObs.Multiline = true;
+            this.TbCRDescricaoObs.Name = "TbCRDescricaoObs";
+            this.TbCRDescricaoObs.Obrigatorio = false;
+            this.TbCRDescricaoObs.ReadOnly = false;
+            this.TbCRDescricaoObs.SelectionLength = 0;
+            this.TbCRDescricaoObs.SelectionStart = 0;
+            this.TbCRDescricaoObs.Size = new System.Drawing.Size(553, 54);
+            this.TbCRDescricaoObs.TabIndex = 1;
+            this.TbCRDescricaoObs.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TbCRDescricaoObs.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            // 
+            // PanelCRButtom
+            // 
+            this.PanelCRButtom.Controls.Add(this.LbIdCtaRecebtoInsert);
+            this.PanelCRButtom.Controls.Add(this.BtGravarCRAltInsert);
+            this.PanelCRButtom.Controls.Add(this.BtCancelarCRInserir);
+            this.PanelCRButtom.Dock = System.Windows.Forms.DockStyle.Bottom;
+            this.PanelCRButtom.Location = new System.Drawing.Point(0, 364);
+            this.PanelCRButtom.Name = "PanelCRButtom";
+            this.PanelCRButtom.Size = new System.Drawing.Size(603, 58);
+            this.PanelCRButtom.TabIndex = 3;
+            // 
+            // LbIdCtaRecebtoInsert
+            // 
+            this.LbIdCtaRecebtoInsert.AutoSize = true;
+            this.LbIdCtaRecebtoInsert.BackColor = System.Drawing.Color.Transparent;
+            this.LbIdCtaRecebtoInsert.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.LbIdCtaRecebtoInsert.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.LbIdCtaRecebtoInsert.ForeColor = System.Drawing.Color.Black;
+            this.LbIdCtaRecebtoInsert.Location = new System.Drawing.Point(12, 18);
+            this.LbIdCtaRecebtoInsert.Name = "LbIdCtaRecebtoInsert";
+            this.LbIdCtaRecebtoInsert.Size = new System.Drawing.Size(30, 22);
+            this.LbIdCtaRecebtoInsert.TabIndex = 16;
+            this.LbIdCtaRecebtoInsert.Text = "ID";
+            // 
+            // BtGravarCRAltInsert
+            // 
+            this.BtGravarCRAltInsert.BackColor = System.Drawing.Color.Transparent;
+            this.BtGravarCRAltInsert.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtGravarCRAltInsert.BackgroundImage")));
+            this.BtGravarCRAltInsert.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtGravarCRAltInsert.FlatAppearance.BorderSize = 0;
+            this.BtGravarCRAltInsert.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtGravarCRAltInsert.Location = new System.Drawing.Point(397, 14);
+            this.BtGravarCRAltInsert.Name = "BtGravarCRAltInsert";
+            this.BtGravarCRAltInsert.Size = new System.Drawing.Size(94, 30);
+            this.BtGravarCRAltInsert.TabIndex = 15;
+            this.BtGravarCRAltInsert.UseVisualStyleBackColor = false;
+            // 
+            // BtCancelarCRInserir
+            // 
+            this.BtCancelarCRInserir.BackColor = System.Drawing.Color.Transparent;
+            this.BtCancelarCRInserir.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtCancelarCRInserir.BackgroundImage")));
+            this.BtCancelarCRInserir.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtCancelarCRInserir.FlatAppearance.BorderSize = 0;
+            this.BtCancelarCRInserir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtCancelarCRInserir.Location = new System.Drawing.Point(497, 14);
+            this.BtCancelarCRInserir.Name = "BtCancelarCRInserir";
+            this.BtCancelarCRInserir.Size = new System.Drawing.Size(94, 30);
+            this.BtCancelarCRInserir.TabIndex = 14;
+            this.BtCancelarCRInserir.UseVisualStyleBackColor = false;
+            // 
+            // PanelCRTop3
+            // 
+            this.PanelCRTop3.Controls.Add(this.TbCRVlrDocumento);
+            this.PanelCRTop3.Controls.Add(this.label1);
+            this.PanelCRTop3.Controls.Add(this.DtCRVencimento);
+            this.PanelCRTop3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelCRTop3.Location = new System.Drawing.Point(0, 105);
+            this.PanelCRTop3.Name = "PanelCRTop3";
+            this.PanelCRTop3.Size = new System.Drawing.Size(603, 54);
+            this.PanelCRTop3.TabIndex = 2;
+            // 
+            // TbCRVlrDocumento
+            // 
+            this.TbCRVlrDocumento.Caption = "Vlr Documento";
+            this.TbCRVlrDocumento.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbCRVlrDocumento.FonteTexto = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbCRVlrDocumento.Location = new System.Drawing.Point(206, 6);
+            this.TbCRVlrDocumento.MaxLength = 32767;
+            this.TbCRVlrDocumento.Multiline = true;
+            this.TbCRVlrDocumento.Name = "TbCRVlrDocumento";
+            this.TbCRVlrDocumento.Obrigatorio = false;
+            this.TbCRVlrDocumento.ReadOnly = false;
+            this.TbCRVlrDocumento.SelectionLength = 0;
+            this.TbCRVlrDocumento.SelectionStart = 0;
+            this.TbCRVlrDocumento.Size = new System.Drawing.Size(135, 40);
+            this.TbCRVlrDocumento.TabIndex = 5;
+            this.TbCRVlrDocumento.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TbCRVlrDocumento.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(20, 5);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.TabIndex = 4;
+            this.label1.Text = "Vencimento";
+            // 
+            // DtCRVencimento
+            // 
+            this.DtCRVencimento.CalendarFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtCRVencimento.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtCRVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DtCRVencimento.Location = new System.Drawing.Point(23, 20);
+            this.DtCRVencimento.Name = "DtCRVencimento";
+            this.DtCRVencimento.Size = new System.Drawing.Size(126, 25);
+            this.DtCRVencimento.TabIndex = 3;
+            // 
+            // PanelCRTop2
+            // 
+            this.PanelCRTop2.Controls.Add(this.CbCRDevedor);
+            this.PanelCRTop2.Controls.Add(this.BtnCadGeral);
+            this.PanelCRTop2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelCRTop2.Location = new System.Drawing.Point(0, 53);
+            this.PanelCRTop2.Name = "PanelCRTop2";
+            this.PanelCRTop2.Size = new System.Drawing.Size(603, 52);
+            this.PanelCRTop2.TabIndex = 1;
+            // 
+            // CbCRDevedor
+            // 
+            this.CbCRDevedor.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.CbCRDevedor.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.CbCRDevedor.Caption = "Devedor";
+            this.CbCRDevedor.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.CbCRDevedor.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.CbCRDevedor.FormattingEnabled = true;
+            this.CbCRDevedor.Location = new System.Drawing.Point(23, 5);
+            this.CbCRDevedor.Name = "CbCRDevedor";
+            this.CbCRDevedor.Obrigatorio = false;
+            this.CbCRDevedor.SelectedIndex = -1;
+            this.CbCRDevedor.SelectedItem = null;
+            this.CbCRDevedor.SelectedText = "";
+            this.CbCRDevedor.Size = new System.Drawing.Size(530, 44);
+            this.CbCRDevedor.TabIndex = 27;
+            // 
+            // BtnCadGeral
+            // 
+            this.BtnCadGeral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCadGeral.BackColor = System.Drawing.Color.Transparent;
+            this.BtnCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCadGeral.FlatAppearance.BorderSize = 0;
+            this.BtnCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnCadGeral.Image = ((System.Drawing.Image)(resources.GetObject("BtnCadGeral.Image")));
+            this.BtnCadGeral.Location = new System.Drawing.Point(551, 19);
+            this.BtnCadGeral.Name = "BtnCadGeral";
+            this.BtnCadGeral.Size = new System.Drawing.Size(28, 20);
+            this.BtnCadGeral.TabIndex = 26;
+            this.BtnCadGeral.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnCadGeral.UseVisualStyleBackColor = false;
+            // 
+            // PanelCRTop1
+            // 
+            this.PanelCRTop1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelCRTop1.BackgroundImage")));
+            this.PanelCRTop1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PanelCRTop1.Controls.Add(this.label2);
+            this.PanelCRTop1.Controls.Add(this.panel2);
+            this.PanelCRTop1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelCRTop1.Location = new System.Drawing.Point(0, 0);
+            this.PanelCRTop1.Name = "PanelCRTop1";
+            this.PanelCRTop1.Size = new System.Drawing.Size(603, 53);
+            this.PanelCRTop1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(62, 4);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(352, 45);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "Inserir Ctas a Receber";
+            // 
+            // panel2
+            // 
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(59, 53);
+            this.panel2.TabIndex = 0;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -409,14 +439,16 @@
             this.Name = "Form1";
             this.Text = "Form1";
             this.panel1.ResumeLayout(false);
-            this.PanelCRTop2.ResumeLayout(false);
-            this.PanelCRTop3.ResumeLayout(false);
-            this.PanelCRTop3.PerformLayout();
-            this.PanelCRButtom.ResumeLayout(false);
-            this.PanelCRButtom.PerformLayout();
-            this.PanelCRTop4.ResumeLayout(false);
             this.PanelCRCentral.ResumeLayout(false);
             this.PanelCRMultaJuros.ResumeLayout(false);
+            this.PanelCRTop4.ResumeLayout(false);
+            this.PanelCRButtom.ResumeLayout(false);
+            this.PanelCRButtom.PerformLayout();
+            this.PanelCRTop3.ResumeLayout(false);
+            this.PanelCRTop3.PerformLayout();
+            this.PanelCRTop2.ResumeLayout(false);
+            this.PanelCRTop1.ResumeLayout(false);
+            this.PanelCRTop1.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -447,5 +479,7 @@
         private Componentes.AltTextBox TbCRPercentMulta;
         private Componentes.AltComboBox CbCRJuros;
         private Componentes.AltComboBox CbCRMulta;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Label label2;
     }
 }

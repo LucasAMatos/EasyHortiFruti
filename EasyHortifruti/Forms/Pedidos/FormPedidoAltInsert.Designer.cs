@@ -1466,10 +1466,14 @@ namespace EasyHortifruti
         private AltTextBox TbEndCidade;
         private System.Windows.Forms.DataGridViewTextBoxColumn DescrProduto;
 #pragma warning disable CS0649 // Campo "FormPedidoAltInsert.unidade" nunca é atribuído e sempre terá seu valor padrão null
+#pragma warning disable CS0169 // O campo "FormPedidoAltInsert.unidade" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn unidade;
+#pragma warning restore CS0169 // O campo "FormPedidoAltInsert.unidade" nunca é usado
 #pragma warning restore CS0649 // Campo "FormPedidoAltInsert.unidade" nunca é atribuído e sempre terá seu valor padrão null
 #pragma warning disable CS0649 // Campo "FormPedidoAltInsert.quantidade" nunca é atribuído e sempre terá seu valor padrão null
+#pragma warning disable CS0169 // O campo "FormPedidoAltInsert.quantidade" nunca é usado
         private System.Windows.Forms.DataGridViewTextBoxColumn quantidade;
+#pragma warning restore CS0169 // O campo "FormPedidoAltInsert.quantidade" nunca é usado
 #pragma warning restore CS0649 // Campo "FormPedidoAltInsert.quantidade" nunca é atribuído e sempre terá seu valor padrão null
         private System.Windows.Forms.DataGridViewTextBoxColumn VlCompraProduto;
         private System.Windows.Forms.DataGridViewTextBoxColumn TotalItem;

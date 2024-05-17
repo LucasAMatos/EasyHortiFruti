@@ -56,5 +56,10 @@ namespace EasyHortifruti
             FormCtasReceber CtasReceber = new FormCtasReceber();
             CtasReceber.ShowDialog();
         }
+
+        private void BtSairPedido_Click_1(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

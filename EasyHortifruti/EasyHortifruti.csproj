@@ -183,6 +183,24 @@
     <Compile Include="DML\SubGrupo.cs" />
     <Compile Include="DML\Telefone.cs" />
     <Compile Include="DML\Unidade.cs" />
+    <Compile Include="Forms\Financeiro\FormCtasPagarAltInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Financeiro\FormCtasPagarAltInsert.Designer.cs">
+      <DependentUpon>FormCtasPagarAltInsert.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Financeiro\FormCtasPagar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Financeiro\FormCtasPagar.Designer.cs">
+      <DependentUpon>FormCtasPagar.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\Financeiro\FormCtasReceberAltInsert.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Financeiro\FormCtasReceberAltInsert.Designer.cs">
+      <DependentUpon>FormCtasReceberAltInsert.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Produtos\FormNcm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -290,6 +308,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Componentes\AltTextBox.resx">
       <DependentUpon>AltTextBox.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Financeiro\FormCtasPagar.resx">
+      <DependentUpon>FormCtasPagar.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Financeiro\FormCtasPagarAltInsert.resx">
+      <DependentUpon>FormCtasPagarAltInsert.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Financeiro\FormCtasReceberAltInsert.resx">
+      <DependentUpon>FormCtasReceberAltInsert.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Forms\Produtos\FormNcm.resx">
       <DependentUpon>FormNcm.cs</DependentUpon>

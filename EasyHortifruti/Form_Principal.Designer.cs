@@ -30,19 +30,21 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panel1FormPrincipal = new System.Windows.Forms.Panel();
-            this.btFinanceiro = new System.Windows.Forms.Button();
+            this.BtCtasPagar = new System.Windows.Forms.Button();
             this.btSairPrincipal = new System.Windows.Forms.Button();
             this.btRelatórios = new System.Windows.Forms.Button();
             this.btPedidos = new System.Windows.Forms.Button();
             this.btCadGeral = new System.Windows.Forms.Button();
             this.btProdutos = new System.Windows.Forms.Button();
+            this.BtCtasReceber = new System.Windows.Forms.Button();
             this.panel1FormPrincipal.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1FormPrincipal
             // 
             this.panel1FormPrincipal.BackColor = System.Drawing.Color.Transparent;
-            this.panel1FormPrincipal.Controls.Add(this.btFinanceiro);
+            this.panel1FormPrincipal.Controls.Add(this.BtCtasReceber);
+            this.panel1FormPrincipal.Controls.Add(this.BtCtasPagar);
             this.panel1FormPrincipal.Controls.Add(this.btSairPrincipal);
             this.panel1FormPrincipal.Controls.Add(this.btRelatórios);
             this.panel1FormPrincipal.Controls.Add(this.btPedidos);
@@ -54,19 +56,19 @@
             this.panel1FormPrincipal.Size = new System.Drawing.Size(484, 561);
             this.panel1FormPrincipal.TabIndex = 0;
             // 
-            // btFinanceiro
+            // BtCtasPagar
             // 
-            this.btFinanceiro.BackColor = System.Drawing.Color.Transparent;
-            this.btFinanceiro.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btFinanceiro.BackgroundImage")));
-            this.btFinanceiro.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btFinanceiro.FlatAppearance.BorderSize = 0;
-            this.btFinanceiro.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btFinanceiro.Location = new System.Drawing.Point(49, 280);
-            this.btFinanceiro.Name = "btFinanceiro";
-            this.btFinanceiro.Size = new System.Drawing.Size(195, 44);
-            this.btFinanceiro.TabIndex = 7;
-            this.btFinanceiro.UseVisualStyleBackColor = false;
-            this.btFinanceiro.Click += new System.EventHandler(this.BtFinanceiro_Click);
+            this.BtCtasPagar.BackColor = System.Drawing.Color.Transparent;
+            this.BtCtasPagar.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtCtasPagar.BackgroundImage")));
+            this.BtCtasPagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtCtasPagar.FlatAppearance.BorderSize = 0;
+            this.BtCtasPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtCtasPagar.Location = new System.Drawing.Point(49, 280);
+            this.BtCtasPagar.Name = "BtCtasPagar";
+            this.BtCtasPagar.Size = new System.Drawing.Size(195, 44);
+            this.BtCtasPagar.TabIndex = 7;
+            this.BtCtasPagar.UseVisualStyleBackColor = false;
+            this.BtCtasPagar.Click += new System.EventHandler(this.BtCtasPagar_Click);
             // 
             // btSairPrincipal
             // 
@@ -75,9 +77,9 @@
             this.btSairPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btSairPrincipal.FlatAppearance.BorderSize = 0;
             this.btSairPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSairPrincipal.Location = new System.Drawing.Point(49, 433);
+            this.btSairPrincipal.Location = new System.Drawing.Point(49, 508);
             this.btSairPrincipal.Name = "btSairPrincipal";
-            this.btSairPrincipal.Size = new System.Drawing.Size(195, 44);
+            this.btSairPrincipal.Size = new System.Drawing.Size(195, 42);
             this.btSairPrincipal.TabIndex = 6;
             this.btSairPrincipal.UseVisualStyleBackColor = false;
             this.btSairPrincipal.Click += new System.EventHandler(this.BtSairPrincipal_Click);
@@ -89,9 +91,9 @@
             this.btRelatórios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btRelatórios.FlatAppearance.BorderSize = 0;
             this.btRelatórios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btRelatórios.Location = new System.Drawing.Point(49, 358);
+            this.btRelatórios.Location = new System.Drawing.Point(49, 433);
             this.btRelatórios.Name = "btRelatórios";
-            this.btRelatórios.Size = new System.Drawing.Size(195, 44);
+            this.btRelatórios.Size = new System.Drawing.Size(195, 42);
             this.btRelatórios.TabIndex = 5;
             this.btRelatórios.UseVisualStyleBackColor = false;
             this.btRelatórios.Click += new System.EventHandler(this.BtRelatórios_Click);
@@ -138,6 +140,20 @@
             this.btProdutos.UseVisualStyleBackColor = false;
             this.btProdutos.Click += new System.EventHandler(this.BtProdutos_Click);
             // 
+            // BtCtasReceber
+            // 
+            this.BtCtasReceber.BackColor = System.Drawing.Color.Transparent;
+            this.BtCtasReceber.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtCtasReceber.BackgroundImage")));
+            this.BtCtasReceber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtCtasReceber.FlatAppearance.BorderSize = 0;
+            this.BtCtasReceber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtCtasReceber.Location = new System.Drawing.Point(49, 358);
+            this.BtCtasReceber.Name = "BtCtasReceber";
+            this.BtCtasReceber.Size = new System.Drawing.Size(195, 44);
+            this.BtCtasReceber.TabIndex = 9;
+            this.BtCtasReceber.UseVisualStyleBackColor = false;
+            this.BtCtasReceber.Click += new System.EventHandler(this.BtCtasReceber_Click);
+            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -161,7 +177,8 @@
         private System.Windows.Forms.Button btPedidos;
         private System.Windows.Forms.Button btRelatórios;
         private System.Windows.Forms.Button btSairPrincipal;
-        private System.Windows.Forms.Button btFinanceiro;
+        private System.Windows.Forms.Button BtCtasPagar;
+        private System.Windows.Forms.Button BtCtasReceber;
     }
 }
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasyHortifruti.Forms.Financeiro;
+using System;
 using System.Windows.Forms;
 
 namespace EasyHortifruti
@@ -30,12 +31,6 @@ namespace EasyHortifruti
             FormPedidos.ShowDialog();
         }
 
-        private void BtFinanceiro_Click(object sender, EventArgs e)
-        {
-            FormCtasReceber FormCtasReceber = new FormCtasReceber();
-            FormCtasReceber.ShowDialog();
-        }
-
         private void BtSairPrincipal_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -48,6 +43,18 @@ namespace EasyHortifruti
         private void CriarTabelas()
         {
             new ConexaoBD().CriaTabelasBD();
+        }
+
+        private void BtCtasPagar_Click(object sender, EventArgs e)
+        {
+            FormCtasPagar CtasPagar= new FormCtasPagar();
+            CtasPagar.ShowDialog();
+        }
+
+        private void BtCtasReceber_Click(object sender, EventArgs e)
+        {
+            FormCtasReceber CtasReceber = new FormCtasReceber();
+            CtasReceber.ShowDialog();
         }
     }
 }

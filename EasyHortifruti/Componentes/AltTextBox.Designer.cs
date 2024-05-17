@@ -48,28 +48,31 @@ namespace EasyHortifruti.Componentes
             this.tableLayoutPanel1.RowCount = 2;
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 15F));
             this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(54, 56);
+            this.tableLayoutPanel1.Size = new System.Drawing.Size(88, 56);
             this.tableLayoutPanel1.TabIndex = 0;
             // 
             // label
             // 
             this.label.AutoSize = true;
             this.label.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.label.Location = new System.Drawing.Point(1, 2);
-            this.label.Margin = new System.Windows.Forms.Padding(1, 2, 3, 0);
+            this.label.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(0, 2);
+            this.label.Margin = new System.Windows.Forms.Padding(0, 2, 3, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(50, 13);
+            this.label.Size = new System.Drawing.Size(85, 13);
             this.label.TabIndex = 0;
             this.label.Text = "label1";
+            this.label.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // txtBox
             // 
             this.txtBox.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.txtBox.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtBox.Location = new System.Drawing.Point(0, 15);
             this.txtBox.Margin = new System.Windows.Forms.Padding(0);
             this.txtBox.Multiline = true;
             this.txtBox.Name = "txtBox";
-            this.txtBox.Size = new System.Drawing.Size(54, 41);
+            this.txtBox.Size = new System.Drawing.Size(88, 41);
             this.txtBox.TabIndex = 1;
             // 
             // AltTextBox
@@ -78,7 +81,7 @@ namespace EasyHortifruti.Componentes
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.tableLayoutPanel1);
             this.Name = "AltTextBox";
-            this.Size = new System.Drawing.Size(54, 56);
+            this.Size = new System.Drawing.Size(88, 56);
             this.tableLayoutPanel1.ResumeLayout(false);
             this.tableLayoutPanel1.PerformLayout();
             this.ResumeLayout(false);

@@ -53,21 +53,23 @@
             // 
             this.label.AutoSize = true;
             this.label.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label.Location = new System.Drawing.Point(1, 2);
-            this.label.Margin = new System.Windows.Forms.Padding(1, 2, 3, 0);
+            this.label.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Location = new System.Drawing.Point(0, 1);
+            this.label.Margin = new System.Windows.Forms.Padding(0, 1, 3, 0);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(185, 12);
+            this.label.Size = new System.Drawing.Size(186, 13);
             this.label.TabIndex = 0;
             this.label.Text = "label1";
             // 
             // comboBox1
             // 
             this.comboBox1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.comboBox1.Font = new System.Drawing.Font("Tahoma", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.comboBox1.FormattingEnabled = true;
             this.comboBox1.Location = new System.Drawing.Point(0, 14);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(0);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(189, 21);
+            this.comboBox1.Size = new System.Drawing.Size(189, 26);
             this.comboBox1.TabIndex = 1;
             this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.ComboBox1_SelectedIndexChanged);
             // 

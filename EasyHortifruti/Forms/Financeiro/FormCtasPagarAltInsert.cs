@@ -10,14 +10,24 @@ using System.Windows.Forms;
 
 namespace EasyHortifruti.Forms.Financeiro
 {
-    public partial class FormCtasPagar : Form
+    public partial class FormCtasPagarAltInsert : Form
     {
-        public FormCtasPagar()
+        public FormCtasPagarAltInsert()
         {
             InitializeComponent();
         }
 
-        private void BtBaixaCtaRecebto_Click(object sender, EventArgs e)
+        private void PanelTop2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void PanelTop3_Paint(object sender, PaintEventArgs e)
         {
 
         }

@@ -58,14 +58,20 @@ namespace EasyHortifruti
                 string coluna = dgv.Columns[SelectedIndex].DataPropertyName;
                 if (!string.IsNullOrEmpty(pFiltro))
                 {
-                    switch (pDs.Tables["Table"].DefaultView.Table.Columns[SelectedIndex].DataType.ToString())
+                    if (SelectedIndex == 14)
+                        pDs.Tables["Table"].DefaultView.RowFilter = $"{coluna} = {pFiltro}";
+                    else
                     {
-                        case "System.Double":
-                            pDs.Tables["Table"].DefaultView.RowFilter = $"{coluna} = {pFiltro}";
-                            break;
-                        default:
-                            pDs.Tables["Table"].DefaultView.RowFilter = $"{coluna} LIKE '%{pFiltro}%'";
-                            break;
+                        switch (pDs.Tables["Table"].DefaultView.Table.Columns[SelectedIndex].DataType.ToString())
+                        {
+                            case "System.Int32":
+                            case "System.Double":
+                                pDs.Tables["Table"].DefaultView.RowFilter = $"{coluna} = {pFiltro}";
+                                break;
+                            default:
+                                pDs.Tables["Table"].DefaultView.RowFilter = $"{coluna} LIKE '%{pFiltro}%'";
+                                break;
+                        }
                     }
                 }
                 else

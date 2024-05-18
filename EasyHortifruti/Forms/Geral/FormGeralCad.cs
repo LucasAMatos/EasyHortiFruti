@@ -91,13 +91,12 @@ namespace EasyHortifruti
 
         public void CarregarComboTipoFonte()
         {
-            cbTpFontePesquisa.Items.Clear();
-            cbTpFontePesquisa.Items.AddRange(new object[] {
-            "Cliente",
-            "Entregador",
-            "Fornecedor",
-            "Funcionário",
-            "Sócio"});
+            cbTpFontePesquisa.Clear();
+            cbTpFontePesquisa.Add(1, "Cliente");
+            cbTpFontePesquisa.Add(2, "Entregador");
+            cbTpFontePesquisa.Add(3, "Fornecedor");
+            cbTpFontePesquisa.Add(4, "Funcionário");
+            cbTpFontePesquisa.Add(5, "Sócio");
         }
         private void CarregarComboFiltros()
         {
@@ -129,5 +128,10 @@ namespace EasyHortifruti
             Filtrar();
         }
         #endregion
+
+        private void cbTpFontePesquisa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            base.Filtrar(DgViewCadGeral, dsGrid, 14, cbTpFontePesquisa.SelectedIndex.ToString());
+        }
     }
 }

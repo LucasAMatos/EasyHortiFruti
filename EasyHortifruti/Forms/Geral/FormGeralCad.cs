@@ -38,6 +38,8 @@ namespace EasyHortifruti
             FormGeralAltInsert GeralAltInsert = new FormGeralAltInsert();
 
             GeralAltInsert.ShowDialog();
+
+            CarregarGrid();
         }
 
         private void BtEditarCadGeral_Click(object sender, EventArgs e)

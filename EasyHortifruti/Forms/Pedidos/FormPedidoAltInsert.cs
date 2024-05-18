@@ -482,7 +482,13 @@ namespace EasyHortifruti
                 ValorDesconto = string.IsNullOrEmpty(TbDesconto.Text) ? 0 : Convert.ToDecimal(TbDesconto.Text.Replace("R$", "")),
                 TotalGeral = Convert.ToDecimal(TbTotalGeral.Text.Replace("R$", ""))
             };
-            new ConexaoBD().InserirPedido(pedido);
+            if (Id > 0)
+            {
+                pedido.ID = Id;
+                new ConexaoBD().AlterarPedido(pedido);
+            }
+            else
+                new ConexaoBD().InserirPedido(pedido);
 
             MessageBox.Show("Pedido inserido com sucesso!");
             this.Close();

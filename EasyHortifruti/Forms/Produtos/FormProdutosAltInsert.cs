@@ -54,18 +54,21 @@ namespace EasyHortifruti
         {
             FormUnidadeCad FormUnidadeCad = new FormUnidadeCad();
             FormUnidadeCad.ShowDialog();
+            CarregarComboUnidades();
         }
 
         private void BtCadGrupo_Click(object sender, EventArgs e)
         {
             FormGruposCad cadGrupos = new FormGruposCad();
             cadGrupos.ShowDialog();
+            CarregarComboGrupo();
         }
 
         private void BtCadSubGrupo_Click(object sender, EventArgs e)
         {
             FormSubGruposCad cadSubGrupos = new FormSubGruposCad();
             cadSubGrupos.ShowDialog();
+            CarregarComboSubGrupo();
         }
 
         private void BtCancelaProduto_Click(object sender, EventArgs e)

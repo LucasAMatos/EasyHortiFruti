@@ -322,7 +322,6 @@ namespace EasyHortifruti
 
                 if (iGeral != null)
                 {
-                    CbNomeCliente.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.RazaoSocial : iGeral.NomeCompleto;
                     if (iGeral.Telefones?.Count > 0)
                         TbCelular.Text = iGeral.Telefones.First(x => x.TipoTelefone == TipoTelefone.celular).TelefoneCompleto;
 

@@ -31,5 +31,52 @@ namespace EasyHortifruti.Forms.Financeiro
         {
 
         }
+
+        private void FormCtasPagarAltInsert_Load(object sender, EventArgs e)
+        {
+            CarregarComboPeriodicidade();
+            CarregarTipoDocumento();
+            CarregarComboCredorFornecedor();
+        }
+
+        private void CarregarComboPeriodicidade()
+        {
+            CbTpConta.Clear();
+            CbTpConta.Add(0, "Eventual");
+            CbTpConta.Add(1, "Mensal");
+            CbTpConta.SelectedIndex = 0;
+        }
+
+        private void CarregarComboCredorFornecedor()
+        {
+            DataSet dsFornecedor = new ConexaoBD().ConsultarGeralPorClassificacao(DML.Classificacao.Fornecedor);
+            CbCredorFornecedor.Clear();
+
+            foreach (DataRow dr in dsFornecedor.Tables[0].Rows)
+            {
+                CbCredorFornecedor.Add(Convert.ToInt32(dr["id_recno"]), dr["razaosocial"].ToString());
+            }
+        }
+
+        private void CarregarTipoDocumento()
+        {
+            DataSet dsTiposConta = new ConexaoBD().ConsultarTiposConta();
+            CbTpDocumento.Clear();
+            foreach (DataRow dr in dsTiposConta.Tables[0].Rows)
+            {
+                CbTpDocumento.Add(Convert.ToInt32(dr["id_recno"]), dr["descricao"].ToString());
+            }
+        }
+
+        private void BtCancelarCPInserir_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void BtGravarCPAltInsert_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("Conta cadastrada com Sucesso!");
+            this.Close();
+        }
     }
 }

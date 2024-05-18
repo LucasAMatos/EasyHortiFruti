@@ -35,26 +35,26 @@
             this.BtGravarCPAltInsert = new System.Windows.Forms.Button();
             this.BtCancelarCPInserir = new System.Windows.Forms.Button();
             this.PanelCentro = new System.Windows.Forms.Panel();
+            this.PanelMultaJuros = new System.Windows.Forms.Panel();
+            this.PanelTop3 = new System.Windows.Forms.Panel();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.DtVencimento = new System.Windows.Forms.DateTimePicker();
+            this.PanelTop2 = new System.Windows.Forms.Panel();
+            this.BtnCadGeral = new System.Windows.Forms.Button();
+            this.PanelTop1 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.CbTpConta = new EasyHortifruti.Componentes.AltComboBox();
             this.CbTpDocumento = new EasyHortifruti.Componentes.AltComboBox();
-            this.PanelMultaJuros = new System.Windows.Forms.Panel();
             this.CbTpCobraJuros = new EasyHortifruti.Componentes.AltComboBox();
             this.TbPercentJuros = new EasyHortifruti.Componentes.AltTextBox();
             this.TbPercentMulta = new EasyHortifruti.Componentes.AltTextBox();
             this.CbJuros = new EasyHortifruti.Componentes.AltComboBox();
             this.CbMulta = new EasyHortifruti.Componentes.AltComboBox();
-            this.PanelTop3 = new System.Windows.Forms.Panel();
             this.TbDescricaoObs = new EasyHortifruti.Componentes.AltTextBox();
-            this.panel3 = new System.Windows.Forms.Panel();
             this.TbVlrDocumento = new EasyHortifruti.Componentes.AltTextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.DtVencimento = new System.Windows.Forms.DateTimePicker();
-            this.PanelTop2 = new System.Windows.Forms.Panel();
             this.CbCredorFornecedor = new EasyHortifruti.Componentes.AltComboBox();
-            this.BtnCadGeral = new System.Windows.Forms.Button();
-            this.PanelTop1 = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.PanelPrincipalCPInsert.SuspendLayout();
             this.PanelButtom.SuspendLayout();
             this.PanelCentro.SuspendLayout();
@@ -115,6 +115,7 @@
             this.BtGravarCPAltInsert.Size = new System.Drawing.Size(94, 30);
             this.BtGravarCPAltInsert.TabIndex = 3;
             this.BtGravarCPAltInsert.UseVisualStyleBackColor = false;
+            this.BtGravarCPAltInsert.Click += new System.EventHandler(this.BtGravarCPAltInsert_Click);
             // 
             // BtCancelarCPInserir
             // 
@@ -128,6 +129,7 @@
             this.BtCancelarCPInserir.Size = new System.Drawing.Size(94, 30);
             this.BtCancelarCPInserir.TabIndex = 2;
             this.BtCancelarCPInserir.UseVisualStyleBackColor = false;
+            this.BtCancelarCPInserir.Click += new System.EventHandler(this.BtCancelarCPInserir_Click);
             // 
             // PanelCentro
             // 
@@ -140,11 +142,130 @@
             this.PanelCentro.Size = new System.Drawing.Size(603, 180);
             this.PanelCentro.TabIndex = 4;
             // 
+            // PanelMultaJuros
+            // 
+            this.PanelMultaJuros.Controls.Add(this.CbTpCobraJuros);
+            this.PanelMultaJuros.Controls.Add(this.TbPercentJuros);
+            this.PanelMultaJuros.Controls.Add(this.TbPercentMulta);
+            this.PanelMultaJuros.Controls.Add(this.CbJuros);
+            this.PanelMultaJuros.Controls.Add(this.CbMulta);
+            this.PanelMultaJuros.Dock = System.Windows.Forms.DockStyle.Right;
+            this.PanelMultaJuros.Location = new System.Drawing.Point(297, 0);
+            this.PanelMultaJuros.Name = "PanelMultaJuros";
+            this.PanelMultaJuros.Size = new System.Drawing.Size(306, 180);
+            this.PanelMultaJuros.TabIndex = 1;
+            // 
+            // PanelTop3
+            // 
+            this.PanelTop3.Controls.Add(this.TbDescricaoObs);
+            this.PanelTop3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTop3.Location = new System.Drawing.Point(0, 171);
+            this.PanelTop3.Name = "PanelTop3";
+            this.PanelTop3.Size = new System.Drawing.Size(603, 71);
+            this.PanelTop3.TabIndex = 3;
+            this.PanelTop3.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelTop3_Paint);
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.TbVlrDocumento);
+            this.panel3.Controls.Add(this.label1);
+            this.panel3.Controls.Add(this.DtVencimento);
+            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel3.Location = new System.Drawing.Point(0, 113);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(603, 58);
+            this.panel3.TabIndex = 2;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(21, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(73, 13);
+            this.label1.TabIndex = 1;
+            this.label1.Text = "Vencimento";
+            // 
+            // DtVencimento
+            // 
+            this.DtVencimento.CalendarFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtVencimento.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.DtVencimento.Location = new System.Drawing.Point(24, 24);
+            this.DtVencimento.Name = "DtVencimento";
+            this.DtVencimento.Size = new System.Drawing.Size(126, 25);
+            this.DtVencimento.TabIndex = 0;
+            // 
+            // PanelTop2
+            // 
+            this.PanelTop2.Controls.Add(this.CbCredorFornecedor);
+            this.PanelTop2.Controls.Add(this.BtnCadGeral);
+            this.PanelTop2.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTop2.Location = new System.Drawing.Point(0, 54);
+            this.PanelTop2.Name = "PanelTop2";
+            this.PanelTop2.Size = new System.Drawing.Size(603, 59);
+            this.PanelTop2.TabIndex = 1;
+            this.PanelTop2.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelTop2_Paint);
+            // 
+            // BtnCadGeral
+            // 
+            this.BtnCadGeral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.BtnCadGeral.BackColor = System.Drawing.Color.Transparent;
+            this.BtnCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtnCadGeral.FlatAppearance.BorderSize = 0;
+            this.BtnCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.BtnCadGeral.Image = ((System.Drawing.Image)(resources.GetObject("BtnCadGeral.Image")));
+            this.BtnCadGeral.Location = new System.Drawing.Point(552, 23);
+            this.BtnCadGeral.Name = "BtnCadGeral";
+            this.BtnCadGeral.Size = new System.Drawing.Size(28, 26);
+            this.BtnCadGeral.TabIndex = 24;
+            this.BtnCadGeral.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.BtnCadGeral.UseVisualStyleBackColor = false;
+            // 
+            // PanelTop1
+            // 
+            this.PanelTop1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelTop1.BackgroundImage")));
+            this.PanelTop1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.PanelTop1.Controls.Add(this.label2);
+            this.PanelTop1.Controls.Add(this.panel1);
+            this.PanelTop1.Dock = System.Windows.Forms.DockStyle.Top;
+            this.PanelTop1.Location = new System.Drawing.Point(0, 0);
+            this.PanelTop1.Name = "PanelTop1";
+            this.PanelTop1.Size = new System.Drawing.Size(603, 54);
+            this.PanelTop1.TabIndex = 0;
+            // 
+            // label2
+            // 
+            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.Color.White;
+            this.label2.Location = new System.Drawing.Point(68, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(312, 45);
+            this.label2.TabIndex = 2;
+            this.label2.Text = "Inserir Ctas a Pagar";
+            // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
+            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel1.Location = new System.Drawing.Point(0, 0);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(65, 54);
+            this.panel1.TabIndex = 0;
+            // 
             // CbTpConta
             // 
             this.CbTpConta.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
             this.CbTpConta.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.CbTpConta.Caption = "Tipo Conta";
+            this.CbTpConta.Caption = "Periodicidade";
             this.CbTpConta.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.CbTpConta.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.CbTpConta.FormattingEnabled = true;
@@ -173,19 +294,6 @@
             this.CbTpDocumento.SelectedText = "";
             this.CbTpDocumento.Size = new System.Drawing.Size(189, 40);
             this.CbTpDocumento.TabIndex = 4;
-            // 
-            // PanelMultaJuros
-            // 
-            this.PanelMultaJuros.Controls.Add(this.CbTpCobraJuros);
-            this.PanelMultaJuros.Controls.Add(this.TbPercentJuros);
-            this.PanelMultaJuros.Controls.Add(this.TbPercentMulta);
-            this.PanelMultaJuros.Controls.Add(this.CbJuros);
-            this.PanelMultaJuros.Controls.Add(this.CbMulta);
-            this.PanelMultaJuros.Dock = System.Windows.Forms.DockStyle.Right;
-            this.PanelMultaJuros.Location = new System.Drawing.Point(297, 0);
-            this.PanelMultaJuros.Name = "PanelMultaJuros";
-            this.PanelMultaJuros.Size = new System.Drawing.Size(306, 180);
-            this.PanelMultaJuros.TabIndex = 1;
             // 
             // CbTpCobraJuros
             // 
@@ -274,16 +382,6 @@
             this.CbMulta.Size = new System.Drawing.Size(101, 40);
             this.CbMulta.TabIndex = 1;
             // 
-            // PanelTop3
-            // 
-            this.PanelTop3.Controls.Add(this.TbDescricaoObs);
-            this.PanelTop3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelTop3.Location = new System.Drawing.Point(0, 171);
-            this.PanelTop3.Name = "PanelTop3";
-            this.PanelTop3.Size = new System.Drawing.Size(603, 71);
-            this.PanelTop3.TabIndex = 3;
-            this.PanelTop3.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelTop3_Paint);
-            // 
             // TbDescricaoObs
             // 
             this.TbDescricaoObs.Caption = "Descrição / Observações do Documento";
@@ -302,18 +400,6 @@
             this.TbDescricaoObs.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.TbDescricaoObs.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.TbVlrDocumento);
-            this.panel3.Controls.Add(this.label1);
-            this.panel3.Controls.Add(this.DtVencimento);
-            this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
-            this.panel3.Location = new System.Drawing.Point(0, 113);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(603, 58);
-            this.panel3.TabIndex = 2;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
             // TbVlrDocumento
             // 
             this.TbVlrDocumento.Caption = "Vlr Documento";
@@ -330,38 +416,7 @@
             this.TbVlrDocumento.Size = new System.Drawing.Size(135, 40);
             this.TbVlrDocumento.TabIndex = 2;
             this.TbVlrDocumento.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.TbVlrDocumento.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(21, 9);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(73, 13);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Vencimento";
-            // 
-            // DtVencimento
-            // 
-            this.DtVencimento.CalendarFont = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtVencimento.Font = new System.Drawing.Font("Tahoma", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DtVencimento.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
-            this.DtVencimento.Location = new System.Drawing.Point(24, 24);
-            this.DtVencimento.Name = "DtVencimento";
-            this.DtVencimento.Size = new System.Drawing.Size(126, 25);
-            this.DtVencimento.TabIndex = 0;
-            // 
-            // PanelTop2
-            // 
-            this.PanelTop2.Controls.Add(this.CbCredorFornecedor);
-            this.PanelTop2.Controls.Add(this.BtnCadGeral);
-            this.PanelTop2.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelTop2.Location = new System.Drawing.Point(0, 54);
-            this.PanelTop2.Name = "PanelTop2";
-            this.PanelTop2.Size = new System.Drawing.Size(603, 59);
-            this.PanelTop2.TabIndex = 1;
-            this.PanelTop2.Paint += new System.Windows.Forms.PaintEventHandler(this.PanelTop2_Paint);
+            this.TbVlrDocumento.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.MOEDA;
             // 
             // CbCredorFornecedor
             // 
@@ -380,59 +435,6 @@
             this.CbCredorFornecedor.Size = new System.Drawing.Size(530, 44);
             this.CbCredorFornecedor.TabIndex = 25;
             // 
-            // BtnCadGeral
-            // 
-            this.BtnCadGeral.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.BtnCadGeral.BackColor = System.Drawing.Color.Transparent;
-            this.BtnCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.BtnCadGeral.FlatAppearance.BorderSize = 0;
-            this.BtnCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.BtnCadGeral.Image = ((System.Drawing.Image)(resources.GetObject("BtnCadGeral.Image")));
-            this.BtnCadGeral.Location = new System.Drawing.Point(552, 23);
-            this.BtnCadGeral.Name = "BtnCadGeral";
-            this.BtnCadGeral.Size = new System.Drawing.Size(28, 26);
-            this.BtnCadGeral.TabIndex = 24;
-            this.BtnCadGeral.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.BtnCadGeral.UseVisualStyleBackColor = false;
-            // 
-            // PanelTop1
-            // 
-            this.PanelTop1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("PanelTop1.BackgroundImage")));
-            this.PanelTop1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.PanelTop1.Controls.Add(this.label2);
-            this.PanelTop1.Controls.Add(this.panel1);
-            this.PanelTop1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.PanelTop1.Location = new System.Drawing.Point(0, 0);
-            this.PanelTop1.Name = "PanelTop1";
-            this.PanelTop1.Size = new System.Drawing.Size(603, 54);
-            this.PanelTop1.TabIndex = 0;
-            // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.Color.Transparent;
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel1.Location = new System.Drawing.Point(0, 0);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(65, 54);
-            this.panel1.TabIndex = 0;
-            // 
-            // label2
-            // 
-            this.label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label2.AutoSize = true;
-            this.label2.BackColor = System.Drawing.Color.Transparent;
-            this.label2.Font = new System.Drawing.Font("Calibri", 27.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(68, 5);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(312, 45);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Inserir Ctas a Pagar";
-            // 
             // FormCtasPagarAltInsert
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -443,6 +445,7 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormCtasPagarAltInsert";
             this.Text = "Easy Hortifruti - Inserir";
+            this.Load += new System.EventHandler(this.FormCtasPagarAltInsert_Load);
             this.PanelPrincipalCPInsert.ResumeLayout(false);
             this.PanelButtom.ResumeLayout(false);
             this.PanelButtom.PerformLayout();

@@ -1,7 +1,9 @@
 ﻿using EasyHortifruti.DML;
 using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
+using System.Runtime.InteropServices.ComTypes;
 using System.Security.Policy;
 using System.Text;
 using System.Threading.Tasks;
@@ -156,6 +158,16 @@ namespace EasyHortifruti
                                                 CONSTRAINT fk_pedido_id FOREIGN KEY (id_pedido)
                                                     REFERENCES public.pedidos (id_recno)
                                             )";
+
+        public static string TabelaTiposConta = "tiposConta";
+
+        public static string CreateTabelaTiposConta = @"CREATE TABLE IF NOT EXISTS public.tiposConta
+        (
+                                                descricao character varying(50)  NOT NULL,
+                                                id_recno integer NOT NULL GENERATED ALWAYS AS IDENTITY
+                                                (INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
+                                                CONSTRAINT id_recno PRIMARY KEY(id_recno)
+												)";
 
         public static string TabelaNCM = "tabelancm";
 
@@ -927,7 +939,8 @@ namespace EasyHortifruti
                 CreateTabelaNCM,
                 ProcTabelaNCM,
                 ChamaProcNCM,
-                CreateItensPedido
+                CreateItensPedido,
+                CreateTabelaTiposConta
             };
         }
     }

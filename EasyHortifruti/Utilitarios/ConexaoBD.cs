@@ -41,6 +41,12 @@ namespace EasyHortifruti
             return iGeral;
         }
 
+        public DataSet ConsultarGeralPorClassificacao(Classificacao pClassificacao)
+        {
+            string sql = "select * from geral where classificacao = " + ((int)pClassificacao).ToString();
+
+            return ExecutaEPreencheDataset(sql);
+        }
         public void InserirGeral(Geral pGeral)
         {
             Telefone fone = pGeral.Telefones.First(x => x.TipoTelefone == TipoTelefone.pessoal);
@@ -423,6 +429,8 @@ namespace EasyHortifruti
         #region CtasReceber
 
         public DataSet ConsultarContas() => ConsultarTabela(TabelasScript.TabelaCtasReceber);
+
+        public DataSet ConsultarTiposConta() => ConsultarTabela(TabelasScript.TabelaTiposConta);
 
         public DataSet ConsultarContaPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaCtasReceber);
 

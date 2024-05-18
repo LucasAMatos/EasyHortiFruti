@@ -73,11 +73,12 @@
             this.BtCtasReceber.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtCtasReceber.FlatAppearance.BorderSize = 0;
             this.BtCtasReceber.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtCtasReceber.Location = new System.Drawing.Point(42, 446);
+            this.BtCtasReceber.Location = new System.Drawing.Point(42, 597);
             this.BtCtasReceber.Name = "BtCtasReceber";
             this.BtCtasReceber.Size = new System.Drawing.Size(195, 44);
             this.BtCtasReceber.TabIndex = 9;
             this.BtCtasReceber.UseVisualStyleBackColor = false;
+            this.BtCtasReceber.Visible = false;
             this.BtCtasReceber.Click += new System.EventHandler(this.BtCtasReceber_Click);
             // 
             // BtCtasPagar
@@ -87,11 +88,12 @@
             this.BtCtasPagar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtCtasPagar.FlatAppearance.BorderSize = 0;
             this.BtCtasPagar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtCtasPagar.Location = new System.Drawing.Point(42, 368);
+            this.BtCtasPagar.Location = new System.Drawing.Point(42, 519);
             this.BtCtasPagar.Name = "BtCtasPagar";
             this.BtCtasPagar.Size = new System.Drawing.Size(195, 44);
             this.BtCtasPagar.TabIndex = 7;
             this.BtCtasPagar.UseVisualStyleBackColor = false;
+            this.BtCtasPagar.Visible = false;
             this.BtCtasPagar.Click += new System.EventHandler(this.BtCtasPagar_Click);
             // 
             // btSairPrincipal
@@ -101,7 +103,7 @@
             this.btSairPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btSairPrincipal.FlatAppearance.BorderSize = 0;
             this.btSairPrincipal.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btSairPrincipal.Location = new System.Drawing.Point(42, 596);
+            this.btSairPrincipal.Location = new System.Drawing.Point(42, 439);
             this.btSairPrincipal.Name = "btSairPrincipal";
             this.btSairPrincipal.Size = new System.Drawing.Size(195, 42);
             this.btSairPrincipal.TabIndex = 6;
@@ -115,7 +117,7 @@
             this.btRelatórios.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btRelatórios.FlatAppearance.BorderSize = 0;
             this.btRelatórios.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btRelatórios.Location = new System.Drawing.Point(42, 521);
+            this.btRelatórios.Location = new System.Drawing.Point(42, 364);
             this.btRelatórios.Name = "btRelatórios";
             this.btRelatórios.Size = new System.Drawing.Size(195, 42);
             this.btRelatórios.TabIndex = 5;

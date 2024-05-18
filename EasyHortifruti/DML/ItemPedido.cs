@@ -16,7 +16,11 @@
 
         public decimal Valor_custo { get; set; }
 
-        public decimal Percentual_lucro { get; set; }
+        public decimal Percentual_lucro {
+            get { 
+                return Valor_lucro/Valor_custo*100;
+            }
+        }
 
         public decimal Total_item { get; set; }
 

@@ -31,9 +31,9 @@ namespace EasyHortifruti
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidoAltInsert));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel5 = new System.Windows.Forms.Panel();
             this.panelPedidoProdutos = new System.Windows.Forms.Panel();
@@ -42,12 +42,6 @@ namespace EasyHortifruti
             this.BtExclItemPedido = new System.Windows.Forms.Button();
             this.BtEditItemPedido = new System.Windows.Forms.Button();
             this.DgvItensPedido = new System.Windows.Forms.DataGridView();
-            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vltotitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vllucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panelSelectProduto = new System.Windows.Forms.Panel();
             this.TbPrecoProd = new EasyHortifruti.Componentes.AltTextBox();
             this.TbLucroItem = new EasyHortifruti.Componentes.AltTextBox();
@@ -112,6 +106,13 @@ namespace EasyHortifruti
             this.DescrProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.VlCompraProduto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TotalItem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Column4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vltotitem = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vllucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Id_item = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel5.SuspendLayout();
             this.panelPedidoProdutos.SuspendLayout();
@@ -230,7 +231,8 @@ namespace EasyHortifruti
             this.Column3,
             this.Column4,
             this.vltotitem,
-            this.vllucro});
+            this.vllucro,
+            this.Id_item});
             this.DgvItensPedido.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DgvItensPedido.Location = new System.Drawing.Point(3, 105);
             this.DgvItensPedido.MultiSelect = false;
@@ -242,36 +244,6 @@ namespace EasyHortifruti
             this.DgvItensPedido.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvItensPedido_CellEndEdit);
             this.DgvItensPedido.RowsAdded += new System.Windows.Forms.DataGridViewRowsAddedEventHandler(this.DgvItensPedido_RowsAdded);
             this.DgvItensPedido.RowsRemoved += new System.Windows.Forms.DataGridViewRowsRemovedEventHandler(this.DgvItensPedido_RowsRemoved);
-            // 
-            // Column1
-            // 
-            this.Column1.HeaderText = "Produto";
-            this.Column1.Name = "Column1";
-            // 
-            // Column2
-            // 
-            this.Column2.HeaderText = "Unidade";
-            this.Column2.Name = "Column2";
-            // 
-            // Column3
-            // 
-            this.Column3.HeaderText = "Qtde.";
-            this.Column3.Name = "Column3";
-            // 
-            // Column4
-            // 
-            this.Column4.HeaderText = "Vrl Custo";
-            this.Column4.Name = "Column4";
-            // 
-            // vltotitem
-            // 
-            this.vltotitem.HeaderText = "Total Item";
-            this.vltotitem.Name = "vltotitem";
-            // 
-            // vllucro
-            // 
-            this.vllucro.HeaderText = "Vrl Lucro";
-            this.vllucro.Name = "vllucro";
             // 
             // panelSelectProduto
             // 
@@ -1335,34 +1307,73 @@ namespace EasyHortifruti
             // 
             // DescrProduto
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.DescrProduto.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DescrProduto.DefaultCellStyle = dataGridViewCellStyle4;
             this.DescrProduto.HeaderText = "Descrição Produto";
             this.DescrProduto.Name = "DescrProduto";
             this.DescrProduto.Width = 220;
             // 
             // VlCompraProduto
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.VlCompraProduto.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.VlCompraProduto.DefaultCellStyle = dataGridViewCellStyle5;
             this.VlCompraProduto.HeaderText = "Valor Custo";
             this.VlCompraProduto.Name = "VlCompraProduto";
             this.VlCompraProduto.Width = 90;
             // 
             // TotalItem
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.TotalItem.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle6.Format = "C2";
+            dataGridViewCellStyle6.NullValue = null;
+            this.TotalItem.DefaultCellStyle = dataGridViewCellStyle6;
             this.TotalItem.HeaderText = "Total Item";
             this.TotalItem.Name = "TotalItem";
             this.TotalItem.Width = 90;
+            // 
+            // Column1
+            // 
+            this.Column1.HeaderText = "Produto";
+            this.Column1.Name = "Column1";
+            // 
+            // Column2
+            // 
+            this.Column2.HeaderText = "Unidade";
+            this.Column2.Name = "Column2";
+            // 
+            // Column3
+            // 
+            this.Column3.HeaderText = "Qtde.";
+            this.Column3.Name = "Column3";
+            // 
+            // Column4
+            // 
+            this.Column4.HeaderText = "Vrl Custo";
+            this.Column4.Name = "Column4";
+            // 
+            // vltotitem
+            // 
+            this.vltotitem.DataPropertyName = "vltotitem";
+            this.vltotitem.HeaderText = "Total Item";
+            this.vltotitem.Name = "vltotitem";
+            // 
+            // vllucro
+            // 
+            this.vllucro.DataPropertyName = "vllucro";
+            this.vllucro.HeaderText = "Vrl Lucro";
+            this.vllucro.Name = "vllucro";
+            // 
+            // Id_item
+            // 
+            this.Id_item.DataPropertyName = "Id_item";
+            this.Id_item.HeaderText = "idItem";
+            this.Id_item.Name = "Id_item";
+            this.Id_item.Visible = false;
             // 
             // FormPedidoAltInsert
             // 
@@ -1480,13 +1491,14 @@ namespace EasyHortifruti
         private AltTextBox TbPrecoProd;
         private AltTextBox TbLucroPedido;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.Button BtEditItemPedido;
+        private System.Windows.Forms.Button BtExclItemPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column3;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column4;
         private System.Windows.Forms.DataGridViewTextBoxColumn vltotitem;
         private System.Windows.Forms.DataGridViewTextBoxColumn vllucro;
-        private System.Windows.Forms.Button BtEditItemPedido;
-        private System.Windows.Forms.Button BtExclItemPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Id_item;
     }
 }

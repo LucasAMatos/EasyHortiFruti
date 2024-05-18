@@ -408,9 +408,9 @@ namespace EasyHortifruti
                         Unidade = dr["abrev_unid"].ToString(),
                         Quantidade = Convert.ToInt32(dr["qtdeitem"]),
                         Valor_custo = Convert.ToDecimal(dr["vlcusto"]),
-                        Valor_lucro = Convert.ToDecimal(dr["vllucro"])
+                        Valor_lucro = Convert.ToDecimal(dr["vllucro"]),
+                        Total_item = Convert.ToDecimal(dr["vltotitem"])
                     };
-                    item.Percentual_lucro = item.Valor_lucro * 100 / (item.Valor_custo + item.Valor_lucro);
                     item.Id_item = Convert.ToInt32(dr["id_recno"]);
 
                     itensPedido.Add(item);

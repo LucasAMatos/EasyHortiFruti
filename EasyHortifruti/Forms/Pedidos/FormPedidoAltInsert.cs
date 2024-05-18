@@ -315,8 +315,12 @@ namespace EasyHortifruti
         {
             if (CbNomeCliente.SelectedItem != null || IdClienteSelecionado >= 0)
             {
-                if(IdClienteSelecionado < 0)
+
+                if (Id == 0)
+                {
                     IdClienteSelecionado = CbNomeCliente.SelectedIndex;
+                    CbNomeCliente.Enabled = true;
+                }
 
                 iGeral = new ConexaoBD().ConsultarGeralPorId(IdClienteSelecionado);
 
@@ -325,6 +329,11 @@ namespace EasyHortifruti
                     if (iGeral.Telefones?.Count > 0)
                         TbCelular.Text = iGeral.Telefones.First(x => x.TipoTelefone == TipoTelefone.celular).TelefoneCompleto;
 
+                    if (CbNomeCliente.Text == string.Empty && Id > 0)
+                    {
+                        CbNomeCliente.Enabled = false;
+                        CbNomeCliente.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.RazaoSocial : iGeral.NomeCompleto;
+                    }
                     CbTpDocumento.SelectedIndex = iGeral.TipoPessoa == TPFJ.Fisica ? 0 : 1;
                     TbRazaoSocial.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.RazaoSocial : string.Empty;
                     TbCNPJ.Text = iGeral.TipoPessoa == TPFJ.Juridica ? iGeral.CNPJ : string.Empty;
@@ -373,7 +382,6 @@ namespace EasyHortifruti
                 Id_unidade = CbUnidPedido.SelectedIndex,
                 Quantidade = Convert.ToInt32(TbQtdPedido.Text),
                 Valor_custo = Convert.ToDecimal(TbVlCusto.Text),
-                //percentual_lucro = Convert.ToDecimal(TbMargemLucro.Text),
                 Total_item = Convert.ToDecimal(TbTotalItem.Text),
                 Valor_lucro = Convert.ToDecimal(TbLucroItem.Text)
             };
@@ -396,7 +404,7 @@ namespace EasyHortifruti
 
         private void AdicionarPedidoDataGridView(ItemPedido pedido)
         {
-            DgvItensPedido.Rows.Add(pedido.DescrProduto, pedido.Unidade, pedido.Quantidade, pedido.Valor_custo, pedido.Total_item, pedido.Valor_lucro);
+            DgvItensPedido.Rows.Add(pedido.DescrProduto, pedido.Unidade, pedido.Quantidade, pedido.Valor_custo, pedido.Total_item, pedido.Valor_lucro, pedido.Id_item);
             itensPedidos.Add(pedido);
         }
 
@@ -515,6 +523,7 @@ namespace EasyHortifruti
                 TbQtdPedido.Text = DgvItensPedido.Rows[IdSelecionado].Cells[2].Value.ToString();
                 BtAdicItemPedido.Text = "Alterar";
                 BtExclItemPedido.Enabled = false;
+                itensPedidos.RemoveAll(x => x.Id_item == Convert.ToInt16(DgvItensPedido.Rows[IdSelecionado].Cells["Id_item"].Value));
             }
         }
 
@@ -528,6 +537,7 @@ namespace EasyHortifruti
 
                     DtPedido.Value = pedido.DataPedido;
                     IdClienteSelecionado = pedido.IdPessoa;
+                    CbNomeCliente_SelectedIndexChanged(null, null);
                     CbStatusPedido.Text = pedido.StatusPedido.ToString();
                     TbPrazoPgto.Text = pedido.PrazoPagamento.ToString();
                     DtPrevEntrega.Value = pedido.DataPrev;
@@ -537,7 +547,7 @@ namespace EasyHortifruti
                     TbLucroPedido.Text = pedido.ValorLucro.ToString();
                     TbTotPedido.Text = pedido.TotalPedido.ToString();
                     TbDesconto.Text = pedido.ValorDesconto.ToString();
-                    TbTotalGeral.Text = pedido.TotalGeral.ToString();
+                    Total_Geral = pedido.TotalGeral;
 
                     pedido.Itens = new ConexaoBD().ConsultarItensPedido(pedido.ID);
 

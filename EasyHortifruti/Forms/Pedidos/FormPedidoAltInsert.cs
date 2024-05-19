@@ -152,10 +152,10 @@ namespace EasyHortifruti
             BuscaCliente.ShowDialog();
         }
 
-        private void CarregarGridNomeCliente()
+        private void CarregarComboNomeCliente()
         {
             CbNomeCliente.Clear();
-            DataSet ds = new ConexaoBD().ConsultarGerais();
+            DataSet ds = new ConexaoBD().ConsultarGeralPorClassificacao(Classificacao.Cliente);
             foreach (DataRow dr in ds.Tables[0].Rows)
                 CbNomeCliente.Add(Convert.ToInt32(dr["id_recno"]), dr["razaosocial"].ToString());
 
@@ -171,7 +171,7 @@ namespace EasyHortifruti
         {
             base.LimparCampos();
             CarregarComboStatusPedido();
-            CarregarGridNomeCliente();
+            CarregarComboNomeCliente();
             dsProdutos = new ConexaoBD().ConsultarProdutos();
             CarregarComboProdutos();
             CarregarComboUnidades();

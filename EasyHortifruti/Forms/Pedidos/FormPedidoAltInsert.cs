@@ -193,7 +193,7 @@ namespace EasyHortifruti
                     (CbUnidPedido.SelectedItem == dr["abrev_unid"].ToString()))
                 {
                     TbPrecoProd.Text = dr["pcocompra_produto"].ToString();
-                    TbMargemLucro.Text = Convert.ToDouble(dr["margem_produto"]).ToString("F2", System.Globalization.CultureInfo.InvariantCulture);
+                    TbMargemLucro.Text = Convert.ToDouble(dr["margem_produto"]).ToString();
                 }
             }
         }
@@ -245,7 +245,7 @@ namespace EasyHortifruti
                 decimal lucroFinalItem = (valorCompra * quantidade * (margemLucro / 100));
 
                 // Exibir a margem de lucro no TextBox de resultado
-                TbLucroItem.Text = lucroFinalItem.ToString();
+                TbLucroItem.Text = lucroFinalItem.ToString("N2");
             }
             else
             {
@@ -281,7 +281,7 @@ namespace EasyHortifruti
                 decimal valorFinal = (valorCompra + LucroItem);
 
                 // Exibir a margem de lucro no TextBox de resultado
-                TbTotalItem.Text = valorFinal.ToString();
+                TbTotalItem.Text = valorFinal.ToString("N2");
             }
             else
             {

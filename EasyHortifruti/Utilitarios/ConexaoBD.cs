@@ -553,8 +553,8 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-                foreach (string script in new TabelasScript().Scripts)
-                    new NpgsqlCommand(script, conn).ExecuteNonQuery();
+              //  foreach (string script in new TabelasScript().Scripts)
+                //new NpgsqlCommand(script, conn).ExecuteNonQuery();
             }
         }
         #endregion

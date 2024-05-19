@@ -176,7 +176,10 @@ namespace EasyHortifruti
             CarregarComboProdutos();
             CarregarComboUnidades();
             CarregarComboTpDocumento();
-
+            DtPedido.Value = DateTime.Now;
+            DtPrevEntrega.Value = DateTime.Now;
+            DtEntregaPedido.Value = DateTime.Now;
+            DtConclusaoPedido.Value = DateTime.Now;
             PreencheCampos();
         }
 

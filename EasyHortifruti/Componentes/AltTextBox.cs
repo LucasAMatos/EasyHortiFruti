@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Newtonsoft.Json.Linq;
+using System;
 using System.Drawing;
 using System.Linq;
 using System.Text.RegularExpressions;
@@ -172,7 +173,9 @@ namespace EasyHortifruti.Componentes
         {
             InitializeComponent();
             txtBox.TextChanged += TextBox_TextChanged;
+            txtBox.KeyPress += FormataCampos;
             txtBox.KeyDown += AltTextBox_Enter;
+            txtBox.Leave += FormataCampoLeave;
         }
 
         #region Eventos
@@ -227,6 +230,12 @@ namespace EasyHortifruti.Componentes
 
                 case TipoCampo.CPF:
                     Text = Regex.Replace(Value.PadLeft(11, '0'), @"(\d{3})(\d{3})(\d{3})", "$1.$2.$3-");
+                    break;
+
+                case TipoCampo.MOEDA:
+                    if (!Value.Contains(','))
+                        txtBox.Text += ",00";
+                    txtBox.Text = txtBox.Text.Split(',')[0] + "," + txtBox.Text.Split(',')[1].PadRight(2, '0');
                     break;
 
                 default:
@@ -329,41 +338,44 @@ namespace EasyHortifruti.Componentes
                     return;
 
                 case TipoCampo.MOEDA:
-                    if ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',') ||
-                       (Text.Contains(',') && e.KeyChar == ','))
+                    if (e != null)
                     {
-                        e.Handled = true;
-                        return;
-                    }
-                    if (string.IsNullOrEmpty(Text) && e.KeyChar == ',')
-                    {
-                        e.Handled = true;
-                        Text = "0,";
-                        SelectionStart = Text.Length;
-                        return;
-                    }
-                    if (!char.IsControl(e.KeyChar) && Text.Contains(',') && Text.Split(',')[1].Length == 2 && SelectionLength == 0)
-                    {
-                        e.Handled = true;
-                        return;
-                    }
-                    if (e.KeyChar == 8 && SelectionLength > 0)
-                    {
-                        Text = Text.Remove(SelectionStart, SelectionLength);
-                        SelectionStart = Text.Length;
-                        SelectionLength = 0;
-                        e.Handled = true;
-                        return;
-                    }
-                    if (e.KeyChar == 8 && SelectionLength == 0)
-                    {
-                        if (Text.Length > 0)
+                        if ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',') ||
+                           (Text.Contains(',') && e.KeyChar == ','))
                         {
-                            Text = Text.Remove(SelectionStart - 1);
+                            e.Handled = true;
+                            return;
+                        }
+                        if (string.IsNullOrEmpty(Text) && e.KeyChar == ',')
+                        {
+                            e.Handled = true;
+                            Text = "0,";
+                            SelectionStart = Text.Length;
+                            return;
+                        }
+                        if (!char.IsControl(e.KeyChar) && Text.Contains(',') && Text.Split(',')[1].Length == 2 && SelectionLength == 0)
+                        {
+                            e.Handled = true;
+                            return;
+                        }
+                        if (e.KeyChar == 8 && SelectionLength > 0)
+                        {
+                            Text = Text.Remove(SelectionStart, SelectionLength);
                             SelectionStart = Text.Length;
                             SelectionLength = 0;
                             e.Handled = true;
                             return;
+                        }
+                        if (e.KeyChar == 8 && SelectionLength == 0)
+                        {
+                            if (Text.Length > 0)
+                            {
+                                Text = Text.Remove(SelectionStart - 1);
+                                SelectionStart = Text.Length;
+                                SelectionLength = 0;
+                                e.Handled = true;
+                                return;
+                            }
                         }
                     }
                     return;

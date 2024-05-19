@@ -20,6 +20,10 @@ namespace EasyHortifruti.Forms.Produtos
             dsNCM = new ConexaoBD().ConsutarNCMs();
             if (dsNCM?.Tables.Count > 0)
                 dataGridView1.DataSource = dsNCM.Tables[0];
+
+            cbFiltro.Clear();
+            cbFiltro.Add(0, "Número");
+            cbFiltro.Add(1, "Descricao");
         }
 
         private void BtnSelecionar_Click(object sender, EventArgs e)
@@ -53,7 +57,7 @@ namespace EasyHortifruti.Forms.Produtos
 
                 // Aplica o filtro nos dados do DataTable
                 // Neste exemplo, assumimos que a primeira coluna do DataGridView contém os valores que queremos filtrar
-                string filtroExpressao = string.Format("Convert({0}, 'System.String') LIKE '%{1}%'", dataTable.Columns[1].ColumnName, filtro);
+                string filtroExpressao = string.Format("Convert({0}, 'System.String') LIKE '%{1}%'", dataTable.Columns[cbFiltro.SelectedIndex].ColumnName, filtro);
                 dataTable.DefaultView.RowFilter = filtroExpressao;
             }
         }
@@ -61,6 +65,11 @@ namespace EasyHortifruti.Forms.Produtos
         private void DataGridView1_DoubleClick(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void txtFiltro_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

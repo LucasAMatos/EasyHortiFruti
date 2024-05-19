@@ -344,7 +344,10 @@ namespace EasyHortifruti.DML
         Funcionario = 3,
 
         [Description("Sócio")]
-        Socio = 4
+        Socio = 4,
+
+        [Description("Entregador")]
+        Entregador = 5
     }
 
     #endregion ENUM

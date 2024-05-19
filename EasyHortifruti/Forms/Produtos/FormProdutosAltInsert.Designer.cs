@@ -232,6 +232,7 @@ namespace EasyHortifruti
             this.cbSubGrupoProduto.Name = "cbSubGrupoProduto";
             this.cbSubGrupoProduto.Obrigatorio = false;
             this.cbSubGrupoProduto.SelectedIndex = -1;
+            this.cbSubGrupoProduto.SelectedItem = null;
             this.cbSubGrupoProduto.SelectedText = "";
             this.cbSubGrupoProduto.Size = new System.Drawing.Size(138, 48);
             this.cbSubGrupoProduto.TabIndex = 8;
@@ -250,6 +251,7 @@ namespace EasyHortifruti
             this.cbGrupoProduto.Name = "cbGrupoProduto";
             this.cbGrupoProduto.Obrigatorio = false;
             this.cbGrupoProduto.SelectedIndex = -1;
+            this.cbGrupoProduto.SelectedItem = null;
             this.cbGrupoProduto.SelectedText = "";
             this.cbGrupoProduto.Size = new System.Drawing.Size(119, 48);
             this.cbGrupoProduto.TabIndex = 7;
@@ -268,6 +270,7 @@ namespace EasyHortifruti
             this.cbUnidProduto.Name = "cbUnidProduto";
             this.cbUnidProduto.Obrigatorio = false;
             this.cbUnidProduto.SelectedIndex = -1;
+            this.cbUnidProduto.SelectedItem = null;
             this.cbUnidProduto.SelectedText = "";
             this.cbUnidProduto.Size = new System.Drawing.Size(113, 48);
             this.cbUnidProduto.TabIndex = 3;

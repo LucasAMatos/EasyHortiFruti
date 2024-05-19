@@ -193,7 +193,7 @@ namespace EasyHortifruti
                     (CbUnidPedido.SelectedItem == dr["abrev_unid"].ToString()))
                 {
                     TbPrecoProd.Text = dr["pcocompra_produto"].ToString();
-                    TbMargemLucro.Text = dr["margem_produto"].ToString();
+                    TbMargemLucro.Text = Convert.ToDouble(dr["margem_produto"]).ToString("F2", System.Globalization.CultureInfo.InvariantCulture);
                 }
             }
         }

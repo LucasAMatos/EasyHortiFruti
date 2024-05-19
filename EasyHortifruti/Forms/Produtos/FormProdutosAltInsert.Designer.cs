@@ -148,7 +148,7 @@ namespace EasyHortifruti
             this.MtbMargemLucro.Size = new System.Drawing.Size(88, 48);
             this.MtbMargemLucro.TabIndex = 5;
             this.MtbMargemLucro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.MtbMargemLucro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.MOEDA;
+            this.MtbMargemLucro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.NUMERO;
             this.MtbMargemLucro.TextChanged += new System.EventHandler(this.MtbMargemLucro_TextChanged);
             // 
             // MtbPrecoCompra

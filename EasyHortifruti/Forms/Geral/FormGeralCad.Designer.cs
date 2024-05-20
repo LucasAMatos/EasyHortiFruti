@@ -30,14 +30,15 @@ namespace EasyHortifruti
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGeralCad));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGeralCad));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCadGeralForm = new System.Windows.Forms.Panel();
             this.panelFormCadGeral = new System.Windows.Forms.Panel();
             this.DgViewCadGeral = new System.Windows.Forms.DataGridView();
@@ -86,7 +87,7 @@ namespace EasyHortifruti
             this.panelCadGeralForm.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelCadGeralForm.Location = new System.Drawing.Point(0, 0);
             this.panelCadGeralForm.Name = "panelCadGeralForm";
-            this.panelCadGeralForm.Size = new System.Drawing.Size(843, 561);
+            this.panelCadGeralForm.Size = new System.Drawing.Size(934, 661);
             this.panelCadGeralForm.TabIndex = 0;
             // 
             // panelFormCadGeral
@@ -95,13 +96,21 @@ namespace EasyHortifruti
             this.panelFormCadGeral.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelFormCadGeral.Location = new System.Drawing.Point(0, 175);
             this.panelFormCadGeral.Name = "panelFormCadGeral";
-            this.panelFormCadGeral.Size = new System.Drawing.Size(843, 386);
+            this.panelFormCadGeral.Size = new System.Drawing.Size(934, 486);
             this.panelFormCadGeral.TabIndex = 5;
             // 
             // DgViewCadGeral
             // 
             this.DgViewCadGeral.AllowUserToAddRows = false;
             this.DgViewCadGeral.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgViewCadGeral.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.DgViewCadGeral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgViewCadGeral.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NomeFantasia,
@@ -124,7 +133,7 @@ namespace EasyHortifruti
             this.DgViewCadGeral.Location = new System.Drawing.Point(0, 0);
             this.DgViewCadGeral.Name = "DgViewCadGeral";
             this.DgViewCadGeral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.DgViewCadGeral.Size = new System.Drawing.Size(843, 386);
+            this.DgViewCadGeral.Size = new System.Drawing.Size(934, 486);
             this.DgViewCadGeral.TabIndex = 0;
             // 
             // panelPesquisarCadGeral
@@ -135,7 +144,7 @@ namespace EasyHortifruti
             this.panelPesquisarCadGeral.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelPesquisarCadGeral.Location = new System.Drawing.Point(0, 120);
             this.panelPesquisarCadGeral.Name = "panelPesquisarCadGeral";
-            this.panelPesquisarCadGeral.Size = new System.Drawing.Size(843, 55);
+            this.panelPesquisarCadGeral.Size = new System.Drawing.Size(934, 55);
             this.panelPesquisarCadGeral.TabIndex = 4;
             // 
             // cbTpFontePesquisa
@@ -203,7 +212,7 @@ namespace EasyHortifruti
             this.panel3FormCadGeralBotoes.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3FormCadGeralBotoes.Location = new System.Drawing.Point(0, 59);
             this.panel3FormCadGeralBotoes.Name = "panel3FormCadGeralBotoes";
-            this.panel3FormCadGeralBotoes.Size = new System.Drawing.Size(843, 61);
+            this.panel3FormCadGeralBotoes.Size = new System.Drawing.Size(934, 61);
             this.panel3FormCadGeralBotoes.TabIndex = 2;
             // 
             // BtSairCadGeral
@@ -215,7 +224,7 @@ namespace EasyHortifruti
             this.BtSairCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtSairCadGeral.FlatAppearance.BorderSize = 0;
             this.BtSairCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtSairCadGeral.Location = new System.Drawing.Point(778, 4);
+            this.BtSairCadGeral.Location = new System.Drawing.Point(869, 4);
             this.BtSairCadGeral.Name = "BtSairCadGeral";
             this.BtSairCadGeral.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtSairCadGeral.Size = new System.Drawing.Size(46, 52);
@@ -297,7 +306,7 @@ namespace EasyHortifruti
             this.panelTituloCadGeral.Dock = System.Windows.Forms.DockStyle.Top;
             this.panelTituloCadGeral.Location = new System.Drawing.Point(0, 0);
             this.panelTituloCadGeral.Name = "panelTituloCadGeral";
-            this.panelTituloCadGeral.Size = new System.Drawing.Size(843, 59);
+            this.panelTituloCadGeral.Size = new System.Drawing.Size(934, 59);
             this.panelTituloCadGeral.TabIndex = 0;
             // 
             // panel1
@@ -330,28 +339,28 @@ namespace EasyHortifruti
             this.NomeFantasia.DataPropertyName = "nomefantasia";
             this.NomeFantasia.HeaderText = "Nome / Fantasia";
             this.NomeFantasia.Name = "NomeFantasia";
-            this.NomeFantasia.Width = 110;
+            this.NomeFantasia.Width = 150;
             // 
             // RazaoSocial
             // 
             this.RazaoSocial.DataPropertyName = "razaosocial";
             this.RazaoSocial.HeaderText = "Razão Social";
             this.RazaoSocial.Name = "RazaoSocial";
-            this.RazaoSocial.Width = 230;
+            this.RazaoSocial.Width = 250;
             // 
             // CPF
             // 
             this.CPF.DataPropertyName = "cnpj_cpf";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CPF.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CPF.DefaultCellStyle = dataGridViewCellStyle2;
             this.CPF.HeaderText = "CNPJ / CPF";
             this.CPF.Name = "CPF";
             // 
             // RG
             // 
             this.RG.DataPropertyName = "ie_rg";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            this.RG.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.RG.DefaultCellStyle = dataGridViewCellStyle3;
             this.RG.HeaderText = "I.E. / RG.";
             this.RG.Name = "RG";
             // 
@@ -365,8 +374,8 @@ namespace EasyHortifruti
             // numero
             // 
             this.numero.DataPropertyName = "numero";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.numero.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.numero.DefaultCellStyle = dataGridViewCellStyle4;
             this.numero.HeaderText = "Nº";
             this.numero.Name = "numero";
             this.numero.Width = 35;
@@ -394,8 +403,8 @@ namespace EasyHortifruti
             // uf
             // 
             this.uf.DataPropertyName = "uf";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.uf.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.uf.DefaultCellStyle = dataGridViewCellStyle5;
             this.uf.HeaderText = "UF";
             this.uf.Name = "uf";
             this.uf.Width = 30;
@@ -403,8 +412,8 @@ namespace EasyHortifruti
             // fone
             // 
             this.fone.DataPropertyName = "fone";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.fone.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fone.DefaultCellStyle = dataGridViewCellStyle6;
             this.fone.HeaderText = "Fone";
             this.fone.Name = "fone";
             this.fone.Width = 65;
@@ -412,8 +421,8 @@ namespace EasyHortifruti
             // celular
             // 
             this.celular.DataPropertyName = "celular";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.celular.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.celular.DefaultCellStyle = dataGridViewCellStyle7;
             this.celular.HeaderText = "Celular";
             this.celular.Name = "celular";
             this.celular.Width = 65;
@@ -428,8 +437,8 @@ namespace EasyHortifruti
             // ID
             // 
             this.ID.DataPropertyName = "id_recno";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle8;
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.Width = 30;
@@ -445,12 +454,14 @@ namespace EasyHortifruti
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(843, 561);
+            this.ClientSize = new System.Drawing.Size(934, 661);
             this.Controls.Add(this.panelCadGeralForm);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FormGeralCad";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "EasyHortifruti - Cadastro de Clientes, Fornecedores, Funcionarios";
+            this.Text = "EasyHortifruti";
             this.Load += new System.EventHandler(this.FormCadGeral_Load);
             this.panelCadGeralForm.ResumeLayout(false);
             this.panelFormCadGeral.ResumeLayout(false);

@@ -318,7 +318,6 @@ namespace EasyHortifruti
         {
             if (CbNomeCliente.SelectedItem != null || IdClienteSelecionado >= 0)
             {
-
                 if (Id == 0)
                 {
                     IdClienteSelecionado = CbNomeCliente.SelectedIndex;
@@ -359,6 +358,8 @@ namespace EasyHortifruti
                     TbEndPontoReferencia.Text = iGeral.PontoReferencia;
                     TbEndEmail.Text = iGeral.Email;
                 }
+
+                LbAviso.Visible = string.Equals(CbNomeCliente.Text, "la nonna", StringComparison.OrdinalIgnoreCase);
             }
         }
 

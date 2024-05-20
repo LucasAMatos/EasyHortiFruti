@@ -210,7 +210,15 @@ namespace EasyHortifruti
         private void CarregarComboProdutos()
         {
             CbProdutos.Clear();
-            foreach (DataRow dr in dsProdutos.Tables[0].Rows)
+
+            DataTable dtProdutos = dsProdutos.Tables[0];
+
+            dtProdutos.DefaultView.Sort = "nome_produto ASC";
+
+            // Criando um novo DataTable com os dados ordenados
+            DataTable sortedDataTable = dtProdutos.DefaultView.ToTable();
+
+            foreach (DataRow dr in sortedDataTable.Rows)
             {
                 if (!CbProdutos.Items.Contains(dr["nome_produto"].ToString()))
                 {

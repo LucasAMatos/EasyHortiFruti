@@ -29,22 +29,26 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidos));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle61 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle62 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle63 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle64 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
-            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
-            this.panelBotoesCadPedidos = new System.Windows.Forms.Panel();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel5 = new System.Windows.Forms.Panel();
             this.BtSairPedido = new System.Windows.Forms.Button();
             this.btImprimirPedido = new System.Windows.Forms.Button();
             this.BtExcluirPedido = new System.Windows.Forms.Button();
             this.BtEditarPedido = new System.Windows.Forms.Button();
             this.BtIncluirPedido = new System.Windows.Forms.Button();
-            this.panelCadPedidos = new System.Windows.Forms.Panel();
+            this.panel6 = new System.Windows.Forms.Panel();
+            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
+            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
+            this.DtInicio = new System.Windows.Forms.DateTimePicker();
+            this.DtFim = new System.Windows.Forms.DateTimePicker();
+            this.panel7 = new System.Windows.Forms.Panel();
             this.DgvPedidos = new System.Windows.Forms.DataGridView();
             this.nCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -54,114 +58,77 @@
             this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.panelTituloCadPedidos = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
-            this.tableLayoutPanel1.SuspendLayout();
-            this.tableLayoutPanel2.SuspendLayout();
-            this.panelBotoesCadPedidos.SuspendLayout();
-            this.panelCadPedidos.SuspendLayout();
+            this.panel4.SuspendLayout();
+            this.panel5.SuspendLayout();
+            this.panel6.SuspendLayout();
+            this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPedidos)).BeginInit();
-            this.panelTituloCadPedidos.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.tableLayoutPanel1);
+            this.panel1.Controls.Add(this.panel7);
+            this.panel1.Controls.Add(this.panel6);
+            this.panel1.Controls.Add(this.panel5);
+            this.panel1.Controls.Add(this.panel4);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(802, 563);
+            this.panel1.Size = new System.Drawing.Size(784, 661);
             this.panel1.TabIndex = 0;
             // 
-            // tableLayoutPanel1
+            // panel4
             // 
-            this.tableLayoutPanel1.ColumnCount = 1;
-            this.tableLayoutPanel1.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Controls.Add(this.tableLayoutPanel2, 0, 2);
-            this.tableLayoutPanel1.Controls.Add(this.panelBotoesCadPedidos, 0, 1);
-            this.tableLayoutPanel1.Controls.Add(this.panelCadPedidos, 0, 3);
-            this.tableLayoutPanel1.Controls.Add(this.panelTituloCadPedidos, 0, 0);
-            this.tableLayoutPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel1.Location = new System.Drawing.Point(0, 0);
-            this.tableLayoutPanel1.Name = "tableLayoutPanel1";
-            this.tableLayoutPanel1.RowCount = 4;
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 67F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 65F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 55F));
-            this.tableLayoutPanel1.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel1.Size = new System.Drawing.Size(802, 563);
-            this.tableLayoutPanel1.TabIndex = 2;
+            this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
+            this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel4.Controls.Add(this.label1);
+            this.panel4.Controls.Add(this.panel2);
+            this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel4.Location = new System.Drawing.Point(0, 0);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(784, 70);
+            this.panel4.TabIndex = 8;
             // 
-            // tableLayoutPanel2
+            // label1
             // 
-            this.tableLayoutPanel2.ColumnCount = 2;
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 26.93686F));
-            this.tableLayoutPanel2.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 73.06314F));
-            this.tableLayoutPanel2.Controls.Add(this.tbFiltro, 1, 0);
-            this.tableLayoutPanel2.Controls.Add(this.cbFiltro, 0, 0);
-            this.tableLayoutPanel2.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.tableLayoutPanel2.Location = new System.Drawing.Point(3, 132);
-            this.tableLayoutPanel2.Margin = new System.Windows.Forms.Padding(3, 0, 3, 2);
-            this.tableLayoutPanel2.Name = "tableLayoutPanel2";
-            this.tableLayoutPanel2.RowCount = 1;
-            this.tableLayoutPanel2.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 100F));
-            this.tableLayoutPanel2.Size = new System.Drawing.Size(796, 53);
-            this.tableLayoutPanel2.TabIndex = 5;
+            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Calibri", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.White;
+            this.label1.Location = new System.Drawing.Point(79, 9);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(386, 53);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "Cadastro de Pedidos";
             // 
-            // tbFiltro
+            // panel2
             // 
-            this.tbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFiltro.Caption = "Digite para Filtrar";
-            this.tbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFiltro.Location = new System.Drawing.Point(234, 3);
-            this.tbFiltro.Margin = new System.Windows.Forms.Padding(20, 3, 20, 9);
-            this.tbFiltro.MaxLength = 32767;
-            this.tbFiltro.Multiline = true;
-            this.tbFiltro.Name = "tbFiltro";
-            this.tbFiltro.Obrigatorio = false;
-            this.tbFiltro.ReadOnly = false;
-            this.tbFiltro.SelectionLength = 0;
-            this.tbFiltro.SelectionStart = 0;
-            this.tbFiltro.Size = new System.Drawing.Size(542, 41);
-            this.tbFiltro.TabIndex = 1;
-            this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
+            this.panel2.Location = new System.Drawing.Point(0, 0);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(73, 70);
+            this.panel2.TabIndex = 2;
             // 
-            // cbFiltro
+            // panel5
             // 
-            this.cbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.cbFiltro.Caption = "Campo para Filtrar";
-            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbFiltro.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
-            this.cbFiltro.FormattingEnabled = true;
-            this.cbFiltro.Location = new System.Drawing.Point(10, 3);
-            this.cbFiltro.Name = "cbFiltro";
-            this.cbFiltro.Obrigatorio = false;
-            this.cbFiltro.SelectedIndex = -1;
-            this.cbFiltro.SelectedItem = null;
-            this.cbFiltro.SelectedText = "";
-            this.cbFiltro.Size = new System.Drawing.Size(194, 47);
-            this.cbFiltro.TabIndex = 0;
-            // 
-            // panelBotoesCadPedidos
-            // 
-            this.panelBotoesCadPedidos.Controls.Add(this.BtSairPedido);
-            this.panelBotoesCadPedidos.Controls.Add(this.btImprimirPedido);
-            this.panelBotoesCadPedidos.Controls.Add(this.BtExcluirPedido);
-            this.panelBotoesCadPedidos.Controls.Add(this.BtEditarPedido);
-            this.panelBotoesCadPedidos.Controls.Add(this.BtIncluirPedido);
-            this.panelBotoesCadPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelBotoesCadPedidos.Location = new System.Drawing.Point(3, 70);
-            this.panelBotoesCadPedidos.Name = "panelBotoesCadPedidos";
-            this.panelBotoesCadPedidos.Size = new System.Drawing.Size(796, 59);
-            this.panelBotoesCadPedidos.TabIndex = 3;
+            this.panel5.Controls.Add(this.BtSairPedido);
+            this.panel5.Controls.Add(this.btImprimirPedido);
+            this.panel5.Controls.Add(this.BtExcluirPedido);
+            this.panel5.Controls.Add(this.BtEditarPedido);
+            this.panel5.Controls.Add(this.BtIncluirPedido);
+            this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel5.Location = new System.Drawing.Point(0, 70);
+            this.panel5.Name = "panel5";
+            this.panel5.Size = new System.Drawing.Size(784, 63);
+            this.panel5.TabIndex = 9;
             // 
             // BtSairPedido
             // 
@@ -172,14 +139,13 @@
             this.BtSairPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtSairPedido.FlatAppearance.BorderSize = 0;
             this.BtSairPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtSairPedido.Location = new System.Drawing.Point(736, 3);
+            this.BtSairPedido.Location = new System.Drawing.Point(722, 5);
             this.BtSairPedido.Name = "BtSairPedido";
             this.BtSairPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtSairPedido.Size = new System.Drawing.Size(46, 53);
-            this.BtSairPedido.TabIndex = 5;
+            this.BtSairPedido.TabIndex = 10;
             this.BtSairPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtSairPedido.UseVisualStyleBackColor = false;
-            this.BtSairPedido.Click += new System.EventHandler(this.BtSairPedido_Click);
             // 
             // btImprimirPedido
             // 
@@ -188,11 +154,11 @@
             this.btImprimirPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btImprimirPedido.FlatAppearance.BorderSize = 0;
             this.btImprimirPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btImprimirPedido.Location = new System.Drawing.Point(173, 4);
+            this.btImprimirPedido.Location = new System.Drawing.Point(177, 6);
             this.btImprimirPedido.Name = "btImprimirPedido";
             this.btImprimirPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.btImprimirPedido.Size = new System.Drawing.Size(46, 52);
-            this.btImprimirPedido.TabIndex = 3;
+            this.btImprimirPedido.TabIndex = 9;
             this.btImprimirPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btImprimirPedido.UseVisualStyleBackColor = false;
             // 
@@ -203,14 +169,13 @@
             this.BtExcluirPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtExcluirPedido.FlatAppearance.BorderSize = 0;
             this.BtExcluirPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtExcluirPedido.Location = new System.Drawing.Point(116, 3);
+            this.BtExcluirPedido.Location = new System.Drawing.Point(120, 5);
             this.BtExcluirPedido.Name = "BtExcluirPedido";
             this.BtExcluirPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtExcluirPedido.Size = new System.Drawing.Size(46, 52);
-            this.BtExcluirPedido.TabIndex = 2;
+            this.BtExcluirPedido.TabIndex = 8;
             this.BtExcluirPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtExcluirPedido.UseVisualStyleBackColor = false;
-            this.BtExcluirPedido.Click += new System.EventHandler(this.BtExcluirPedido_Click);
             // 
             // BtEditarPedido
             // 
@@ -219,14 +184,13 @@
             this.BtEditarPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtEditarPedido.FlatAppearance.BorderSize = 0;
             this.BtEditarPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtEditarPedido.Location = new System.Drawing.Point(64, 3);
+            this.BtEditarPedido.Location = new System.Drawing.Point(68, 5);
             this.BtEditarPedido.Name = "BtEditarPedido";
             this.BtEditarPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtEditarPedido.Size = new System.Drawing.Size(46, 52);
-            this.BtEditarPedido.TabIndex = 1;
+            this.BtEditarPedido.TabIndex = 7;
             this.BtEditarPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtEditarPedido.UseVisualStyleBackColor = false;
-            this.BtEditarPedido.Click += new System.EventHandler(this.BtEditarPedido_Click);
             // 
             // BtIncluirPedido
             // 
@@ -235,23 +199,103 @@
             this.BtIncluirPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtIncluirPedido.FlatAppearance.BorderSize = 0;
             this.BtIncluirPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtIncluirPedido.Location = new System.Drawing.Point(12, 3);
+            this.BtIncluirPedido.Location = new System.Drawing.Point(16, 5);
             this.BtIncluirPedido.Name = "BtIncluirPedido";
             this.BtIncluirPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtIncluirPedido.Size = new System.Drawing.Size(46, 52);
-            this.BtIncluirPedido.TabIndex = 0;
+            this.BtIncluirPedido.TabIndex = 6;
             this.BtIncluirPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtIncluirPedido.UseVisualStyleBackColor = false;
-            this.BtIncluirPedido.Click += new System.EventHandler(this.BtIncluirPedido_Click);
             // 
-            // panelCadPedidos
+            // panel6
             // 
-            this.panelCadPedidos.Controls.Add(this.DgvPedidos);
-            this.panelCadPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelCadPedidos.Location = new System.Drawing.Point(3, 190);
-            this.panelCadPedidos.Name = "panelCadPedidos";
-            this.panelCadPedidos.Size = new System.Drawing.Size(796, 370);
-            this.panelCadPedidos.TabIndex = 4;
+            this.panel6.Controls.Add(this.label3);
+            this.panel6.Controls.Add(this.label2);
+            this.panel6.Controls.Add(this.DtFim);
+            this.panel6.Controls.Add(this.DtInicio);
+            this.panel6.Controls.Add(this.tbFiltro);
+            this.panel6.Controls.Add(this.cbFiltro);
+            this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.panel6.Location = new System.Drawing.Point(0, 133);
+            this.panel6.Name = "panel6";
+            this.panel6.Size = new System.Drawing.Size(784, 49);
+            this.panel6.TabIndex = 10;
+            // 
+            // cbFiltro
+            // 
+            this.cbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbFiltro.Caption = "Campo para Filtrar";
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbFiltro.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFiltro.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFiltro.FormattingEnabled = true;
+            this.cbFiltro.Location = new System.Drawing.Point(14, 4);
+            this.cbFiltro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Obrigatorio = false;
+            this.cbFiltro.SelectedIndex = -1;
+            this.cbFiltro.SelectedItem = null;
+            this.cbFiltro.SelectedText = "";
+            this.cbFiltro.Size = new System.Drawing.Size(181, 43);
+            this.cbFiltro.TabIndex = 2;
+            // 
+            // tbFiltro
+            // 
+            this.tbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.tbFiltro.Caption = "Digite para Filtrar";
+            this.tbFiltro.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltro.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tbFiltro.Location = new System.Drawing.Point(207, 2);
+            this.tbFiltro.Margin = new System.Windows.Forms.Padding(20, 3, 20, 9);
+            this.tbFiltro.MaxLength = 32767;
+            this.tbFiltro.Multiline = true;
+            this.tbFiltro.Name = "tbFiltro";
+            this.tbFiltro.Obrigatorio = false;
+            this.tbFiltro.ReadOnly = false;
+            this.tbFiltro.SelectionLength = 0;
+            this.tbFiltro.SelectionStart = 0;
+            this.tbFiltro.Size = new System.Drawing.Size(331, 41);
+            this.tbFiltro.TabIndex = 3;
+            this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
+            // 
+            // DtInicio
+            // 
+            this.DtInicio.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DtInicio.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtInicio.Location = new System.Drawing.Point(549, 20);
+            this.DtInicio.Name = "DtInicio";
+            this.DtInicio.Size = new System.Drawing.Size(104, 23);
+            this.DtInicio.TabIndex = 4;
+            // 
+            // DtFim
+            // 
+            this.DtFim.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.DtFim.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.DtFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.DtFim.Location = new System.Drawing.Point(665, 20);
+            this.DtFim.Name = "DtFim";
+            this.DtFim.Size = new System.Drawing.Size(103, 23);
+            this.DtFim.TabIndex = 5;
+            // 
+            // panel7
+            // 
+            this.panel7.Controls.Add(this.DgvPedidos);
+            this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.panel7.Location = new System.Drawing.Point(0, 182);
+            this.panel7.Name = "panel7";
+            this.panel7.Size = new System.Drawing.Size(784, 479);
+            this.panel7.TabIndex = 11;
             // 
             // DgvPedidos
             // 
@@ -270,8 +314,8 @@
             this.DgvPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvPedidos.Location = new System.Drawing.Point(0, 0);
             this.DgvPedidos.Name = "DgvPedidos";
-            this.DgvPedidos.Size = new System.Drawing.Size(796, 370);
-            this.DgvPedidos.TabIndex = 1;
+            this.DgvPedidos.Size = new System.Drawing.Size(784, 479);
+            this.DgvPedidos.TabIndex = 3;
             // 
             // nCliente
             // 
@@ -290,8 +334,8 @@
             // data
             // 
             this.data.DataPropertyName = "datapedido";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.data.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle61.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.data.DefaultCellStyle = dataGridViewCellStyle61;
             this.data.HeaderText = "Data";
             this.data.Name = "data";
             this.data.Width = 80;
@@ -299,10 +343,10 @@
             // totalPedido
             // 
             this.totalPedido.DataPropertyName = "totalvenda";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.totalPedido.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle62.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle62.Format = "C2";
+            dataGridViewCellStyle62.NullValue = null;
+            this.totalPedido.DefaultCellStyle = dataGridViewCellStyle62;
             this.totalPedido.HeaderText = "Valor Pedido";
             this.totalPedido.Name = "totalPedido";
             this.totalPedido.Width = 95;
@@ -310,10 +354,10 @@
             // vlrlucro
             // 
             this.vlrlucro.DataPropertyName = "vlrlucro";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.vlrlucro.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle63.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle63.Format = "C2";
+            dataGridViewCellStyle63.NullValue = null;
+            this.vlrlucro.DefaultCellStyle = dataGridViewCellStyle63;
             this.vlrlucro.HeaderText = "Lucro Pedido";
             this.vlrlucro.Name = "vlrlucro";
             this.vlrlucro.Width = 95;
@@ -321,8 +365,8 @@
             // status
             // 
             this.status.DataPropertyName = "statuspedido";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.status.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle64.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.status.DefaultCellStyle = dataGridViewCellStyle64;
             this.status.HeaderText = "Status Pedido";
             this.status.Name = "status";
             // 
@@ -340,49 +384,32 @@
             this.id.Name = "id";
             this.id.Visible = false;
             // 
-            // panelTituloCadPedidos
+            // label2
             // 
-            this.panelTituloCadPedidos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panelTituloCadPedidos.BackgroundImage")));
-            this.panelTituloCadPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panelTituloCadPedidos.Controls.Add(this.label1);
-            this.panelTituloCadPedidos.Controls.Add(this.panel2);
-            this.panelTituloCadPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.panelTituloCadPedidos.Location = new System.Drawing.Point(3, 3);
-            this.panelTituloCadPedidos.Name = "panelTituloCadPedidos";
-            this.panelTituloCadPedidos.Size = new System.Drawing.Size(796, 61);
-            this.panelTituloCadPedidos.TabIndex = 0;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(547, 5);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(93, 14);
+            this.label2.TabIndex = 6;
+            this.label2.Text = "Período Inicial";
             // 
-            // label1
+            // label3
             // 
-            this.label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left)));
-            this.label1.AutoSize = true;
-            this.label1.BackColor = System.Drawing.Color.Transparent;
-            this.label1.Font = new System.Drawing.Font("Calibri", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(76, 3);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(386, 53);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Cadastro de Pedidos";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
-            this.panel2.Location = new System.Drawing.Point(0, 0);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(73, 61);
-            this.panel2.TabIndex = 0;
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(663, 5);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(93, 15);
+            this.label3.TabIndex = 7;
+            this.label3.Text = "Período Final";
             // 
             // FormPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(802, 563);
+            this.ClientSize = new System.Drawing.Size(784, 661);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPedidos";
@@ -390,13 +417,13 @@
             this.Text = "EasyHortifruti - Pedidos";
             this.Load += new System.EventHandler(this.FormPedidos_Load);
             this.panel1.ResumeLayout(false);
-            this.tableLayoutPanel1.ResumeLayout(false);
-            this.tableLayoutPanel2.ResumeLayout(false);
-            this.panelBotoesCadPedidos.ResumeLayout(false);
-            this.panelCadPedidos.ResumeLayout(false);
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
+            this.panel5.ResumeLayout(false);
+            this.panel6.ResumeLayout(false);
+            this.panel6.PerformLayout();
+            this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvPedidos)).EndInit();
-            this.panelTituloCadPedidos.ResumeLayout(false);
-            this.panelTituloCadPedidos.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -404,19 +431,22 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Panel panelTituloCadPedidos;
-        private System.Windows.Forms.Panel panelBotoesCadPedidos;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Panel panel6;
+        private System.Windows.Forms.DateTimePicker DtFim;
+        private System.Windows.Forms.DateTimePicker DtInicio;
+        private Componentes.AltTextBox tbFiltro;
+        private Componentes.AltComboBox cbFiltro;
+        private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button BtSairPedido;
         private System.Windows.Forms.Button btImprimirPedido;
         private System.Windows.Forms.Button BtExcluirPedido;
         private System.Windows.Forms.Button BtEditarPedido;
         private System.Windows.Forms.Button BtIncluirPedido;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;
-        private System.Windows.Forms.Panel panelCadPedidos;
+        private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.DataGridView DgvPedidos;
-        private System.Windows.Forms.TableLayoutPanel tableLayoutPanel2;
-        private Componentes.AltComboBox cbFiltro;
-        private Componentes.AltTextBox tbFiltro;
         private System.Windows.Forms.DataGridViewTextBoxColumn nCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
         private System.Windows.Forms.DataGridViewTextBoxColumn data;
@@ -425,7 +455,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn status;
         private System.Windows.Forms.DataGridViewTextBoxColumn obs;
         private System.Windows.Forms.DataGridViewTextBoxColumn id;
-        private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
     }
 }

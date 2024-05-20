@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
+using static Npgsql.Replication.PgOutput.Messages.RelationMessage;
 
 namespace EasyHortifruti
 {
@@ -104,12 +105,9 @@ namespace EasyHortifruti
         private void CarregarComboFiltros()
         {
             int index = 0;
-            foreach (DataGridViewColumn coluna in DgViewCadGeral.Columns)
-            {
-                if (coluna.Visible)
-                    cbFiltro.Add(index, coluna.HeaderText);
-                index++;
-            }
+
+            cbFiltro.Add(0, "nomefantasia");
+            cbFiltro.Add(1, "Razão Social");
         }
 
         private void FormCadGeral_Load(object sender, EventArgs e)

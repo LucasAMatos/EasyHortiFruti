@@ -51,6 +51,41 @@ namespace EasyHortifruti
             }
         }
 
+        internal void Filtrar(DataGridView dgv, DataTable pDt, int SelectedIndex, string pFiltro)
+        {
+            try
+            {
+                string coluna = dgv.Columns[SelectedIndex].DataPropertyName;
+                if (!string.IsNullOrEmpty(pFiltro))
+                {
+                    if (SelectedIndex == 14)
+                        pDt.DefaultView.RowFilter = $"{coluna} = {pFiltro}";
+                    else
+                    {
+                        switch (pDt.DefaultView.Table.Columns[SelectedIndex].DataType.ToString())
+                        {
+                            case "System.Int32":
+                            case "System.Double":
+                                pDt.DefaultView.RowFilter = $"{coluna} = {pFiltro}";
+                                break;
+                            default:
+                                pDt.DefaultView.RowFilter = $"{coluna} LIKE '%{pFiltro}%'";
+                                break;
+                        }
+                    }
+                }
+                else
+                {
+                    pDt.DefaultView.RowFilter = string.Empty;
+                }
+
+                dgv.DataSource = pDt.DefaultView;
+            }
+            catch
+            {
+            }
+        }
+
         internal void Filtrar(DataGridView dgv, DataSet pDs, int SelectedIndex, string pFiltro)
         {
             try

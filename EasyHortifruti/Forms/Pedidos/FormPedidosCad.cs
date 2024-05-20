@@ -21,6 +21,9 @@ namespace EasyHortifruti
             }
         }
 
+        // Supondo que você tenha uma DataTable como fonte de dados
+        private DataTable dataTable;
+
         #endregion
 
         #region Construtor
@@ -92,14 +95,15 @@ namespace EasyHortifruti
             CarregarGrid();
             CarregarComboFiltros();
             tbFiltro.TextChanged += TbFiltro_TextoAlterado;
+
+            DateChanged(null, null);
         }
 
         public void CarregarGrid()
         {
-            dsGrid = new ConexaoBD().ConsultarClientePedido();
-            DgvPedidos.DataSource = dsGrid;
+            dataTable = new ConexaoBD().ConsultarClientePedido().Tables[0];
+            DgvPedidos.DataSource = dataTable;
             DgvPedidos.AutoGenerateColumns = false;
-            DgvPedidos.DataMember = "Table";
         }
 
         private void CarregarComboFiltros()
@@ -107,7 +111,7 @@ namespace EasyHortifruti
             int index = 0;
             foreach (DataGridViewColumn coluna in DgvPedidos.Columns)
             {
-                if (coluna.Visible)
+                if (coluna.Visible && coluna.Name != "Data")
                     cbFiltro.Add(index, coluna.HeaderText);
                 index++;
             }
@@ -115,12 +119,22 @@ namespace EasyHortifruti
 
         private void Filtrar()
         {
-            base.Filtrar(DgvPedidos, dsGrid, cbFiltro.SelectedIndex, tbFiltro.Text);
+            base.Filtrar(DgvPedidos, dataTable, cbFiltro.SelectedIndex, tbFiltro.Text);
         }
 
         private void TbFiltro_TextoAlterado(object sender, EventArgs e)
         {
             Filtrar();
+        }
+
+        private void DateChanged(object sender, EventArgs e)
+        {
+            // Filtro aplicado ao DataTable com base nos DateTimePickers
+            DataView dv = dataTable.DefaultView;
+            dv.RowFilter = $"datapedido >= #{DtInicio.Value.ToString("yyyy-MM-dd")}# AND datapedido <= #{DtFim.Value.ToString("yyyy-MM-dd")}#";
+
+            // Atualiza o DataGridView
+            DgvPedidos.DataSource = dv;
         }
         #endregion
     }

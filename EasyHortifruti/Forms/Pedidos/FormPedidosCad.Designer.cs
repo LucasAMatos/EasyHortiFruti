@@ -221,6 +221,7 @@
             this.DtFim.Name = "DtFim";
             this.DtFim.Size = new System.Drawing.Size(103, 23);
             this.DtFim.TabIndex = 5;
+            this.DtFim.ValueChanged += new System.EventHandler(this.DateChanged);
             // 
             // DtInicio
             // 
@@ -233,6 +234,7 @@
             this.DtInicio.Name = "DtInicio";
             this.DtInicio.Size = new System.Drawing.Size(104, 23);
             this.DtInicio.TabIndex = 4;
+            this.DtInicio.ValueChanged += new System.EventHandler(this.DateChanged);
             // 
             // tbFiltro
             // 

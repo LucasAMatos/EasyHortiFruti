@@ -85,7 +85,7 @@ namespace EasyHortifruti
             this.BtCadNCM.Location = new System.Drawing.Point(107, 162);
             this.BtCadNCM.Name = "BtCadNCM";
             this.BtCadNCM.Size = new System.Drawing.Size(26, 25);
-            this.BtCadNCM.TabIndex = 21;
+            this.BtCadNCM.TabIndex = 3;
             this.BtCadNCM.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtCadNCM.UseVisualStyleBackColor = false;
             this.BtCadNCM.Click += new System.EventHandler(this.BtCadNCM_Click);
@@ -146,7 +146,7 @@ namespace EasyHortifruti
             this.MtbMargemLucro.SelectionLength = 0;
             this.MtbMargemLucro.SelectionStart = 0;
             this.MtbMargemLucro.Size = new System.Drawing.Size(88, 48);
-            this.MtbMargemLucro.TabIndex = 5;
+            this.MtbMargemLucro.TabIndex = 7;
             this.MtbMargemLucro.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MtbMargemLucro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.NUMERO;
             this.MtbMargemLucro.TextChanged += new System.EventHandler(this.MtbMargemLucro_TextChanged);
@@ -158,7 +158,7 @@ namespace EasyHortifruti
             this.MtbPrecoCompra.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.MtbPrecoCompra.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.MtbPrecoCompra.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.MtbPrecoCompra.Location = new System.Drawing.Point(325, 141);
+            this.MtbPrecoCompra.Location = new System.Drawing.Point(314, 141);
             this.MtbPrecoCompra.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.MtbPrecoCompra.MaxLength = 32767;
             this.MtbPrecoCompra.Multiline = true;
@@ -168,7 +168,7 @@ namespace EasyHortifruti
             this.MtbPrecoCompra.SelectionLength = 0;
             this.MtbPrecoCompra.SelectionStart = 0;
             this.MtbPrecoCompra.Size = new System.Drawing.Size(93, 48);
-            this.MtbPrecoCompra.TabIndex = 4;
+            this.MtbPrecoCompra.TabIndex = 6;
             this.MtbPrecoCompra.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.MtbPrecoCompra.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.MOEDA;
             this.MtbPrecoCompra.TextChanged += new System.EventHandler(this.MtbPrecoCompra_TextChanged);
@@ -180,10 +180,10 @@ namespace EasyHortifruti
             this.BtCadSubGrupo.FlatAppearance.BorderSize = 0;
             this.BtCadSubGrupo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.BtCadSubGrupo.Image = ((System.Drawing.Image)(resources.GetObject("BtCadSubGrupo.Image")));
-            this.BtCadSubGrupo.Location = new System.Drawing.Point(492, 244);
+            this.BtCadSubGrupo.Location = new System.Drawing.Point(484, 244);
             this.BtCadSubGrupo.Name = "BtCadSubGrupo";
             this.BtCadSubGrupo.Size = new System.Drawing.Size(26, 25);
-            this.BtCadSubGrupo.TabIndex = 17;
+            this.BtCadSubGrupo.TabIndex = 11;
             this.BtCadSubGrupo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtCadSubGrupo.UseVisualStyleBackColor = false;
             this.BtCadSubGrupo.Click += new System.EventHandler(this.BtCadSubGrupo_Click);
@@ -198,7 +198,7 @@ namespace EasyHortifruti
             this.BtCadGrupo.Location = new System.Drawing.Point(274, 244);
             this.BtCadGrupo.Name = "BtCadGrupo";
             this.BtCadGrupo.Size = new System.Drawing.Size(26, 25);
-            this.BtCadGrupo.TabIndex = 16;
+            this.BtCadGrupo.TabIndex = 9;
             this.BtCadGrupo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtCadGrupo.UseVisualStyleBackColor = false;
             this.BtCadGrupo.Click += new System.EventHandler(this.BtCadGrupo_Click);
@@ -213,7 +213,7 @@ namespace EasyHortifruti
             this.BtCadUnidade.Location = new System.Drawing.Point(268, 163);
             this.BtCadUnidade.Name = "BtCadUnidade";
             this.BtCadUnidade.Size = new System.Drawing.Size(26, 25);
-            this.BtCadUnidade.TabIndex = 14;
+            this.BtCadUnidade.TabIndex = 5;
             this.BtCadUnidade.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.BtCadUnidade.UseVisualStyleBackColor = false;
             this.BtCadUnidade.Click += new System.EventHandler(this.BtCadUnidade_Click);
@@ -227,15 +227,15 @@ namespace EasyHortifruti
             this.cbSubGrupoProduto.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbSubGrupoProduto.FonteCaption = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold);
             this.cbSubGrupoProduto.FormattingEnabled = true;
-            this.cbSubGrupoProduto.Location = new System.Drawing.Point(353, 225);
+            this.cbSubGrupoProduto.Location = new System.Drawing.Point(328, 225);
             this.cbSubGrupoProduto.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.cbSubGrupoProduto.Name = "cbSubGrupoProduto";
             this.cbSubGrupoProduto.Obrigatorio = false;
             this.cbSubGrupoProduto.SelectedIndex = -1;
             this.cbSubGrupoProduto.SelectedItem = null;
             this.cbSubGrupoProduto.SelectedText = "";
-            this.cbSubGrupoProduto.Size = new System.Drawing.Size(138, 48);
-            this.cbSubGrupoProduto.TabIndex = 8;
+            this.cbSubGrupoProduto.Size = new System.Drawing.Size(155, 48);
+            this.cbSubGrupoProduto.TabIndex = 10;
             // 
             // cbGrupoProduto
             // 
@@ -254,7 +254,7 @@ namespace EasyHortifruti
             this.cbGrupoProduto.SelectedItem = null;
             this.cbGrupoProduto.SelectedText = "";
             this.cbGrupoProduto.Size = new System.Drawing.Size(119, 48);
-            this.cbGrupoProduto.TabIndex = 7;
+            this.cbGrupoProduto.TabIndex = 8;
             // 
             // cbUnidProduto
             // 
@@ -273,7 +273,7 @@ namespace EasyHortifruti
             this.cbUnidProduto.SelectedItem = null;
             this.cbUnidProduto.SelectedText = "";
             this.cbUnidProduto.Size = new System.Drawing.Size(113, 48);
-            this.cbUnidProduto.TabIndex = 3;
+            this.cbUnidProduto.TabIndex = 4;
             // 
             // tbDescricaoProduto
             // 
@@ -317,7 +317,7 @@ namespace EasyHortifruti
             this.labelIDProduto.Location = new System.Drawing.Point(12, 21);
             this.labelIDProduto.Name = "labelIDProduto";
             this.labelIDProduto.Size = new System.Drawing.Size(30, 22);
-            this.labelIDProduto.TabIndex = 12;
+            this.labelIDProduto.TabIndex = 0;
             this.labelIDProduto.Text = "ID";
             // 
             // BtGravaAlterProd
@@ -332,7 +332,7 @@ namespace EasyHortifruti
             this.BtGravaAlterProd.Location = new System.Drawing.Point(337, 17);
             this.BtGravaAlterProd.Name = "BtGravaAlterProd";
             this.BtGravaAlterProd.Size = new System.Drawing.Size(94, 30);
-            this.BtGravaAlterProd.TabIndex = 9;
+            this.BtGravaAlterProd.TabIndex = 12;
             this.BtGravaAlterProd.UseVisualStyleBackColor = false;
             this.BtGravaAlterProd.Click += new System.EventHandler(this.BtGravaAlterProd_Click);
             // 
@@ -348,7 +348,7 @@ namespace EasyHortifruti
             this.BtCancelaProduto.Location = new System.Drawing.Point(437, 17);
             this.BtCancelaProduto.Name = "BtCancelaProduto";
             this.BtCancelaProduto.Size = new System.Drawing.Size(94, 30);
-            this.BtCancelaProduto.TabIndex = 10;
+            this.BtCancelaProduto.TabIndex = 13;
             this.BtCancelaProduto.UseVisualStyleBackColor = false;
             this.BtCancelaProduto.Click += new System.EventHandler(this.BtCancelaProduto_Click);
             // 

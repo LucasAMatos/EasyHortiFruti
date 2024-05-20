@@ -51,7 +51,7 @@ namespace EasyHortifruti.Forms.Produtos
             string filtro = txtFiltro.Text.ToLower(); // Texto digitado no TextBox (convertido para minúsculas)
 
             // Verifica se o DataGridView possui dados
-            if (dataGridView1.DataSource != null && dataGridView1.DataSource is DataTable table)
+            if (cbFiltro.SelectedIndex >= 0 && dataGridView1.DataSource != null && dataGridView1.DataSource is DataTable table)
             {
                 DataTable dataTable = table;
 

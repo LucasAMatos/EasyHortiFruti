@@ -185,6 +185,12 @@ namespace EasyHortifruti
             CarregarComboSubGrupo();
             CalcularMargemLucro();
 
+            tbDescricaoProduto.Text = string.Empty;
+            txtNCM.Text = string.Empty;
+            MtbPrecoCompra.Text = string.Empty;
+            MtbMargemLucro.Text = string.Empty;
+            MtbPrecoVenda.Text = string.Empty;
+
             labelIDProduto.Visible = Alterar;
         }
 

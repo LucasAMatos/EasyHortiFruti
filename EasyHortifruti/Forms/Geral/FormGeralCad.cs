@@ -109,8 +109,6 @@ namespace EasyHortifruti
 
         private void CarregarComboFiltros()
         {
-            int index = 0;
-
             cbFiltro.Add(0, "nomefantasia");
             cbFiltro.Add(1, "Razão Social");
         }

@@ -324,6 +324,7 @@
             this.btImprimirPedido.TabIndex = 9;
             this.btImprimirPedido.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btImprimirPedido.UseVisualStyleBackColor = false;
+            this.btImprimirPedido.Click += new System.EventHandler(this.btImprimirPedido_Click);
             // 
             // BtExcluirPedido
             // 

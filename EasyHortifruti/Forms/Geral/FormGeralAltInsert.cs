@@ -47,7 +47,6 @@ namespace EasyHortifruti
         public FormGeralAltInsert()
         {
             InitializeComponent();
-
         }
 
         public FormGeralAltInsert(int pID)
@@ -55,6 +54,7 @@ namespace EasyHortifruti
             InitializeComponent();
             Id = pID;
         }
+
         #endregion Construtor
 
         #region Eventos
@@ -141,7 +141,7 @@ namespace EasyHortifruti
                 }
             }
             catch (Exception ex)
-            { 
+            {
                 MessageBox.Show(ex.Message);
             }
         }
@@ -416,8 +416,7 @@ namespace EasyHortifruti
 
         private void CbClassificacao_SelectedIndexChanged(object sender, EventArgs e)
         {
-
-            if ((Classificacao)CbClassificacao.SelectedIndex == Classificacao.Funcionario || 
+            if ((Classificacao)CbClassificacao.SelectedIndex == Classificacao.Funcionario ||
                 (Classificacao)CbClassificacao.SelectedIndex == Classificacao.Socio)
                 TbPrazoPgto.Obrigatorio = false;
             else

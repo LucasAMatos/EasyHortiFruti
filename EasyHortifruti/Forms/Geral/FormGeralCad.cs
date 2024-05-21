@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Data;
 using System.Windows.Forms;
-using static Npgsql.Replication.PgOutput.Messages.RelationMessage;
 
 namespace EasyHortifruti
 {
@@ -22,18 +21,22 @@ namespace EasyHortifruti
                 return -1;
             }
         }
-        #endregion
+
+        #endregion Properties
 
         #region Construtor
+
         public FormGeralCad()
         {
             InitializeComponent();
 
             ConfiguraGridPadrao(DgViewCadGeral);
         }
-        #endregion
+
+        #endregion Construtor
 
         #region Eventos
+
         private void BtIncluirCliente_Click(object sender, EventArgs e)
         {
             FormGeralAltInsert GeralAltInsert = new FormGeralAltInsert();
@@ -81,9 +84,10 @@ namespace EasyHortifruti
             this.Close();
         }
 
-        #endregion
+        #endregion Eventos
 
         #region Metodos
+
         public void CarregarGrid()
         {
             dsGrid = new ConexaoBD().ConsultarGerais();
@@ -102,6 +106,7 @@ namespace EasyHortifruti
             cbTpFontePesquisa.Add(4, "Sócio");
             cbTpFontePesquisa.Add(5, "Entregador");
         }
+
         private void CarregarComboFiltros()
         {
             int index = 0;
@@ -128,11 +133,12 @@ namespace EasyHortifruti
         {
             Filtrar();
         }
-        #endregion
+
+        #endregion Metodos
 
         private void cbTpFontePesquisa_SelectedIndexChanged(object sender, EventArgs e)
         {
-            base.Filtrar(DgViewCadGeral, dsGrid, 14, cbTpFontePesquisa.SelectedIndex == 0 ? string.Empty : cbTpFontePesquisa.SelectedIndex.ToString() );
+            base.Filtrar(DgViewCadGeral, dsGrid, 14, cbTpFontePesquisa.SelectedIndex == 0 ? string.Empty : cbTpFontePesquisa.SelectedIndex.ToString());
         }
     }
 }

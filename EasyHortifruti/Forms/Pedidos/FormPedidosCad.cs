@@ -2,13 +2,19 @@
 using System.Data;
 using System.Windows.Forms;
 using static Npgsql.Replication.PgOutput.Messages.RelationMessage;
+using FastReport;
+using FastReport.Utils;
+using FastReport.Export.PdfSimple;
+using System.IO;
 
 namespace EasyHortifruti
 {
     public partial class FormPedidos : FormBase
     {
         #region Propriedades
-        private DataSet dsGrid;
+
+        private DataView dvGrid;
+
         public int IdSelecionado
         {
             get
@@ -25,16 +31,18 @@ namespace EasyHortifruti
         // Supondo que você tenha uma DataTable como fonte de dados
         private DataTable dataTable;
 
-        #endregion
+        #endregion Propriedades
 
         #region Construtor
+
         public FormPedidos()
         {
             InitializeComponent();
 
             ConfiguraGridPadrao(DgvPedidos);
         }
-        #endregion
+
+        #endregion Construtor
 
         #region Eventos
 
@@ -87,7 +95,7 @@ namespace EasyHortifruti
             this.Close();
         }
 
-        #endregion
+        #endregion Eventos
 
         #region Metodos
 
@@ -127,12 +135,40 @@ namespace EasyHortifruti
         private void DateChanged(object sender, EventArgs e)
         {
             // Filtro aplicado ao DataTable com base nos DateTimePickers
-            DataView dv = dataTable.DefaultView;
-            dv.RowFilter = $"datapedido >= #{DtInicio.Value.ToString("yyyy-MM-dd")}# AND datapedido <= #{DtFim.Value.ToString("yyyy-MM-dd")}#";
+            dvGrid = dataTable.DefaultView;
+            dvGrid.RowFilter = $"datapedido >= #{DtInicio.Value.ToString("yyyy-MM-dd")}# AND datapedido <= #{DtFim.Value.ToString("yyyy-MM-dd")}#";
 
             // Atualiza o DataGridView
-            DgvPedidos.DataSource = dv;
+            DgvPedidos.DataSource = dvGrid;
         }
-        #endregion
+
+        #endregion Metodos
+
+        private void btImprimirPedido_Click(object sender, EventArgs e)
+        {
+            // Crie um objeto de relatório
+            Report report = new Report();
+
+            // Carregue o modelo do relatório a partir de um arquivo .frx
+            report.Load($"{Directory.GetCurrentDirectory().Replace("\\bin\\Debug", "")}\\Relatorios\\arquivo.frx");
+
+            // Opcional: passe dados para o relatório (se necessário)
+            report.RegisterData(dvGrid, "dvGrid");
+
+            // Opcional: configure parâmetros do relatório (se necessário)
+            report.SetParameterValue("NomeRelatorio", "relatório teste");
+
+            // Prepare o relatório para impressão
+            report.Prepare();
+
+            using (FileStream stream = new FileStream("C:\\temp\\pdftaste.pdf", FileMode.Create))
+            {
+                PDFSimpleExport export = new PDFSimpleExport();
+                report.Export(export, stream);
+            }
+
+            // Opcional: abra o arquivo PDF após a exportação
+            System.Diagnostics.Process.Start("C:\\temp\\pdftaste.pdf");
+        }
     }
 }

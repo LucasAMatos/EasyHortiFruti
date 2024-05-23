@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FastReport.DevComponents.DotNetBar.Controls;
+using FastReport;
+using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -35,7 +37,7 @@ namespace EasyHortifruti
 
         #endregion Construtor
 
-        #region Eventos
+        #region Eventos Click
 
         private void BtIncluirCliente_Click(object sender, EventArgs e)
         {
@@ -77,6 +79,10 @@ namespace EasyHortifruti
             {
                 MessageBox.Show("Selecione um registro para excluir");
             }
+        }
+        private void BtImprimirCadGeral_Click(object sender, EventArgs e)
+        {
+
         }
 
         private void BtSairCadGeral_Click(object sender, EventArgs e)

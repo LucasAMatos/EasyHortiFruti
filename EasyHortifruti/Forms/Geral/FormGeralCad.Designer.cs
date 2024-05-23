@@ -30,31 +30,18 @@ namespace EasyHortifruti
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormGeralCad));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panelCadGeralForm = new System.Windows.Forms.Panel();
             this.panelFormCadGeral = new System.Windows.Forms.Panel();
             this.DgViewCadGeral = new System.Windows.Forms.DataGridView();
-            this.panelPesquisarCadGeral = new System.Windows.Forms.Panel();
-            this.cbTpFontePesquisa = new EasyHortifruti.Componentes.AltComboBox();
-            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
-            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
-            this.panel3FormCadGeralBotoes = new System.Windows.Forms.Panel();
-            this.BtSairCadGeral = new System.Windows.Forms.Button();
-            this.BtImprimirCadGeral = new System.Windows.Forms.Button();
-            this.BtExcluirCadGeral = new System.Windows.Forms.Button();
-            this.BtEditarCadGeral = new System.Windows.Forms.Button();
-            this.BtIncluirCadGeral = new System.Windows.Forms.Button();
-            this.panelTituloCadGeral = new System.Windows.Forms.Panel();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
             this.NomeFantasia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.RazaoSocial = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.CPF = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,6 +57,19 @@ namespace EasyHortifruti
             this.email = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TipoFonte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panelPesquisarCadGeral = new System.Windows.Forms.Panel();
+            this.cbTpFontePesquisa = new EasyHortifruti.Componentes.AltComboBox();
+            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
+            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
+            this.panel3FormCadGeralBotoes = new System.Windows.Forms.Panel();
+            this.BtSairCadGeral = new System.Windows.Forms.Button();
+            this.BtImprimirCadGeral = new System.Windows.Forms.Button();
+            this.BtExcluirCadGeral = new System.Windows.Forms.Button();
+            this.BtEditarCadGeral = new System.Windows.Forms.Button();
+            this.BtIncluirCadGeral = new System.Windows.Forms.Button();
+            this.panelTituloCadGeral = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
             this.panelCadGeralForm.SuspendLayout();
             this.panelFormCadGeral.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgViewCadGeral)).BeginInit();
@@ -103,14 +103,14 @@ namespace EasyHortifruti
             // 
             this.DgViewCadGeral.AllowUserToAddRows = false;
             this.DgViewCadGeral.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.DgViewCadGeral.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle9.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle9.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle9.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle9.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle9.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.DgViewCadGeral.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle9;
             this.DgViewCadGeral.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgViewCadGeral.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.NomeFantasia,
@@ -135,6 +135,122 @@ namespace EasyHortifruti
             this.DgViewCadGeral.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.DgViewCadGeral.Size = new System.Drawing.Size(934, 486);
             this.DgViewCadGeral.TabIndex = 0;
+            // 
+            // NomeFantasia
+            // 
+            this.NomeFantasia.DataPropertyName = "nomefantasia";
+            this.NomeFantasia.HeaderText = "Nome / Fantasia";
+            this.NomeFantasia.Name = "NomeFantasia";
+            this.NomeFantasia.Width = 150;
+            // 
+            // RazaoSocial
+            // 
+            this.RazaoSocial.DataPropertyName = "razaosocial";
+            this.RazaoSocial.HeaderText = "Razão Social";
+            this.RazaoSocial.Name = "RazaoSocial";
+            this.RazaoSocial.Width = 250;
+            // 
+            // CPF
+            // 
+            this.CPF.DataPropertyName = "cnpj_cpf";
+            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.CPF.DefaultCellStyle = dataGridViewCellStyle10;
+            this.CPF.HeaderText = "CNPJ / CPF";
+            this.CPF.Name = "CPF";
+            // 
+            // RG
+            // 
+            this.RG.DataPropertyName = "ie_rg";
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.RG.DefaultCellStyle = dataGridViewCellStyle11;
+            this.RG.HeaderText = "I.E. / RG.";
+            this.RG.Name = "RG";
+            // 
+            // logradouro
+            // 
+            this.logradouro.DataPropertyName = "logradouro";
+            this.logradouro.HeaderText = "Endereço";
+            this.logradouro.Name = "logradouro";
+            this.logradouro.Width = 180;
+            // 
+            // numero
+            // 
+            this.numero.DataPropertyName = "numero";
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.numero.DefaultCellStyle = dataGridViewCellStyle12;
+            this.numero.HeaderText = "Nº";
+            this.numero.Name = "numero";
+            this.numero.Width = 35;
+            // 
+            // complemento
+            // 
+            this.complemento.DataPropertyName = "complemento";
+            this.complemento.HeaderText = "Complemento";
+            this.complemento.Name = "complemento";
+            // 
+            // bairro
+            // 
+            this.bairro.DataPropertyName = "bairro";
+            this.bairro.HeaderText = "Bairro";
+            this.bairro.Name = "bairro";
+            this.bairro.Width = 130;
+            // 
+            // cidade
+            // 
+            this.cidade.DataPropertyName = "cidade";
+            this.cidade.HeaderText = "Cidade";
+            this.cidade.Name = "cidade";
+            this.cidade.Width = 130;
+            // 
+            // uf
+            // 
+            this.uf.DataPropertyName = "uf";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.uf.DefaultCellStyle = dataGridViewCellStyle13;
+            this.uf.HeaderText = "UF";
+            this.uf.Name = "uf";
+            this.uf.Width = 30;
+            // 
+            // fone
+            // 
+            this.fone.DataPropertyName = "fone";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.fone.DefaultCellStyle = dataGridViewCellStyle14;
+            this.fone.HeaderText = "Fone";
+            this.fone.Name = "fone";
+            this.fone.Width = 65;
+            // 
+            // celular
+            // 
+            this.celular.DataPropertyName = "celular";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.celular.DefaultCellStyle = dataGridViewCellStyle15;
+            this.celular.HeaderText = "Celular";
+            this.celular.Name = "celular";
+            this.celular.Width = 65;
+            // 
+            // email
+            // 
+            this.email.DataPropertyName = "email";
+            this.email.HeaderText = "E-mail";
+            this.email.Name = "email";
+            this.email.Width = 200;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id_recno";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle16;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Width = 30;
+            // 
+            // TipoFonte
+            // 
+            this.TipoFonte.DataPropertyName = "classificacao";
+            this.TipoFonte.HeaderText = "TipoFonte";
+            this.TipoFonte.Name = "TipoFonte";
+            this.TipoFonte.Visible = false;
             // 
             // panelPesquisarCadGeral
             // 
@@ -247,6 +363,7 @@ namespace EasyHortifruti
             this.BtImprimirCadGeral.TabIndex = 3;
             this.BtImprimirCadGeral.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtImprimirCadGeral.UseVisualStyleBackColor = false;
+            this.BtImprimirCadGeral.Click += new System.EventHandler(this.BtImprimirCadGeral_Click);
             // 
             // BtExcluirCadGeral
             // 
@@ -333,122 +450,6 @@ namespace EasyHortifruti
             this.label1.Size = new System.Drawing.Size(285, 53);
             this.label1.TabIndex = 0;
             this.label1.Text = "Cadastro Geral";
-            // 
-            // NomeFantasia
-            // 
-            this.NomeFantasia.DataPropertyName = "nomefantasia";
-            this.NomeFantasia.HeaderText = "Nome / Fantasia";
-            this.NomeFantasia.Name = "NomeFantasia";
-            this.NomeFantasia.Width = 150;
-            // 
-            // RazaoSocial
-            // 
-            this.RazaoSocial.DataPropertyName = "razaosocial";
-            this.RazaoSocial.HeaderText = "Razão Social";
-            this.RazaoSocial.Name = "RazaoSocial";
-            this.RazaoSocial.Width = 250;
-            // 
-            // CPF
-            // 
-            this.CPF.DataPropertyName = "cnpj_cpf";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.CPF.DefaultCellStyle = dataGridViewCellStyle2;
-            this.CPF.HeaderText = "CNPJ / CPF";
-            this.CPF.Name = "CPF";
-            // 
-            // RG
-            // 
-            this.RG.DataPropertyName = "ie_rg";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.RG.DefaultCellStyle = dataGridViewCellStyle3;
-            this.RG.HeaderText = "I.E. / RG.";
-            this.RG.Name = "RG";
-            // 
-            // logradouro
-            // 
-            this.logradouro.DataPropertyName = "logradouro";
-            this.logradouro.HeaderText = "Endereço";
-            this.logradouro.Name = "logradouro";
-            this.logradouro.Width = 180;
-            // 
-            // numero
-            // 
-            this.numero.DataPropertyName = "numero";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.numero.DefaultCellStyle = dataGridViewCellStyle4;
-            this.numero.HeaderText = "Nº";
-            this.numero.Name = "numero";
-            this.numero.Width = 35;
-            // 
-            // complemento
-            // 
-            this.complemento.DataPropertyName = "complemento";
-            this.complemento.HeaderText = "Complemento";
-            this.complemento.Name = "complemento";
-            // 
-            // bairro
-            // 
-            this.bairro.DataPropertyName = "bairro";
-            this.bairro.HeaderText = "Bairro";
-            this.bairro.Name = "bairro";
-            this.bairro.Width = 130;
-            // 
-            // cidade
-            // 
-            this.cidade.DataPropertyName = "cidade";
-            this.cidade.HeaderText = "Cidade";
-            this.cidade.Name = "cidade";
-            this.cidade.Width = 130;
-            // 
-            // uf
-            // 
-            this.uf.DataPropertyName = "uf";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.uf.DefaultCellStyle = dataGridViewCellStyle5;
-            this.uf.HeaderText = "UF";
-            this.uf.Name = "uf";
-            this.uf.Width = 30;
-            // 
-            // fone
-            // 
-            this.fone.DataPropertyName = "fone";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.fone.DefaultCellStyle = dataGridViewCellStyle6;
-            this.fone.HeaderText = "Fone";
-            this.fone.Name = "fone";
-            this.fone.Width = 65;
-            // 
-            // celular
-            // 
-            this.celular.DataPropertyName = "celular";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.celular.DefaultCellStyle = dataGridViewCellStyle7;
-            this.celular.HeaderText = "Celular";
-            this.celular.Name = "celular";
-            this.celular.Width = 65;
-            // 
-            // email
-            // 
-            this.email.DataPropertyName = "email";
-            this.email.HeaderText = "E-mail";
-            this.email.Name = "email";
-            this.email.Width = 200;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "id_recno";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle8;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Width = 30;
-            // 
-            // TipoFonte
-            // 
-            this.TipoFonte.DataPropertyName = "classificacao";
-            this.TipoFonte.HeaderText = "TipoFonte";
-            this.TipoFonte.Name = "TipoFonte";
-            this.TipoFonte.Visible = false;
             // 
             // FormGeralCad
             // 

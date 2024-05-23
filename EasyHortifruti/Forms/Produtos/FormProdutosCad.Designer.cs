@@ -28,33 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle20 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle19 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormCadastroProduto));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1FormCadProd = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.dtGridViewCadProd = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
-            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
-            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
-            this.panel3FormCadProdBotoes = new System.Windows.Forms.Panel();
-            this.BtSairCadProduto = new System.Windows.Forms.Button();
-            this.BtImprimirProduto = new System.Windows.Forms.Button();
-            this.BtExcluirProduto = new System.Windows.Forms.Button();
-            this.BtEditarProduto = new System.Windows.Forms.Button();
-            this.BtIncluirProduto = new System.Windows.Forms.Button();
-            this.panelTituloCadProd = new System.Windows.Forms.Panel();
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.lbDescricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbUnidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbVlrCompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,6 +50,20 @@
             this.lbGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.lbSubGrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.tableLayoutPanel2 = new System.Windows.Forms.TableLayoutPanel();
+            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
+            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
+            this.panel3FormCadProdBotoes = new System.Windows.Forms.Panel();
+            this.BtAtualizaPrecos = new System.Windows.Forms.Button();
+            this.BtSairCadProduto = new System.Windows.Forms.Button();
+            this.BtImprimirProduto = new System.Windows.Forms.Button();
+            this.BtExcluirProduto = new System.Windows.Forms.Button();
+            this.BtEditarProduto = new System.Windows.Forms.Button();
+            this.BtIncluirProduto = new System.Windows.Forms.Button();
+            this.panelTituloCadProd = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel2 = new System.Windows.Forms.Panel();
             this.panel1FormCadProd.SuspendLayout();
             this.panel3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dtGridViewCadProd)).BeginInit();
@@ -98,17 +99,17 @@
             this.dtGridViewCadProd.AllowUserToAddRows = false;
             this.dtGridViewCadProd.AllowUserToDeleteRows = false;
             this.dtGridViewCadProd.AllowUserToResizeRows = false;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dtGridViewCadProd.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dtGridViewCadProd.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle11;
             this.dtGridViewCadProd.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtGridViewCadProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle12.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle12.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle12.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle12.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle12.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dtGridViewCadProd.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle12;
             this.dtGridViewCadProd.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dtGridViewCadProd.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.lbDescricao,
@@ -119,14 +120,14 @@
             this.lbGrupo,
             this.lbSubGrupo,
             this.ID});
-            dataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle10.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle10.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle10.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle10.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle10.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtGridViewCadProd.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle20.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle20.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle20.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle20.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle20.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle20.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle20.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dtGridViewCadProd.DefaultCellStyle = dataGridViewCellStyle20;
             this.dtGridViewCadProd.Dock = System.Windows.Forms.DockStyle.Fill;
             this.dtGridViewCadProd.Location = new System.Drawing.Point(0, 0);
             this.dtGridViewCadProd.Name = "dtGridViewCadProd";
@@ -134,6 +135,87 @@
             this.dtGridViewCadProd.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dtGridViewCadProd.Size = new System.Drawing.Size(784, 480);
             this.dtGridViewCadProd.TabIndex = 3;
+            // 
+            // lbDescricao
+            // 
+            this.lbDescricao.DataPropertyName = "nome_produto";
+            this.lbDescricao.HeaderText = "Descrição";
+            this.lbDescricao.Name = "lbDescricao";
+            this.lbDescricao.ReadOnly = true;
+            this.lbDescricao.Width = 200;
+            // 
+            // lbUnidade
+            // 
+            this.lbUnidade.DataPropertyName = "abrev_unid";
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.lbUnidade.DefaultCellStyle = dataGridViewCellStyle13;
+            this.lbUnidade.HeaderText = "Unidade";
+            this.lbUnidade.Name = "lbUnidade";
+            this.lbUnidade.ReadOnly = true;
+            this.lbUnidade.Width = 60;
+            // 
+            // lbVlrCompra
+            // 
+            this.lbVlrCompra.DataPropertyName = "pcocompra_produto";
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Format = "C2";
+            dataGridViewCellStyle14.NullValue = null;
+            this.lbVlrCompra.DefaultCellStyle = dataGridViewCellStyle14;
+            this.lbVlrCompra.HeaderText = "Vlr Compra";
+            this.lbVlrCompra.Name = "lbVlrCompra";
+            this.lbVlrCompra.ReadOnly = true;
+            // 
+            // lbVlrVenda
+            // 
+            this.lbVlrVenda.DataPropertyName = "pcovenda_produto";
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle15.Format = "C2";
+            dataGridViewCellStyle15.NullValue = null;
+            this.lbVlrVenda.DefaultCellStyle = dataGridViewCellStyle15;
+            this.lbVlrVenda.HeaderText = "Vlr Venda";
+            this.lbVlrVenda.Name = "lbVlrVenda";
+            this.lbVlrVenda.ReadOnly = true;
+            // 
+            // lbVlrMargem
+            // 
+            this.lbVlrMargem.DataPropertyName = "margem_produto";
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle16.Format = "N0";
+            dataGridViewCellStyle16.NullValue = null;
+            this.lbVlrMargem.DefaultCellStyle = dataGridViewCellStyle16;
+            this.lbVlrMargem.HeaderText = "% Lucro";
+            this.lbVlrMargem.Name = "lbVlrMargem";
+            this.lbVlrMargem.ReadOnly = true;
+            this.lbVlrMargem.Width = 80;
+            // 
+            // lbGrupo
+            // 
+            this.lbGrupo.DataPropertyName = "nome_grupo";
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.lbGrupo.DefaultCellStyle = dataGridViewCellStyle17;
+            this.lbGrupo.HeaderText = "Grupo";
+            this.lbGrupo.Name = "lbGrupo";
+            this.lbGrupo.ReadOnly = true;
+            // 
+            // lbSubGrupo
+            // 
+            this.lbSubGrupo.DataPropertyName = "nome_subgrupo";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.lbSubGrupo.DefaultCellStyle = dataGridViewCellStyle18;
+            this.lbSubGrupo.HeaderText = "SubGrupo";
+            this.lbSubGrupo.Name = "lbSubGrupo";
+            this.lbSubGrupo.ReadOnly = true;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id_recno";
+            dataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.ID.DefaultCellStyle = dataGridViewCellStyle19;
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.ReadOnly = true;
+            this.ID.Visible = false;
+            this.ID.Width = 30;
             // 
             // panel1
             // 
@@ -200,6 +282,7 @@
             // 
             // panel3FormCadProdBotoes
             // 
+            this.panel3FormCadProdBotoes.Controls.Add(this.BtAtualizaPrecos);
             this.panel3FormCadProdBotoes.Controls.Add(this.BtSairCadProduto);
             this.panel3FormCadProdBotoes.Controls.Add(this.BtImprimirProduto);
             this.panel3FormCadProdBotoes.Controls.Add(this.BtExcluirProduto);
@@ -210,6 +293,22 @@
             this.panel3FormCadProdBotoes.Name = "panel3FormCadProdBotoes";
             this.panel3FormCadProdBotoes.Size = new System.Drawing.Size(784, 61);
             this.panel3FormCadProdBotoes.TabIndex = 1;
+            // 
+            // BtAtualizaPrecos
+            // 
+            this.BtAtualizaPrecos.BackColor = System.Drawing.Color.Transparent;
+            this.BtAtualizaPrecos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtAtualizaPrecos.BackgroundImage")));
+            this.BtAtualizaPrecos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtAtualizaPrecos.FlatAppearance.BorderSize = 0;
+            this.BtAtualizaPrecos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtAtualizaPrecos.Location = new System.Drawing.Point(221, 6);
+            this.BtAtualizaPrecos.Name = "BtAtualizaPrecos";
+            this.BtAtualizaPrecos.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.BtAtualizaPrecos.Size = new System.Drawing.Size(55, 52);
+            this.BtAtualizaPrecos.TabIndex = 12;
+            this.BtAtualizaPrecos.TextAlign = System.Drawing.ContentAlignment.BottomRight;
+            this.BtAtualizaPrecos.UseVisualStyleBackColor = false;
+            this.BtAtualizaPrecos.Click += new System.EventHandler(this.BtAtualizaPrecos_Click);
             // 
             // BtSairCadProduto
             // 
@@ -314,7 +413,7 @@
             this.label1.BackColor = System.Drawing.Color.Transparent;
             this.label1.Font = new System.Drawing.Font("Calibri", 32.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(85, 6);
+            this.label1.Location = new System.Drawing.Point(73, 6);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(406, 53);
             this.label1.TabIndex = 1;
@@ -327,89 +426,8 @@
             this.panel2.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel2.Location = new System.Drawing.Point(0, 0);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(82, 66);
+            this.panel2.Size = new System.Drawing.Size(68, 66);
             this.panel2.TabIndex = 0;
-            // 
-            // lbDescricao
-            // 
-            this.lbDescricao.DataPropertyName = "nome_produto";
-            this.lbDescricao.HeaderText = "Descrição";
-            this.lbDescricao.Name = "lbDescricao";
-            this.lbDescricao.ReadOnly = true;
-            this.lbDescricao.Width = 200;
-            // 
-            // lbUnidade
-            // 
-            this.lbUnidade.DataPropertyName = "abrev_unid";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.lbUnidade.DefaultCellStyle = dataGridViewCellStyle3;
-            this.lbUnidade.HeaderText = "Unidade";
-            this.lbUnidade.Name = "lbUnidade";
-            this.lbUnidade.ReadOnly = true;
-            this.lbUnidade.Width = 60;
-            // 
-            // lbVlrCompra
-            // 
-            this.lbVlrCompra.DataPropertyName = "pcocompra_produto";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.lbVlrCompra.DefaultCellStyle = dataGridViewCellStyle4;
-            this.lbVlrCompra.HeaderText = "Vlr Compra";
-            this.lbVlrCompra.Name = "lbVlrCompra";
-            this.lbVlrCompra.ReadOnly = true;
-            // 
-            // lbVlrVenda
-            // 
-            this.lbVlrVenda.DataPropertyName = "pcovenda_produto";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.lbVlrVenda.DefaultCellStyle = dataGridViewCellStyle5;
-            this.lbVlrVenda.HeaderText = "Vlr Venda";
-            this.lbVlrVenda.Name = "lbVlrVenda";
-            this.lbVlrVenda.ReadOnly = true;
-            // 
-            // lbVlrMargem
-            // 
-            this.lbVlrMargem.DataPropertyName = "margem_produto";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = null;
-            this.lbVlrMargem.DefaultCellStyle = dataGridViewCellStyle6;
-            this.lbVlrMargem.HeaderText = "% Lucro";
-            this.lbVlrMargem.Name = "lbVlrMargem";
-            this.lbVlrMargem.ReadOnly = true;
-            this.lbVlrMargem.Width = 80;
-            // 
-            // lbGrupo
-            // 
-            this.lbGrupo.DataPropertyName = "nome_grupo";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.lbGrupo.DefaultCellStyle = dataGridViewCellStyle7;
-            this.lbGrupo.HeaderText = "Grupo";
-            this.lbGrupo.Name = "lbGrupo";
-            this.lbGrupo.ReadOnly = true;
-            // 
-            // lbSubGrupo
-            // 
-            this.lbSubGrupo.DataPropertyName = "nome_subgrupo";
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.lbSubGrupo.DefaultCellStyle = dataGridViewCellStyle8;
-            this.lbSubGrupo.HeaderText = "SubGrupo";
-            this.lbSubGrupo.Name = "lbSubGrupo";
-            this.lbSubGrupo.ReadOnly = true;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "id_recno";
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.ID.DefaultCellStyle = dataGridViewCellStyle9;
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.ReadOnly = true;
-            this.ID.Visible = false;
-            this.ID.Width = 30;
             // 
             // FormCadastroProduto
             // 
@@ -462,5 +480,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn lbGrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn lbSubGrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
+        private System.Windows.Forms.Button BtAtualizaPrecos;
     }
 }

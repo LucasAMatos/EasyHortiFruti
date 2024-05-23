@@ -1,4 +1,5 @@
-﻿using System;
+﻿using EasyHortifruti.Forms.Produtos;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -92,13 +93,19 @@ namespace EasyHortifruti
         {
         }
 
+        private void BtAtualizaPrecos_Click(object sender, EventArgs e)
+        {
+            FormAlterarPrecoCompra AlterarPrecoCompra = new FormAlterarPrecoCompra();
+            AlterarPrecoCompra.ShowDialog();
+        }
+
         private void BtSairCadProduto_Click(object sender, EventArgs e)
         {
             this.Close();
         }
         #endregion
 
-        #region Metodos
+        #region Metodos Filtro
 
         private void CarregarComboFiltros()
         {
@@ -129,5 +136,7 @@ namespace EasyHortifruti
             Filtrar();
         }
         #endregion
+
+
     }
 }

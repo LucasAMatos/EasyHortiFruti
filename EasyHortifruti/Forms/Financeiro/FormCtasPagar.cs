@@ -19,7 +19,6 @@ namespace EasyHortifruti.Forms.Financeiro
 
         private void BtBaixaCtaRecebto_Click(object sender, EventArgs e)
         {
-
         }
 
         private void BtSairCtasPagar_Click(object sender, EventArgs e)

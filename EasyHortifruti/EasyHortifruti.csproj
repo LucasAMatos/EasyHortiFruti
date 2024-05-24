@@ -1,6 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="packages\FastReport.OpenSource.2024.2.1\build\FastReport.OpenSource.props" Condition="Exists('packages\FastReport.OpenSource.2024.2.1\build\FastReport.OpenSource.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -54,15 +53,6 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Accessibility" />
-    <Reference Include="FastReport, Version=2024.2.1.0, Culture=neutral, PublicKeyToken=5ceb240df42bf6e8, processorArchitecture=MSIL">
-      <HintPath>packages\FastReport.OpenSource.2024.2.1\lib\net462\FastReport.dll</HintPath>
-    </Reference>
-    <Reference Include="FastReport.Compat, Version=2024.2.1.0, Culture=neutral, PublicKeyToken=5ceb240df42bf6e8, processorArchitecture=MSIL">
-      <HintPath>packages\FastReport.Compat.2024.2.1\lib\net462\FastReport.Compat.dll</HintPath>
-    </Reference>
-    <Reference Include="FastReport.OpenSource.Export.PdfSimple, Version=2024.2.1.0, Culture=neutral, PublicKeyToken=b33a9a06fcc00c4c, processorArchitecture=MSIL">
-      <HintPath>packages\FastReport.OpenSource.Export.PdfSimple.2024.2.1\lib\net462\FastReport.OpenSource.Export.PdfSimple.dll</HintPath>
-    </Reference>
     <Reference Include="Microsoft.Bcl.AsyncInterfaces, Version=8.0.0.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Bcl.AsyncInterfaces.8.0.0\lib\net462\Microsoft.Bcl.AsyncInterfaces.dll</HintPath>
     </Reference>
@@ -74,6 +64,24 @@
     </Reference>
     <Reference Include="Microsoft.Extensions.Logging.Abstractions, Version=8.0.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>packages\Microsoft.Extensions.Logging.Abstractions.8.0.0\lib\net462\Microsoft.Extensions.Logging.Abstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Common.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.DataVisualization, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.DataVisualization.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Design, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.ProcessingObjectModel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.ProcessingObjectModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=15.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.ReportingServices.ReportViewerControl.Winforms.150.1620.0\lib\net40\Microsoft.ReportViewer.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.SqlServer.Types, Version=14.0.0.0, Culture=neutral, PublicKeyToken=89845dcd8080cc91, processorArchitecture=MSIL">
+      <HintPath>packages\Microsoft.SqlServer.Types.14.0.314.76\lib\net40\Microsoft.SqlServer.Types.dll</HintPath>
     </Reference>
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
@@ -213,12 +221,19 @@
     <Compile Include="Forms\Financeiro\FormCtasReceberAltInsert.Designer.cs">
       <DependentUpon>FormCtasReceberAltInsert.cs</DependentUpon>
     </Compile>
+    <Compile Include="Forms\Produtos\FormAlterarPrecoCompra.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\Produtos\FormAlterarPrecoCompra.Designer.cs">
+      <DependentUpon>FormAlterarPrecoCompra.cs</DependentUpon>
+    </Compile>
     <Compile Include="Forms\Produtos\FormNcm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Forms\Produtos\FormNcm.Designer.cs">
       <DependentUpon>FormNcm.cs</DependentUpon>
     </Compile>
+    <Compile Include="SqlServerTypes\Loader.cs" />
     <Compile Include="Utilitarios\APIClient.cs" />
     <Compile Include="Utilitarios\ConsultarCEP.cs" />
     <Compile Include="Utilitarios\ConsultarCNPJ.cs" />
@@ -330,6 +345,9 @@
     <EmbeddedResource Include="Forms\Financeiro\FormCtasReceberAltInsert.resx">
       <DependentUpon>FormCtasReceberAltInsert.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Forms\Produtos\FormAlterarPrecoCompra.resx">
+      <DependentUpon>FormAlterarPrecoCompra.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Forms\Produtos\FormNcm.resx">
       <DependentUpon>FormNcm.cs</DependentUpon>
     </EmbeddedResource>
@@ -396,6 +414,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
     <None Include="Relatorios\arquivo.frx" />
+    <None Include="Relatorios\Produtos.rdl" />
+    <None Include="Relatorios\Produtos.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -415,11 +435,20 @@
   <ItemGroup>
     <Folder Include="NewFolder1\" />
   </ItemGroup>
+  <ItemGroup>
+    <Content Include="SqlServerTypes\readme.htm" />
+    <Content Include="SqlServerTypes\x64\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x64\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\msvcr120.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="SqlServerTypes\x86\SqlServerSpatial140.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Use NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('packages\FastReport.OpenSource.2024.2.1\build\FastReport.OpenSource.props')" Text="$([System.String]::Format('$(ErrorText)', 'packages\FastReport.OpenSource.2024.2.1\build\FastReport.OpenSource.props'))" />
-  </Target>
 </Project>

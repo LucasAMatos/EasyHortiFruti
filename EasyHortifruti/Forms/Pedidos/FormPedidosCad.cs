@@ -2,10 +2,8 @@
 using System.Data;
 using System.Windows.Forms;
 using static Npgsql.Replication.PgOutput.Messages.RelationMessage;
-using FastReport;
-using FastReport.Utils;
-using FastReport.Export.PdfSimple;
 using System.IO;
+using Microsoft.Reporting.WinForms;
 
 namespace EasyHortifruti
 {
@@ -146,29 +144,47 @@ namespace EasyHortifruti
 
         private void btImprimirPedido_Click(object sender, EventArgs e)
         {
-            // Crie um objeto de relatório
-            Report report = new Report();
-
-            // Carregue o modelo do relatório a partir de um arquivo .frx
-            report.Load($"{Directory.GetCurrentDirectory().Replace("\\bin\\Debug", "")}\\Relatorios\\arquivo.frx");
-
-            // Opcional: passe dados para o relatório (se necessário)
-            report.RegisterData(dvGrid, "dvGrid");
-
-            // Opcional: configure parâmetros do relatório (se necessário)
-            report.SetParameterValue("NomeRelatorio", "relatório teste");
-
-            // Prepare o relatório para impressão
-            report.Prepare();
-
-            using (FileStream stream = new FileStream("C:\\temp\\pdftaste.pdf", FileMode.Create))
+            try
             {
-                PDFSimpleExport export = new PDFSimpleExport();
-                report.Export(export, stream);
-            }
+                // Caminho do arquivo RDL
+                string rdlPath = $"{Directory.GetCurrentDirectory().Replace("\\bin\\Debug", "")}\\Relatorios\\Produtos.rdl"; // Use a extensão .rdlc para relatórios locais
 
-            // Opcional: abra o arquivo PDF após a exportação
-            System.Diagnostics.Process.Start("C:\\temp\\pdftaste.pdf");
+                // Cria uma instância do LocalReport
+                LocalReport report = new LocalReport();
+                report.ReportPath = rdlPath;
+
+                // Se o relatório tiver parâmetros, você pode configurá-los assim:
+                // report.SetParameters(new ReportParameter("ParameterName", "ParameterValue"));
+
+                // Carrega os dados no relatório (DataSet, DataTable ou outra fonte de dados)
+                // Exemplo:
+                // report.DataSources.Add(new ReportDataSource("DataSourceName", suaFonteDeDados));
+
+                // Renderiza o relatório em formato PDF
+                byte[] pdfContent;
+                string mimeType, encoding, fileNameExtension;
+                string[] streams;
+                Warning[] warnings;
+
+                pdfContent = report.Render(
+                    "PDF", null, out mimeType, out encoding, out fileNameExtension,
+                    out streams, out warnings);
+
+                // Salva o conteúdo do PDF em um arquivo temporário
+                string tempFilePath = Path.GetTempFileName() + ".pdf";
+                File.WriteAllBytes(tempFilePath, pdfContent);
+
+                // Abre o PDF no visualizador padrão do sistema
+                System.Diagnostics.Process.Start(new System.Diagnostics.ProcessStartInfo()
+                {
+                    FileName = tempFilePath,
+                    UseShellExecute = true
+                });
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao gerar relatório: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
     }
 }

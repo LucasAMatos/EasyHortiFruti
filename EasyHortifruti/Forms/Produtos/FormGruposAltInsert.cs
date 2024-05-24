@@ -62,7 +62,9 @@ namespace EasyHortifruti
                         LimpaCampos();
                     }
                     else
+                    {
                         this.Close();
+                    }
                 }
             }
             catch (Exception E)

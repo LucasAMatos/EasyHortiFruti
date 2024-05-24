@@ -1,6 +1,4 @@
-﻿using FastReport.DevComponents.DotNetBar.Controls;
-using FastReport;
-using System;
+﻿using System;
 using System.Data;
 using System.Windows.Forms;
 
@@ -80,9 +78,9 @@ namespace EasyHortifruti
                 MessageBox.Show("Selecione um registro para excluir");
             }
         }
+
         private void BtImprimirCadGeral_Click(object sender, EventArgs e)
         {
-
         }
 
         private void BtSairCadGeral_Click(object sender, EventArgs e)
@@ -90,7 +88,7 @@ namespace EasyHortifruti
             this.Close();
         }
 
-        #endregion Eventos
+        #endregion Eventos Click
 
         #region Metodos
 
@@ -140,7 +138,7 @@ namespace EasyHortifruti
 
         #endregion Metodos
 
-        private void cbTpFontePesquisa_SelectedIndexChanged(object sender, EventArgs e)
+        private void CbTpFontePesquisa_SelectedIndexChanged(object sender, EventArgs e)
         {
             base.Filtrar(DgViewCadGeral, dsGrid, 14, cbTpFontePesquisa.SelectedIndex == 0 ? string.Empty : cbTpFontePesquisa.SelectedIndex.ToString());
         }

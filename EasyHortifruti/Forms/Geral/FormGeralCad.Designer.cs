@@ -279,7 +279,7 @@ namespace EasyHortifruti
             this.cbTpFontePesquisa.SelectedText = "";
             this.cbTpFontePesquisa.Size = new System.Drawing.Size(163, 46);
             this.cbTpFontePesquisa.TabIndex = 7;
-            this.cbTpFontePesquisa.SelectedIndexChanged += new System.EventHandler(this.cbTpFontePesquisa_SelectedIndexChanged);
+            this.cbTpFontePesquisa.SelectedIndexChanged += new System.EventHandler(this.CbTpFontePesquisa_SelectedIndexChanged);
             // 
             // cbFiltro
             // 

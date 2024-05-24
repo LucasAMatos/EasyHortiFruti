@@ -29,13 +29,13 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlterarPrecoCompra));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle29 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle30 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.DgvListaProdutos = new System.Windows.Forms.DataGridView();
@@ -57,9 +57,10 @@
             this.Ibgrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ibsubgrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.valoratual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.alterarPara = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vlrAlterado = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.margem_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.id_recno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaProdutos)).BeginInit();
@@ -101,9 +102,10 @@
             this.Ibgrupo,
             this.Ibsubgrupo,
             this.valoratual,
-            this.alterarPara,
+            this.vlrAlterado,
             this.margem_produto,
-            this.id_recno});
+            this.id_recno,
+            this.ValorVenda});
             this.DgvListaProdutos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvListaProdutos.Location = new System.Drawing.Point(0, 0);
             this.DgvListaProdutos.Name = "DgvListaProdutos";
@@ -217,6 +219,7 @@
             this.BtEditarGrupo.TabIndex = 16;
             this.BtEditarGrupo.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.BtEditarGrupo.UseVisualStyleBackColor = false;
+            this.BtEditarGrupo.Click += new System.EventHandler(this.BtEditarGrupo_Click);
             // 
             // CbFiltraProdutos
             // 
@@ -229,11 +232,12 @@
             this.CbFiltraProdutos.Location = new System.Drawing.Point(367, 12);
             this.CbFiltraProdutos.Name = "CbFiltraProdutos";
             this.CbFiltraProdutos.Obrigatorio = false;
-            this.CbFiltraProdutos.SelectedIndex = 0;
+            this.CbFiltraProdutos.SelectedIndex = -1;
             this.CbFiltraProdutos.SelectedItem = null;
             this.CbFiltraProdutos.SelectedText = "";
             this.CbFiltraProdutos.Size = new System.Drawing.Size(150, 40);
             this.CbFiltraProdutos.TabIndex = 2;
+            this.CbFiltraProdutos.SelectedIndexChanged += new System.EventHandler(this.Filtrar);
             // 
             // CbFiltraSubGrupo
             // 
@@ -246,11 +250,12 @@
             this.CbFiltraSubGrupo.Location = new System.Drawing.Point(193, 12);
             this.CbFiltraSubGrupo.Name = "CbFiltraSubGrupo";
             this.CbFiltraSubGrupo.Obrigatorio = false;
-            this.CbFiltraSubGrupo.SelectedIndex = 0;
+            this.CbFiltraSubGrupo.SelectedIndex = -1;
             this.CbFiltraSubGrupo.SelectedItem = null;
             this.CbFiltraSubGrupo.SelectedText = "";
             this.CbFiltraSubGrupo.Size = new System.Drawing.Size(153, 40);
             this.CbFiltraSubGrupo.TabIndex = 1;
+            this.CbFiltraSubGrupo.SelectedIndexChanged += new System.EventHandler(this.Filtrar);
             // 
             // CbFiltraGrupo
             // 
@@ -263,12 +268,12 @@
             this.CbFiltraGrupo.Location = new System.Drawing.Point(18, 12);
             this.CbFiltraGrupo.Name = "CbFiltraGrupo";
             this.CbFiltraGrupo.Obrigatorio = false;
-            this.CbFiltraGrupo.SelectedIndex = 0;
+            this.CbFiltraGrupo.SelectedIndex = -1;
             this.CbFiltraGrupo.SelectedItem = null;
             this.CbFiltraGrupo.SelectedText = "";
             this.CbFiltraGrupo.Size = new System.Drawing.Size(154, 40);
             this.CbFiltraGrupo.TabIndex = 0;
-            this.CbFiltraGrupo.SelectedIndexChanged += new System.EventHandler(this.CbFiltraGrupo_SelectedIndexChanged);
+            this.CbFiltraGrupo.SelectedIndexChanged += new System.EventHandler(this.Filtrar);
             // 
             // panel2
             // 
@@ -318,8 +323,8 @@
             // Ibunidade
             // 
             this.Ibunidade.DataPropertyName = "abrev_unid";
-            dataGridViewCellStyle29.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Ibunidade.DefaultCellStyle = dataGridViewCellStyle29;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Ibunidade.DefaultCellStyle = dataGridViewCellStyle1;
             this.Ibunidade.HeaderText = "Unidade";
             this.Ibunidade.Name = "Ibunidade";
             this.Ibunidade.ReadOnly = true;
@@ -328,8 +333,8 @@
             // Ibgrupo
             // 
             this.Ibgrupo.DataPropertyName = "nome_grupo";
-            dataGridViewCellStyle30.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Ibgrupo.DefaultCellStyle = dataGridViewCellStyle30;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Ibgrupo.DefaultCellStyle = dataGridViewCellStyle2;
             this.Ibgrupo.HeaderText = "Grupo";
             this.Ibgrupo.Name = "Ibgrupo";
             this.Ibgrupo.ReadOnly = true;
@@ -337,8 +342,8 @@
             // Ibsubgrupo
             // 
             this.Ibsubgrupo.DataPropertyName = "nome_subgrupo";
-            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Ibsubgrupo.DefaultCellStyle = dataGridViewCellStyle31;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Ibsubgrupo.DefaultCellStyle = dataGridViewCellStyle3;
             this.Ibsubgrupo.HeaderText = "SubGrupo";
             this.Ibsubgrupo.Name = "Ibsubgrupo";
             this.Ibsubgrupo.ReadOnly = true;
@@ -346,32 +351,33 @@
             // valoratual
             // 
             this.valoratual.DataPropertyName = "pcocompra_produto";
-            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle32.Format = "C2";
-            dataGridViewCellStyle32.NullValue = null;
-            this.valoratual.DefaultCellStyle = dataGridViewCellStyle32;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.valoratual.DefaultCellStyle = dataGridViewCellStyle4;
             this.valoratual.HeaderText = "R$ Atual";
             this.valoratual.Name = "valoratual";
             this.valoratual.ReadOnly = true;
             this.valoratual.Width = 80;
             // 
-            // alterarPara
+            // vlrAlterado
             // 
-            dataGridViewCellStyle33.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle33.Format = "C2";
-            dataGridViewCellStyle33.NullValue = null;
-            this.alterarPara.DefaultCellStyle = dataGridViewCellStyle33;
-            this.alterarPara.HeaderText = "R$ Alterar";
-            this.alterarPara.Name = "alterarPara";
-            this.alterarPara.Width = 80;
+            this.vlrAlterado.DataPropertyName = "vlrAlterado";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.vlrAlterado.DefaultCellStyle = dataGridViewCellStyle5;
+            this.vlrAlterado.HeaderText = "R$ Alterar";
+            this.vlrAlterado.Name = "vlrAlterado";
+            this.vlrAlterado.Width = 80;
             // 
             // margem_produto
             // 
             this.margem_produto.DataPropertyName = "margem_produto";
-            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle34.Format = "N0";
-            dataGridViewCellStyle34.NullValue = null;
-            this.margem_produto.DefaultCellStyle = dataGridViewCellStyle34;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.margem_produto.DefaultCellStyle = dataGridViewCellStyle6;
             this.margem_produto.HeaderText = "% Lucro";
             this.margem_produto.Name = "margem_produto";
             this.margem_produto.Width = 70;
@@ -379,13 +385,20 @@
             // id_recno
             // 
             this.id_recno.DataPropertyName = "id_recno";
-            dataGridViewCellStyle35.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.id_recno.DefaultCellStyle = dataGridViewCellStyle35;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.id_recno.DefaultCellStyle = dataGridViewCellStyle7;
             this.id_recno.HeaderText = "ID";
             this.id_recno.Name = "id_recno";
             this.id_recno.ReadOnly = true;
             this.id_recno.Visible = false;
             this.id_recno.Width = 60;
+            // 
+            // ValorVenda
+            // 
+            this.ValorVenda.DataPropertyName = "pcovenda_produto";
+            this.ValorVenda.HeaderText = "VlrVenda";
+            this.ValorVenda.Name = "ValorVenda";
+            this.ValorVenda.Visible = false;
             // 
             // FormAlterarPrecoCompra
             // 
@@ -435,8 +448,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Ibgrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn Ibsubgrupo;
         private System.Windows.Forms.DataGridViewTextBoxColumn valoratual;
-        private System.Windows.Forms.DataGridViewTextBoxColumn alterarPara;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vlrAlterado;
         private System.Windows.Forms.DataGridViewTextBoxColumn margem_produto;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_recno;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ValorVenda;
     }
 }

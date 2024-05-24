@@ -68,6 +68,7 @@ namespace EasyHortifruti
                             case "System.Double":
                                 pDt.DefaultView.RowFilter = $"{coluna} = {pFiltro}";
                                 break;
+
                             default:
                                 pDt.DefaultView.RowFilter = $"{coluna} LIKE '%{pFiltro}%'";
                                 break;
@@ -88,9 +89,10 @@ namespace EasyHortifruti
 
         internal void Filtrar(DataGridView dgv, DataSet pDs, int SelectedIndex, string pFiltro)
         {
+            string coluna = dgv.Columns[SelectedIndex].DataPropertyName;
+
             try
             {
-                string coluna = dgv.Columns[SelectedIndex].DataPropertyName;
                 if (!string.IsNullOrEmpty(pFiltro))
                 {
                     if (SelectedIndex == 14)
@@ -103,6 +105,7 @@ namespace EasyHortifruti
                             case "System.Double":
                                 pDs.Tables["Table"].DefaultView.RowFilter = $"{coluna} = {pFiltro}";
                                 break;
+
                             default:
                                 pDs.Tables["Table"].DefaultView.RowFilter = $"{coluna} LIKE '%{pFiltro}%'";
                                 break;
@@ -118,6 +121,8 @@ namespace EasyHortifruti
             }
             catch
             {
+                pDs.Tables["Table"].DefaultView.RowFilter = $"{coluna} LIKE '%{pFiltro}%'";
+                dgv.DataSource = pDs.Tables["Table"].DefaultView;
             }
         }
 

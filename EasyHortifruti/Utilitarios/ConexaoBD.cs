@@ -18,11 +18,13 @@ namespace EasyHortifruti
         private readonly string connectionString;
 
         #region Constructor
+
         public ConexaoBD()
         {
             connectionString = "Host=localhost;Username=Admin;Password=2125071216;Database=EasyHortifruti";
         }
-        #endregion
+
+        #endregion Constructor
 
         #region Métodos
 
@@ -47,6 +49,7 @@ namespace EasyHortifruti
 
             return ExecutaEPreencheDataset(sql);
         }
+
         public void InserirGeral(Geral pGeral)
         {
             Telefone fone = pGeral.Telefones.First(x => x.TipoTelefone == TipoTelefone.pessoal);
@@ -83,6 +86,7 @@ namespace EasyHortifruti
 
             ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaGeral, pCampos));
         }
+
         public void AlterarGeral(Geral pGeral)
         {
             Telefone fone = pGeral.Telefones.First(x => x.TipoTelefone == TipoTelefone.pessoal);
@@ -122,7 +126,7 @@ namespace EasyHortifruti
 
         public void ExcluirGeral(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaGeral);
 
-        #endregion
+        #endregion Geral
 
         #region Unidades
 
@@ -156,9 +160,10 @@ namespace EasyHortifruti
 
         public void ExcluirUnidade(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaUnidades);
 
-        #endregion
+        #endregion Unidades
 
         #region Grupo
+
         public DataSet ConsultarGrupos() => ConsultarTabela(TabelasScript.TabelaGrupos);
 
         public DataSet ConsultarGrupoPorId(int pId) => ConsultarTabelaPorId(pId, TabelasScript.TabelaGrupos);
@@ -174,6 +179,7 @@ namespace EasyHortifruti
 
             ExecutarSemRetorno(TabelasScript.ScriptInsert(TabelasScript.TabelaGrupos, pCampos));
         }
+
         public void AlterarGrupo(int pId, string Descricao, string Observacao, string MargemLucro)
         {
             Dictionary<string, string> pCampos = new Dictionary<string, string>
@@ -187,10 +193,13 @@ namespace EasyHortifruti
         }
 
         public void ExcluirGrupo(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaGrupos);
-        #endregion
+
+        #endregion Grupo
 
         #region SubGrupo
+
         public DataSet ConsultarSubGrupos() => ConsultarTabela(TabelasScript.TabelaSubGrupos);
+
         public DataSet ConsultarSubGrupo(int pId)
         {
             string sql = string.Concat("SELECT Sub.nome_subgrupo, grp.nome_grupo,  " +
@@ -202,6 +211,7 @@ namespace EasyHortifruti
 
             return ExecutaEPreencheDataset(sql);
         }
+
         public void InserirSubGrupo(string Descricao, int pGrupo, string MargemLucro)
         {
             Dictionary<string, string> pCampos = new Dictionary<string, string>
@@ -225,13 +235,23 @@ namespace EasyHortifruti
 
             ExecutarSemRetorno(TabelasScript.ScriptUpdate(TabelasScript.TabelaSubGrupos, pId, pCampos));
         }
+
         public void ExcluirSubGrupo(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaSubGrupos);
-        #endregion
+
+        #endregion SubGrupo
 
         #region Produtos
+
         public DataSet ConsultarProdutos()
         {
             string sql = string.Concat("SELECT * FROM produtos P LEFT JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO LEFT JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO LEFT JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO");
+
+            return ExecutaEPreencheDataset(sql);
+        }
+
+        public DataSet ConsultarListaDeProdutos()
+        {
+            string sql = string.Concat("SELECT nome_produto FROM produtos");
 
             return ExecutaEPreencheDataset(sql);
         }
@@ -282,7 +302,18 @@ namespace EasyHortifruti
         }
 
         public void ExcluirProduto(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaProdutos);
-        #endregion
+
+        public void AtualizarValor(Tuple<int, decimal, int> novoValorProduto)
+        {
+            string sql = $"" +
+                $"UPDATE {TabelasScript.TabelaProdutos} SET " +
+                $"pcocompra_produto = {novoValorProduto.Item2.ToString().Replace(',', '.')}," +
+                $"margem_produto = {novoValorProduto.Item3.ToString()} " +
+                $"WHERE ID_RECNO={novoValorProduto.Item1}";
+            ExecutarSemRetorno(sql);
+        }
+
+        #endregion Produtos
 
         #region Pedidos
 
@@ -312,6 +343,7 @@ namespace EasyHortifruti
 
             return ExecutaEPreencheDataset(sql);
         }
+
         public Pedido ConsultarClientePedidoPorId(int pId)
         {
             string sql = string.Concat("SELECT ped.id_recno,ped.id_fonte, ped.datapedido,grl.razaosocial AS nCliente,ped.statuspedido,ped.prazopgto,ped.dataprev,",
@@ -350,7 +382,7 @@ namespace EasyHortifruti
 
             int IDPedido = ExecutarRetornaID(TabelasScript.ScriptInsert(TabelasScript.TabelaPedidos, Campos));
 
-            foreach(ItemPedido item in pPedido.Itens)
+            foreach (ItemPedido item in pPedido.Itens)
             {
                 Dictionary<string, string> CamposItens = new Dictionary<string, string>
                 {
@@ -390,7 +422,8 @@ namespace EasyHortifruti
         }
 
         public void ExcluirPedido(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaPedidos);
-        #endregion
+
+        #endregion Pedidos
 
         #region ItensPedido
 
@@ -415,16 +448,17 @@ namespace EasyHortifruti
                         Quantidade = Convert.ToInt32(dr["qtdeitem"]),
                         Valor_custo = Convert.ToDecimal(dr["vlcusto"]),
                         Valor_lucro = Convert.ToDecimal(dr["vllucro"]),
-                        Total_item = Convert.ToDecimal(dr["vltotitem"])
+                        Total_item = Convert.ToDecimal(dr["vltotitem"]),
+                        Id_item = Convert.ToInt32(dr["id_recno"])
                     };
-                    item.Id_item = Convert.ToInt32(dr["id_recno"]);
 
                     itensPedido.Add(item);
                 }
             }
             return itensPedido;
         }
-        #endregion
+
+        #endregion ItensPedido
 
         #region CtasReceber
 
@@ -468,12 +502,14 @@ namespace EasyHortifruti
 
         public void ExcluirConta(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaCtasReceber);
 
-        #endregion
+        #endregion CtasReceber
 
         public DataSet ConsutarNCMs() => ConsultarTabela("tabelancm");
-        #endregion
+
+        #endregion Tabelas
 
         #region Privado
+
         private DataSet ExecutaEPreencheDataset(string pSql)
         {
             DataSet dataSet = new DataSet();
@@ -553,12 +589,13 @@ namespace EasyHortifruti
             {
                 conn.Open();
 
-              //  foreach (string script in new TabelasScript().Scripts)
+                //  foreach (string script in new TabelasScript().Scripts)
                 //new NpgsqlCommand(script, conn).ExecuteNonQuery();
             }
         }
-        #endregion
 
-        #endregion
+        #endregion Privado
+
+        #endregion Métodos
     }
 }

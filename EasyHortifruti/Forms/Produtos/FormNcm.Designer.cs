@@ -85,7 +85,7 @@
             this.txtFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.txtFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             this.txtFiltro.TextChanged += new System.EventHandler(this.AltTextBox1_TextChanged);
-            this.txtFiltro.Load += new System.EventHandler(this.txtFiltro_Load);
+            this.txtFiltro.Load += new System.EventHandler(this.TxtFiltro_Load);
             // 
             // cbFiltro
             // 

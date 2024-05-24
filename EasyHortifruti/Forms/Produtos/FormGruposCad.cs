@@ -7,6 +7,7 @@ namespace EasyHortifruti
     public partial class FormGruposCad : FormBase
     {
         #region Propriedades
+
         private DataSet dsGrid;
 
         public int IdSelecionado
@@ -108,6 +109,7 @@ namespace EasyHortifruti
                 index++;
             }
         }
+
         public void CarregarGrid()
         {
             dsGrid = new ConexaoBD().ConsultarGrupos();

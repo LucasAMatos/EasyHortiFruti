@@ -1,9 +1,11 @@
 ﻿using EasyHortifruti.Forms.Produtos;
+using Microsoft.Reporting.WinForms;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -16,6 +18,7 @@ namespace EasyHortifruti
         #region Propriedades
 
         private DataSet dsGrid;
+
         public int IdSelecionado
         {
             get
@@ -29,17 +32,20 @@ namespace EasyHortifruti
             }
         }
 
-        #endregion
+        #endregion Propriedades
 
         #region Construtor
+
         public FormCadastroProduto()
         {
             InitializeComponent();
             ConfiguraGridPadrao(dtGridViewCadProd);
         }
-        #endregion
+
+        #endregion Construtor
 
         #region Metodos
+
         private void FormCadastroProduto_Load(object sender, EventArgs e)
         {
             CarregarGrid();
@@ -47,6 +53,7 @@ namespace EasyHortifruti
             // Inscreva-se para o evento TextoAlterado do UserControl
             tbFiltro.TextChanged += TbFiltro_TextoAlterado;
         }
+
         private void BtIncluirProduto_Click(object sender, EventArgs e)
         {
             FormProdutosAltInsert InserirProduto = new FormProdutosAltInsert();
@@ -91,6 +98,35 @@ namespace EasyHortifruti
 
         private void BtImprimir_Click(object sender, EventArgs e)
         {
+            // Caminho do arquivo RDL
+            string rdlPath = $"{Directory.GetCurrentDirectory().Replace("\\bin\\Debug", "")}\\Relatorios\\Produtos.rdlc";
+
+            // Cria uma instância do LocalReport
+            LocalReport report = new LocalReport();
+            report.ReportPath = rdlPath;
+
+            // Obtenha os dados
+            DataTable dataTable = new ConexaoBD().ConsultarListaDeProdutos().Tables[0];
+
+            // Adicione a fonte de dados ao relatório
+            report.DataSources.Add(new ReportDataSource("DataSet1", dataTable));
+
+            // Renderiza o relatório em formato PDF
+            byte[] pdfContent;
+            string mimeType, encoding, fileNameExtension;
+            string[] streams;
+            Warning[] warnings;
+
+            pdfContent = report.Render(
+                "PDF", null, out mimeType, out encoding, out fileNameExtension,
+                out streams, out warnings);
+
+            // Salva o conteúdo do PDF em um arquivo temporário
+            string tempFilePath = Path.GetTempFileName();
+            File.WriteAllBytes(tempFilePath, pdfContent);
+
+            // Abre o PDF no visualizador padrão do sistema
+            System.Diagnostics.Process.Start(tempFilePath);
         }
 
         private void BtAtualizaPrecos_Click(object sender, EventArgs e)
@@ -103,7 +139,8 @@ namespace EasyHortifruti
         {
             this.Close();
         }
-        #endregion
+
+        #endregion Metodos
 
         #region Metodos Filtro
 
@@ -135,8 +172,7 @@ namespace EasyHortifruti
         {
             Filtrar();
         }
-        #endregion
 
-
+        #endregion Metodos Filtro
     }
 }

@@ -60,13 +60,13 @@ namespace EasyHortifruti.Componentes
         public string SelectedText
         {
             get { return comboBox1.SelectedText; }
-            set { comboBox1.SelectedText = value; }
+            set => comboBox1.SelectedText = value;
         }
 
         public override string Text
         {
             get { return comboBox1.Text; }
-            set { comboBox1.Text = value; }
+            set => comboBox1.Text = value;
         }
 
         public string SelectedItem
@@ -75,11 +75,13 @@ namespace EasyHortifruti.Componentes
             {
                 if (comboBox1.SelectedItem == null)
                     return null;
-#pragma warning disable CS0253 // Possível comparação de referência inesperada; o lado direito precisa de conversão
-                return itemDicionario.First(x => x.Value == comboBox1.SelectedItem).Value;
-#pragma warning restore CS0253 // Possível comparação de referência inesperada; o lado direito precisa de conversão
+                return itemDicionario.First(x => x.Value == comboBox1.SelectedItem.ToString()).Value;
             }
-            set { comboBox1.SelectedItem = value; }
+            set
+            {
+                if (comboBox1.Items.Count > 0)
+                    comboBox1.SelectedItem = value;
+            }
         }
 
         public int SelectedIndex
@@ -88,11 +90,13 @@ namespace EasyHortifruti.Componentes
             {
                 if (comboBox1.SelectedItem == null)
                     return -1;
-#pragma warning disable CS0253 // Possível comparação de referência inesperada; o lado direito precisa de conversão
-                return itemDicionario.First(x => x.Value == comboBox1.SelectedItem).Key;
-#pragma warning restore CS0253 // Possível comparação de referência inesperada; o lado direito precisa de conversão
+                return itemDicionario.First(x => x.Value == comboBox1.SelectedItem.ToString()).Key;
             }
-            set { comboBox1.SelectedIndex = value; }
+            set
+            {
+                if (comboBox1.Items.Count > 0)
+                    comboBox1.SelectedIndex = value;
+            }
         }
 
         public AutoCompleteMode AutoCompleteMode

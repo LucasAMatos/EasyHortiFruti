@@ -67,9 +67,8 @@ namespace EasyHortifruti.Forms.Produtos
             this.Close();
         }
 
-        private void txtFiltro_Load(object sender, EventArgs e)
+        private void TxtFiltro_Load(object sender, EventArgs e)
         {
-
         }
     }
 }

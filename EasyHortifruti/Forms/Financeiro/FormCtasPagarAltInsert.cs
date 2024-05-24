@@ -19,17 +19,14 @@ namespace EasyHortifruti.Forms.Financeiro
 
         private void PanelTop2_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
-        private void panel3_Paint(object sender, PaintEventArgs e)
+        private void Panel3_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void PanelTop3_Paint(object sender, PaintEventArgs e)
         {
-
         }
 
         private void FormCtasPagarAltInsert_Load(object sender, EventArgs e)

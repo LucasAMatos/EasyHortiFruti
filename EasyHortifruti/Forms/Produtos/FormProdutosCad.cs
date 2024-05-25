@@ -105,11 +105,8 @@ namespace EasyHortifruti
             LocalReport report = new LocalReport();
             report.ReportPath = rdlPath;
 
-            // Obtenha os dados
-            DataTable dataTable = new ConexaoBD().ConsultarListaDeProdutos().Tables[0];
-
-            // Adicione a fonte de dados ao relatório
-            report.DataSources.Add(new ReportDataSource("DataSet1", dataTable));
+            // TODO: LUCAS, AQUI TEM QUE SER UMA LISTA DE HEROIS RANK S
+            report.DataSources.Add(new ReportDataSource("ProdutosDS", new ConexaoBD().ConsultarObjetoProdutos()));
 
             // Renderiza o relatório em formato PDF
             byte[] pdfContent;

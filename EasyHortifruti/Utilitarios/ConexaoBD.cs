@@ -256,6 +256,17 @@ namespace EasyHortifruti
             return ExecutaEPreencheDataset(sql);
         }
 
+        public Produtos ConsultarObjetoProdutos()
+        {
+            string sql = string.Concat("SELECT * FROM produtos P LEFT JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO LEFT JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO LEFT JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO");
+
+            Produtos produtos = new Produtos();
+            DataSet ds = ExecutaEPreencheDataset(sql);
+            produtos.CarregarProdutos(ds);
+
+            return produtos;
+        }
+
         public Produto ConsultarProdutoPorId(int pId)
         {
             string sql = $"SELECT * FROM produtos P LEFT JOIN GRUPOS G ON P.ID_GRUPO=G.ID_RECNO LEFT JOIN SUBGRUPOS S ON P.ID_SUBGRUPO=S.ID_RECNO INNER JOIN UNIDADES U ON P.ID_UNIDADE=U.ID_RECNO WHERE P.ID_RECNO ={pId}";

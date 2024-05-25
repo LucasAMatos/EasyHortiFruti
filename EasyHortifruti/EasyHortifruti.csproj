@@ -426,7 +426,47 @@
     <None Include="packages.config" />
     <None Include="Properties\DataSources\Caracter.datasource" />
     <None Include="Properties\DataSources\ConexaoBD.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Componentes.AltComboBox.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Componentes.AltTextBox+TipoCampo.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Componentes.AltTextBox.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Componentes.LabelTextBox+TipoCampo.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Componentes.LabelTextBox.datasource" />
     <None Include="Properties\DataSources\EasyHortifruti.DataSets.Produtos.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.AtividadePrincipal.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.AtividadesSecundaria.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.CEPConsultado.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Cidade.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.CNPJConsultado.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.ContaAReceber.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Endereco.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Estabelecimento.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Estado.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Geral.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Grupo.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.IE.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.ItemPedido.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.NaturezaJuridica.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Pais.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Pedido.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Porte.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Produto.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Qualificacao.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.QualificacaoDoResponsavel.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Socio.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.SubGrupo.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Telefone.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Telefones.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.Unidade.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Forms.Financeiro.Form1.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Forms.Financeiro.FormCtasPagar.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Forms.Financeiro.FormCtasPagarAltInsert.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Forms.Produtos.FormAlterarPrecoCompra.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Forms.Produtos.FormNcm.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Properties.Resources.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Properties.Settings.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Utilitarios.ApiClient.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Utilitarios.ConsultarCEP.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.Utilitarios.ConsultarCNPJ.datasource" />
     <None Include="Properties\DataSources\EnumExtensions.datasource" />
     <None Include="Properties\DataSources\FormBase.datasource" />
     <None Include="Properties\DataSources\FormCadastroProduto.datasource" />
@@ -444,6 +484,7 @@
     <None Include="Properties\DataSources\FormUnidadeCad.datasource" />
     <None Include="Properties\DataSources\FormUnidadesAltInsert.datasource" />
     <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\SqlServerTypes.Utilities.datasource" />
     <None Include="Properties\DataSources\TabelasScript.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -470,7 +511,9 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

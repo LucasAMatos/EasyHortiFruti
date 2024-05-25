@@ -31,7 +31,7 @@ namespace EasyHortifruti.Forms.Produtos
                 DataGridViewSelectedRowCollection linhaSelecionada = DgvListaProdutos.SelectedRows;
 
                 if (linhaSelecionada?.Count == 1)
-                    return Convert.ToInt32(linhaSelecionada[0].Cells["id"].Value);
+                    return Convert.ToInt32(linhaSelecionada[0].Cells["id_recno"].Value);
                 return -1;
             }
         }
@@ -104,9 +104,28 @@ namespace EasyHortifruti.Forms.Produtos
             DgvListaProdutos.AutoGenerateColumns = false;
             DgvListaProdutos.DataMember = "Table";
             DgvListaProdutos.Sort(DgvListaProdutos.Columns["Descricao"], System.ComponentModel.ListSortDirection.Ascending);
+
+            DgvListaProdutos.CellClick += DataGridView1_CellClick;
         }
 
         #endregion Metodos
+
+        private void DataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificar se a célula clicada é da coluna desejada
+            if (e.ColumnIndex == 0 && DgvListaProdutos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString() == "Clique para alterar")
+            {
+                // Habilitar edição apenas para a célula clicada
+                DgvListaProdutos.ReadOnly = false;
+                DgvListaProdutos.Rows[e.RowIndex].Cells[e.ColumnIndex].ReadOnly = false;
+
+                // Limpar o valor da célula
+                DgvListaProdutos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "";
+
+                // Definir a cor do texto para esmaecido
+                DgvListaProdutos.Rows[e.RowIndex].Cells[e.ColumnIndex].Style.ForeColor = Color.Gray;
+            }
+        }
 
         public decimal MontaFormERetornaValorAlterado(string produto)
         {
@@ -154,13 +173,12 @@ namespace EasyHortifruti.Forms.Produtos
         {
             if (DgvListaProdutos.SelectedRows.Count > 0)
             {
-                var selectedRow = DgvListaProdutos.SelectedRows[0];
-                string produto = selectedRow.Cells[0].Value.ToString();
-
-                decimal vlrVenda = TransformaMoedaEmDecimal(selectedRow.Cells[7].Value.ToString());
-                decimal novoValor = MontaFormERetornaValorAlterado(produto);
-                selectedRow.Cells[5].Value = novoValor;
-                selectedRow.Cells[6].Value = RecalcularPercentualLucro(novoValor, vlrVenda);
+                FormProdutosAltInsert FormProdutosAltInsert = new FormProdutosAltInsert
+                {
+                    Id = IdSelecionado
+                };
+                FormProdutosAltInsert.ShowDialog();
+                CarregarGrid();
             }
             else
             {
@@ -204,6 +222,9 @@ namespace EasyHortifruti.Forms.Produtos
             CarregarComboGrupo();
             CarregarComboSubGrupo();
             CarregarComboProdutos();
+
+            // Configurar o evento CellDoubleClick para o DataGridView
+            DgvListaProdutos.CellDoubleClick += DgvListaProdutos_DoubleClick;
         }
 
         private void BtGravarAltPreco_Click(object sender, EventArgs e)
@@ -221,7 +242,7 @@ namespace EasyHortifruti.Forms.Produtos
                 dataView.RowFilter = string.Empty;
 
                 // Lista de tuplas para armazenar os valores de id e novo valor
-                List<Tuple<int, decimal, int>> listaDePrecos = new List<Tuple<int, decimal, int>>();
+                List<Tuple<int, decimal, decimal>> listaDePrecos = new List<Tuple<int, decimal, decimal>>();
 
                 // Itera através das linhas do DataGridView
                 foreach (DataGridViewRow row in DgvListaProdutos.Rows)
@@ -232,17 +253,17 @@ namespace EasyHortifruti.Forms.Produtos
                     // Captura o id do produto (assumindo que está em uma célula chamada "id_recno")
                     int id = Convert.ToInt32(row.Cells["id_recno"].Value);
 
-                    // Captura o valor alterado, removendo a máscara de moeda
-                    string valorAlteradoStr = row.Cells["vlrAlterado"].Value?.ToString();
+                    string novoValorCompraStr = row.Cells["vlrAlterado"].Value?.ToString();
+                    string novoValorVendaStr = row.Cells["vlrAlterado"].Value?.ToString();
 
                     int margemProduto = Convert.ToInt32(row.Cells["margem_produto"].Value);
 
-                    decimal.TryParse(valorAlteradoStr, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal novoValorVenda);
-                    decimal.TryParse(valorAlteradoStr, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal novoValorCompra)
-                    if ()
+                    decimal.TryParse(novoValorCompraStr, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal novoValorCompra);
+
+                    if (!string.IsNullOrEmpty(novoValorCompraStr))
                     {
                         // Adiciona a tupla à lista
-                        listaDePrecos.Add(new Tuple<int, decimal, decimal>(id, novoValorVenda, novoValorCompra));
+                        listaDePrecos.Add(new Tuple<int, decimal, decimal>(id, RecalcularPercentualLucro(novoValorCompra, margemProduto), novoValorCompra));
                     }
                     else
                     {
@@ -285,7 +306,7 @@ namespace EasyHortifruti.Forms.Produtos
             return valorDecimal;
         }
 
-        public int RecalcularPercentualLucro(decimal valorCompra, decimal valorVenda)
+        public decimal RecalcularPercentualLucro(decimal valorCompra, int margemProduto)
         {
             if (valorCompra <= 0)
             {
@@ -293,10 +314,67 @@ namespace EasyHortifruti.Forms.Produtos
             }
 
             // Calcula o percentual de lucro
-            decimal percentualLucro = ((valorVenda - valorCompra) / valorCompra) * 100;
+            decimal percentualLucro = valorCompra * (1.0m + (margemProduto / 100.0m));
 
             // Retorna apenas a parte inteira do percentual de lucro
-            return (int)Math.Floor(percentualLucro);
+            return Math.Round(percentualLucro, 2);
+        }
+
+        private void DgvListaProdutos_DoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificar se a coluna clicada é a coluna C
+            if (e.ColumnIndex == 5)
+            {
+                // Habilitar a edição da célula clicada
+                DgvListaProdutos.ReadOnly = false;
+                DgvListaProdutos.CurrentCell = DgvListaProdutos.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                DgvListaProdutos.BeginEdit(true);
+            }
+        }
+
+        private void DgvListaProdutos_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)
+        {
+            TextBox textBox = e.Control as TextBox;
+            if (textBox != null)
+            {
+                textBox.KeyPress -= TextBox_KeyPress;
+                textBox.KeyPress += TextBox_KeyPress;
+            }
+        }
+
+        private void TextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            // Permitir apenas números, vírgula e teclas de controle
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar) && e.KeyChar != ',')
+            {
+                e.Handled = true;
+            }
+
+            // Permitir apenas uma vírgula na entrada
+            TextBox textBox = sender as TextBox;
+            if (e.KeyChar == ',' && textBox.Text.Contains(","))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void DgvListaProdutos_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        {
+            // Verificar se a edição foi na coluna C
+            if (e.ColumnIndex == 5)
+            {
+                // Formatar o valor da célula como uma moeda
+                decimal valor;
+                if (decimal.TryParse(DgvListaProdutos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value.ToString(), out valor))
+                {
+                    DgvListaProdutos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = valor.ToString("C");
+                }
+                else
+                {
+                    // Se a conversão falhar, restaurar o valor original
+                    DgvListaProdutos.Rows[e.RowIndex].Cells[e.ColumnIndex].Value = "Clique para alterar";
+                }
+            }
         }
     }
 }

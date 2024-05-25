@@ -307,8 +307,8 @@ namespace EasyHortifruti
         {
             string sql = $"" +
                 $"UPDATE {TabelasScript.TabelaProdutos} SET " +
-                $"pcocompra_produto = {novoValorProduto.Item2.ToString().Replace(',', '.')}," +
-                $"pcovenda_produto = {novoValorProduto.Item3.ToString().Replace(',', '.')} " +
+                $"pcocompra_produto = {novoValorProduto.Item3.ToString().Replace(',', '.')}," +
+                $"pcovenda_produto = {novoValorProduto.Item2.ToString().Replace(',', '.')} " +
                 $"WHERE ID_RECNO={novoValorProduto.Item1}";
             ExecutarSemRetorno(sql);
         }

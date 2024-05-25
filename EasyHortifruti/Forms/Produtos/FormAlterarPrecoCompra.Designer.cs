@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlterarPrecoCompra));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
@@ -36,11 +35,20 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormAlterarPrecoCompra));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.DgvListaProdutos = new System.Windows.Forms.DataGridView();
+            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ibunidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ibgrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Ibsubgrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valoratual = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vlrAlterado = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.margem_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_recno = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ValorVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
-            this.LbIDGrupo = new System.Windows.Forms.Label();
             this.BtGravarAltPreco = new System.Windows.Forms.Button();
             this.BtCancelGrupo = new System.Windows.Forms.Button();
             this.panel4 = new System.Windows.Forms.Panel();
@@ -52,15 +60,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.Descricao = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ibunidade = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ibgrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Ibsubgrupo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valoratual = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vlrAlterado = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.margem_produto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_recno = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ValorVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaProdutos)).BeginInit();
@@ -111,10 +110,101 @@
             this.DgvListaProdutos.Name = "DgvListaProdutos";
             this.DgvListaProdutos.Size = new System.Drawing.Size(745, 440);
             this.DgvListaProdutos.TabIndex = 0;
+            this.DgvListaProdutos.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.DgvListaProdutos_CellEndEdit);
+            this.DgvListaProdutos.EditingControlShowing += new System.Windows.Forms.DataGridViewEditingControlShowingEventHandler(this.DgvListaProdutos_EditingControlShowing);
+            // 
+            // Descricao
+            // 
+            this.Descricao.DataPropertyName = "nome_produto";
+            this.Descricao.HeaderText = "Descrição Produto";
+            this.Descricao.Name = "Descricao";
+            this.Descricao.ReadOnly = true;
+            this.Descricao.Width = 200;
+            // 
+            // Ibunidade
+            // 
+            this.Ibunidade.DataPropertyName = "abrev_unid";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Ibunidade.DefaultCellStyle = dataGridViewCellStyle1;
+            this.Ibunidade.HeaderText = "Unidade";
+            this.Ibunidade.Name = "Ibunidade";
+            this.Ibunidade.ReadOnly = true;
+            this.Ibunidade.Width = 65;
+            // 
+            // Ibgrupo
+            // 
+            this.Ibgrupo.DataPropertyName = "nome_grupo";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Ibgrupo.DefaultCellStyle = dataGridViewCellStyle2;
+            this.Ibgrupo.HeaderText = "Grupo";
+            this.Ibgrupo.Name = "Ibgrupo";
+            this.Ibgrupo.ReadOnly = true;
+            // 
+            // Ibsubgrupo
+            // 
+            this.Ibsubgrupo.DataPropertyName = "nome_subgrupo";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.Ibsubgrupo.DefaultCellStyle = dataGridViewCellStyle3;
+            this.Ibsubgrupo.HeaderText = "SubGrupo";
+            this.Ibsubgrupo.Name = "Ibsubgrupo";
+            this.Ibsubgrupo.ReadOnly = true;
+            // 
+            // valoratual
+            // 
+            this.valoratual.DataPropertyName = "pcocompra_produto";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.valoratual.DefaultCellStyle = dataGridViewCellStyle4;
+            this.valoratual.HeaderText = "R$ Atual";
+            this.valoratual.Name = "valoratual";
+            this.valoratual.ReadOnly = true;
+            this.valoratual.Width = 80;
+            // 
+            // vlrAlterado
+            // 
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Red;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Red;
+            this.vlrAlterado.DefaultCellStyle = dataGridViewCellStyle5;
+            this.vlrAlterado.HeaderText = "R$ Alterar";
+            this.vlrAlterado.Name = "vlrAlterado";
+            this.vlrAlterado.ToolTipText = "Digite Para Alterar";
+            this.vlrAlterado.Width = 80;
+            // 
+            // margem_produto
+            // 
+            this.margem_produto.DataPropertyName = "margem_produto";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.Format = "N0";
+            dataGridViewCellStyle6.NullValue = null;
+            this.margem_produto.DefaultCellStyle = dataGridViewCellStyle6;
+            this.margem_produto.HeaderText = "% Lucro";
+            this.margem_produto.Name = "margem_produto";
+            this.margem_produto.Width = 70;
+            // 
+            // id_recno
+            // 
+            this.id_recno.DataPropertyName = "id_recno";
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.id_recno.DefaultCellStyle = dataGridViewCellStyle7;
+            this.id_recno.HeaderText = "ID";
+            this.id_recno.Name = "id_recno";
+            this.id_recno.ReadOnly = true;
+            this.id_recno.Visible = false;
+            this.id_recno.Width = 60;
+            // 
+            // ValorVenda
+            // 
+            this.ValorVenda.DataPropertyName = "pcovenda_produto";
+            this.ValorVenda.HeaderText = "VlrVenda";
+            this.ValorVenda.Name = "ValorVenda";
+            this.ValorVenda.Visible = false;
             // 
             // panel6
             // 
-            this.panel6.Controls.Add(this.LbIDGrupo);
             this.panel6.Controls.Add(this.BtGravarAltPreco);
             this.panel6.Controls.Add(this.BtCancelGrupo);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Bottom;
@@ -122,22 +212,6 @@
             this.panel6.Name = "panel6";
             this.panel6.Size = new System.Drawing.Size(745, 47);
             this.panel6.TabIndex = 3;
-            // 
-            // LbIDGrupo
-            // 
-            this.LbIDGrupo.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.LbIDGrupo.AutoSize = true;
-            this.LbIDGrupo.BackColor = System.Drawing.Color.Transparent;
-            this.LbIDGrupo.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.LbIDGrupo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.LbIDGrupo.ForeColor = System.Drawing.Color.Black;
-            this.LbIDGrupo.Location = new System.Drawing.Point(18, 15);
-            this.LbIDGrupo.Name = "LbIDGrupo";
-            this.LbIDGrupo.Size = new System.Drawing.Size(30, 22);
-            this.LbIDGrupo.TabIndex = 16;
-            this.LbIDGrupo.Text = "ID";
             // 
             // BtGravarAltPreco
             // 
@@ -312,94 +386,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Gerenciador Preço Compra";
             // 
-            // Descricao
-            // 
-            this.Descricao.DataPropertyName = "nome_produto";
-            this.Descricao.HeaderText = "Descrição Produto";
-            this.Descricao.Name = "Descricao";
-            this.Descricao.ReadOnly = true;
-            this.Descricao.Width = 200;
-            // 
-            // Ibunidade
-            // 
-            this.Ibunidade.DataPropertyName = "abrev_unid";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Ibunidade.DefaultCellStyle = dataGridViewCellStyle1;
-            this.Ibunidade.HeaderText = "Unidade";
-            this.Ibunidade.Name = "Ibunidade";
-            this.Ibunidade.ReadOnly = true;
-            this.Ibunidade.Width = 65;
-            // 
-            // Ibgrupo
-            // 
-            this.Ibgrupo.DataPropertyName = "nome_grupo";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Ibgrupo.DefaultCellStyle = dataGridViewCellStyle2;
-            this.Ibgrupo.HeaderText = "Grupo";
-            this.Ibgrupo.Name = "Ibgrupo";
-            this.Ibgrupo.ReadOnly = true;
-            // 
-            // Ibsubgrupo
-            // 
-            this.Ibsubgrupo.DataPropertyName = "nome_subgrupo";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.Ibsubgrupo.DefaultCellStyle = dataGridViewCellStyle3;
-            this.Ibsubgrupo.HeaderText = "SubGrupo";
-            this.Ibsubgrupo.Name = "Ibsubgrupo";
-            this.Ibsubgrupo.ReadOnly = true;
-            // 
-            // valoratual
-            // 
-            this.valoratual.DataPropertyName = "pcocompra_produto";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.valoratual.DefaultCellStyle = dataGridViewCellStyle4;
-            this.valoratual.HeaderText = "R$ Atual";
-            this.valoratual.Name = "valoratual";
-            this.valoratual.ReadOnly = true;
-            this.valoratual.Width = 80;
-            // 
-            // vlrAlterado
-            // 
-            this.vlrAlterado.DataPropertyName = "vlrAlterado";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.vlrAlterado.DefaultCellStyle = dataGridViewCellStyle5;
-            this.vlrAlterado.HeaderText = "R$ Alterar";
-            this.vlrAlterado.Name = "vlrAlterado";
-            this.vlrAlterado.Width = 80;
-            // 
-            // margem_produto
-            // 
-            this.margem_produto.DataPropertyName = "margem_produto";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.Format = "N0";
-            dataGridViewCellStyle6.NullValue = null;
-            this.margem_produto.DefaultCellStyle = dataGridViewCellStyle6;
-            this.margem_produto.HeaderText = "% Lucro";
-            this.margem_produto.Name = "margem_produto";
-            this.margem_produto.Width = 70;
-            // 
-            // id_recno
-            // 
-            this.id_recno.DataPropertyName = "id_recno";
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.id_recno.DefaultCellStyle = dataGridViewCellStyle7;
-            this.id_recno.HeaderText = "ID";
-            this.id_recno.Name = "id_recno";
-            this.id_recno.ReadOnly = true;
-            this.id_recno.Visible = false;
-            this.id_recno.Width = 60;
-            // 
-            // ValorVenda
-            // 
-            this.ValorVenda.DataPropertyName = "pcovenda_produto";
-            this.ValorVenda.HeaderText = "VlrVenda";
-            this.ValorVenda.Name = "ValorVenda";
-            this.ValorVenda.Visible = false;
-            // 
             // FormAlterarPrecoCompra
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -417,7 +403,6 @@
             this.panel7.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.DgvListaProdutos)).EndInit();
             this.panel6.ResumeLayout(false);
-            this.panel6.PerformLayout();
             this.panel4.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
@@ -438,7 +423,6 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.DataGridView DgvListaProdutos;
-        private System.Windows.Forms.Label LbIDGrupo;
         private System.Windows.Forms.Button BtGravarAltPreco;
         private System.Windows.Forms.Button BtCancelGrupo;
         private System.Windows.Forms.Button BtImprimirGrupo;

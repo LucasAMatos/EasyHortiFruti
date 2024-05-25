@@ -237,10 +237,12 @@ namespace EasyHortifruti.Forms.Produtos
 
                     int margemProduto = Convert.ToInt32(row.Cells["margem_produto"].Value);
 
-                    if (decimal.TryParse(valorAlteradoStr, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal valorAlterado))
+                    decimal.TryParse(valorAlteradoStr, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal novoValorVenda);
+                    decimal.TryParse(valorAlteradoStr, NumberStyles.Currency, CultureInfo.CurrentCulture, out decimal novoValorCompra)
+                    if ()
                     {
                         // Adiciona a tupla à lista
-                        listaDePrecos.Add(new Tuple<int, decimal, int>(id, valorAlterado, margemProduto));
+                        listaDePrecos.Add(new Tuple<int, decimal, decimal>(id, novoValorVenda, novoValorCompra));
                     }
                     else
                     {
@@ -257,7 +259,7 @@ namespace EasyHortifruti.Forms.Produtos
                 // Itera pela lista de tuplas e chama o método atualizarValor para cada uma
                 foreach (var preco in listaDePrecos)
                 {
-                    conexaoBD.AtualizarValor(preco);
+                    conexaoBD.AtualizarValorCompraVenda(preco);
                 }
 
                 // Mensagem de confirmação ou qualquer ação subsequente

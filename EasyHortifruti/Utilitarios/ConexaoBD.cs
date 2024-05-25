@@ -303,12 +303,12 @@ namespace EasyHortifruti
 
         public void ExcluirProduto(int pId) => ExcluirRegistro(pId, TabelasScript.TabelaProdutos);
 
-        public void AtualizarValor(Tuple<int, decimal, int> novoValorProduto)
+        public void AtualizarValorCompraVenda(Tuple<int, decimal, decimal> novoValorProduto)
         {
             string sql = $"" +
                 $"UPDATE {TabelasScript.TabelaProdutos} SET " +
                 $"pcocompra_produto = {novoValorProduto.Item2.ToString().Replace(',', '.')}," +
-                $"margem_produto = {novoValorProduto.Item3.ToString()} " +
+                $"pcovenda_produto = {novoValorProduto.Item3.ToString().Replace(',', '.')} " +
                 $"WHERE ID_RECNO={novoValorProduto.Item1}";
             ExecutarSemRetorno(sql);
         }

@@ -1,0 +1,6 @@
+C:\Users\LMATOS\Horti\EasyHortiFruti\ConexaoBD\obj\Debug\net8.0\ConexaoBD.csproj.AssemblyReference.cache
+C:\Users\LMATOS\Horti\EasyHortiFruti\ConexaoBD\obj\Debug\net8.0\ConexaoBD.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\LMATOS\Horti\EasyHortiFruti\ConexaoBD\obj\Debug\net8.0\ConexaoBD.AssemblyInfoInputs.cache
+C:\Users\LMATOS\Horti\EasyHortiFruti\ConexaoBD\obj\Debug\net8.0\ConexaoBD.AssemblyInfo.cs
+C:\Users\LMATOS\Horti\EasyHortiFruti\ConexaoBD\obj\Debug\net8.0\ConexaoBD.csproj.CoreCompileInputs.cache
+C:\Users\LMATOS\Horti\EasyHortiFruti\ConexaoBD\obj\Debug\net8.0\ConexaoBD.sourcelink.json

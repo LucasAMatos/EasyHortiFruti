@@ -86,8 +86,8 @@
     <Reference Include="Newtonsoft.Json, Version=13.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <HintPath>packages\Newtonsoft.Json.13.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
-    <Reference Include="Npgsql, Version=8.0.2.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
-      <HintPath>packages\Npgsql.8.0.2\lib\netstandard2.0\Npgsql.dll</HintPath>
+    <Reference Include="Npgsql, Version=8.0.3.0, Culture=neutral, PublicKeyToken=5d8b90d52f46fda7, processorArchitecture=MSIL">
+      <HintPath>packages\Npgsql.8.0.3\lib\netstandard2.0\Npgsql.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Buffers, Version=4.0.3.0, Culture=neutral, PublicKeyToken=cc7b13ffcd2ddd51, processorArchitecture=MSIL">
@@ -190,6 +190,14 @@
     </Compile>
     <Compile Include="Componentes\LabelTextBox.Designer.cs">
       <DependentUpon>LabelTextBox.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\Produtos.cs">
+      <DependentUpon>Produtos.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSets\Produtos.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Produtos.xsd</DependentUpon>
     </Compile>
     <Compile Include="DML\CEPConsultado.cs" />
     <Compile Include="DML\CNPJConsultado.cs" />
@@ -403,7 +411,40 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Relatorios\Produtos.rdlc" />
+    <None Include="DataSets\Produtos.xsc">
+      <DependentUpon>Produtos.xsd</DependentUpon>
+    </None>
+    <None Include="DataSets\Produtos.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>Produtos.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSets\Produtos.xss">
+      <DependentUpon>Produtos.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\Caracter.datasource" />
+    <None Include="Properties\DataSources\ConexaoBD.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DataSets.Produtos.datasource" />
+    <None Include="Properties\DataSources\EnumExtensions.datasource" />
+    <None Include="Properties\DataSources\FormBase.datasource" />
+    <None Include="Properties\DataSources\FormCadastroProduto.datasource" />
+    <None Include="Properties\DataSources\FormCtasReceber.datasource" />
+    <None Include="Properties\DataSources\FormGeralAltInsert.datasource" />
+    <None Include="Properties\DataSources\FormGeralCad.datasource" />
+    <None Include="Properties\DataSources\FormGruposAltInsert.datasource" />
+    <None Include="Properties\DataSources\FormGruposCad.datasource" />
+    <None Include="Properties\DataSources\FormPedidoAltInsert.datasource" />
+    <None Include="Properties\DataSources\FormPedidos.datasource" />
+    <None Include="Properties\DataSources\FormPrincipal.datasource" />
+    <None Include="Properties\DataSources\FormProdutosAltInsert.datasource" />
+    <None Include="Properties\DataSources\FormSubGruposAltInsert.datasource" />
+    <None Include="Properties\DataSources\FormSubGruposCad.datasource" />
+    <None Include="Properties\DataSources\FormUnidadeCad.datasource" />
+    <None Include="Properties\DataSources\FormUnidadesAltInsert.datasource" />
+    <None Include="Properties\DataSources\Program.datasource" />
+    <None Include="Properties\DataSources\TabelasScript.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -413,9 +454,6 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Relatorios\arquivo.frx" />
-    <None Include="Relatorios\Produtos.rdl" />
-    <None Include="Relatorios\Produtos.rdlc" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -432,9 +470,7 @@
       <Install>false</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">

@@ -11,5 +11,6 @@ namespace EasyHortifruti.DML
         public double MargemPedido { get; set; }
         public DateTime DataVencimento { get; set; }
         public DateTime DataRecebimento { get; set; }
+        public object IdGeral { get; internal set; }
     }
 }

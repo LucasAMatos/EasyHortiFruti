@@ -61,7 +61,7 @@ namespace EasyHortifruti
             this.btSairCtasReceber = new System.Windows.Forms.Button();
             this.id_recno = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataentrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id_fonte = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.id_geral = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.totalvenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.vlrlucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataconclusao = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -112,7 +112,7 @@ namespace EasyHortifruti
             this.dtGridViewCtasReceber.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.id_recno,
             this.dataentrega,
-            this.id_fonte,
+            this.id_geral,
             this.totalvenda,
             this.vlrlucro,
             this.dataconclusao});
@@ -431,12 +431,12 @@ namespace EasyHortifruti
             this.dataentrega.HeaderText = "Vencimento";
             this.dataentrega.Name = "dataentrega";
             // 
-            // id_fonte
+            // id_geral
             // 
-            this.id_fonte.DataPropertyName = "id_fonte";
-            this.id_fonte.HeaderText = "Cliente";
-            this.id_fonte.Name = "id_fonte";
-            this.id_fonte.Width = 200;
+            this.id_geral.DataPropertyName = "id_geral";
+            this.id_geral.HeaderText = "Cliente";
+            this.id_geral.Name = "id_geral";
+            this.id_geral.Width = 200;
             // 
             // totalvenda
             // 
@@ -574,7 +574,7 @@ namespace EasyHortifruti
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.DataGridViewTextBoxColumn id_recno;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataentrega;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id_fonte;
+        private System.Windows.Forms.DataGridViewTextBoxColumn id_geral;
         private System.Windows.Forms.DataGridViewTextBoxColumn totalvenda;
         private System.Windows.Forms.DataGridViewTextBoxColumn vlrlucro;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataconclusao;

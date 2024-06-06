@@ -51,7 +51,7 @@ namespace EasyHortifruti
         private readonly string CreatePedidos = @"CREATE TABLE IF NOT EXISTS public.pedidos
                                             (
                                                 datapedido date,
-                                                id_fonte integer NOT NULL,
+                                                id_geral integer NOT NULL,
                                                 statuspedido character varying(10)  NOT NULL,
                                                 prazopgto int NOT NULL,
                                                 dataprev date NULL,
@@ -146,14 +146,14 @@ namespace EasyHortifruti
         private readonly string CreateCtasReceber = @"CREATE TABLE IF NOT EXISTS public.ctasreceber
                                             (
                                                 id_pedido integer NOT NULL,
-                                                id_fonte integer NOT NULL,
+                                                id_geral integer NOT NULL,
                                                 vlpedido numeric(2,0) NOT NULL,
                                                 margempedido double precision NOT NULL,
                                                 dtvencto date NOT NULL,
                                                 dtrecebto date NOT NULL,
                                                 id_recno integer NOT NULL GENERATED ALWAYS AS IDENTITY 
                                                 ( INCREMENT 1 START 1 MINVALUE 1 MAXVALUE 2147483647 CACHE 1 ),
-                                                CONSTRAINT fk_fonte_id FOREIGN KEY (id_fonte)
+                                                CONSTRAINT fk_fonte_id FOREIGN KEY (id_geral)
                                                     REFERENCES public.geral (id_recno),
                                                 CONSTRAINT fk_pedido_id FOREIGN KEY (id_pedido)
                                                     REFERENCES public.pedidos (id_recno)

@@ -9,6 +9,7 @@ using System.Reflection;
 using System.Security.Policy;
 using System.Web;
 using System.Windows.Forms;
+using static EasyHortifruti.DML.Pedido;
 
 namespace EasyHortifruti
 
@@ -328,12 +329,21 @@ namespace EasyHortifruti
 
         #region Pedidos
 
+        public DataSet ConsultarPedidos()
+        {
+            string sql = string.Concat("SELECT G.nomefantasia AS nCliente,P.datapedido,P.dataentrega,P.totalcompra," +
+                "P.vlrlucro,P.totalcompra-vlrlucro AS valorCompra,P.statuspedido,P.Obspedido AS valorCompra FROM pedidos P " +
+                "LEFT JOIN GERAL G ON P.id_geral = G.id_recno");
+
+            return ExecutaEPreencheDataset(sql);
+        }
+
         public DataSet ConsultarClientePedido()
         {
             string sql = string.Concat(
                 "SELECT CASE WHEN TPPESSOA='J' THEN nomefantasia ELSE RAZAOSOCIAL END as NOME_GRID,* FROM ",
                 TabelasScript.TabelaPedidos, " ped INNER JOIN ",
-                TabelasScript.TabelaGeral, " grl ON ped.id_fonte = grl.id_recno"
+                TabelasScript.TabelaGeral, " grl ON ped.id_geral = grl.id_recno"
             );
 
             return ExecutaEPreencheDataset(sql);
@@ -341,10 +351,10 @@ namespace EasyHortifruti
 
         public DataSet ConsultarPedidosComFiltros(int pCliente, string pStatusPedido)
         {
-            string sql = "select id_recno,dataconclusao,id_fonte,totalvenda,vlrlucro,prazopgto,dataentrega,round(((vlrlucro * 100)/totalvenda),2) as perclucro from pedidos";
+            string sql = "select id_recno,dataconclusao,id_geral,totalvenda,vlrlucro,prazopgto,dataentrega,round(((vlrlucro * 100)/totalvenda),2) as perclucro from pedidos";
 
             if (pCliente >= 0)
-                sql += " where id_fonte=" + pCliente;
+                sql += " where id_geral=" + pCliente;
 
             if (!string.IsNullOrEmpty(pStatusPedido))
             {
@@ -355,12 +365,25 @@ namespace EasyHortifruti
             return ExecutaEPreencheDataset(sql);
         }
 
+        public Pedidos ConsultarObjetoPedidos()
+        {
+            string sql = string.Concat("SELECT G.nomefantasia AS nCliente,P.datapedido,P.dataentrega,P.totalcompra,P.vlrlucro," +
+                "P.totalcompra-vlrlucro AS valorCompra,P.statuspedido,P.Obspedido AS valorCompra FROM pedidos P LEFT JOIN GERAL G " +
+                "ON P.id_geral = G.id_recno");
+
+            Pedidos pedido = new Pedidos();
+            DataSet ds = ExecutaEPreencheDataset(sql);
+            pedido.CarregarPedidos(ds);
+
+            return pedido;
+        }
+
         public Pedido ConsultarClientePedidoPorId(int pId)
         {
-            string sql = string.Concat("SELECT ped.id_recno,ped.id_fonte, ped.datapedido,grl.razaosocial AS nCliente,ped.statuspedido,ped.prazopgto,ped.dataprev,",
+            string sql = string.Concat("SELECT ped.id_recno,ped.id_geral, ped.datapedido,grl.razaosocial AS nCliente,ped.statuspedido,ped.prazopgto,ped.dataprev,",
                                         "ped.dataentrega,ped.dataconclusao,ped.obspedido,ped.totalcompra,ped.descpedido,ped.totalvenda,",
                                         "ped.vlrlucro FROM ", TabelasScript.TabelaPedidos, " ped INNER JOIN ", TabelasScript.TabelaGeral,
-                                        " grl ON ped.id_fonte = grl.id_recno");
+                                        " grl ON ped.id_geral = grl.id_recno");
 
             if (pId > 0)
                 sql += " where ped.id_recno = " + pId.ToString();
@@ -378,7 +401,7 @@ namespace EasyHortifruti
             Dictionary<string, string> Campos = new Dictionary<string, string>
             {
                 { "datapedido",     pPedido.DataPedido.ToString() },
-                { "id_fonte",       pPedido.IdPessoa.ToString() },
+                { "id_geral",       pPedido.IdPessoa.ToString() },
                 { "statuspedido",   pPedido.StatusPedido.ToString() },
                 { "prazopgto",      pPedido.PrazoPagamento.ToString() },
                 { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },
@@ -416,7 +439,7 @@ namespace EasyHortifruti
             Dictionary<string, string> pCampos = new Dictionary<string, string>
             {
                 { "datapedido",     pPedido.DataPedido.ToString() },
-                { "id_fonte",       pPedido.IdPessoa.ToString() },
+                { "id_geral",       pPedido.IdPessoa.ToString() },
                 { "statuspedido",   pPedido.StatusPedido.ToString() },
                 { "prazopgto",      pPedido.PrazoPagamento.ToString() },
                 { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },
@@ -485,7 +508,7 @@ namespace EasyHortifruti
             Dictionary<string, string> pCampos = new Dictionary<string, string>
             {
                {" id_pedido=",      pContaAReceber.IdPedido.ToString() },
-               {" id_fonte=",       pContaAReceber.IdFonte.ToString() },
+               {" id_geral=",       pContaAReceber.IdGeral.ToString() },
                {" vlpedido=",       pContaAReceber.ValorPedido.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
                {" margempedido=",   pContaAReceber.MargemPedido.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
                {" dtvencto=",       pContaAReceber.DataVencimento.ToString("dd/MM/yyyy") },
@@ -501,7 +524,7 @@ namespace EasyHortifruti
             Dictionary<string, string> pCampos = new Dictionary<string, string>
             {
                {" id_pedido=",      pContaAReceber.IdPedido.ToString() },
-               {" id_fonte=",       pContaAReceber.IdFonte.ToString() },
+               {" id_geral=",       pContaAReceber.IdGeral.ToString() },
                {" vlpedido=",       pContaAReceber.ValorPedido.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
                {" margempedido=",   pContaAReceber.MargemPedido.ToString("F2", System.Globalization.CultureInfo.InvariantCulture) },
                {" dtvencto=",       pContaAReceber.DataVencimento.ToString("dd/MM/yyyy") },

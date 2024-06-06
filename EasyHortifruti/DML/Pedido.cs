@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using static EasyHortifruti.DML.Pedido;
 
 namespace EasyHortifruti.DML
 {
@@ -46,8 +47,8 @@ namespace EasyHortifruti.DML
                 if (dr["dataPedido"] != null)
                     DataPedido = Convert.ToDateTime(dr["dataPedido"]);
 
-                if (dr["id_fonte"] != null)
-                    IdPessoa = Convert.ToInt32(dr["id_fonte"]);
+                if (dr["id_geral"] != null)
+                    IdPessoa = Convert.ToInt32(dr["id_geral"]);
 
                 if (dr["statuspedido"] != null)
                     StatusPedido = RetornaStatusPedido(dr["statuspedido"].ToString());
@@ -78,6 +79,61 @@ namespace EasyHortifruti.DML
 
                 if (dr["vlrlucro"] != null)
                     ValorLucro = Convert.ToDecimal(dr["vlrlucro"]);
+            }
+        }
+        public class Pedidos : List<Pedido>
+        {
+            public Pedidos()
+            { }
+
+            public void CarregarPedidos(DataSet ds)
+            {
+                this.Clear();
+
+                foreach (DataRow dr in ds.Tables[0].Rows)
+                {
+                    Pedido pedido = new Pedido();
+                    if (dr["id_recno"] != null)
+                        pedido.ID = Convert.ToInt32(dr["id_recno"]);
+
+                    if (dr["dataPedido"] != null)
+                        pedido.DataPedido = Convert.ToDateTime(dr["dataPedido"]);
+
+                    if (dr["nCliente"] != null)
+                        pedido.IdPessoa = Convert.ToInt32(dr["nCliente"]);
+
+                   // if (dr["statuspedido"] != null)
+                    //    pedido.StatusPedido = RetornaStatusPedido(dr["statuspedido"].ToString());
+
+                    //if (dr["prazopgto"] != null)
+                    //    pedido.PrazoPagamento = Convert.ToInt32(dr["prazopgto"]);
+
+                    //if (dr["dataprev"] != null)
+                    //    pedido.DataPrev = Convert.ToDateTime(dr["dataprev"]);
+
+                    if (dr["dataentrega"] != null)
+                        pedido.DataEntrega = Convert.ToDateTime(dr["dataentrega"]);
+
+                    //if (dr["dataconclusao"] != null)
+                    //    pedido.DataConclusao = Convert.ToDateTime(dr["dataconclusao"]);
+
+                    if (dr["obspedido"] != null)
+                        pedido.Observacoes = dr["obspedido"].ToString();
+
+                    if (dr["totalcompra"] != null)
+                        pedido.TotalPedido = Convert.ToDecimal(dr["totalcompra"]);
+
+                    if (dr["descpedido"] != null)
+                        pedido.ValorDesconto = Convert.ToDecimal(dr["descpedido"]);
+
+                    if (dr["totalvenda"] != null)
+                        pedido.TotalGeral = Convert.ToDecimal(dr["totalvenda"]);
+
+                    if (dr["vlrlucro"] != null)
+                        pedido.ValorLucro = Convert.ToDecimal(dr["vlrlucro"]);
+
+                    this.Add(pedido);
+                }
             }
         }
 

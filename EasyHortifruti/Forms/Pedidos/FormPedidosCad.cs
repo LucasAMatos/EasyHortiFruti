@@ -108,7 +108,7 @@ namespace EasyHortifruti
 
         public void CarregarGrid()
         {
-            dataTable = new ConexaoBD().ConsultarClientePedido().Tables[0];
+            dataTable = new ConexaoBD().ConsultarPedidos().Tables[0];
             DgvPedidos.DataSource = dataTable;
             DgvPedidos.AutoGenerateColumns = false;
         }
@@ -147,18 +147,14 @@ namespace EasyHortifruti
             try
             {
                 // Caminho do arquivo RDL
-                string rdlPath = $"{Directory.GetCurrentDirectory().Replace("\\bin\\Debug", "")}\\Relatorios\\Produtos.rdl"; // Use a extensão .rdlc para relatórios locais
+                string rdlPath = $"{Directory.GetCurrentDirectory().Replace("\\bin\\Debug", "")}\\Relatorios\\Pedidos.rdlc";
 
                 // Cria uma instância do LocalReport
                 LocalReport report = new LocalReport();
                 report.ReportPath = rdlPath;
 
-                // Se o relatório tiver parâmetros, você pode configurá-los assim:
-                // report.SetParameters(new ReportParameter("ParameterName", "ParameterValue"));
-
-                // Carrega os dados no relatório (DataSet, DataTable ou outra fonte de dados)
-                // Exemplo:
-                // report.DataSources.Add(new ReportDataSource("DataSourceName", suaFonteDeDados));
+                // TODO: LUCAS, AQUI TEM QUE SER UMA LISTA DE HEROIS RANK S
+                report.DataSources.Add(new ReportDataSource("PedidosDS", new ConexaoBD().ConsultarObjetoPedidos()));
 
                 // Renderiza o relatório em formato PDF
                 byte[] pdfContent;

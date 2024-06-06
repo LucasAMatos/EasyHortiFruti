@@ -28,22 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidos));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.DgvPedidos = new System.Windows.Forms.DataGridView();
-            this.nCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.idCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vlrlucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.id = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,6 +54,15 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.nCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataentrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vlrlucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorcompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPedidos)).BeginInit();
@@ -77,7 +80,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(784, 661);
+            this.panel1.Size = new System.Drawing.Size(876, 661);
             this.panel1.TabIndex = 0;
             // 
             // panel7
@@ -86,7 +89,7 @@
             this.panel7.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel7.Location = new System.Drawing.Point(0, 182);
             this.panel7.Name = "panel7";
-            this.panel7.Size = new System.Drawing.Size(784, 479);
+            this.panel7.Size = new System.Drawing.Size(876, 479);
             this.panel7.TabIndex = 11;
             // 
             // DgvPedidos
@@ -96,85 +99,19 @@
             this.DgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.DgvPedidos.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.nCliente,
-            this.idCliente,
             this.data,
+            this.dataentrega,
             this.totalPedido,
             this.vlrlucro,
+            this.valorcompra,
             this.status,
             this.obs,
-            this.id});
+            this.ID});
             this.DgvPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
             this.DgvPedidos.Location = new System.Drawing.Point(0, 0);
             this.DgvPedidos.Name = "DgvPedidos";
-            this.DgvPedidos.Size = new System.Drawing.Size(784, 479);
+            this.DgvPedidos.Size = new System.Drawing.Size(876, 479);
             this.DgvPedidos.TabIndex = 3;
-            // 
-            // nCliente
-            // 
-            this.nCliente.DataPropertyName = "NOME_GRID";
-            this.nCliente.HeaderText = "Cliente";
-            this.nCliente.Name = "nCliente";
-            this.nCliente.Width = 180;
-            // 
-            // idCliente
-            // 
-            this.idCliente.DataPropertyName = "id_fonte";
-            this.idCliente.HeaderText = "idCliente";
-            this.idCliente.Name = "idCliente";
-            this.idCliente.Visible = false;
-            // 
-            // data
-            // 
-            this.data.DataPropertyName = "datapedido";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.data.DefaultCellStyle = dataGridViewCellStyle1;
-            this.data.HeaderText = "Data";
-            this.data.Name = "data";
-            this.data.Width = 80;
-            // 
-            // totalPedido
-            // 
-            this.totalPedido.DataPropertyName = "totalvenda";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle2.Format = "C2";
-            dataGridViewCellStyle2.NullValue = null;
-            this.totalPedido.DefaultCellStyle = dataGridViewCellStyle2;
-            this.totalPedido.HeaderText = "Valor Pedido";
-            this.totalPedido.Name = "totalPedido";
-            this.totalPedido.Width = 95;
-            // 
-            // vlrlucro
-            // 
-            this.vlrlucro.DataPropertyName = "vlrlucro";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.vlrlucro.DefaultCellStyle = dataGridViewCellStyle3;
-            this.vlrlucro.HeaderText = "Lucro Pedido";
-            this.vlrlucro.Name = "vlrlucro";
-            this.vlrlucro.Width = 95;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "statuspedido";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.status.DefaultCellStyle = dataGridViewCellStyle4;
-            this.status.HeaderText = "Status Pedido";
-            this.status.Name = "status";
-            // 
-            // obs
-            // 
-            this.obs.DataPropertyName = "obspedido";
-            this.obs.HeaderText = "Observações";
-            this.obs.Name = "obs";
-            this.obs.Width = 200;
-            // 
-            // id
-            // 
-            this.id.DataPropertyName = "id_recno";
-            this.id.HeaderText = "id";
-            this.id.Name = "id";
-            this.id.Visible = false;
             // 
             // panel6
             // 
@@ -187,14 +124,14 @@
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 133);
             this.panel6.Name = "panel6";
-            this.panel6.Size = new System.Drawing.Size(784, 49);
+            this.panel6.Size = new System.Drawing.Size(876, 49);
             this.panel6.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(663, 5);
+            this.label3.Location = new System.Drawing.Point(742, 5);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(93, 15);
             this.label3.TabIndex = 7;
@@ -204,7 +141,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(547, 5);
+            this.label2.Location = new System.Drawing.Point(617, 5);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(93, 14);
             this.label2.TabIndex = 6;
@@ -217,9 +154,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DtFim.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtFim.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtFim.Location = new System.Drawing.Point(665, 20);
+            this.DtFim.Location = new System.Drawing.Point(745, 20);
             this.DtFim.Name = "DtFim";
-            this.DtFim.Size = new System.Drawing.Size(103, 23);
+            this.DtFim.Size = new System.Drawing.Size(115, 23);
             this.DtFim.TabIndex = 5;
             this.DtFim.ValueChanged += new System.EventHandler(this.DateChanged);
             // 
@@ -230,10 +167,11 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.DtInicio.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.DtInicio.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.DtInicio.Location = new System.Drawing.Point(549, 20);
+            this.DtInicio.Location = new System.Drawing.Point(619, 20);
             this.DtInicio.Name = "DtInicio";
-            this.DtInicio.Size = new System.Drawing.Size(104, 23);
+            this.DtInicio.Size = new System.Drawing.Size(109, 23);
             this.DtInicio.TabIndex = 4;
+            this.DtInicio.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.DtInicio.ValueChanged += new System.EventHandler(this.DateChanged);
             // 
             // tbFiltro
@@ -254,7 +192,7 @@
             this.tbFiltro.ReadOnly = false;
             this.tbFiltro.SelectionLength = 0;
             this.tbFiltro.SelectionStart = 0;
-            this.tbFiltro.Size = new System.Drawing.Size(331, 41);
+            this.tbFiltro.Size = new System.Drawing.Size(400, 41);
             this.tbFiltro.TabIndex = 3;
             this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -269,7 +207,7 @@
             this.cbFiltro.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFiltro.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFiltro.FormattingEnabled = true;
-            this.cbFiltro.Location = new System.Drawing.Point(14, 4);
+            this.cbFiltro.Location = new System.Drawing.Point(13, 3);
             this.cbFiltro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Obrigatorio = false;
@@ -289,7 +227,7 @@
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 70);
             this.panel5.Name = "panel5";
-            this.panel5.Size = new System.Drawing.Size(784, 63);
+            this.panel5.Size = new System.Drawing.Size(876, 63);
             this.panel5.TabIndex = 9;
             // 
             // BtSairPedido
@@ -301,7 +239,7 @@
             this.BtSairPedido.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.BtSairPedido.FlatAppearance.BorderSize = 0;
             this.BtSairPedido.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.BtSairPedido.Location = new System.Drawing.Point(722, 5);
+            this.BtSairPedido.Location = new System.Drawing.Point(814, 5);
             this.BtSairPedido.Name = "BtSairPedido";
             this.BtSairPedido.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
             this.BtSairPedido.Size = new System.Drawing.Size(46, 53);
@@ -383,7 +321,7 @@
             this.panel4.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel4.Location = new System.Drawing.Point(0, 0);
             this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(784, 70);
+            this.panel4.Size = new System.Drawing.Size(876, 70);
             this.panel4.TabIndex = 8;
             // 
             // label1
@@ -411,12 +349,96 @@
             this.panel2.Size = new System.Drawing.Size(73, 70);
             this.panel2.TabIndex = 2;
             // 
+            // nCliente
+            // 
+            this.nCliente.DataPropertyName = "nCliente";
+            this.nCliente.HeaderText = "Cliente";
+            this.nCliente.Name = "nCliente";
+            this.nCliente.Width = 180;
+            // 
+            // data
+            // 
+            this.data.DataPropertyName = "datapedido";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.data.DefaultCellStyle = dataGridViewCellStyle1;
+            this.data.HeaderText = "Data Pedido";
+            this.data.Name = "data";
+            this.data.Width = 95;
+            // 
+            // dataentrega
+            // 
+            this.dataentrega.DataPropertyName = "dataentrega";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataentrega.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataentrega.HeaderText = "Data Entrega";
+            this.dataentrega.Name = "dataentrega";
+            this.dataentrega.Width = 95;
+            // 
+            // totalPedido
+            // 
+            this.totalPedido.DataPropertyName = "totalcompra";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.totalPedido.DefaultCellStyle = dataGridViewCellStyle3;
+            this.totalPedido.HeaderText = "Valor Pedido";
+            this.totalPedido.Name = "totalPedido";
+            this.totalPedido.Width = 95;
+            // 
+            // vlrlucro
+            // 
+            this.vlrlucro.DataPropertyName = "vlrlucro";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.vlrlucro.DefaultCellStyle = dataGridViewCellStyle4;
+            this.vlrlucro.HeaderText = "Lucro Pedido";
+            this.vlrlucro.Name = "vlrlucro";
+            this.vlrlucro.Width = 95;
+            // 
+            // valorcompra
+            // 
+            this.valorcompra.DataPropertyName = "valorCompra";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.valorcompra.DefaultCellStyle = dataGridViewCellStyle5;
+            this.valorcompra.HeaderText = "Vlr. Compra";
+            this.valorcompra.Name = "valorcompra";
+            this.valorcompra.Width = 95;
+            // 
+            // status
+            // 
+            this.status.DataPropertyName = "statuspedido";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.status.DefaultCellStyle = dataGridViewCellStyle6;
+            this.status.HeaderText = "Status Pedido";
+            this.status.Name = "status";
+            // 
+            // obs
+            // 
+            this.obs.DataPropertyName = "obspedido";
+            this.obs.HeaderText = "Observações";
+            this.obs.Name = "obs";
+            this.obs.Width = 200;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "ID";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
+            // 
             // FormPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(784, 661);
+            this.ClientSize = new System.Drawing.Size(876, 661);
             this.Controls.Add(this.panel1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormPedidos";
@@ -454,15 +476,16 @@
         private System.Windows.Forms.Button BtIncluirPedido;
         private System.Windows.Forms.Panel panel7;
         private System.Windows.Forms.DataGridView DgvPedidos;
-        private System.Windows.Forms.DataGridViewTextBoxColumn nCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn idCliente;
-        private System.Windows.Forms.DataGridViewTextBoxColumn data;
-        private System.Windows.Forms.DataGridViewTextBoxColumn totalPedido;
-        private System.Windows.Forms.DataGridViewTextBoxColumn vlrlucro;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
-        private System.Windows.Forms.DataGridViewTextBoxColumn obs;
-        private System.Windows.Forms.DataGridViewTextBoxColumn id;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn nCliente;
+        private System.Windows.Forms.DataGridViewTextBoxColumn data;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataentrega;
+        private System.Windows.Forms.DataGridViewTextBoxColumn totalPedido;
+        private System.Windows.Forms.DataGridViewTextBoxColumn vlrlucro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn valorcompra;
+        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn obs;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }
 }

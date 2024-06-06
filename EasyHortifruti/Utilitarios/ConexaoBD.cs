@@ -332,7 +332,7 @@ namespace EasyHortifruti
         public DataSet ConsultarPedidos()
         {
             string sql = string.Concat("SELECT G.nomefantasia AS nCliente,P.datapedido,P.dataentrega,P.totalcompra," +
-                "P.vlrlucro,P.totalcompra-vlrlucro AS valorCompra,P.statuspedido,P.Obspedido AS valorCompra FROM pedidos P " +
+                "P.vlrlucro,P.totalcompra-vlrlucro AS valorCompra,P.statuspedido,P.Obspedido,P.id_recno FROM pedidos P " +
                 "LEFT JOIN GERAL G ON P.id_geral = G.id_recno");
 
             return ExecutaEPreencheDataset(sql);
@@ -368,7 +368,7 @@ namespace EasyHortifruti
         public Pedidos ConsultarObjetoPedidos()
         {
             string sql = string.Concat("SELECT G.nomefantasia AS nCliente,P.datapedido,P.dataentrega,P.totalcompra,P.vlrlucro," +
-                "P.totalcompra-vlrlucro AS valorCompra,P.statuspedido,P.Obspedido AS valorCompra FROM pedidos P LEFT JOIN GERAL G " +
+                "P.totalcompra-vlrlucro AS valorCompra,P.statuspedido,P.Obspedido,P.id_recno FROM pedidos P LEFT JOIN GERAL G " +
                 "ON P.id_geral = G.id_recno");
 
             Pedidos pedido = new Pedidos();

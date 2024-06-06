@@ -428,7 +428,7 @@
             // 
             // ID
             // 
-            this.ID.DataPropertyName = "ID";
+            this.ID.DataPropertyName = "id_recno";
             this.ID.HeaderText = "ID";
             this.ID.Name = "ID";
             this.ID.Visible = false;

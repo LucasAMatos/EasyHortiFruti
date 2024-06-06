@@ -36,6 +36,8 @@ namespace EasyHortifruti.DML
 
         public decimal ValorLucro { get; set; }
 
+        public string Nome { get; set; }
+
         public void CarregaPedido(DataSet ds)
         {
             if (ds?.Tables.Count > 0 && ds.Tables[0].Rows.Count > 0)
@@ -100,34 +102,19 @@ namespace EasyHortifruti.DML
                         pedido.DataPedido = Convert.ToDateTime(dr["dataPedido"]);
 
                     if (dr["nCliente"] != null)
-                        pedido.IdPessoa = Convert.ToInt32(dr["nCliente"]);
+                        pedido.Nome = dr["nCliente"].ToString();
 
-                   // if (dr["statuspedido"] != null)
-                    //    pedido.StatusPedido = RetornaStatusPedido(dr["statuspedido"].ToString());
-
-                    //if (dr["prazopgto"] != null)
-                    //    pedido.PrazoPagamento = Convert.ToInt32(dr["prazopgto"]);
-
-                    //if (dr["dataprev"] != null)
-                    //    pedido.DataPrev = Convert.ToDateTime(dr["dataprev"]);
+                    if (dr["statuspedido"] != null)
+                        pedido.StatusPedido = RetornaStatusPedido(dr["statuspedido"].ToString());
 
                     if (dr["dataentrega"] != null)
                         pedido.DataEntrega = Convert.ToDateTime(dr["dataentrega"]);
-
-                    //if (dr["dataconclusao"] != null)
-                    //    pedido.DataConclusao = Convert.ToDateTime(dr["dataconclusao"]);
 
                     if (dr["obspedido"] != null)
                         pedido.Observacoes = dr["obspedido"].ToString();
 
                     if (dr["totalcompra"] != null)
                         pedido.TotalPedido = Convert.ToDecimal(dr["totalcompra"]);
-
-                    if (dr["descpedido"] != null)
-                        pedido.ValorDesconto = Convert.ToDecimal(dr["descpedido"]);
-
-                    if (dr["totalvenda"] != null)
-                        pedido.TotalGeral = Convert.ToDecimal(dr["totalvenda"]);
 
                     if (dr["vlrlucro"] != null)
                         pedido.ValorLucro = Convert.ToDecimal(dr["vlrlucro"]);
@@ -137,7 +124,7 @@ namespace EasyHortifruti.DML
             }
         }
 
-        public StatusPedido RetornaStatusPedido(string pStatus)
+        public static StatusPedido RetornaStatusPedido(string pStatus)
         {
             switch (pStatus)
             {

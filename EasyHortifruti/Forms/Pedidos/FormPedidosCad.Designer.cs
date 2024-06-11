@@ -28,16 +28,25 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidos));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
             this.DgvPedidos = new System.Windows.Forms.DataGridView();
+            this.nCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataentrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.totalPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vlrlucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.valorcompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.StatusPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel6 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
@@ -54,15 +63,6 @@
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.nCliente = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.data = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataentrega = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.totalPedido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vlrlucro = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.valorcompra = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.status = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.obs = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ID = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1.SuspendLayout();
             this.panel7.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DgvPedidos)).BeginInit();
@@ -104,7 +104,7 @@
             this.totalPedido,
             this.vlrlucro,
             this.valorcompra,
-            this.status,
+            this.StatusPedido,
             this.obs,
             this.ID});
             this.DgvPedidos.Dock = System.Windows.Forms.DockStyle.Fill;
@@ -112,6 +112,90 @@
             this.DgvPedidos.Name = "DgvPedidos";
             this.DgvPedidos.Size = new System.Drawing.Size(876, 479);
             this.DgvPedidos.TabIndex = 3;
+            // 
+            // nCliente
+            // 
+            this.nCliente.DataPropertyName = "nCliente";
+            this.nCliente.HeaderText = "Cliente";
+            this.nCliente.Name = "nCliente";
+            this.nCliente.Width = 180;
+            // 
+            // data
+            // 
+            this.data.DataPropertyName = "datapedido";
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.Format = "d";
+            dataGridViewCellStyle1.NullValue = null;
+            this.data.DefaultCellStyle = dataGridViewCellStyle1;
+            this.data.HeaderText = "Data Pedido";
+            this.data.Name = "data";
+            this.data.Width = 95;
+            // 
+            // dataentrega
+            // 
+            this.dataentrega.DataPropertyName = "dataentrega";
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.Format = "d";
+            dataGridViewCellStyle2.NullValue = null;
+            this.dataentrega.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dataentrega.HeaderText = "Data Entrega";
+            this.dataentrega.Name = "dataentrega";
+            this.dataentrega.Width = 95;
+            // 
+            // totalPedido
+            // 
+            this.totalPedido.DataPropertyName = "totalcompra";
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle3.Format = "C2";
+            dataGridViewCellStyle3.NullValue = null;
+            this.totalPedido.DefaultCellStyle = dataGridViewCellStyle3;
+            this.totalPedido.HeaderText = "Valor Pedido";
+            this.totalPedido.Name = "totalPedido";
+            this.totalPedido.Width = 95;
+            // 
+            // vlrlucro
+            // 
+            this.vlrlucro.DataPropertyName = "vlrlucro";
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle4.Format = "C2";
+            dataGridViewCellStyle4.NullValue = null;
+            this.vlrlucro.DefaultCellStyle = dataGridViewCellStyle4;
+            this.vlrlucro.HeaderText = "Lucro Pedido";
+            this.vlrlucro.Name = "vlrlucro";
+            this.vlrlucro.Width = 95;
+            // 
+            // valorcompra
+            // 
+            this.valorcompra.DataPropertyName = "valorCompra";
+            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle5.Format = "C2";
+            dataGridViewCellStyle5.NullValue = null;
+            this.valorcompra.DefaultCellStyle = dataGridViewCellStyle5;
+            this.valorcompra.HeaderText = "Vlr. Compra";
+            this.valorcompra.Name = "valorcompra";
+            this.valorcompra.Width = 95;
+            // 
+            // StatusPedido
+            // 
+            this.StatusPedido.DataPropertyName = "nStatus";
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.StatusPedido.DefaultCellStyle = dataGridViewCellStyle6;
+            this.StatusPedido.HeaderText = "Status Pedido";
+            this.StatusPedido.Name = "StatusPedido";
+            // 
+            // obs
+            // 
+            this.obs.DataPropertyName = "obspedido";
+            this.obs.HeaderText = "Observações";
+            this.obs.Name = "obs";
+            this.obs.Width = 200;
+            // 
+            // ID
+            // 
+            this.ID.DataPropertyName = "id_recno";
+            this.ID.HeaderText = "ID";
+            this.ID.Name = "ID";
+            this.ID.Visible = false;
             // 
             // panel6
             // 
@@ -216,6 +300,7 @@
             this.cbFiltro.SelectedText = "";
             this.cbFiltro.Size = new System.Drawing.Size(181, 43);
             this.cbFiltro.TabIndex = 2;
+            this.cbFiltro.SelectedIndexChanged += new System.EventHandler(this.cbFiltro_SelectedIndexChanged);
             // 
             // panel5
             // 
@@ -349,90 +434,6 @@
             this.panel2.Size = new System.Drawing.Size(73, 70);
             this.panel2.TabIndex = 2;
             // 
-            // nCliente
-            // 
-            this.nCliente.DataPropertyName = "nCliente";
-            this.nCliente.HeaderText = "Cliente";
-            this.nCliente.Name = "nCliente";
-            this.nCliente.Width = 180;
-            // 
-            // data
-            // 
-            this.data.DataPropertyName = "datapedido";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.data.DefaultCellStyle = dataGridViewCellStyle1;
-            this.data.HeaderText = "Data Pedido";
-            this.data.Name = "data";
-            this.data.Width = 95;
-            // 
-            // dataentrega
-            // 
-            this.dataentrega.DataPropertyName = "dataentrega";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataentrega.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dataentrega.HeaderText = "Data Entrega";
-            this.dataentrega.Name = "dataentrega";
-            this.dataentrega.Width = 95;
-            // 
-            // totalPedido
-            // 
-            this.totalPedido.DataPropertyName = "totalcompra";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.totalPedido.DefaultCellStyle = dataGridViewCellStyle3;
-            this.totalPedido.HeaderText = "Valor Pedido";
-            this.totalPedido.Name = "totalPedido";
-            this.totalPedido.Width = 95;
-            // 
-            // vlrlucro
-            // 
-            this.vlrlucro.DataPropertyName = "vlrlucro";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.vlrlucro.DefaultCellStyle = dataGridViewCellStyle4;
-            this.vlrlucro.HeaderText = "Lucro Pedido";
-            this.vlrlucro.Name = "vlrlucro";
-            this.vlrlucro.Width = 95;
-            // 
-            // valorcompra
-            // 
-            this.valorcompra.DataPropertyName = "valorCompra";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.valorcompra.DefaultCellStyle = dataGridViewCellStyle5;
-            this.valorcompra.HeaderText = "Vlr. Compra";
-            this.valorcompra.Name = "valorcompra";
-            this.valorcompra.Width = 95;
-            // 
-            // status
-            // 
-            this.status.DataPropertyName = "statuspedido";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.status.DefaultCellStyle = dataGridViewCellStyle6;
-            this.status.HeaderText = "Status Pedido";
-            this.status.Name = "status";
-            // 
-            // obs
-            // 
-            this.obs.DataPropertyName = "obspedido";
-            this.obs.HeaderText = "Observações";
-            this.obs.Name = "obs";
-            this.obs.Width = 200;
-            // 
-            // ID
-            // 
-            this.ID.DataPropertyName = "id_recno";
-            this.ID.HeaderText = "ID";
-            this.ID.Name = "ID";
-            this.ID.Visible = false;
-            // 
             // FormPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -484,7 +485,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn totalPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn vlrlucro;
         private System.Windows.Forms.DataGridViewTextBoxColumn valorcompra;
-        private System.Windows.Forms.DataGridViewTextBoxColumn status;
+        private System.Windows.Forms.DataGridViewTextBoxColumn StatusPedido;
         private System.Windows.Forms.DataGridViewTextBoxColumn obs;
         private System.Windows.Forms.DataGridViewTextBoxColumn ID;
     }

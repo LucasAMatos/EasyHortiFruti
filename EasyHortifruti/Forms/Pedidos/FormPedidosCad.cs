@@ -3,6 +3,7 @@ using System.Data;
 using System.Windows.Forms;
 using static Npgsql.Replication.PgOutput.Messages.RelationMessage;
 using System.IO;
+using System.Linq;
 using Microsoft.Reporting.WinForms;
 
 namespace EasyHortifruti
@@ -120,14 +121,40 @@ namespace EasyHortifruti
             cbFiltro.Add(16, "razaosocial");
         }
 
-        private void Filtrar()
+        private void Filtrar(DataTable dt, int filtroIndex, string filtroTexto)
         {
-            base.Filtrar(DgvPedidos, dataTable, cbFiltro.SelectedIndex, tbFiltro.Text);
+            //base.Filtrar(DgvPedidos, dataTable, cbFiltro.SelectedIndex, tbFiltro.Text);
+
+            // Crie um DataView a partir do DataTable original
+            DataView dv = new DataView(dt);
+
+            // Construa a expressão de filtro com base no índice e no texto do filtro
+            string filtro = string.Empty;
+            switch (filtroIndex)
+            {
+                case 0: // Supondo que o índice 0 seja o filtro pelo nome do cliente
+                    filtro = $"Nome LIKE '%{filtroTexto}%'";
+                    break;
+                case 1: // Supondo que o índice 1 seja o filtro pelo ID do pedido
+                    filtro = $"ID = {filtroTexto}";
+                    break;
+                // Adicione outros casos conforme necessário
+                default:
+                    filtro = string.Empty;
+                    break;
+            }
+            // Aplique o filtro ao DataView
+            dv.RowFilter = filtro;
+
+            // Atualize o DataGridView com os dados filtrados
+            DgvPedidos.DataSource = dv;
+
         }
 
         private void TbFiltro_TextoAlterado(object sender, EventArgs e)
         {
-            Filtrar();
+            // Chame a função Filtrar quando o texto do filtro for alterado
+            Filtrar(DgvPedidos, dataTable, cbFiltro.SelectedIndex, tbFiltro.Text);
         }
 
         private void DateChanged(object sender, EventArgs e)
@@ -181,6 +208,12 @@ namespace EasyHortifruti
             {
                 MessageBox.Show($"Erro ao gerar relatório: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+
+        private void cbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Chame a função Filtrar quando o índice do filtro for alterado
+            Filtrar(DgvPedidos, dataTable, cbFiltro.SelectedIndex, tbFiltro.Text);
         }
     }
 }

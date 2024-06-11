@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using Microsoft.Reporting.WinForms;
 using static EasyHortifruti.DML.Pedido;
+using System.Linq;
 
 namespace EasyHortifruti.DML
 {
@@ -11,6 +13,8 @@ namespace EasyHortifruti.DML
         public int ID { get; set; }
 
         public DateTime DataPedido { get; set; }
+
+        public string Nome { get; set; }
 
         public int IdPessoa { get; set; }
 
@@ -34,9 +38,9 @@ namespace EasyHortifruti.DML
 
         public decimal TotalGeral { get; set; }
 
-        public decimal ValorLucro { get; set; }
+        public decimal ValorLucro { get; set; }        
 
-        public string Nome { get; set; }
+        public string Tipo { get; set; }
 
         public void CarregaPedido(DataSet ds)
         {
@@ -83,14 +87,18 @@ namespace EasyHortifruti.DML
                     ValorLucro = Convert.ToDecimal(dr["vlrlucro"]);
             }
         }
+
         public class Pedidos : List<Pedido>
         {
             public Pedidos()
-            { }
+            {
+                
+            }
 
             public void CarregarPedidos(DataSet ds)
             {
                 this.Clear();
+                //this.Where(p => p.Nome.Equals("id_geral", StringComparison.OrdinalIgnoreCase)).ToList();
 
                 foreach (DataRow dr in ds.Tables[0].Rows)
                 {
@@ -121,6 +129,14 @@ namespace EasyHortifruti.DML
 
                     this.Add(pedido);
                 }
+            }
+        }
+
+        public string StatusDescricao
+        {
+            get
+            {
+                return Tipo.ToString();
             }
         }
 

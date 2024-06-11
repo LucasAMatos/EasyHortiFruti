@@ -8,7 +8,9 @@ namespace EasyHortifruti.DataSets
 {
     public partial class Produtos
     {
+#pragma warning disable CS0649 // Campo "Produtos.reportViewer" nunca é atribuído e sempre terá seu valor padrão null
         private Microsoft.Reporting.WinForms.ReportViewer reportViewer;
+#pragma warning restore CS0649 // Campo "Produtos.reportViewer" nunca é atribuído e sempre terá seu valor padrão null
 
         private void ReportForm_Load(object sender, EventArgs e)
         {

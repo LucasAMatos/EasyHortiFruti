@@ -402,7 +402,7 @@ namespace EasyHortifruti
             {
                 { "datapedido",     pPedido.DataPedido.ToString() },
                 { "id_geral",       pPedido.IdPessoa.ToString() },
-                { "statuspedido",   pPedido.StatusPedido.ToString() },
+                { "nStatus",        pPedido.StatusPedido.ToString() },
                 { "prazopgto",      pPedido.PrazoPagamento.ToString() },
                 { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },
                 { "dataentrega",    pPedido.DataEntrega.ToString("dd/MM/yyyy") },
@@ -440,7 +440,7 @@ namespace EasyHortifruti
             {
                 { "datapedido",     pPedido.DataPedido.ToString() },
                 { "id_geral",       pPedido.IdPessoa.ToString() },
-                { "statuspedido",   pPedido.StatusPedido.ToString() },
+                { "nStatus",        pPedido.StatusPedido.ToString() },
                 { "prazopgto",      pPedido.PrazoPagamento.ToString() },
                 { "dataprev",       pPedido.DataPrev.ToString("dd/MM/yyyy") },
                 { "dataentrega",    pPedido.DataEntrega.ToString("dd/MM/yyyy") },

@@ -204,7 +204,6 @@
             this.panel6.Controls.Add(this.DtFim);
             this.panel6.Controls.Add(this.DtInicio);
             this.panel6.Controls.Add(this.tbFiltro);
-            this.panel6.Controls.Add(this.cbFiltro);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 133);
             this.panel6.Name = "panel6";
@@ -263,11 +262,11 @@
             this.tbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFiltro.Caption = "Digite para Filtrar";
+            this.tbFiltro.Caption = "Digite Nome do Cliente";
             this.tbFiltro.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFiltro.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFiltro.Location = new System.Drawing.Point(207, 2);
+            this.tbFiltro.Location = new System.Drawing.Point(16, 2);
             this.tbFiltro.Margin = new System.Windows.Forms.Padding(20, 3, 20, 9);
             this.tbFiltro.MaxLength = 32767;
             this.tbFiltro.Multiline = true;
@@ -276,7 +275,7 @@
             this.tbFiltro.ReadOnly = false;
             this.tbFiltro.SelectionLength = 0;
             this.tbFiltro.SelectionStart = 0;
-            this.tbFiltro.Size = new System.Drawing.Size(400, 41);
+            this.tbFiltro.Size = new System.Drawing.Size(591, 41);
             this.tbFiltro.TabIndex = 3;
             this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
             this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
@@ -291,7 +290,7 @@
             this.cbFiltro.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFiltro.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbFiltro.FormattingEnabled = true;
-            this.cbFiltro.Location = new System.Drawing.Point(13, 3);
+            this.cbFiltro.Location = new System.Drawing.Point(242, 14);
             this.cbFiltro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             this.cbFiltro.Name = "cbFiltro";
             this.cbFiltro.Obrigatorio = false;
@@ -300,6 +299,7 @@
             this.cbFiltro.SelectedText = "";
             this.cbFiltro.Size = new System.Drawing.Size(181, 43);
             this.cbFiltro.TabIndex = 2;
+            this.cbFiltro.Visible = false;
             this.cbFiltro.SelectedIndexChanged += new System.EventHandler(this.cbFiltro_SelectedIndexChanged);
             // 
             // panel5
@@ -309,6 +309,7 @@
             this.panel5.Controls.Add(this.BtExcluirPedido);
             this.panel5.Controls.Add(this.BtEditarPedido);
             this.panel5.Controls.Add(this.BtIncluirPedido);
+            this.panel5.Controls.Add(this.cbFiltro);
             this.panel5.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel5.Location = new System.Drawing.Point(0, 70);
             this.panel5.Name = "panel5";

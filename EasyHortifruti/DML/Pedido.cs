@@ -20,6 +20,14 @@ namespace EasyHortifruti.DML
 
         public StatusPedido StatusPedido { get; set; }
 
+        public string StatusDescricao
+        {
+            get
+            {
+                return StatusPedido.ToString();
+            }
+        }
+
         public int PrazoPagamento { get; set; }
 
         public DateTime DataPrev { get; set; }
@@ -38,7 +46,7 @@ namespace EasyHortifruti.DML
 
         public decimal TotalGeral { get; set; }
 
-        public decimal ValorLucro { get; set; }        
+        public decimal ValorLucro { get; set; }
 
         public string Tipo { get; set; }
 
@@ -92,7 +100,6 @@ namespace EasyHortifruti.DML
         {
             public Pedidos()
             {
-                
             }
 
             public void CarregarPedidos(DataSet ds)
@@ -129,14 +136,6 @@ namespace EasyHortifruti.DML
 
                     this.Add(pedido);
                 }
-            }
-        }
-
-        public string StatusDescricao
-        {
-            get
-            {
-                return Tipo.ToString();
             }
         }
 

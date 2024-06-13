@@ -105,7 +105,7 @@ namespace EasyHortifruti
             CarregarGrid();
             CarregarComboFiltros();
             tbFiltro.TextChanged += TbFiltro_TextoAlterado;
-
+            cbFiltro.SelectedIndex = 1;
             DateChanged(null, null);
         }
 
@@ -156,7 +156,7 @@ namespace EasyHortifruti
         private void TbFiltro_TextoAlterado(object sender, EventArgs e)
         {
             // Chame a função Filtrar quando o texto do filtro for alterado
-            Filtrar(DgvPedidos, dataTable, cbFiltro.SelectedIndex, tbFiltro.Text);
+            Filtrar(DgvPedidos, dataTable, 1, tbFiltro.Text);
         }
 
         private void DateChanged(object sender, EventArgs e)
@@ -230,7 +230,7 @@ namespace EasyHortifruti
         private void cbFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Chame a função Filtrar quando o índice do filtro for alterado
-            Filtrar(DgvPedidos, dataTable, cbFiltro.SelectedIndex, tbFiltro.Text);
+            Filtrar(DgvPedidos, dataTable, 1, tbFiltro.Text);
         }
     }
 }

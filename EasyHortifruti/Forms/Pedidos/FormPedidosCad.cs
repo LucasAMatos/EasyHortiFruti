@@ -3,8 +3,10 @@ using System.Data;
 using System.Windows.Forms;
 using static Npgsql.Replication.PgOutput.Messages.RelationMessage;
 using System.IO;
+using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Reporting.WinForms;
+using EasyHortifruti.DML;
 
 namespace EasyHortifruti
 {
@@ -135,6 +137,7 @@ namespace EasyHortifruti
                 case 0: // Supondo que o índice 0 seja o filtro pelo nome do cliente
                     filtro = $"Nome LIKE '%{filtroTexto}%'";
                     break;
+
                 case 1: // Supondo que o índice 1 seja o filtro pelo ID do pedido
                     filtro = $"ID = {filtroTexto}";
                     break;
@@ -148,7 +151,6 @@ namespace EasyHortifruti
 
             // Atualize o DataGridView com os dados filtrados
             DgvPedidos.DataSource = dv;
-
         }
 
         private void TbFiltro_TextoAlterado(object sender, EventArgs e)
@@ -180,8 +182,14 @@ namespace EasyHortifruti
                 LocalReport report = new LocalReport();
                 report.ReportPath = rdlPath;
 
-                // TODO: LUCAS, AQUI TEM QUE SER UMA LISTA DE HEROIS RANK S
-                report.DataSources.Add(new ReportDataSource("PedidosDS", new ConexaoBD().ConsultarObjetoPedidos()));
+                List<Pedido> todosPedidos = new ConexaoBD().ConsultarObjetoPedidos();
+                List<Pedido> filtroPedidos = new List<Pedido>();
+                foreach (DataGridViewRow dr in DgvPedidos.Rows)
+                {
+                    filtroPedidos.Add(todosPedidos.First(x => x.ID == Convert.ToInt32(dr.Cells["ID"].Value)));
+                }
+
+                report.DataSources.Add(new ReportDataSource("PedidosDS", filtroPedidos));
 
                 // Renderiza o relatório em formato PDF
                 byte[] pdfContent;

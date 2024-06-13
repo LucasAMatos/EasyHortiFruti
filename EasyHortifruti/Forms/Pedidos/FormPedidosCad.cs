@@ -191,6 +191,15 @@ namespace EasyHortifruti
 
                 report.DataSources.Add(new ReportDataSource("PedidosDS", filtroPedidos));
 
+                RelatorioInfo relatorioInfo = new RelatorioInfo
+                {
+                    DataInicial = DtInicio.Value,
+                    DataFinal = DtFim.Value
+                };
+
+                List<RelatorioInfo> relatorioInfoList = new List<RelatorioInfo> { relatorioInfo };
+                report.DataSources.Add(new ReportDataSource("RelatorioInfoDS", relatorioInfoList));
+
                 // Renderiza o relatório em formato PDF
                 byte[] pdfContent;
                 string mimeType, encoding, fileNameExtension;

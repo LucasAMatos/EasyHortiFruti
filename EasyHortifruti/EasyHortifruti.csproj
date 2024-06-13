@@ -212,6 +212,7 @@
     <Compile Include="DML\ItemPedido.cs" />
     <Compile Include="DML\Pedido.cs" />
     <Compile Include="DML\Produto.cs" />
+    <Compile Include="DML\RelatorioInfo.cs" />
     <Compile Include="DML\SubGrupo.cs" />
     <Compile Include="DML\Telefone.cs" />
     <Compile Include="DML\Unidade.cs" />
@@ -457,6 +458,7 @@
     <None Include="Properties\DataSources\EasyHortifruti.DML.Produto.datasource" />
     <None Include="Properties\DataSources\EasyHortifruti.DML.Qualificacao.datasource" />
     <None Include="Properties\DataSources\EasyHortifruti.DML.QualificacaoDoResponsavel.datasource" />
+    <None Include="Properties\DataSources\EasyHortifruti.DML.RelatorioInfo.datasource" />
     <None Include="Properties\DataSources\EasyHortifruti.DML.Socio.datasource" />
     <None Include="Properties\DataSources\EasyHortifruti.DML.SubGrupo.datasource" />
     <None Include="Properties\DataSources\EasyHortifruti.DML.Telefone.datasource" />

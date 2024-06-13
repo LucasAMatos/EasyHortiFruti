@@ -726,7 +726,7 @@
         <PageBreak>
           <BreakLocation>End</BreakLocation>
         </PageBreak>
-        <Height>1.95847cm</Height>
+        <Height>1.95846cm</Height>
         <Width>20.07841cm</Width>
         <Style>
           <Border>
@@ -800,18 +800,38 @@
             </Border>
           </Style>
         </Image>
-      </ReportItems>
-      <Style>
-        <Border>
-          <Style>None</Style>
-        </Border>
-      </Style>
-    </PageHeader>
-    <PageFooter>
-      <Height>1.08479cm</Height>
-      <PrintOnFirstPage>true</PrintOnFirstPage>
-      <PrintOnLastPage>true</PrintOnLastPage>
-      <ReportItems>
+        <Textbox Name="Textbox3">
+          <CanGrow>true</CanGrow>
+          <KeepTogether>true</KeepTogether>
+          <Paragraphs>
+            <Paragraph>
+              <TextRuns>
+                <TextRun>
+                  <Value>=First(Fields!DataInicial.Value, "RelatorioInfoDS")</Value>
+                  <Style>
+                    <Format>d</Format>
+                  </Style>
+                </TextRun>
+              </TextRuns>
+              <Style />
+            </Paragraph>
+          </Paragraphs>
+          <rd:DefaultName>Textbox1</rd:DefaultName>
+          <Top>0.05264cm</Top>
+          <Left>14.40341cm</Left>
+          <Height>0.6cm</Height>
+          <Width>2.35479cm</Width>
+          <ZIndex>2</ZIndex>
+          <Style>
+            <Border>
+              <Style>None</Style>
+            </Border>
+            <PaddingLeft>2pt</PaddingLeft>
+            <PaddingRight>2pt</PaddingRight>
+            <PaddingTop>2pt</PaddingTop>
+            <PaddingBottom>2pt</PaddingBottom>
+          </Style>
+        </Textbox>
         <Textbox Name="Textbox1">
           <CanGrow>true</CanGrow>
           <KeepTogether>true</KeepTogether>
@@ -819,18 +839,21 @@
             <Paragraph>
               <TextRuns>
                 <TextRun>
-                  <Value>=Globals!ExecutionTime</Value>
-                  <Style />
+                  <Value>=First(Fields!DataFinal.Value, "RelatorioInfoDS")</Value>
+                  <Style>
+                    <Format>d</Format>
+                  </Style>
                 </TextRun>
               </TextRuns>
               <Style />
             </Paragraph>
           </Paragraphs>
           <rd:DefaultName>Textbox1</rd:DefaultName>
-          <Top>0.29958cm</Top>
-          <Left>12.16941cm</Left>
+          <Top>0.05264cm</Top>
+          <Left>17.33053cm</Left>
           <Height>0.6cm</Height>
-          <Width>5.675cm</Width>
+          <Width>2.74788cm</Width>
+          <ZIndex>3</ZIndex>
           <Style>
             <Border>
               <Style>None</Style>
@@ -842,6 +865,16 @@
           </Style>
         </Textbox>
       </ReportItems>
+      <Style>
+        <Border>
+          <Style>None</Style>
+        </Border>
+      </Style>
+    </PageHeader>
+    <PageFooter>
+      <Height>1.08479cm</Height>
+      <PrintOnFirstPage>true</PrintOnFirstPage>
+      <PrintOnLastPage>true</PrintOnLastPage>
       <Style>
         <Border>
           <Style>None</Style>
@@ -872,6 +905,13 @@
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
       <rd:DataSourceID>e08ac6b5-8120-42b7-945f-70d69493dc75</rd:DataSourceID>
+    </DataSource>
+    <DataSource Name="EasyHortifrutiDML2">
+      <ConnectionProperties>
+        <DataProvider>System.Data.DataSet</DataProvider>
+        <ConnectString>/* Local Connection */</ConnectString>
+      </ConnectionProperties>
+      <rd:DataSourceID>26d924cd-045e-421e-95b1-c53dedfb008c</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -942,6 +982,27 @@
         <rd:DataSetName>EasyHortifruti.DML</rd:DataSetName>
         <rd:TableName>Pedido</rd:TableName>
         <rd:ObjectDataSourceType>EasyHortifruti.DML.Pedido, EasyHortifruti, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
+      </rd:DataSetInfo>
+    </DataSet>
+    <DataSet Name="RelatorioInfoDS">
+      <Query>
+        <DataSourceName>EasyHortifrutiDML2</DataSourceName>
+        <CommandText>/* Local Query */</CommandText>
+      </Query>
+      <Fields>
+        <Field Name="DataFinal">
+          <DataField>DataFinal</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+        <Field Name="DataInicial">
+          <DataField>DataInicial</DataField>
+          <rd:TypeName>System.DateTime</rd:TypeName>
+        </Field>
+      </Fields>
+      <rd:DataSetInfo>
+        <rd:DataSetName>EasyHortifruti.DML</rd:DataSetName>
+        <rd:TableName>RelatorioInfo</rd:TableName>
+        <rd:ObjectDataSourceType>EasyHortifruti.DML.RelatorioInfo, EasyHortifruti, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</rd:ObjectDataSourceType>
       </rd:DataSetInfo>
     </DataSet>
   </DataSets>

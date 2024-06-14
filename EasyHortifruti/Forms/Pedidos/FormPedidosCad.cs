@@ -7,6 +7,8 @@ using System.Collections.Generic;
 using System.Linq;
 using Microsoft.Reporting.WinForms;
 using EasyHortifruti.DML;
+using EasyHortifruti.Componentes;
+using System.Web.UI.WebControls;
 
 namespace EasyHortifruti
 {
@@ -15,6 +17,7 @@ namespace EasyHortifruti
         #region Propriedades
 
         private DataView dvGrid;
+        private DataTable dataTable;
 
         public int IdSelecionado
         {
@@ -29,9 +32,6 @@ namespace EasyHortifruti
             }
         }
 
-        // Supondo que você tenha uma DataTable como fonte de dados
-        private DataTable dataTable;
-
         #endregion Propriedades
 
         #region Construtor
@@ -40,8 +40,9 @@ namespace EasyHortifruti
         {
             InitializeComponent();
 
-            ConfiguraGridPadrao(DgvPedidos);
+            ConfiguraGridPadrao(DgvPedidos);           
         }
+
 
         #endregion Construtor
 
@@ -104,7 +105,7 @@ namespace EasyHortifruti
         {
             CarregarGrid();
             CarregarComboFiltros();
-            tbFiltro.TextChanged += TbFiltro_TextoAlterado;
+            TbFiltro.TextChanged += TbFiltro_TextChanged;
             cbFiltro.SelectedIndex = 1;
             DateChanged(null, null);
         }
@@ -135,7 +136,7 @@ namespace EasyHortifruti
             switch (filtroIndex)
             {
                 case 0: // Supondo que o índice 0 seja o filtro pelo nome do cliente
-                    filtro = $"Nome LIKE '%{filtroTexto}%'";
+                    filtro = $"nCliente LIKE '%{filtroTexto}%'";
                     break;
 
                 case 1: // Supondo que o índice 1 seja o filtro pelo ID do pedido
@@ -146,6 +147,7 @@ namespace EasyHortifruti
                     filtro = string.Empty;
                     break;
             }
+
             // Aplique o filtro ao DataView
             dv.RowFilter = filtro;
 
@@ -153,10 +155,11 @@ namespace EasyHortifruti
             DgvPedidos.DataSource = dv;
         }
 
-        private void TbFiltro_TextoAlterado(object sender, EventArgs e)
+        //private void TbFiltro_TextoAlterado(object sender, EventArgs e)
+        private void TbFiltro_TextChanged(object sender, EventArgs e)
         {
             // Chame a função Filtrar quando o texto do filtro for alterado
-            Filtrar(DgvPedidos, dataTable, 1, tbFiltro.Text);
+            Filtrar(DgvPedidos, dataTable, 1, TbFiltro.Text);
         }
 
         private void DateChanged(object sender, EventArgs e)
@@ -230,7 +233,9 @@ namespace EasyHortifruti
         private void cbFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Chame a função Filtrar quando o índice do filtro for alterado
-            Filtrar(DgvPedidos, dataTable, 1, tbFiltro.Text);
+            Filtrar(DgvPedidos, dataTable, 1, TbFiltro.Text);
         }
+
     }
+
 }

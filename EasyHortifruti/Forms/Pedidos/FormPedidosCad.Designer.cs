@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle17 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle18 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPedidos));
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel7 = new System.Windows.Forms.Panel();
@@ -52,14 +52,14 @@
             this.label2 = new System.Windows.Forms.Label();
             this.DtFim = new System.Windows.Forms.DateTimePicker();
             this.DtInicio = new System.Windows.Forms.DateTimePicker();
-            this.tbFiltro = new EasyHortifruti.Componentes.AltTextBox();
-            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
+            this.TbFiltro = new EasyHortifruti.Componentes.AltTextBox();
             this.panel5 = new System.Windows.Forms.Panel();
             this.BtSairPedido = new System.Windows.Forms.Button();
             this.btImprimirPedido = new System.Windows.Forms.Button();
             this.BtExcluirPedido = new System.Windows.Forms.Button();
             this.BtEditarPedido = new System.Windows.Forms.Button();
             this.BtIncluirPedido = new System.Windows.Forms.Button();
+            this.cbFiltro = new EasyHortifruti.Componentes.AltComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -123,10 +123,10 @@
             // data
             // 
             this.data.DataPropertyName = "datapedido";
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.Format = "d";
-            dataGridViewCellStyle1.NullValue = null;
-            this.data.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle13.Format = "d";
+            dataGridViewCellStyle13.NullValue = null;
+            this.data.DefaultCellStyle = dataGridViewCellStyle13;
             this.data.HeaderText = "Data Pedido";
             this.data.Name = "data";
             this.data.Width = 95;
@@ -134,10 +134,10 @@
             // dataentrega
             // 
             this.dataentrega.DataPropertyName = "dataentrega";
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.Format = "d";
-            dataGridViewCellStyle2.NullValue = null;
-            this.dataentrega.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.Format = "d";
+            dataGridViewCellStyle14.NullValue = null;
+            this.dataentrega.DefaultCellStyle = dataGridViewCellStyle14;
             this.dataentrega.HeaderText = "Data Entrega";
             this.dataentrega.Name = "dataentrega";
             this.dataentrega.Width = 95;
@@ -145,10 +145,10 @@
             // totalPedido
             // 
             this.totalPedido.DataPropertyName = "totalcompra";
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle3.Format = "C2";
-            dataGridViewCellStyle3.NullValue = null;
-            this.totalPedido.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle15.Format = "C2";
+            dataGridViewCellStyle15.NullValue = null;
+            this.totalPedido.DefaultCellStyle = dataGridViewCellStyle15;
             this.totalPedido.HeaderText = "Valor Pedido";
             this.totalPedido.Name = "totalPedido";
             this.totalPedido.Width = 95;
@@ -156,10 +156,10 @@
             // vlrlucro
             // 
             this.vlrlucro.DataPropertyName = "vlrlucro";
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle4.Format = "C2";
-            dataGridViewCellStyle4.NullValue = null;
-            this.vlrlucro.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle16.Format = "C2";
+            dataGridViewCellStyle16.NullValue = null;
+            this.vlrlucro.DefaultCellStyle = dataGridViewCellStyle16;
             this.vlrlucro.HeaderText = "Lucro Pedido";
             this.vlrlucro.Name = "vlrlucro";
             this.vlrlucro.Width = 95;
@@ -167,19 +167,19 @@
             // valorcompra
             // 
             this.valorcompra.DataPropertyName = "valorCompra";
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
-            dataGridViewCellStyle5.Format = "C2";
-            dataGridViewCellStyle5.NullValue = null;
-            this.valorcompra.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle17.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleRight;
+            dataGridViewCellStyle17.Format = "C2";
+            dataGridViewCellStyle17.NullValue = null;
+            this.valorcompra.DefaultCellStyle = dataGridViewCellStyle17;
             this.valorcompra.HeaderText = "Vlr. Compra";
             this.valorcompra.Name = "valorcompra";
             this.valorcompra.Width = 95;
             // 
             // StatusPedido
             // 
-            this.StatusPedido.DataPropertyName = "nStatus";
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.StatusPedido.DefaultCellStyle = dataGridViewCellStyle6;
+            this.StatusPedido.DataPropertyName = "StatusPedido";
+            dataGridViewCellStyle18.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.StatusPedido.DefaultCellStyle = dataGridViewCellStyle18;
             this.StatusPedido.HeaderText = "Status Pedido";
             this.StatusPedido.Name = "StatusPedido";
             // 
@@ -203,7 +203,7 @@
             this.panel6.Controls.Add(this.label2);
             this.panel6.Controls.Add(this.DtFim);
             this.panel6.Controls.Add(this.DtInicio);
-            this.panel6.Controls.Add(this.tbFiltro);
+            this.panel6.Controls.Add(this.TbFiltro);
             this.panel6.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel6.Location = new System.Drawing.Point(0, 133);
             this.panel6.Name = "panel6";
@@ -257,50 +257,28 @@
             this.DtInicio.Value = new System.DateTime(2024, 1, 1, 0, 0, 0, 0);
             this.DtInicio.ValueChanged += new System.EventHandler(this.DateChanged);
             // 
-            // tbFiltro
+            // TbFiltro
             // 
-            this.tbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.TbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.tbFiltro.Caption = "Digite Nome do Cliente";
-            this.tbFiltro.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFiltro.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tbFiltro.Location = new System.Drawing.Point(16, 2);
-            this.tbFiltro.Margin = new System.Windows.Forms.Padding(20, 3, 20, 9);
-            this.tbFiltro.MaxLength = 32767;
-            this.tbFiltro.Multiline = true;
-            this.tbFiltro.Name = "tbFiltro";
-            this.tbFiltro.Obrigatorio = false;
-            this.tbFiltro.ReadOnly = false;
-            this.tbFiltro.SelectionLength = 0;
-            this.tbFiltro.SelectionStart = 0;
-            this.tbFiltro.Size = new System.Drawing.Size(591, 41);
-            this.tbFiltro.TabIndex = 3;
-            this.tbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
-            this.tbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
-            // 
-            // cbFiltro
-            // 
-            this.cbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
-            this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
-            this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
-            this.cbFiltro.Caption = "Campo para Filtrar";
-            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
-            this.cbFiltro.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFiltro.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.cbFiltro.FormattingEnabled = true;
-            this.cbFiltro.Location = new System.Drawing.Point(242, 14);
-            this.cbFiltro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
-            this.cbFiltro.Name = "cbFiltro";
-            this.cbFiltro.Obrigatorio = false;
-            this.cbFiltro.SelectedIndex = -1;
-            this.cbFiltro.SelectedItem = null;
-            this.cbFiltro.SelectedText = "";
-            this.cbFiltro.Size = new System.Drawing.Size(181, 43);
-            this.cbFiltro.TabIndex = 2;
-            this.cbFiltro.Visible = false;
-            this.cbFiltro.SelectedIndexChanged += new System.EventHandler(this.cbFiltro_SelectedIndexChanged);
+            this.TbFiltro.Caption = "Digite Nome do Cliente";
+            this.TbFiltro.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbFiltro.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbFiltro.FonteTexto = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.TbFiltro.Location = new System.Drawing.Point(16, 2);
+            this.TbFiltro.Margin = new System.Windows.Forms.Padding(20, 3, 20, 9);
+            this.TbFiltro.MaxLength = 32767;
+            this.TbFiltro.Multiline = true;
+            this.TbFiltro.Name = "TbFiltro";
+            this.TbFiltro.Obrigatorio = false;
+            this.TbFiltro.ReadOnly = false;
+            this.TbFiltro.SelectionLength = 0;
+            this.TbFiltro.SelectionStart = 0;
+            this.TbFiltro.Size = new System.Drawing.Size(375, 41);
+            this.TbFiltro.TabIndex = 3;
+            this.TbFiltro.TextAlign = System.Windows.Forms.HorizontalAlignment.Left;
+            this.TbFiltro.Tipo = EasyHortifruti.Componentes.AltTextBox.TipoCampo.TEXTO;
             // 
             // panel5
             // 
@@ -398,6 +376,28 @@
             this.BtIncluirPedido.UseVisualStyleBackColor = false;
             this.BtIncluirPedido.Click += new System.EventHandler(this.BtIncluirPedido_Click);
             // 
+            // cbFiltro
+            // 
+            this.cbFiltro.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.cbFiltro.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.None;
+            this.cbFiltro.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.None;
+            this.cbFiltro.Caption = "Campo para Filtrar";
+            this.cbFiltro.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.cbFiltro.Font = new System.Drawing.Font("Tahoma", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFiltro.FonteCaption = new System.Drawing.Font("Tahoma", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cbFiltro.FormattingEnabled = true;
+            this.cbFiltro.Location = new System.Drawing.Point(242, 14);
+            this.cbFiltro.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
+            this.cbFiltro.Name = "cbFiltro";
+            this.cbFiltro.Obrigatorio = false;
+            this.cbFiltro.SelectedIndex = -1;
+            this.cbFiltro.SelectedItem = null;
+            this.cbFiltro.SelectedText = "";
+            this.cbFiltro.Size = new System.Drawing.Size(181, 43);
+            this.cbFiltro.TabIndex = 2;
+            this.cbFiltro.Visible = false;
+            this.cbFiltro.SelectedIndexChanged += new System.EventHandler(this.cbFiltro_SelectedIndexChanged);
+            // 
             // panel4
             // 
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
@@ -468,7 +468,7 @@
         private System.Windows.Forms.Panel panel6;
         private System.Windows.Forms.DateTimePicker DtFim;
         private System.Windows.Forms.DateTimePicker DtInicio;
-        private Componentes.AltTextBox tbFiltro;
+        private Componentes.AltTextBox TbFiltro;
         private Componentes.AltComboBox cbFiltro;
         private System.Windows.Forms.Panel panel5;
         private System.Windows.Forms.Button BtSairPedido;

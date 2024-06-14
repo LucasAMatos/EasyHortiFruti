@@ -14,6 +14,7 @@ namespace EasyHortifruti
         #region propriedades
 
         private Geral iGeral;
+        private int IdClienteSelecionado { get; set; }
 
         private readonly List<ItemPedido> itensPedidos;
 
@@ -84,8 +85,6 @@ namespace EasyHortifruti
                 TbLucroPedido.Text = value.ToString("F2");
             }
         }
-
-        private int IdClienteSelecionado { get; set; }
 
         public int IdSelecionado
         {

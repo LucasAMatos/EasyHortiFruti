@@ -52,6 +52,7 @@ namespace EasyHortifruti.DML
         public string ReferenciasComerciais { get; set; }
 
         public int PrazoPagamento { get; set; }
+        public object Tables { get; internal set; }
 
         public void CarregarGeral(DataSet ds)
         {

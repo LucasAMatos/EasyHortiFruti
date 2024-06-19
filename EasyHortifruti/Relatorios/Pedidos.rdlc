@@ -739,9 +739,6 @@
         <RepeatColumnHeaders>true</RepeatColumnHeaders>
         <RepeatRowHeaders>true</RepeatRowHeaders>
         <DataSetName>PedidosDS</DataSetName>
-        <PageBreak>
-          <BreakLocation>End</BreakLocation>
-        </PageBreak>
         <Height>1.95846cm</Height>
         <Width>20.07841cm</Width>
         <Style>

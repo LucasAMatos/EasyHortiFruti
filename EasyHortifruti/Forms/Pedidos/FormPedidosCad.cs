@@ -40,9 +40,11 @@ namespace EasyHortifruti
         {
             InitializeComponent();
 
-            ConfiguraGridPadrao(DgvPedidos);           
-        }
+            ConfiguraGridPadrao(DgvPedidos);
 
+            // Inscreva-se para o evento TextoAlterado do UserControl
+            TbFiltro.TextChanged += TbFiltro_TextoAlterado;
+        }
 
         #endregion Construtor
 
@@ -159,7 +161,7 @@ namespace EasyHortifruti
         private void TbFiltro_TextChanged(object sender, EventArgs e)
         {
             // Chame a função Filtrar quando o texto do filtro for alterado
-            Filtrar(DgvPedidos, dataTable, 1, TbFiltro.Text);
+            Filtrar(DgvPedidos, dataTable, 0, TbFiltro.Text);
         }
 
         private void DateChanged(object sender, EventArgs e)
@@ -233,9 +235,12 @@ namespace EasyHortifruti
         private void cbFiltro_SelectedIndexChanged(object sender, EventArgs e)
         {
             // Chame a função Filtrar quando o índice do filtro for alterado
-            Filtrar(DgvPedidos, dataTable, 1, TbFiltro.Text);
+            Filtrar(DgvPedidos, dataTable, 0, TbFiltro.Text);
         }
 
+        private void TbFiltro_TextoAlterado(object sender, EventArgs e)
+        {
+            Filtrar(DgvPedidos, dataTable, 0, TbFiltro.Text);
+        }
     }
-
 }

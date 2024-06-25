@@ -164,6 +164,17 @@ namespace EasyHortifruti
             Filtrar(DgvPedidos, dataTable, 0, TbFiltro.Text);
         }
 
+        private void cbFiltro_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            // Chame a função Filtrar quando o índice do filtro for alterado
+            Filtrar(DgvPedidos, dataTable, 0, TbFiltro.Text);
+        }
+
+        private void TbFiltro_TextoAlterado(object sender, EventArgs e)
+        {
+            Filtrar(DgvPedidos, dataTable, 0, TbFiltro.Text);
+        }
+
         private void DateChanged(object sender, EventArgs e)
         {
             // Filtro aplicado ao DataTable com base nos DateTimePickers
@@ -232,15 +243,5 @@ namespace EasyHortifruti
             }
         }
 
-        private void cbFiltro_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            // Chame a função Filtrar quando o índice do filtro for alterado
-            Filtrar(DgvPedidos, dataTable, 0, TbFiltro.Text);
-        }
-
-        private void TbFiltro_TextoAlterado(object sender, EventArgs e)
-        {
-            Filtrar(DgvPedidos, dataTable, 0, TbFiltro.Text);
-        }
     }
 }

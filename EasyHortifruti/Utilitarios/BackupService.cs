@@ -38,15 +38,23 @@ namespace EasyHortifruti
             ProcessStartInfo processStartInfo = new ProcessStartInfo("cmd", $"/c {command}")
             {
                 RedirectStandardOutput = true,
+                RedirectStandardError = true,
                 UseShellExecute = false,
                 CreateNoWindow = true
             };
 
             using (Process process = Process.Start(processStartInfo))
             {
+                string output = process.StandardOutput.ReadToEnd();
+                string error = process.StandardError.ReadToEnd();
                 process.WaitForExit();
-                string result = process.StandardOutput.ReadToEnd();
-                Console.WriteLine(result);
+
+                Console.WriteLine(output);
+                if (!string.IsNullOrEmpty(error))
+                {
+                    Console.WriteLine($"Erro: {error}");
+                    throw new Exception($"Erro ao executar comando: {error}");
+                }
             }
         }
     }

@@ -38,8 +38,17 @@ namespace EasyHortifruti.Utilitarios
             }
 
             string backupFileName = $"backup_{DateTime.Now:yyyyMMddHHmmss}.sql";
-            _backupService.BackupDatabase(backupFileName, backupDirectory);
-            MessageBox.Show("Backup realizado com sucesso!");
+            try
+            {
+                _backupService.BackupDatabase(backupFileName, backupDirectory);
+                MessageBox.Show("Backup realizado com sucesso!");
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Erro ao realizar o backup: {ex.Message}");
+            }
+
+            this.Close();
 
         }
 

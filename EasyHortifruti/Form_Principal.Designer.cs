@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormPrincipal));
             this.panel1FormPrincipal = new System.Windows.Forms.Panel();
+            this.BtBackup = new System.Windows.Forms.Button();
+            this.BtCadSubGrupos = new System.Windows.Forms.Button();
+            this.BtCadGrupos = new System.Windows.Forms.Button();
+            this.BtCadUnidade = new System.Windows.Forms.Button();
             this.BtCtasReceber = new System.Windows.Forms.Button();
             this.BtCtasPagar = new System.Windows.Forms.Button();
             this.btSairPrincipal = new System.Windows.Forms.Button();
             this.BtRelatórios = new System.Windows.Forms.Button();
-            this.btPedidos = new System.Windows.Forms.Button();
-            this.btCadGeral = new System.Windows.Forms.Button();
-            this.btProdutos = new System.Windows.Forms.Button();
+            this.BtPedidos = new System.Windows.Forms.Button();
+            this.BtCadGeral = new System.Windows.Forms.Button();
+            this.BtProdutos = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.btCadUnidade = new System.Windows.Forms.Button();
-            this.btCadGrupos = new System.Windows.Forms.Button();
-            this.btCadSubGrupos = new System.Windows.Forms.Button();
-            this.btBackup = new System.Windows.Forms.Button();
             this.panel1FormPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -52,23 +52,79 @@
             this.panel1FormPrincipal.BackColor = System.Drawing.Color.Transparent;
             this.panel1FormPrincipal.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1FormPrincipal.BackgroundImage")));
             this.panel1FormPrincipal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.panel1FormPrincipal.Controls.Add(this.btBackup);
-            this.panel1FormPrincipal.Controls.Add(this.btCadSubGrupos);
-            this.panel1FormPrincipal.Controls.Add(this.btCadGrupos);
-            this.panel1FormPrincipal.Controls.Add(this.btCadUnidade);
+            this.panel1FormPrincipal.Controls.Add(this.BtBackup);
+            this.panel1FormPrincipal.Controls.Add(this.BtCadSubGrupos);
+            this.panel1FormPrincipal.Controls.Add(this.BtCadGrupos);
+            this.panel1FormPrincipal.Controls.Add(this.BtCadUnidade);
             this.panel1FormPrincipal.Controls.Add(this.BtCtasReceber);
             this.panel1FormPrincipal.Controls.Add(this.BtCtasPagar);
             this.panel1FormPrincipal.Controls.Add(this.btSairPrincipal);
             this.panel1FormPrincipal.Controls.Add(this.BtRelatórios);
-            this.panel1FormPrincipal.Controls.Add(this.btPedidos);
-            this.panel1FormPrincipal.Controls.Add(this.btCadGeral);
-            this.panel1FormPrincipal.Controls.Add(this.btProdutos);
+            this.panel1FormPrincipal.Controls.Add(this.BtPedidos);
+            this.panel1FormPrincipal.Controls.Add(this.BtCadGeral);
+            this.panel1FormPrincipal.Controls.Add(this.BtProdutos);
             this.panel1FormPrincipal.Controls.Add(this.panel1);
             this.panel1FormPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1FormPrincipal.Location = new System.Drawing.Point(0, 0);
             this.panel1FormPrincipal.Name = "panel1FormPrincipal";
             this.panel1FormPrincipal.Size = new System.Drawing.Size(1384, 861);
             this.panel1FormPrincipal.TabIndex = 0;
+            // 
+            // BtBackup
+            // 
+            this.BtBackup.BackColor = System.Drawing.Color.Transparent;
+            this.BtBackup.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtBackup.BackgroundImage")));
+            this.BtBackup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtBackup.FlatAppearance.BorderSize = 0;
+            this.BtBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtBackup.Location = new System.Drawing.Point(48, 520);
+            this.BtBackup.Name = "BtBackup";
+            this.BtBackup.Size = new System.Drawing.Size(195, 42);
+            this.BtBackup.TabIndex = 14;
+            this.BtBackup.UseVisualStyleBackColor = false;
+            this.BtBackup.Click += new System.EventHandler(this.BtBackup_Click);
+            // 
+            // BtCadSubGrupos
+            // 
+            this.BtCadSubGrupos.BackColor = System.Drawing.Color.Transparent;
+            this.BtCadSubGrupos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtCadSubGrupos.BackgroundImage")));
+            this.BtCadSubGrupos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtCadSubGrupos.FlatAppearance.BorderSize = 0;
+            this.BtCadSubGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtCadSubGrupos.Location = new System.Drawing.Point(48, 220);
+            this.BtCadSubGrupos.Name = "BtCadSubGrupos";
+            this.BtCadSubGrupos.Size = new System.Drawing.Size(195, 42);
+            this.BtCadSubGrupos.TabIndex = 13;
+            this.BtCadSubGrupos.UseVisualStyleBackColor = false;
+            this.BtCadSubGrupos.Click += new System.EventHandler(this.BtCadSubGrupos_Click);
+            // 
+            // BtCadGrupos
+            // 
+            this.BtCadGrupos.BackColor = System.Drawing.Color.Transparent;
+            this.BtCadGrupos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtCadGrupos.BackgroundImage")));
+            this.BtCadGrupos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtCadGrupos.FlatAppearance.BorderSize = 0;
+            this.BtCadGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtCadGrupos.Location = new System.Drawing.Point(48, 160);
+            this.BtCadGrupos.Name = "BtCadGrupos";
+            this.BtCadGrupos.Size = new System.Drawing.Size(195, 42);
+            this.BtCadGrupos.TabIndex = 12;
+            this.BtCadGrupos.UseVisualStyleBackColor = false;
+            this.BtCadGrupos.Click += new System.EventHandler(this.BtCadGrupos_Click);
+            // 
+            // BtCadUnidade
+            // 
+            this.BtCadUnidade.BackColor = System.Drawing.Color.Transparent;
+            this.BtCadUnidade.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtCadUnidade.BackgroundImage")));
+            this.BtCadUnidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtCadUnidade.FlatAppearance.BorderSize = 0;
+            this.BtCadUnidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtCadUnidade.Location = new System.Drawing.Point(48, 100);
+            this.BtCadUnidade.Name = "BtCadUnidade";
+            this.BtCadUnidade.Size = new System.Drawing.Size(195, 42);
+            this.BtCadUnidade.TabIndex = 11;
+            this.BtCadUnidade.UseVisualStyleBackColor = false;
+            this.BtCadUnidade.Click += new System.EventHandler(this.BtCadUnidade_Click);
             // 
             // BtCtasReceber
             // 
@@ -128,47 +184,47 @@
             this.BtRelatórios.UseVisualStyleBackColor = false;
             this.BtRelatórios.Click += new System.EventHandler(this.BtRelatórios_Click);
             // 
-            // btPedidos
+            // BtPedidos
             // 
-            this.btPedidos.BackColor = System.Drawing.Color.Transparent;
-            this.btPedidos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btPedidos.BackgroundImage")));
-            this.btPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btPedidos.FlatAppearance.BorderSize = 0;
-            this.btPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btPedidos.Location = new System.Drawing.Point(48, 400);
-            this.btPedidos.Name = "btPedidos";
-            this.btPedidos.Size = new System.Drawing.Size(195, 44);
-            this.btPedidos.TabIndex = 4;
-            this.btPedidos.UseVisualStyleBackColor = false;
-            this.btPedidos.Click += new System.EventHandler(this.BtPedidos_Click);
+            this.BtPedidos.BackColor = System.Drawing.Color.Transparent;
+            this.BtPedidos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtPedidos.BackgroundImage")));
+            this.BtPedidos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtPedidos.FlatAppearance.BorderSize = 0;
+            this.BtPedidos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtPedidos.Location = new System.Drawing.Point(48, 400);
+            this.BtPedidos.Name = "BtPedidos";
+            this.BtPedidos.Size = new System.Drawing.Size(195, 44);
+            this.BtPedidos.TabIndex = 4;
+            this.BtPedidos.UseVisualStyleBackColor = false;
+            this.BtPedidos.Click += new System.EventHandler(this.BtPedidos_Click);
             // 
-            // btCadGeral
+            // BtCadGeral
             // 
-            this.btCadGeral.BackColor = System.Drawing.Color.Transparent;
-            this.btCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btCadGeral.BackgroundImage")));
-            this.btCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btCadGeral.FlatAppearance.BorderSize = 0;
-            this.btCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCadGeral.Location = new System.Drawing.Point(48, 280);
-            this.btCadGeral.Name = "btCadGeral";
-            this.btCadGeral.Size = new System.Drawing.Size(195, 42);
-            this.btCadGeral.TabIndex = 1;
-            this.btCadGeral.UseVisualStyleBackColor = false;
-            this.btCadGeral.Click += new System.EventHandler(this.BtCadGeral_Click);
+            this.BtCadGeral.BackColor = System.Drawing.Color.Transparent;
+            this.BtCadGeral.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtCadGeral.BackgroundImage")));
+            this.BtCadGeral.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtCadGeral.FlatAppearance.BorderSize = 0;
+            this.BtCadGeral.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtCadGeral.Location = new System.Drawing.Point(48, 280);
+            this.BtCadGeral.Name = "BtCadGeral";
+            this.BtCadGeral.Size = new System.Drawing.Size(195, 42);
+            this.BtCadGeral.TabIndex = 1;
+            this.BtCadGeral.UseVisualStyleBackColor = false;
+            this.BtCadGeral.Click += new System.EventHandler(this.BtCadGeral_Click);
             // 
-            // btProdutos
+            // BtProdutos
             // 
-            this.btProdutos.BackColor = System.Drawing.Color.Transparent;
-            this.btProdutos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btProdutos.BackgroundImage")));
-            this.btProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btProdutos.FlatAppearance.BorderSize = 0;
-            this.btProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btProdutos.Location = new System.Drawing.Point(48, 340);
-            this.btProdutos.Name = "btProdutos";
-            this.btProdutos.Size = new System.Drawing.Size(195, 45);
-            this.btProdutos.TabIndex = 0;
-            this.btProdutos.UseVisualStyleBackColor = false;
-            this.btProdutos.Click += new System.EventHandler(this.BtProdutos_Click);
+            this.BtProdutos.BackColor = System.Drawing.Color.Transparent;
+            this.BtProdutos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("BtProdutos.BackgroundImage")));
+            this.BtProdutos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.BtProdutos.FlatAppearance.BorderSize = 0;
+            this.BtProdutos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.BtProdutos.Location = new System.Drawing.Point(48, 340);
+            this.BtProdutos.Name = "BtProdutos";
+            this.BtProdutos.Size = new System.Drawing.Size(195, 45);
+            this.BtProdutos.TabIndex = 0;
+            this.BtProdutos.UseVisualStyleBackColor = false;
+            this.BtProdutos.Click += new System.EventHandler(this.BtProdutos_Click);
             // 
             // panel1
             // 
@@ -197,58 +253,6 @@
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.label1.UseCompatibleTextRendering = true;
             // 
-            // btCadUnidade
-            // 
-            this.btCadUnidade.BackColor = System.Drawing.Color.Transparent;
-            this.btCadUnidade.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btCadUnidade.BackgroundImage")));
-            this.btCadUnidade.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btCadUnidade.FlatAppearance.BorderSize = 0;
-            this.btCadUnidade.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCadUnidade.Location = new System.Drawing.Point(48, 100);
-            this.btCadUnidade.Name = "btCadUnidade";
-            this.btCadUnidade.Size = new System.Drawing.Size(195, 42);
-            this.btCadUnidade.TabIndex = 11;
-            this.btCadUnidade.UseVisualStyleBackColor = false;
-            // 
-            // btCadGrupos
-            // 
-            this.btCadGrupos.BackColor = System.Drawing.Color.Transparent;
-            this.btCadGrupos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btCadGrupos.BackgroundImage")));
-            this.btCadGrupos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btCadGrupos.FlatAppearance.BorderSize = 0;
-            this.btCadGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCadGrupos.Location = new System.Drawing.Point(48, 160);
-            this.btCadGrupos.Name = "btCadGrupos";
-            this.btCadGrupos.Size = new System.Drawing.Size(195, 42);
-            this.btCadGrupos.TabIndex = 12;
-            this.btCadGrupos.UseVisualStyleBackColor = false;
-            // 
-            // btCadSubGrupos
-            // 
-            this.btCadSubGrupos.BackColor = System.Drawing.Color.Transparent;
-            this.btCadSubGrupos.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btCadSubGrupos.BackgroundImage")));
-            this.btCadSubGrupos.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btCadSubGrupos.FlatAppearance.BorderSize = 0;
-            this.btCadSubGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btCadSubGrupos.Location = new System.Drawing.Point(48, 220);
-            this.btCadSubGrupos.Name = "btCadSubGrupos";
-            this.btCadSubGrupos.Size = new System.Drawing.Size(195, 42);
-            this.btCadSubGrupos.TabIndex = 13;
-            this.btCadSubGrupos.UseVisualStyleBackColor = false;
-            // 
-            // btBackup
-            // 
-            this.btBackup.BackColor = System.Drawing.Color.Transparent;
-            this.btBackup.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btBackup.BackgroundImage")));
-            this.btBackup.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btBackup.FlatAppearance.BorderSize = 0;
-            this.btBackup.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btBackup.Location = new System.Drawing.Point(48, 520);
-            this.btBackup.Name = "btBackup";
-            this.btBackup.Size = new System.Drawing.Size(195, 42);
-            this.btBackup.TabIndex = 14;
-            this.btBackup.UseVisualStyleBackColor = false;
-            // 
             // FormPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -269,19 +273,19 @@
         #endregion
 
         private System.Windows.Forms.Panel panel1FormPrincipal;
-        private System.Windows.Forms.Button btProdutos;
-        private System.Windows.Forms.Button btCadGeral;
-        private System.Windows.Forms.Button btPedidos;
+        private System.Windows.Forms.Button BtProdutos;
+        private System.Windows.Forms.Button BtCadGeral;
+        private System.Windows.Forms.Button BtPedidos;
         private System.Windows.Forms.Button BtRelatórios;
         private System.Windows.Forms.Button btSairPrincipal;
         private System.Windows.Forms.Button BtCtasPagar;
         private System.Windows.Forms.Button BtCtasReceber;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btCadSubGrupos;
-        private System.Windows.Forms.Button btCadGrupos;
-        private System.Windows.Forms.Button btCadUnidade;
-        private System.Windows.Forms.Button btBackup;
+        private System.Windows.Forms.Button BtCadSubGrupos;
+        private System.Windows.Forms.Button BtCadGrupos;
+        private System.Windows.Forms.Button BtCadUnidade;
+        private System.Windows.Forms.Button BtBackup;
     }
 }
 

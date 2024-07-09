@@ -1,4 +1,5 @@
 ﻿using EasyHortifruti.Forms.Financeiro;
+using EasyHortifruti.Utilitarios;
 using System;
 using System.Windows.Forms;
 
@@ -11,6 +12,24 @@ namespace EasyHortifruti
             InitializeComponent();
 
             CriarTabelas();
+        }
+
+        private void BtCadUnidade_Click(object sender, EventArgs e)
+        {
+            FormUnidadeCad FormUnidadeCad = new FormUnidadeCad();
+            FormUnidadeCad.ShowDialog();
+        }
+
+        private void BtCadGrupos_Click(object sender, EventArgs e)
+        {
+            FormGruposCad cadGrupos = new FormGruposCad();
+            cadGrupos.ShowDialog();
+        }
+
+        private void BtCadSubGrupos_Click(object sender, EventArgs e)
+        {
+            FormSubGruposCad cadSubGrupos = new FormSubGruposCad();
+            cadSubGrupos.ShowDialog();
         }
 
         private void BtCadGeral_Click(object sender, EventArgs e)
@@ -31,13 +50,14 @@ namespace EasyHortifruti
             FormPedidos.ShowDialog();
         }
 
+        private void BtRelatórios_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void BtSairPrincipal_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void BtRelatórios_Click(object sender, EventArgs e)
-        {
         }
 
         private void CriarTabelas()
@@ -57,9 +77,10 @@ namespace EasyHortifruti
             CtasReceber.ShowDialog();
         }
 
-        private void BtSairPedido_Click_1(object sender, EventArgs e)
+        private void BtBackup_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            FormBackupDiario BackupAgora = new FormBackupDiario();
+            BackupAgora.ShowDialog();
         }
     }
 }

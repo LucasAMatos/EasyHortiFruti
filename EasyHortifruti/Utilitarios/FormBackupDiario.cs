@@ -37,7 +37,7 @@ namespace EasyHortifruti.Utilitarios
                 return;
             }
 
-            string backupFileName = $"backup_{DateTime.Now:yyyyMMddHHmmss}.sql";
+            string backupFileName = $"backup_{DateTime.Now:yyyyMMddHHmmss}.dump";
             try
             {
                 _backupService.BackupDatabase(backupFileName, backupDirectory);

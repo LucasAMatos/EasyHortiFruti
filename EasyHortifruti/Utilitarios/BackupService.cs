@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.IO;
+using System.Xml.Linq;
 
 namespace EasyHortifruti
 {
@@ -20,44 +21,45 @@ namespace EasyHortifruti
 
         public void BackupDatabase(string backupFileName, string backupDirectory)
         {
-            try
-            {
-                string backupFilePath = Path.Combine(backupDirectory, backupFileName);
-                string command = $"pg_dump --file \"{backupFilePath}\" --dbname \"{_connectionString}\"";
+            string database = "EasyHortifruti";
+            string user = "Admin";
+            string password = "2125071216";
+            string host = "localhost"; // ou o endereço do seu servidor PostgreSQL
+            string arquivoLocal = string.Concat(backupDirectory, "\\", backupFileName);
+            // Configura a variável de ambiente PGPASSWORD para evitar que a senha seja solicitada
+            Environment.SetEnvironmentVariable("PGPASSWORD", password);
 
-                ExecuteCommand(command);
-            }
-            catch (Exception ex)
-            {
-                Console.WriteLine($"Erro ao realizar o backup: {ex.Message}");
-            }
-        }
+            string args = $"-h {host} -U {user} -F c -b -v -f {arquivoLocal} {database}";
 
-        private void ExecuteCommand(string command)
-        {
-            ProcessStartInfo processStartInfo = new ProcessStartInfo("cmd", $"/c {command}")
+            ProcessStartInfo startInfo = new ProcessStartInfo
             {
+                FileName = "C:\\Program Files\\PostgreSQL\\16\\bin\\pg_dump.exe",
+                Arguments = args,
                 RedirectStandardOutput = true,
                 RedirectStandardError = true,
                 UseShellExecute = false,
                 CreateNoWindow = true
             };
 
-            using (Process process = Process.Start(processStartInfo))
+            try
             {
-                string output = process.StandardOutput.ReadToEnd();
-                string error = process.StandardError.ReadToEnd();
-                process.WaitForExit();
-
-                Console.WriteLine(output);
-                if (!string.IsNullOrEmpty(error))
+                using (Process process = Process.Start(startInfo))
                 {
-                    Console.WriteLine($"Erro: {error}");
-                    throw new Exception($"Erro ao executar comando: {error}");
+                    process.WaitForExit();
+                    if (process.ExitCode != 0)
+                    {
+                        MessageBox.Show($"Erro no backup: {process.StandardError.ReadToEnd()}");
+                    }
+                    else
+                    {
+                        MessageBox.Show("Backup realizado com sucesso.");
+                    }
                 }
+            }
+            catch (Exception ex)
+            {
+                throw ex;
             }
         }
     }
-
 }
-
